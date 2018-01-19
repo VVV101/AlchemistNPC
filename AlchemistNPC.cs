@@ -20,18 +20,27 @@ namespace AlchemistNPC
 			};
 		}
 		
+		public static string GithubUserName { get { return "VVV101"; } }
+		public static string GithubProjectName { get { return "AlchemistNPC"; } }
+		
 		public override void Load()
-{
-   Config.Load();
-    ModTranslation text = CreateTranslation("Change1");
-	text.SetDefault("Sniper scope is disabled");
-	text.AddTranslation(GameCulture.Russian, "Снайперский прицел выключен");
-	AddTranslation(text);
-	text = CreateTranslation("Change2");
-	text.SetDefault("Sniper scope is enabled");
-	text.AddTranslation(GameCulture.Russian, "Снайперский прицел включён");
-	AddTranslation(text);
-}
+		{
+		Config.Load();
+		ModTranslation text = CreateTranslation("Change1");
+		text.SetDefault("Sniper scope is disabled");
+		text.AddTranslation(GameCulture.Russian, "Снайперский прицел выключен");
+		AddTranslation(text);
+		text = CreateTranslation("Change2");
+		text.SetDefault("Sniper scope is enabled");
+		text.AddTranslation(GameCulture.Russian, "Снайперский прицел включён");
+		AddTranslation(text);
+		}
+
+		public static string ConfigFileRelativePath {
+		get { return "Mod Configs/AlchemistNPC.json"; }
+		}
+		public static void ReloadConfigFromFile() {
+		}
 		
 		public static bool CalamityUnloaded = ModLoader.GetMod("CalamityMod") != null;
 		public override void AddRecipeGroups()
