@@ -1,0 +1,476 @@
+Alchemist:
+--------------------
+Right after spawn of NPC:
+Lesser Healing Potion
+Lesser Mana Potion
+Lesser Restoration Potion
+Recall Potion
+Wormhole Potion
+Invisibility Potion
+Gender Change Potion
+Bottle
+Bottled Water
+Mushroom
+Glowing Mushroom
+Gel
+--------------------
+After beating EoW/BoC:
+Healing Potion
+Mana Potion
+Restoration Potion
+Strange Brew
+Vile Mushroom
+Vicious Mushroom
+Fallen Stars
+Pink Gel
+--------------------
+At start of Hardmode:
+Greater Healing Potion
+Greater Mana Potion
+Teleportation Potion
+Pixie Dust
+Crystal Shard
+Unicorn Horn
+Cursed Flame
+Ichor
+--------------------
+After beating Mechanical Bosses:
+Super Mana Potion
+--------------------
+If 5 angler quests finished:
+Fishing Potion
+Sonar Potion
+Crate Potion
+--------------------
+If you have Otherworldly Amulet in inventory:
+Emagled Fragmentation
+--------------------
+If imkSushi's Mod is active:
+--------------------
+Right after spawn of NPC:
+Base Summoning Potion
+Angler Amnesia Potion
+Meteorite Potion
+Ressurection Potion
+--------------------
+If Thorium Mod is active:
+--------------------
+After beating EoW/BoC:
+Water Chestnut
+--------------------
+After beating Skeletron:
+Jelly
+--------------------
+Alchemist Tremor Shop:
+---------------------
+Right after spawn of NPC:
+Basic Flask
+Frost Liquid Flask
+Lesser Healing Flask
+Lesser Mana Flask
+Lesser Poison Flask
+Boom Flask
+Freeze Flask
+Burning Flask
+---------------------
+After beating Skeletron:
+Gold Flask
+Gloomstone
+Untreated Flesh
+Light Bulb
+Atis Blood
+Tears of Death
+Torn Papyrus
+Phantom Soul
+The Rib
+---------------------
+At start of Hardmode:
+Big Healing Flask
+Big Mana Flask
+Big Poison Flask
+Extended Boom Flask
+Extended Freeze Flask
+Extented Burning Flask
+Health Support Flask
+Mana Support Flask
+Lesser Venom Flask
+Big Venom Flask
+Crystal Flask
+---------------------
+After beating Plantera:
+Phantom Flask
+Plague Flask
+Sparking Flask
+---------------------
+After beating Moon Lord:
+Moon Dust Flask
+Super Mana Flask
+Cluster Flask
+---------------------
+Brewer:
+--------------------
+Shop 1 (Vanilla)
+--------------------
+Right after spawn of NPC:
+Swiftness Potion
+Ironskin Potion
+Regeneration Potion
+Mining Potion
+Builder Potion
+Archery Potion
+Summoning Potion
+Endurance Potion
+Heartreach Potion
+Ammo Reservation Potion
+Thorns Potion
+Shine Potion
+Night Owl Potion
+Warmth Potion
+Spelunker Potion
+Hunter Potion
+Dangersense Potion
+Flipper Potion
+Gills Potion
+Water Walking Potion
+Obsidian Skin Potion
+Featherfall Potion
+Gravitation Potion
+Magic Power Potion
+Mana Regeneration Potion
+Titan Potion
+Battle Potion
+Calming Potion
+Stink Potion
+--------------------
+At start of Hardmode:
+Lifeforce Potion
+Inferno Potion
+Wrath Potion
+Rage Potion
+Love Potion
+--------------------
+Shop 2 (Mod/Reduced Grinding/Calamity Mod/Thorium Mod)
+--------------------
+Right after spawn of NPC:
+Sunshine Potion
+--------------------
+After beating Skeletron:
+Bewitching Potion
+Fortitude Potion
+--------------------
+At start of Hardmode:
+Invincibility Potion
+Titan Skin Potion
+--------------------
+After beating Mechanical Bosses:
+Blurring Potion
+--------------------
+After beating Plantera:
+Ninja Potion
+--------------------
+If Reduced Grinding is active:
+--------------------
+Right after spawn of NPC:
+War Potion
+Time Potion
+Expert Change Potion
+Rain Potion
+Slime Rain Potion
+--------------------
+If Thorium Mod is active:
+--------------------
+Right after spawn of NPC:
+Glowing Potion
+Accuracy Potion
+Blood Potion
+Combat Potion
+Conflagration Potion
+Silver Tongue Potion
+Aqua Potion
+Frenzy Potion
+--------------------
+After beating Skeletron:
+Frost Coating
+Explosive Coating
+Gorgan Coating
+Life Leech Coating
+Toxic Coating
+Creativity Potion
+Earworm Potion
+--------------------
+At start of Hardmode:
+Inspiration Reach Potion
+Holy Potion
+--------------------
+If Calamity Mod is active:
+--------------------
+After beating Skeletron:
+Omniscience Potion
+Zerg Potion
+Yharims Stimulants
+--------------------
+At start of Hardmode:
+Cadence Potion
+Fabsol's Vodka
+--------------------
+After beating Golem:
+Titan Scale Potion
+--------------------
+Shop 3 (MorePotion mod)
+--------------------
+If MorePotions mod is active:
+--------------------
+Right after NPC spawns:
+Heavy Roots Potion
+Natures Blessing Potion
+Honey Potion
+Jelly Soles Potion
+Jump Potion
+Penetration Potion
+Warriors Drought Potion
+Rangers Drought Potion
+Summoners Drought Potion
+Gladiators Potion
+Olympians Potion
+Swift Hands Potion
+Speed Potion
+Starlight Potion
+Golden Potion
+---------------------
+At start of Hardmode:
+Diamond Skin Potion
+Manashield Potion
+Reactive Armor Potion
+Vengeance Potion
+Enchanced Regeneration Potion
+Holy Elixer Potion
+Soulbinding Elixer
+Manaforce Potion
+Courage Potion
+Delving Potion
+Forbidden Potion
+Venomous Coating
+Gold Coating
+Ichorous Coating
+Cursed Coating
+---------------------
+After beating Mechanical Bosses:
+Leaf Crystal Potion
+---------------------
+After beating Plantera:
+Lifesteal Potion
+---------------------
+After beating Golem:
+Super Regeneration Potion
+---------------------
+After beating Moon Lord:
+Solar Potion
+Nebula Potion
+Vortex Potion
+Stardust Potion
+Terrarians Wrath Potion
+---------------------
+Shop 4 (UnuBattleRods mod/ Tacklebox mod)
+---------------------
+If UnuBattleRods mods is active:
+---------------------
+Right after spawn of NPC:
+Bob Escalation Potion
+Bob Speeding Potion
+Faster Escalation Potion
+Further Escalation Potion
+---------------------
+After beating Skeletron:
+Maximum Escalation Potion
+---------------------
+If Tacklebox mod is active:
+---------------------
+Right after spawn of NPC:
+Frog Potion
+Diving Potion
+Ultrabright Potion
+---------------------
+After beating Skeletron & beating 5 angler quests:
+Angler Potion
+Super Angler Potion
+Super Crate Potion
+Super Fishing Potion
+---------------------
+Shop 5 (Tremor Mod/ Wildlife Mod)
+---------------------
+If Tremor mod is active:
+---------------------
+Right after spawn of NPC:
+Inspiration Potion
+Rock Climber Potion
+---------------------
+At start of Hardmode:
+Bloodmoon Potion
+---------------------
+After beating Moon Lord:
+Paradox Potion
+Sunfury Potion
+Midnight Potion
+Scamper Potion
+Saving Potion
+Glass Potion
+---------------------
+If Wildlife is active:
+---------------------
+Right after spawn of NPC:
+Bounce Potion
+Fluxglow Potion
+Deer Blood
+Tortoise Potion
+---------------------
+After beating Skeletron:
+Molter Potion
+---------------------
+At start of Hardmode:
+Fairy Bottle B
+Fairy Bottle G
+Fairy Bottle P
+Ascension Potion
+Glitchhop Potion
+Spark Potion
+---------------------
+Jeweler
+---------------------
+Normal Shop
+---------------------
+Right after NPC spawn:
+Amethyst
+Topaz
+---------------------
+After beating EoW/BoC
+Sapphire
+Emerald
+Amber
+Sturdy Fossil
+Band of Starpower
+Band of Regeneration
+---------------------
+After beating Skeletron:
+Ruby
+Diamond
+Diamond Ring
+---------------------
+At start of Hardmode:
+Alchemist Horcrux
+Brewer Horcrux
+Jeweler Horcrux
+---------------------
+If Thorium Mod is active:
+---------------------
+After beating EoW/BoC:
+Opal
+---------------------
+After beating Skeletron:
+Granite Energy Core
+Bronze Fragments
+---------------------
+If Tremor mod is active
+---------------------
+After beating Skeletron:
+Rupicide
+Opal
+---------------------
+At start of Hardmode:
+Magium Shard
+Rune Bar
+---------------------
+After beating Moon Lord:
+Lapis Lazuli
+---------------------
+If Spirit Mod is active:
+---------------------
+After beating Skeletron:
+Enchanted Granite Chunk
+Ancient Marble Chunk
+---------------------
+Arena Shop
+---------------------
+Right after spawn of NPC:
+Campfire
+---------------------
+After beating Skeletron:
+Honey Bucket
+Heart Lantern
+Star in a Bottle
+Water Candle
+Peace Candle
+Sharpening Station
+Bewitching Table
+Ammo Box
+---------------------
+At start of Hardmode:
+Crystal Ball
+---------------------
+Young Brewer
+---------------------
+Right after spawn of NPC (Hardmode):
+Vanilla Tank Combination
+Tank Combination
+Battle Combination
+Ranger Combination
+Mage Combination
+Builder Combination
+Explorer Combination
+Summoner Combination
+Flask of Poison
+Flask of Fire
+Flask of Party
+Flask of Gold
+Flask of Ichor
+Flask of Cursed Flames
+---------------------
+After beating 5 angler quests:
+Fishing Combination
+---------------------
+After beating Plantera:
+Flask of Venom
+Flask of Nanites
+---------------------
+After beating Moon Lord:
+Universal Combination
+---------------------
+If Watcher Amulet is in inventory:
+Flask of Rainbows
+---------------------
+If Thorium Mod is active:
+---------------------
+Right after spawn of NPC (Hardmode):
+Gas Container
+Corrosive Vial
+Combustion Vial
+Nitrogen Vial
+---------------------
+If Calamity Mod is active:
+---------------------
+After beating Mechanical Bosses:
+Calamitas Brew
+---------------------
+After beating Golem:
+Calamity Combination
+---------------------
+Tremor Mod Lady Moon's shop extention:
+---------------------
+Right after spawn of NPC:
+Dark Mass
+Carbon Steel
+Doomstone
+Nightmare Bar
+Void Bar
+Angry Shard
+Cluster Shard
+Dragon Capsule
+Husk of Dusk
+Night Core
+Golden Claw
+Stone Dice
+Concentrated Ether
+Squorb
+Tooth of Abraxas
+Cosmic Fuel
+Eye of Oblivion
+---------------------

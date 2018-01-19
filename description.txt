@@ -1,0 +1,300 @@
+This mod adds 4 NPC (Alchemist, Brewer, Jeweler and Young Brewer) which sells potions including buff, health and mana. Also different flasks. New combinations of potions are sold by Young Brewer.
+Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu. Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
+v6.0
+-Reworked Justitia Sword behaviour. Now it works like impowered Arkhalis.
+Also its sprite was changed.
+-Added Water Chestnuts from Thorium Mod to Alchemist shop. Available after beating EoW/BoC.
+-Added Jelly from Thorium Mod to Alchemist shop. Available after beating Skeletron.
+-Added some Torn Notes as boss drops. They give advices to player.
+-Fishing, Crate and Sonar potions were moved to Brewer's 1st shop (since they are buff potions).
+-Fixed Jeweler's base shop conditions.
+-Added more description details to Calamity Combination. And also added a recipe for it.
+-Reworked/recolored some sprites.
+v5.9.1
+-Added Vicious/Vile Mushrooms to Alchemist shop.
+Avaible after beating EoW/BoC.
+-Changed value of town NPCs damage for pre-hardmode, hardmode and after beating Moon Lord.
+-Added full support for Russian language. Big thanks to somebody0214#2327 and DESPERATION#4629 for testing.
+v5.9
+-Added "Opened can of Wellcheers" Vending Machine.
+Can be crafted after beating Mechanical Bosses.
+Produces 4 types of Soda.
+-Added Solemn Vow, EGO weapon of "Funeral of the Dead Butterflies".
+Can be crafted before fighting Mechanical Bosses.
+-Added 5th shop to Brewer (Tremor/Wildlife).
+-Added Opals from Thorium Mod to Jeweler. Avaible after beating EoW/BoC.
+-Improved "Wing of the World" sprite.
+-Fixed Party Hat problem again :()
+v5.8.1
+-Fixed NPCs size. They couldn't go through doors before.
+v5.8
+-Added Laetitia EGO armor and weapon/accessory. Avaible after beating Skeletron Prime.
+-Added Wrath potion to Summoner Combination. Same buff stacking rules as before.
+-Fixed and nerfed Crystalyzed Arrows.
+-Fixed some descriptions.
+v5.7
+-Added Justitia items (sword and melee armor set). Avaible after beating Moon Lord.
+-Added Grinder MK4. Avaible after beating all Mechanical Bosses.
+-Added Wing of the World. Required to craft EGO equipment. Avaible after beating EoW/BoC.
+-The Beak moved to post EoW/BoC state.
+-Added Crystalyzed Arrow. Can be crafted with Hellfire Arrows and Crystal Dust on Mythril/Orichalcum Anvil.
+Explodes to shards on hit.
+-Horcruxes can now be used pre-hardmode.
+v5.6
+-Improved Artificial Altar texture (~).
+-Improved animation of Crystal Dust.
+-Magic Bullet's shot now goes through tiles.
+-Sniper Scope effect can now be toggled by using Rampage Components.
+-Nerfed Crystal Dust bullets (-4 damage). 
+They are still pretty powerful.
+v5.5
+-Added config file for changing Fallen Stars price. 
+Default value is 1000 = 10 silver.
+10000 = 1 gold
+-Added 2 new weapons. 1st post ML and 2nd post EoC.
+v5.4.1
+-Fixed shop conditions with multiple mods.
+v5.4
+-Fixed doubling potions bug in Brewer's shop.
+-Added a secret way to resummon Young Brewer. Can be done in Hardmode.
+-Fixed Alchemist Horcrux.
+v5.3
+-Added Tank Combination (Vanilla). Contains same buffs as Tank Combination (w/Modded), but without modded ones. Costs 9 Gold..
+-Removed Fortitude buff from Tank Combination (w/Modded).
+-Improved Young Brewer textures (a bit).
+-Corrosion debuff now visible on enemies while active (red sparkles).
+v5.2.1
+-Removed Tremor integrations. Should fix mod crash.
+v5.2
+-While Tremor Mod is active, you could craft Corrosive Flask in Alchemical damage type.
+-Added Blurring Potion. Grants Blurring buff, which activates Shadow Dodge every 20 seconds.
+Costs 15 gold. Avaible after beating Mechanical Bosses. Can be crafted.
+-Added new pet. Obtainable from Hardmode Treasure Bags with 1/80 chance. Gives some benefits while active.
+v5.1.2
+-Fixed spawning problem of Young Brewer
+v5.1.1
+-Fixed mod crash while Calamity Mod is disabled.
+v5.1
+-Added Universal Combination. Same as from Autoinjector.
+Costs 50 gold. Avaible after beating Moon Lord. 
+-Added Calamity Combination. Contains Yharim's Stimulant, Omniscience, Titan Scale, Cadence and Fabsol Vodka buffs.
+Costs 50 gold. Avaible after beating Golem.
+-Added Destroyer Emblem to Autoinjector. Now it also adds 10% damage and 8% critical chance to all weapon types.
+-Reworked side sprite and code of Otherworldly Amulet mount. Now it negates knockback and fall damage.
+-Fixed some typos
+v5.0.1
+-Fixed Rainbow Flask buff. Now it counts as buff again.
+-Removed doubling potions from Brewer's shops.
+v5.0
+-Reworked Rainbow flask. Now it simply increases DPS by ~1K and cuts 60 defense from enemy.
+-Added tier 2 Otherworldly Amulet. It's called "Watcher Amulet". Allows to buy Flasks of Rainbow from Young Brewer.
+Also working as Sentry Minion. More than 1 cannot be summoned.
+Can be crafted with Otherworldly Amulet, some hardmode and luminite bars and ore and 20 of each fragments.
+Can be used to make Autoinjector.
+-Added Clairvoyance buff (Crystal Ball) to Mage Combination. Cost increased.
+-Fallen Stars and Pink Gel are avaible in Alchemist shop after beating EoW/BoC.
+-Brewer's 2nd and 3rd shops are changed their places.
+-Brewer's 2nd shop now contains all potions, added by this mod.
+-All Brewer's shops now has headings (Vanilla, Mod/Thorium/Calamity/RG, MorePotions, UnuBattleRods/Tacklebox)
+-Fixed party hat for Alchemist, Brewer and Jeweler.
+-Changed NPC naming from "the Alchemist" to "Alchemist". NPC needs to be resummoned.
+v4.9.2
+-Added Artificial Altar. Maded with Ebon/Crimstone, Deathweeds, Rotten Chunks/Vertebras, some Thorns and Battle potions on Demon/Crimson Altar.
+-Changed Jeweler's conditions for Rubies and Diamonds to defeat EoW/BoC.
+-New phrases for Alchemist and Brewer during invasions and Blood Moon.
+v4.9.1
+-Fixed 4th Brewer shop.
+-Renamed Unknocking Potion.
+-Now Masks Bundle recipe can use any vanilla Cultist Mask.
+-New Masks Bundle sprite (~ Zelda refference)
+-Explorer, Builder and Fishing combinations effects are now contained in a single buff, just like the others.
+v4.9
+-Balancing some prices.
+-New lines for Alchemist with Thorium, Tremor and Peculiarity mods.
+-Fixed recipe for Masks Bundle.
+-Added 2 vanity sets. Avaible from Hardmode bosses Treasure bags.
+-Added potions from UnuBattleRods and Tacklebox mods.
+v4.8
+-Added 3 potions from Calamity Mod.
+-Added Rampage Components.
+-Nerfed fishing quest requirement to 5 for all fishing type potions.
+-Changed sprites of some items.
+-Tweaked animation of Young Brewer.
+-Cursed Ice, Crystal Dust and Divine Lava are now animated.
+-Alchemist, Brewer and Young Brewer will use Corrosive Flask after beating Moon Lord.
+-All class combinations (Battle, Mage, Ranger, Tank, Summoner) now will disable buffs which they are containing.
+No more problems with usage.
+v4.7
+-Added Autoinjector. Can be crafted with Alchemist Necklace, 15 of each fragments, some spectral and luminite bars, 30 of each possible class combinations and a new item, called Masks Bundle.
+Provides all bonuses from Alchemist Necklace, gives extra 2 defense and gives to player Universal Combination buff.
+This buff provides all class combinations bonuses (if accessory is on player). Bonuses will not stack with vanilla potions or other combinations.
+-Added Masks Bundle. Required to make Autoinjector. Can be crafted with every basic vanilla Terraria boss mask (Old One's not included, yet).
+-Reworked Summoner Combination to single buff. Not stacks with Summoning and Bewitching Potions.
+v4.6.1
+-Updated to tModLoader v0.10.1
+v4.6
+-Added some potions from Thorium and Calamity mods to Brewer's 3rd shop.
+-Reworked Battle, Tank, Ranger & Mage combinations.
+Now they work like a single buff, which includes all of combination potions effects.
+Special effects of combinations are not stacking (Lifeforce, Damage & Crit boosts).
+-Added new function for Otherworldly Amulet. (Big thanks to Sir Mirsario for helping with sprite)
+v4.5.1
+-Added Granite and Marble Chunks from Spirit Mod.
+-Added Granite Energy Core and Bronze Alloy Fragment from Thorium Mod.
+-Added icon for mod
+v4.5
+-New Alchemist texture
+-Added Unicorn Horn to Alchemist's shop.
+-Changed possible names of NPC's
+v4.4.1
+-Fix for Otherworldly Amulet.
+v4.4
+-Added Sturdy Fossil to Jeweler. Avaible after beating EoW/BoC.
+-New sprite for Otherworldly Amulet (by Dick_Kickem007#1531)
+v4.3
+-Added Emagled Fragmentation and Otherworldly Amulet.
+1st - Can be bought from Alchemist for 8 gold while 2nd lying in inventory. Also can be gathered from Dungeon Guardian.
+On normal mode they drops from 5 to 10, on expert from 15 to 20.
+25 of Emagled Fragmentations could be transformed into 2 vanilla pillar fragments.
+2nd - Can be gathered from Dungeon Guardian with 10% chance on normal mode or 20% on expert.
+Big thanks to Dick_Kickem007#1531 for Emagled Fragmentation sprite and ideas of this update.
+v4.2
+-Added Cursed Ice and Icedamned Arrow.
+-Added 1 more potion from MorePotions mod.
+-Added 3 more potions from Reduced Grinding.
+v4.1
+-Reworker Cycle Shop feature. Now should work like in Fargo's mod.
+-Added 3 potions from imkSushi's mod (Ressurection, Angler Amnesia, Meteorite)
+v4.0
+-Added 6 more MorePotions's potions.
+-Added 3rd shop to Brewer. Avaible by cycling.
+-Added Arena shop to Jeweler.
+-Added 3 special items to Jeweler's shop in hardmode.
+v3.9.4
+-Added 1 new potion from MorePotions to Brewer's second shop.
+-Added Flippers potion to Brewer's shop.
+-Invisibility potion moved to Alchemist shop.
+v3.9.3
+-Reworked NPC texts and items descriptions.
+-Added ability to dash to Ninja Potion.
+-Gas Containers moved to Young Brewer's shop.
+v3.9.2
+-Added even more potions to Brewer's shop (actually, 5).
+-Vanilla flasks moved to Young Brewer's shop.
+-Added potions from Reduced Grinding to Brewer's shop.
+-Added Rainbow Flask. Inflicts vanilla Flasks debuffs and Frostburn to attacked enemy. Costs 20 gold. 
+Can be bought from Young Brewer after beating Moon Lord. 
+Can be crafted with Ancient Manipulator after beating Lunatic Cultist.
+Bugfix v3.9.1
+-Fixed a bug with vanilla shops additions of imkSushi's mod.
+v3.9
+-Added 8 more potions from MorePotions mod.
+-Reworked sprite of Jeweler.
+-Added Seeping Arrow. Crafted with Divine Lava and normal arrow. Applies On Fire! and Ichor debuffs. Has higher basic damage.
+-Added Divine Lava. Crafted with Crystal Ball, Ichor and Lava Bucket or just normal Lava.
+-Nerfed Sunshine potion effect. Before it could light up the whole fullhd screen with lighting "retro".
+v3.8
+-Added Sunshine Potion (increase light radius greatly)
+v3.7
+-Added "More Potions" potions to Brewer's 2nd shop.
+v3.6
+-Fixed Base Summoning Potion selling.
+v3.5
+-Upgraded to tModLoader 0.10.
+-Fixed selling condition of Ninja Potion to Post Plantera.
+v3.4
+-Added new ammo type - Crystal Dust Bullets (even more shards on hit). Do much more damage.
+Made with 100 crystal bullets & crystal dust (which is made using Crystal Shards with Autohammer)
+-Little rework of Battle and Tank combinations (removed Swiftness from Battle and Titan from Tank, added Titan Skin to Tank)
+-Added Thorium Mod Coatings and Gas Containers to Brewer's flask shop.
+v3.3
+-Added more Tremor mod materials to NPC's
+-Added Tremor mod materials to Lady Moon
+-Added Corrosive Flask (makes with Celestial tower fragments and Toxic Flask).
+-Improved descriptions of Combinations.
+v3.2
+-Added new NPC (Jeweler), which solds various gems, vanilla bands, Opals and Lapis Lazuli from Tremor mod.
+-Added more vanilla materials to Alchemist shop.
+-Added some Tremor mod materials to Alchemist shop.
+v3.1
+-Added Gills and Water Walking Potions to Brewer's shop.
+-Changed descriptions of some new potions.
+-Changed danger detection distance of NPC's.
+v3.0
+30k downloads anniversary.
+-Added Alchemist Necklace. Crafted from Charm of Myths & Cross Necklace. Gives life regeneration, reduce cooldown of healing potions & prolongers invincibility after hit.
+-Replaced attack of NPCs.
+v2.9
+-Added Fishing Combination. Grants effects of Fishing, Sonar, Crate, Regeneration, Iron Skin, Calming, Thorns & Inferno potions.
+-Added Ninja Potion. Grants 10% damage & crit to all sources. Also give chance to dodge enemy attack and ability to climb walls. 
+Costs 7 gold 50 silver. Can be bought in Hardmode. Also has recipe.
+-Fixed sprite size of Young Brewer (I guess this should fix Party Hat problem).
+v2.8
+-Changed spawn condition for Alchemist & Brewer (now it is required to kill the Eye of Ctulhu for allowing to spawn them)
+Also this should help for respawn.
+v2.7
+-Added Titan Skin Potion with recipe to the Brewer. Avaible in hardmode.
+Gives immunity to On Fire!, Frostburn, Cursed Flames, Chilled, Frozen & Ichor debuffs. Lasts for 15 minutes. Costs 5 gold.
+v2.6
+-Added separate shop for flasks from Tremor mod to The Alchemist
+-Added separate shop for vanilla flasks to the Brewer
+v2.5
+-Added Love potion to Alchemist & Calming Potion to Brewer
+v2.4
+-New sprite for Young Brewer (more original)
+v2.3
+-New sprite for Brewer (hope you will like it!)
+-Little redesign of Alchemist (2x2 terraria pixels rule)
+v2.2
+-Added 2 new potions:
+Unknocking Potion (player cannot be knockbacked).
+Invincibility Potion (prolongers invicibility time after hit)
+-Added 3 new combinations (Mage, Ranger, Tank)
+-Changes in shops
+-Added recipe for Bewitching Potion.
+v2.1
+-Fixed Young Brewer spawnability problem.
+v2.0
+-Renaming Alchemist to The Alchemist due to compatibility issues.
+-Changed prices of some potions (Spelunker, Obsidian Skin, Hunter). 
+v1.9
+-Added Explorer Combination.
+v1.8
+-Added 3rd NPC Young Brewer. Spawns while both Alchemist & Brewer are in the world and world is Hardmode. 
+Sells combinations of potions.
+v1.7
+-Added Bewitching Potion (has effect of Bewithing Table for 15 minutes). Costs 1 gold.
+Can be bought from Brewer after beating Skeletron.
+-Changed price of Summoning Potion to 75 silver.
+v1.6
+-Removed Empty Seed Bag from Alchemist.
+-Gender Change potion was sent to Alchemist and now has changed price (1 gold).
+-Added Flasks to Brewer.
+v1.5
+-Restored changed prices from v1.3. Used other method to change them.
+v1.4
+-Deleted changed prices from v1.3 due to crashability.
+v1.3
+-Changed prices of Base Summoning Potion from imkSushi's Potions Addon and Empty Seed Bag from Thorium Mod.
+v1.2
+-Added 2nd NPC (Brewer).
+-Potions separated between 2 NPCs. 
+Alchemist sells Health/Mana potions, Recall & Wormhole potions and some basic ingredients.
+Brewer sells buff potions.
+Changed vanilla prices of potions and some ingredients.
+Some custom dialogues while both NPC are spawned.
+v1.1
+-Added page to Forum
+-Fixed mod description
+v1.0
+-Fixed compatibility problems with tModLoader 0.9.0.2.
+-Fixed spawn problems (now spawns when Player has empty housing and holding Water Bottle).
+-Now can attack
+-Custom Sprite (kinda...)
+v0.2.1
+-Now sells recall and wormhole potions
+-New dialogue
+v0.2
+-Alchemist Textures (unfinished)
+v0.1
+-Alchemist NPC

@@ -1,0 +1,32 @@
+using Terraria;
+using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+using System;
+using System.Linq;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
+using Terraria.UI;
+
+namespace AlchemistNPC.Projectiles
+{
+	public class CorrosiveFlaskCloud : ModProjectile
+	{
+        public override void SetDefaults()
+        {
+            projectile.damage = 250;
+			projectile.width = 32;
+            projectile.height = 32;
+            projectile.penetrate = 12;
+            projectile.aiStyle = 92;
+            aiType = 511;
+            projectile.friendly = true;
+            projectile.timeLeft = 600;
+        }
+		
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+			{
+				target.AddBuff(mod.BuffType("Corrosion"), 300);
+				target.immune[projectile.owner] = 3;
+			}
+    }
+}
