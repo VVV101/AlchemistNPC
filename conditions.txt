@@ -474,3 +474,46 @@ Tooth of Abraxas
 Cosmic Fuel
 Eye of Oblivion
 ---------------------
+Operator
+---------------------
+Boss Drops Shop
+---------------------
+Right after spawn of NPC:
+Demonite/Crimtane ore depending of world type
+Shadow Scale/Tissue Sample depending of world type
+---------------------
+After beating any Mechanical Boss:
+Soul of Light
+Soul of Night
+---------------------
+After beating respective Mechanical Boss:
+Soul of Might
+Soul of Sight
+Sould of Fright
+---------------------
+After beating Mechanical Bosses:
+Hallowed Bar
+---------------------
+After beating Golem:
+Shiny Stone
+Beetle Husk
+---------------------
+After beating Moon Lord and having Otherworldly Amulet in inventory:
+Solar Fragment
+Nebula Fragment
+Vortex Fragment
+Stardust Fragment
+---------------------
+EGO Shop
+---------------------
+After beating Skeletron:
+The Beak
+---------------------
+After beating any Mechanical Boss:
+Solemn Vow
+---------------------
+After beating Mechanical Bosses:
+Laetitia Armor set and Gift.
+---------------------
+After beating Plantera:
+Grinder MK4

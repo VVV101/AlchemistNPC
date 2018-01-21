@@ -11,6 +11,7 @@ namespace AlchemistNPC.NPCs
 	{
 		public bool rainbowdust = false;
 		public bool corrosion = false;
+		public bool justitiapale = false;
 		public bool N1 = false;
 		public bool N2 = false;
 		public bool N3 = false;
@@ -90,6 +91,7 @@ namespace AlchemistNPC.NPCs
 		public override void ResetEffects(NPC npc)
         {
             corrosion = false;
+			justitiapale = false;
 			N1 = false;
 			N2 = false;
 			N3 = false;
@@ -103,6 +105,14 @@ namespace AlchemistNPC.NPCs
                 if (damage < 49)
                 {
                     damage = 50;  // this is the damage dealt when the npc lose health
+                }
+            }
+			if (justitiapale)  //this tells the game to use the public bool customdebuff from NPCsINFO.cs
+            {
+                npc.lifeRegen -= 2000;      //this make so the npc lose life, the highter is the value the faster the npc lose life
+                if (damage < 199)
+                {
+                    damage = 200;  // this is the damage dealt when the npc lose health
                 }
             }
         }
@@ -124,6 +134,21 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 				Lighting.AddLight(npc.position, 1f, 1f, 1f);
+			}
+			if (justitiapale)
+			{
+				if (Main.rand.Next(4) < 3)
+				{
+					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, mod.DustType("JustitiaPale"), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 3.5f);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust].velocity *= 1.8f;
+					Main.dust[dust].velocity.Y -= 0.5f;
+					if (Main.rand.Next(4) == 0)
+					{
+						Main.dust[dust].noGravity = false;
+						Main.dust[dust].scale *= 0.5f;
+					}
+				}
 			}
 		}
 		
@@ -152,7 +177,10 @@ namespace AlchemistNPC.NPCs
 				}
 			}
 			
-			
+			if (npc.type == mod.NPCType("Operator"))
+			{
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("APMC"));
+			}
 			if (npc.type == NPCID.DungeonGuardian && !Main.expertMode)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(5, 10));

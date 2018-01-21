@@ -36,12 +36,6 @@ namespace AlchemistNPC.Projectiles
                     Main.dust[num30].position -= projectile.velocity;
                  }
                 projectile.netUpdate = true;
-				if (Main.rand.Next(4) == 0)
-					{
-				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, mod.DustType<Dusts.ET>(), projectile.velocity.X, projectile.velocity.Y, 100, default(Color), 1f);
-				dust.noGravity = true;
-				dust.position -= projectile.velocity;
-					}
                 Vector2 mouse = new Vector2(Main.mouseX, Main.mouseY) + Main.screenPosition;
                 if (Main.player[projectile.owner].Center.Y < mouse.Y)
                 {
@@ -68,6 +62,7 @@ namespace AlchemistNPC.Projectiles
         }
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
+			target.AddBuff(mod.BuffType("JustitiaPale"), 600);
 			target.immune[projectile.owner] = 3;
 		}
         //public override void AI()

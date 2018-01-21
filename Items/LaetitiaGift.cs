@@ -14,14 +14,14 @@ namespace AlchemistNPC.Items
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Laetitia Gift");
+			DisplayName.SetDefault("Laetitia Gift (O-01-67-1)");
 			Tooltip.SetDefault("She says that she has many friends, but they can't come with you. So she came up with this brilliant idea!"
 			+ "\n[c/FF0000:EGO Gift/Weapon]"
 			+ "\n[c/FF0000:Warning!!! Will slowly consume your life if Little Witch Monster is not summoned]"
 			+ "\nAllows to summon Little Witch Monster if full set of Laetitia EGO armor is on"
 			+ "\nLittle Witch Monster will dissapear if EGO armor set is not on"
 			+ "\nIncreases maximum amount of minions by 5");
-			DisplayName.AddTranslation(GameCulture.Russian, "Дар Летиции");
+			DisplayName.AddTranslation(GameCulture.Russian, "Дар Летиции (O-01-67-1)");
 			Tooltip.AddTranslation(GameCulture.Russian, "Она говорила, что у неё много друзей, но они не смогут пойти с тобой. И тогда ей пришла в голову блестящая идея!\n[c/FF0000:Э.П.О.С Дар/Оружие]\n[c/FF0000:Осторожно!!! Будет медленно пожирать ваше HP, если Монстр Маленькой Ведьмы не призван]\nПозволяет призвать Монстра Маленькой Ведьмы если одет полный сет Э.П.О.С брони Летиции.\nМонстр Маленькой Ведьмы пропадёт если если Э.П.О.С броня не одета\nУвеличивает максимальное число прислужников на 5"); 
 		}
 	

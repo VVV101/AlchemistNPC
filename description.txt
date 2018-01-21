@@ -1,7 +1,12 @@
-This mod adds 4 NPC (Alchemist, Brewer, Jeweler and Young Brewer) which sells potions including buff, health and mana. Also different flasks. New combinations of potions are sold by Young Brewer.
-Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu. Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
+This mod adds 5 NPC (Alchemist, Brewer, Jeweler, Young Brewer and Operator), which sells potions including buff, health and mana. 
+New combinations of potions are sold by Young Brewer.
+Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu. 
+Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
+Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
 v6.0
--Reworked Justitia Sword behaviour. Now it works like impowered Arkhalis.
+-Added new town NPC - Operator. Sells boss drops and some special EGO equipment.
+She comes after beating EoW/BoC and when Wing of the World is inside free housing.
+-Reworked Justitia Sword behaviour. Now it works like impowered Arkhalis. Deals additional Pale damage.
 Also its sprite was changed.
 -Added Water Chestnuts from Thorium Mod to Alchemist shop. Available after beating EoW/BoC.
 -Added Jelly from Thorium Mod to Alchemist shop. Available after beating Skeletron.
@@ -12,7 +17,7 @@ Also its sprite was changed.
 -Reworked/recolored some sprites.
 v5.9.1
 -Added Vicious/Vile Mushrooms to Alchemist shop.
-Avaible after beating EoW/BoC.
+Available after beating EoW/BoC.
 -Changed value of town NPCs damage for pre-hardmode, hardmode and after beating Moon Lord.
 -Added full support for Russian language. Big thanks to somebody0214#2327 and DESPERATION#4629 for testing.
 v5.9
@@ -22,20 +27,20 @@ Produces 4 types of Soda.
 -Added Solemn Vow, EGO weapon of "Funeral of the Dead Butterflies".
 Can be crafted before fighting Mechanical Bosses.
 -Added 5th shop to Brewer (Tremor/Wildlife).
--Added Opals from Thorium Mod to Jeweler. Avaible after beating EoW/BoC.
+-Added Opals from Thorium Mod to Jeweler. Available after beating EoW/BoC.
 -Improved "Wing of the World" sprite.
 -Fixed Party Hat problem again :()
 v5.8.1
 -Fixed NPCs size. They couldn't go through doors before.
 v5.8
--Added Laetitia EGO armor and weapon/accessory. Avaible after beating Skeletron Prime.
+-Added Laetitia EGO armor and weapon/accessory. Available after beating Skeletron Prime.
 -Added Wrath potion to Summoner Combination. Same buff stacking rules as before.
 -Fixed and nerfed Crystalyzed Arrows.
 -Fixed some descriptions.
 v5.7
--Added Justitia items (sword and melee armor set). Avaible after beating Moon Lord.
--Added Grinder MK4. Avaible after beating all Mechanical Bosses.
--Added Wing of the World. Required to craft EGO equipment. Avaible after beating EoW/BoC.
+-Added Justitia items (sword and melee armor set). Available after beating Moon Lord.
+-Added Grinder MK4. Available after beating all Mechanical Bosses.
+-Added Wing of the World. Required to craft EGO equipment. Available after beating EoW/BoC.
 -The Beak moved to post EoW/BoC state.
 -Added Crystalyzed Arrow. Can be crafted with Hellfire Arrows and Crystal Dust on Mythril/Orichalcum Anvil.
 Explodes to shards on hit.
@@ -68,7 +73,7 @@ v5.2.1
 v5.2
 -While Tremor Mod is active, you could craft Corrosive Flask in Alchemical damage type.
 -Added Blurring Potion. Grants Blurring buff, which activates Shadow Dodge every 20 seconds.
-Costs 15 gold. Avaible after beating Mechanical Bosses. Can be crafted.
+Costs 15 gold. Available after beating Mechanical Bosses. Can be crafted.
 -Added new pet. Obtainable from Hardmode Treasure Bags with 1/80 chance. Gives some benefits while active.
 v5.1.2
 -Fixed spawning problem of Young Brewer
@@ -76,9 +81,9 @@ v5.1.1
 -Fixed mod crash while Calamity Mod is disabled.
 v5.1
 -Added Universal Combination. Same as from Autoinjector.
-Costs 50 gold. Avaible after beating Moon Lord. 
+Costs 50 gold. Available after beating Moon Lord. 
 -Added Calamity Combination. Contains Yharim's Stimulant, Omniscience, Titan Scale, Cadence and Fabsol Vodka buffs.
-Costs 50 gold. Avaible after beating Golem.
+Costs 50 gold. Available after beating Golem.
 -Added Destroyer Emblem to Autoinjector. Now it also adds 10% damage and 8% critical chance to all weapon types.
 -Reworked side sprite and code of Otherworldly Amulet mount. Now it negates knockback and fall damage.
 -Fixed some typos
@@ -92,7 +97,7 @@ Also working as Sentry Minion. More than 1 cannot be summoned.
 Can be crafted with Otherworldly Amulet, some hardmode and luminite bars and ore and 20 of each fragments.
 Can be used to make Autoinjector.
 -Added Clairvoyance buff (Crystal Ball) to Mage Combination. Cost increased.
--Fallen Stars and Pink Gel are avaible in Alchemist shop after beating EoW/BoC.
+-Fallen Stars and Pink Gel are available in Alchemist shop after beating EoW/BoC.
 -Brewer's 2nd and 3rd shops are changed their places.
 -Brewer's 2nd shop now contains all potions, added by this mod.
 -All Brewer's shops now has headings (Vanilla, Mod/Thorium/Calamity/RG, MorePotions, UnuBattleRods/Tacklebox)
@@ -112,7 +117,7 @@ v4.9
 -Balancing some prices.
 -New lines for Alchemist with Thorium, Tremor and Peculiarity mods.
 -Fixed recipe for Masks Bundle.
--Added 2 vanity sets. Avaible from Hardmode bosses Treasure bags.
+-Added 2 vanity sets. Available from Hardmode bosses Treasure bags.
 -Added potions from UnuBattleRods and Tacklebox mods.
 v4.8
 -Added 3 potions from Calamity Mod.
@@ -149,7 +154,7 @@ v4.5
 v4.4.1
 -Fix for Otherworldly Amulet.
 v4.4
--Added Sturdy Fossil to Jeweler. Avaible after beating EoW/BoC.
+-Added Sturdy Fossil to Jeweler. Available after beating EoW/BoC.
 -New sprite for Otherworldly Amulet (by Dick_Kickem007#1531)
 v4.3
 -Added Emagled Fragmentation and Otherworldly Amulet.
@@ -167,7 +172,7 @@ v4.1
 -Added 3 potions from imkSushi's mod (Ressurection, Angler Amnesia, Meteorite)
 v4.0
 -Added 6 more MorePotions's potions.
--Added 3rd shop to Brewer. Avaible by cycling.
+-Added 3rd shop to Brewer. Available by cycling.
 -Added Arena shop to Jeweler.
 -Added 3 special items to Jeweler's shop in hardmode.
 v3.9.4
@@ -233,7 +238,7 @@ v2.8
 -Changed spawn condition for Alchemist & Brewer (now it is required to kill the Eye of Ctulhu for allowing to spawn them)
 Also this should help for respawn.
 v2.7
--Added Titan Skin Potion with recipe to the Brewer. Avaible in hardmode.
+-Added Titan Skin Potion with recipe to the Brewer. Available in hardmode.
 Gives immunity to On Fire!, Frostburn, Cursed Flames, Chilled, Frozen & Ichor debuffs. Lasts for 15 minutes. Costs 5 gold.
 v2.6
 -Added separate shop for flasks from Tremor mod to The Alchemist
