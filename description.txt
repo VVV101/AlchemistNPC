@@ -6,8 +6,14 @@ Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside fre
 v6.0
 -Added new town NPC - Operator. Sells boss drops and some special EGO equipment.
 She comes after beating EoW/BoC and when Wing of the World is inside free housing.
--Reworked Justitia Sword behaviour. Now it works like impowered Arkhalis. Deals additional Pale damage.
+She also could sell Treasure Bags if TresureBagsShop set to true in Alchemist.json config file and World is Expert. True by default.
+Else she will have only normal shops.
+-Added support for live configuration changing using Hamstar's Helpers mod.
+-Reworked Justitia Sword behaviour. Now it works like impowered Arkhalis. Inflicts Pale damage debuff.
 Also its sprite was changed.
+-Reworked Laetitia set. Now it available post EoW/BoC for crafting or post Skeletron for buying.
+After certain boss killed, armor defense will grow stronger.
+Modified set bonus. Now full set also gives additional 35% minion damage boost (only in Hardmode).
 -Added Water Chestnuts from Thorium Mod to Alchemist shop. Available after beating EoW/BoC.
 -Added Jelly from Thorium Mod to Alchemist shop. Available after beating Skeletron.
 -Added some Torn Notes as boss drops. They give advices to player.

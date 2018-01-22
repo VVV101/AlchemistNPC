@@ -9,7 +9,8 @@ namespace AlchemistNPC
     public static class Config
     {
         public static int StarPrice = 1000;
-        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "AlchemistNPC.json");
+		public static bool TS = true;
+        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemist.json");
         static Preferences Configuration = new Preferences(ConfigPath);
 
         public static void Load()
@@ -24,22 +25,32 @@ namespace AlchemistNPC
         }
 
         static bool ReadConfig()
-        {
-            if(Configuration.Load())
-            {
-                Configuration.Get("StarPrice", ref StarPrice);
-                if(StarPrice <= 0)
-                   StarPrice = 1;
-                return true;
+        {         
+		if(Configuration.Load())
+			{
+            Configuration.Get("StarPrice", ref StarPrice);
+            if(StarPrice <= 0)
+			{
+            StarPrice = 1;
+			}
+			Configuration.Get<bool>("TreasureBagsShop", ref Config.TS);
+			if(TS != true && TS != false)
+			{
+            TS = true;
+			}
+			return true;
             }
-            return false;
+		else
+		{
+		return false;
+		}
+            
         }
-
-        //Creates a config file. This will only be called if the config file doesn't exist yet or it's invalid. 
         static void CreateConfig()
         {
             Configuration.Clear();
             Configuration.Put("StarPrice", StarPrice);
+			Configuration.Put("TreasureBagsShop", TS);
             Configuration.Save();
         }
     }

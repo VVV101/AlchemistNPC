@@ -37,9 +37,11 @@ namespace AlchemistNPC
 		}
 
 		public static string ConfigFileRelativePath {
-		get { return "Mod Configs/AlchemistNPC.json"; }
+		get { return "Mod Configs/Alchemist.json"; }
 		}
-		public static void ReloadConfigFromFile() {
+		public static void ReloadConfigFromFile() 
+		{
+		Config.Load();
 		}
 		
 		public static bool CalamityUnloaded = ModLoader.GetMod("CalamityMod") != null;

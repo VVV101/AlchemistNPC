@@ -482,6 +482,9 @@ Right after spawn of NPC:
 Demonite/Crimtane ore depending of world type
 Shadow Scale/Tissue Sample depending of world type
 ---------------------
+After beating Queen Bee:
+Bee Wax
+---------------------
 After beating any Mechanical Boss:
 Soul of Light
 Soul of Night
@@ -508,12 +511,26 @@ EGO Shop
 ---------------------
 After beating Skeletron:
 The Beak
+Laetitia Armor set
 ---------------------
 After beating any Mechanical Boss:
 Solemn Vow
 ---------------------
 After beating Mechanical Bosses:
-Laetitia Armor set and Gift.
+Laetitia Gift.
 ---------------------
 After beating Plantera:
 Grinder MK4
+---------------------
+Treasure Bags Shop (if TreasureBagsShop in config is set to true and world is Expert)
+---------------------
+After beating WoF:
+All prehardmode bosses Treasure Bags.
+---------------------
+After beating Plantera:
+All Mechanical Bosses Treasure Bags
+Plantera Treasure Bag
+---------------------
+After beating Moon Lord:
+Golem Treasure Bag
+Fishron Treasure Bag

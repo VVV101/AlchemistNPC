@@ -5,5 +5,5 @@ homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v5-0.52798
 hideCode = false
 hideResources = false
 includeSource = true
-buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+buildIgnore = *.user, obj\*, bin\*, .vs\*, .git*, referenceImages*.png, .gitattributes, *.csproj
 includePDB = true

@@ -11,8 +11,12 @@ namespace AlchemistNPC.NPCs
 	public class Operator : ModNPC
 	{
 		public static bool OA = false;
-		public static bool OH = false;
-		public static bool AS = false;
+		public static bool Shop1 = true;
+		public static bool Shop2 = false;
+		public static bool Shop3 = false;
+		public static bool S1A = false;
+		public static bool S2A = false;
+		public static bool S3A = false;
 		public override string Texture
 		{
 			get
@@ -46,6 +50,14 @@ namespace AlchemistNPC.NPCs
 		text = mod.CreateTranslation("BossDropsShop");
 		text.SetDefault("Boss Drops Shop");
 		text.AddTranslation(GameCulture.Russian, "Магазин лута Боссов");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("TreasureBagsShop");
+		text.SetDefault("Treasure Bags Shop");
+		text.AddTranslation(GameCulture.Russian, "Магазин сумок Боссов");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("CycleShopO");
+		text.SetDefault("Cycle shop");
+		text.AddTranslation(GameCulture.Russian, "Сменить магазин");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("Angela");
 		text.SetDefault("Angela");
@@ -120,7 +132,9 @@ namespace AlchemistNPC.NPCs
 		public override void ResetEffects()
 		{
 		OA = false;
-		AS = false;
+		S1A = false;
+		S2A = false;
+		S3A = false;
 		}
 		
 		public override void SetDefaults()
@@ -335,22 +349,78 @@ namespace AlchemistNPC.NPCs
         {
             string EGOShop = Language.GetTextValue("Mods.AlchemistNPC.EGOShop");
 			string BossDropsShop = Language.GetTextValue("Mods.AlchemistNPC.BossDropsShop");
+			string TreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.TreasureBagsShop");
+			string CycleShopO = Language.GetTextValue("Mods.AlchemistNPC.CycleShopO");
+			if (Config.TS && Main.expertMode)
+		{
+			if (Shop1)
+			{
+			button = BossDropsShop;
+			S3A = false;
+			S1A = true;
+			}
+			if (Shop2)
+			{
+			button = EGOShop;
+			S1A = false;
+			S2A = true;
+			}
+			if (Shop3)
+			{
+			button = TreasureBagsShop;
+			S2A = false;
+			S3A = true;
+			}
+			button2 = CycleShopO;
+		}
+			if (!Config.TS || !Main.expertMode)
+			{
 			button = BossDropsShop;
 			button2 = EGOShop;
+			}
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
 		{
 			if (firstButton)
 			{
-		OH = firstButton;
-		shop = true;
+				if (!Config.TS || !Main.expertMode)
+					{
+					Shop1 = true;
+					Shop2 = false;
+					shop = true;
+					}
+				if (Config.TS && Main.expertMode)
+					{
+					shop = true;
+					}
 			}
-		else
+			else
 			{
-				OH = false;
-				AS = true;
-				shop = true;
+				if (Config.TS && Main.expertMode)
+				{
+				if (Shop1 && S1A)
+						{
+						Shop2 = true;
+						Shop1 = false;
+						}
+				if (Shop2 && S2A)
+						{
+						Shop3 = true;
+						Shop2 = false;
+						}
+				if (Shop3 && S3A)
+						{
+						Shop1 = true;
+						Shop3 = false;
+						}
+				}
+				if (!Config.TS || !Main.expertMode)
+					{
+					Shop2 = true;
+					Shop1 = false;
+					shop = true;
+					}
 			}
 		}
  
@@ -370,7 +440,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (OH)
+			if (Shop1)
 			{
 				if (!WorldGen.crimson)
 				{
@@ -388,6 +458,12 @@ namespace AlchemistNPC.NPCs
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.TissueSample);
 				shop.item[nextSlot].shopCustomPrice = 7500;
+				nextSlot++;
+				}
+				if (NPC.downedQueenBee)
+				{
+				shop.item[nextSlot].SetDefaults (ItemID.BeeWax);
+				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
 				}
 				if (NPC.downedMechBossAny)
@@ -441,25 +517,34 @@ namespace AlchemistNPC.NPCs
 				if (NPC.downedMoonlord && OA)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentSolar);
-				shop.item[nextSlot].shopCustomPrice = 25000;
+				shop.item[nextSlot].shopCustomPrice = 250000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentNebula);
-				shop.item[nextSlot].shopCustomPrice = 25000;
+				shop.item[nextSlot].shopCustomPrice = 250000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentVortex);
-				shop.item[nextSlot].shopCustomPrice = 25000;
+				shop.item[nextSlot].shopCustomPrice = 250000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentStardust);
-				shop.item[nextSlot].shopCustomPrice = 25000;
+				shop.item[nextSlot].shopCustomPrice = 250000;
 				nextSlot++;
 				}
 	}
-		if (AS)
+		if (Shop2)
 		{
 		if (NPC.downedBoss3)
 			{
 			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("TheBeak"));
 			shop.item[nextSlot].shopCustomPrice = 200000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaRibbon"));
+			shop.item[nextSlot].shopCustomPrice = 100000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaCoat"));
+			shop.item[nextSlot].shopCustomPrice = 200000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaLeggings"));
+			shop.item[nextSlot].shopCustomPrice = 150000;
 			nextSlot++;
 			}
 		if (NPC.downedMechBossAny)
@@ -470,15 +555,6 @@ namespace AlchemistNPC.NPCs
 			}
 		if (NPC.downedMechBoss1 && NPC.downedMechBoss3 && NPC.downedMechBoss3)
 				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaRibbon"));
-				shop.item[nextSlot].shopCustomPrice = 150000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaCoat"));
-				shop.item[nextSlot].shopCustomPrice = 150000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaLeggings"));
-				shop.item[nextSlot].shopCustomPrice = 150000;
-				nextSlot++;
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaGift"));
 				shop.item[nextSlot].shopCustomPrice = 300000;
 				nextSlot++;
@@ -487,6 +563,60 @@ namespace AlchemistNPC.NPCs
 			{
 			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("GrinderMK4"));
 			shop.item[nextSlot].shopCustomPrice = 500000;
+			nextSlot++;
+			}
+		}
+		if (Shop3)
+		{
+			if (NPC.downedBoss3 && Main.expertMode)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.KingSlimeBossBag);
+			shop.item[nextSlot].shopCustomPrice = 250000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.EyeOfCthulhuBossBag);
+			shop.item[nextSlot].shopCustomPrice = 500000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.EaterOfWorldsBossBag);
+			shop.item[nextSlot].shopCustomPrice = 750000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.BrainOfCthulhuBossBag);
+			shop.item[nextSlot].shopCustomPrice = 750000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.QueenBeeBossBag);
+			shop.item[nextSlot].shopCustomPrice = 1000000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.SkeletronBossBag);
+			shop.item[nextSlot].shopCustomPrice = 1500000;
+			nextSlot++;
+			}
+			if (Main.hardMode && Main.expertMode)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.WallOfFleshBossBag);
+			shop.item[nextSlot].shopCustomPrice = 2000000;
+			nextSlot++;
+			}
+			if (NPC.downedPlantBoss && Main.expertMode)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.DestroyerBossBag);
+			shop.item[nextSlot].shopCustomPrice = 2000000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.TwinsBossBag);
+			shop.item[nextSlot].shopCustomPrice = 2000000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.SkeletronPrimeBossBag);
+			shop.item[nextSlot].shopCustomPrice = 2000000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.PlanteraBossBag);
+			shop.item[nextSlot].shopCustomPrice = 3000000;
+			nextSlot++;
+			}
+			if (NPC.downedMoonlord && Main.expertMode)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.GolemBossBag);
+			shop.item[nextSlot].shopCustomPrice = 3000000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
+			shop.item[nextSlot].shopCustomPrice = 4000000;
 			nextSlot++;
 			}
 		}
