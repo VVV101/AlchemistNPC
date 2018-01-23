@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class GrinderMK4 : ModProjectile
+	public class Spore : ModProjectile
 	{
 		public static int counter = 0;
 		public override void SetStaticDefaults()
@@ -25,7 +25,7 @@ namespace AlchemistNPC.Projectiles
 
 			projectile.hide = true;
 			projectile.ownerHitCheck = true;
-			projectile.melee = true;
+			projectile.magic = true;
 			projectile.tileCollide = false;
 			projectile.friendly = true;
 		}
@@ -102,17 +102,17 @@ namespace AlchemistNPC.Projectiles
 		}
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			target.immune[projectile.owner] = 3;
+			target.immune[projectile.owner] = 5;
 			counter++;
-			if (counter == 20)
+			if (counter == 10)
 			{
-			for (int h = 0; h < 4; h++)
+			for (int h = 0; h < 10; h++)
 				{
 					Vector2 vel = new Vector2(0, -1);
 					float rand = Main.rand.NextFloat() * 6.283f;
 					vel = vel.RotatedBy(rand);
 					vel *= 5f;
-					Projectile.NewProjectile((projectile.Center.X - 30) + Main.rand.Next(60), (projectile.Center.Y - 30) + Main.rand.Next(60), vel.X, vel.Y, mod.ProjectileType("BB"), projectile.damage, 0, Main.myPlayer);
+					Projectile.NewProjectile((projectile.Center.X - 30) + Main.rand.Next(60), (projectile.Center.Y - 30) + Main.rand.Next(60), vel.X, vel.Y, mod.ProjectileType("SporeTrap"), projectile.damage, 0, Main.myPlayer);
 				}
 				counter = 0;
 			}

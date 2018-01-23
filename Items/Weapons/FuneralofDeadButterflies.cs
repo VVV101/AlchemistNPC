@@ -23,12 +23,12 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 30;
+			item.damage = 36;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 20;
-			item.useAnimation = 6;
-			item.useTime = 3;
+			item.useAnimation = 4;
+			item.useTime = 2;
 			item.reuseDelay = 20;
 			item.useStyle = 5;
 			item.noMelee = true;

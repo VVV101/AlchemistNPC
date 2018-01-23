@@ -1,3 +1,5 @@
+using System;
+using Microsoft.Xna.Framework;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -304,6 +306,25 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 				{
 				player.QuickSpawnItem(mod.ItemType("SecretNote"));
 				shop = false;
+				if (Main.player[Main.myPlayer].HasItem(mod.ItemType("TornNote1")))
+				{
+				Item[] inventory = Main.player[Main.myPlayer].inventory;
+				for (int k = 0; k < inventory.Length; k++)
+				{
+					if (inventory[k].type == mod.ItemType("TornNote1"))
+					{
+						inventory[k].stack--;
+					}
+					if (inventory[k].type == mod.ItemType("TornNote2"))
+					{
+						inventory[k].stack--;
+					}
+					if (inventory[k].type == mod.ItemType("TornNote3"))
+					{
+						inventory[k].stack--;
+					}
+				}
+				}
 				}
 			}
 		}
@@ -344,6 +365,18 @@ if (NPC.downedBoss2)
 	shop.item[nextSlot].SetDefaults (ItemID.BandofRegeneration);
 	shop.item[nextSlot].shopCustomPrice = 50000;
     nextSlot++;
+	if (Main.netMode == 1 || Main.netMode == 2)
+	{
+	shop.item[nextSlot].SetDefaults (ItemID.LifeCrystal);
+	shop.item[nextSlot].shopCustomPrice = 100000;
+    nextSlot++;
+	if (NPC.downedGolemBoss)
+			{
+	shop.item[nextSlot].SetDefaults (ItemID.LifeFruit);
+	shop.item[nextSlot].shopCustomPrice = 200000;
+    nextSlot++;
+			}
+	}
 }
 if (NPC.downedBoss3)
 {

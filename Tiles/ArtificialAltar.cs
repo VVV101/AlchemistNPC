@@ -14,12 +14,13 @@ namespace AlchemistNPC.Tiles
 	{
 		public override void SetDefaults()
 		{
+			Main.tileLighted[Type] = true;
 			Main.tileSolidTop[Type] = false;
 			Main.tileFrameImportant[Type] = true;
 			Main.tileNoAttach[Type] = true;
 			Main.tileTable[Type] = true;
 			Main.tileLavaDeath[Type] = false;
-			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
+			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
 			TileObjectData.newTile.Origin = new Point16(0, 1);
 			TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
 			TileObjectData.addTile(Type);
@@ -31,6 +32,17 @@ namespace AlchemistNPC.Tiles
 			adjTiles = new int[]{ TileID.DemonAltar };
 		}
 
+		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+		{
+			Tile tile = Main.tile[i, j];
+			if (tile.frameX < 66)
+			{
+				r = 0.9f;
+				g = 0.3f;
+				b = 0.3f;
+			}
+		}
+		
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
 			Item.NewItem(i * 16, j * 16, 32, 16, mod.ItemType("ArtificialAltar"));

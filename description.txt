@@ -3,6 +3,18 @@ New combinations of potions are sold by Young Brewer.
 Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu. 
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
+v6.1
+-Artifitial Altar is now wider (3 blocks). It also glows red now.
+-Added Life Crystals for multiplayer to Jeweler's base shop.
+Available after beating EoW/BoC.
+-Added Life Fruits for multiplayer to Jeweler's base shop.
+Available after beating Golem.
+-Added magical spear 'Spore', EGO weapon. Releases spores after certain amount of hits. 
+-Now 3 notes will be consumed while making Secret One.
+-Reworked Grinder MK4. Now it would release spread of bullets into enemy each 20 ticks of damage.
+-Buffed Solemn Vow for a bit.
+-Fixed sprites for Corrosive Flask and Grinder MK4.
+-Improved custom bullets rendering.
 v6.0
 -Added new town NPC - Operator. Sells boss drops and some special EGO equipment.
 She comes after beating EoW/BoC and when Wing of the World is inside free housing.

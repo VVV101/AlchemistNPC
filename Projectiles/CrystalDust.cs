@@ -11,6 +11,8 @@ namespace AlchemistNPC.Projectiles
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("CrystalBullet2");
+			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;    //The length of old position to be recorded
+			ProjectileID.Sets.TrailingMode[projectile.type] = 0;        //The recording mode
 		}
 		
 		public override void SetDefaults()
@@ -26,7 +28,7 @@ namespace AlchemistNPC.Projectiles
 			if (projectile.penetrate <= 0)
 			{
 				projectile.Kill();
-				for (int h = 0; h < 2; h++)
+				for (int h = 0; h < 5; h++)
 				{
 					Vector2 vel = new Vector2(0, -1);
 					float rand = Main.rand.NextFloat() * 6.283f;

@@ -524,8 +524,12 @@ Grinder MK4
 ---------------------
 Treasure Bags Shop (if TreasureBagsShop in config is set to true and world is Expert)
 ---------------------
+After beating Skeletron:
+All pre-Skeletron Treasure Bags
+---------------------
 After beating WoF:
-All prehardmode bosses Treasure Bags.
+Skeletron Treasure Bag
+Wall of Flesh Treasure Bag
 ---------------------
 After beating Plantera:
 All Mechanical Bosses Treasure Bags

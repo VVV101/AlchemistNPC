@@ -565,6 +565,12 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].shopCustomPrice = 500000;
 			nextSlot++;
 			}
+		if (NPC.downedGolemBoss)
+			{
+			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("Spore"));
+			shop.item[nextSlot].shopCustomPrice = 1000000;
+			nextSlot++;
+			}
 		}
 		if (Shop3)
 		{
