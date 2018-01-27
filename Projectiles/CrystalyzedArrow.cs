@@ -36,7 +36,7 @@ namespace AlchemistNPC.Projectiles
 					float rand = Main.rand.NextFloat() * 6.283f;
 					vel = vel.RotatedBy(rand);
 					vel *= 5f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CrystalDust"), projectile.damage/2, 0, Main.myPlayer);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CrystalDust"), projectile.damage/4, 0, Main.myPlayer);
 				}
 			}
 			return false;
@@ -50,7 +50,7 @@ namespace AlchemistNPC.Projectiles
 					float rand = Main.rand.NextFloat() * 6.283f;
 					vel = vel.RotatedBy(rand);
 					vel *= 5f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CrystalDust"), projectile.damage/2, 0, Main.myPlayer);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CrystalDust"), projectile.damage/4, 0, Main.myPlayer);
 				}
 			}
 		}

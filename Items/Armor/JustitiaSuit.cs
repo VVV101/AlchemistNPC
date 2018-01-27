@@ -18,9 +18,9 @@ namespace AlchemistNPC.Items.Armor
 			DisplayName.AddTranslation(GameCulture.Russian, "Костюм Юстиции (O-02-62)"); 
 			Tooltip.SetDefault("Just like anything else, it had hope at first. The desire for peace now only exists in fairy tales."
 				+ "\n[c/FF0000:EGO armor piece]"
-				+ "\n+100 maximum HP."
-				+ "\n+15% damage reduction.");
-			Tooltip.AddTranslation(GameCulture.Russian, "Как и что-либо другое, оно имело надежду поначалу. Теперь же мечта о мире имеет место лишь в сказках.\n[c/FF0000:Э.П.О.С часть брони]\n+100 к максимальному здоворью.\n+15% к поглощению урона.");
+				+ "\n+100 maximum HP"
+				+ "\n+15% damage reduction");
+			Tooltip.AddTranslation(GameCulture.Russian, "Как и что-либо другое, оно имело надежду поначалу. Теперь же мечта о мире имеет место лишь в сказках.\n[c/FF0000:Э.П.О.С часть брони]\n+100 к максимальному здоровью\n+15% к поглощению урона");
 		}
 
 		public override void SetDefaults()

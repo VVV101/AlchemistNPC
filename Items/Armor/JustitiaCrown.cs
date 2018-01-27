@@ -17,7 +17,7 @@ namespace AlchemistNPC.Items.Armor
 			DisplayName.AddTranslation(GameCulture.Russian, "Корона Юстиции (O-02-62)"); 
 			Tooltip.SetDefault("Just like anything else, it had hope at first. The desire for peace now only exists in fairy tales."
 			+ "\n[c/FF0000:EGO armor piece]"
-			+ "\nIncreases melee speed by 20%.");
+			+ "\nIncreases melee speed by 20%");
 			Tooltip.AddTranslation(GameCulture.Russian, "Как и что-либо другое, оно имело надежду поначалу. Теперь же мечта о мире имеет место лишь в сказках.\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает скорость атак в ближнем бою 20%");
 		ModTranslation text = mod.CreateTranslation("JustitiaSetBonus");
 		text.SetDefault("Increases current melee damage by 30% and adds 15% to melee critical strike chance");

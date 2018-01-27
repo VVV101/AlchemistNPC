@@ -27,8 +27,8 @@ namespace AlchemistNPC.Items
             item.useTime = 17;
             item.maxStack = 99;                 //this is where you set the max stack of item
             item.consumable = true;           //this make that the item is consumable when used
-            item.width = 38;
-            item.height = 34;
+            item.width = 32;
+            item.height = 32;
             item.value = Item.sellPrice(0, 2, 0, 0);
             item.rare = 10;
             item.buffType = mod.BuffType("VanTankComb");           //this is where you put your Buff

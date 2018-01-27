@@ -294,13 +294,12 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
 			if (firstButton)
 			{
-		OH = firstButton;
+		OH = true;
+		AS = false;
 		shop = true;
 			}
 		else
 			{
-				AS = true;
-				shop = true;
 				Player player = Main.player[Main.myPlayer];
 				if (TN1 && TN2 && TN3 && !SN)
 				{
@@ -326,6 +325,9 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 				}
 				}
 				}
+				OH = false;
+				AS = true;
+				shop = true;
 			}
 		}
  

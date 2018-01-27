@@ -327,7 +327,7 @@ shop.item[nextSlot].SetDefaults (ItemID.FlaskofNanites);
 				{
 					for (int j = 0; j < player.inventory.Length; j++)
 					{
-						if (player.inventory[j].type == mod.ItemType("WatcherAmulet"))
+						if (player.inventory[j].type == mod.ItemType("WatcherAmulet") || player.inventory[j].type == mod.ItemType("Autoinjector"))
 				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RainbowFlask"));
 					shop.item[nextSlot].shopCustomPrice = 1000000;

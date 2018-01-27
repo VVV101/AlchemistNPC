@@ -8,7 +8,7 @@ namespace AlchemistNPC.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Artificial Altar, maded by occult powers");
+			Tooltip.SetDefault("Artificial Altar, made by occult powers");
 			DisplayName.AddTranslation(GameCulture.Russian, "Искусственный Алтарь");
 			Tooltip.AddTranslation(GameCulture.Russian, "Искусственный алтарь, созданный оккультными силами"); 
 		}

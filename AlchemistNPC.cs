@@ -19,7 +19,7 @@ namespace AlchemistNPC
 				AutoloadSounds = true,
 			};
 		}
-		
+		public static ModHotKey LampLight;
 		public static string GithubUserName { get { return "VVV101"; } }
 		public static string GithubProjectName { get { return "AlchemistNPC"; } }
 		
@@ -34,6 +34,15 @@ namespace AlchemistNPC
 		text.SetDefault("Sniper scope is enabled");
 		text.AddTranslation(GameCulture.Russian, "Снайперский прицел включён");
 		AddTranslation(text);
+		text = CreateTranslation("DC1");
+		text.SetDefault("Damage type changed to Magic");
+		text.AddTranslation(GameCulture.Russian, "Тип урона изменён на Магический");
+		AddTranslation(text);
+		text = CreateTranslation("DC2");
+		text.SetDefault("Damage type changed to Melee");
+		text.AddTranslation(GameCulture.Russian, "Тип урона изменён на Ближний");
+		AddTranslation(text);
+		LampLight = RegisterHotKey("Lamp Light Toggle", "L");
 		}
 
 		public static string ConfigFileRelativePath {

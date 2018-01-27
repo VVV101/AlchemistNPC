@@ -21,14 +21,12 @@ namespace AlchemistNPC.Items
 		}    
 		public override void SetDefaults()
 		{
+			item.CloneDefaults(ItemID.BlessedApple);
 			item.width = 32;
 			item.height = 30;
-			item.maxStack = 999;
 			item.value = 5000000;
 			item.rare = 8;
 			item.knockBack = 6;
-			item.UseSound = SoundID.Item79;
-			item.noMelee = true;
 			item.mountType = mod.MountType("Poro");
 		}
 	}

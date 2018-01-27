@@ -3,6 +3,24 @@ New combinations of potions are sold by Young Brewer.
 Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu. 
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
+v6.2
+-New sprites for combinations by Frank#4074 and somebody0214#2327.
+-Fixed Jeweler's shops again. Hopefully, forever.
+-Fixed Operator spawn requirements and housing conditions.
+-Added Magic/Melee sword Twilight. Tier 2 upgrade for Justitia Sword.
+Can be changed to do melee/magic damage by right click.
+Instakills enemies with less than 10000K HP with projectiles.
+-Added Twilight Armor set. Available after beating Moon Lord for crafting.
+Requires full Justitia set.
+-Added Big Bird's Lamp. Available after beating Mechanical Bosses.
+Provides light around the player, increases all damage and crit by 5% and destroys enemy armor on hit.
+-Added special hotkey for toggling Big Bird's Lamp Light.
+Bonuses would work in any state.
+-Nerfed Crystalized Arrows. Still pretty powerful with high damaging bows/repeaters.
+-Otherworldly Amulet can now be right-clicked to place into slot.
+However, cannot be stacked anymore.
+v6.1.1
+-tModLoader bug.
 v6.1
 -Artifitial Altar is now wider (3 blocks). It also glows red now.
 -Added Life Crystals for multiplayer to Jeweler's base shop.
@@ -10,7 +28,9 @@ Available after beating EoW/BoC.
 -Added Life Fruits for multiplayer to Jeweler's base shop.
 Available after beating Golem.
 -Added magical spear 'Spore', EGO weapon. Releases spores after certain amount of hits. 
--Now 3 notes will be consumed while making Secret One.
+Available post Plantera to craft and post Golem for buying.
+-Autoinjector in inventory now will also allow to buy Flasks of Rainbows from Young Brewer.
+-Now all 3 Torn Notes will be consumed while making Secret One.
 -Reworked Grinder MK4. Now it would release spread of bullets into enemy each 20 ticks of damage.
 -Buffed Solemn Vow for a bit.
 -Fixed sprites for Corrosive Flask and Grinder MK4.

@@ -35,7 +35,7 @@ namespace AlchemistNPC.Items
             item.maxStack = 99;                 //this is where you set the max stack of item
             item.consumable = true;           //this make that the item is consumable when used
             item.width = 32;
-            item.height = 36;
+            item.height = 32;
             item.value = Item.sellPrice(0, 10, 0, 0);
             item.rare = 10;
             item.buffType = ModLoader.GetMod("CalamityMod").BuffType("YharimPower");           //this is where you put your Buff

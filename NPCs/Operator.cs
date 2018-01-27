@@ -10,6 +10,7 @@ namespace AlchemistNPC.NPCs
 	[AutoloadHead]
 	public class Operator : ModNPC
 	{
+		public static bool CanSpawn = false;
 		public static bool OA = false;
 		public static bool Shop1 = true;
 		public static bool Shop2 = false;
@@ -155,7 +156,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss2)
+			if (NPC.downedBoss2 && CanSpawn)
 			{
 			return true;
 			}
@@ -170,13 +171,14 @@ namespace AlchemistNPC.NPCs
 				for (int y = top; y <= bottom; y++)
 				{
 					int type = Main.tile[x, y].type;
-					if (type == mod.TileType("Wing of the World"))
+					if (type == mod.TileType("WingoftheWorld"))
 					{
 						score++;
+						CanSpawn = true;
 					}
 				}
 			}
-			return score < (right - left) * (bottom - top);
+			return score > 0;
 		}
  
         public override string TownNPCName()
@@ -561,6 +563,9 @@ namespace AlchemistNPC.NPCs
 				}
 		if (NPC.downedPlantBoss)
 			{
+			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("BigBirdLamp"));
+			shop.item[nextSlot].shopCustomPrice = 750000;
+			nextSlot++;
 			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("GrinderMK4"));
 			shop.item[nextSlot].shopCustomPrice = 500000;
 			nextSlot++;
