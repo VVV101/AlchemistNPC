@@ -3,6 +3,8 @@ New combinations of potions are sold by Young Brewer.
 Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu. 
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
+v.6.2.1
+-Added Github authorization. Should prevent downloading problems.
 v6.2
 -New sprites for combinations by Frank#4074 and somebody0214#2327.
 -Fixed Jeweler's shops again. Hopefully, forever.
