@@ -25,13 +25,13 @@ namespace AlchemistNPC
         }
 
         static bool ReadConfig()
-        {         
+        {
 		if(Configuration.Load())
 			{
             Configuration.Get("StarPrice", ref StarPrice);
             if(StarPrice <= 0)
 			{
-            StarPrice = 1;
+            StarPrice = 1000;
 			}
 			Configuration.Get<bool>("TreasureBagsShop", ref Config.TS);
 			if(TS != true && TS != false)
@@ -39,19 +39,19 @@ namespace AlchemistNPC
             TS = true;
 			}
 			return true;
-            }
+			}
 		else
 		{
 		return false;
 		}
+		}
             
-        }
         static void CreateConfig()
         {
             Configuration.Clear();
             Configuration.Put("StarPrice", StarPrice);
 			Configuration.Put("TreasureBagsShop", TS);
-            Configuration.Save();
+            Configuration.Save(true);
         }
     }
 }

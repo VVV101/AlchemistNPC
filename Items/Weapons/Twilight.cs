@@ -1,17 +1,20 @@
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Localization;
+using Terraria.World.Generation;
+using AlchemistNPC;
 
 namespace AlchemistNPC.Items.Weapons
 {
 	public class Twilight : ModItem
 	{
-		public bool ASS = false;
+		public bool AC = false;
 		public bool DTT = true;
 		public int DT = 0;
 		public override void SetStaticDefaults()
@@ -104,16 +107,16 @@ namespace AlchemistNPC.Items.Weapons
 			string key = "Mods.AlchemistNPC.DC2";
 			Color messageColor = Color.Blue;
 			Main.NewText(Language.GetTextValue(key), messageColor);
-			ASS = true;
+			AC = true;
 			}
-			if (DT == 1 || player.altFunctionUse == 2 && DTT && !ASS)
+			if (DT == 1 || player.altFunctionUse == 2 && DTT && !AC)
 			{
 			Main.PlaySound(SoundID.MenuOpen, player.position, 0);
 			string key = "Mods.AlchemistNPC.DC1";
 			Color messageColor = Color.Blue;
 			Main.NewText(Language.GetTextValue(key), messageColor);
 			}
-			ASS = false;
+			AC = false;
 			return true;
 		}
 		

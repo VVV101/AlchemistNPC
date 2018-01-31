@@ -3,6 +3,13 @@ New combinations of potions are sold by Young Brewer.
 Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu. 
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
+v6.3
+-New sprite for Cursed Ice by Sad#0216.
+-Fixed spawning conditions of Operator.
+-Added Ninja Focus and Nightmare Fuel potions from Sacred Tools to Brewer's 5th shop.
+Ninja Focus is available after beating EoC.
+Nightmare Fuel is available after beating Abaddon.
+-Added new lines for Calamity mod to Operator.
 v.6.2.1
 -Added Github authorization. Should prevent downloading problems.
 v6.2

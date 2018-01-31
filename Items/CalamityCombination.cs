@@ -11,7 +11,6 @@ namespace AlchemistNPC.Items
 {
     public class CalamityCombination : ModItem
     {
-		
 		public override bool Autoload(ref string name)
 		{
 		return ModLoader.GetMod("CalamityMod") != null;

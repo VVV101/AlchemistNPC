@@ -10,7 +10,7 @@ namespace AlchemistNPC
 {
     public class AlchemistNPC : Mod
     {
-        public AlchemistNPC()
+		public AlchemistNPC()
 		{
 			Properties = new ModProperties()
 			{
@@ -53,7 +53,9 @@ namespace AlchemistNPC
 		Config.Load();
 		}
 		
-		public static bool CalamityUnloaded = ModLoader.GetMod("CalamityMod") != null;
+		public static bool CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
+		public static bool SacredToolsLoaded = ModLoader.GetMod("SacredTools") != null;
+		
 		public override void AddRecipeGroups()
         {
             RecipeGroup group = new RecipeGroup(() => Lang.misc[37] + " " + "Corruption/Crimson boss mask", new int[]

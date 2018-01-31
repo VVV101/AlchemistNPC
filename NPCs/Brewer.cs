@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 using AlchemistNPC.NPCs;
+using AlchemistNPC;
 using Terraria.Localization;
  
 namespace AlchemistNPC.NPCs
@@ -65,8 +66,8 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "4-ый магазин (UnuBattleRods/Tacklebox)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("ShopB5");
-		text.SetDefault("5th shop (Tremor/Wildlife)           ");
-		text.AddTranslation(GameCulture.Russian, "5-ый магазин (Tremor/Wildlife)");
+		text.SetDefault("5th shop (Tremor/Wildlife/SacredTools)");
+		text.AddTranslation(GameCulture.Russian, "5-ый магазин (Tremor/Wildlife/SacredTools)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("CycleShop");
 		text.SetDefault("Cycle Shop");
@@ -424,6 +425,11 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 						Shop5 = false;
 						}
 				}
+		}
+ 
+		public bool SacredToolsDownedAbaddon
+		{
+		get { return SacredTools.ModdedWorld.OblivionSpawns; }
 		}
  
         public override void SetupShop(Chest shop, ref int nextSlot)
@@ -967,6 +973,21 @@ if (NPC.downedMoonlord)
 					nextSlot++;
 					}
 				}
+				if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+					{
+						if (NPC.downedBoss1)
+						{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("ThrownPotion"));
+						shop.item[nextSlot].value=30000;
+						nextSlot++;
+						}
+					if(SacredToolsDownedAbaddon)
+						{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("NightmarePotion"));
+						shop.item[nextSlot].value=250000;
+						nextSlot++;
+						}
+					}
 			}
 		}
 	}

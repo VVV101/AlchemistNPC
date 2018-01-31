@@ -14,14 +14,14 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Cursed Ice");
 			Tooltip.SetDefault("Cursed Flame, bound in ice.");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(8, 9));
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(3, 8));
 			DisplayName.AddTranslation(GameCulture.Russian, "Проклятый лёд");
 			Tooltip.AddTranslation(GameCulture.Russian, "Проклятое Пламя, заключённое в лёд"); 
 		}    
 		public override void SetDefaults()
 		{
-			item.width = 16;
-			item.height = 16;
+			item.width = 32;
+			item.height = 32;
 			item.maxStack = 999;
 			item.value = 5000;
 			item.rare = 5;

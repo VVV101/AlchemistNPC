@@ -10,7 +10,6 @@ namespace AlchemistNPC.NPCs
 	[AutoloadHead]
 	public class Operator : ModNPC
 	{
-		public static bool CanSpawn = false;
 		public static bool OA = false;
 		public static bool Shop1 = true;
 		public static bool Shop2 = false;
@@ -128,6 +127,14 @@ namespace AlchemistNPC.NPCs
 		text.SetDefault("Anyway, there are some reasons for optimism. Blood Moon attracks some creatures, which cannot be seen in normal conditions.");
 		text.AddTranslation(GameCulture.Russian, "Как бы то ни было, есть некоторые причины для оптимизма. Кровавая Луна привлекает некоторых созданий, которых нельзя увидеть при обычных условиях.");
 		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO17");
+		text.SetDefault("I read a few manuscripts about creature, named Slime God. They say that he is one of the first creatures in this world.");
+		text.AddTranslation(GameCulture.Russian, "Я прочитала несколько манускриптов о существе, именуемом Бог Слизней. В них говорится, что он является одним из первых созданий этого мира");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO18");
+		text.SetDefault("Yharim... I am pretty sure I heard that name before. But my memory data is corrupted. Try asking Calamitas about him...");
+		text.AddTranslation(GameCulture.Russian, "Ярим... Я уверена, что слышала это имя раньше. Но моя память повреждена. Попробуй узнать у Каламитас что-нибудь о нём...");
+		mod.AddTranslation(text);
 		}
 
 		public override void ResetEffects()
@@ -156,7 +163,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss2 && CanSpawn)
+			if (NPC.downedBoss2)
 			{
 			return true;
 			}
@@ -174,7 +181,6 @@ namespace AlchemistNPC.NPCs
 					if (type == mod.TileType("WingoftheWorld"))
 					{
 						score++;
-						CanSpawn = true;
 					}
 				}
 			}
@@ -276,6 +282,8 @@ namespace AlchemistNPC.NPCs
 		 string EntryO14 = Language.GetTextValue("Mods.AlchemistNPC.EntryO14");
 		 string EntryO15 = Language.GetTextValue("Mods.AlchemistNPC.EntryO15");
 		 string EntryO16 = Language.GetTextValue("Mods.AlchemistNPC.EntryO16");
+		 string EntryO17 = Language.GetTextValue("Mods.AlchemistNPC.EntryO17");
+		 string EntryO18 = Language.GetTextValue("Mods.AlchemistNPC.EntryO18");
 		if (Main.bloodMoon)
 			{
 				switch (Main.rand.Next(3))
@@ -311,18 +319,34 @@ namespace AlchemistNPC.NPCs
 			return EntryO8;
 			}
 		}
+		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && NPC.downedBoss3)
+		{
+			if (Main.rand.Next(7) == 0)
+			{
+				return EntryO17;
+			} 
+		}
+		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && NPC.downedMoonlord)
+		{
+			if (Main.rand.Next(7) == 0)
+			{
+				return EntryO18;
+			} 
+		}
 		if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 		{
-			if (Main.rand.Next(5) == 0)
+			if (Main.rand.Next(6) == 0)
 			{
-				switch (Main.rand.Next(2))
-				{
-				case 0:
 				return EntryO2;
-				case 1:
-				return EntryO6;
-				}
+				
 			} 
+		}
+		if (ModLoader.GetLoadedMods().Contains("ThoriumMod") && Main.hardMode)
+		{
+			if (Main.rand.Next(6) == 0)
+			{
+			return EntryO6;
+			}
 		}
 		if (Main.rand.Next(5) == 0 && Main.hardMode)
 			{
