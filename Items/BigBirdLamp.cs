@@ -33,7 +33,7 @@ namespace AlchemistNPC.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.AddBuff(mod.BuffType("BigBirdLamp"), 300);
+			player.AddBuff(mod.BuffType("BigBirdLamp"), 60);
 			player.thrownDamage += 0.05f;
             player.meleeDamage += 0.05f;
             player.rangedDamage += 0.05f;

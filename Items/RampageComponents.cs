@@ -32,8 +32,8 @@ namespace AlchemistNPC.Items
 		{
 			item.width = 22;
 			item.height = 30;
-			item.value = 50000;
-			item.rare = 9;
+			item.value = 1000000;
+			item.rare = 11;
 			item.accessory = true;
 			item.useAnimation = 30;
 			item.useTime = 30;

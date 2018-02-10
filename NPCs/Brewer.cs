@@ -66,8 +66,8 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "4-ый магазин (UnuBattleRods/Tacklebox)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("ShopB5");
-		text.SetDefault("5th shop (Tremor/Wildlife/SacredTools)");
-		text.AddTranslation(GameCulture.Russian, "5-ый магазин (Tremor/Wildlife/SacredTools)");
+		text.SetDefault("5th shop (Tremor/Wildlife/Sacred/Spirit/Cristilium/ExpSentr)");
+		text.AddTranslation(GameCulture.Russian, "5-ый магазин (Tremor/Wildlife/Sacred/Spirit/Cristilium/ExpSentr)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("CycleShop");
 		text.SetDefault("Cycle Shop");
@@ -683,6 +683,9 @@ if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZergPotion"));
 			shop.item[nextSlot].shopCustomPrice = 30000;
             nextSlot++;
+			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZenPotion"));
+			shop.item[nextSlot].shopCustomPrice = 30000;
+            nextSlot++;
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharimsStimulants"));
 			shop.item[nextSlot].shopCustomPrice = 100000;
             nextSlot++;
@@ -978,16 +981,88 @@ if (NPC.downedMoonlord)
 						if (NPC.downedBoss1)
 						{
 						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("ThrownPotion"));
-						shop.item[nextSlot].value=30000;
+						shop.item[nextSlot].value = 30000;
 						nextSlot++;
 						}
 					if(SacredToolsDownedAbaddon)
 						{
 						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("NightmarePotion"));
-						shop.item[nextSlot].value=250000;
+						shop.item[nextSlot].value = 250000;
 						nextSlot++;
 						}
 					}
+				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("BismitePotion"));
+					shop.item[nextSlot].value = 10000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("PinkPotion"));
+					shop.item[nextSlot].value = 10000;
+					nextSlot++;
+					if (NPC.downedMechBossAny)
+					{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("SoulPotion"));
+					shop.item[nextSlot].value = 30000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("RunePotion"));
+					shop.item[nextSlot].value = 30000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("SpiritPotion"));
+					shop.item[nextSlot].value = 30000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("StarPotion"));
+					shop.item[nextSlot].value = 30000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("TurtlePotion"));
+					shop.item[nextSlot].value = 100000;
+					nextSlot++;
+					}
+					if (NPC.downedPlantBoss)
+					{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("DungeonSpirit"));
+					shop.item[nextSlot].value = 30000;
+					nextSlot++;
+					}
+				}
+				if (ModLoader.GetLoadedMods().Contains("CrystiliumMod"))
+				{
+				if (Main.hardMode)
+					{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CrystiliumMod").ItemType("CrystalPotion"));
+					shop.item[nextSlot].value = 20000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CrystiliumMod").ItemType("DragonWine"));
+					shop.item[nextSlot].value = 20000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CrystiliumMod").ItemType("DustbreakPotion"));
+					shop.item[nextSlot].value = 20000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CrystiliumMod").ItemType("GranitePotion"));
+					shop.item[nextSlot].value = 20000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CrystiliumMod").ItemType("MarblePotion"));
+					shop.item[nextSlot].value = 20000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CrystiliumMod").ItemType("ThrowingBoostPotion"));
+					shop.item[nextSlot].value = 20000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CrystiliumMod").ItemType("TwilightPotion"));
+					shop.item[nextSlot].value = 20000;
+					nextSlot++;
+					}
+				}
+				if (ModLoader.GetLoadedMods().Contains("ExpandedSentries"))
+				{
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ExpandedSentries").ItemType("SentryPotion"));
+				shop.item[nextSlot].value = 30000;
+				nextSlot++;
+					if (NPC.downedBoss3)
+					{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ExpandedSentries").ItemType("DefenderPotion"));
+					shop.item[nextSlot].value = 20000;
+					nextSlot++;
+					}
+				}
 			}
 		}
 	}

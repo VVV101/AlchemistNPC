@@ -9,6 +9,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
+using AlchemistNPC;
 
 namespace AlchemistNPC
 {
@@ -18,6 +19,7 @@ namespace AlchemistNPC
 		public bool lf = false;
 		public int lamp = 0;
 		public bool Rampage = false;
+		public bool lilithemblem = false;
 		public bool trigger = true;
 		public bool watchercrystal = false;
 		public bool grimreaper = false;
@@ -29,7 +31,9 @@ namespace AlchemistNPC
 		
 		public override void ResetEffects()
 		{
+			AlchemistNPC.scroll = false;
 			Rampage = false;
+			lilithemblem = false;
 			watchercrystal = false;
 			grimreaper = false;
 			rainbowdust = false;
@@ -53,6 +57,10 @@ namespace AlchemistNPC
 			target.AddBuff(BuffID.Ichor, 600);
 			target.AddBuff(BuffID.BrokenArmor, 600);
 			}
+		if (player.FindBuffIndex(mod.BuffType("BastScroll")) > -1)
+			{
+			target.defense = 0;
+			}
 		}
 			
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
@@ -69,6 +77,10 @@ namespace AlchemistNPC
 			{
 			target.AddBuff(BuffID.Ichor, 600);
 			target.AddBuff(BuffID.BrokenArmor, 600);
+			}
+		if (player.FindBuffIndex(mod.BuffType("BastScroll")) > -1)
+			{
+			target.defense = 0;
 			}
 		}
 		
