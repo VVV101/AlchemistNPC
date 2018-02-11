@@ -88,7 +88,18 @@ namespace AlchemistNPC
          {
                  ItemID.ShadowScale, ItemID.TissueSample
          });
-            RecipeGroup.RegisterGroup("AlchemistNPC:EvilComponent", group);			
+            RecipeGroup.RegisterGroup("AlchemistNPC:EvilComponent", group);	
+		group = new RecipeGroup(() => Lang.misc[37] + " " + "tier 2 anvil", new int[]
+         {
+                 ItemID.MythrilAnvil, ItemID.OrichalcumAnvil
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPC:AnyAnvil", group);
+		group = new RecipeGroup(() => Lang.misc[37] + " " + "tier 2 forge", new int[]
+         {
+                 ItemID.AdamantiteForge, ItemID.TitaniumForge
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPC:AnyForge", group);
+			
         }
 		
 		public override void AddRecipes()

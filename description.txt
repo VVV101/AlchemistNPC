@@ -4,6 +4,12 @@ Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu.
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
 Architect will come if you have at least 1 any NPC.
+v6.5
+-Added Materia Transmutator. Works as Ultimate Crafting Station.
+-Added Dungeon and Temple Teleportation Potions. Both sold by Alchemist.
+Dungeon - available after beating EoW/BoC.
+Temple - available after beating Plantera.
+-Fixed Mana Flower effect was not working in Lilith Emblem.
 v6.4
 -Merged with Builder NPC mod by somebody0214#2327.
 Added Architect NPC. Sell various blocks and furniture.

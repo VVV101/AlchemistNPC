@@ -478,7 +478,19 @@ if (ModLoader.GetLoadedMods().Contains("imkSushisMod"))
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("ResurrectionPotion"));
 				shop.item[nextSlot].shopCustomPrice = 25000;
 				nextSlot++;
-			}		
+			}
+if (NPC.downedBoss2)
+{
+	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("DungeonTeleportationPotion"));
+	shop.item[nextSlot].shopCustomPrice = 20000;
+    nextSlot++;
+}
+if (NPC.downedPlantBoss)
+{
+	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TempleTeleportationPotion"));
+	shop.item[nextSlot].shopCustomPrice = 100000;
+    nextSlot++;
+}
 shop.item[nextSlot].SetDefaults (ItemID.Bottle);
 			shop.item[nextSlot].shopCustomPrice = 100;
             nextSlot++;

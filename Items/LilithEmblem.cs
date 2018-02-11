@@ -43,6 +43,7 @@ namespace AlchemistNPC.Items
 			player.magicDamage += 0.1f;
 			player.magicCrit += 10;
 			player.statManaMax2 += 50;
+			player.manaFlower = true;
             player.manaCost -= 0.15f;
 			++player.manaRegenDelayBonus;
             player.manaRegenBonus += 25;
