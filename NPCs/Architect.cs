@@ -573,7 +573,9 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 				shop.item[nextSlot].SetDefaults (ItemID.AsphaltBlock);
 				shop.item[nextSlot].shopCustomPrice = 2;
 				nextSlot++;
-				
+				shop.item[nextSlot].SetDefaults (ItemID.FleshBlock);
+				shop.item[nextSlot].shopCustomPrice = 10;
+           			nextSlot++;		
 			}
 			if (Main.hardMode)
 				{
