@@ -30,12 +30,24 @@ namespace AlchemistNPC.Tiles
 			AddMapEntry(new Color(200, 200, 200), name);
 			disableSmartCursor = true;
 			adjTiles = new int[]
-			{ 
+			{
 			TileID.WorkBenches, 
 			TileID.Anvils, 
 			TileID.Furnaces, 
 			TileID.Hellforge, 
-			TileID.Books, 
+			TileID.Bookcases,
+			TileID.Sinks,
+			TileID.Solidifier,
+			TileID.Blendomatic,
+			TileID.MeatGrinder,
+			TileID.Loom,
+			TileID.LivingLoom,
+			TileID.FleshCloningVat,
+			TileID.GlassKiln,
+			TileID.BoneWelder,
+			TileID.SteampunkBoiler,
+			TileID.Bottles,
+			TileID.LihzahrdFurnace,
 			TileID.Tables, 
 			TileID.Chairs,
 			TileID.CookingPots,

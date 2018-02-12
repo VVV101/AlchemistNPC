@@ -9,12 +9,10 @@ namespace AlchemistNPC.Items.Placeable
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Same functionality as most of crafting stations in one"
-			+"\nAll crafting stations included:"
-			+"\nWorkbench, Sawmill, Tinkerers Workshop, Table & Chair, Bookcase"
-			+"\nSky Mill, Ice Machine, Honey Dispenser, Demon Altar"
-			+"\nCrystal Ball, Any Hardmode Anvil/Forge, Autohammer and Ancient Manipulator");
+			+"\nAll crafting stations included :)"
+			+"\nAlso works as Water/Honey/Lava source");
 			DisplayName.AddTranslation(GameCulture.Russian, "Преобразователь Материи");
-			Tooltip.AddTranslation(GameCulture.Russian, "Выполняет функции большей части станций крафта в одной\nВсе включённые станции крафта:\nВерстак, Лесопилка, Мастерская Инженера, Стол и стул, Книжный шкаф\nНебесная Мельница, Раздатчик Мёда, Ледяная Машина, Любой Алтарь\nКристальный шар, Любая наковальня/печка, Автомолот и Древний Манипулятор"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Выполняет функции большей части станций крафта в одной\nВсе станции крафта включены :)\nРаботает в качестве источника Воды/Мёда/Лавы"); 
 		}
 
 		public override void SetDefaults()

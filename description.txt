@@ -9,6 +9,9 @@ v6.5
 -Added Dungeon and Temple Teleportation Potions. Both sold by Alchemist.
 Dungeon - available after beating EoW/BoC.
 Temple - available after beating Plantera.
+-Added Twilight Wings. Required Lunar tier Wings, Big Bird's Lamp and Emagled Fragmentations.
+-Added Moon Lord Treasure Bag to Operator shop.
+Available if Profaned Guardians from Calamity are beaten.
 -Fixed Mana Flower effect was not working in Lilith Emblem.
 v6.4
 -Merged with Builder NPC mod by somebody0214#2327.

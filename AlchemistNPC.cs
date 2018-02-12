@@ -99,6 +99,16 @@ namespace AlchemistNPC
                  ItemID.AdamantiteForge, ItemID.TitaniumForge
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:AnyForge", group);
+		group = new RecipeGroup(() => Lang.misc[37] + " " + "tier 1 anvil", new int[]
+         {
+                 ItemID.IronAnvil, ItemID.LeadAnvil
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPC:AnyPreHMAnvil", group);
+		group = new RecipeGroup(() => Lang.misc[37] + " " + "Celestial Wings", new int[]
+         {
+                 ItemID.WingsSolar, ItemID.WingsNebula, ItemID.WingsStardust, ItemID.WingsVortex
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPC:AnyCelestialWings", group);
 			
         }
 		

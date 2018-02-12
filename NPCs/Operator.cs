@@ -450,6 +450,11 @@ namespace AlchemistNPC.NPCs
 			}
 		}
  
+		public bool CalamityModDownedGuardian
+		{
+		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		}
+ 
     public override void SetupShop(Chest shop, ref int nextSlot)
     {
 			for (int k = 0; k < 255; k++)
@@ -654,6 +659,15 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].shopCustomPrice = 4000000;
 			nextSlot++;
 			}
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					{
+						if(CalamityModDownedGuardian)
+						{
+						shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
+						shop.item[nextSlot].shopCustomPrice = 7500000;
+						nextSlot++;
+						}
+					}
 		}
 	}
 }
