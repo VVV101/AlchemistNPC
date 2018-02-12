@@ -41,7 +41,6 @@ namespace AlchemistNPC.Items
             recipe.AddIngredient(ItemID.CookingPot);
             recipe.AddIngredient(ItemID.TinkerersWorkshop);
             recipe.AddIngredient(ItemID.ImbuingStation);
-            recipe.AddIngredient(ItemID.Keg);
             recipe.AddIngredient(ItemID.HeavyWorkBench);
             recipe.AddIngredient(ItemID.Sawmill);
             recipe.AddTile(TileID.DemonAltar);
