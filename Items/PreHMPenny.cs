@@ -47,6 +47,26 @@ namespace AlchemistNPC.Items
             recipe.AddTile(TileID.DemonAltar);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
+
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WorkBench);
+            recipe.AddIngredient(ItemID.LeadAnvil);
+            recipe.AddIngredient(ItemID.Hellforge);
+            recipe.AddIngredient(ItemID.Loom);
+            recipe.AddIngredient(ItemID.AlchemyTable);
+            recipe.AddIngredient(ItemID.Sawmill);
+            recipe.AddIngredient(ItemID.DyeVat);
+            recipe.AddIngredient(ItemID.WoodenTable);
+            recipe.AddIngredient(ItemID.WoodenChair);
+            recipe.AddIngredient(ItemID.CookingPot);
+            recipe.AddIngredient(ItemID.TinkerersWorkshop);
+            recipe.AddIngredient(ItemID.ImbuingStation);
+            recipe.AddIngredient(ItemID.HeavyWorkBench);
+            recipe.AddIngredient(ItemID.Sawmill);
+            recipe.AddIngredient(mod, "ArtificialAltar");
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(this, 1);
+            recipe.AddRecipe();
         }
     }
 }
