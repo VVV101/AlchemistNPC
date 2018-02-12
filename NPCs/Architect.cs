@@ -567,9 +567,6 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 			}
 			if (NPC.downedMechBossAny)
 			{
-				shop.item[nextSlot].SetDefaults (ItemID.Cog);
-				shop.item[nextSlot].shopCustomPrice = 2;
-				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.AsphaltBlock);
 				shop.item[nextSlot].shopCustomPrice = 2;
 				nextSlot++;
@@ -735,9 +732,6 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 			if (NPC.downedMechBossAny)
 			{
 		shop.item[nextSlot].SetDefaults (ItemID.FleshCloningVaat);
-		shop.item[nextSlot].shopCustomPrice = 20000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.SteampunkBoiler);
 		shop.item[nextSlot].shopCustomPrice = 20000;
 		nextSlot++;
 			}
