@@ -43,6 +43,7 @@ namespace AlchemistNPC.Items
             recipe.AddIngredient(ItemID.ImbuingStation);
             recipe.AddIngredient(ItemID.HeavyWorkBench);
             recipe.AddIngredient(ItemID.Sawmill);
+            recipe.AddIngredient(mod, "ArtificialAltar")
             recipe.AddTile(TileID.DemonAltar);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
