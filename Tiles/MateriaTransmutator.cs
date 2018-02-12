@@ -1,3 +1,4 @@
+
 using System;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -35,7 +36,19 @@ namespace AlchemistNPC.Tiles
 			TileID.Anvils, 
 			TileID.Furnaces, 
 			TileID.Hellforge, 
-			TileID.Books, 
+			TileID.Bookcases,
+			TileID.Sinks,
+			TileID.Solidifier,
+			TileID.Blendomatic,
+			TileID.MeatGrinder,
+			TileID.Loom,
+			TileID.LivingLoom,
+			TileID.FleshCloningVat,
+			TileID.GlassKiln,
+			TileID.BoneWelder,
+			TileID.SteampunkBoiler,
+			TileID.Bottles,
+			TileID.LihzahrdFurnace,
 			TileID.Tables, 
 			TileID.Chairs,
 			TileID.CookingPots,
