@@ -64,7 +64,7 @@ namespace AlchemistNPC.Items
             recipe.AddIngredient(ItemID.FragmentVortex, 15);
             recipe.AddIngredient(ItemID.FragmentSolar, 15);
 			recipe.AddIngredient(null, "MasksBundle", 1);
-			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 			recipe = new ModRecipe(mod);
@@ -76,7 +76,7 @@ namespace AlchemistNPC.Items
 			recipe.AddIngredient(null, "MageCombination", 30);
 			recipe.AddIngredient(null, "SummonerCombination", 30);
 			recipe.AddIngredient(null, "MasksBundle", 1);
-			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

@@ -192,10 +192,10 @@ namespace AlchemistNPC.NPCs
 		
 public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
-                    if (numTownNPCs >= 1)
-                    {
-                    return true;
-                    }
+            if (numTownNPCs >= 5 && NPC.downedBoss2)
+                {
+                 return true;
+                }
             return false;
         }
 

@@ -71,7 +71,7 @@ namespace AlchemistNPC.Items
 			recipe.AddIngredient(ItemID.FragmentNebula, 20);
             recipe.AddIngredient(ItemID.FragmentVortex, 20);
             recipe.AddIngredient(ItemID.FragmentSolar, 20);
-			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

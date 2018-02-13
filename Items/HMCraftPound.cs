@@ -37,6 +37,7 @@ namespace AlchemistNPC.Items
             recipe.AddIngredient(ItemID.Autohammer);
 			recipe.AddIngredient(ItemID.BlendOMatic);
             recipe.AddIngredient(ItemID.MeatGrinder);
+			recipe.AddIngredient(ItemID.LihzahrdFurnace);
             recipe.AddIngredient(ItemID.LunarCraftingStation);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();

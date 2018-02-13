@@ -86,7 +86,7 @@ namespace AlchemistNPC.Items
 					{
 			recipe.AddIngredient((ModLoader.GetMod("SacredTools").ItemType("QuasarSigil")));
 					}
-			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

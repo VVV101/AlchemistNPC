@@ -206,6 +206,13 @@ namespace AlchemistNPC.NPCs
 			{
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("APMC"));
 			}
+			if (npc.type == NPCID.MoonLordCore)
+			{
+				if (Main.rand.Next(10) == 0)
+                {
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
+				}
+			}
 			if (npc.type == NPCID.DungeonGuardian && !Main.expertMode)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(5, 10));

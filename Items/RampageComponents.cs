@@ -82,7 +82,7 @@ namespace AlchemistNPC.Items
 			recipe.AddIngredient(ItemID.SniperScope);
 			recipe.AddIngredient(ItemID.LunarBar, 16);
             recipe.AddIngredient(ItemID.FragmentVortex, 18);
-			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

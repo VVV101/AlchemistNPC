@@ -36,6 +36,8 @@ namespace AlchemistNPC.Items.Placeable
 			recipe.AddIngredient(null, "PreHMPenny");
 			recipe.AddIngredient(null, "HMCraftPound");
 			recipe.AddIngredient(null, "SpecCraftPoint");
+			recipe.AddIngredient(ItemID.ManaCrystal);
+			recipe.AddIngredient(ItemID.DD2ElderCrystalStand);
 			recipe.AddIngredient(null, "EmagledFragmentation", 150);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

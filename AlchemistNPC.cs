@@ -44,6 +44,10 @@ namespace AlchemistNPC
 		text.AddTranslation(GameCulture.Russian, "Тип урона изменён на Ближний");
 		AddTranslation(text);
 		LampLight = RegisterHotKey("Lamp Light Toggle", "L");
+		if (!Main.dedServ)
+			{
+				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
+			}
 		}
 
 		public static string ConfigFileRelativePath {

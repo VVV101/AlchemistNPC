@@ -60,7 +60,7 @@ namespace AlchemistNPC.Items
 			recipe.AddIngredient(ItemID.SpectreBar, 15);
 			recipe.AddIngredient(ItemID.LunarBar, 15);
 			recipe.AddIngredient(null, "EmagledFragmentation", 150);
-			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
