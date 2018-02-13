@@ -33,20 +33,10 @@ namespace AlchemistNPC.Items.Placeable
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.WorkBench);
-			recipe.AddIngredient(ItemID.Sawmill);
-			recipe.AddIngredient(ItemID.TinkerersWorkshop);
-			recipe.AddIngredient(ItemID.AlchemyTable);
-			recipe.AddIngredient(ItemID.Bookcase);
-			recipe.AddIngredient(ItemID.SkyMill);
-			recipe.AddIngredient(ItemID.IceMachine);
-			recipe.AddIngredient(ItemID.HoneyDispenser);
-			recipe.AddIngredient(null, "ArtificialAltar");
-			recipe.AddIngredient(ItemID.CrystalBall);
-			recipe.AddRecipeGroup("AlchemistNPC:AnyAnvil");
-			recipe.AddRecipeGroup("AlchemistNPC:AnyForge");
-			recipe.AddIngredient(ItemID.Autohammer);
-			recipe.AddIngredient(ItemID.LunarCraftingStation);
+			recipe.AddIngredient(null, "PreHMPenny");
+			recipe.AddIngredient(null, "HMCraftPound");
+			recipe.AddIngredient(null, "SpecCraftPoint");
+			recipe.AddIngredient(null, "EmagledFragmentation", 150);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
