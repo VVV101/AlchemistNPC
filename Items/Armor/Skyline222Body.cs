@@ -11,7 +11,7 @@ namespace AlchemistNPC.Items.Armor
 		{
 			DisplayName.SetDefault("Skyline222's (Noire) shirt");
 			DisplayName.AddTranslation(GameCulture.Russian, "Блузка Нуар"); 
-			Tooltip.SetDefault("Skyline222's cute shirt.");
+			Tooltip.SetDefault("Skyline222's cute shirt");
 			Tooltip.AddTranslation(GameCulture.Russian, "Милая блузка Нуар"); 
 		}
 
