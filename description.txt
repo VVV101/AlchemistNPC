@@ -4,6 +4,12 @@ Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu.
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
 Architect will come if you have at least 5 any NPC and EoW/BoC is beaten.
+v6.5.1
+-Fixed Moon Lord bag not appeared after beating Profaned Guardians.
+-Tweaked Titan Skin potion (and Modded Tank Combination) to provide Cursed Flame/Ichor protection after beating Twins.
+-Changed Dungeon Teleportation Potion to be available post Skeletron.
+-Removed abiities of Demon Altar from Wing of the World
+-Fixed some typos and errors in descriptions/tooltips/dialog lines.
 v6.5
 -Added Materia Transmutator. Works as Ultimate Crafting Station.
 -Added Dungeon and Temple Teleportation Potions. Both sold by Alchemist.

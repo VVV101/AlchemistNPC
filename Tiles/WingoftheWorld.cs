@@ -28,7 +28,6 @@ namespace AlchemistNPC.Tiles
 			name.AddTranslation(GameCulture.Russian, "Крыло Мира");
 			AddMapEntry(new Color(200, 200, 200), name);
 			disableSmartCursor = true;
-			adjTiles = new int[]{ TileID.DemonAltar };
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

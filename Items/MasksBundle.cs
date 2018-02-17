@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Masks Bundle");
 			Tooltip.SetDefault("Contains masks of all vanilla bosses"
-				+ "\nRequired for making ultimate accessory ");
+				+ "\nRequired for making ultimate accessory");
 			DisplayName.AddTranslation(GameCulture.Russian, "Набор Масок");
 			Tooltip.AddTranslation(GameCulture.Russian, "Содержит в себе маски всех базовых боссов\nНеобходим для создания ультимативного аксессуара"); 
 		}    

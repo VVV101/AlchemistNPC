@@ -74,24 +74,24 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "Мои зелья маны восстановят твою магическую силу.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA3");
-		text.SetDefault("Restoration Potions... don't know if they are good or bad...");
-		text.AddTranslation(GameCulture.Russian, "Зелья Восстановления... даже не знаю, хороши они или плохи...");
+		text.SetDefault("Restoration potions... I'm not sure if I trust them...");
+		text.AddTranslation(GameCulture.Russian, "Зелья Восстановления... Не уверен, могу ли я доверять им...");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA4");
 		text.SetDefault("There's a legendary yoyo known as the Sasscade.");
 		text.AddTranslation(GameCulture.Russian, "Существует Легендарное Йо-йо, известное как Сасскад.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA5");
-		text.SetDefault("Strange Brew from Skeleton Merchant smells really terrible but Mana Restoration effect is awesome.");
-		text.AddTranslation(GameCulture.Russian, "Странное Варево от Скелета-торговца пахнет просто ужасно, но эффект восстановления маны потрясает.");
+		text.SetDefault("The Strange Brew I bought from the Skeleton Merchant smells awful, but its Mana Restoration effect is awesome!");
+		text.AddTranslation(GameCulture.Russian, "Странное Варево, что я купил у Скелета-торговца пахнет просто ужасно, но его эффект восстановления маны потрясает.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA6");
 		text.SetDefault("Hi, *cough*... That definetly wasn't a Teleporation potion.");
 		text.AddTranslation(GameCulture.Russian, "Привет, *кашель*... Это определённо было не зелье Телепортации.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA7");
-		text.SetDefault("Have you seen a Mechanical Skull around?");
-		text.AddTranslation(GameCulture.Russian, "Ты не видел Механического Черепа поблизости?");
+		text.SetDefault("Have you seen any Mechanical Skulls around?");
+		text.AddTranslation(GameCulture.Russian, "Ты не видел Механических Черепов поблизости?");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA8");
 		text.SetDefault("Have you ever heard of Ultra Mushroom? If you find one, I do believe I got some stuff to aid you in boosting that thing.");
@@ -102,8 +102,8 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "Я попросил у ");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA10");
-		text.SetDefault(" to offer the recipe for the Cactus Extract. He said no, since even an idiot would figure it out.");
-		text.AddTranslation(GameCulture.Russian, " рецепт Кактусового Экстракта. Он ответил нет, поскольку даже идиот догадается.");
+		text.SetDefault(" if I could buy the recipe for the Potent Extract. He said no because, and I quote, ''Even an idiot would figure it out.''");
+		text.AddTranslation(GameCulture.Russian, " рецепт Кактусового Экстракта. Он ответил нет, поскольку, я процитирую ''Даже идиот догадается.''");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA11");
 		text.SetDefault("And to think, she's getting the potions and not me... but I can't argue there.");
@@ -142,8 +142,8 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "Я надеюсь, ты не пустишь их в мой дом, правда?");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA20");
-		text.SetDefault("Maybe you have some better things to do than talk to me right now? It is Blood Moon in the sky!");
-		text.AddTranslation(GameCulture.Russian, "Может у тебя найдётся занятие получше, чем говорить со мной сейчас? На небе Кровавая Луна!");
+		text.SetDefault("Perhaps there are better things for you to do, rather than talking to me, at the moment. I don't know... maybe defend us from the Blood Moon?!");
+		text.AddTranslation(GameCulture.Russian, "Может у тебя найдётся занятие получше, чем говорить со мной сейчас? Ну например... Охранять нас от Кровавой Луны?!");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryA21");
 		text.SetDefault("...My friend, the best thing to do in this case is not bother me during this time.");
@@ -479,7 +479,7 @@ if (ModLoader.GetLoadedMods().Contains("imkSushisMod"))
 				shop.item[nextSlot].shopCustomPrice = 25000;
 				nextSlot++;
 			}
-if (NPC.downedBoss2)
+if (NPC.downedBoss3)
 {
 	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("DungeonTeleportationPotion"));
 	shop.item[nextSlot].shopCustomPrice = 20000;

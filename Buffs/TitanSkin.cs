@@ -18,12 +18,16 @@ namespace AlchemistNPC.Buffs
 		}
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.buffImmune[24] = true;
+			if (NPC.downedMechBoss2)
+			{
 			player.buffImmune[39] = true;
+			player.buffImmune[69] = true;
+			}
+			player.buffImmune[24] = true;
 			player.buffImmune[44] = true;
 			player.buffImmune[46] = true;
 			player.buffImmune[47] = true;
-			player.buffImmune[69] = true;
+			
 		}
 	}
 }

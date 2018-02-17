@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Suspicious Looking Scythe");
-			Tooltip.SetDefault("Summons your own Grim Reaper. Increases your crits moderatly.");
+			Tooltip.SetDefault("Summons your own Grim Reaper. Increases your crits moderately.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Подозрительно Выглядящая Коса");
 			Tooltip.AddTranslation(GameCulture.Russian, "Призывает вашего собственного Жнеца. Увеличивает ваш шанс критического удара."); 
 		}    

@@ -23,8 +23,8 @@ namespace AlchemistNPC.Items
 			+"\nBonus jumps could be disabled by changing visibility of accessory"
 			+"\n+10% damage reduction"
 			+"\nIncreases melee/throwing damage and crits by 15%"
-			+"\nAttacks destroys enemy armor totally"
-			+"\nThrowing attacks goes through tiles");
+			+"\nAttacks destroy enemy armor totally"
+			+"\nThrowing attacks go through tiles");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток Баст");
 			Tooltip.AddTranslation(GameCulture.Russian, "'Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!'\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего боя/метательного на 15%\nАтаки полностью разрушают броню противника\nМетательные атаки проходят сквозь блоки"); 
 		}

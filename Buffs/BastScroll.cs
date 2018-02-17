@@ -13,7 +13,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Bast's Scroll");
-			Description.SetDefault("Attacks totally destroys enemy armor");
+			Description.SetDefault("Attacks totally destroy enemy armor");
 			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;

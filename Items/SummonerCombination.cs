@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Summoner Combination");
-			Tooltip.SetDefault("Grants buffs, which are necesary for Summoners (Battle, Summoning, Bewitched, Wrath)");
+			Tooltip.SetDefault("Grants buffs, which are necessary for Summoners (Battle, Summoning, Bewitched, Wrath)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Призывателя");
 			Tooltip.AddTranslation(GameCulture.Russian, "аёт баффы, необходимые для Призывателя(Битва, Призыв, Колдовство, Гнев)"); 
 		}    
