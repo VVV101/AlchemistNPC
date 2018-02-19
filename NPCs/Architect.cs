@@ -418,6 +418,12 @@ shop.item[nextSlot].SetDefaults (ItemID.EbonstoneBlock);
 shop.item[nextSlot].SetDefaults (ItemID.CrimstoneBlock);
 			shop.item[nextSlot].shopCustomPrice = 2;
             nextSlot++;
+if (NPC.downedQueenBee)
+{
+shop.item[nextSlot].SetDefaults (ItemID.Hive);
+shop.item[nextSlot].shopCustomPrice = 10;
+nextSlot++;
+}
 shop.item[nextSlot].SetDefaults (ItemID.SandBlock);
 			shop.item[nextSlot].shopCustomPrice = 1;
             nextSlot++;
@@ -541,6 +547,12 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 		shop.item[nextSlot].SetDefaults (ItemID.GraniteBlock);
 			shop.item[nextSlot].shopCustomPrice = 2;
             nextSlot++;
+	    if (NPC.downedQueenBee)
+	    {
+	    shop.item[nextSlot].SetDefaults (ItemID.HoneyBlock);
+	    shop.item[next.slot].shopCustomPrice = 5;
+	    nextSlot++;
+	    }
 		if (Main.hardMode)
 			{
 		shop.item[nextSlot].SetDefaults (ItemID.CrystalBlock);
@@ -710,9 +722,12 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 		shop.item[nextSlot].SetDefaults (ItemID.IceMachine);
 		shop.item[nextSlot].shopCustomPrice = 20000;
 		nextSlot++;
+		if (NPC.downedQueenBee)
+		{
 		shop.item[nextSlot].SetDefaults (ItemID.HoneyDispenser);
 		shop.item[nextSlot].shopCustomPrice = 20000;
 		nextSlot++;
+		}
 		shop.item[nextSlot].SetDefaults (ItemID.Sawmill);
 		shop.item[nextSlot].shopCustomPrice = 2000;
 		nextSlot++;
