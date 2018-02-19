@@ -4,10 +4,16 @@ Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu.
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
 Architect will come if you have at least 5 any NPC and EoW/BoC is beaten.
-v6.5.1
+v6.6
+-Added Reverberation (T-04-53) EGO weapon. Crossbow.
+Available after beating any Mechanical Boss for crafting and after all mechs for buying.
+-Added Black Cat vanity set. Available from Treasure Bags in hardmode.
+-New sprite for Icedamned Arrow.
 -Fixed Moon Lord bag not appeared after beating Profaned Guardians.
 -Tweaked Titan Skin potion (and Modded Tank Combination) to provide Cursed Flame/Ichor protection after beating Twins.
 -Changed Dungeon Teleportation Potion to be available post Skeletron.
+-Fixed Lilith Emblem's bees MP crashability and mana magnet effect.
+-Changed icons for Skyline222 set.
 -Removed abiities of Demon Altar from Wing of the World
 -Fixed some typos and errors in descriptions/tooltips/dialog lines.
 v6.5

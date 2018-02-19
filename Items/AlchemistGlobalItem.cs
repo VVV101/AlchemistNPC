@@ -48,6 +48,12 @@ namespace AlchemistNPC.Items
 			}
 			if (Main.hardMode && context == "bossBag" && Main.rand.Next(50) == 0)
 			{
+				player.QuickSpawnItem(mod.ItemType("BlackCatHead"));
+				player.QuickSpawnItem(mod.ItemType("BlackCatBody"));
+				player.QuickSpawnItem(mod.ItemType("BlackCatLegs"));
+			}
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(50) == 0)
+			{
 				player.QuickSpawnItem(mod.ItemType("Skyline222Hair"));
 				player.QuickSpawnItem(mod.ItemType("Skyline222Body"));
 				player.QuickSpawnItem(mod.ItemType("Skyline222Legs"));

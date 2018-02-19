@@ -40,6 +40,7 @@ namespace AlchemistNPC.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.GetModPlayer<AlchemistNPCPlayer>(mod).lilithemblem = true;
+			player.manaMagnet = true;
 			player.magicDamage += 0.1f;
 			player.magicCrit += 10;
 			player.statManaMax2 += 50;

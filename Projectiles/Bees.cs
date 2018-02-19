@@ -24,15 +24,26 @@ namespace AlchemistNPC.Projectiles
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
-		for (int h = 0; h < 1; h++)
+			projectile.penetrate--;
+			if (projectile.penetrate <= 0)
+			{
+				projectile.Kill();
+			}
+			else
+			{
+				projectile.ai[0] += 0.1f;
+				if (projectile.velocity.X != oldVelocity.X)
 				{
-				Vector2 vel = new Vector2(0, -1);
-				float rand = Main.rand.NextFloat() * 6.283f;
-				vel = vel.RotatedBy(rand);
-				vel *= 5f;
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage, 0, Main.myPlayer);
+					projectile.velocity.X = -oldVelocity.X;
 				}
-			return true;
+				if (projectile.velocity.Y != oldVelocity.Y)
+				{
+					projectile.velocity.Y = -oldVelocity.Y;
+				}
+				projectile.velocity *= 0.75f;
+				Main.PlaySound(SoundID.Item10, projectile.position);
+			}
+			return false;
 		}
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

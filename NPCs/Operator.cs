@@ -589,6 +589,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaGift"));
 				shop.item[nextSlot].shopCustomPrice = 300000;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("Reverberation"));
+				shop.item[nextSlot].shopCustomPrice = 300000;
+				nextSlot++;
 				}
 		if (NPC.downedPlantBoss)
 			{

@@ -15,6 +15,7 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Big Bird's Lamp (O-02-40)");
 			Tooltip.SetDefault("A month later we concluded, there was no such thing as the beast."
+			+ "\n[c/FF0000:EGO Gift]"
 			+"\nProvides light around the character"
 			+"\nIncreases all damage and crits for 5%"
 			+"\nAttacks destroys enemy armor");
