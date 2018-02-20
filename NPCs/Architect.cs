@@ -550,7 +550,7 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 	    if (NPC.downedQueenBee)
 	    {
 	    shop.item[nextSlot].SetDefaults (ItemID.HoneyBlock);
-	    shop.item[next.slot].shopCustomPrice = 5;
+	    shop.item[nextSlot].shopCustomPrice = 5;
 	    nextSlot++;
 	    }
 		if (Main.hardMode)

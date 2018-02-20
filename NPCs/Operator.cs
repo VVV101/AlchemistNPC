@@ -589,8 +589,17 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaGift"));
 				shop.item[nextSlot].shopCustomPrice = 300000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("Reverberation"));
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ReverberationHead"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ReverberationBody"));
+				shop.item[nextSlot].shopCustomPrice = 350000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ReverberationLegs"));
 				shop.item[nextSlot].shopCustomPrice = 300000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("Reverberation"));
+				shop.item[nextSlot].shopCustomPrice = 350000;
 				nextSlot++;
 				}
 		if (NPC.downedPlantBoss)

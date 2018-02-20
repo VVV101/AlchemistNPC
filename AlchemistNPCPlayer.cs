@@ -32,6 +32,7 @@ namespace AlchemistNPC
 		public override void ResetEffects()
 		{
 			AlchemistNPC.scroll = false;
+			AlchemistNPC.RevSet = false;
 			Rampage = false;
 			lilithemblem = false;
 			watchercrystal = false;
