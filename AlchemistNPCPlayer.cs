@@ -33,6 +33,7 @@ namespace AlchemistNPC
 		{
 			AlchemistNPC.scroll = false;
 			AlchemistNPC.RevSet = false;
+			AlchemistNPC.LE = false;
 			Rampage = false;
 			lilithemblem = false;
 			watchercrystal = false;

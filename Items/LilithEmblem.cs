@@ -23,7 +23,7 @@ namespace AlchemistNPC.Items
 			+ "\nIncreases mana stars pickup range"
 			+ "\nAutomatically uses mana potions"
 			+ "\nYou shoot cluster of deadly bees while using magic weapons"
-			+ "\nNot working with some specific weapons");
+			+ "\nNot works with some very specific weapons");
 			DisplayName.AddTranslation(GameCulture.Russian, "Эмблема Лилит");
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический урон на 15% и шанс критического удара на 10%\nУменьшает затраты маны на 15%\nУвеличивает максимальную ману на 50\nУскоряет восстановление маны\nУвеличивает радиус сбора звёзд\nАвтоматически использует зелья маны\nВы выстреливает кучку смертоносных пчёл при использовании любого магического оружия\nПоследнее не работает с некоторыми специфическими оружиями"); 
 		}
@@ -39,7 +39,7 @@ namespace AlchemistNPC.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).lilithemblem = true;
+			AlchemistNPC.LE = true;
 			player.manaMagnet = true;
 			player.magicDamage += 0.1f;
 			player.magicCrit += 10;
@@ -57,6 +57,8 @@ namespace AlchemistNPC.Items
 			recipe.AddIngredient(ItemID.EyeoftheGolem);
 			recipe.AddIngredient(ItemID.ManaFlower);
 			recipe.AddIngredient(ItemID.ManaRegenerationBand);
+			recipe.AddIngredient(ItemID.BeeGun);
+			recipe.AddIngredient(ItemID.WaspGun);
             recipe.AddIngredient(ItemID.FragmentNebula, 25);
 			recipe.AddIngredient(ItemID.SpectreBar, 15);
 			recipe.AddIngredient(ItemID.LunarBar, 15);

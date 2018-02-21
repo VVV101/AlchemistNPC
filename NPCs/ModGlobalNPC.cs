@@ -177,7 +177,7 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 		
-		 public override void NPCLoot(NPC npc)
+		public override void NPCLoot(NPC npc)
         {
             for (int k = 0; k < 255; k++)
 			{
@@ -213,20 +213,23 @@ namespace AlchemistNPC.NPCs
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
 				}
 			}
-			if (npc.type == NPCID.DungeonGuardian && !Main.expertMode)
+			if (npc.type == NPCID.DungeonGuardian)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(5, 10));
-				 if (Main.rand.Next(10) == 0)
-                {
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OtherworldlyAmulet"));
+				if (!Main.expertMode)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(5, 10));
+					if (Main.rand.Next(10) == 0)
+					{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OtherworldlyAmulet"));
+					}
 				}
-			}
-			if (npc.type == NPCID.DungeonGuardian && Main.expertMode)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(15, 20));
-				if (Main.rand.Next(5) == 0)
-                {
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OtherworldlyAmulet"));
+				if (Main.expertMode)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(15, 20));
+					if (Main.rand.Next(5) == 0)
+					{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OtherworldlyAmulet"));
+					}
 				}
 			}
 			if (npc.type == NPCID.EyeofCthulhu && !N1)
@@ -237,7 +240,11 @@ namespace AlchemistNPC.NPCs
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote2"));
 			}
-			if (npc.type == NPCID.EaterofWorldsTail && !N2)
+			if (npc.type == NPCID.EaterofWorldsHead && !N2 && !NPC.AnyNPCs(NPCID.EaterofWorldsTail))
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote2"));
+			}
+			if (npc.type == NPCID.EaterofWorldsTail && !N2 && !NPC.AnyNPCs(NPCID.EaterofWorldsHead))
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote2"));
 			}
