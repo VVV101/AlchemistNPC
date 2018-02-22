@@ -14,14 +14,13 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Divine Lava");
 			Tooltip.SetDefault("Ichor & Lava, combined together by magic");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 6));
 			DisplayName.AddTranslation(GameCulture.Russian, "Вечная Лава");
 			Tooltip.AddTranslation(GameCulture.Russian, "Лава и Ихор, слитые воедино магией"); 
 		}    
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 16;
+			item.width = 32;
+			item.height = 32;
 			item.maxStack = 999;
 			item.value = 5000;
 			item.rare = 5;

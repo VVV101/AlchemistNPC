@@ -25,7 +25,7 @@ namespace AlchemistNPC.Items
 			item.rare = 11;
 			item.accessory = true;
 		}
-		//these wings use the same values as the solar wings
+		
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.wingTimeMax = 240;
@@ -40,7 +40,7 @@ namespace AlchemistNPC.Items
 			maxAscentMultiplier = 4f;
 			constantAscend = 0.135f;
 		}
-
+		
 		public override void HorizontalWingSpeeds(Player player, ref float speed, ref float acceleration)
 		{
 			speed = 16f;

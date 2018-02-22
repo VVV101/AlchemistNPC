@@ -15,7 +15,8 @@ namespace AlchemistNPC.Projectiles
 {
    public class AlchemistGlobalProjectile : GlobalProjectile
    {
-		public int counter = 0;
+		public bool firstTime = true;
+
 		public override bool InstancePerEntity
 		{
 			get
@@ -31,28 +32,42 @@ namespace AlchemistNPC.Projectiles
 				projectile.tileCollide = false;
 			}
 		}
+
+		private void createProjectTile(Projectile projectile) {
+			Vector2 vel = new Vector2(0, -1);
+			float rand = Main.rand.NextFloat() * 6.283f;
+			vel = vel.RotatedBy(rand);
+			vel *= 5f;
+			Projectile.NewProjectile(
+				projectile.Center.X,
+				projectile.Center.Y,
+				vel.X,
+				vel.Y,
+				mod.ProjectileType("Bees"),
+				projectile.damage,
+				0,
+				Main.myPlayer
+			);			
+		}
+		
 		public override void AI(Projectile projectile)
 		{
-			if (projectile.magic && AlchemistNPC.LE)
+			if (firstTime && !projectile.hostile && projectile.magic && AlchemistNPC.LE && projectile.type != mod.ProjectileType("Bees"))
 			{
-				if (counter == 0)
+				for (int g = 0; g < 4; g++)
 				{
-				if (projectile.type != mod.ProjectileType("Bees"))
-					{
-			for (int g = 0; g < 3; g++)
-						{
-					Vector2 vel = new Vector2(0, -1);
-					float rand = Main.rand.NextFloat() * 6.283f;
-					vel = vel.RotatedBy(rand);
-					vel *= 5f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage, 0, Main.myPlayer);
-					counter -= 10;
-						}
-					}
+					createProjectTile(projectile);
 				}
+				firstTime = false;
 			}
-			return;
-			counter++;
 		}
+		public override void OnHitNPC (Projectile projectile, NPC target, int damage, float knockback, bool crit)
+		{
+			if (projectile.minion && AlchemistNPC.SF)
+			{
+				target.immune[projectile.owner] = 1;
+			}
+		}
+
 	}
 }

@@ -14,9 +14,10 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Titan Skin Potion");
-			Tooltip.SetDefault("Grants immunity to some debuffs (On Fire!, Frostburn, Cursed Flames, Chilled, Frozen, Ichor)");
+			Tooltip.SetDefault("Grants immunity to some debuffs (On Fire!, Frostburn, Cursed Flame, Chilled, Frozen, Ichor)"
+			+ "\nImmunity to Cursed Flame and Ichor would work only after beating Twins");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Титановой Кожи");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к некоторым серьёзным дебаффам (Горение, Морозный ожог, Проклятое Пламя, Замедление, Заморозка, Ихор)"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к некоторым серьёзным дебаффам (Горение, Морозный ожог, Проклятое Пламя, Замедление, Заморозка, Ихор)\nИммунитет к Проклятому Пламени или Ихору активируется только после победы над Близнецами"); 
 		}    
 		public override void SetDefaults()
         {

@@ -7,9 +7,13 @@ Architect will come if you have at least 5 any NPC and EoW/BoC is beaten.
 v6.6
 -Added Reverberation (T-04-53) EGO weapon and armor set.
 Available after beating any Mechanical Boss for crafting and after all mechs for buying.
+-Added Sephirothic Fruit, ultimate accessory for Summoners.
+Increases minion damage by 10%, gives +2 max minions and minions ignore enemy invincibility frames. 
 -Added Black Cat vanity set. Available from Treasure Bags in hardmode.
+-Added Ballistic Nebular Destroyer. Post ML upgrade of Vortex Beater.
+Shoots spread of Vortex Rockets.
 -Added loot tables for Recipe Browser. May be needed to delete lootcache.
--New sprite for Icedamned Arrow.
+-New sprite for Icedamned and Seeping Arrows.
 -Fixed Moon Lord bag not appeared after beating Profaned Guardians.
 -Tweaked Titan Skin potion (and Modded Tank Combination) to provide Cursed Flame/Ichor protection after beating Twins.
 -Changed Dungeon Teleportation Potion to be available post Skeletron.

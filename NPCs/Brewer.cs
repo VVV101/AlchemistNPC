@@ -187,7 +187,7 @@ namespace AlchemistNPC.NPCs
 			animationType = NPCID.Mechanic;
         }
 		
-public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
 			if (NPC.downedBoss1)
 			{

@@ -23,6 +23,7 @@ namespace AlchemistNPC
 		public static bool scroll = false;
 		public static bool RevSet = false;
 		public static bool LE = false;
+		public static bool SF = false;
 		public static string GithubUserName { get { return "VVV101"; } }
 		public static string GithubProjectName { get { return "AlchemistNPC"; } }
 		
