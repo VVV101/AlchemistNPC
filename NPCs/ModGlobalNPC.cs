@@ -16,6 +16,10 @@ namespace AlchemistNPC.NPCs
 		public bool N1 = false;
 		public bool N2 = false;
 		public bool N3 = false;
+		public bool N4 = false;
+		public bool N5 = false;
+		public bool N6 = false;
+		public bool N7 = false;
 		
 		public override bool InstancePerEntity
 		{
@@ -97,6 +101,10 @@ namespace AlchemistNPC.NPCs
 			N1 = false;
 			N2 = false;
 			N3 = false;
+			N4 = false;
+			N5 = false;
+			N6 = false;
+			N7 = false;
         }
  
         public override void UpdateLifeRegen(NPC npc, ref int damage)
@@ -198,6 +206,22 @@ namespace AlchemistNPC.NPCs
 						{
 						N3 = true;
 						}
+						if (player.inventory[j].type == mod.ItemType("TornNote4"))
+						{
+						N4 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("TornNote5"))
+						{
+						N5 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("TornNote6"))
+						{
+						N6 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("TornNote7"))
+						{
+						N7 = true;
+						}
 					}
 				}
 			}
@@ -248,9 +272,25 @@ namespace AlchemistNPC.NPCs
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote2"));
 			}
-			if (npc.type == NPCID.SkeletronHead && !N3)
+			if (npc.type == NPCID.SkeletronPrime && !N4)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote3"));
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote4"));
+			}
+			if (npc.type == NPCID.Spazmatism && !N5 && !NPC.AnyNPCs(NPCID.Retinazer))
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote5"));
+			}
+			if (npc.type == NPCID.Retinazer && !N5 && !NPC.AnyNPCs(NPCID.Spazmatism))
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote5"));
+			}
+			if (npc.type == NPCID.TheDestroyer && !N6)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote6"));
+			}
+			if (npc.type == NPCID.Golem && !N7)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote7"));
 			}
         }
 	}

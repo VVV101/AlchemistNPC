@@ -48,8 +48,8 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "Магазин Э.П.О.С");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("BossDropsShop");
-		text.SetDefault("Boss Drops Shop");
-		text.AddTranslation(GameCulture.Russian, "Магазин лута Боссов");
+		text.SetDefault("Boss Drops & Materials Shop");
+		text.AddTranslation(GameCulture.Russian, "Магазин лута Боссов и материалов");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("TreasureBagsShop");
 		text.SetDefault("Treasure Bags Shop");

@@ -35,6 +35,11 @@ namespace AlchemistNPC.Items.Weapons
 			return true;
 		}
 
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(-15, 0);
+		}
+		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);

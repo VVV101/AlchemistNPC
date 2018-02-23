@@ -9,7 +9,7 @@ using Terraria.UI;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class CorrosiveFlaskCloud : ModProjectile
+	public class CorrosiveFlaskCloudMagic : ModProjectile
 	{
         public override void SetDefaults()
         {
@@ -21,8 +21,8 @@ namespace AlchemistNPC.Projectiles
             aiType = 511;
             projectile.friendly = true;
             projectile.timeLeft = 600;
-			projectile.magic = false;
-			projectile.thrown = true;
+			projectile.magic = true;
+			projectile.thrown = false;
         }
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

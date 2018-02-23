@@ -24,8 +24,9 @@ namespace AlchemistNPC.Items.Armor
 			Tooltip.AddTranslation(GameCulture.Russian, "Ленточка на плаще отражает мольбу дитя о счастье. Дитя, что не может покинуть своих друзей.\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает урон прислужников на 5%\nЗащита брони увеличивается после победы над определённым боссами\nТекущая защита брони будет показана в инвентаре");
 		
 		ModTranslation text = mod.CreateTranslation("LaetitiaSetBonus");
-		text.SetDefault("Allows to summon Little Witch Monster from the Gift."
-		+ "\nMinion damage grows stronger by additional 35% in Hardmode.");
+		text.SetDefault("Allows to summon Little Witch Monster from the Gift"
+		+ "\nMinion damage grows stronger by additional 35% in Hardmode"
+		+ "\nDoubles speed of Laetitia Rifle");
 		text.AddTranslation(GameCulture.Russian, "Позволяет призвать Монстра Маленькой Ведьмы из Дара.\nУрон прислужников дополнительно увеличивается на 35% в Хардмоде.");
 		mod.AddTranslation(text);
 		}
@@ -48,6 +49,7 @@ namespace AlchemistNPC.Items.Armor
 		{
 			string LaetitiaSetBonus = Language.GetTextValue("Mods.AlchemistNPC.LaetitiaSetBonus");
 			player.setBonus = LaetitiaSetBonus;
+			AlchemistNPC.LaetitiaSet = true;
 			if (Main.hardMode)
 			{
 			player.minionDamage += 0.35f;

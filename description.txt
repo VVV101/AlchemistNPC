@@ -5,15 +5,24 @@ Young Brewer spawns while both Alchemist & Brewer are in the world and world is 
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
 Architect will come if you have at least 5 any NPC and EoW/BoC is beaten.
 v6.6
--Added Reverberation (T-04-53) EGO weapon and armor set.
+-Added Reverberation (T-04-53) EGO weapon (Crossbow) and armor set.
 Available after beating any Mechanical Boss for crafting and after all mechs for buying.
+-Added Laetitia (O-01-67) EGO weapon (Rifle). Can be powered up by equipping full armor set.
+Available post EoW/BoC.
 -Added Sephirothic Fruit, ultimate accessory for Summoners.
-Increases minion damage by 10%, gives +2 max minions and minions ignore enemy invincibility frames. 
--Added Black Cat vanity set. Available from Treasure Bags in hardmode.
+Increases minion damage by 10%, gives +2 max minions and minions ignore enemy invincibility frames.
+-Added Life Elixir and Alchemical Bundle.
+Life Elixir adds +50 to max HP permanently. Can only be used once. Would work only if you have 500+ HP.
+Can be gathered from Alchemist by talking to him while having Philosopher's Stone and Alchemical Bundle.
+Available post ML.
 -Added Ballistic Nebular Destroyer. Post ML upgrade of Vortex Beater.
 Shoots spread of Vortex Rockets.
+-Added 4 more Torn Notes. Drops from Mechanical Bosses and Golem.
+Also, changed some text in previous ones.
+-Added Black Cat vanity set. Available from Treasure Bags in hardmode.
 -Added loot tables for Recipe Browser. May be needed to delete lootcache.
--New sprite for Icedamned and Seeping Arrows.
+-Added trails for Icedamned and Seeping Arrows.
+-New sprite for Icedamned and Seeping Arrows, Divine Lava.
 -Fixed Moon Lord bag not appeared after beating Profaned Guardians.
 -Tweaked Titan Skin potion (and Modded Tank Combination) to provide Cursed Flame/Ichor protection after beating Twins.
 -Changed Dungeon Teleportation Potion to be available post Skeletron.
@@ -22,7 +31,7 @@ Changed recipe for a bit.
 -Fixed Lilith Emblem's bees MP crashability and mana magnet effect.
 -Fixed multiple drop of Torn Note 2.
 -Changed icons for Skyline222 set.
--Removed abiities of Demon Altar from Wing of the World
+-Removed abilities of Demon Altar from Wing of the World
 -Fixed some typos and errors in descriptions/tooltips/dialog lines.
 v6.5
 -Added Materia Transmutator. Works as Ultimate Crafting Station.

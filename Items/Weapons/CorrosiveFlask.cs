@@ -29,7 +29,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.rare = 9;
 			item.UseSound = SoundID.Item106;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("CorrosiveFlask");
+			item.shoot = mod.ProjectileType("CorrosiveFlaskMagic");
 			item.shootSpeed = 16f;
 			item.noUseGraphic = true;
 			item.noMelee = true;

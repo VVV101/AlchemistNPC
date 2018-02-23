@@ -11,6 +11,9 @@ namespace AlchemistNPC.NPCs
 	public class Alchemist : ModNPC
 	{
 		public static bool baseShop = false;
+		public static bool PS = false;
+		public static bool AB = false;
+		public static bool LE = false;
 		public override string Texture
 		{
 			get
@@ -161,8 +164,19 @@ namespace AlchemistNPC.NPCs
 		text.SetDefault(" stay calm in a time like this? I want to know, NOW.");
 		text.AddTranslation(GameCulture.Russian, "может оставаться спокойной в такое время? Я ХОЧУ это узнать.");
 		mod.AddTranslation(text);
+		text = mod.CreateTranslation("BrewElixir");
+		text.SetDefault("Brew Life Elixir");
+		text.AddTranslation(GameCulture.Russian, "Сварить Эликсир Жизни");
+		mod.AddTranslation(text);
 		}
 
+		public override void ResetEffects()
+		{
+		PS = false;
+		AB = false;
+		LE = false;
+		}
+		
 		public override void SetDefaults()
 		{
 			npc.townNPC = true;
@@ -373,8 +387,35 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         public override void SetChatButtons(ref string button, ref string button2)
         {
 			string TremorShop = Language.GetTextValue("Mods.AlchemistNPC.TremorShop");
+			string BrewElixir = Language.GetTextValue("Mods.AlchemistNPC.BrewElixir");
             button = Lang.inter[28].Value;
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			for (int k = 0; k < 255; k++)
+			{
+				Player player = Main.player[k];
+				if (player.active)
+				{
+					for (int j = 0; j < player.inventory.Length; j++)
+					{
+						if (player.inventory[j].type == mod.ItemType("LifeElixir"))
+						{
+							LE = true;
+						}
+						if (player.inventory[j].type == ItemID.PhilosophersStone)
+						{
+							PS = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+						{
+							AB = true;
+						}
+					}
+				}
+			}
+			if (PS && AB)
+			{
+			button2 = BrewElixir;
+			}
+			if (ModLoader.GetLoadedMods().Contains("Tremor") && (!PS || !AB))
 			{
 			button2 = TremorShop;
 			}
@@ -382,8 +423,32 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
 		{
+		if (firstButton)
+		{
 		baseShop = firstButton;
 		shop = true;
+		}
+		else
+			{
+			shop = false;
+			Player player = Main.player[Main.myPlayer];
+				if (PS && AB)
+				{
+					player.QuickSpawnItem(mod.ItemType("LifeElixir"));
+					if (Main.player[Main.myPlayer].HasItem(ItemID.PhilosophersStone))
+					{
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
+							if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
+							{
+								inventory[k].stack--;
+							}
+						}
+				
+					}
+				}
+			}
 		}
  
         public override void SetupShop(Chest shop, ref int nextSlot)

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class CorrosiveFlask : ModProjectile
+	public class CorrosiveFlaskMagic : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -16,9 +16,9 @@ namespace AlchemistNPC.Projectiles
 		{
 			projectile.CloneDefaults(ProjectileID.ToxicFlask);
 			projectile.damage = 350;
+			projectile.magic = true;
+			projectile.thrown = false;
 			aiType = ProjectileID.ToxicFlask;
-			projectile.magic = false;
-			projectile.thrown = true;
 		}
 
 		public override bool PreKill(int timeLeft)
@@ -40,7 +40,7 @@ namespace AlchemistNPC.Projectiles
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(20, 402) * 0.01f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, value17.X, value17.Y, mod.ProjectileType("CorrosiveFlaskCloud"), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-30, 2));
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, value17.X, value17.Y, mod.ProjectileType("CorrosiveFlaskCloudMagic"), projectile.damage, 1f, projectile.owner, 0f, Main.rand.Next(-30, 2));
 				}
 			}
 		}

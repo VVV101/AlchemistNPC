@@ -1,3 +1,7 @@
+using Microsoft.Xna.Framework;
+using System.IO;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +9,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using Terraria.UI;
+using Terraria.DataStructures;
+using Terraria.GameContent.UI;
 
 namespace AlchemistNPC
 {
@@ -24,6 +31,7 @@ namespace AlchemistNPC
 		public static bool RevSet = false;
 		public static bool LE = false;
 		public static bool SF = false;
+		public static bool LaetitiaSet = false;
 		public static string GithubUserName { get { return "VVV101"; } }
 		public static string GithubProjectName { get { return "AlchemistNPC"; } }
 		
@@ -63,6 +71,28 @@ namespace AlchemistNPC
 		
 		public static bool CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
 		public static bool SacredToolsLoaded = ModLoader.GetMod("SacredTools") != null;
+		
+		public override void HandlePacket(BinaryReader reader, int whoAmI)
+		{
+			AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();
+			switch (msgType)
+			{
+				case AlchemistNPCMessageType.LifeElixir:
+					byte playernumber = reader.ReadByte();
+					Player lifeFruitsPlayer = Main.player[playernumber];
+					int LifeElixir = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().LifeElixir = LifeElixir;
+					break;
+				default:
+					ErrorLogger.Log("AlchemistNPC: Unknown Message type: " + msgType);
+					break;
+			}
+		}
+		
+		enum AlchemistNPCMessageType : byte
+		{
+		LifeElixir
+		}
 		
 		public override void AddRecipeGroups()
         {

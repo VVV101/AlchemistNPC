@@ -29,12 +29,16 @@ namespace AlchemistNPC
 		public bool jr = false;
 		public bool DB = false;
 		
+		private const int maxLifeElixir = 1;
+		public int LifeElixir = 0;
+		
 		public override void ResetEffects()
 		{
 			AlchemistNPC.scroll = false;
 			AlchemistNPC.RevSet = false;
 			AlchemistNPC.LE = false;
 			AlchemistNPC.SF = false;
+			AlchemistNPC.LaetitiaSet = false;
 			Rampage = false;
 			lilithemblem = false;
 			watchercrystal = false;
@@ -43,6 +47,34 @@ namespace AlchemistNPC
 			sscope = false;
 			lwm = false;
 			jr = false;
+			
+			player.statLifeMax2 += LifeElixir * 50;
+		}
+	
+		public override void clientClone(ModPlayer clientClone)
+		{
+			AlchemistNPCPlayer clone = clientClone as AlchemistNPCPlayer;
+		}
+	
+		public override void SyncPlayer(int toWho, int fromWho, bool newPlayer)
+		{
+			ModPacket packet = mod.GetPacket();
+			packet.Write((byte)LifeElixir);
+			packet.Write((byte)player.whoAmI);
+			packet.Write(LifeElixir);
+			packet.Send(toWho, fromWho);
+		}
+	
+		public override TagCompound Save()
+		{
+			return new TagCompound {
+				{"LifeElixir", LifeElixir},
+			};
+		}
+	
+		public override void Load(TagCompound tag)
+		{
+			LifeElixir = tag.GetInt("LifeElixir");
 		}
 	
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)

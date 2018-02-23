@@ -41,7 +41,6 @@ namespace AlchemistNPC.Projectiles
 					projectile.velocity.Y = -oldVelocity.Y;
 				}
 				projectile.velocity *= 0.75f;
-				Main.PlaySound(SoundID.Item10, projectile.position);
 			}
 			return false;
 		}
