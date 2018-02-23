@@ -1,4 +1,3 @@
-
 using System;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -49,6 +48,10 @@ namespace AlchemistNPC.Tiles
 			TileID.SteampunkBoiler,
 			TileID.Bottles,
 			TileID.LihzahrdFurnace,
+			TileID.ImbuingStation,
+			TileID.DyeVat,
+			TileID.Kegs,
+			TileID.HeavyWorkBench,
 			TileID.Tables, 
 			TileID.Chairs,
 			TileID.CookingPots,

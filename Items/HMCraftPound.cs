@@ -13,17 +13,25 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Superb Crafting Pound");
-            Tooltip.SetDefault("Now you can do best stuff");
+            Tooltip.SetDefault("Now you can do best stuff"
+			+"\nCan be placed as crafting station");
             DisplayName.AddTranslation(GameCulture.Russian, "Сложный Крафтовый Фунт");
-            Tooltip.AddTranslation(GameCulture.Russian, "Вы можете делать крутые штуки");
+            Tooltip.AddTranslation(GameCulture.Russian, "Вы можете делать крутые штуки\nМожет быть размещён как станция крафта");
         }
         public override void SetDefaults()
         {
             item.width = 24;
             item.height = 24;
             item.maxStack = 1;
-            item.value = 10000000;
+            item.value = 1000000;
             item.rare = 7;
+			item.useTurn = true;
+			item.autoReuse = true;
+			item.useAnimation = 15;
+			item.useTime = 10;
+			item.useStyle = 1;
+			item.consumable = true;
+			item.createTile = mod.TileType("HMCraftPound");
         }
 
         public override void AddRecipes()

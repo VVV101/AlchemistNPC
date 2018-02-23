@@ -22,6 +22,12 @@ namespace AlchemistNPC.Tiles
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
 			}
+		if (type == mod.TileType("SpecCraftPoint"))
+			{
+				Main.LocalPlayer.adjHoney = true;
+				Main.LocalPlayer.adjLava = true;
+				Main.LocalPlayer.adjWater = true;
+			}
 			return new int[0];
 		}
 	}

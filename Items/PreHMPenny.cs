@@ -13,9 +13,10 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Simple Crafting Penny");
-            Tooltip.SetDefault("Makes you look like a master of carpentry");
+            Tooltip.SetDefault("Makes you look like a master of carpentry"
+			+"\nCan be placed as crafting station");
             DisplayName.AddTranslation(GameCulture.Russian, "Простой Крафтовый Пенни");
-            Tooltip.AddTranslation(GameCulture.Russian, "Вы теперь мастер-слесарь");
+            Tooltip.AddTranslation(GameCulture.Russian, "Вы теперь мастер-слесарь\nМожет быть размещён как станция крафта");
         }
         public override void SetDefaults()
         {
@@ -24,6 +25,13 @@ namespace AlchemistNPC.Items
             item.maxStack = 1;
             item.value = 1000000;
             item.rare = 7;
+			item.useTurn = true;
+			item.autoReuse = true;
+			item.useAnimation = 15;
+			item.useTime = 10;
+			item.useStyle = 1;
+			item.consumable = true;
+			item.createTile = mod.TileType("PreHMPenny");
         }
 
         public override void AddRecipes()

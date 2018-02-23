@@ -23,6 +23,7 @@ Also, changed some text in previous ones.
 -Added loot tables for Recipe Browser. May be needed to delete lootcache.
 -Added trails for Icedamned and Seeping Arrows.
 -New sprite for Icedamned and Seeping Arrows, Divine Lava.
+-Items for crafting Materia Transmutator can now be used as crafting stations.
 -Fixed Moon Lord bag not appeared after beating Profaned Guardians.
 -Tweaked Titan Skin potion (and Modded Tank Combination) to provide Cursed Flame/Ichor protection after beating Twins.
 -Changed Dungeon Teleportation Potion to be available post Skeletron.
