@@ -234,7 +234,7 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Lang.inter[28].Value;
+            button = Language.GetTextValue("LegacyInterface.28");
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)

@@ -4,6 +4,15 @@ Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu.
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
 Architect will come if you have at least 5 any NPC and EoW/BoC is beaten.
+v6.7
+-Updated to tModLoader v0.10.1.3.
+-Added Beacon and Beacon Teleportator. Available in Hardmode.
+Beacon Teleportator could be bought from Alchemist.
+Beacon can be crafted with Adamantium/Titanium Bar and some other stuff.
+-Added new sprites for Battle, Explorer and Calamity combinations.
+-Life Elixir can be used twice now (Now it is possible to make +100 max HP).
+-Fixed Tremor shop of Alchemist.
+-Fixed recipe of Simple Crafting Penny.
 v6.6
 -Added Reverberation (T-04-53) EGO weapon (Crossbow) and armor set.
 Available after beating any Mechanical Boss for crafting and after all mechs for buying.

@@ -388,7 +388,7 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
 			string TremorShop = Language.GetTextValue("Mods.AlchemistNPC.TremorShop");
 			string BrewElixir = Language.GetTextValue("Mods.AlchemistNPC.BrewElixir");
-            button = Lang.inter[28].Value;
+            button = Language.GetTextValue("LegacyInterface.28");
 			for (int k = 0; k < 255; k++)
 			{
 				Player player = Main.player[k];
@@ -430,22 +430,26 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		}
 		else
 			{
-			shop = false;
-			Player player = Main.player[Main.myPlayer];
+				shop = true;
 				if (PS && AB)
 				{
-					player.QuickSpawnItem(mod.ItemType("LifeElixir"));
-					if (Main.player[Main.myPlayer].HasItem(ItemID.PhilosophersStone))
+				shop = false;
+				Player player = Main.player[Main.myPlayer];
+					if (PS && AB)
 					{
-						Item[] inventory = Main.player[Main.myPlayer].inventory;
-						for (int k = 0; k < inventory.Length; k++)
+						player.QuickSpawnItem(mod.ItemType("LifeElixir"));
+						if (Main.player[Main.myPlayer].HasItem(ItemID.PhilosophersStone))
 						{
-							if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
+							Item[] inventory = Main.player[Main.myPlayer].inventory;
+							for (int k = 0; k < inventory.Length; k++)
 							{
-								inventory[k].stack--;
+								if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
+								{
+									inventory[k].stack--;
+								}
 							}
+					
 						}
-				
 					}
 				}
 			}
@@ -517,9 +521,6 @@ shop.item[nextSlot].shopCustomPrice = 5000;
 shop.item[nextSlot].SetDefaults (ItemID.WormholePotion);
 shop.item[nextSlot].shopCustomPrice = 5000;
             nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.InvisibilityPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
 if (Main.hardMode)
 {
 shop.item[nextSlot].SetDefaults (ItemID.TeleportationPotion);
@@ -548,6 +549,12 @@ if (NPC.downedBoss3)
 {
 	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("DungeonTeleportationPotion"));
 	shop.item[nextSlot].shopCustomPrice = 20000;
+    nextSlot++;
+}
+if (Main.hardMode)
+{
+	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeaconTeleportator"));
+	shop.item[nextSlot].shopCustomPrice = 25000;
     nextSlot++;
 }
 if (NPC.downedPlantBoss)

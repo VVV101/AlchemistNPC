@@ -42,7 +42,6 @@ namespace AlchemistNPC.Items
             recipe.AddIngredient(ItemID.Hellforge);
             recipe.AddIngredient(ItemID.Loom);
             recipe.AddIngredient(ItemID.AlchemyTable);
-            recipe.AddIngredient(ItemID.Sawmill);
             recipe.AddIngredient(ItemID.DyeVat);
             recipe.AddIngredient(ItemID.WoodenTable);
             recipe.AddIngredient(ItemID.WoodenChair);

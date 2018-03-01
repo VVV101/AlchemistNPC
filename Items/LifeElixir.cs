@@ -13,9 +13,9 @@ namespace AlchemistNPC.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Life Elixir");
-			Tooltip.SetDefault("Permanently increases maximum life by 50. Can be used once.");
+			Tooltip.SetDefault("Permanently increases maximum life by 50. Can be used twice.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Эликсир Жизни");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальное здоровье на 50. Можно использовать только 1 раз."); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальное здоровье на 50. Можно использовать только 2 раза."); 
 			
 		}
 
@@ -27,7 +27,7 @@ namespace AlchemistNPC.Items
 
 		public override bool CanUseItem(Player player)
 		{
-			return player.statLifeMax >= 500 && player.GetModPlayer<AlchemistNPCPlayer>().LifeElixir < 1;
+			return player.statLifeMax >= 500 && player.GetModPlayer<AlchemistNPCPlayer>().LifeElixir < 2;
 		}
 
 		public override bool UseItem(Player player)

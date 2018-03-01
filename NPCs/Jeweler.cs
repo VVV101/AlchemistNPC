@@ -256,7 +256,7 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
             string ArenaShop = Language.GetTextValue("Mods.AlchemistNPC.ArenaShop");
 			string Combine = Language.GetTextValue("Mods.AlchemistNPC.Combine");
-			button = Lang.inter[28].Value;
+			button = Language.GetTextValue("LegacyInterface.28");
 			button2 = ArenaShop;
 			for (int k = 0; k < 255; k++)
 			{

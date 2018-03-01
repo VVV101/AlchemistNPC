@@ -6,18 +6,19 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using AlchemistNPC.Tiles;
  
 namespace AlchemistNPC.Items
 {
-     public class DungeonTeleportationPotion : ModItem
+     public class BeaconTeleportator : ModItem
     {
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Dungeon Teleportation Potion");
-			Tooltip.SetDefault("Teleports you to Dungeon entrance"
-			+"\nDoesn't work in multiplayer :(");
-			DisplayName.AddTranslation(GameCulture.Russian, "Зелье телепортации в Данж");
-			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас ко входу в Данж\nНе работает в мультиплеере :("); 
+			DisplayName.SetDefault("Beacon Teleportator");
+			Tooltip.SetDefault("Teleports you to placed Beacon"
+			+"\nWill not teleport you anywhere if Beacon is not placed");
+			DisplayName.AddTranslation(GameCulture.Russian, "Телепортер к Маяку");
+			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в Маяку\nНе телепортирует никуда, если Маяк не размещён"); 
 		}    
 		public override void SetDefaults()
         {
@@ -27,24 +28,32 @@ namespace AlchemistNPC.Items
             return;
         }
 		
-		public override bool CanUseItem(Player player)
-		{
-			if (Main.netMode == 1 || Main.netMode == 2)
-			{
-				return false;
-			}
-			return true;
-		}
-		
 		public override bool UseItem(Player player)
 		{
-			HandleDungeonTeleport(player);
+			HandleBeaconTeleport(player);
 			return true;
 		}
 		
-		private static void HandleDungeonTeleport(Player player, bool syncData = false)
+		private static void HandleBeaconTeleport(Player player, bool syncData = false)
 		{
-			RunTeleport(player, new Vector2(Main.dungeonX, Main.dungeonY), syncData, true);
+			Mod mod = ModLoader.GetMod("AlchemistNPC");
+			Vector2 prePos = player.position;
+			Vector2 pos = prePos;
+			for (int x = 0; x < Main.tile.GetLength(0); ++x)
+			{
+				for (int y = 0; y < Main.tile.GetLength(1); ++y)
+				{
+					if (Main.tile[x, y] == null) continue;
+					if (Main.tile[x, y].type != mod.TileType("Beacon")) continue;
+					pos = new Vector2((x-1) * 16, (y-2) * 16);
+					break;
+				}
+			}
+			if (pos != prePos)
+			{
+				RunTeleport(player, new Vector2(pos.X, pos.Y), syncData, false);
+			}
+			else return;
 		}
 		
 		private static void RunTeleport(Player player, Vector2 pos, bool syncData = false, bool convertFromTiles = false)

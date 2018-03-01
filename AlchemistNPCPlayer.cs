@@ -29,7 +29,7 @@ namespace AlchemistNPC
 		public bool jr = false;
 		public bool DB = false;
 		
-		private const int maxLifeElixir = 1;
+		private const int maxLifeElixir = 2;
 		public int LifeElixir = 0;
 		
 		public override void ResetEffects()
@@ -90,7 +90,7 @@ namespace AlchemistNPC
 		if (player.FindBuffIndex(mod.BuffType("BigBirdLamp")) > -1)
 			{
 			target.AddBuff(BuffID.Ichor, 600);
-			target.AddBuff(BuffID.BrokenArmor, 600);
+			target.AddBuff(BuffID.BetsysCurse, 600);
 			}
 		if (player.FindBuffIndex(mod.BuffType("BastScroll")) > -1)
 			{
@@ -111,7 +111,7 @@ namespace AlchemistNPC
 		if (player.FindBuffIndex(mod.BuffType("BigBirdLamp")) > -1)
 			{
 			target.AddBuff(BuffID.Ichor, 600);
-			target.AddBuff(BuffID.BrokenArmor, 600);
+			target.AddBuff(BuffID.BetsysCurse, 600);
 			}
 		if (player.FindBuffIndex(mod.BuffType("BastScroll")) > -1)
 			{
