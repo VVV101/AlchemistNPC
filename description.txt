@@ -4,6 +4,18 @@ Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu.
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
 Architect will come if you have at least 5 any NPC and EoW/BoC is beaten.
+v6.8
+-Updated sprites for both Tank combinations, Ranger, Summoner, Mage and Explorer combinations.
+-Updated sprite for Crystal Dust bullet/material, Beacon Teleporter Potion.
+-Animated tiles of Simple Crafting Penny, Superb Crafting Pound and Special Crafting Point.
+-Added Torn Notes #8, #9. Drops from Golem and Moon Lord.
+-Torn Note #7 now drops from Plantera instead of Golem.
+-Added Fuaran. Allows to increase max mana by 100.
+Drops from Golem with 10% chance. Can only be used once.
+-Fixed drop of Torn Note#3 from Skeletron.
+-Fixed Simple Crafting Penny and Materia Transmutator to have abilities of Alchemy Table.
+-Added projectile.netImportant to Lilith Emblem's bees. May help in MP.
+-Fixed some typos.
 v6.7
 -Updated to tModLoader v0.10.1.3.
 -Added Beacon and Beacon Teleportator. Available in Hardmode.

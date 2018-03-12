@@ -14,10 +14,10 @@ namespace AlchemistNPC.Items
     {
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Beacon Teleportator");
+			DisplayName.SetDefault("Beacon Teleporter Potion");
 			Tooltip.SetDefault("Teleports you to placed Beacon"
 			+"\nWill not teleport you anywhere if Beacon is not placed");
-			DisplayName.AddTranslation(GameCulture.Russian, "Телепортер к Маяку");
+			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Маяку");
 			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в Маяку\nНе телепортирует никуда, если Маяк не размещён"); 
 		}    
 		public override void SetDefaults()

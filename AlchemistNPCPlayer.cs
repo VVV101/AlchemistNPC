@@ -31,6 +31,8 @@ namespace AlchemistNPC
 		
 		private const int maxLifeElixir = 2;
 		public int LifeElixir = 0;
+		private const int maxFuaran = 1;
+		public int Fuaran = 0;
 		
 		public override void ResetEffects()
 		{
@@ -49,6 +51,7 @@ namespace AlchemistNPC
 			jr = false;
 			
 			player.statLifeMax2 += LifeElixir * 50;
+			player.statManaMax2 += Fuaran * 100;
 		}
 	
 		public override void clientClone(ModPlayer clientClone)
@@ -60,8 +63,10 @@ namespace AlchemistNPC
 		{
 			ModPacket packet = mod.GetPacket();
 			packet.Write((byte)LifeElixir);
+			packet.Write((byte)Fuaran);
 			packet.Write((byte)player.whoAmI);
 			packet.Write(LifeElixir);
+			packet.Write(Fuaran);
 			packet.Send(toWho, fromWho);
 		}
 	
@@ -69,12 +74,14 @@ namespace AlchemistNPC
 		{
 			return new TagCompound {
 				{"LifeElixir", LifeElixir},
+				{"Fuaran", Fuaran},
 			};
 		}
 	
 		public override void Load(TagCompound tag)
 		{
 			LifeElixir = tag.GetInt("LifeElixir");
+			Fuaran = tag.GetInt("Fuaran");
 		}
 	
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)

@@ -83,6 +83,12 @@ namespace AlchemistNPC
 					int LifeElixir = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().LifeElixir = LifeElixir;
 					break;
+				case AlchemistNPCMessageType.Fuaran:
+					byte playernumber1 = reader.ReadByte();
+					Player Fuarans = Main.player[playernumber1];
+					int Fuaran = reader.ReadInt32();
+					Fuarans.GetModPlayer<AlchemistNPCPlayer>().Fuaran = Fuaran;
+					break;
 				default:
 					ErrorLogger.Log("AlchemistNPC: Unknown Message type: " + msgType);
 					break;
@@ -91,7 +97,8 @@ namespace AlchemistNPC
 		
 		enum AlchemistNPCMessageType : byte
 		{
-		LifeElixir
+		LifeElixir,
+		Fuaran
 		}
 		
 		public override void AddRecipeGroups()

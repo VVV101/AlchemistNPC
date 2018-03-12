@@ -20,9 +20,11 @@ namespace AlchemistNPC.Tiles
 			Main.tileNoAttach[Type] = true;
 			Main.tileTable[Type] = true;
 			Main.tileLavaDeath[Type] = false;
-			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-			TileObjectData.newTile.Origin = new Point16(0, 1);
-			TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
+			TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
+			TileObjectData.newTile.Height = 3;
+			TileObjectData.newTile.Origin = new Point16(1, 2);
+			TileObjectData.newTile.StyleHorizontal = true;
+			TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 18 };
 			TileObjectData.addTile(Type);
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Superb Crafting Pound");
@@ -46,8 +48,21 @@ namespace AlchemistNPC.Tiles
 			TileID.LihzahrdFurnace,
 			TileID.LunarCraftingStation
 			};
+			dustType = mod.DustType("JustitiaPale");
+			animationFrameHeight = 56;
+		}
+		
+		public override void NumDust(int i, int j, bool fail, ref int num)
+		{
+			num = fail ? 1 : 3;
 		}
 
+		public override void AnimateTile(ref int frame, ref int frameCounter)
+		{
+			frame = Main.tileFrame[TileID.FireflyinaBottle];
+			frameCounter = Main.tileFrameCounter[TileID.FireflyinaBottle];
+		}
+		
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
 			Item.NewItem(i * 16, j * 16, 32, 16, mod.ItemType("HMCraftPound"));

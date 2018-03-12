@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.Placeable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Beacon");
-			Tooltip.SetDefault("Can be used as target for Beacon Teleportator while placed"
+			Tooltip.SetDefault("Can be used as target for Beacon Teleporter potion while placed"
 			+"\nCannot be placed if another one is already placed in the world");
 			DisplayName.AddTranslation(GameCulture.Russian, "Маяк");
 			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использован в качестве цели для Телепортатора к Маяку, когда размещён\nНе может быть установлен, если он уже есть в мире"); 

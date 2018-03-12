@@ -65,6 +65,7 @@ namespace AlchemistNPC.Tiles
 			TileID.IceMachine,
 			TileID.SkyMill,
 			TileID.HoneyDispenser,
+			TileID.AlchemyTable,
 			TileID.LunarCraftingStation
 			};
 			dustType = mod.DustType("JustitiaPale");

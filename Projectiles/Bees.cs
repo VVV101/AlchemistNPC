@@ -17,6 +17,7 @@ namespace AlchemistNPC.Projectiles
 		public override void SetDefaults()
 		{
 		projectile.CloneDefaults(ProjectileID.Bee);
+		projectile.netImportant = true;
 		projectile.magic = true; 
 		projectile.timeLeft = 240;
 		aiType = ProjectileID.Bee;

@@ -20,6 +20,8 @@ namespace AlchemistNPC.NPCs
 		public bool N5 = false;
 		public bool N6 = false;
 		public bool N7 = false;
+		public bool N8 = false;
+		public bool N9 = false;
 		
 		public override bool InstancePerEntity
 		{
@@ -105,6 +107,8 @@ namespace AlchemistNPC.NPCs
 			N5 = false;
 			N6 = false;
 			N7 = false;
+			N8 = false;
+			N9 = false;
         }
  
         public override void UpdateLifeRegen(NPC npc, ref int damage)
@@ -222,6 +226,14 @@ namespace AlchemistNPC.NPCs
 						{
 						N7 = true;
 						}
+						if (player.inventory[j].type == mod.ItemType("TornNote8"))
+						{
+						N8 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("TornNote9"))
+						{
+						N9 = true;
+						}
 					}
 				}
 			}
@@ -272,6 +284,10 @@ namespace AlchemistNPC.NPCs
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote2"));
 			}
+			if (npc.type == NPCID.SkeletronHead && !N3)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote3"));
+			}
 			if (npc.type == NPCID.SkeletronPrime && !N4)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote4"));
@@ -288,9 +304,24 @@ namespace AlchemistNPC.NPCs
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote6"));
 			}
-			if (npc.type == NPCID.Golem && !N7)
+			if (npc.type == NPCID.Plantera && !N7)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote7"));
+			}
+			if (npc.type == NPCID.Golem && !N8)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote8"));
+			}
+			if (npc.type == NPCID.Golem)
+			{
+				if (Main.rand.Next(10) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Fuaran"));
+				}
+			}
+			if (npc.type == NPCID.MoonLordCore && !N9)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote9"));
 			}
         }
 	}

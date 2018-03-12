@@ -14,7 +14,6 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Crystal Dust");
 			Tooltip.SetDefault("Dust, which is made from Crystal Shards.");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 8));
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристальная пыль");
 			Tooltip.AddTranslation(GameCulture.Russian, "Пьль, сделанная из осколков кристалла"); 
 		}    
