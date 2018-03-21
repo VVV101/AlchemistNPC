@@ -31,7 +31,10 @@ namespace AlchemistNPC
 		public static bool RevSet = false;
 		public static bool LE = false;
 		public static bool SF = false;
+		public static int DTH = 0;
 		public static bool LaetitiaSet = false;
+		public static float ppx = 0f;
+		public static float ppy = 0f;
 		public static string GithubUserName { get { return "VVV101"; } }
 		public static string GithubProjectName { get { return "AlchemistNPC"; } }
 		

@@ -13,10 +13,10 @@ namespace AlchemistNPC.Items
     {
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pink Gold Strawberry Soda");
-			Tooltip.SetDefault("Heals for 150 hp and 150 mana, removes most debuffs for a short time");
-			DisplayName.AddTranslation(GameCulture.Russian, "Сода Розово-Золотой Клубники");
-			Tooltip.AddTranslation(GameCulture.Russian, "Пополняет 150 жизней и маны, убирает большинство дебаффов в течение короткого времени"); 
+		DisplayName.SetDefault("Pink Gold Strawberry Soda");
+		Tooltip.SetDefault("Heals for 150 hp and 150 mana, removes most debuffs for a short time");
+		DisplayName.AddTranslation(GameCulture.Russian, "Сода Розово-Золотой Клубники");
+		Tooltip.AddTranslation(GameCulture.Russian, "Пополняет 150 жизней и маны, убирает большинство дебаффов в течение короткого времени"); 
 		}    
 		public override void SetDefaults()
         {

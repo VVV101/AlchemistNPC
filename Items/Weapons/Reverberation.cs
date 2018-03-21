@@ -26,8 +26,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.ranged = true;
 			item.width = 40;
 			item.height = 20;
-			item.useTime = 10;
-			item.useAnimation = 10;
+			item.useTime = 15;
+			item.useAnimation = 15;
 			item.useStyle = 5;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 8;
@@ -56,11 +56,15 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (AlchemistNPC.RevSet)
 				{
-				int numberProjectiles = 2 + Main.rand.Next(3);
-				for (int i = 0; i < numberProjectiles; i++)
+					if (player.statMana >= 30)
 					{
-					Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(20));
-					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ProjectileID.CrystalLeafShot, damage/2, knockBack, player.whoAmI);
+					int numberProjectiles = 2 + Main.rand.Next(3);
+					for (int i = 0; i < numberProjectiles; i++)
+						{
+						Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(20));
+						Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ProjectileID.CrystalLeafShot, damage/2, knockBack, player.whoAmI);
+						player.statMana -= 4;
+						}
 					}
 				}
 			if (!AlchemistNPC.RevSet)

@@ -13,10 +13,10 @@ namespace AlchemistNPC.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Memer's Riposte");
-			Tooltip.SetDefault("Mirrors 500% of damage back to enemy"
+			Tooltip.SetDefault("Mirrors 500% of contact damage back to enemy"
 			+ "\nIncrease all damage by 15%");
 				DisplayName.AddTranslation(GameCulture.Russian, "Ответ Мемеру");
-			Tooltip.AddTranslation(GameCulture.Russian, "Отражает 500% урона обратно противнику\nУвеличивает весь урон на 15%"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Отражает 500% контактного урона обратно противнику\nУвеличивает весь урон на 15%"); 
 		}
 	
 		public override void SetDefaults()

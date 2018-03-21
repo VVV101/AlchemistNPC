@@ -15,13 +15,31 @@ namespace AlchemistNPC.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.IchorArrow);
-			aiType = ProjectileID.HellfireArrow;
+			aiType = ProjectileID.IchorArrow;
 		}
 
 		public override bool PreKill(int timeLeft)
 		{
-			projectile.type = ProjectileID.HellfireArrow;
+			projectile.type = ProjectileID.IchorArrow;
 			return true;
+		}
+		
+		public override void AI()
+		{
+			if (Main.rand.Next(3) == 0)
+				{
+					Dust dust = Dust.NewDustDirect(projectile.position, projectile.height, projectile.width, mod.DustType("CrystalDust"),
+						projectile.velocity.X * .2f, projectile.velocity.Y * .2f, 200, Scale: 1.2f);
+					dust.velocity += projectile.velocity * 0.3f;
+					dust.velocity *= 0.2f;
+				}
+				if (Main.rand.Next(4) == 0)
+				{
+					Dust dust = Dust.NewDustDirect(projectile.position, projectile.height, projectile.width, mod.DustType("CrystalDust"),
+						0, 0, 254, Scale: 0.3f);
+					dust.velocity += projectile.velocity * 0.5f;
+					dust.velocity *= 0.5f;
+				}
 		}
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)
@@ -36,7 +54,7 @@ namespace AlchemistNPC.Projectiles
 					float rand = Main.rand.NextFloat() * 6.283f;
 					vel = vel.RotatedBy(rand);
 					vel *= 5f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CrystalDust"), projectile.damage/4, 0, Main.myPlayer);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CrystalDust"), projectile.damage/3, 0, Main.myPlayer);
 				}
 			}
 			return false;
@@ -50,7 +68,7 @@ namespace AlchemistNPC.Projectiles
 					float rand = Main.rand.NextFloat() * 6.283f;
 					vel = vel.RotatedBy(rand);
 					vel *= 5f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CrystalDust"), projectile.damage/4, 0, Main.myPlayer);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CrystalDust"), projectile.damage/3, 0, Main.myPlayer);
 				}
 			}
 		}

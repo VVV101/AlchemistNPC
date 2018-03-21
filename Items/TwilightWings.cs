@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items
 			+ "\n[c/FF0000:EGO Gift]"
 			+ "\nWorks as Wings");
 			DisplayName.AddTranslation(GameCulture.Russian, "Крылья Сумерек (O-02-63)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Они выстояли Сумерки и всретили Закат. Прекратили ли птицы чирикать в лесу?\n[c/FF0000:Э.П.О.С. Дар]\nРаботает как Крылья"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Они выстояли Сумерки и встретили Закат. Прекратили ли птицы чирикать в лесу?\n[c/FF0000:Э.П.О.С. Дар]\nРаботает как Крылья"); 
 		}
 
 		public override void SetDefaults()

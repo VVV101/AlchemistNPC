@@ -742,6 +742,9 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
                         shop.item[nextSlot].shopCustomPrice = 200000;
                         nextSlot++;
                     }
+					shop.item[nextSlot].SetDefaults (ItemID.FleshGrinder);
+					shop.item[nextSlot].shopCustomPrice = 15000;
+					nextSlot++;
                 }
 		
 			if (NPC.downedMechBossAny)

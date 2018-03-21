@@ -20,8 +20,8 @@ namespace AlchemistNPC.Items.Armor
 			+ "\nIncreases ranged damage by 20%");
 			Tooltip.AddTranslation(GameCulture.Russian, "Гладкая поверхность всё так же прочна, как будто не была восстановлена несколько раз.\n[c/FF0000:Э.П.О.С часть брони]\nПовышает урон в дальнем бою на 20%");
 		ModTranslation text = mod.CreateTranslation("ReverberationSetBonus");
-		text.SetDefault("Forms shield around weilder. Shield reduces all incoming damage by 20%\nSpeeds up all arrows\nImproves Reverberation Crossbow:\nRemoves manacost for additional projectiles\nMakes crossbow shot multiple projectiles");
-		text.AddTranslation(GameCulture.Russian, "Создаёт щит вокруг владельца. Щит уменьшает весь входящий урон на 20%\nУскоряет все стрелы\nУлучшает арбалет 'Реверберация'\nУбирает затраты маны на выстрел дополнительными снарядами\nАрбалет будет выстреливать несколько дополнительных снарядов");
+		text.SetDefault("Forms shield around weilder. Shield reduces all incoming damage by 15%\nSpeeds up all arrows\nImproves Reverberation Crossbow:\nLowers manacost for additional projectiles\nMakes crossbow shot multiple projectiles");
+		text.AddTranslation(GameCulture.Russian, "Создаёт щит вокруг владельца. Щит уменьшает весь входящий урон на 15%\nУскоряет все стрелы\nУлучшает арбалет 'Реверберация'\nУменьшает затраты маны на выстрел дополнительными снарядами\nАрбалет будет выстреливать несколько дополнительных снарядов");
 		mod.AddTranslation(text);
 		}
 

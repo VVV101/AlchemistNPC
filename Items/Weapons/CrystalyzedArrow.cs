@@ -32,7 +32,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.HellfireArrow, 150);
+			recipe.AddIngredient(ItemID.WoodenArrow, 150);
 			recipe.AddIngredient(null, "CrystalDust", 3);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this, 150);
