@@ -16,6 +16,7 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
+			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Ненависть");
 			Description.AddTranslation(GameCulture.Russian, "Вы готовы выпустить свою Ненависть"); 
 		}

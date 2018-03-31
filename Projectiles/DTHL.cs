@@ -8,11 +8,11 @@ using AlchemistNPC.Items.Weapons;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class DTH : ModProjectile
+	public class DTHL : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("DTH");
+			DisplayName.SetDefault("DTHL");
 			ProjectileID.Sets.Homing[projectile.type] = true;
 		}
 
@@ -20,9 +20,9 @@ namespace AlchemistNPC.Projectiles
 		{
 			projectile.CloneDefaults(ProjectileID.Bullet);
 			projectile.ranged = false;
-			projectile.width = 128;
-			projectile.height = 128;
-			projectile.penetrate = 180;
+			projectile.width = 34;
+			projectile.height = 90;
+			projectile.penetrate = 30;
 			projectile.timeLeft = 600;
 			projectile.tileCollide = false;
 			aiType = ProjectileID.Bullet;

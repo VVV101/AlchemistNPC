@@ -11,6 +11,7 @@ namespace AlchemistNPC.NPCs
 	public class Alchemist : ModNPC
 	{
 		public static bool baseShop = false;
+		public static bool tremorShop = false;
 		public static bool PS = false;
 		public static bool AB = false;
 		public static bool LE = false;
@@ -175,6 +176,8 @@ namespace AlchemistNPC.NPCs
 		PS = false;
 		AB = false;
 		LE = false;
+		baseShop = false;
+		tremorShop = false;
 		}
 		
 		public override void SetDefaults()
@@ -425,11 +428,14 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
 		if (firstButton)
 		{
-		baseShop = firstButton;
+		baseShop = true;
+		tremorShop = false;
 		shop = true;
 		}
 		else
 			{
+				baseShop = false;
+				tremorShop = true;
 				shop = true;
 				if (PS && AB)
 				{
@@ -458,159 +464,162 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
 		if (baseShop){
-shop.item[nextSlot].SetDefaults (ItemID.LesserHealingPotion);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-            nextSlot++;
-if (NPC.downedBoss2)
-{
-shop.item[nextSlot].SetDefaults (ItemID.HealingPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-}
-if (Main.hardMode)
-{
-shop.item[nextSlot].SetDefaults (ItemID.GreaterHealingPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-}
-if (NPC.downedMoonlord)
-{
-shop.item[nextSlot].SetDefaults (ItemID.SuperHealingPotion);
-			shop.item[nextSlot].shopCustomPrice = 25000;
-            nextSlot++;
-}
-shop.item[nextSlot].SetDefaults (ItemID.LesserManaPotion);
-			shop.item[nextSlot].shopCustomPrice = 500;
-            nextSlot++;
-if (NPC.downedBoss2)
-{
-shop.item[nextSlot].SetDefaults (ItemID.ManaPotion);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-            nextSlot++;
-}
-if (Main.hardMode)
-{
-shop.item[nextSlot].SetDefaults (ItemID.GreaterManaPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;		
-}
-if (Main.hardMode && NPC.downedMechBoss1 && (NPC.downedMechBoss2 && NPC.downedMechBoss3))
-{
-shop.item[nextSlot].SetDefaults (ItemID.SuperManaPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;	
-}
-if (NPC.downedBoss1)
-{
-shop.item[nextSlot].SetDefaults (ItemID.LesserRestorationPotion);
-			shop.item[nextSlot].shopCustomPrice = 3500;
-            nextSlot++;
-}
-if (NPC.downedBoss2)
-{
-shop.item[nextSlot].SetDefaults (ItemID.RestorationPotion);
-			shop.item[nextSlot].shopCustomPrice = 7500;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.StrangeBrew);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-}
-shop.item[nextSlot].SetDefaults (ItemID.RecallPotion);
-shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.WormholePotion);
-shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-if (Main.hardMode)
-{
-shop.item[nextSlot].SetDefaults (ItemID.TeleportationPotion);
-			shop.item[nextSlot].shopCustomPrice = 7500;
-            nextSlot++;	
-}
-shop.item[nextSlot].SetDefaults (ItemID.GenderChangePotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;			
-if (ModLoader.GetLoadedMods().Contains("imkSushisMod"))
-			{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
-				shop.item[nextSlot].shopCustomPrice = 2500;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("AnglerAmnesiaPotion"));
-				shop.item[nextSlot].shopCustomPrice = 10000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("MeteoritePotion"));
-				shop.item[nextSlot].shopCustomPrice = 50000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("ResurrectionPotion"));
-				shop.item[nextSlot].shopCustomPrice = 25000;
-				nextSlot++;
-			}
-if (NPC.downedBoss3)
-{
-	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("DungeonTeleportationPotion"));
-	shop.item[nextSlot].shopCustomPrice = 20000;
-    nextSlot++;
-}
-if (Main.hardMode)
-{
-	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeaconTeleportator"));
-	shop.item[nextSlot].shopCustomPrice = 25000;
-    nextSlot++;
-}
-if (NPC.downedPlantBoss)
-{
-	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TempleTeleportationPotion"));
-	shop.item[nextSlot].shopCustomPrice = 100000;
-    nextSlot++;
-}
-shop.item[nextSlot].SetDefaults (ItemID.Bottle);
-			shop.item[nextSlot].shopCustomPrice = 100;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.BottledWater);
-			shop.item[nextSlot].shopCustomPrice = 500;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.Mushroom);
-			shop.item[nextSlot].shopCustomPrice = 500;
-            nextSlot++;			
-shop.item[nextSlot].SetDefaults (ItemID.GlowingMushroom);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-            nextSlot++;
-			if (NPC.downedBoss2)
-{
-shop.item[nextSlot].SetDefaults (ItemID.VileMushroom);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.ViciousMushroom);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.FallenStar);
-            nextSlot++;
-}
-shop.item[nextSlot].SetDefaults (ItemID.Gel);
-			shop.item[nextSlot].shopCustomPrice = 100;
-            nextSlot++;
-			if (NPC.downedBoss2)
-{
-shop.item[nextSlot].SetDefaults (ItemID.PinkGel);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-            nextSlot++;
-}
-if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-	{
-if (NPC.downedBoss2)
+		shop.item[nextSlot].SetDefaults (ItemID.LesserHealingPotion);
+		shop.item[nextSlot].shopCustomPrice = 1000;
+		nextSlot++;
+		if (NPC.downedBoss2)
 		{
-		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("WaterChestnut"));
+		shop.item[nextSlot].SetDefaults (ItemID.HealingPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		}
+		if (Main.hardMode)
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.GreaterHealingPotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		}
+		if (NPC.downedMoonlord)
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.SuperHealingPotion);
+		shop.item[nextSlot].shopCustomPrice = 25000;
+		nextSlot++;
+		}
+		shop.item[nextSlot].SetDefaults (ItemID.LesserManaPotion);
+		shop.item[nextSlot].shopCustomPrice = 500;
+		nextSlot++;
+		if (NPC.downedBoss2)
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.ManaPotion);
+		shop.item[nextSlot].shopCustomPrice = 1000;
+		nextSlot++;
+		}
+		if (Main.hardMode)
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.GreaterManaPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;		
+		}
+		if (Main.hardMode && NPC.downedMechBoss1 && (NPC.downedMechBoss2 && NPC.downedMechBoss3))
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.SuperManaPotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;	
+		}
+		if (NPC.downedBoss1)
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.LesserRestorationPotion);
 		shop.item[nextSlot].shopCustomPrice = 3500;
 		nextSlot++;
 		}
-	if (NPC.downedBoss3)
+		if (NPC.downedBoss2)
 		{
-		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Jelly"));
+		shop.item[nextSlot].SetDefaults (ItemID.RestorationPotion);
 		shop.item[nextSlot].shopCustomPrice = 7500;
 		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.StrangeBrew);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
 		}
-	}
-if (Main.hardMode)
+		shop.item[nextSlot].SetDefaults (ItemID.RecallPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.WormholePotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		if (Main.hardMode)
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.TeleportationPotion);
+		shop.item[nextSlot].shopCustomPrice = 7500;
+		nextSlot++;	
+		}
+		shop.item[nextSlot].SetDefaults (ItemID.GenderChangePotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;			
+		if (ModLoader.GetLoadedMods().Contains("imkSushisMod"))
+		{
+		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
+		shop.item[nextSlot].shopCustomPrice = 2500;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("AnglerAmnesiaPotion"));
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("MeteoritePotion"));
+		shop.item[nextSlot].shopCustomPrice = 50000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("ResurrectionPotion"));
+		shop.item[nextSlot].shopCustomPrice = 25000;
+		nextSlot++;
+		}
+		if (NPC.downedBoss3)
+		{
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("DungeonTeleportationPotion"));
+		shop.item[nextSlot].shopCustomPrice = 20000;
+		nextSlot++;
+		}
+		if (Main.hardMode)
+		{
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("UnderworldTeleportationPotion"));
+		shop.item[nextSlot].shopCustomPrice = 50000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeaconTeleportator"));
+		shop.item[nextSlot].shopCustomPrice = 25000;
+		nextSlot++;
+		}
+		if (NPC.downedPlantBoss)
+		{
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TempleTeleportationPotion"));
+		shop.item[nextSlot].shopCustomPrice = 100000;
+		nextSlot++;
+		}
+		shop.item[nextSlot].SetDefaults (ItemID.Bottle);
+		shop.item[nextSlot].shopCustomPrice = 100;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.BottledWater);
+		shop.item[nextSlot].shopCustomPrice = 500;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.Mushroom);
+		shop.item[nextSlot].shopCustomPrice = 500;
+		nextSlot++;			
+		shop.item[nextSlot].SetDefaults (ItemID.GlowingMushroom);
+		shop.item[nextSlot].shopCustomPrice = 1000;
+		nextSlot++;
+			if (NPC.downedBoss2)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.VileMushroom);
+			shop.item[nextSlot].shopCustomPrice = 1000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.ViciousMushroom);
+			shop.item[nextSlot].shopCustomPrice = 1000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FallenStar);
+			nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (ItemID.Gel);
+			shop.item[nextSlot].shopCustomPrice = 100;
+			nextSlot++;
+			if (NPC.downedBoss2)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.PinkGel);
+			shop.item[nextSlot].shopCustomPrice = 1000;
+			nextSlot++;
+			}
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				if (NPC.downedBoss2)
+						{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("WaterChestnut"));
+						shop.item[nextSlot].shopCustomPrice = 3500;
+						nextSlot++;
+						}
+					if (NPC.downedBoss3)
+						{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Jelly"));
+						shop.item[nextSlot].shopCustomPrice = 7500;
+						nextSlot++;
+						}
+				}
+			if (Main.hardMode)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.PixieDust);
 				shop.item[nextSlot].shopCustomPrice = 5000;
@@ -628,27 +637,27 @@ if (Main.hardMode)
 				shop.item[nextSlot].shopCustomPrice = 7500;
 				nextSlot++;
 				}	
-{
-			for (int k = 0; k < 255; k++)
 			{
-				Player player = Main.player[k];
-				if (player.active)
+				for (int k = 0; k < 255; k++)
 				{
-					for (int j = 0; j < player.inventory.Length; j++)
+					Player player = Main.player[k];
+					if (player.active)
 					{
-						if (player.inventory[j].type == mod.ItemType("OtherworldlyAmulet"))
+						for (int j = 0; j < player.inventory.Length; j++)
 						{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EmagledFragmentation"));
-			shop.item[nextSlot].shopCustomPrice = 80000;
-            nextSlot++;
+							if (player.inventory[j].type == mod.ItemType("OtherworldlyAmulet"))
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EmagledFragmentation"));
+							shop.item[nextSlot].shopCustomPrice = 80000;
+							nextSlot++;
+							}
 						}
 					}
 				}
 			}
-
-}
 		}
-		else{
+		if (tremorShop)
+		{
 			if (ModLoader.GetLoadedMods().Contains("Tremor"))
 			{
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BasicFlask"));

@@ -27,7 +27,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.melee = true;
 			item.damage = 200;
 			item.width = 32;
-			item.height = 34;
+			item.height = 32;
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 1;
@@ -36,8 +36,8 @@ namespace AlchemistNPC.Items.Weapons
             item.knockBack = 8f;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
-			item.shoot = mod.ProjectileType("DBB");
-			item.shootSpeed = 16f;
+			item.shoot = mod.ProjectileType("DBD");
+			item.shootSpeed = 9f;
 		}
 		
 		public override bool AltFunctionUse(Player player)
@@ -109,16 +109,38 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-					if (count == 4)
+					if (count == 3)
 					{
-					int numberProjectiles = 3 + Main.rand.Next(2);
+					item.shoot = mod.ProjectileType("DBJ");
+					int numberProjectiles = 3 + Main.rand.Next(3);
 					for (int i = 0; i < numberProjectiles; i++)
 						{
-						Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
+						Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
+						Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("DBJ"), damage, knockBack, player.whoAmI);
+						}
+					}
+					if (count == 4)
+					{
+					item.shoot = mod.ProjectileType("DBB");
+					int numberProjectiles = 2 + Main.rand.Next(2);
+					for (int i = 0; i < numberProjectiles; i++)
+						{
+						Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
 						Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("DBB"), damage, knockBack, player.whoAmI);
 						}
 					}
 					return true;
+		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "SoulEssence", 25);
+			recipe.AddIngredient(ItemID.TerraBlade);
+			recipe.AddIngredient(null, "EmagledFragmentation", 300);
+			recipe.AddTile(null, "MateriaTransmutator");
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

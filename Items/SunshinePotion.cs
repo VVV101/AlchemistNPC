@@ -14,7 +14,8 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Sunshine Potion");
-			Tooltip.SetDefault("Increases light radius greatly");
+			Tooltip.SetDefault("Increases light radius greatly"
+			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Солнечного Сияния");
 			Tooltip.AddTranslation(GameCulture.Russian, "Значительно увеличивает радиус освещения вокруг персонажа"); 
 		}    

@@ -14,7 +14,8 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Bewitching Potion");
-			Tooltip.SetDefault("Grants Bewitched buff (increases max number of minions)");
+			Tooltip.SetDefault("Grants Bewitched buff (increases max number of minions)"
+			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Колдовства");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Колдовства (увеличивает максимальное число прислужников)"); 
 		}    

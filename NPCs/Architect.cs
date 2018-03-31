@@ -443,7 +443,7 @@ shop.item[nextSlot].SetDefaults (ItemID.MudBlock);
 			shop.item[nextSlot].shopCustomPrice = 1;
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ItemID.Obsidian);
-			shop.item[nextSlot].shopCustomPrice = 5;
+			shop.item[nextSlot].shopCustomPrice = 2500;
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ItemID.AshBlock);
 			shop.item[nextSlot].shopCustomPrice = 1;
@@ -458,24 +458,24 @@ shop.item[nextSlot].SetDefaults (ItemID.IceBlock);
 			shop.item[nextSlot].shopCustomPrice = 1;
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ItemID.Marble);
-			shop.item[nextSlot].shopCustomPrice = 2;
+			shop.item[nextSlot].shopCustomPrice = 50;
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ItemID.Granite);
-			shop.item[nextSlot].shopCustomPrice = 2;
+			shop.item[nextSlot].shopCustomPrice = 50;
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ItemID.Cloud);
-			shop.item[nextSlot].shopCustomPrice = 5;
+			shop.item[nextSlot].shopCustomPrice = 100;
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ItemID.RainCloud);
-			shop.item[nextSlot].shopCustomPrice = 5;
+			shop.item[nextSlot].shopCustomPrice = 100;
             nextSlot++;
 if (Main.hardMode)
 {		
 shop.item[nextSlot].SetDefaults (ItemID.PearlstoneBlock);
-			shop.item[nextSlot].shopCustomPrice = 5;
+			shop.item[nextSlot].shopCustomPrice = 25;
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
-			shop.item[nextSlot].shopCustomPrice = 5;
+			shop.item[nextSlot].shopCustomPrice = 25;
             nextSlot++;
 }
 			}
@@ -560,10 +560,10 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
             nextSlot++;
 			}
 		shop.item[nextSlot].SetDefaults (ItemID.SunplateBlock);
-			shop.item[nextSlot].shopCustomPrice = 10;
+			shop.item[nextSlot].shopCustomPrice = 25;
             nextSlot++;
 		shop.item[nextSlot].SetDefaults (ItemID.Pumpkin);
-			shop.item[nextSlot].shopCustomPrice = 2;
+			shop.item[nextSlot].shopCustomPrice = 125;
             nextSlot++;
 			if (NPC.downedBoss3)
 			{

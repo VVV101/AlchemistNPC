@@ -26,6 +26,7 @@ namespace AlchemistNPC
 				AutoloadSounds = true,
 			};
 		}
+
 		public static ModHotKey LampLight;
 		public static bool scroll = false;
 		public static bool RevSet = false;
@@ -33,6 +34,7 @@ namespace AlchemistNPC
 		public static bool SF = false;
 		public static int DTH = 0;
 		public static bool LaetitiaSet = false;
+		public static bool Extractor = false;
 		public static float ppx = 0f;
 		public static float ppy = 0f;
 		public static string GithubUserName { get { return "VVV101"; } }
@@ -64,9 +66,11 @@ namespace AlchemistNPC
 			}
 		}
 
-		public static string ConfigFileRelativePath {
+		public static string ConfigFileRelativePath 
+		{
 		get { return "Mod Configs/Alchemist.json"; }
 		}
+
 		public static void ReloadConfigFromFile() 
 		{
 		Config.Load();
@@ -77,18 +81,17 @@ namespace AlchemistNPC
 		
 		public override void HandlePacket(BinaryReader reader, int whoAmI)
 		{
+			byte playernumber = reader.ReadByte();
 			AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();
 			switch (msgType)
 			{
 				case AlchemistNPCMessageType.LifeElixir:
-					byte playernumber = reader.ReadByte();
 					Player lifeFruitsPlayer = Main.player[playernumber];
 					int LifeElixir = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().LifeElixir = LifeElixir;
 					break;
 				case AlchemistNPCMessageType.Fuaran:
-					byte playernumber1 = reader.ReadByte();
-					Player Fuarans = Main.player[playernumber1];
+					Player Fuarans = Main.player[playernumber];
 					int Fuaran = reader.ReadInt32();
 					Fuarans.GetModPlayer<AlchemistNPCPlayer>().Fuaran = Fuaran;
 					break;
@@ -98,7 +101,7 @@ namespace AlchemistNPC
 			}
 		}
 		
-		enum AlchemistNPCMessageType : byte
+		public enum AlchemistNPCMessageType : byte
 		{
 		LifeElixir,
 		Fuaran

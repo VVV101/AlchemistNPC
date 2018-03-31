@@ -32,25 +32,25 @@ namespace AlchemistNPC.Items
 			{
 				player.QuickSpawnItem(mod.ItemType("SuspiciousLookingScythe"));
 			}
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(50) == 0)
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(60) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("PinkGuyHead"));
 				player.QuickSpawnItem(mod.ItemType("PinkGuyBody"));
 				player.QuickSpawnItem(mod.ItemType("PinkGuyLegs"));
 			}
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(50) == 0)
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(60) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("BlackCatHead"));
 				player.QuickSpawnItem(mod.ItemType("BlackCatBody"));
 				player.QuickSpawnItem(mod.ItemType("BlackCatLegs"));
 			}
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(50) == 0)
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(60) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("Skyline222Hair"));
 				player.QuickSpawnItem(mod.ItemType("Skyline222Body"));
 				player.QuickSpawnItem(mod.ItemType("Skyline222Legs"));
 			}
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(50) == 0)
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(60) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("somebody0214Hood"));
 				player.QuickSpawnItem(mod.ItemType("somebody0214Robe"));

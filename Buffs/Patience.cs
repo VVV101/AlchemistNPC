@@ -21,8 +21,8 @@ namespace AlchemistNPC.Buffs
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-			npc.velocity.X = 0.5f;
-			npc.velocity.Y = 0.5f;
+			npc.velocity.X = 0.1f;
+			npc.velocity.Y = 0.1f;
         }
 	}
 }

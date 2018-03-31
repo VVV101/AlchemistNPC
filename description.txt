@@ -5,12 +5,27 @@ Young Brewer spawns while both Alchemist & Brewer are in the world and world is 
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
 Architect will come if you have at least 5 any NPC and EoW/BoC is beaten.
 v6.9
--Added Determination Blade (yes, this is Glitchtale reference). 8 of 8 special projectiles are ready.
+-Added Determination Blade (yes, this is Glitchtale reference).
+Extractor and soul essence are added as well for crafting DT Blade.
+Available post ML.
 -Added Enchanted Mirror. Remembers last recall position.
 Available in early Hardmode. Requires Magic Mirror, Beacon and some other stuff.
+-Added Chromatic Crystal. Post ML material.
+-Added Chromovaria Bullet/Arrow. Heavy damaging post ML bullet/arrow.
+Require Chromatic Crystal as material.
+-Added Underworld Teleportation Potion. Teleports player to rightest Obsidian Tower.
+Available after beating WoF.
+-Added NON-CALAMITY BUFF POTION tooltip to AlchemistNPC buff potions.
+-Added 3 more potions from Sacred Tools. 
+Available as certain ST bosses are defeated.
 -Added Meat Grinder to Architect's 4th shop.
+Some prices tweaks too.
+-Lowered chances of dropping dev items from Treasure Bags.
+-Moved Tremor potions to Brewer's 4th shop.
+-Fixed Tremor shop of Alchemist.
 -Nerfed Reverberation Repeater (had too big DPS before).
 -Nerfed set bonus of Reverberation (not longer removes manacost, leaf shield lowers damage by 15% now).
+-Fixed MP part of Life Elixir and Fuaran.
 -Fixed strange behavior of Crystalyzed Arrow.
 -Changed sprites of Builder and Fishing Combinations, Crystalyzed Arrow.
 -Fixed some typos.

@@ -62,12 +62,12 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "3-ий магазин (MorePotions)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("ShopB4");
-		text.SetDefault("4th shop (UnuBattleRods/Tacklebox) ");
-		text.AddTranslation(GameCulture.Russian, "4-ый магазин (UnuBattleRods/Tacklebox)");
+		text.SetDefault("4th shop (UnuBattleRods/Tacklebox/Tremor) ");
+		text.AddTranslation(GameCulture.Russian, "4-ый магазин (UnuBattleRods/Tacklebox/Tremor)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("ShopB5");
-		text.SetDefault("5th shop (Tremor/Wildlife/Sacred/Spirit/Cristilium/ExpSentr)");
-		text.AddTranslation(GameCulture.Russian, "5-ый магазин (Tremor/Wildlife/Sacred/Spirit/Cristilium/ExpSentr)");
+		text.SetDefault("5th shop (Wildlife/Sacred/Spirit/Cristilium/ExpSentr)");
+		text.AddTranslation(GameCulture.Russian, "5-ый магазин (Wildlife/Sacred/Spirit/Cristilium/ExpSentr)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("CycleShop");
 		text.SetDefault("Cycle Shop");
@@ -430,6 +430,16 @@ namespace AlchemistNPC.NPCs
 		public bool SacredToolsDownedAbaddon
 		{
 		get { return SacredTools.ModdedWorld.OblivionSpawns; }
+		}
+		
+		public bool SacredToolsDownedSerpent
+		{
+			get { return SacredTools.ModdedWorld.FlariumSpawns; }
+		}
+		
+		public bool SacredToolsDownedLunarians
+		{
+			get { return SacredTools.ModdedWorld.downedLunarians; }
 		}
  
         public override void SetupShop(Chest shop, ref int nextSlot)
@@ -898,10 +908,7 @@ if (NPC.downedMoonlord)
 				}
 			}
 		}
-		}
-		if (Shop5)
-		{
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+		if (ModLoader.GetLoadedMods().Contains("Tremor"))
 				{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Tremor").ItemType("InspirationPotion"));
 			shop.item[nextSlot].shopCustomPrice = 20000;
@@ -937,6 +944,9 @@ if (NPC.downedMoonlord)
 					nextSlot++;
 					}						
 				}
+		}
+		if (Shop5)
+		{
 			if (ModLoader.GetLoadedMods().Contains("Wildlife"))
 				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Wildlife").ItemType("BouncePotion"));
@@ -987,9 +997,27 @@ if (NPC.downedMoonlord)
 						shop.item[nextSlot].value = 30000;
 						nextSlot++;
 						}
+						if (Main.hardMode)
+						{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("SandPotion"));
+						shop.item[nextSlot].value = 30000;
+						nextSlot++;
+						}
 					if(SacredToolsDownedAbaddon)
 						{
 						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("NightmarePotion"));
+						shop.item[nextSlot].value = 250000;
+						nextSlot++;
+						}
+					if(SacredToolsDownedSerpent)
+						{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("BurnCure"));
+						shop.item[nextSlot].value = 250000;
+						nextSlot++;
+						}
+					if(SacredToolsDownedLunarians)
+						{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("MoonlightPotion"));
 						shop.item[nextSlot].value = 250000;
 						nextSlot++;
 						}

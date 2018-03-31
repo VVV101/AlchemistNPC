@@ -28,6 +28,12 @@ namespace AlchemistNPC.Projectiles
 			aiType = ProjectileID.Bullet;
 		}
 		
+		public override bool PreKill(int timeLeft)
+		{
+			projectile.type = ProjectileID.HellfireArrow;
+			return true;
+		}
+		
 		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
 			Player player = Main.player[projectile.owner]; 

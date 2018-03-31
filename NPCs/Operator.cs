@@ -545,6 +545,12 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
 				}
+				if (NPC.downedMoonlord)
+				{
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ChromaticCrystal"));
+				shop.item[nextSlot].shopCustomPrice = 350000;
+				nextSlot++;	
+				}
 				if (NPC.downedMoonlord && OA)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentSolar);
@@ -577,11 +583,14 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("LaetitiaLeggings"));
 			shop.item[nextSlot].shopCustomPrice = 150000;
 			nextSlot++;
+			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("Laetitia"));
+			shop.item[nextSlot].shopCustomPrice = 350000;
+			nextSlot++;
 			}
 		if (NPC.downedMechBossAny)
 			{
 			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("FuneralofDeadButterflies"));
-			shop.item[nextSlot].shopCustomPrice = 350000;
+			shop.item[nextSlot].shopCustomPrice = 500000;
 			nextSlot++;
 			}
 		if (NPC.downedMechBoss1 && NPC.downedMechBoss3 && NPC.downedMechBoss3)
@@ -599,7 +608,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 300000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("Reverberation"));
-				shop.item[nextSlot].shopCustomPrice = 350000;
+				shop.item[nextSlot].shopCustomPrice = 500000;
 				nextSlot++;
 				}
 		if (NPC.downedPlantBoss)
@@ -608,7 +617,7 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].shopCustomPrice = 750000;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("GrinderMK4"));
-			shop.item[nextSlot].shopCustomPrice = 500000;
+			shop.item[nextSlot].shopCustomPrice = 750000;
 			nextSlot++;
 			}
 		if (NPC.downedGolemBoss)

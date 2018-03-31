@@ -41,6 +41,7 @@ namespace AlchemistNPC
 			AlchemistNPC.LE = false;
 			AlchemistNPC.SF = false;
 			AlchemistNPC.LaetitiaSet = false;
+			AlchemistNPC.Extractor = false;
 			Rampage = false;
 			lilithemblem = false;
 			watchercrystal = false;
@@ -62,8 +63,8 @@ namespace AlchemistNPC
 		public override void SyncPlayer(int toWho, int fromWho, bool newPlayer)
 		{
 			ModPacket packet = mod.GetPacket();
-			packet.Write((byte)LifeElixir);
-			packet.Write((byte)Fuaran);
+			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.LifeElixir);
+			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.Fuaran);
 			packet.Write((byte)player.whoAmI);
 			packet.Write(LifeElixir);
 			packet.Write(Fuaran);
@@ -101,7 +102,7 @@ namespace AlchemistNPC
 			}
 		if (player.FindBuffIndex(mod.BuffType("BastScroll")) > -1)
 			{
-			target.defense = 0;
+			target.defense -= 100;
 			}
 		}
 			
@@ -122,7 +123,7 @@ namespace AlchemistNPC
 			}
 		if (player.FindBuffIndex(mod.BuffType("BastScroll")) > -1)
 			{
-			target.defense = 0;
+			target.defense -= 100;
 			}
 		}
 		

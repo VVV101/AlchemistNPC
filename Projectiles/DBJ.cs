@@ -19,10 +19,11 @@ namespace AlchemistNPC.Projectiles
 		{
 			projectile.CloneDefaults(ProjectileID.Bullet);
 			projectile.ranged = true;
-			projectile.width = 34;
-			projectile.height = 34;
+			projectile.width = 20;
+			projectile.height = 20;
 			projectile.penetrate = 1;
 			projectile.timeLeft = 300;
+			projectile.scale = 0.75f;
 			aiType = ProjectileID.Bullet;
 		}
 		

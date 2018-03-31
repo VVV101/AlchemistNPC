@@ -60,6 +60,30 @@ namespace AlchemistNPC.Projectiles
 				}
 				firstTime = false;
 			}
+			
+			if (projectile.type == mod.ProjectileType("DTH"))
+			{
+				if (Main.rand.Next(45) == 0)
+					{
+						for (int g = 0; g < 3; g++)
+						{
+						Vector2 vel = new Vector2(0, -1);
+						float rand = Main.rand.NextFloat() * 6.283f;
+						vel = vel.RotatedBy(rand);
+						vel *= 3f;
+						Projectile.NewProjectile(
+						projectile.Center.X,
+						projectile.Center.Y,
+						vel.X,
+						vel.Y,
+						mod.ProjectileType("DTHL"),
+						projectile.damage,
+						0,
+						Main.myPlayer
+						);	
+					}
+				}
+			}
 		}
 		public override void OnHitNPC (Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{

@@ -23,7 +23,6 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.damage = 150;
-			item.melee = true;
 			item.width = 44;
 			item.height = 44;
 			item.useTime = 30;
