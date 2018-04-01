@@ -15,9 +15,10 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Underworld Teleporter Potion");
-			Tooltip.SetDefault("Teleports you to Underworld to the nearest to right end Obsidian Tower");
+			Tooltip.SetDefault("Teleports you to Underworld to the nearest to right end Obsidian Tower"
+			+"\nWould be useful to drink Obsidian Skin potion before drinking that");
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр в Ад");
-			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в Ад к ближайщей к правому краю Обсидиановой башне"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в Ад к ближайщей к правому краю Обсидиановой башне\nБудет полезно выпить зелье Обсидиановой кожи до того, как пить это"); 
 		}    
 		public override void SetDefaults()
         {
@@ -43,7 +44,7 @@ namespace AlchemistNPC.Items
 				{
 					if (Main.tile[x, y] == null) continue;
 					if (Main.tile[x, y].type != 75) continue;
-					pos = new Vector2((x-1) * 16, (y-3) * 16);
+					pos = new Vector2((x-3) * 16, (y+2) * 16);
 					break;
 				}
 			}

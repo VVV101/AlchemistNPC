@@ -17,9 +17,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Extractor");
 			Tooltip.SetDefault("Allows to extract soul essence from bosses"
 			+"\nWould work if placed in inventory"
-			+"\nCan extract essence with 1/3 chance if boss has more than 50K HP.");
+			+"\nCan extract essence with 1/3 chance if boss has more than 50K HP"
+			+"\nCan extract Hate with 1/10 chance if boss has more than 55K HP");
 			DisplayName.AddTranslation(GameCulture.Russian, "Экстрактор");
-			Tooltip.AddTranslation(GameCulture.Russian, "Позволяет извлекать эссенцию души из боссов\nБудет работать, если находится в инвентаре\nМожет извлечь эссенцию души с вероятностью 1/3, если у босса >= 50K HP"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Позволяет извлекать эссенцию души из боссов\nБудет работать, если находится в инвентаре\nМожет извлечь эссенцию души с вероятностью 1/3, если у босса >= 50K HP\nМожет извлечь Ненависть с вероятностью 1/10, если у босса >= 55K HP"); 
 		}
 
 		public override void SetDefaults()

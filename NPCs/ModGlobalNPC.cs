@@ -237,9 +237,13 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (AlchemistNPC.Extractor && npc.boss == true && npc.lifeMax > 50000 && (Main.rand.Next(3) == 0))
+			if (AlchemistNPC.Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
 			{
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoulEssence"));
+			}
+			if (AlchemistNPC.Extractor && npc.boss == true && npc.lifeMax >= 55000 && (Main.rand.Next(10) == 0))
+			{
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HateVial"));
 			}
 			if (npc.type == mod.NPCType("Operator"))
 			{

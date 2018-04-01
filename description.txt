@@ -4,9 +4,11 @@ Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu.
 Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
 Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
 Architect will come if you have at least 5 any NPC and EoW/BoC is beaten.
+v.6.9.1
+-To prevent confusion with beta update.
 v6.9
 -Added Determination Blade (yes, this is Glitchtale reference).
-Extractor and soul essence are added as well for crafting DT Blade.
+Extractor, soul essence and hate vial are added as well for crafting DT Blade.
 Available post ML.
 -Added Enchanted Mirror. Remembers last recall position.
 Available in early Hardmode. Requires Magic Mirror, Beacon and some other stuff.

@@ -135,7 +135,8 @@ namespace AlchemistNPC.Items.Weapons
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "SoulEssence", 25);
+			recipe.AddIngredient(null, "SoulEssence", 7);
+			recipe.AddIngredient(null, "HateVial");
 			recipe.AddIngredient(ItemID.TerraBlade);
 			recipe.AddIngredient(null, "EmagledFragmentation", 300);
 			recipe.AddTile(null, "MateriaTransmutator");
