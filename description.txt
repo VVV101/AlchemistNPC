@@ -1,9 +1,9 @@
-This mod adds 6 NPC (Alchemist, Brewer, Jeweler, Young Brewer, Operator and Architect), which sells potions including buff, health and mana. 
-New combinations of potions are sold by Young Brewer.
-Spawn condition for Alchemist, Jeweler & Brewer is kill the Eye of Ctulhu. 
-Young Brewer spawns while both Alchemist & Brewer are in the world and world is Hardmode.
-Spawn condition for Operator is kill EoW/BoC and Wing of the World is inside free housing.
-Architect will come if you have at least 5 any NPC and EoW/BoC is beaten.
+This mod adds 6 NPC (Alchemist, Brewer, Jeweler, Young Brewer, Operator and Architect), who sell potions including buffs, health and mana. 
+New combinations of potions are sold by the Young Brewer.
+The spawn condition for the Alchemist, the Jeweler & the Brewer is to kill the Eye of Ctulhu. 
+The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
+The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
+The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 v.6.9.1
 -To prevent confusion with beta update.
 v6.9
