@@ -10,10 +10,10 @@ namespace AlchemistNPC.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Torn Note #5");
-			Tooltip.SetDefault("'After beating Moon Lord you could craft some Ultimate Accessories."
-			+"\nOne of them is Lilith Emblem." 
-			+"\nNot only it combines all effects of multiple mage essential accessories..."
-			+"\nIt also allows you to shoot dozens of deadly bees while using magic attacks'");
+			Tooltip.SetDefault("'Defeating the Moon Lord allows the creation of Ultimate Accessories."
+			+"\nOne of them is the Lilith Emblem." 
+			+"\nNot only does it combine all the effects of multiple mage essential accessories..."
+			+"\n... but it also allows you to shoot dozens of deadly bees while using magic attacks'");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #5");
 			Tooltip.AddTranslation(GameCulture.Russian, "'После победы на Лунным Лордом ты сможешь скрафтить Ультимативные Аксессуары.\nОдин из них - это Эмблема Лилит.\nОна не только сочетает в себе эффекты всех важных аксессуаров на мага...\nТакже она позволяет выпускать дюжины смертоносных пчёл при магических атаках."); 
 		}
