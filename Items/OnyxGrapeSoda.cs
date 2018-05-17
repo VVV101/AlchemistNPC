@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Onyx Grape Soda");
-			Tooltip.SetDefault("Returns you home and gives you 75% endurance for a 5 seconds."
+			Tooltip.SetDefault("Returns you home and gives you 75% endurance for 5 seconds."
 			+ "\nHas a 30 seconds cooldown, applies Chaos State debuff");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сода Ониксового Винограда");
 			Tooltip.AddTranslation(GameCulture.Russian, "Возвращает вас домой и даёт бафф на 75% поглощения урона на 5 секунд.\nИмеет 30-ти секундный откат, накладывает дебафф Хаос"); 

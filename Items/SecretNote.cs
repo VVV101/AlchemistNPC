@@ -11,8 +11,9 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Secret Note");
 			Tooltip.SetDefault("'If you are reading this, then know, that you could spawn your own Grim Reaper."
-			+ "\nTo do this, you simply need to find item 'Suspicious Looking Scythe', which drops with 1/80 chance from any Treasure Bag in Hardmode."
-			+ "\nGLHF!'");
+			+ "\nTo do this, you simply need to find the 'Suspicious Looking Scythe', which drops with 1/150 chance from any Treasure Bag in Hardmode."
+			+ "\nGLHF!'"
+			+ "\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Тайная записка");
 			Tooltip.AddTranslation(GameCulture.Russian, "'Если ты читаешь это, то знай, что ты можешь призвать своего собственного Жнеца.\nДля того, чтобы сделать это, найти предмет 'Подозрительно Выглядящая Коса'.\nC вероятностью 1/80 выпадает из любой сумки босса в Хардмоде.\nGLHF!'"); 
 		}

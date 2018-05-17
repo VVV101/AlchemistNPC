@@ -14,9 +14,9 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Explorer Combination");
-			Tooltip.SetDefault("Grants buffs, which are necessary for exploring (Dangersense, Hunter, Spelunker, Night Owl, Shine & Mining)");
+			Tooltip.SetDefault("Grants buffs, which are necessary for exploring (Dangersense, Hunter, Spelunker, Night Owl, Shine, Mining, Gills, Flippers, Water Walking)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Исследователя");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Исследователя(Предчувствие, Охотник, Шахтёр, Ночное Зрение, Сияние и Добыча)"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Исследователя(Предчувствие, Охотник, Шахтёр, Ночное Зрение, Сияние, Добыча, Жабры, Ласты, Хождение по воде)"); 
 		}    
 		public override void SetDefaults()
         {
@@ -29,7 +29,7 @@ namespace AlchemistNPC.Items
             item.consumable = true;           //this make that the item is consumable when used
             item.width = 32;
             item.height = 32;
-            item.value = Item.sellPrice(0, 0, 7, 0);
+            item.value = Item.sellPrice(0, 1, 0, 0);
             item.rare = 10;
             item.buffType = mod.BuffType("ExplorerComb");           //this is where you put your Buff
             item.buffTime = 52000;    //this is the buff duration        10 = 10 Second

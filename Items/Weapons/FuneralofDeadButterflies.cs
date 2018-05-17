@@ -13,12 +13,12 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Solemn Vow (T-01-68)");
-			Tooltip.SetDefault("High atmosphere. One represents sadness of dead and other represents fear of living."
+			Tooltip.SetDefault("''High atmosphere. One represents sadness of dead and other represents fear of living.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nInflicts Shadowflame and Frostburn"
 			+ "\n35% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Торжественная клятва (T-01-68)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Высокая атмосфера. Один отражает грусть мёртвых, а другой отражает страх живущих.\n[c/FF0000:Э.П.О.С. оружие]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "''Высокая атмосфера. Один отражает грусть мёртвых, а другой отражает страх живущих.''\n[c/FF0000:Э.П.О.С. оружие]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны"); 
 		}
 
 		public override void SetDefaults()

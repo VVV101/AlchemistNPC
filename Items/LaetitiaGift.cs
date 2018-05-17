@@ -36,7 +36,7 @@ namespace AlchemistNPC.Items
 			item.useAnimation = 36;
 			item.useStyle = 1;
 			item.noMelee = true;
-			item.knockBack = 3;
+			item.knockBack = 3f;
 			item.value = Item.buyPrice(0, 30, 0, 0);
 			item.rare = 7;
 			item.UseSound = SoundID.Item44;

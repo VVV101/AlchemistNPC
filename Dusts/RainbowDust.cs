@@ -26,7 +26,7 @@ namespace AlchemistNPC.Dusts
 				{
 					strength = 1f;
 				}
-				Lighting.AddLight(dust.position, 0.1f * strength, 0.2f * strength, 0.7f * strength);
+				Lighting.AddLight(dust.position, 0.8f * strength, 0.2f * strength, 0.2f * strength);
 			}
 			return false;
 		}

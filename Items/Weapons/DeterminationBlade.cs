@@ -15,9 +15,9 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Determination Blade");
-			Tooltip.SetDefault("Contains Determination of 7 souls inside"
+			Tooltip.SetDefault("Contains Determination of 7 souls"
 			+"\nAttacks building Hate" 
-			+"\nAfter certain amount of hits you could release it by right-click.");
+			+"\nAfter a certain amount of hits, right-clicking will release the Hate");
 			DisplayName.AddTranslation(GameCulture.Russian, "Клинок Решимости");
 			Tooltip.AddTranslation(GameCulture.Russian, "Хранит в себе Решимость семи душ\nАтаки заряжают Ненависть\nПосле определённого количества ударов вы можете её выпустить, нажав правую кнопку мыши"); 
 		}

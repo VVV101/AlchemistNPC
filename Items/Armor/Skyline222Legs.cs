@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items.Armor
 		{
 			item.width = 20;
 			item.height = 16;
-			item.value = 100000;
+			item.value = 1650000;
 			item.rare = -11;
 			item.vanity = true;
 		}

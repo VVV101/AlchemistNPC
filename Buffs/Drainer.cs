@@ -1,0 +1,30 @@
+using System;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.ID;
+using Terraria.Localization;
+
+namespace AlchemistNPC.Buffs
+{
+	public class Drainer : ModBuff
+	{
+		public override void SetDefaults()
+		{
+			DisplayName.SetDefault("Drain");
+			Description.SetDefault("Removes most of defense and endurance while held");
+			Main.debuff[Type] = true;
+			Main.buffNoSave[Type] = true;
+			Main.buffNoTimeDisplay[Type] = true;
+			DisplayName.AddTranslation(GameCulture.Russian, "Иссушение");
+			Description.AddTranslation(GameCulture.Russian, "Лишает защиты и поглощения урона пока удерживается Поглотитель"); 
+		}
+
+        public override void Update(Player player, ref int buffIndex)
+        {
+			player.endurance -= 0.25f;
+			player.statDefense -= 300;
+			player.longInvince = false;
+        }
+	}
+}

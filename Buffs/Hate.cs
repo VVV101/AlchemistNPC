@@ -16,9 +16,24 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
-			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Ненависть");
 			Description.AddTranslation(GameCulture.Russian, "Вы готовы выпустить свою Ненависть"); 
+		}
+		
+		public override void Update(Player player, ref int buffIndex)
+		{
+		player.thrownDamage += 0.15f;
+        player.meleeDamage += 0.15f;
+        player.rangedDamage += 0.15f;
+        player.magicDamage += 0.15f;
+        player.minionDamage += 0.15f;
+		player.meleeCrit += 15;
+        player.rangedCrit += 15;
+        player.magicCrit += 15;
+        player.thrownCrit += 15;
+		player.lifeRegen += 20;
+		player.endurance -= 0.15f;
+		player.statDefense -= 30;
 		}
 	}
 }

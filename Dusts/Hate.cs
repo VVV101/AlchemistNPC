@@ -21,12 +21,12 @@ namespace AlchemistNPC.Dusts
 			}
 			if (!dust.noLight)
 			{
-				float strength = dust.scale * 1.4f;
+				float strength = dust.scale * 1.2f;
 				if (strength > 1f)
 				{
 					strength = 1f;
 				}
-				Lighting.AddLight(dust.position, 0.1f * strength, 0.2f * strength, 0.7f * strength);
+				Lighting.AddLight(dust.position, 0.1f * strength, 0.1f * strength, 0.1f * strength);
 			}
 			return false;
 		}

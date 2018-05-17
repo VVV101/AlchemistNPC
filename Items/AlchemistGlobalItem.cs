@@ -19,38 +19,46 @@ namespace AlchemistNPC.Items
 			return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 		public override void PickAmmo(Item item, Player player, ref int type, ref float speed, ref int damage, ref float knockback)
-				{
-    if (type == ProjectileID.Bullet && player.GetModPlayer<AlchemistNPCPlayer>().Rampage)
-    {
-        type = mod.ProjectileType("Chloroshard");
-    }
-				}
+		{
+			if (type == ProjectileID.Bullet && player.GetModPlayer<AlchemistNPCPlayer>().Rampage)
+			{
+				type = mod.ProjectileType("Chloroshard");
+			}
+		}
 		
 		public override void OpenVanillaBag(string context, Player player, int arg)
 		{
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(80) == 0)
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(150) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("SuspiciousLookingScythe"));
 			}
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(60) == 0)
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(150) == 0)
+			{
+				player.QuickSpawnItem(mod.ItemType("HeartofYui"));
+			}
+			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(150) == 0)
+			{
+				player.QuickSpawnItem(mod.ItemType("BanHammer"));
+			}
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(100) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("PinkGuyHead"));
 				player.QuickSpawnItem(mod.ItemType("PinkGuyBody"));
 				player.QuickSpawnItem(mod.ItemType("PinkGuyLegs"));
 			}
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(60) == 0)
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(100) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("BlackCatHead"));
 				player.QuickSpawnItem(mod.ItemType("BlackCatBody"));
 				player.QuickSpawnItem(mod.ItemType("BlackCatLegs"));
 			}
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(60) == 0)
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(100) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("Skyline222Hair"));
 				player.QuickSpawnItem(mod.ItemType("Skyline222Body"));
 				player.QuickSpawnItem(mod.ItemType("Skyline222Legs"));
 			}
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(60) == 0)
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(100) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("somebody0214Hood"));
 				player.QuickSpawnItem(mod.ItemType("somebody0214Robe"));

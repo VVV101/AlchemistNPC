@@ -26,6 +26,7 @@ namespace AlchemistNPC.Items.Placeable
 			item.useTime = 10;
 			item.useStyle = 1;
 			item.consumable = true;
+			item.rare = 11;
 			item.value = 1000000;
 			item.createTile = mod.TileType("MateriaTransmutator");
 		}

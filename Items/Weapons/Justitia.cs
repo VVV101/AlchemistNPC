@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Justitia (O-02-62)");
-			Tooltip.SetDefault("It is implicative of a tall bird's balance, that signifies a need to weigh sins in every dispute."
+			Tooltip.SetDefault("''It is implicative of a tall bird's balance, that signifies a need to weigh sins in every dispute.''"
 			+ "\n[c/FF0000:EGO weapon]");
 			DisplayName.AddTranslation(GameCulture.Russian, "Юстиция (O-02-62)");
 			Tooltip.AddTranslation(GameCulture.Russian, "Он является отражением баланса Высокой Птицы, который показывает нужду взвесить грехи при каждом споре.\n[c/FF0000:Э.П.О.С. оружие]"); 

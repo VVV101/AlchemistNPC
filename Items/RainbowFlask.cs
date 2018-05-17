@@ -14,9 +14,10 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Flask of Rainbows");
-			Tooltip.SetDefault("You weapons inflict defense destroying and heavy damaging debuffs.");
+			Tooltip.SetDefault("Your weapons inflict defense destroying and heavy damaging debuffs"
+			+"\nRemoves enemy immunity to Ichor, Betsy's Curse and Daybroken");
 			DisplayName.AddTranslation(GameCulture.Russian, "Флакон Радуги");
-			Tooltip.AddTranslation(GameCulture.Russian, "Ваши оружия разрушают броню вашего противника и накладывают дебаффы, наносящие значительный урон противнику"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Ваши оружия разрушают броню вашего противника и накладывают дебаффы, наносящие значительный урон противнику\nУбирает невосприимчивость противника к Ихору, Проклятию Бетси и Дневному Ожогу"); 
 		}    
 		public override void SetDefaults()
         {

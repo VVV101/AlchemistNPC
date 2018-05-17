@@ -26,6 +26,7 @@ namespace AlchemistNPC.Items
 			item.useTime = 30;
 			item.useStyle = 4;
 			item.consumable = true;
+			item.UseSound = SoundID.Item37;
 		}
 
 		public override bool CanUseItem(Player player)
@@ -35,7 +36,7 @@ namespace AlchemistNPC.Items
 
 		public override bool UseItem(Player player)
 		{
-			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Operator"));
+			NPC.NewNPC((int)player.Center.X+2, (int)player.Center.Y, mod.NPCType("Operator"));
 			return true;
 		}
 	}

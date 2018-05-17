@@ -18,6 +18,7 @@ namespace AlchemistNPC.Projectiles
 		{
 		projectile.CloneDefaults(ProjectileID.Bee);
 		projectile.netImportant = true;
+		projectile.netUpdate = true;
 		projectile.magic = true; 
 		projectile.timeLeft = 240;
 		aiType = ProjectileID.Bee;

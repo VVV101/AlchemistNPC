@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pink Guy's leggins");
+			DisplayName.SetDefault("Pink Guy's Leggings");
 			DisplayName.AddTranslation(GameCulture.Russian, "Штаны Розового Парня"); 
 			Tooltip.SetDefault("The perfect pants for leg day. May even make you stronger.");
 			Tooltip.AddTranslation(GameCulture.Russian, "Превосходные штаны для трудного дня. Возможно, могут даже сделать вас сильнее."); 
@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items.Armor
 		{
 			item.width = 22;
 			item.height = 16;
-			item.value = 100000;
+			item.value = 1650000;
 			item.rare = -11;
 			item.vanity = true;
 		}

@@ -65,12 +65,7 @@ namespace AlchemistNPC.Items
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 25);
 			recipe.AddIngredient(ItemID.ShroomiteBar, 25);
 			recipe.AddIngredient(ItemID.SpectreBar, 25);
-			recipe.AddIngredient(ItemID.LunarBar, 25);
-			recipe.AddIngredient(ItemID.LunarOre, 25);
-			recipe.AddIngredient(ItemID.FragmentStardust, 20);
-			recipe.AddIngredient(ItemID.FragmentNebula, 20);
-            recipe.AddIngredient(ItemID.FragmentVortex, 20);
-            recipe.AddIngredient(ItemID.FragmentSolar, 20);
+			recipe.AddIngredient(null, "AlchemicalBundle", 1);
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

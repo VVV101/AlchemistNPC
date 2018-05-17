@@ -12,7 +12,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Grinder MK4 (T-05-41)");
-			Tooltip.SetDefault("The sharp teeth of the grinder makes a clean cut through the enemy."
+			Tooltip.SetDefault("''The sharp teeth of the grinder makes a clean cut through the enemy.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nIts attack goes through enemy invincibility frames"
 			+ "\nAfter certain amount of hits releases broken blades into enemies");

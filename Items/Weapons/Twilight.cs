@@ -20,8 +20,8 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Twilight (O-02-63)");
-			Tooltip.SetDefault("Eyes that never close, a scale that could measure all sins, and a beak that could swallow everything "
-			+ "\nprotected the Black Forest in peace, and those who could wield this could also bring peace."
+			Tooltip.SetDefault("''Eyes that never close, a scale that could measure all sins, and a beak that could swallow everything"
+			+ "\nprotected the Black Forest in peace, and those who could wield this could also bring peace.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nInflicts several types of damage on hit"
 			+ "\nDamage type could be changed by right-click"

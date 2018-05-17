@@ -28,6 +28,9 @@ namespace AlchemistNPC
 		}
 
 		public static ModHotKey LampLight;
+		public static bool EyeOfJudgement = false;
+		public static bool MemersRiposte = false;
+		public static bool PGSWear = false;
 		public static bool scroll = false;
 		public static bool RevSet = false;
 		public static bool LE = false;
@@ -35,6 +38,7 @@ namespace AlchemistNPC
 		public static int DTH = 0;
 		public static bool LaetitiaSet = false;
 		public static bool Extractor = false;
+		public static bool XtraT = false;
 		public static float ppx = 0f;
 		public static float ppy = 0f;
 		public static string GithubUserName { get { return "VVV101"; } }
@@ -43,15 +47,7 @@ namespace AlchemistNPC
 		public override void Load()
 		{
 		Config.Load();
-		ModTranslation text = CreateTranslation("Change1");
-		text.SetDefault("Sniper scope is disabled");
-		text.AddTranslation(GameCulture.Russian, "Снайперский прицел выключен");
-		AddTranslation(text);
-		text = CreateTranslation("Change2");
-		text.SetDefault("Sniper scope is enabled");
-		text.AddTranslation(GameCulture.Russian, "Снайперский прицел включён");
-		AddTranslation(text);
-		text = CreateTranslation("DC1");
+		ModTranslation text = CreateTranslation("DC1");
 		text.SetDefault("Damage type changed to Magic");
 		text.AddTranslation(GameCulture.Russian, "Тип урона изменён на Магический");
 		AddTranslation(text);
@@ -81,19 +77,13 @@ namespace AlchemistNPC
 		
 		public override void HandlePacket(BinaryReader reader, int whoAmI)
 		{
-			byte playernumber = reader.ReadByte();
-			AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();
+		AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();
 			switch (msgType)
 			{
-				case AlchemistNPCMessageType.LifeElixir:
-					Player lifeFruitsPlayer = Main.player[playernumber];
-					int LifeElixir = reader.ReadInt32();
-					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().LifeElixir = LifeElixir;
-					break;
-				case AlchemistNPCMessageType.Fuaran:
-					Player Fuarans = Main.player[playernumber];
-					int Fuaran = reader.ReadInt32();
-					Fuarans.GetModPlayer<AlchemistNPCPlayer>().Fuaran = Fuaran;
+				case AlchemistNPCMessageType.LifeAndManaSync:
+					Player lifeFruitsPlayer = Main.player[reader.ReadByte()];
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().LifeElixir = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().Fuaran = reader.ReadInt32();
 					break;
 				default:
 					ErrorLogger.Log("AlchemistNPC: Unknown Message type: " + msgType);
@@ -103,8 +93,7 @@ namespace AlchemistNPC
 		
 		public enum AlchemistNPCMessageType : byte
 		{
-		LifeElixir,
-		Fuaran
+		LifeAndManaSync
 		}
 		
 		public override void AddRecipeGroups()

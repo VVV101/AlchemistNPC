@@ -22,9 +22,11 @@ namespace AlchemistNPC.Items
 			item.CloneDefaults(ItemID.Carrot);
 			item.width = 34;
 			item.height = 34;
+			item.value = 15000000;
 			item.shoot = mod.ProjectileType("GrimReaper");
 			item.buffType = mod.BuffType("GrimReaper");	//The buff added to player after used the item
-			item.buffTime = 3600;				//The duration of the buff, here is 60 seconds
+			item.buffTime = 3600;
+			item.expert = true;
 		}
 
 		public override void UseStyle(Player player)

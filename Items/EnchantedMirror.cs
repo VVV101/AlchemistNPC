@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Enchanted Mirror");
-			Tooltip.SetDefault("Left click return you home"
+			Tooltip.SetDefault("Left click returns you home"
 			+ "\nRight click teleports you back to recall point");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зачарованное Зеркало");
 			Tooltip.AddTranslation(GameCulture.Russian, "Возвращает вас домой при использовании\nВозвращает вас на место предыдущей телепортации по нажатию правой кнопки мыши"); 

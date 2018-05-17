@@ -25,8 +25,8 @@ namespace AlchemistNPC.Items
 			item.width = 32;
 			item.height = 30;
 			item.value = 5000000;
-			item.rare = 8;
-			item.knockBack = 6;
+			item.rare = 11;
+			item.noUseGraphic = true;
 			item.mountType = mod.MountType("Poro");
 		}
 	}

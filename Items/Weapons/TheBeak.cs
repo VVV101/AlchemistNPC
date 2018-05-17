@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("The Beak (O-02-56)");
-			Tooltip.SetDefault("Size has no meaning while it overflowed with power."
+			Tooltip.SetDefault("''Size has no meaning while it overflowed with power.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nShoots 2 times in one use"
 			+ "\nBullets are setting enemies ablaze"

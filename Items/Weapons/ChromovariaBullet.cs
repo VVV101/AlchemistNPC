@@ -11,7 +11,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			DisplayName.SetDefault("Chromovaria Bullet");
 			Tooltip.SetDefault("Creates heavy damaging light explosion and inflicts Daybroken debuff");
-			DisplayName.AddTranslation(GameCulture.Russian, "Пули с кристальной пылью");
+			DisplayName.AddTranslation(GameCulture.Russian, "Хромовариевая Пуля");
 			Tooltip.AddTranslation(GameCulture.Russian, "Создаёт взрыв, наносящий значительные повреждения и накладывает мощный дебафф"); 
 		}    
 		public override void SetDefaults()
@@ -24,7 +24,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.consumable = true;
 			item.knockBack = 4f;
 			item.value = Item.sellPrice(0, 0, 1, 0);
-			item.rare = 8;
+			item.rare = 10;
 			item.shoot = mod.ProjectileType("ChromovariaBullet");
 			item.shootSpeed = 16f; 
 			item.ammo = AmmoID.Bullet; //

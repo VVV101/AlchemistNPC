@@ -18,12 +18,13 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Explorer Combination");
-			Description.SetDefault("Combination of Dangersense, Hunter, Spelunker, Night Owl, Shine & Mining buffs");
+			Description.SetDefault("Combination of Dangersense, Hunter, Spelunker, Night Owl, Shine & Mining buffs"
+			+"\nAlso gives effects of Gills, Flippers and Water Walking Potions");
 			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Исследователя");
-			Description.AddTranslation(GameCulture.Russian, "Сочетания баффов Предчувствия, Охотника, Шахтёра, Ночного Зрения, Сияния и Добычи"); 
+			Description.AddTranslation(GameCulture.Russian, "Сочетания баффов Предчувствия, Охотника, Шахтёра, Ночного Зрения, Сияния и Добычи\nТакже даёт эффекты зельев Подводного Дыхания, Ласт и Хождения по воде"); 
 		}
 		public override void Update(Player player, ref int buffIndex)
 		{
@@ -33,6 +34,13 @@ namespace AlchemistNPC.Buffs
 			player.detectCreature = true;
 			player.pickSpeed -= 0.25f;
 			player.dangerSense = true;
+			player.gills = true;
+			player.waterWalk = true;
+			player.ignoreWater = true;
+            player.accFlipper = true;
+			player.buffImmune[4] = true;
+			player.buffImmune[15] = true;
+			player.buffImmune[109] = true;
 			player.buffImmune[9] = true;
 			player.buffImmune[11] = true;
 			player.buffImmune[12] = true;

@@ -15,10 +15,11 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Underworld Teleporter Potion");
-			Tooltip.SetDefault("Teleports you to Underworld to the nearest to right end Obsidian Tower"
+			Tooltip.SetDefault("Teleports you to Underworld to leftest or rightest Obsidian Tower"
+			+"\nSide depends of used mouse button"
 			+"\nWould be useful to drink Obsidian Skin potion before drinking that");
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр в Ад");
-			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в Ад к ближайщей к правому краю Обсидиановой башне\nБудет полезно выпить зелье Обсидиановой кожи до того, как пить это"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в Ад к крайней Обсидиановой башне\nСторона зависит от нажатой клавиши мыши\nБудет полезно выпить зелье Обсидиановой кожи до того, как пить это"); 
 		}    
 		public override void SetDefaults()
         {
@@ -30,7 +31,6 @@ namespace AlchemistNPC.Items
 		
 		public override bool UseItem(Player player)
 		{
-			HandleHellTeleport(player);
 			return true;
 		}
 		
@@ -54,6 +54,55 @@ namespace AlchemistNPC.Items
 			}
 			else return;
 		}
+		
+		private static void HandleHellTeleportLeft(Player player, bool syncData = false)
+		{
+			Vector2 prePos = player.position;
+			Vector2 pos = prePos;
+			for (int x = 8400; x > 0; --x)
+			{
+				for (int y = 0; y < Main.tile.GetLength(1); ++y)
+				{
+					if (Main.tile[x, y] == null) continue;
+					if (Main.tile[x, y].type != 75) continue;
+					pos = new Vector2((x+3) * 16, (y+2) * 16);
+					break;
+				}
+			}
+			if (pos != prePos)
+			{
+				RunTeleport(player, new Vector2(pos.X, pos.Y), syncData, false);
+			}
+			else return;
+		}
+		
+		public override bool AltFunctionUse(Player player)
+		{
+			return true;
+		}
+
+		public override bool CanUseItem(Player player)
+		{
+			if (player.altFunctionUse == 2)
+			{
+				HandleHellTeleport(player);
+			}
+			else
+			{
+				HandleHellTeleportLeft(player);
+			}
+			return base.CanUseItem(player);
+		}
+		
+		public override bool CanRightClick()
+        {            
+            return true;
+        }
+
+        public override void RightClick(Player player)
+        {
+            HandleHellTeleport(player);
+        }
 		
 		private static void RunTeleport(Player player, Vector2 pos, bool syncData = false, bool convertFromTiles = false)
 		{

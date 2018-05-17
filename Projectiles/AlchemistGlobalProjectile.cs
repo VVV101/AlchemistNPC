@@ -25,7 +25,7 @@ namespace AlchemistNPC.Projectiles
 			}
 		}
 		
-		public override void SetDefaults (Projectile projectile)
+		public override void SetDefaults(Projectile projectile)
 		{
 			if (AlchemistNPC.scroll == true && projectile.thrown == true)
 			{
@@ -33,7 +33,7 @@ namespace AlchemistNPC.Projectiles
 			}
 		}
 
-		private void createProjectTile(Projectile projectile) {
+		public void createBee(Projectile projectile) {
 			Vector2 vel = new Vector2(0, -1);
 			float rand = Main.rand.NextFloat() * 6.283f;
 			vel = vel.RotatedBy(rand);
@@ -50,14 +50,52 @@ namespace AlchemistNPC.Projectiles
 			);			
 		}
 		
+		public void createNAG(Projectile projectile) {
+			Projectile.NewProjectile(
+				projectile.Center.X,
+				projectile.Center.Y,
+				projectile.velocity.X,
+				projectile.velocity.Y,
+				mod.ProjectileType("NyctosythiaArrowGhost"),
+				projectile.damage,
+				0,
+				Main.myPlayer
+			);			
+		}
+		
+		public void createNBG(Projectile projectile) {
+			Projectile.NewProjectile(
+				projectile.Center.X,
+				projectile.Center.Y,
+				projectile.velocity.X,
+				projectile.velocity.Y,
+				mod.ProjectileType("NyctosythiaBulletGhost"),
+				projectile.damage,
+				0,
+				Main.myPlayer
+			);			
+		}
+		
 		public override void AI(Projectile projectile)
 		{
 			if (firstTime && !projectile.hostile && projectile.magic && AlchemistNPC.LE && projectile.type != mod.ProjectileType("Bees"))
 			{
 				for (int g = 0; g < 4; g++)
 				{
-					createProjectTile(projectile);
+					createBee(projectile);
 				}
+				firstTime = false;
+			}
+			
+			if (firstTime && !projectile.hostile && projectile.type == mod.ProjectileType("NyctosythiaArrow"))
+			{
+				createNAG(projectile);
+				firstTime = false;
+			}
+			
+			if (firstTime && !projectile.hostile && projectile.type == mod.ProjectileType("NyctosythiaBullet"))
+			{
+				createNBG(projectile);
 				firstTime = false;
 			}
 			
@@ -85,13 +123,18 @@ namespace AlchemistNPC.Projectiles
 				}
 			}
 		}
+		
 		public override void OnHitNPC (Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
 			if (projectile.minion && AlchemistNPC.SF)
 			{
 				target.immune[projectile.owner] = 1;
 			}
+			if ((projectile.type == 443) && AlchemistNPC.XtraT)
+			{
+				target.AddBuff(mod.BuffType("Electrocute"), 300);
+				target.immune[projectile.owner] = 2;
+			}
 		}
-
 	}
 }

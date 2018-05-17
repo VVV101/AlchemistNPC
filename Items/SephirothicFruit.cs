@@ -16,11 +16,11 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Sephirotic Fruit");
 			Tooltip.SetDefault("The last of Echidna's seeds... Holds incredible powers inside."
-			+"\nIncreases minions damage by 10%"
+			+"\nIncreases minions damage by 15%"
 			+"\nIncreases max amount of minions by 2"
 			+"\nMinions ignore enemy invincibility frames");
 			DisplayName.AddTranslation(GameCulture.Russian, "Плод Сефирот");
-			Tooltip.AddTranslation(GameCulture.Russian, "Последнее семя Ехидны... Хранит невероятные силы внутри\nПовышает урон прислужников на 10%\nПрислужники игнорируют период неуязвимости у противника"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Последнее семя Ехидны... Хранит невероятные силы внутри\nПовышает урон прислужников на 15%\nУвеличивает максимальное количество прислужников на 2\nПрислужники игнорируют период неуязвимости у противника"); 
 		}
 	
 		public override void SetDefaults()
@@ -35,7 +35,7 @@ namespace AlchemistNPC.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			AlchemistNPC.SF = true;
-            player.minionDamage += 0.10f;
+            player.minionDamage += 0.15f;
 			++player.maxMinions;
 			++player.maxMinions;
 		}

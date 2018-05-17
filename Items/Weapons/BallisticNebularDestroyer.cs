@@ -19,12 +19,12 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 80;
+			item.damage = 70;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 20;
-			item.useTime = 12;
-			item.useAnimation = 12;
+			item.useTime = 20;
+			item.useAnimation = 20;
 			item.useStyle = 5;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 8;
@@ -55,7 +55,7 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-				int numberProjectiles = 4 + Main.rand.Next(2);
+				int numberProjectiles = 3 + Main.rand.Next(2);
 				for (int i = 0; i < numberProjectiles; i++)
 					{
 					Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));

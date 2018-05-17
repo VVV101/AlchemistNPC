@@ -1,5 +1,5 @@
 author = Gregg/VVV101, Somebody0214
-version = 6.9.1
+version = 7.0
 displayName = AlchemistNPC
 homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v5-0.52798/
 hideCode = false

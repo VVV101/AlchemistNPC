@@ -78,7 +78,6 @@ namespace AlchemistNPC.Buffs
 			player.endurance += 0.1f;
 			player.lifeForce = true;
             player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
-			player.enemySpawns = true;
 			++player.maxMinions;
 			++player.maxMinions;
 		}

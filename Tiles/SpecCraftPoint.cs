@@ -43,8 +43,7 @@ namespace AlchemistNPC.Tiles
 			TileID.SteampunkBoiler,
 			TileID.IceMachine,
 			TileID.SkyMill,
-			TileID.HoneyDispenser,
-			TileID.LunarCraftingStation
+			TileID.HoneyDispenser
 			};
 			dustType = mod.DustType("JustitiaPale");
 			animationFrameHeight = 56;

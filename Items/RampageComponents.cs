@@ -10,8 +10,6 @@ namespace AlchemistNPC.Items
 {
 	public class RampageComponents : ModItem
 	{
-
-		public static bool sscope = false;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Rampage Components");
@@ -19,12 +17,13 @@ namespace AlchemistNPC.Items
 			+ "\nThey work like crazy combination of Chlorophyte and Crystal Dust Bullets"
 			+ "\nGives effect of Sniper Scope (10% bonus ranged damage and crit, ability to zoom)"
 			+ "\nAmmo Reservation Effect"
-			+ "\nUse item to disable scoping effect and use again to enable"
-			+ "\nAnd the lord poked his head out from the patron clouds,"
+			+ "\nHide visual to disable Sniper Scope effect"
+			+ "\nEmpowers any Electrospheres greatly"
+			+ "\n''And the lord poked his head out from the patron clouds,"
 			+ "\nto look down on his followers in chaos and anarchy as the world is already aflame,"
-			+ "\nout he tossed an canister of gasoline and out from his mouth, his words were: Screw it.");
+			+ "\nout he tossed an canister of gasoline and out from his mouth, his words were: Screw it.''");
 			DisplayName.AddTranslation(GameCulture.Russian, "Компоненты Буйства");
-			Tooltip.AddTranslation(GameCulture.Russian, "Превращяет мушкетные пули в смертоносные Хлорофитово-осколочные пули\nОни работают как безумная комбинация Хлорифитовых и Пыле-кристальных пуль\nДаёт эффект Снайперского прицела \n10% бонусного урона и шанса критического удара для дальнего боя\nЭффект Экономии Патронов\nИспользуйте предмет в руках для выключения эффекта Снайперского прицела, используйте вновь для включения\nAnd the lord poked his head out from the patron clouds,\nto look down on his followers in chaos and anarchy as the world is already aflame,\nout he tossed an canister of gasoline and out from his mouth, his words were: Screw it."); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Превращяет мушкетные пули в смертоносные Хлорофитово-осколочные пули\nОни работают как безумная комбинация Хлорифитовых и Пыле-кристальных пуль\nДаёт эффект Снайперского прицела \n10% бонусного урона и шанса критического удара для дальнего боя\nЭффект Экономии Патронов\nОтключение видимости выключает эффект Снайперского Прицела\nAnd the lord poked his head out from the patron clouds,\nto look down on his followers in chaos and anarchy as the world is already aflame,\nout he tossed an canister of gasoline and out from his mouth, his words were: Screw it."); 
 		}
 	
 		public override void SetDefaults()
@@ -34,44 +33,21 @@ namespace AlchemistNPC.Items
 			item.value = 1000000;
 			item.rare = 11;
 			item.accessory = true;
-			item.useAnimation = 30;
-			item.useTime = 30;
-			item.useStyle = 4;
-			item.consumable = false;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.GetModPlayer<AlchemistNPCPlayer>(mod).Rampage = true;
-			if (sscope)
+			if (!hideVisual)
 			{
 				player.scope = true;
 			}
 			player.ammoPotion = true;
 			player.rangedDamage += 0.1f;
 			player.rangedCrit += 10;
+			AlchemistNPC.XtraT = true;
 		}
 
-		public override bool UseItem(Player player)
-		{
-			if (sscope == true)
-			{
-			sscope = false;
-			Main.PlaySound(SoundID.MenuClose, player.position, 0);
-			string key = "Mods.AlchemistNPC.Change1";
-			Color messageColor = Color.Orange;
-			Main.NewText(Language.GetTextValue(key), messageColor);
-			}
-			else
-			{
-			sscope = true;
-			Main.PlaySound(SoundID.MenuOpen, player.position, 0);
-			string key = "Mods.AlchemistNPC.Change2";
-			Color messageColor = Color.Orange;
-			Main.NewText(Language.GetTextValue(key), messageColor);
-			}
-			return true;
-		}
 		
 		public override void AddRecipes()
 		{

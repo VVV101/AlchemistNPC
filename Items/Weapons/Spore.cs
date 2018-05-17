@@ -12,8 +12,8 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Spore (O-04-66)");
-			Tooltip.SetDefault("The spear, covered with spores and attention."
-			+ "\nIt expands mind, shines like a star and gradually becomes closer to weilder."
+			Tooltip.SetDefault("''The spear, covered with spores and attention."
+			+ "\nIt expands mind, shines like a star and gradually becomes closer to weilder.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nIts attack hits enemy several times"
 			+ "\nAfter certain amount of hits releases damaging spores into enemy");

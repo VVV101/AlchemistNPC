@@ -29,7 +29,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			target.AddBuff(mod.BuffType("Twilight"), 120);
+			target.AddBuff(mod.BuffType("Twilight"), 240);
 			projectile.penetrate--;
 			if (projectile.penetrate <= 0)
 			{

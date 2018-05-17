@@ -9,9 +9,10 @@ namespace AlchemistNPC.Items.Placeable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Wing of the World");
-			Tooltip.SetDefault("Needed to craft EGO equipment.");
+			Tooltip.SetDefault("Needed to craft EGO equipment"
+			+"\nCounts as table, chair and light source");
 			DisplayName.AddTranslation(GameCulture.Russian, "Крыло Мира");
-			Tooltip.AddTranslation(GameCulture.Russian, "Необходимо для создания Э.П.О.С экипировки"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Необходимо для создания Э.П.О.С экипировки\nСчитается за стол, стул и источник света"); 
 		}
 
 		public override void SetDefaults()

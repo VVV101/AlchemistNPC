@@ -27,8 +27,8 @@ namespace AlchemistNPC.Items
 		{
 			item.width = 22;
 			item.height = 20;
-			item.value = 50000;
-			item.rare = 6;
+			item.value = 100000;
+			item.rare = 8;
 			item.accessory = true;
 		}
 

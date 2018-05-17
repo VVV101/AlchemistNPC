@@ -8,7 +8,8 @@ namespace AlchemistNPC.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("The worthy usage of Hallowed materia (Infinite)l"
+			DisplayName.SetDefault("Chromovaria Arrow");
+			Tooltip.SetDefault("The worthy usage of Hallowed material"
 			+"\nReleases heavy damaging light beams and inflicts Daybroken debuff"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Хромоварийная стрела (Бесконечная)");
@@ -25,7 +26,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.consumable = false;             //You need to set the item consumable so that the ammo would automatically consumed
 			item.knockBack = 1.5f;
 			item.value = 10;
-			item.rare = 2;
+			item.rare = 10;
 			item.shoot = mod.ProjectileType("ChromovariaArrow");   //The projectile shoot when your weapon using this ammo
 			item.shootSpeed = 12f;                  //The speed of the projectile
 			item.ammo = AmmoID.Arrow;              //The ammo class this ammo belongs to.

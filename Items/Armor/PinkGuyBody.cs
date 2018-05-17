@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pink Guy's body");
+			DisplayName.SetDefault("Pink Guy's Suit");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинезон Розового Парня"); 
 			Tooltip.SetDefault("Forged from the darkest of materials. Only the best of the bests can wear it.");
 			Tooltip.AddTranslation(GameCulture.Russian, "Скован из темнейших материалов. Лишь лучшие из лучших могут носить его."); 
@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items.Armor
 		{
 			item.width = 28;
 			item.height = 24;
-			item.value = 100000;
+			item.value = 1650000;
 			item.rare = -11;
 			item.vanity = true;
 		}

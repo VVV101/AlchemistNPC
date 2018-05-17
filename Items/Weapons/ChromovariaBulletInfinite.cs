@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Chromovaria Bullet (Infinite)");
+			DisplayName.SetDefault("Chromovaria Bullet");
 			Tooltip.SetDefault("Creates heavy damaging light explosion and inflicts Daybroken debuff"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Хромовариевая пуля (Бесконечная)");
@@ -25,7 +25,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.consumable = false;
 			item.knockBack = 4f;
 			item.value = Item.sellPrice(0, 0, 1, 0);
-			item.rare = 8;
+			item.rare = 10;
 			item.shoot = mod.ProjectileType("ChromovariaBullet");
 			item.shootSpeed = 16f; 
 			item.ammo = AmmoID.Bullet; //

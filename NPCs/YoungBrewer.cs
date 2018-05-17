@@ -33,7 +33,7 @@ namespace AlchemistNPC.NPCs
 			NPCID.Sets.AttackType[npc.type] = 0;
 			NPCID.Sets.AttackTime[npc.type] = 20;
 			NPCID.Sets.AttackAverageChance[npc.type] = 30;
-			NPCID.Sets.HatOffsetY[npc.type] = 0;
+			NPCID.Sets.HatOffsetY[npc.type] = 2;
 		
 		ModTranslation text = mod.CreateTranslation("Harold");
 		text.SetDefault("Harold");
@@ -266,7 +266,7 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			shop.item[nextSlot].shopCustomPrice = 35000;
             nextSlot++;
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ExplorerCombination"));
-			shop.item[nextSlot].shopCustomPrice = 60000;
+			shop.item[nextSlot].shopCustomPrice = 80000;
             nextSlot++;
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SummonerCombination"));
 			shop.item[nextSlot].shopCustomPrice = 30000;
@@ -350,7 +350,7 @@ if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
 if (Main.hardMode)
 {
-shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GasContainerItem"));
+shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GasContainer"));
 shop.item[nextSlot].shopCustomPrice = 200;
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CorrosionBeaker"));

@@ -18,19 +18,18 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Summoner Combination");
-			Description.SetDefault("Combination of Summoning, Bewitched, Wrath and Battle buffs");
+			Description.SetDefault("Combination of Summoning, Bewitched and Wrath buffs");
 			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Призывателя");
-			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Призыва, Колдовства, Гнева и Битвы"); 
+			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Призыва, Колдовства и Гнева"); 
 		}
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (player.FindBuffIndex(mod.BuffType("MageComb")) >= 0 ||  player.FindBuffIndex(mod.BuffType("RangerComb")) >= 0 || player.FindBuffIndex(mod.BuffType("BattleComb")) >= 0)
 			{
-			player.enemySpawns = true;
 			++player.maxMinions;
 			++player.maxMinions;
 			player.buffImmune[13] = true;
@@ -45,7 +44,6 @@ namespace AlchemistNPC.Buffs
             player.rangedDamage += 0.1f;
             player.magicDamage += 0.1f;
             player.minionDamage += 0.1f;
-			player.enemySpawns = true;
 			++player.maxMinions;
 			++player.maxMinions;
 			player.buffImmune[13] = true;

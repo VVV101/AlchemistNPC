@@ -12,7 +12,6 @@ namespace AlchemistNPC.Items
 {
 	public class BastScroll : ModItem
 	{
-
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Bast's Scroll");
@@ -23,17 +22,17 @@ namespace AlchemistNPC.Items
 			+"\nBonus jumps could be disabled by changing visibility of accessory"
 			+"\n+10% damage reduction"
 			+"\nIncreases melee/throwing damage and crits by 15%"
-			+"\nAttacks destroy enemy armor totally"
+			+"\nAttacks destroy enemy armor totally (may not work with some weapons)"
 			+"\nThrowing attacks go through tiles");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток Баст");
-			Tooltip.AddTranslation(GameCulture.Russian, "'Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!'\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего боя/метательного на 15%\nАтаки полностью разрушают броню противника\nМетательные атаки проходят сквозь блоки"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "'Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!'\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего боя/метательного на 15%\nАтаки полностью разрушают броню противника (может не работать с некоторыми оружиями)\nМетательные атаки проходят сквозь блоки"); 
 		}
 	
 		public override void SetDefaults()
 		{
 			item.width = 22;
 			item.height = 20;
-			item.value = 50000;
+			item.value = 100000;
 			item.rare = 11;
 			item.accessory = true;
 		}
@@ -64,28 +63,15 @@ namespace AlchemistNPC.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.MasterNinjaGear);
+			recipe.AddIngredient(ItemID.WarriorEmblem);
 			recipe.AddIngredient(ItemID.Book);
 			recipe.AddIngredient(ItemID.BlackInk, 10);
 			recipe.AddIngredient(ItemID.VialofVenom, 10);
-			recipe.AddIngredient(ItemID.SpectreBar, 10);
+			recipe.AddIngredient(ItemID.SpectreBar, 20);
 			recipe.AddIngredient(ItemID.Nanites, 10);
 			recipe.AddIngredient(ItemID.FragmentSolar, 30);
-			recipe.AddIngredient(ItemID.LunarBar, 15);
+			recipe.AddIngredient(ItemID.LunarBar, 25);
 			recipe.AddIngredient(null, "EmagledFragmentation", 250);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-					{
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("CalamitousEssence")), 5);
-					}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-					{
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
-					}
-			if (ModLoader.GetLoadedMods().Contains("SacredTools"))
-					{
-			recipe.AddIngredient((ModLoader.GetMod("SacredTools").ItemType("QuasarSigil")));
-					}
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

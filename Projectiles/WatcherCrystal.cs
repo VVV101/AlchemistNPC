@@ -20,17 +20,17 @@ namespace AlchemistNPC.Projectiles
             projectile.friendly = true;   
             projectile.ignoreWater = true; 
             Main.projFrames[projectile.type] = 9;
-            projectile.timeLeft = 18000;  
+            projectile.timeLeft = 18000;
             projectile.penetrate = -1; 
             projectile.tileCollide = false; 
             projectile.sentry = true;
             ProjectileID.Sets.MinionTargettingFeature[projectile.type] = true;
         }
 
-    public override void SetStaticDefaults()
-    {
-    DisplayName.SetDefault("Watcher Crystal");
-    }
+		public override void SetStaticDefaults()
+		{
+		DisplayName.SetDefault("Watcher Crystal");
+		}
 	
         public override void AI()
         {

@@ -397,7 +397,7 @@ namespace AlchemistNPC.NPCs
 				{
 					if (npc.FindBuffIndex(119) >= 0 && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
 					{
-						NPC.SpawnOnPlayer(Main.myPlayer, mod.NPCType("Young Brewer"));
+					NPC.NewNPC((int)npc.Center.X+2, (int)npc.Center.Y, mod.NPCType("Young Brewer"));
 					}
 			if (Shop1 && S1A)
 						{
@@ -434,144 +434,165 @@ namespace AlchemistNPC.NPCs
 		
 		public bool SacredToolsDownedSerpent
 		{
-			get { return SacredTools.ModdedWorld.FlariumSpawns; }
+		get { return SacredTools.ModdedWorld.FlariumSpawns; }
 		}
 		
 		public bool SacredToolsDownedLunarians
 		{
-			get { return SacredTools.ModdedWorld.downedLunarians; }
+		get { return SacredTools.ModdedWorld.downedLunarians; }
 		}
  
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
 		if (Shop1)
-			{
-shop.item[nextSlot].SetDefaults (ItemID.SwiftnessPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.IronskinPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.RegenerationPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.MiningPotion);
-			shop.item[nextSlot].shopCustomPrice = 7500;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.BuilderPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.ArcheryPotion);
-			shop.item[nextSlot].shopCustomPrice = 15000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.SummoningPotion);
-			shop.item[nextSlot].shopCustomPrice = 7500;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.EndurancePotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.HeartreachPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.AmmoReservationPotion);
-			shop.item[nextSlot].shopCustomPrice = 7500;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.ThornsPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.ShinePotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.NightOwlPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.WarmthPotion);
-			shop.item[nextSlot].shopCustomPrice = 20000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.SpelunkerPotion);
-			shop.item[nextSlot].shopCustomPrice = 20000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.HunterPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.TrapsightPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.FlipperPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.GillsPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.InvisibilityPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.WaterWalkingPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.ObsidianSkinPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.FeatherfallPotion);
-			shop.item[nextSlot].shopCustomPrice = 7500;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.GravitationPotion);
-			shop.item[nextSlot].shopCustomPrice = 20000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.MagicPowerPotion);
-			shop.item[nextSlot].shopCustomPrice = 15000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.ManaRegenerationPotion);
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.TitanPotion);
-			shop.item[nextSlot].shopCustomPrice = 7500;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.BattlePotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.CalmingPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;			
-if (Main.hardMode)
-{		
-shop.item[nextSlot].SetDefaults (ItemID.LifeforcePotion);
-			shop.item[nextSlot].shopCustomPrice = 25000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.InfernoPotion);
-			shop.item[nextSlot].shopCustomPrice = 15000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.WrathPotion);
-			shop.item[nextSlot].shopCustomPrice = 25000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.RagePotion);
-			shop.item[nextSlot].shopCustomPrice = 25000;
-            nextSlot++;
-}
-shop.item[nextSlot].SetDefaults (ItemID.StinkPotion);
-			shop.item[nextSlot].shopCustomPrice = 7500;
-            nextSlot++;
-if (Main.hardMode)
-{	
-shop.item[nextSlot].SetDefaults (ItemID.LovePotion);
-			shop.item[nextSlot].shopCustomPrice = 7500;
-            nextSlot++;
-}
-if (Main.player[Main.myPlayer].anglerQuestsFinished >= 5)
-			{
-shop.item[nextSlot].SetDefaults (ItemID.FishingPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.SonarPotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.CratePotion);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-			}
-			}
-				if (Shop2)
 		{
+		shop.item[nextSlot].SetDefaults (ItemID.SwiftnessPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.IronskinPotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.RegenerationPotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.MiningPotion);
+		shop.item[nextSlot].shopCustomPrice = 7500;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.BuilderPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.ArcheryPotion);
+		shop.item[nextSlot].shopCustomPrice = 15000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.SummoningPotion);
+		shop.item[nextSlot].shopCustomPrice = 7500;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.EndurancePotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.HeartreachPotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.AmmoReservationPotion);
+		shop.item[nextSlot].shopCustomPrice = 7500;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.ThornsPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.ShinePotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.NightOwlPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.WarmthPotion);
+		shop.item[nextSlot].shopCustomPrice = 20000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.SpelunkerPotion);
+		shop.item[nextSlot].shopCustomPrice = 20000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.HunterPotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.TrapsightPotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.FlipperPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.GillsPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.InvisibilityPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.WaterWalkingPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.ObsidianSkinPotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.FeatherfallPotion);
+		shop.item[nextSlot].shopCustomPrice = 7500;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.GravitationPotion);
+		shop.item[nextSlot].shopCustomPrice = 20000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.MagicPowerPotion);
+		shop.item[nextSlot].shopCustomPrice = 15000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.ManaRegenerationPotion);
+		shop.item[nextSlot].shopCustomPrice = 5000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.TitanPotion);
+		shop.item[nextSlot].shopCustomPrice = 7500;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.BattlePotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.CalmingPotion);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;			
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.LifeforcePotion);
+			shop.item[nextSlot].shopCustomPrice = 25000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.InfernoPotion);
+			shop.item[nextSlot].shopCustomPrice = 15000;
+			nextSlot++;
+			}
+			if (NPC.downedBoss3)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.WrathPotion);
+			shop.item[nextSlot].shopCustomPrice = 25000;
+            nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.RagePotion);
+			shop.item[nextSlot].shopCustomPrice = 25000;
+            nextSlot++;
+			}
+		shop.item[nextSlot].SetDefaults (ItemID.StinkPotion);
+		shop.item[nextSlot].shopCustomPrice = 7500;
+		nextSlot++;
+			if (Main.hardMode)
+			{	
+			shop.item[nextSlot].SetDefaults (ItemID.LovePotion);
+			shop.item[nextSlot].shopCustomPrice = 7500;
+			nextSlot++;
+			}
+			if (Main.player[Main.myPlayer].anglerQuestsFinished >= 5)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.FishingPotion);
+			shop.item[nextSlot].shopCustomPrice = 10000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.SonarPotion);
+			shop.item[nextSlot].shopCustomPrice = 10000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.CratePotion);
+			shop.item[nextSlot].shopCustomPrice = 10000;
+			nextSlot++;
+			}
+		shop.item[nextSlot].SetDefaults (ItemID.GenderChangePotion);
+		shop.item[nextSlot].shopCustomPrice = 100000;
+		nextSlot++;			
+		}
+		if (Shop2)
+		{
+		if (NPC.downedBoss1)
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.LesserRestorationPotion);
+		shop.item[nextSlot].shopCustomPrice = 3500;
+		nextSlot++;
+		}
+		if (NPC.downedBoss2)
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.RestorationPotion);
+		shop.item[nextSlot].shopCustomPrice = 7500;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ItemID.StrangeBrew);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		}
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SunshinePotion"));
 			shop.item[nextSlot].shopCustomPrice = 15000;
             nextSlot++;

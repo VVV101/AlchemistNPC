@@ -17,6 +17,12 @@ namespace AlchemistNPC.NPCs
 		public static bool TN1 = false;
 		public static bool TN2 = false;
 		public static bool TN3 = false;
+		public static bool TN4 = false;
+		public static bool TN5 = false;
+		public static bool TN6 = false;
+		public static bool TN7 = false;
+		public static bool TN8 = false;
+		public static bool TN9 = false;
 		public override string Texture
 		{
 			get
@@ -121,6 +127,12 @@ namespace AlchemistNPC.NPCs
 		TN1 = false;
 		TN2 = false;
 		TN3 = false;
+		TN4 = false;
+		TN5 = false;
+		TN6 = false;
+		TN7 = false;
+		TN8 = false;
+		TN9 = false;
 		}
 		
 		public override void SetDefaults()
@@ -281,10 +293,38 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 						{
 							TN3 = true;
 						}
+						if (player.inventory[j].type == mod.ItemType("TornNote4"))
+						{
+							TN4 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("TornNote5"))
+						{
+							TN5 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("TornNote6"))
+						{
+							TN6 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("TornNote7"))
+						{
+							TN7 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("TornNote8"))
+						{
+							TN8 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("TornNote9"))
+						{
+							TN9 = true;
+						}
 					}
 				}
 			}
 			if (TN1 && TN2 && TN3 && !SN)
+			{
+			button2 = Combine;
+			}
+			if (SN && TN4 && TN5 && TN6 && TN7 && TN8 && TN9)
 			{
 			button2 = Combine;
 			}
@@ -303,27 +343,67 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 				Player player = Main.player[Main.myPlayer];
 				if (TN1 && TN2 && TN3 && !SN)
 				{
-				player.QuickSpawnItem(mod.ItemType("SecretNote"));
-				shop = false;
-				if (Main.player[Main.myPlayer].HasItem(mod.ItemType("TornNote1")))
-				{
-				Item[] inventory = Main.player[Main.myPlayer].inventory;
-				for (int k = 0; k < inventory.Length; k++)
-				{
-					if (inventory[k].type == mod.ItemType("TornNote1"))
+					player.QuickSpawnItem(mod.ItemType("SecretNote"));
+					shop = false;
+					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("TornNote1")))
 					{
-						inventory[k].stack--;
-					}
-					if (inventory[k].type == mod.ItemType("TornNote2"))
-					{
-						inventory[k].stack--;
-					}
-					if (inventory[k].type == mod.ItemType("TornNote3"))
-					{
-						inventory[k].stack--;
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
+							if (inventory[k].type == mod.ItemType("TornNote1"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("TornNote2"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("TornNote3"))
+							{
+								inventory[k].stack--;
+							}
+						}
 					}
 				}
-				}
+				if (SN && TN4 && TN5 && TN6 && TN7 && TN8 && TN9)
+				{
+					player.QuickSpawnItem(mod.ItemType("NotesBook"));
+					shop = false;
+					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("SecretNote")))
+					{
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
+							if (inventory[k].type == mod.ItemType("SecretNote"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("TornNote4"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("TornNote5"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("TornNote6"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("TornNote7"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("TornNote8"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("TornNote9"))
+							{
+								inventory[k].stack--;
+							}	
+						}
+					}
 				}
 				OH = false;
 				AS = true;
@@ -448,6 +528,9 @@ if (Main.hardMode)
 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("JewelerHorcrux"));
 	shop.item[nextSlot].shopCustomPrice = 150000;
 	nextSlot++;
+	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ArchitectHorcrux"));
+	shop.item[nextSlot].shopCustomPrice = 150000;
+	nextSlot++;
 	}
 }
 		if (AS)
@@ -457,8 +540,14 @@ if (Main.hardMode)
 		nextSlot++;
 		if (NPC.downedBoss3)
 			{
-			shop.item[nextSlot].SetDefaults (ItemID.HoneyBucket);
+			shop.item[nextSlot].SetDefaults (ItemID.WaterBucket);
 			shop.item[nextSlot].shopCustomPrice = 15000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.HoneyBucket);
+			shop.item[nextSlot].shopCustomPrice = 30000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.LavaBucket);
+			shop.item[nextSlot].shopCustomPrice = 50000;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.HeartLantern);
 			shop.item[nextSlot].shopCustomPrice = 30000;
@@ -467,10 +556,19 @@ if (Main.hardMode)
 			shop.item[nextSlot].shopCustomPrice = 10000;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.WaterCandle);
-			shop.item[nextSlot].shopCustomPrice = 20000;
+			shop.item[nextSlot].shopCustomPrice = 30000;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.PeaceCandle);
+			shop.item[nextSlot].shopCustomPrice = 50000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.Spike);
+			shop.item[nextSlot].shopCustomPrice = 10000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.DartTrap);
 			shop.item[nextSlot].shopCustomPrice = 30000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.GeyserTrap);
+			shop.item[nextSlot].shopCustomPrice = 100000;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.SharpeningStation);
 			shop.item[nextSlot].shopCustomPrice = 150000;
@@ -485,6 +583,21 @@ if (Main.hardMode)
 	{
 			shop.item[nextSlot].SetDefaults (ItemID.CrystalBall);
 			shop.item[nextSlot].shopCustomPrice = 150000;
+			nextSlot++; 
+	}
+if (NPC.downedGolemBoss)
+	{
+			shop.item[nextSlot].SetDefaults (ItemID.WoodenSpike);
+			shop.item[nextSlot].shopCustomPrice = 20000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.SpikyBallTrap);
+			shop.item[nextSlot].shopCustomPrice = 50000;
+			nextSlot++; 
+			shop.item[nextSlot].SetDefaults (ItemID.SuperDartTrap);
+			shop.item[nextSlot].shopCustomPrice = 750000;
+			nextSlot++; 
+			shop.item[nextSlot].SetDefaults (ItemID.FlameTrap);
+			shop.item[nextSlot].shopCustomPrice = 100000;
 			nextSlot++; 
 	}		
 			}

@@ -12,9 +12,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Twilight Wings (O-02-63)");
 			Tooltip.SetDefault("They withstood the twilight and faced the dawn. In the forest, did the birds twitter stop?"
 			+ "\n[c/FF0000:EGO Gift]"
-			+ "\nWorks as Wings");
+			+ "\nWorks as Wings"
+			+ "\nHas huge wing time and excellent horizontal speed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Крылья Сумерек (O-02-63)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Они выстояли Сумерки и встретили Закат. Прекратили ли птицы чирикать в лесу?\n[c/FF0000:Э.П.О.С. Дар]\nРаботает как Крылья"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Они выстояли Сумерки и встретили Закат. Прекратили ли птицы чирикать в лесу?\n[c/FF0000:Э.П.О.С. Дар]\nРаботает как Крылья\nИмеют большое время полёта и великолепную горизонтальную скорость"); 
 		}
 
 		public override void SetDefaults()

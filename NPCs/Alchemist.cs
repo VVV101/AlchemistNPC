@@ -506,21 +506,6 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		shop.item[nextSlot].shopCustomPrice = 10000;
 		nextSlot++;	
 		}
-		if (NPC.downedBoss1)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.LesserRestorationPotion);
-		shop.item[nextSlot].shopCustomPrice = 3500;
-		nextSlot++;
-		}
-		if (NPC.downedBoss2)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.RestorationPotion);
-		shop.item[nextSlot].shopCustomPrice = 7500;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.StrangeBrew);
-		shop.item[nextSlot].shopCustomPrice = 10000;
-		nextSlot++;
-		}
 		shop.item[nextSlot].SetDefaults (ItemID.RecallPotion);
 		shop.item[nextSlot].shopCustomPrice = 5000;
 		nextSlot++;
@@ -533,9 +518,6 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		shop.item[nextSlot].shopCustomPrice = 7500;
 		nextSlot++;	
 		}
-		shop.item[nextSlot].SetDefaults (ItemID.GenderChangePotion);
-		shop.item[nextSlot].shopCustomPrice = 10000;
-		nextSlot++;			
 		if (ModLoader.GetLoadedMods().Contains("imkSushisMod"))
 		{
 		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
@@ -551,10 +533,19 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
 		}
+		if (NPC.downedBoss2)
+		{
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeachTeleporterPotion"));
+		shop.item[nextSlot].shopCustomPrice = 20000;
+		nextSlot++;
+		}
 		if (NPC.downedBoss3)
 		{
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("DungeonTeleportationPotion"));
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("OceanTeleporterPotion"));
 		shop.item[nextSlot].shopCustomPrice = 20000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("DungeonTeleportationPotion"));
+		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
 		}
 		if (Main.hardMode)

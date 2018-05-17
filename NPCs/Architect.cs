@@ -18,11 +18,21 @@ namespace AlchemistNPC.NPCs
 		public static bool Shop3 = false;
 		public static bool Shop4 = false;
 		public static bool Shop5 = false;
+		public static bool Shop6 = false;
+		public static bool Shop7 = false;
+		public static bool Shop8 = false;
+		public static bool Shop9 = false;
+		public static bool Shop10 = false;
 		public static bool S1A = false;
 		public static bool S2A = false;
 		public static bool S3A = false;
 		public static bool S4A = false;
 		public static bool S5A = false;
+		public static bool S6A = false;
+		public static bool S7A = false;
+		public static bool S8A = false;
+		public static bool S9A = false;
+		public static bool S10A = false;
 		public override string Texture
 		{
 			get
@@ -153,20 +163,44 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "Я видел твои постройки, но я всё ещё не впечатлён.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("AS1");
-		text.SetDefault("1st shop (Filler Blocks)");
+		text.SetDefault("1st shop (Filler Blocks)       ");
 		text.AddTranslation(GameCulture.Russian, "1-ый магазин (Заполняющие Блоки)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("AS2");
-		text.SetDefault("2nd shop (Building Blocks)");
+		text.SetDefault("2nd shop (Building Blocks)     ");
 		text.AddTranslation(GameCulture.Russian, "2-ой магазин (Строительные Блоки)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("AS3");
-		text.SetDefault("3rd shop (Basic Furniture)");
+		text.SetDefault("3rd shop (Basic Furniture)     ");
 		text.AddTranslation(GameCulture.Russian, "3-ий магазин (Базовая мебель)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("AS4");
-		text.SetDefault("4th shop (Advanced Furniture)");
+		text.SetDefault("4th shop (Advanced Furniture)  ");
 		text.AddTranslation(GameCulture.Russian, "4-ый магазин (Продвинутая мебель)");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("AS5");
+		text.SetDefault("5th shop (Torches)             ");
+		text.AddTranslation(GameCulture.Russian, "5-ый магазин (Факелы)");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("AS6");
+		text.SetDefault("6th shop (Candles)             ");
+		text.AddTranslation(GameCulture.Russian, "6-ый магазин (Свечи)");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("AS7");
+		text.SetDefault("7th shop (Lamps)               ");
+		text.AddTranslation(GameCulture.Russian, "7-ой магазин (Лампы)");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("AS8");
+		text.SetDefault("8th shop (Lanterns)            ");
+		text.AddTranslation(GameCulture.Russian, "8-ой магазин (Фонари)");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("AS9");
+		text.SetDefault("9th shop (Chandeliers)         ");
+		text.AddTranslation(GameCulture.Russian, "9-ый магазин (Люстры)");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("AS10");
+		text.SetDefault("10th shop (Candelabras)        ");
+		text.AddTranslation(GameCulture.Russian, "10-ый магазин (Канделябры)");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("CycleAS");
 		text.SetDefault("Cycle Shop");
@@ -338,11 +372,17 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			string AS2 = Language.GetTextValue("Mods.AlchemistNPC.AS2");
 			string AS3 = Language.GetTextValue("Mods.AlchemistNPC.AS3");
 			string AS4 = Language.GetTextValue("Mods.AlchemistNPC.AS4");
+			string AS5 = Language.GetTextValue("Mods.AlchemistNPC.AS5");
+			string AS6 = Language.GetTextValue("Mods.AlchemistNPC.AS6");
+			string AS7 = Language.GetTextValue("Mods.AlchemistNPC.AS7");
+			string AS8 = Language.GetTextValue("Mods.AlchemistNPC.AS8");
+			string AS9 = Language.GetTextValue("Mods.AlchemistNPC.AS9");
+			string AS10 = Language.GetTextValue("Mods.AlchemistNPC.AS10");
 			string CycleAS = Language.GetTextValue("Mods.AlchemistNPC.CycleAS");
           if (Shop1)
 			{
 			button = AS1;
-			S4A = false;
+			S10A = false;
 			S1A = true;
 			}
 			if (Shop2)
@@ -362,6 +402,42 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			button = AS4;
 			S3A = false;
 			S4A = true;
+			}
+			if (Shop5)
+			{
+			button = AS5;
+			S4A = false;
+			S5A = true;
+			}
+			if (Shop6)
+			{
+			button = AS6;
+			S5A = false;
+			S6A = true;
+			}
+			if (Shop7)
+			{
+			button = AS7;
+			S6A = false;
+			S7A = true;
+			}
+			if (Shop8)
+			{
+			button = AS8;
+			S7A = false;
+			S8A = true;
+			}
+			if (Shop9)
+			{
+			button = AS9;
+			S8A = false;
+			S9A = true;
+			}
+			if (Shop10)
+			{
+			button = AS10;
+			S9A = false;
+			S10A = true;
 			}
 	  button2 = CycleAS;
         }
@@ -391,8 +467,38 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 						}
 			if (Shop4 && S4A)
 						{
-						Shop1 = true;
+						Shop5 = true;
 						Shop4 = false;
+						}
+			if (Shop5 && S5A)
+						{
+						Shop6 = true;
+						Shop5 = false;
+						}
+			if (Shop6 && S6A)
+						{
+						Shop7 = true;
+						Shop6 = false;
+						}
+			if (Shop7 && S7A)
+						{
+						Shop8 = true;
+						Shop7 = false;
+						}
+			if (Shop8 && S8A)
+						{
+						Shop9 = true;
+						Shop8 = false;
+						}
+			if (Shop9 && S9A)
+						{
+						Shop10 = true;
+						Shop9 = false;
+						}
+			if (Shop10 && S10A)
+						{
+						Shop1 = true;
+						Shop10 = false;
 						}
 				}
 		}
@@ -441,6 +547,9 @@ shop.item[nextSlot].SetDefaults (ItemID.HardenedSand);
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ItemID.MudBlock);
 			shop.item[nextSlot].shopCustomPrice = 1;
+            nextSlot++;
+shop.item[nextSlot].SetDefaults (ItemID.DesertFossil);
+			shop.item[nextSlot].shopCustomPrice = 1000;
             nextSlot++;
 shop.item[nextSlot].SetDefaults (ItemID.Obsidian);
 			shop.item[nextSlot].shopCustomPrice = 2500;
@@ -502,6 +611,15 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 			shop.item[nextSlot].SetDefaults (ItemID.RichMahogany);
 			shop.item[nextSlot].shopCustomPrice = 15;
 			nextSlot++;
+if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				if (NPC.downedGoblins)
+						{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("YewWood"));
+						shop.item[nextSlot].shopCustomPrice = 500;
+						nextSlot++;
+						}
+				}
 			if (Main.hardMode)
 			{
 			shop.item[nextSlot].SetDefaults (ItemID.Pearlwood);
@@ -613,9 +731,6 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 			shop.item[nextSlot].SetDefaults (ItemID.Wood);
 			shop.item[nextSlot].shopCustomPrice = 5;
             nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.Torch);
-			shop.item[nextSlot].shopCustomPrice = 25;
-			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.Candle);
 			shop.item[nextSlot].shopCustomPrice = 100;
             nextSlot++;
@@ -693,47 +808,47 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
             nextSlot++;	
 			}
 		}
-            if (Shop4)
-            {
-                if (NPC.downedBoss3)
-                {
-                    shop.item[nextSlot].SetDefaults(ItemID.BoneWelder);
-                    shop.item[nextSlot].shopCustomPrice = 20000;
-                    nextSlot++;
-                    if (chadsfurniture != null)
-                    {
-                        shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("printer"));
-                        shop.item[nextSlot].shopCustomPrice = 20000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("printer3"));
-                        shop.item[nextSlot].shopCustomPrice = 20000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("wallomatic"));
-                        shop.item[nextSlot].shopCustomPrice = 20000;
-                        nextSlot++;
-                    }
-                }
-        shop.item[nextSlot].SetDefaults(ItemID.GlassKiln);
-        shop.item[nextSlot].shopCustomPrice = 20000;
-        nextSlot++;
-        shop.item[nextSlot].SetDefaults (ItemID.SkyMill);
-		shop.item[nextSlot].shopCustomPrice = 20000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.IceMachine);
-		shop.item[nextSlot].shopCustomPrice = 20000;
-		nextSlot++;
-		if (NPC.downedQueenBee)
+		if (Shop4)
 		{
-		shop.item[nextSlot].SetDefaults (ItemID.HoneyDispenser);
-		shop.item[nextSlot].shopCustomPrice = 20000;
-		nextSlot++;
-		}
-		shop.item[nextSlot].SetDefaults (ItemID.Sawmill);
-		shop.item[nextSlot].shopCustomPrice = 2000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.Loom);
-		shop.item[nextSlot].shopCustomPrice = 2000;
-		nextSlot++;
+			if (NPC.downedBoss3)
+			{
+				shop.item[nextSlot].SetDefaults(ItemID.BoneWelder);
+				shop.item[nextSlot].shopCustomPrice = 20000;
+				nextSlot++;
+				if (chadsfurniture != null)
+				{
+					shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("printer"));
+					shop.item[nextSlot].shopCustomPrice = 20000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("printer3"));
+					shop.item[nextSlot].shopCustomPrice = 20000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("wallomatic"));
+					shop.item[nextSlot].shopCustomPrice = 20000;
+					nextSlot++;
+				}
+			}
+			shop.item[nextSlot].SetDefaults(ItemID.GlassKiln);
+			shop.item[nextSlot].shopCustomPrice = 20000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.SkyMill);
+			shop.item[nextSlot].shopCustomPrice = 20000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.IceMachine);
+			shop.item[nextSlot].shopCustomPrice = 20000;
+			nextSlot++;
+			if (NPC.downedQueenBee)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.HoneyDispenser);
+			shop.item[nextSlot].shopCustomPrice = 20000;
+			nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (ItemID.Sawmill);
+			shop.item[nextSlot].shopCustomPrice = 2000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.Loom);
+			shop.item[nextSlot].shopCustomPrice = 2000;
+			nextSlot++;
                 if (Main.hardMode)
                 {
                     if (chadsfurniture != null)
@@ -742,7 +857,7 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
                         shop.item[nextSlot].shopCustomPrice = 200000;
                         nextSlot++;
                     }
-					shop.item[nextSlot].SetDefaults (ItemID.FleshGrinder);
+					shop.item[nextSlot].SetDefaults (ItemID.MeatGrinder);
 					shop.item[nextSlot].shopCustomPrice = 15000;
 					nextSlot++;
                 }
@@ -758,6 +873,627 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 		shop.item[nextSlot].SetDefaults (ItemID.LihzahrdFurnace);
 		shop.item[nextSlot].shopCustomPrice = 20000;
 		nextSlot++;
+			}
+		}
+		if (Shop5)
+            {
+			shop.item[nextSlot].SetDefaults (ItemID.Torch);
+			shop.item[nextSlot].shopCustomPrice = 50;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.TikiTorch);
+			shop.item[nextSlot].shopCustomPrice = 250;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (974);
+			shop.item[nextSlot].shopCustomPrice = 300;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (427);
+			shop.item[nextSlot].shopCustomPrice = 300;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (428);
+			shop.item[nextSlot].shopCustomPrice = 300;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1245);
+			shop.item[nextSlot].shopCustomPrice = 300;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (429);
+			shop.item[nextSlot].shopCustomPrice = 300;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (430);
+			shop.item[nextSlot].shopCustomPrice = 300;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (431);
+			shop.item[nextSlot].shopCustomPrice = 300;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (432);
+			shop.item[nextSlot].shopCustomPrice = 300;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (433);
+			shop.item[nextSlot].shopCustomPrice = 300;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (523);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1333);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2274);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3004);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3045);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3114);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			}
+		if (Shop6)
+            {
+			shop.item[nextSlot].SetDefaults (105);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (713);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1405);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1406);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1407);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2045);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2046);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2047);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2048);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2049);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2050);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (2051);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (2052);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2153);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2154);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2155);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2236);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2523);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2542);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2556);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2571);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2648);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2649);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2650);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2651);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			if (NPC.downedMartians)
+			{
+			shop.item[nextSlot].SetDefaults (2818);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			}
+			shop.item[nextSlot].SetDefaults (3171);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3172);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (3173);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (3890);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			}
+			}
+		if (Shop7)
+            {
+			shop.item[nextSlot].SetDefaults (341);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2082);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2083);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2084);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2085);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2086);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2087);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (2088);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (2089);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2090);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2091);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2129);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2130);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2131);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2132);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2133);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2134);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2225);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2533);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2547);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2563);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2578);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2643);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2644);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2645);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2646);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2647);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			if (NPC.downedMartians)
+			{
+			shop.item[nextSlot].SetDefaults (2819);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2820);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (3135);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (3136);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3137);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (3892);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			}
+			}
+		if (Shop8)
+            {
+			shop.item[nextSlot].SetDefaults (136);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (344);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (347);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1390);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1391);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1392);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1393);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1394);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (1808);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2032);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2033);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2034);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2035);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2036);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2037);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2038);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (2039);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (2040);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2041);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2042);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2043);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2145);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2146);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2147);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2148);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2226);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2530);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2546);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2564);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2579);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2641);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2642);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2820);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3138);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (3139);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3140);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (3891);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			}
+			}
+		if (Shop9)
+            {
+			shop.item[nextSlot].SetDefaults (106);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (107);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (108);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (710);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (711);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (712);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2055);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2056);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2057);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2058);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2059);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2060);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (2061);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (2062);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2063);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2064);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2065);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2141);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2142);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2143);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2144);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2224);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2525);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2543);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2558);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2573);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2652);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2653);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2654);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2655);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2656);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2657);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (NPC.downedMartians)
+			{
+			shop.item[nextSlot].SetDefaults (2813);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			}
+			shop.item[nextSlot].SetDefaults (3177);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3178);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (3179);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (3894);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			}
+			}
+		if (Shop10)
+            {
+			shop.item[nextSlot].SetDefaults (349);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (714);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2092);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2093);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2094);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2095);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2096);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2097);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2098);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (2099);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (2100);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2101);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2102);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2103);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2149);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2150);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2151);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2152);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2227);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2522);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2541);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2555);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2570);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2664);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2665);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2666);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			shop.item[nextSlot].SetDefaults (2667);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (2668);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			if (NPC.downedMartians)
+			{
+			shop.item[nextSlot].SetDefaults (2825);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (3168);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3169);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (3170);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;	
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (3893);
+			shop.item[nextSlot].shopCustomPrice = 500;
+			nextSlot++;
 			}
 			}
 		}

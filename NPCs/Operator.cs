@@ -545,12 +545,6 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
 				}
-				if (NPC.downedMoonlord)
-				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ChromaticCrystal"));
-				shop.item[nextSlot].shopCustomPrice = 350000;
-				nextSlot++;	
-				}
 				if (NPC.downedMoonlord && OA)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentSolar);
