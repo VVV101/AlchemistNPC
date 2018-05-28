@@ -120,7 +120,7 @@ namespace AlchemistNPC.NPCs
 				{
 					if (Main.hardMode && !NPC.downedMoonlord)
 					{
-					damage = 40;	
+					damage += 20;	
 					}
 					if (NPC.downedMoonlord)
 					{

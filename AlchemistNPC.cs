@@ -43,6 +43,8 @@ namespace AlchemistNPC
 		public static float ppy = 0f;
 		public static string GithubUserName { get { return "VVV101"; } }
 		public static string GithubProjectName { get { return "AlchemistNPC"; } }
+		public static int IchorCurrencyID;
+		public static int CursedFlameCurrencyID;
 		
 		public override void Load()
 		{
@@ -60,8 +62,11 @@ namespace AlchemistNPC
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
 			}
+		IchorCurrencyID = CustomCurrencyManager.RegisterCurrency(new AlchemistNPCCustomCurrency1(ItemID.Ichor, 999L));
+		CursedFlameCurrencyID = CustomCurrencyManager.RegisterCurrency(new AlchemistNPCCustomCurrency2(ItemID.CursedFlame, 999L));
 		}
 
+		
 		public static string ConfigFileRelativePath 
 		{
 		get { return "Mod Configs/Alchemist.json"; }

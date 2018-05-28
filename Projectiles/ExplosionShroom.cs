@@ -43,7 +43,7 @@ namespace AlchemistNPC.Projectiles
 
                 if (distance < 400f && !target.friendly && target.active)
                 {
-                    if (projectile.ai[0] > 20f)
+                    if (projectile.ai[0] > 30f)
                     {
                         distance = 1.6f / distance;
                         shootToX *= distance * 3;

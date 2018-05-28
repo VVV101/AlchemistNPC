@@ -47,7 +47,7 @@ namespace AlchemistNPC.Projectiles
 				projectile.damage,
 				0,
 				Main.myPlayer
-			);			
+			);
 		}
 		
 		public void createNAG(Projectile projectile) {

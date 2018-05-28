@@ -619,6 +619,11 @@ namespace AlchemistNPC.NPCs
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EnergyCell"));
 							nextSlot++;
 							}
+							if (player.inventory[j].type == mod.ItemType("Tritantrum"))
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("PlasmaRound"));
+							nextSlot++;
+							}
 						}
 					}
 				}

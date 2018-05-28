@@ -13,7 +13,7 @@ Little advice - Torn Notes.
 Can be bought from Explorer.
 -Added config option to disable Torn Notes drop. Also changed config file name to AlchemistNPCv70.json.
 -Boosted stats of vanilla town NPC in hardmode and post Moon Lord.
-They got 40 basic damage and +30 defense in hardmode.
+They got +20 basic damage and +30 defense in hardmode.
 They got +250 max HP, 100 basic damage and +80 defense post Moon Lord. And some NPCs changes their weapons/projectiles.
 -Added Heart of Yui and Yui (Light Pet). Lights up treasures, creatures and traps.
 Drops from Treasure Bags in hardmode with 1:150 chance.
@@ -25,8 +25,11 @@ Has 2 attack types. One is exploding Red Spear. Another is a spread of homing bl
 Available post Lunatic Cultist.
 -Added XtraT, shroomite repeater. Shoots 2 arrows and energy bolt. Bolt deals triple weapon damage and pierces through enemies and tiles.
 Available post Lunatic Cultist.
+-Added Laoskadyn, powerful post Moon Lord sword. Shoots homing needles from the sky.
+Needles explode into flames on tyile/enemy impact.
+-Added Tritantrum, powerful post Moon Lord assault rifle. Shoots exploding Plasma Rounds.
 -Added Drainer. Damages player by 250-400 HP each half of the second, then heals by 200. Also removes most of player's defense and endurance.
-Useful for gaining Rage. Available after beating Lunatic Cultist.
+Useful for gaining Rage. Available after beating Lunatic Cultist while you have Calamity mod ON.
 -Added Nyctosythia and Sunkrovera Arrows/Bullets. Post ML ammo.
 Nyctosythia ammo phases through walls and releases homing projectiles on enemy/wall impact.
 Sunkrovera ammo releases life stealing projectiles on enemy/wall impact.
@@ -60,6 +63,7 @@ Grants 15% bonus to all damage & crits, +20 life regeneration and heals for 150,
 -Nerfed Ballistic Nebular Destroyer.
 -Nerfed Blurring Potion.
 -Lowered drop chances for developer sets (1:100) and pet (1:150).
+Sets now drops post Plantera.
 -Improved Young Brewer sprite.
 -Reworked recipes for Autoinjector and Watcher Amulet.
 -Fixed Bast's Scroll armor destruction. Also added visual effect. Crafting recipe was nerfed too.

@@ -17,16 +17,17 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Laoskadyn");
-			Tooltip.SetDefault("Drops exploding needle from the sky on swing");
+			Tooltip.SetDefault("Drops exploding homing needles from the sky on swing"
+			+"\nNeedles release damaging fires");
 			DisplayName.AddTranslation(GameCulture.Russian, "Лаоскадин");
-			Tooltip.AddTranslation(GameCulture.Russian, "Вызывает падение взрывающихся игл с небес при взмахе"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Вызывает падение взрывающихся игл с небес при взмахе\nИгры выпускают наносящие урон огни"); 
 		}
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Starfury);
 			item.melee = true;
-			item.damage = 150;
+			item.damage = 100;
 			item.width = 78;
 			item.height = 106;
 			item.useTime = 15;
@@ -43,12 +44,9 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			type = mod.ProjectileType("SharpNeedle");
+			Projectile.NewProjectile(position.X+Main.rand.Next(-25,25), position.Y+Main.rand.Next(-25,25), speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X+Main.rand.Next(-50,50), position.Y+Main.rand.Next(-50,50), speedX, speedY, type, damage, knockBack, player.whoAmI);
 			return base.Shoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
-		}
-		
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
-		{
-			target.AddBuff(mod.BuffType("Twilight"), 600);
 		}
 		
 		public override void AddRecipes()
