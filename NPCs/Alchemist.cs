@@ -196,7 +196,7 @@ namespace AlchemistNPC.NPCs
 			animationType = NPCID.Clothier;
 		}
 		
-public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+        public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
 			if (NPC.downedBoss1)
 			{
@@ -215,18 +215,18 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			string Gregg = Language.GetTextValue("Mods.AlchemistNPC.Gregg");
 			switch (WorldGen.genRand.Next(6))
             {
-                case 0:
-                    return Edward;
-                case 1:
-                    return Severus;
-                case 2:
-                    return Horace;
-                case 3:
-                    return Tilyorn;
-				case 4:
-                    return Nicolas;
-                default:
-                    return Gregg;
+            case 0:
+            return Edward;
+            case 1:
+            return Severus;
+            case 2:
+            return Horace;
+            case 3:
+            return Tilyorn;
+			case 4:
+            return Nicolas;
+            default:
+            return Gregg;
             }
         }
  

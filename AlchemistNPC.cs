@@ -45,6 +45,12 @@ namespace AlchemistNPC
 		public static string GithubProjectName { get { return "AlchemistNPC"; } }
 		public static int IchorCurrencyID;
 		public static int CursedFlameCurrencyID;
+		public static int ReversivityCoinTier1ID;
+		public static int ReversivityCoinTier2ID;
+		public static int ReversivityCoinTier3ID;
+		public static int ReversivityCoinTier4ID;
+		public static int ReversivityCoinTier5ID;
+		public static int ReversivityCoinTier6ID;
 		
 		public override void Load()
 		{
@@ -64,6 +70,12 @@ namespace AlchemistNPC
 			}
 		IchorCurrencyID = CustomCurrencyManager.RegisterCurrency(new AlchemistNPCCustomCurrency1(ItemID.Ichor, 999L));
 		CursedFlameCurrencyID = CustomCurrencyManager.RegisterCurrency(new AlchemistNPCCustomCurrency2(ItemID.CursedFlame, 999L));
+		ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ItemType<Items.ReversivityCoinTier1>(), 999L));
+		ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ItemType<Items.ReversivityCoinTier2>(), 999L));
+		ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ItemType<Items.ReversivityCoinTier3>(), 999L));
+		ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ItemType<Items.ReversivityCoinTier4>(), 999L));
+		ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ItemType<Items.ReversivityCoinTier5>(), 999L));
+		ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ItemType<Items.ReversivityCoinTier6>(), 999L));
 		}
 
 		

@@ -44,7 +44,7 @@ namespace AlchemistNPC.Projectiles
 				vel.X,
 				vel.Y,
 				mod.ProjectileType("Bees"),
-				projectile.damage,
+				projectile.damage/2,
 				0,
 				Main.myPlayer
 			);
@@ -80,7 +80,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			if (firstTime && !projectile.hostile && projectile.magic && AlchemistNPC.LE && projectile.type != mod.ProjectileType("Bees"))
 			{
-				for (int g = 0; g < 4; g++)
+				for (int g = 0; g < 2; g++)
 				{
 					createBee(projectile);
 				}

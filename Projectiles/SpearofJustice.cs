@@ -66,6 +66,30 @@ namespace AlchemistNPC.Projectiles
 				vel *= 0f;
 				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionSOJ"), projectile.damage, 0, Main.myPlayer);
 			}
+			Vector2 vel1 = new Vector2(-1, -1);
+			vel1 *= 4f;
+			Projectile.NewProjectile(projectile.Center.X+150, projectile.Center.Y+150, vel1.X, vel1.Y, mod.ProjectileType("SpearofJusticeB"), projectile.damage/2, 0, Main.myPlayer);
+			Vector2 vel2 = new Vector2(1, 1);
+			vel2 *= 4f;
+			Projectile.NewProjectile(projectile.Center.X-150, projectile.Center.Y-150, vel2.X, vel2.Y, mod.ProjectileType("SpearofJusticeB"), projectile.damage/2, 0, Main.myPlayer);
+			Vector2 vel3 = new Vector2(1, -1);
+			vel3 *= 4f;
+			Projectile.NewProjectile(projectile.Center.X-150, projectile.Center.Y+150, vel3.X, vel3.Y, mod.ProjectileType("SpearofJusticeB"), projectile.damage/2, 0, Main.myPlayer);
+			Vector2 vel4 = new Vector2(-1, 1);
+			vel4 *= 4f;
+			Projectile.NewProjectile(projectile.Center.X+150, projectile.Center.Y-150, vel4.X, vel4.Y, mod.ProjectileType("SpearofJusticeB"), projectile.damage/2, 0, Main.myPlayer);
+			Vector2 vel5 = new Vector2(0, -1);
+			vel5 *= 4f;
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y+150, vel5.X, vel5.Y, mod.ProjectileType("SpearofJusticeB"), projectile.damage/2, 0, Main.myPlayer);
+			Vector2 vel6 = new Vector2(0, 1);
+			vel6 *= 4f;
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y-150, vel6.X, vel6.Y, mod.ProjectileType("SpearofJusticeB"), projectile.damage/2, 0, Main.myPlayer);
+			Vector2 vel7 = new Vector2(1, 0);
+			vel7 *= 4f;
+			Projectile.NewProjectile(projectile.Center.X-150, projectile.Center.Y, vel7.X, vel7.Y, mod.ProjectileType("SpearofJusticeB"), projectile.damage/2, 0, Main.myPlayer);
+			Vector2 vel8 = new Vector2(-1, 0);
+			vel8 *= 4f;
+			Projectile.NewProjectile(projectile.Center.X+150, projectile.Center.Y, vel8.X, vel8.Y, mod.ProjectileType("SpearofJusticeB"), projectile.damage/2, 0, Main.myPlayer);
 		}
 	}
 }

@@ -12,6 +12,7 @@ Little advice - Torn Notes.
 -Added Explorer's Brew. Works like Explorer Combination, but have Sunshine effect instead of Shine, gives bigger mining speed bonus and your attacks can Electrocute enemies.
 Can be bought from Explorer.
 -Added config option to disable Torn Notes drop. Also changed config file name to AlchemistNPCv70.json.
+-Reworked treasure bags shop of Operator. Now bags can be bought by special coins, which are dropping from bosses.
 -Boosted stats of vanilla town NPC in hardmode and post Moon Lord.
 They got +20 basic damage and +30 defense in hardmode.
 They got +250 max HP, 100 basic damage and +80 defense post Moon Lord. And some NPCs changes their weapons/projectiles.
