@@ -15,8 +15,8 @@ namespace AlchemistNPC.Items
         {
             DisplayName.SetDefault("Reversivity Coin Tier 3");
 			DisplayName.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Третий");
-            Tooltip.SetDefault("Some Tooltip");
-			Tooltip.AddTranslation(GameCulture.Russian, "Тоже еще не придумал описание"); 
+            Tooltip.SetDefault("Can be used for buying Treasure Bags");
+			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки Treasure Bags"); 
         }
         public override void SetDefaults()
 		{

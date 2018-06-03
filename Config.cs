@@ -11,7 +11,8 @@ namespace AlchemistNPC
         public static int StarPrice = 1000;
 		public static bool TS = true;
 		public static bool TornNotesDrop = true;
-        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv70.json");
+		public static bool CoinsDrop = true;
+        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv7.json");
         static Preferences Configuration = new Preferences(ConfigPath);
 
         public static void Load()
@@ -44,12 +45,17 @@ namespace AlchemistNPC
 			{
             TornNotesDrop = true;
 			}
+			Configuration.Get<bool>("CoinsDrop", ref Config.CoinsDrop);
+			if(CoinsDrop != true && CoinsDrop != false)
+			{
+            CoinsDrop = true;
+			}
 			return true;
 			}
 		else
-		{
-		return false;
-		}
+			{
+			return false;
+			}
 		}
             
         static void CreateConfig()
@@ -58,6 +64,7 @@ namespace AlchemistNPC
             Configuration.Put("StarPrice", StarPrice);
 			Configuration.Put("TreasureBagsShop", TS);
 			Configuration.Put("TornNotesDrop", TornNotesDrop);
+			Configuration.Put("CoinsDrop", CoinsDrop);
             Configuration.Save(true);
         }
     }

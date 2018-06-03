@@ -10,17 +10,12 @@ namespace AlchemistNPC.Items
 {
     public class ReversivityCoinTier4 : ModItem
     {
-        public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("CalamityMod") != null;
-		}
-
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Reversivity Coin Tier 4");
 			DisplayName.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Четвертый");
-            Tooltip.SetDefault("Some Tooltip");
-			Tooltip.AddTranslation(GameCulture.Russian, "Тоже еще не придумал описание"); 
+            Tooltip.SetDefault("Can be used for buying Treasure Bags");
+			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки Treasure Bags"); 
         }
 
         public override void SetDefaults()

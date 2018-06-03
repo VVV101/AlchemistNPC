@@ -20,7 +20,7 @@ namespace AlchemistNPC.Items.Armor
 		+ "\nIncreases movement speed greatly"
 		+ "\nPlayer is under permanent effect of Tank Combination"
 		+ "\nNational Ugandan Treasure can now be dropped from Moon Lord");
-		text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем/ближнем бою на 20% и добавляет 15% к шансу критического удара\n+56 защиты");
+		text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем/ближнем бою на 15% и добавляет 15% к шансу критического удара\n+56 защиты");
 		mod.AddTranslation(text);
 		}
 

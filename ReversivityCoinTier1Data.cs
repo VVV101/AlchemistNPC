@@ -7,7 +7,7 @@ namespace AlchemistNPC
 {
     public class ReversivityCoinTier1Data : CustomCurrencySingleCoin
     {
-        public Color ReversivityCoinTier1TextColor = Color.BlueViolet;
+        public Color ReversivityCoinTier1TextColor = Color.Orange;
  
         public ReversivityCoinTier1Data(int coinItemID, long currencyCap) : base(coinItemID, currencyCap)
         {

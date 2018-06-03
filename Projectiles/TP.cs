@@ -33,10 +33,6 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
-			if (target.lifeMax > 10000)
-			{
-			damage = 300;
-			}
 			if (target.lifeMax <= 10000)
 			{
 			damage = 10000;
