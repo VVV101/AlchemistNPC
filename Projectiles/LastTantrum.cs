@@ -28,7 +28,7 @@ namespace AlchemistNPC.Projectiles
 			float rand = Main.rand.NextFloat() * 6.283f;
 			vel = vel.RotatedBy(rand);
 			vel *= 0f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionPlasma"), projectile.damage, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionNyx"), projectile.damage, 0, Main.myPlayer);
 			return true;
 		}
 		
@@ -40,7 +40,7 @@ namespace AlchemistNPC.Projectiles
 			float rand = Main.rand.NextFloat() * 6.283f;
 			vel = vel.RotatedBy(rand);
 			vel *= 0f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionPlasma"), projectile.damage, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionNyx"), projectile.damage, 0, Main.myPlayer);
 		}
 	}
 }

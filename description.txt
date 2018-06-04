@@ -7,11 +7,11 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 v7.0
 -Fixed MP bug with additional HP/Mana. Thanks to Dark;Light#2919 for help!
 -Added new NPC, Explorer. Sells some special potions and research notes.
-Avilable after beating Moon Lord. The way to spawn her is secret, so try to find the way. 
+Available after beating Moon Lord. The way to spawn her is secret, so try to find the way. 
 Little advice - Torn Notes.
 -Added Explorer's Brew. Works like Explorer Combination, but have Sunshine effect instead of Shine, gives bigger mining speed bonus and your attacks can Electrocute enemies.
 Can be bought from Explorer.
--Added config option to disable Torn Notes drop. Also changed config file name to AlchemistNPCv70.json.
+-Added config option to disable Torn Notes drop. Also changed config file name to Alchemistv7.json.
 -Reworked treasure bags shop of Operator. Now bags can be bought by special coins, which are dropping from bosses.
 -Boosted stats of vanilla town NPC in hardmode and post Moon Lord.
 They got +20 basic damage and +30 defense in hardmode.

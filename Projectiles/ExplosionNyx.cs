@@ -28,26 +28,25 @@ namespace AlchemistNPC.Projectiles
 			projectile.width = 98;
 			projectile.height = 98;
 			projectile.penetrate = 40;
-			projectile.timeLeft = 40;
+			projectile.timeLeft = 70;
 			projectile.tileCollide = false;
 			aiType = ProjectileID.LaserMachinegunLaser;
 		}
-		
 		public override void AI()
 		{
-			if (projectile.frameCounter < 5)
+			if (projectile.frameCounter < 10)
 				projectile.frame = 0;
-			else if (projectile.frameCounter >= 5 && projectile.frameCounter < 10)
+			else if (projectile.frameCounter >= 10 && projectile.frameCounter < 20)
 				projectile.frame = 1;
-			else if (projectile.frameCounter >= 10 && projectile.frameCounter < 15)
+			else if (projectile.frameCounter >= 20 && projectile.frameCounter < 30)
 				projectile.frame = 2;
-			else if (projectile.frameCounter >= 15 && projectile.frameCounter < 20)
+			else if (projectile.frameCounter >= 30 && projectile.frameCounter < 40)
 				projectile.frame = 3;
-			else if (projectile.frameCounter >= 20 && projectile.frameCounter < 25)
+			else if (projectile.frameCounter >= 40 && projectile.frameCounter < 50)
 				projectile.frame = 4;
-			else if (projectile.frameCounter >= 25 && projectile.frameCounter < 30)
+			else if (projectile.frameCounter >= 50 && projectile.frameCounter < 60)
 				projectile.frame = 5;
-			else if (projectile.frameCounter >= 30 && projectile.frameCounter < 35)
+			else if (projectile.frameCounter >= 60 && projectile.frameCounter < 70)
 				projectile.frame = 6;
 			else
 				projectile.frameCounter = 0;

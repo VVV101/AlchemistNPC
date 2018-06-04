@@ -27,7 +27,6 @@ namespace AlchemistNPC.Projectiles
 			projectile.width = 98;
 			projectile.height = 98;
 			projectile.penetrate = 70;
-			projectile.damage = 100;
 			projectile.timeLeft = 70;
 			projectile.tileCollide = false;
 			aiType = ProjectileID.LaserMachinegunLaser;

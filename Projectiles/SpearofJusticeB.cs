@@ -18,7 +18,7 @@ namespace AlchemistNPC.Projectiles
 			projectile.aiStyle = 1;
 			projectile.thrown = true;
 			projectile.penetrate = 1;
-			projectile.timeLeft = 30;
+			projectile.timeLeft = 40;
 			projectile.tileCollide = false;
 			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 2;

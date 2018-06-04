@@ -796,7 +796,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++; 
 						}
 				}
-				if (NPC.downedMoonlord && Main.expertMode)
+				if (NPC.downedAncientCultist && Main.expertMode)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.GolemBossBag);
 				shop.item[nextSlot].shopCustomPrice = new int?(5);
@@ -959,7 +959,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++; 
 						}
 				}
-				if (NPC.downedMoonlord && Main.expertMode)
+				if (NPC.downedAncientCultist && Main.expertMode)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.GolemBossBag);
 				shop.item[nextSlot].shopCustomPrice = 3000000;
