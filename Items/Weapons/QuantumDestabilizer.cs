@@ -12,7 +12,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			Tooltip.SetDefault("Experiment #618"
 			+"\nReleases entity destabilizing beam, which deals extremely high damage"
-			+"\nRequires 1,5 seconds to charge the shot"
+			+"\nRequires 1 seconds to charge the shot"
 			+"\nRequires Energy Cells as ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Квантовый Дестабилизатор");
 			Tooltip.AddTranslation(GameCulture.Russian, "Эксперимент №618\nВыпускает луч, дестабилизирующий состояние противника и наносящий очень высокие повреждения\nТребует 1 секунду на заряд\nТребует Энергоячейки в качестве патронов"); 
@@ -20,7 +20,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 750;
+			item.damage = 1000;
 			item.noMelee = true;
 			item.ranged = true;
 			item.channel = true;

@@ -11,7 +11,7 @@ namespace AlchemistNPC.Projectiles
 {
 	public class QuantumDestabilizer : ModProjectile
 	{
-		private const int MAX_CHARGE = 90;
+		private const int MAX_CHARGE = 60;
 		private const float MOVE_DISTANCE = 60f;
 		public static int maxcount = 0;
 
@@ -230,7 +230,7 @@ namespace AlchemistNPC.Projectiles
 			{
 				maxcount++;			
 			}
-			if (maxcount >= 5)
+			if (maxcount >= 10)
 			{
 				maxcount = 0;
 				projectile.Kill();

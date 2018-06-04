@@ -624,16 +624,8 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.CursedFlame);
 				shop.item[nextSlot].shopCustomPrice = 7500;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.CursedFlame);
-				shop.item[nextSlot].shopCustomPrice = new int?(1);
-				shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.IchorCurrencyID;
-				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.Ichor);
 				shop.item[nextSlot].shopCustomPrice = 7500;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.Ichor);
-				shop.item[nextSlot].shopCustomPrice = new int?(1);
-				shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.CursedFlameCurrencyID;
 				nextSlot++;
 				}	
 			{

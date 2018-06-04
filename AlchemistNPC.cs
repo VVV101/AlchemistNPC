@@ -43,8 +43,6 @@ namespace AlchemistNPC
 		public static float ppy = 0f;
 		public static string GithubUserName { get { return "VVV101"; } }
 		public static string GithubProjectName { get { return "AlchemistNPC"; } }
-		public static int IchorCurrencyID;
-		public static int CursedFlameCurrencyID;
 		public static int ReversivityCoinTier1ID;
 		public static int ReversivityCoinTier2ID;
 		public static int ReversivityCoinTier3ID;
@@ -68,8 +66,6 @@ namespace AlchemistNPC
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
 			}
-		IchorCurrencyID = CustomCurrencyManager.RegisterCurrency(new AlchemistNPCCustomCurrency1(ItemID.Ichor, 999L));
-		CursedFlameCurrencyID = CustomCurrencyManager.RegisterCurrency(new AlchemistNPCCustomCurrency2(ItemID.CursedFlame, 999L));
 		ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ItemType<Items.ReversivityCoinTier1>(), 999L));
 		ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ItemType<Items.ReversivityCoinTier2>(), 999L));
 		ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ItemType<Items.ReversivityCoinTier3>(), 999L));

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -14,8 +15,8 @@ namespace AlchemistNPC.Items
         {
             DisplayName.SetDefault("Reversivity Coin Tier 4");
 			DisplayName.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Четвертый");
-            Tooltip.SetDefault("Can be used for buying Treasure Bags");
-			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки Treasure Bags"); 
+            Tooltip.SetDefault("Can be used for buying Treasure Bags from Operator");
+			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки сумок у Оператора"); 
         }
 
         public override void SetDefaults()
@@ -29,11 +30,14 @@ namespace AlchemistNPC.Items
         
         public override void AddRecipes()
         {
+            if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			{
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "ReversivityCoinTier5", 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this, 2);
             recipe.AddRecipe();
+			}
         }
     }
 }

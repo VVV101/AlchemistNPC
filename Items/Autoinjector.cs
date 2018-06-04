@@ -9,7 +9,6 @@ namespace AlchemistNPC.Items
 {
 	public class Autoinjector : ModItem
 	{
-
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Autoinjector");
@@ -22,6 +21,7 @@ namespace AlchemistNPC.Items
 	
 		public override void SetDefaults()
 		{
+			item.stack = 1;
 			item.width = 26;
 			item.height = 26;
 			item.value = 1000000;
