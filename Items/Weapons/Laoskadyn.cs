@@ -53,7 +53,12 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.TerraBlade);
+			recipe.AddIngredient(ItemID.StarWrath);
 			recipe.AddIngredient(ItemID.MartianConduitPlating, 50);
+			recipe.AddIngredient(ItemID.FragmentSolar, 5);
+			recipe.AddIngredient(ItemID.FragmentNebula, 5);
+			recipe.AddIngredient(ItemID.FragmentVortex, 5);
+			recipe.AddIngredient(ItemID.FragmentStardust, 5);
 			recipe.AddIngredient(null, "EmagledFragmentation", 100);
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);

@@ -9,14 +9,21 @@ namespace AlchemistNPC.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(555);
-			aiType = 555;
+			projectile.extraUpdates = 0;
+			projectile.width = 16;
+			projectile.height = 16;
+			// aiStyle 99 is used for all yoyos, and is Extremely suggested, as yoyo are extremely difficult without them
 			projectile.aiStyle = 99;
+			projectile.friendly = true;
+			projectile.penetrate = -1;
+			projectile.melee = true;
+			projectile.scale = 1f;
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Sasscade Yoyo");
+			ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = -1f;
 			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 500f;
 			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 20f;
 
@@ -25,7 +32,6 @@ namespace AlchemistNPC.Projectiles
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 		target.immune[projectile.owner] = 2;
-
 		}
 
 		public override void AI()

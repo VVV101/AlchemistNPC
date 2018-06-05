@@ -96,7 +96,7 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "Мозг Ктулху может выглядеть пугающе, но без своих прислужников он не способен ни на что");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO9");
-		text.SetDefault("Something changed in this world, Manager. Evil is spreading even wider, but at the same time, my sensors systems fixed birth of new biome, called Hallowed.");
+		text.SetDefault("Something changed in this world, Manager. Evil is spreading even wider, but at the same time, my sensor system fixed birth of new biome, called Hallowed.");
 		text.AddTranslation(GameCulture.Russian, "Что-то изменилось в этом мире, Управляющий. Зло разрастается ещё шире, но в то же время мои сенсоры зафиксировали рождение нового биома, называющегося Святым.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO10");
@@ -104,8 +104,8 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "Все эти Механические Боссы... Они определённо могут иметь происхождение от Траумы. Какие классификационные номера они получат? Я полагаю, они будут начинаться с T-05-...");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO11");
-		text.SetDefault("Goblins... Such a pathetic creatures. And the only useful things from them are just Spiky Balls and Harpoon.");
-		text.AddTranslation(GameCulture.Russian, "Гоблины... Какие же жалкие создания. Единственные полезные вещи с них - это шипастые шары и Гарпун.");
+		text.SetDefault("Goblins... Such a pathetic creatures. And the only useful things from them are just Spiky Balls and Harpoons.");
+		text.AddTranslation(GameCulture.Russian, "Гоблины... Какие же жалкие создания. Единственные полезные вещи с них - это шипастые шары и Гарпуны.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO12");
 		text.SetDefault("Pretty strange Abnormal event... They all look as living creatures, but their 'Flying Dutchman' is definetly a ghost with HE risk class.");
@@ -134,6 +134,14 @@ namespace AlchemistNPC.NPCs
 		text = mod.CreateTranslation("EntryO18");
 		text.SetDefault("Yharim... I am pretty sure I heard that name before. But my memory data is corrupted. Try asking Calamitas about him...");
 		text.AddTranslation(GameCulture.Russian, "Ярим... Я уверена, что слышала это имя раньше. Но моя память повреждена. Попробуй узнать у Каламитас что-нибудь о нём...");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO19");
+		text.SetDefault("This carnivorous plant was really dangerous... At least HE Class. Glad to see you again in one piece after all.");
+		text.AddTranslation(GameCulture.Russian, "Этот плотоядный цветок был опасен на самом деле... Рада видеть, что ты не пострадал.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("Entry20");
+		text.SetDefault("This ancient machine was holding celestial powers inside. With its death, world can change forever...");
+		text.AddTranslation(GameCulture.Russian, "Эта древняя машина хранила в себе Небесные Силы. С её смертью, мир может измениться навсегда.");
 		mod.AddTranslation(text);
 		}
 
@@ -266,24 +274,26 @@ namespace AlchemistNPC.NPCs
  
         public override string GetChat()
         {                                           //npc chat
-         string EntryO1 = Language.GetTextValue("Mods.AlchemistNPC.EntryO1");
-		 string EntryO2 = Language.GetTextValue("Mods.AlchemistNPC.EntryO2");
-		 string EntryO3 = Language.GetTextValue("Mods.AlchemistNPC.EntryO3");
-		 string EntryO4 = Language.GetTextValue("Mods.AlchemistNPC.EntryO4");
-		 string EntryO5 = Language.GetTextValue("Mods.AlchemistNPC.EntryO5");
-		 string EntryO6 = Language.GetTextValue("Mods.AlchemistNPC.EntryO6");
-		 string EntryO7 = Language.GetTextValue("Mods.AlchemistNPC.EntryO7");
-		 string EntryO8 = Language.GetTextValue("Mods.AlchemistNPC.EntryO8");
-		 string EntryO9 = Language.GetTextValue("Mods.AlchemistNPC.EntryO9");
-		 string EntryO10 = Language.GetTextValue("Mods.AlchemistNPC.EntryO10");
-		 string EntryO11 = Language.GetTextValue("Mods.AlchemistNPC.EntryO11");
-		 string EntryO12 = Language.GetTextValue("Mods.AlchemistNPC.EntryO12");
-		 string EntryO13 = Language.GetTextValue("Mods.AlchemistNPC.EntryO13");
-		 string EntryO14 = Language.GetTextValue("Mods.AlchemistNPC.EntryO14");
-		 string EntryO15 = Language.GetTextValue("Mods.AlchemistNPC.EntryO15");
-		 string EntryO16 = Language.GetTextValue("Mods.AlchemistNPC.EntryO16");
-		 string EntryO17 = Language.GetTextValue("Mods.AlchemistNPC.EntryO17");
-		 string EntryO18 = Language.GetTextValue("Mods.AlchemistNPC.EntryO18");
+		string EntryO1 = Language.GetTextValue("Mods.AlchemistNPC.EntryO1");
+		string EntryO2 = Language.GetTextValue("Mods.AlchemistNPC.EntryO2");
+		string EntryO3 = Language.GetTextValue("Mods.AlchemistNPC.EntryO3");
+		string EntryO4 = Language.GetTextValue("Mods.AlchemistNPC.EntryO4");
+		string EntryO5 = Language.GetTextValue("Mods.AlchemistNPC.EntryO5");
+		string EntryO6 = Language.GetTextValue("Mods.AlchemistNPC.EntryO6");
+		string EntryO7 = Language.GetTextValue("Mods.AlchemistNPC.EntryO7");
+		string EntryO8 = Language.GetTextValue("Mods.AlchemistNPC.EntryO8");
+		string EntryO9 = Language.GetTextValue("Mods.AlchemistNPC.EntryO9");
+		string EntryO10 = Language.GetTextValue("Mods.AlchemistNPC.EntryO10");
+		string EntryO11 = Language.GetTextValue("Mods.AlchemistNPC.EntryO11");
+		string EntryO12 = Language.GetTextValue("Mods.AlchemistNPC.EntryO12");
+		string EntryO13 = Language.GetTextValue("Mods.AlchemistNPC.EntryO13");
+		string EntryO14 = Language.GetTextValue("Mods.AlchemistNPC.EntryO14");
+		string EntryO15 = Language.GetTextValue("Mods.AlchemistNPC.EntryO15");
+		string EntryO16 = Language.GetTextValue("Mods.AlchemistNPC.EntryO16");
+		string EntryO17 = Language.GetTextValue("Mods.AlchemistNPC.EntryO17");
+		string EntryO18 = Language.GetTextValue("Mods.AlchemistNPC.EntryO18");
+		string EntryO19 = Language.GetTextValue("Mods.AlchemistNPC.EntryO19");
+		string EntryO20 = Language.GetTextValue("Mods.AlchemistNPC.EntryO20");
 		if (Main.bloodMoon)
 			{
 				switch (Main.rand.Next(3))
@@ -324,6 +334,20 @@ namespace AlchemistNPC.NPCs
 			if (Main.rand.Next(7) == 0)
 			{
 				return EntryO17;
+			} 
+		}
+		if (NPC.downedPlantBoss)
+		{
+			if (Main.rand.Next(7) == 0)
+			{
+				return EntryO19;
+			} 
+		}
+		if (NPC.downedGolemBoss)
+		{
+			if (Main.rand.Next(7) == 0)
+			{
+				return EntryO20;
 			} 
 		}
 		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && NPC.downedMoonlord)

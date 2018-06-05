@@ -37,12 +37,20 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool CanUseItem(Player player)
 		{
+			if (player.altFunctionUse == 2 && player.statMana < 200)
+			{
+				item.useTime = 20;
+				item.useAnimation = 20;
+				item.damage = 175;
+				item.shootSpeed = 32f;
+				item.shoot = mod.ProjectileType("SpearofJustice");
+			}
 			if (player.altFunctionUse == 2 && player.statMana > 200)
 			{
 				item.useTime = 90;
 				item.useAnimation = 90;
-				item.damage = 350;
-				item.shootSpeed = 16f;
+				item.damage = 250;
+				item.shootSpeed = 64f;
 				item.shoot = mod.ProjectileType("SpearofJusticeG");
 			}
 			if (player.altFunctionUse != 2)

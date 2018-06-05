@@ -10,7 +10,7 @@ namespace AlchemistNPC.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Research Note#2");
-			Tooltip.SetDefault("'I have found some information about the Royal Magic Wand in one ancient manuscript."
+			Tooltip.SetDefault("'I have found some information about the [c/00FF00:Royal Magic Wand] in one ancient manuscript."
 			+"\nThere said... That no matter how exactly Wand was destroyed, it can still be recreated."
 			+"\nBase for Magic Wand is [c/00FF00:the Rainbow Rod]."
 			+"\n[c/00FF00:Last Prism] could work as Magical Focus..." 

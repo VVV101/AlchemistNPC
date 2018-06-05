@@ -21,7 +21,7 @@ Drops from Treasure Bags in hardmode with 1:150 chance.
 -Added Nyx, ultimate Sniper Rifle. 
 Pierces through multiple enemies, every hit causes explosion.
 -Added Spear of Justice, another reference to 'Glitchtale' of some kind. Post ML throwing weapon.
-Has 2 attack types. One is exploding Red Spear. Another is a spread of homing blue Spears.
+Has 2 attack types. One is exploding Red Spear. Another is a spread of homing Yellow Spears.
 -Added Fungalsphere, shroomite flamethrower. Deals massive damage to big group of enemies or Worm type bosses.
 Available post Lunatic Cultist.
 -Added XtraT, shroomite repeater. Shoots 2 arrows and energy bolt. Bolt deals triple weapon damage and pierces through enemies and tiles.
@@ -48,6 +48,7 @@ Available after beating EoW/BoC in Alchemist shop.
 -Added Quantum Destabilizer and Energy Cells.
 -Added Eye of Judgement.
 -Added Pandora PF422.
+-Added Akumu.
 -Added much more stuff to Jeweler's Arena Shop.
 -Added Architect's Horcrux. Used for force re/spawn Architect.
 -Added Gills, Flippers and Water Walking potions effects to Explorer's Combination.
@@ -63,7 +64,7 @@ Grants 15% bonus to all damage & crits, +20 life regeneration and heals for 150,
 -Buffed Chloroshard Bullets for a bit.
 -Nerfed Ballistic Nebular Destroyer.
 -Nerfed Blurring Potion.
--Lowered drop chances for developer sets (1:100) and pet (1:150).
+-Lowered drop chances for developer sets (1:100) and pets (1:150).
 Sets now drops post Plantera.
 -Improved Young Brewer sprite.
 -Reworked recipes for Autoinjector and Watcher Amulet.

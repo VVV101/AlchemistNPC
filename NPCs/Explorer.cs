@@ -35,6 +35,11 @@ namespace AlchemistNPC.NPCs
 		public static bool C53 = false;
 		public static bool C54 = false;
 		public static bool C55 = false;
+		public static bool C61 = false;
+		public static bool C62 = false;
+		public static bool C63 = false;
+		public static bool C64 = false;
+		public static bool C65 = false;
 		
 		public override string Texture
 		{
@@ -72,6 +77,11 @@ namespace AlchemistNPC.NPCs
 		C53 = false;
 		C54 = false;
 		C55 = false;
+		C61 = false;
+		C62 = false;
+		C63 = false;
+		C64 = false;
+		C65 = false;
 		}
 		
 		public override bool Autoload(ref string name)
@@ -119,6 +129,10 @@ namespace AlchemistNPC.NPCs
 		text = mod.CreateTranslation("Create5");
 		text.SetDefault("Create #5");
 		text.AddTranslation(GameCulture.Russian, "Создать №5");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("Create6");
+		text.SetDefault("Create #6");
+		text.AddTranslation(GameCulture.Russian, "Создать №6");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryE1");
 		text.SetDefault("So, were my notes any useful for you?");
@@ -266,6 +280,7 @@ namespace AlchemistNPC.NPCs
 			string Create3 = Language.GetTextValue("Mods.AlchemistNPC.Create3");
 			string Create4 = Language.GetTextValue("Mods.AlchemistNPC.Create4");
 			string Create5 = Language.GetTextValue("Mods.AlchemistNPC.Create5");
+			string Create6 = Language.GetTextValue("Mods.AlchemistNPC.Create6");
             button = Language.GetTextValue("LegacyInterface.28");
 			for (int k = 0; k < 255; k++)
 			{
@@ -378,6 +393,26 @@ namespace AlchemistNPC.NPCs
 						{
 							C55 = true;
 						}
+						if (player.inventory[j].type == 1327)
+						{
+							C61 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("HateVial"))
+						{
+							C62 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+						{
+							C63 = true;
+						}
+						if (player.inventory[j].type == 1865)
+						{
+							C64 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("ResearchNote6"))
+						{
+							C65 = true;
+						}
 					}
 				}
 			}
@@ -400,6 +435,10 @@ namespace AlchemistNPC.NPCs
 			if (C51 && C52 && C53 && C54 && C55)
 			{
 			button2 = Create5;
+			}
+			if (C61 && C62 && C63 && C64 && C65)
+			{
+			button2 = Create6;
 			}
         }
  
@@ -580,6 +619,39 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
+				if (C61 && C62 && C63 && C64 && C65)
+				{
+					Player player = Main.player[Main.myPlayer];
+					player.QuickSpawnItem(mod.ItemType("Akumu"));
+					shop = false;
+					if (Main.player[Main.myPlayer].HasItem(1327))
+					{
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
+							if (inventory[k].type == 1327)
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("HateVial"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == 1865)
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("ResearchNote6"))
+							{
+								inventory[k].stack--;
+							}
+						}
+					}
+				}
 			}
 		}
  
@@ -606,6 +678,8 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote4"));
         nextSlot++;
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote5"));
+        nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote6"));
         nextSlot++;
 		for (int k = 0; k < 255; k++)
 				{
