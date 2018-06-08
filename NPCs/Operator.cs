@@ -1082,15 +1082,15 @@ namespace AlchemistNPC.NPCs
 						}
 						if (CalamityModDownedAstrum)
 						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(30);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
 							shop.item[nextSlot].shopCustomPrice = new int?(20);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 							nextSlot++;
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
-							shop.item[nextSlot].shopCustomPrice = new int?(30);
-							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-							nextSlot++;
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag"));
 							shop.item[nextSlot].shopCustomPrice = new int?(30);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 							nextSlot++;
@@ -1132,6 +1132,10 @@ namespace AlchemistNPC.NPCs
 							}
 							if (CalamityModDownedYharon)
 							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
+								shop.item[nextSlot].shopCustomPrice = new int?(15);
+								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;
+								nextSlot++;
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharonBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(20);
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;
@@ -1278,13 +1282,13 @@ namespace AlchemistNPC.NPCs
 						}
 						if (CalamityModDownedAstrum)
 						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag"));
+							shop.item[nextSlot].shopCustomPrice = 3500000;
+							nextSlot++;
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
 							shop.item[nextSlot].shopCustomPrice = 3000000;
 							nextSlot++;
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
-							shop.item[nextSlot].shopCustomPrice = 3500000;
-							nextSlot++;
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag"));
 							shop.item[nextSlot].shopCustomPrice = 3500000;
 							nextSlot++;
 						}
@@ -1326,6 +1330,9 @@ namespace AlchemistNPC.NPCs
 						}
 						if (CalamityModDownedYharon)
 						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
+							shop.item[nextSlot].shopCustomPrice = 200000000;
+							nextSlot++;
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharonBag"));
 							shop.item[nextSlot].shopCustomPrice = 500000000;
 							nextSlot++;

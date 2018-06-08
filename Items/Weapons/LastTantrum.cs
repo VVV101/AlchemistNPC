@@ -45,9 +45,9 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			type = mod.ProjectileType("LastTantrum");
-			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y+10+Main.rand.Next(-10,10), speedX, speedY, type, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y+Main.rand.Next(-10,10), speedX, speedY, type, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y-10+Main.rand.Next(-10,10), speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y+3+Main.rand.Next(-3,3), speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y+Main.rand.Next(-3,3), speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y-3+Main.rand.Next(-3,3), speedX, speedY, type, damage, knockBack, player.whoAmI);
 			return false;
 		}
 	}
