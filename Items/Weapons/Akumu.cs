@@ -48,9 +48,19 @@ namespace AlchemistNPC.Items.Weapons
 			return true;
 		}
 
-		public override bool UseItem(Player player)
+		public override bool CanUseItem(Player player)
 		{
-			return base.UseItem(player);
+			if (player.altFunctionUse == 2)
+			{
+				item.useTime = 40;
+				item.useAnimation = 40;
+			}
+			else
+			{
+				item.useTime = 30;
+				item.useAnimation = 30;
+			}
+			return base.CanUseItem(player);
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -77,7 +87,7 @@ namespace AlchemistNPC.Items.Weapons
 					for (int h = 0; h < 1; h++) {
 					Vector2 vel = new Vector2(0, 0);
 					vel *= 0f;
-					Projectile.NewProjectile(position.X+40, position.Y, vel.X, vel.Y, mod.ProjectileType("Akumu"), damage*2, knockBack, player.whoAmI);
+					Projectile.NewProjectile(position.X, position.Y, vel.X, vel.Y, mod.ProjectileType("Akumu"), damage*2, knockBack, player.whoAmI);
 					}
 				}
 				if (player.direction == -1)
@@ -85,7 +95,7 @@ namespace AlchemistNPC.Items.Weapons
 					for (int h = 0; h < 1; h++) {
 					Vector2 vel = new Vector2(-1, 0);
 					vel *= 0f;
-					Projectile.NewProjectile(position.X-20, position.Y, vel.X, vel.Y, mod.ProjectileType("AkumuMirror"), damage*2, knockBack, player.whoAmI);
+					Projectile.NewProjectile(position.X, position.Y, vel.X, vel.Y, mod.ProjectileType("AkumuMirror"), damage*2, knockBack, player.whoAmI);
 					}
 				}
 			}

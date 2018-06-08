@@ -58,7 +58,7 @@ namespace AlchemistNPC.Projectiles
 				AdjustMagnitude(ref projectile.velocity);
 			}
 			Player player = Main.player[projectile.owner]; 
-			int dust = Dust.NewDust(new Vector2(player.position.X, player.position.Y), player.width/3, player.height/3, 56, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100, default(Color), 1f);
+			int dust = Dust.NewDust(new Vector2(player.position.X, player.position.Y), player.width/2, player.height/3, 56, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100, default(Color), 1f);
 			Main.dust[dust].scale *= 0.3f;
 		}
 		

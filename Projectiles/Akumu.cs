@@ -23,17 +23,21 @@ namespace AlchemistNPC.Projectiles
 		{
 			projectile.CloneDefaults(ProjectileID.LaserMachinegunLaser);
 			projectile.magic = false;
-			projectile.ranged = true;
-			projectile.width = 50;
+			projectile.melee = true;
+			projectile.width = 60;
 			projectile.height = 46;
 			projectile.penetrate = 200;
 			projectile.timeLeft = 70;
 			projectile.tileCollide = false;
 			aiType = ProjectileID.LaserMachinegunLaser;
+			projectile.extraUpdates = 1;
 			projectile.scale = 2f;
 		}
 		public override void AI()
 		{
+			Player player = Main.player[projectile.owner]; 
+			projectile.position.X = player.position.X;
+			projectile.position.Y = player.position.Y-10;
 			projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(0f);
 			if (projectile.spriteDirection == -1)
 			{

@@ -613,6 +613,49 @@ namespace AlchemistNPC.NPCs
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), 66);
 					}
 				}
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("TheGrandThunderBirdv2")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(1, 2));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("QueenJelly")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(3, 6));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("GraniteEnergyStorm")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(6, 9));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("TheBuriedWarrior")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(6, 9));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("ThePrimeScouter")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(6, 9));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("BoreanStriderPopped")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier2"), Main.rand.Next(1, 3));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("FallenDeathBeholder2")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier2"), Main.rand.Next(3, 6));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("LichHeadless")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(3, 6));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("AbyssionReleased")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(3, 6));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("RealityBreaker")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), 33);
+					}
+				}
         }
 	}
 }

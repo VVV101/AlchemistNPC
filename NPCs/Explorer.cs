@@ -170,6 +170,10 @@ namespace AlchemistNPC.NPCs
 		text.SetDefault(" to sell Celestial Fragments.");
 		text.AddTranslation(GameCulture.Russian, "продавала Небесные Фрагменты.");
 		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryE10");
+		text.SetDefault("That was the most powerful and dangerous creature in the jungle, but you killed it. Does that mean that you are now the most dangerous creature in the jungle?");
+		text.AddTranslation(GameCulture.Russian, "Это было самое опасное и могущественное создание в джунглях, но ты убил его. Это значит что ты теперь - самое опасное существо джунглей?");
+		mod.AddTranslation(text);
 		}
 
 		public override void SetDefaults()
@@ -249,12 +253,13 @@ namespace AlchemistNPC.NPCs
 		string Entry7 = Language.GetTextValue("Mods.AlchemistNPC.EntryE7");
 		string Entry8 = Language.GetTextValue("Mods.AlchemistNPC.EntryE8");
 		string Entry9 = Language.GetTextValue("Mods.AlchemistNPC.EntryE9");
+		string Entry10 = Language.GetTextValue("Mods.AlchemistNPC.EntryE10");
 		int Operator = NPC.FindFirstNPC(mod.NPCType("Operator"));
 			if (Operator >= 0 && Main.rand.Next(4) == 0)
 			{
 				return Entry8 + Main.npc[Operator].GivenName + Entry9;
 			}
-            switch (Main.rand.Next(7))
+            switch (Main.rand.Next(8))
             {
                 case 0:                                     
 				return Entry1;
@@ -268,8 +273,10 @@ namespace AlchemistNPC.NPCs
 				return Entry5;
                 case 5:
 				return Entry6;
-                default:
+				case 6:
 				return Entry7;
+                default:
+				return Entry10;
             }
         }
  
