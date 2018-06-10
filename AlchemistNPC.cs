@@ -33,7 +33,6 @@ namespace AlchemistNPC
 		public static bool PGSWear = false;
 		public static bool scroll = false;
 		public static bool RevSet = false;
-		public static bool LE = false;
 		public static bool SF = false;
 		public static int DTH = 0;
 		public static bool LaetitiaSet = false;

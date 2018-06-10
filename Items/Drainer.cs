@@ -51,9 +51,28 @@ namespace AlchemistNPC.Items
 		counter++;
 		}
 		
-		public override Vector2? HoldoutOffset()
+		private Vector2 GetLightPosition(Player player)
 		{
-			return new Vector2(-8, 0);
+			Vector2 position = Main.screenPosition;
+			position.X += Main.mouseX;
+			position.Y += player.gravDir == 1 ? Main.mouseY : Main.screenHeight - Main.mouseY;
+			return position;
+		}
+		
+		public override void HoldStyle(Player player)
+		{
+			Vector2 position = GetLightPosition(player);
+			if ((position.Y >= player.Center.Y) == (player.gravDir == 1))
+			{
+				player.itemLocation.X = player.Center.X + 6f * player.direction;
+				player.itemLocation.Y = player.position.Y + 21f + 23f * player.gravDir + player.mount.PlayerOffsetHitbox;
+			}
+			else
+			{
+				player.itemLocation.X = player.Center.X;
+				player.itemLocation.Y = player.position.Y + 21f - 3f * player.gravDir + player.mount.PlayerOffsetHitbox;
+			}
+			player.itemRotation = 0f;
 		}
 		
 		public override void AddRecipes()

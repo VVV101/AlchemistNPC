@@ -10,8 +10,6 @@ namespace AlchemistNPC.Items
 {
 	public class LilithEmblem : ModItem
 	{
-
-		public static bool sscope = false;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Lilith Emblem");
@@ -38,7 +36,7 @@ namespace AlchemistNPC.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			AlchemistNPC.LE = true;
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem = true;
 			player.manaMagnet = true;
 			player.magicDamage += 0.1f;
 			player.magicCrit += 10;

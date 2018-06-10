@@ -34,19 +34,20 @@ namespace AlchemistNPC.Projectiles
 		}
 
 		public void createBee(Projectile projectile) {
+			Player player = Main.player[projectile.owner]; 
 			Vector2 vel = new Vector2(0, -1);
 			float rand = Main.rand.NextFloat() * 6.283f;
 			vel = vel.RotatedBy(rand);
 			vel *= 5f;
 			Projectile.NewProjectile(
-				projectile.Center.X,
-				projectile.Center.Y,
+				player.position.X,
+				player.position.Y,
 				vel.X,
 				vel.Y,
 				mod.ProjectileType("Bees"),
 				projectile.damage/2,
 				0,
-				Main.myPlayer
+				projectile.owner
 			);
 		}
 		
@@ -78,7 +79,8 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void AI(Projectile projectile)
 		{
-			if (firstTime && !projectile.hostile && projectile.magic && AlchemistNPC.LE && projectile.type != mod.ProjectileType("Bees"))
+			Player player = Main.player[projectile.owner];
+			if (firstTime && !projectile.hostile && projectile.magic && (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem == true) && projectile.type != mod.ProjectileType("Bees"))
 			{
 				for (int g = 0; g < 2; g++)
 				{

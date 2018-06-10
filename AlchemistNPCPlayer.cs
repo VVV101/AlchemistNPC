@@ -20,7 +20,7 @@ namespace AlchemistNPC
 		public bool lf = false;
 		public int lamp = 0;
 		public bool Rampage = false;
-		public bool lilithemblem = false;
+		public bool LilithEmblem = false;
 		public bool trigger = true;
 		public bool watchercrystal = false;
 		public bool grimreaper = false;
@@ -42,13 +42,12 @@ namespace AlchemistNPC
 			AlchemistNPC.PGSWear = false;
 			AlchemistNPC.scroll = false;
 			AlchemistNPC.RevSet = false;
-			AlchemistNPC.LE = false;
 			AlchemistNPC.SF = false;
 			AlchemistNPC.LaetitiaSet = false;
 			AlchemistNPC.Extractor = false;
 			AlchemistNPC.XtraT = false;
 			Rampage = false;
-			lilithemblem = false;
+			LilithEmblem = false;
 			watchercrystal = false;
 			grimreaper = false;
 			rainbowdust = false;

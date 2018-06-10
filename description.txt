@@ -1,9 +1,10 @@
-This mod adds 6 NPC (Alchemist, Brewer, Jeweler, Young Brewer, Operator and Architect), who sell potions including buffs, health and mana. 
+This mod adds 7 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect and Explorer), who sell potions, materials and some other stuff. 
 New combinations of potions are sold by the Young Brewer.
 The spawn condition for the Alchemist, the Jeweler & the Brewer is to kill the Eye of Ctulhu. 
 The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
+The Explorer is secret NPC. Try to figure out, how to spawn her.
 v7.0
 -Fixed MP bug with additional HP/Mana. Thanks to Dark;Light#2919 for help!
 -Added new NPC, Explorer. Sells some special potions and research notes.
@@ -12,7 +13,8 @@ Little advice - Torn Notes.
 -Added Explorer's Brew. Works like Explorer Combination, but have Sunshine effect instead of Shine, gives bigger mining speed bonus and your attacks can Electrocute enemies.
 Can be bought from Explorer.
 -Added config option to disable Torn Notes drop. Also changed config file name to Alchemistv7.json.
--Reworked treasure bags shop of Operator. Now bags can be bought by special coins, which are dropping from bosses.
+-Reworked treasure bags shop of Operator. Now bags can be bought by special coins, which are dropping from bosses (can be disabled in config).
+Also, Treasure Bags shops were separated for modded and vanilla. Currently, have Thorium and Calamity mod support.
 -Boosted stats of vanilla town NPC in hardmode and post Moon Lord.
 They got +20 basic damage and +30 defense in hardmode.
 They got +250 max HP, 100 basic damage and +80 defense post Moon Lord. And some NPCs changes their weapons/projectiles.
@@ -29,8 +31,7 @@ Available post Lunatic Cultist.
 -Added Laoskadyn, powerful post Moon Lord sword. Shoots homing needles from the sky.
 Needles explode into flames on tyile/enemy impact.
 -Added Tritantrum, powerful post Moon Lord assault rifle. Shoots exploding Plasma Rounds.
--Added Drainer. Damages player by 250-400 HP each half of the second, then heals by 200. Also removes most of player's defense and endurance.
-Useful for gaining Rage. Available after beating Lunatic Cultist while you have Calamity mod ON.
+Ammo can be bought from Explorer, if you have TT in inventory.
 -Added Nyctosythia and Sunkrovera Arrows/Bullets. Post ML ammo.
 Nyctosythia ammo phases through walls and releases homing projectiles on enemy/wall impact.
 Sunkrovera ammo releases life stealing projectiles on enemy/wall impact.
@@ -41,7 +42,13 @@ Available post Moon Lord.
 Available after beating EoW/BoC in Alchemist shop.
 -Added Ocean Teleporter Potion. Teleports you to deep Ocean, side depends on used mouse button. 
 May be useful for Calamity (since there are no palms on sulphuric ocean).
-Available after beating EoW/BoC in Alchemist shop.
+Available after beating Skeletron in Alchemist shop.
+-Added Drainer. Damages player by 250-400 HP each half of the second, then heals by 200. Also removes most of player's defense and endurance.
+Useful for gaining Rage. Available after beating Lunatic Cultist while you have Calamity mod ON.
+-Added much more stuff to Jeweler's Arena Shop.
+-Added Architect's Horcrux. Used for force re/spawn Architect.
+-Added Gills, Flippers and Water Walking potions effects to Explorer's Combination.
+-Added 6 more shops for Architect (with light sources).
 -Added Notes Book.
 -Added Sasscade Yo-Yo.
 -Added Magic Wand.
@@ -49,14 +56,12 @@ Available after beating EoW/BoC in Alchemist shop.
 -Added Eye of Judgement.
 -Added Pandora PF422.
 -Added Akumu.
--Added much more stuff to Jeweler's Arena Shop.
--Added Architect's Horcrux. Used for force re/spawn Architect.
--Added Gills, Flippers and Water Walking potions effects to Explorer's Combination.
 -Changed work mechanic of Rampage Components for a bit. Now turning off visibility of accessory turns off Sniper Scope effect instead of using it. 
 Now also improves power of Electrospheres.
--Added 6 more shops for Architect(light sources).
--Now Pink Guy Set is required to equipped as player's main armor to make National Ugandan Treasure to drop (drop chance was increased to 25%).
+-Horcruxes now have a bit different mechanic of work. It spawn NPC nearby player now instead of off-screen.
+-Now Pink Guy Set is required to be equipped as player's main armor to make National Ugandan Treasure to drop (drop chance was increased to 25%).
 -Memer's Riposte now also cuts critical strike chance in half, but crits deals 4x damage.
+Also, now mirrors ANY damage (contact or projectile) taken multiplied by 5 to all enemies on screen.
 -Hate Vial can be consumed now. 
 Grants 15% bonus to all damage & crits, +20 life regeneration and heals for 150, but removes 15% endurance, 30 defense and inflicts potion sickness.
 -Wrath and Rage potions are now available in Brewer's 1st shop after beating Skeletron instead of in Hardmode.
@@ -68,6 +73,7 @@ Grants 15% bonus to all damage & crits, +20 life regeneration and heals for 150,
 Sets now drops post Plantera.
 -Improved Young Brewer sprite.
 -Reworked recipes for Autoinjector and Watcher Amulet.
+-Fixed Lilith Emblem's bug in multiplayer.
 -Fixed Bast's Scroll armor destruction. Also added visual effect. Crafting recipe was nerfed too.
 -Replaced Flesh Grinder to Meat Grinder in Architect's 4th shop.
 -Removed Ancient Manipulator craftabilities from Special Crafting Point.

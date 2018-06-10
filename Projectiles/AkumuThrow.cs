@@ -22,7 +22,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			projectile.CloneDefaults(ProjectileID.LaserMachinegunLaser);
 			projectile.magic = false;
-			projectile.ranged = true;
+			projectile.melee = true;
 			projectile.width = 50;
 			projectile.height = 46;
 			projectile.penetrate = 200;
@@ -34,7 +34,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			target.immune[projectile.owner] = 1;
+			target.immune[projectile.owner] = 2;
 			projectile.penetrate--;
 			if (projectile.penetrate <= 0)
 			{
