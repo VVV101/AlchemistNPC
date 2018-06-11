@@ -12,6 +12,7 @@ using Terraria.Localization;
 using Terraria.UI;
 using Terraria.DataStructures;
 using Terraria.GameContent.UI;
+using AlchemistNPC.Items;
 
 namespace AlchemistNPC
 {
@@ -27,6 +28,8 @@ namespace AlchemistNPC
 			};
 		}
 
+		internal static AlchemistNPC instance;
+		internal TeleportClass TeleportClass;
 		public static ModHotKey LampLight;
 		public static bool EyeOfJudgement = false;
 		public static bool MemersRiposte = false;
@@ -71,8 +74,13 @@ namespace AlchemistNPC
 		ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ItemType<Items.ReversivityCoinTier4>(), 999L));
 		ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ItemType<Items.ReversivityCoinTier5>(), 999L));
 		ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ItemType<Items.ReversivityCoinTier6>(), 999L));
+		instance = this;
 		}
 
+		public override void Unload()
+		{
+			instance = null;
+		}
 		
 		public static string ConfigFileRelativePath 
 		{
@@ -85,6 +93,7 @@ namespace AlchemistNPC
 		}
 		
 		public static bool CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
+		public static bool ThoriumLoaded = ModLoader.GetMod("ThoriumMod") != null;
 		public static bool SacredToolsLoaded = ModLoader.GetMod("SacredTools") != null;
 		
 		public override void HandlePacket(BinaryReader reader, int whoAmI)
@@ -97,6 +106,9 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().LifeElixir = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().Fuaran = reader.ReadInt32();
 					break;
+				case AlchemistNPCMessageType.TeleportPlayer:
+					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);
+					break;
 				default:
 					ErrorLogger.Log("AlchemistNPC: Unknown Message type: " + msgType);
 					break;
@@ -105,7 +117,8 @@ namespace AlchemistNPC
 		
 		public enum AlchemistNPCMessageType : byte
 		{
-		LifeAndManaSync
+		LifeAndManaSync,
+		TeleportPlayer
 		}
 		
 		public override void AddRecipeGroups()

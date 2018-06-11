@@ -31,49 +31,11 @@ namespace AlchemistNPC.Items
 		
 		public override bool UseItem(Player player)
 		{
+			if (Main.myPlayer == player.whoAmI)
+			{
 			return true;
-		}
-		
-		private static void HandleHellTeleport(Player player, bool syncData = false)
-		{
-			Vector2 prePos = player.position;
-			Vector2 pos = prePos;
-			for (int x = 0; x < Main.tile.GetLength(0); ++x)
-			{
-				for (int y = 0; y < Main.tile.GetLength(1); ++y)
-				{
-					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].type != 75) continue;
-					pos = new Vector2((x-3) * 16, (y+2) * 16);
-					break;
-				}
 			}
-			if (pos != prePos)
-			{
-				RunTeleport(player, new Vector2(pos.X, pos.Y), syncData, false);
-			}
-			else return;
-		}
-		
-		private static void HandleHellTeleportLeft(Player player, bool syncData = false)
-		{
-			Vector2 prePos = player.position;
-			Vector2 pos = prePos;
-			for (int x = 8400; x > 0; --x)
-			{
-				for (int y = 0; y < Main.tile.GetLength(1); ++y)
-				{
-					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].type != 75) continue;
-					pos = new Vector2((x+3) * 16, (y+2) * 16);
-					break;
-				}
-			}
-			if (pos != prePos)
-			{
-				RunTeleport(player, new Vector2(pos.X, pos.Y), syncData, false);
-			}
-			else return;
+			return false;
 		}
 		
 		public override bool AltFunctionUse(Player player)
@@ -85,13 +47,21 @@ namespace AlchemistNPC.Items
 		{
 			if (player.altFunctionUse == 2)
 			{
-				HandleHellTeleport(player);
+				if (Main.myPlayer == player.whoAmI)
+				{
+				TeleportClass.HandleTeleport(5);
+				return true;
+				}
 			}
-			else
+			if (player.altFunctionUse != 2)
 			{
-				HandleHellTeleportLeft(player);
+				if (Main.myPlayer == player.whoAmI)
+				{
+				TeleportClass.HandleTeleport(6);
+				return true;
+				}
 			}
-			return base.CanUseItem(player);
+			return false;
 		}
 		
 		public override bool CanRightClick()
@@ -101,7 +71,7 @@ namespace AlchemistNPC.Items
 
         public override void RightClick(Player player)
         {
-            HandleHellTeleport(player);
+            TeleportClass.HandleTeleport(5);
         }
 		
 		private static void RunTeleport(Player player, Vector2 pos, bool syncData = false, bool convertFromTiles = false)
