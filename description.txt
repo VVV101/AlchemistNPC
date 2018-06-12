@@ -57,7 +57,6 @@ Useful for gaining Rage. Available after beating Lunatic Cultist while you have 
 -Added Pandora PF422.
 -Added Akumu.
 -All Teleportation Potions now work in multiplayer (some warnings\esceptions CAN happen).
--Fixed Wellcheers vending machine usage in MP.
 -Changed work mechanic of Rampage Components for a bit. Now turning off visibility of accessory turns off Sniper Scope effect instead of using it. 
 Now also improves power of Electrospheres.
 -Horcruxes now have a bit different mechanic of work. It spawn NPC nearby player now instead of off-screen.

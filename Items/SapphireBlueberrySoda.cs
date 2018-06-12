@@ -23,7 +23,7 @@ namespace AlchemistNPC.Items
             item.CloneDefaults(ItemID.SuperManaPotion);
             item.maxStack = 999;
             item.consumable = true;
-            item.value = 0;
+            item.value = Item.sellPrice(0, 1, 0, 0);
             item.rare = 6;
 			item.healMana = 175;
             return;
