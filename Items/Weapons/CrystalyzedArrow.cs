@@ -10,8 +10,10 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			Tooltip.SetDefault("Explodes to shards on hit.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристальные стрелы");
-			Tooltip.AddTranslation(GameCulture.Russian, "Взрывается на осколки при попадании"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Взрывается на осколки при попадании");
+            DisplayName.AddTranslation(GameCulture.Chinese, "水晶尘之箭");
+            Tooltip.AddTranslation(GameCulture.Chinese, "爆炸变成致命碎片.");
+        }
 
 		public override void SetDefaults()
 		{

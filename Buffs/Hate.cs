@@ -17,8 +17,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Ненависть");
-			Description.AddTranslation(GameCulture.Russian, "Вы готовы выпустить свою Ненависть"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Вы готовы выпустить свою Ненависть");
+            DisplayName.AddTranslation(GameCulture.Chinese, "仇恨");
+            Description.AddTranslation(GameCulture.Chinese, "准备好释放你的仇恨吧!");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{

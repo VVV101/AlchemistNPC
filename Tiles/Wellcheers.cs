@@ -27,7 +27,8 @@ namespace AlchemistNPC.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Wellcheers");
 			name.AddTranslation(GameCulture.Russian, "Машина по продаже напитков 'Wellcheers'");
-			AddMapEntry(new Color(200, 200, 200), name);
+            name.AddTranslation(GameCulture.Chinese, "韦尔奇乐自动售货机");
+            AddMapEntry(new Color(200, 200, 200), name);
 			disableSmartCursor = true;
 			adjTiles = new int[]{ TileID.Books };
 		}

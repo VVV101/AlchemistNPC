@@ -17,8 +17,10 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nSlowmode on left click (1 shot per second)"
 			+ "\nFastmode on right click (2 shot per second, damage is reduced)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Никс");
-			Tooltip.AddTranslation(GameCulture.Russian, "Всего лишь пушка Гаусса.\nПробивает значительное количество противников одним выстрелом"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Всего лишь пушка Гаусса.\nПробивает значительное количество противников одним выстрелом");
+            DisplayName.AddTranslation(GameCulture.Chinese, "尼克斯");
+            Tooltip.AddTranslation(GameCulture.Chinese, "基本上, 它只是个高斯炮\n能穿透无限个敌人\n有两种发射方式:\n左键慢速发射 (1发/秒)\n右键快速发射 (2发/秒, 伤害降低)");
+        }
 
 		public override void SetDefaults()
 		{

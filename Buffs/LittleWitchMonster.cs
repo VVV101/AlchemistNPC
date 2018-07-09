@@ -13,8 +13,10 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Монстр Маленькой Ведьмы");
-			Description.AddTranslation(GameCulture.Russian, "Так вот что было внутри..."); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Так вот что было внутри...");
+            DisplayName.AddTranslation(GameCulture.Chinese, "小巫怪");
+            Description.AddTranslation(GameCulture.Chinese, "嗯，这就是它里面的东西...");
+        }
 
 		public override void Update(Player player, ref int buffIndex)
 		{

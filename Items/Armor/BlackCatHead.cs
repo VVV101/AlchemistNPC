@@ -14,8 +14,9 @@ namespace AlchemistNPC.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Black Cat's bow and ears");
-			DisplayName.AddTranslation(GameCulture.Russian, "Бантик и ушки Чёрной Кошки"); 
-		}
+			DisplayName.AddTranslation(GameCulture.Russian, "Бантик и ушки Чёрной Кошки");
+            DisplayName.AddTranslation(GameCulture.Chinese, "黑猫的头箍和耳朵");
+        }
 		
 		public override void SetDefaults()
 		{

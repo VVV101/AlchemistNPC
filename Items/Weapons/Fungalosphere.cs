@@ -32,9 +32,11 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Fungalosphere");
-			Tooltip.SetDefault("Consumes gel as ammo"
-			+"\nInflicts Electrocute and Frostburn debuffs"
-			+"\n33% chance not to consume gel");
+            Tooltip.SetDefault("Consumes gel as ammo"
+            + "\nInflicts Electrocute and Frostburn debuffs"
+            + "\n33% chance not to consume gel");
+            DisplayName.AddTranslation(GameCulture.Chinese, "凝胶喷射器");
+            Tooltip.AddTranslation(GameCulture.Chinese, "消耗凝胶\n造成触电和霜燃Debuff\n33%的概率不消耗凝胶");
 		}
 
 		public override bool ConsumeAmmo(Player player)

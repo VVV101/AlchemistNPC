@@ -15,8 +15,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nRequires 1 seconds to charge the shot"
 			+"\nRequires Energy Cells as ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Квантовый Дестабилизатор");
-			Tooltip.AddTranslation(GameCulture.Russian, "Эксперимент №618\nВыпускает луч, дестабилизирующий состояние противника и наносящий очень высокие повреждения\nТребует 1 секунду на заряд\nТребует Энергоячейки в качестве патронов"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Эксперимент №618\nВыпускает луч, дестабилизирующий состояние противника и наносящий очень высокие повреждения\nТребует 1 секунду на заряд\nТребует Энергоячейки в качестве патронов");
+            DisplayName.AddTranslation(GameCulture.Chinese, "量子干扰器");
+            Tooltip.AddTranslation(GameCulture.Chinese, "蓝图 #618\n释放出一束物质破坏光束, 能造成极高的伤害\n需要一秒钟充能\n需要能源电池作为弹药");
+        }
 
 		public override void SetDefaults()
 		{

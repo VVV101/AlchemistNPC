@@ -16,8 +16,10 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Diamond of Nihility"
 			+"\nConsumes any form of light");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристалл Никтосифии");
-			Tooltip.AddTranslation(GameCulture.Russian, "Алмаз Нигилизма\nПоглощает свет любой формы"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Алмаз Нигилизма\nПоглощает свет любой формы");
+            DisplayName.AddTranslation(GameCulture.Chinese, "夜蛾水晶");
+            Tooltip.AddTranslation(GameCulture.Chinese, "夜蛾的钻石\n消耗任意形式的光");
+        }    
 		public override void SetDefaults()
 		{
 			item.width = 32;

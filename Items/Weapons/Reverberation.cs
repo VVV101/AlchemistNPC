@@ -17,8 +17,10 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nProjectile deals same damage is main, but consumes 15 mana each"
 			+ "\nCan be powered up by equipping full 'Reverberation' set");
 			DisplayName.AddTranslation(GameCulture.Russian, "Реверберация (T-04-53)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Это оружие будет более не нужно, если придёт время когда всеобщая похоть заменится цветами\n[c/FF0000:Э.П.О.С. оружие]\n50% шанс выстрелить дополнительным снарядом, проходящим сквозь блоки\nУрон этого снаряда будет равен урону основного, но будет расходоваться по 15 маны за каждый\nМожет быть усилен, если экипировать полный сет 'Реверберация'");
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Это оружие будет более не нужно, если придёт время когда всеобщая похоть заменится цветами\n[c/FF0000:Э.П.О.С. оружие]\n50% шанс выстрелить дополнительным снарядом, проходящим сквозь блоки\nУрон этого снаряда будет равен урону основного, но будет расходоваться по 15 маны за каждый\nМожет быть усилен, если экипировать полный сет 'Реверберация'");
+            DisplayName.AddTranslation(GameCulture.Chinese, "余香 (T-04-53)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'或许, 当每个人内心的欲望都被花朵取代后, 就不再需要这把武器了吧?'\n[c/FF0000:EGO 武器]\n有50％的几率可以射出额外的子弹\n子弹造成同样的伤害，但是每个需要消耗15点法力\n身着全套'余香'可提升伤害");
+        }
 
 		public override void SetDefaults()
 		{
