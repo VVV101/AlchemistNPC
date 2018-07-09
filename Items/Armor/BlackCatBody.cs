@@ -14,7 +14,8 @@ namespace AlchemistNPC.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Black Cat's dress");
-			DisplayName.AddTranslation(GameCulture.Russian, "Платье Чёрной Кошки"); 
+			DisplayName.AddTranslation(GameCulture.Russian, "Платье Чёрной Кошки");
+            DisplayName.AddTranslation(GameCulture.Chinese, "黑猫的裙子");
 		}
 
 		public override void SetDefaults()

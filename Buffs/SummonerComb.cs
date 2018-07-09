@@ -23,8 +23,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Призывателя");
-			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Призыва, Колдовства и Гнева"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Призыва, Колдовства и Гнева");
+            DisplayName.AddTranslation(GameCulture.Chinese, "召唤师药剂包");
+            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：召唤, 迷人, 怒气");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{

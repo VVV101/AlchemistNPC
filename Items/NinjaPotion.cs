@@ -17,8 +17,10 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Increases damage and critical chance by 5% and grants abilities of a Master Ninja"
 			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Ниндзя");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает урон и шанс критического удара любым типом на 5% и даёт способности Мастера Ниндзя"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает урон и шанс критического удара любым типом на 5% и даёт способности Мастера Ниндзя");
+            DisplayName.AddTranslation(GameCulture.Chinese, "忍者药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "增加5%的伤害和暴击几率, 并获得忍者大师的能力");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

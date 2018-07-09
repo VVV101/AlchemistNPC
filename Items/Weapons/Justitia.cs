@@ -17,8 +17,10 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("''It is implicative of a tall bird's balance, that signifies a need to weigh sins in every dispute.''"
 			+ "\n[c/FF0000:EGO weapon]");
 			DisplayName.AddTranslation(GameCulture.Russian, "Юстиция (O-02-62)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Он является отражением баланса Высокой Птицы, который показывает нужду взвесить грехи при каждом споре.\n[c/FF0000:Э.П.О.С. оружие]"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Он является отражением баланса Высокой Птицы, который показывает нужду взвесить грехи при каждом споре.\n[c/FF0000:Э.П.О.С. оружие]");
+            DisplayName.AddTranslation(GameCulture.Chinese, "正义裁决者 (O-02-62)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'这把武器象征着审判鸟的公平制裁, 这也意味着它需要去权衡全部的罪恶.'\n[c/FF0000:EGO 武器]");
+        }
 
 		public override void SetDefaults()
 		{

@@ -12,8 +12,10 @@ namespace AlchemistNPC.Items.Placeable
 			Tooltip.SetDefault("Needed to craft EGO equipment"
 			+"\nCounts as table, chair and light source");
 			DisplayName.AddTranslation(GameCulture.Russian, "Крыло Мира");
-			Tooltip.AddTranslation(GameCulture.Russian, "Необходимо для создания Э.П.О.С экипировки\nСчитается за стол, стул и источник света"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Необходимо для создания Э.П.О.С экипировки\nСчитается за стол, стул и источник света");
+            DisplayName.AddTranslation(GameCulture.Chinese, "世界之翼");
+            Tooltip.AddTranslation(GameCulture.Chinese, "用来制作EGO装备.");
+        }
 
 		public override void SetDefaults()
 		{

@@ -52,7 +52,9 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nBlazes destroy enemies with less than 10K HP and inflict heavy damaging debuff"
 			+"\nGives effects of Yo-yo Bag while placed in inventory or being held");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сасскад");
-			Tooltip.AddTranslation(GameCulture.Russian, "Легендарное Йо-йо\nСтреляет самонаводящимися снарядами в ближайших противников\nСнаряды убивают противников, имеющих менее 10К здоровья и накладывают мощный дебафф\nДаёт эффекты сумки Йо-Йо если находится в инвентаре или в руках"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Легендарное Йо-йо\nСтреляет самонаводящимися снарядами в ближайших противников\nСнаряды убивают противников, имеющих менее 10К здоровья и накладывают мощный дебафф\nДаёт эффекты сумки Йо-Йо если находится в инвентаре или в руках");
+            DisplayName.AddTranslation(GameCulture.Chinese, "Sasscade 悠悠球");
+            Tooltip.AddTranslation(GameCulture.Chinese, "传说中的悠悠球\n向附近的敌人发射跟踪的星云火焰\n火焰会秒杀血量少于10K的敌人并且造成重伤Debuff\n放在包里或拿在手上都会提供一个悠悠球包的效果");
+        }
 	}
 }

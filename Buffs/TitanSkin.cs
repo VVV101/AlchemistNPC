@@ -14,8 +14,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Кожа Титана");
-			Description.AddTranslation(GameCulture.Russian, "Вы имеете иммунитет к некоторым серьёзным дебаффам"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Вы имеете иммунитет к некоторым серьёзным дебаффам");
+            DisplayName.AddTranslation(GameCulture.Chinese, "泰坦皮肤");
+            Description.AddTranslation(GameCulture.Chinese, "你免疫一些Debuff");
+        }
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (NPC.downedMechBoss2)

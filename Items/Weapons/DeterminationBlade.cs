@@ -19,8 +19,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nAttacks building Hate" 
 			+"\nAfter a certain amount of hits, right-clicking will release the Hate");
 			DisplayName.AddTranslation(GameCulture.Russian, "Клинок Решимости");
-			Tooltip.AddTranslation(GameCulture.Russian, "Хранит в себе Решимость семи душ\nАтаки заряжают Ненависть\nПосле определённого количества ударов вы можете её выпустить, нажав правую кнопку мыши"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Хранит в себе Решимость семи душ\nАтаки заряжают Ненависть\nПосле определённого количества ударов вы можете её выпустить, нажав правую кнопку мыши");
+            DisplayName.AddTranslation(GameCulture.Chinese, "决绝之剑");
+            Tooltip.AddTranslation(GameCulture.Chinese, "七魂之决绝蕴于此剑\n攻击增加仇恨\n在击中多次后可以右键释放它.");
+        }
 
 		public override void SetDefaults()
 		{

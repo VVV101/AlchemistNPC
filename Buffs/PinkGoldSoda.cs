@@ -23,8 +23,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Эффект Розово-золотой Соды");
-			Description.AddTranslation(GameCulture.Russian, "Убирает большинство дебаффов"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Убирает большинство дебаффов");
+            DisplayName.AddTranslation(GameCulture.Chinese, "桃金苏打加持");
+            Description.AddTranslation(GameCulture.Chinese, "移除大部分Debuff");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{

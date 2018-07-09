@@ -18,8 +18,10 @@ namespace AlchemistNPC.Items
 			+ "\nImmunity to Cursed Flame and Ichor would work only after beating Twins"
 			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Титановой Кожи");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к некоторым серьёзным дебаффам (Горение, Морозный ожог, Проклятое Пламя, Замедление, Заморозка, Ихор)\nИммунитет к Проклятому Пламени или Ихору активируется только после победы над Близнецами"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к некоторым серьёзным дебаффам (Горение, Морозный ожог, Проклятое Пламя, Замедление, Заморозка, Ихор)\nИммунитет к Проклятому Пламени или Ихору активируется только после победы над Близнецами");
+            DisplayName.AddTranslation(GameCulture.Chinese, "泰坦皮肤药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "使你免疫部分Debuff (点燃, 霜燃, 诅咒火焰, 寒冷, 冰冻, 腐蚀)\n对诅咒火焰和腐蚀的免疫能力只有在击败双子魔眼后才会生效\n非灾厄BUFF药剂");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

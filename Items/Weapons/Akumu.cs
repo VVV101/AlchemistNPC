@@ -22,8 +22,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nLeft click launcher short travelling projectile"
 			+"\nRight click slices the air in place");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Акуму''");
-			Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''демон'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''демон'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши");
+            DisplayName.AddTranslation(GameCulture.Chinese, "''Akumu''");
+            Tooltip.AddTranslation(GameCulture.Chinese, "在日语里, 'Akumu'的意思是'恶魔'\n它发射出的剑气能穿透经过的所有敌人\n左键发射剑气\n右键近距离攻击");
+        }
 
 		public override void SetDefaults()
 		{

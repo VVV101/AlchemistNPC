@@ -13,8 +13,10 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Can open open portal to Other World"
 			+"\nCan be used only on certain conditions");
 			DisplayName.AddTranslation(GameCulture.Russian, "Книга с Записками");
-			Tooltip.AddTranslation(GameCulture.Russian, "Может открыть портал в Другой Мир\nМожет быть использована только в определённых условиях"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Может открыть портал в Другой Мир\nМожет быть использована только в определённых условиях");
+            DisplayName.AddTranslation(GameCulture.Chinese, "笔记本");
+            Tooltip.AddTranslation(GameCulture.Chinese, "能开启一个前往其他世界的传送门\n只能在某些条件下使用");
+        }
 
 		public override void SetDefaults()
 		{

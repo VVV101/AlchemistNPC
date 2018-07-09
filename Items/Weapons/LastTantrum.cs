@@ -16,7 +16,9 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Shoots homing, all-eleminating bullets");
 			DisplayName.AddTranslation(GameCulture.Russian, "Последний Тантрум");
 			Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает самонаводящиеся пули, уничтожающие всё");
-		}
+            DisplayName.AddTranslation(GameCulture.Chinese, "最终之怒");
+            Tooltip.AddTranslation(GameCulture.Chinese, "发射自动追踪、全元素伤害的子弹");
+        }
 
 		public override void SetDefaults()
 		{

@@ -16,8 +16,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Explorer Combination");
 			Tooltip.SetDefault("Grants buffs, which are necessary for exploring (Dangersense, Hunter, Spelunker, Night Owl, Shine, Mining, Gills, Flippers, Water Walking)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Исследователя");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Исследователя(Предчувствие, Охотник, Шахтёр, Ночное Зрение, Сияние, Добыча, Жабры, Ласты, Хождение по воде)"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Исследователя(Предчувствие, Охотник, Шахтёр, Ночное Зрение, Сияние, Добыча, Жабры, Ласты, Хождение по воде)");
+            DisplayName.AddTranslation(GameCulture.Chinese, "探索者药剂包");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得你在探索时所需的Buff(危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿, 鱼鳃, 脚蹼, 水上行走)");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

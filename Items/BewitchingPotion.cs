@@ -17,8 +17,10 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Grants Bewitched buff (increases max number of minions)"
 			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Колдовства");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Колдовства (увеличивает максимальное число прислужников)"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Колдовства (увеличивает максимальное число прислужников)");
+            DisplayName.AddTranslation(GameCulture.Chinese, "迷人药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "增加召唤物能力 (增加一个召唤物上限)\n非灾厄BUFF药剂");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

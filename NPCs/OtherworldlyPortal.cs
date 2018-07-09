@@ -13,6 +13,7 @@ namespace AlchemistNPC.NPCs
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Otherworldly Portal");
+            DisplayName.AddTranslation(GameCulture.Chinese, "Òì½ç´«ËÍÃÅ");
 		}
 
 		public override void SetDefaults()

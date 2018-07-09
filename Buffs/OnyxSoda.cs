@@ -23,8 +23,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Эффект Ониксовой Соды");
-			Description.AddTranslation(GameCulture.Russian, "Увеличивает вашу стойкость на 75%"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Увеличивает вашу стойкость на 75%");
+            DisplayName.AddTranslation(GameCulture.Chinese, "玛瑙苏打加持");
+            Description.AddTranslation(GameCulture.Chinese, "增加75%耐力");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{

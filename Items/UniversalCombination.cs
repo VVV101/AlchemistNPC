@@ -16,8 +16,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Universal Combination");
 			Tooltip.SetDefault("Gives combined effects of Tank, Ranger, Mage and Summoner Combinations in a single buff.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Универсала");
-			Tooltip.AddTranslation(GameCulture.Russian, "Идеальное сочетание Комбинаций Танка, Мага, Стрелка и Призывателя в одном баффе"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Идеальное сочетание Комбинаций Танка, Мага, Стрелка и Призывателя в одном баффе");
+            DisplayName.AddTranslation(GameCulture.Chinese, "万能药剂包");
+            Tooltip.AddTranslation(GameCulture.Chinese, "完美结合了以下药剂包的buff：\n坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包.");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

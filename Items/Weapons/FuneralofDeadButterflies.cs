@@ -18,8 +18,10 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nInflicts Shadowflame and Frostburn"
 			+ "\n35% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Торжественная клятва (T-01-68)");
-			Tooltip.AddTranslation(GameCulture.Russian, "''Высокая атмосфера. Один отражает грусть мёртвых, а другой отражает страх живущих.''\n[c/FF0000:Э.П.О.С. оружие]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "''Высокая атмосфера. Один отражает грусть мёртвых, а другой отражает страх живущих.''\n[c/FF0000:Э.П.О.С. оружие]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны");
+            DisplayName.AddTranslation(GameCulture.Chinese, "圣宣 (T-01-68)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'这两把枪令人感到严肃. 死者之哀, 死亡之惧, 烙印其上.'\n[c/FF0000:EGO 武器]\n造成暗影烈焰和霜灼伤害\n35%的几率不消耗弹药");
+        }
 
 		public override void SetDefaults()
 		{
