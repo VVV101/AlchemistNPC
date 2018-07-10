@@ -15,7 +15,9 @@ namespace AlchemistNPC.Items
             DisplayName.SetDefault("Reversivity Coin Tier 2");
 			DisplayName.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Второй");
             Tooltip.SetDefault("Can be used for buying Treasure Bags from Operator");
-			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки сумок у Оператора"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки сумок у Оператора");
+            DisplayName.AddTranslation(GameCulture.Chinese, "2级逆转硬币");
+            Tooltip.AddTranslation(GameCulture.Chinese, "可以用来在操作员处购买宝藏袋");
         }
         public override void SetDefaults()
 		{

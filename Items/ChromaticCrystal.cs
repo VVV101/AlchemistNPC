@@ -15,8 +15,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Chromatic Crystal");
 			Tooltip.SetDefault("Hallowed Crystal, overflowed by power");
 			DisplayName.AddTranslation(GameCulture.Russian, "Хроматический кристалл");
-			Tooltip.AddTranslation(GameCulture.Russian, "Святой кристалл, переполненный мощью"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Святой кристалл, переполненный мощью");
+            DisplayName.AddTranslation(GameCulture.Chinese, "炫彩水晶");
+            Tooltip.AddTranslation(GameCulture.Chinese, "神圣的水晶, 充斥着无尽的能量");
+        }    
 		public override void SetDefaults()
 		{
 			item.width = 32;

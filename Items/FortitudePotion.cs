@@ -17,8 +17,10 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Grants immunity to knockback"
 			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Стойкости");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к отбрасыванию"); 
-		}    
+			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к отбрасыванию");
+            DisplayName.AddTranslation(GameCulture.Chinese, "刚毅药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "极大地免疫击退\n非灾厄BUFF药剂");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

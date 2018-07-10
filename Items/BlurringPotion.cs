@@ -17,8 +17,10 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Grants Blurring buff (activates Shadow Dodge after 30 seconds CD)"
 			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Размытия");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Размытие (включает Теневое Уклонение с 30-ти секундным откатом)"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Размытие (включает Теневое Уклонение с 30-ти секундным откатом)");
+            DisplayName.AddTranslation(GameCulture.Chinese, "模糊药水");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得模糊Buff (30秒冷却结束激活暗影躲避)\n非灾厄BUFF药剂");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

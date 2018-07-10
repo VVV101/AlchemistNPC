@@ -16,8 +16,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Tank Combination (w/Modded)");
 			Tooltip.SetDefault("Grants buffs, which are necessary for Tanks (Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration, Titan Skin, Invincibility)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Танка (с модовыми)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Сочетание баффов Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов, Регенерации, Кожи Титана и Неуязвимости"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Сочетание баффов Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов, Регенерации, Кожи Титана и Неуязвимости");
+            DisplayName.AddTranslation(GameCulture.Chinese, "坦克药剂包 (模组)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 抵抗, 泰坦皮肤, 无敌)");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

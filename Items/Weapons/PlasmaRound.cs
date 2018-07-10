@@ -13,8 +13,10 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Contains raw energy inside"
 			+"\nRequired for using Tritantrum");
 			DisplayName.AddTranslation(GameCulture.Russian, "Плазменный заряд");
-			Tooltip.AddTranslation(GameCulture.Russian, "Содержит грубую энергию внутри\nНеобходима для использования Тритантрума"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Содержит грубую энергию внутри\nНеобходима для использования Тритантрума");
+            DisplayName.AddTranslation(GameCulture.Chinese, "等离子体");
+            Tooltip.AddTranslation(GameCulture.Chinese, "里面包含原始能量\n是三项之怒的弹药");
+        }
 		
 		public override void SetDefaults()
 		{

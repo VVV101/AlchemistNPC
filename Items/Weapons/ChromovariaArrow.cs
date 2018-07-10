@@ -11,8 +11,10 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("The worthy usage of Hallowed material"
 			+"\nReleases heavy damaging light beams and inflicts Daybroken debuff");
 			DisplayName.AddTranslation(GameCulture.Russian, "Хромоварийная стрела");
-			Tooltip.AddTranslation(GameCulture.Russian, "Достойное применение Святого материала\nВыпускает наносящие значительный урон лучи света и накладывает мощный дебафф"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Достойное применение Святого материала\nВыпускает наносящие значительный урон лучи света и накладывает мощный дебафф");
+            DisplayName.AddTranslation(GameCulture.Chinese, "炫彩箭");
+            Tooltip.AddTranslation(GameCulture.Chinese, "神圣材料的合理使用\n释放出粗大的破坏光束并给予破日Debuff");
+        }
 
 		public override void SetDefaults()
 		{

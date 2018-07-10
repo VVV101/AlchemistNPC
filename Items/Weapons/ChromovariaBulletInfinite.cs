@@ -13,8 +13,10 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Creates heavy damaging light explosion and inflicts Daybroken debuff"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Хромовариевая пуля (Бесконечная)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Создаёт взрыв, наносящий значительные повреждения и накладывает мощный дебафф\nБесконечна"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Создаёт взрыв, наносящий значительные повреждения и накладывает мощный дебафф\nБесконечна");
+            DisplayName.AddTranslation(GameCulture.Chinese, "炫彩弹 (无限)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "造成巨大的伤害性爆炸并给予破日Debuff\n无限");
+        }    
 		public override void SetDefaults()
 		{
 			item.damage = 16;

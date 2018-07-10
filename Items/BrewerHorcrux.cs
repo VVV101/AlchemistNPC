@@ -12,8 +12,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Brewer Horcrux");
 			Tooltip.SetDefault("The piece of Brewer's soul is inside it.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Крестраж Варщицы Зелий");
-			Tooltip.AddTranslation(GameCulture.Russian, "Часть души Варщицы Зелий находится внутри"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Часть души Варщицы Зелий находится внутри");
+            DisplayName.AddTranslation(GameCulture.Chinese, "药剂师魂器");
+            Tooltip.AddTranslation(GameCulture.Chinese, "里面有药剂师的一片灵魂");
+        }
 
 		public override void SetDefaults()
 		{

@@ -17,8 +17,10 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Left click returns you home"
 			+ "\nRight click teleports you back to recall point");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зачарованное Зеркало");
-			Tooltip.AddTranslation(GameCulture.Russian, "Возвращает вас домой при использовании\nВозвращает вас на место предыдущей телепортации по нажатию правой кнопки мыши"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Возвращает вас домой при использовании\nВозвращает вас на место предыдущей телепортации по нажатию правой кнопки мыши");
+            DisplayName.AddTranslation(GameCulture.Chinese, "魔镜");
+            Tooltip.AddTranslation(GameCulture.Chinese, "左键传送回家\n右键传送回上次使用此镜子的地点");
+        }    
 		public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.MagicMirror);

@@ -12,8 +12,10 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Royal Magic Wand"
 			+"\nShoots a laser beam that can eliminate everything on its way.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Волшебная Палочка");
-			Tooltip.AddTranslation(GameCulture.Russian, "Королевская Волшебная Палочка\nИспускает лазерный луч, который способен уничтожить всё на своём пути."); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Королевская Волшебная Палочка\nИспускает лазерный луч, который способен уничтожить всё на своём пути.");
+            DisplayName.AddTranslation(GameCulture.Chinese, "魔杖");
+            Tooltip.AddTranslation(GameCulture.Chinese, "皇家魔杖\n发射一束能消灭一切的激光束");
+        }
 
 		public override void SetDefaults()
 		{

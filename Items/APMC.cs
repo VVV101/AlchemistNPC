@@ -12,8 +12,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("AI Programming and Memory Chip");
 			Tooltip.SetDefault("It is Angela's backup.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Модуль данных ИИ");
-			Tooltip.AddTranslation(GameCulture.Russian, "Это резервная копия Анджелы."); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Это резервная копия Анджелы.");
+            DisplayName.AddTranslation(GameCulture.Chinese, "AI程序与记忆芯片");
+            Tooltip.AddTranslation(GameCulture.Chinese, "这是Angler的备份.");
+        }
 
 		public override void SetDefaults()
 		{

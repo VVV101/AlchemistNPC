@@ -17,8 +17,10 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Increases length of invincibility after taking damage"
 			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Неуязвимости");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает период неуязвимости после получения урона"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает период неуязвимости после получения урона");
+            DisplayName.AddTranslation(GameCulture.Chinese, "无敌药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "延长受伤后的无敌时间\n非灾厄BUFF药剂");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

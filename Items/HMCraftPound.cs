@@ -15,8 +15,10 @@ namespace AlchemistNPC.Items
             DisplayName.SetDefault("Superb Crafting Pound");
             Tooltip.SetDefault("Now you can do best stuff"
 			+"\nCan be placed as crafting station");
-            DisplayName.AddTranslation(GameCulture.Russian, "Сложный Крафтовый Фунт");
-            Tooltip.AddTranslation(GameCulture.Russian, "Вы можете делать крутые штуки\nМожет быть размещён как станция крафта");
+            DisplayName.AddTranslation(GameCulture.Russian, "РЎР»РѕР¶РЅС‹Р№ РљСЂР°С„С‚РѕРІС‹Р№ Р¤СѓРЅС‚");
+            Tooltip.AddTranslation(GameCulture.Russian, "Р’С‹ РјРѕР¶РµС‚Рµ РґРµР»Р°С‚СЊ РєСЂСѓС‚С‹Рµ С€С‚СѓРєРё\nРњРѕР¶РµС‚ Р±С‹С‚СЊ СЂР°Р·РјРµС‰С‘РЅ РєР°Рє СЃС‚Р°РЅС†РёСЏ РєСЂР°С„С‚Р°");
+            DisplayName.AddTranslation(GameCulture.Chinese, "и±ЄеЌЋж‰‹е·Ґи‹±й•‘");
+            Tooltip.AddTranslation(GameCulture.Chinese, "зЋ°ењЁдЅ еЏЇд»ҐеЃље‡єжњЂжЈ’зљ„дёњдёњдє†\nеЏЇд»Јж›їе·ҐдЅњеЏ°");
         }
         public override void SetDefaults()
         {

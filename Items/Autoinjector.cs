@@ -16,8 +16,10 @@ namespace AlchemistNPC.Items
 				+ "\nAdds 10% to all damage and 8% to all critical chances"
 				+ "\nAlso gives permanent effect of Universal Combination (contains Ranger, Mage, Summoner and Tank Combinations effects altogether)");
 				DisplayName.AddTranslation(GameCulture.Russian, "Автоинъектор");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает регенерацию жизней \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт постоянный эффект Комбинации Универсала (включает в себя эффекты Комбинаций Мага, Стрелка, Призывателя и Танка)"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает регенерацию жизней \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт постоянный эффект Комбинации Универсала (включает в себя эффекты Комбинаций Мага, Стрелка, Призывателя и Танка)");
+            DisplayName.AddTranslation(GameCulture.Chinese, "自动注射器");
+            Tooltip.AddTranslation(GameCulture.Chinese, "提供生命回复, 降低治疗药水的冷却时间, 延长收到伤害后的无敌时间\n增加10%全伤害和8%全伤害的暴击几率\n同时永久给予万能药剂包buff（包含坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包）");
+        }
 	
 		public override void SetDefaults()
 		{

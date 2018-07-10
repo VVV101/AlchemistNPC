@@ -12,9 +12,11 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Heart of Yui");
 			Tooltip.SetDefault("Summons small Pixie Helper"
 			+"\nEnlights treasures, creatures and traps");
-			DisplayName.AddTranslation(GameCulture.Russian, "Сердце Юи"); 
-			Tooltip.AddTranslation(GameCulture.Russian, "Вызывает маленькую Фею-Помошника\nПодсвечивает сокровища, существ и ловушки");
-		}
+			DisplayName.AddTranslation(GameCulture.Russian, "Сердце Юи");
+            Tooltip.AddTranslation(GameCulture.Russian, "Вызывает маленькую Фею-Помошника\nПодсвечивает сокровища, существ и ловушки");
+            DisplayName.AddTranslation(GameCulture.Chinese, "小悠之心");
+            Tooltip.AddTranslation(GameCulture.Chinese, "召唤小精灵助手\n照亮宝物, 生物和陷阱");
+        }
 
 		public override void SetDefaults()
 		{

@@ -15,9 +15,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Fuaran");
 			Tooltip.SetDefault("Permanently increases maximum mana by 100. Can only be used once.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Фуаран");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальную ману на 100. Может быть использован только 1 раз."); 
-			
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальную ману на 100. Может быть использован только 1 раз.");
+            DisplayName.AddTranslation(GameCulture.Chinese, "魔泉书");
+            Tooltip.AddTranslation(GameCulture.Chinese, "永久增加100法力上限. 只能使用一次.");
+        }
 
 		public override void SetDefaults()
 		{
