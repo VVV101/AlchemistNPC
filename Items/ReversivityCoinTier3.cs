@@ -17,7 +17,7 @@ namespace AlchemistNPC.Items
 			DisplayName.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Третий");
             Tooltip.SetDefault("Can be used for buying Treasure Bags from Operator");
 			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки сумок у Оператора");
-            DisplayName.AddTranslation(GameCulture.Chinese, "3级扭蛋币");
+            DisplayName.AddTranslation(GameCulture.Chinese, "3级逆转硬币");
             Tooltip.AddTranslation(GameCulture.Chinese, "可以用来在操作员处购买宝藏袋");
         }
         public override void SetDefaults()
