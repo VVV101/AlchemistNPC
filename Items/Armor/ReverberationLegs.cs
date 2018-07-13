@@ -11,6 +11,10 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Legs)]
 	public class ReverberationLegs : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Reverberation Leggings (T-04-53)");

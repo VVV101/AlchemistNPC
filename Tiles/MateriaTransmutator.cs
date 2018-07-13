@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -31,6 +32,7 @@ namespace AlchemistNPC.Tiles
 			disableSmartCursor = true;
 			adjTiles = new int[]
 			{
+			mod.TileType("WingoftheWorld"),
 			TileID.WorkBenches, 
 			TileID.Anvils, 
 			TileID.Furnaces, 
@@ -68,6 +70,18 @@ namespace AlchemistNPC.Tiles
 			TileID.AlchemyTable,
 			TileID.LunarCraftingStation
 			};
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+                Array.Resize(ref adjTiles, adjTiles.Length + 3);
+                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil");
+                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator");
+                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("SoulForge");
+				}
+			if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+				{
+				Array.Resize(ref adjTiles, adjTiles.Length + 1);
+                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("Fargowiltas").TileType("CrucibleCosmosSheet");
+				}
 			dustType = mod.DustType("JustitiaPale");
 			animationFrameHeight = 72;
 		}
@@ -97,6 +111,12 @@ namespace AlchemistNPC.Tiles
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
 			Item.NewItem(i * 16, j * 16, 16, 32, mod.ItemType("MateriaTransmutator"));
+		}
+		
+		public override void NearbyEffects(int i, int j, bool closer)
+        {
+            Player player = Main.player[Main.myPlayer];
+            player.alchemyTable = true;
 		}
 	}
 }

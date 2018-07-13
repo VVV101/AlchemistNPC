@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.UI;
 using Terraria.ID;
@@ -14,13 +15,17 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Autoinjector");
 			Tooltip.SetDefault("Provides life regeneration, lowers cooldown of healing potions and increases length of invincibility after taking hit"
 				+ "\nAdds 10% to all damage and 8% to all critical chances"
-				+ "\nAlso gives permanent effect of Universal Combination (contains Ranger, Mage, Summoner and Tank Combinations effects altogether)");
+				+ "\nAlso gives permanent effect of Universal Combination"
+				+ "\nIt contains Ranger, Mage, Summoner and Tank Combinations effects altogether"
+				+ "\nCan be consumed to give permanent effect to player"
+				+ "\nBuffs will never wear off after death");
 				DisplayName.AddTranslation(GameCulture.Russian, "Автоинъектор");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает регенерацию жизней \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт постоянный эффект Комбинации Универсала (включает в себя эффекты Комбинаций Мага, Стрелка, Призывателя и Танка)"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает регенерацию жизней \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт постоянный эффект Комбинации Универсала\nОна включает в себя эффекты Комбинаций Мага, Стрелка, Призывателя и Танка\nМожет быть использован для получения постоянного позитивного эффекта\nБаффы не будут исчезать после смерти"); 
 		}
 	
 		public override void SetDefaults()
 		{
+			item.CloneDefaults(ItemID.LifeFruit);
 			item.stack = 1;
 			item.width = 26;
 			item.height = 26;
@@ -47,6 +52,17 @@ namespace AlchemistNPC.Items
 			player.AddBuff(mod.BuffType("UniversalComb"), 1);
 		}
 
+		public override bool CanUseItem(Player player)
+		{
+			return player.GetModPlayer<AlchemistNPCPlayer>().KeepBuffs < 1;
+		}
+
+		public override bool UseItem(Player player)
+		{
+			player.GetModPlayer<AlchemistNPCPlayer>().KeepBuffs += 1;
+			return true;
+		}
+		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
@@ -66,6 +82,8 @@ namespace AlchemistNPC.Items
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
+			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
+			{
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "WatcherAmulet", 1);
 			recipe.AddRecipeGroup("AlchemistNPC:Tier3Bar", 25);
@@ -82,6 +100,7 @@ namespace AlchemistNPC.Items
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
+			}
 		}
 	}
 }

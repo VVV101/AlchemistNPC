@@ -7,6 +7,10 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class PinkGuyBody : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pink Guy's Suit");

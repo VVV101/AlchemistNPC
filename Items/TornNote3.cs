@@ -7,6 +7,10 @@ namespace AlchemistNPC.Items
 {
 	public class TornNote3 : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Torn Note #3");
@@ -16,7 +20,7 @@ namespace AlchemistNPC.Items
 			+ "\nThis will reset the machine counter to 0, so you can use it again after destroying or evading the boss.'"
 			+ "\nThere is something else, but you couldn't read it. Not without parts #1 & #2. Maybe the Jeweler could help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #3");
-			Tooltip.AddTranslation(GameCulture.Russian, "'Когда ты одолеешь всех Механических Боссов, ты сможешь сделать особую Машину по продаже напитков.\nОни могут помочь тебе преодолеть великие угрозы и опасности.\nНо будь осторожен! Если воспользуешься ей более 10 раз, то она призовёт случайного Механического Босса.\nЭто сбросит счётчик Машины на 0, что позволит тебе вновь ей воспользоваться после того, как ты победишь или сбежишь от Босса'\nТам есть что-то ещё, но вы не можете прочесть это без других частей. Возможно, вам сможет помочь Ювелир."); 
+			Tooltip.AddTranslation(GameCulture.Russian, "'Когда ты одолеешь всех Механических Боссов, ты сможешь сделать особую Машину по продаже напитков.\nОни могут помочь тебе преодолеть великие угрозы и опасности.\nНо будь осторожен! Если воспользуешься ей более 10 раз, то она призовёт случайного Механического Босса.\nЭто сбросит счётчик до 0, что позволит тебе вновь ей воспользоваться после того, как ты победишь или сбежишь от Босса'\nТам есть что-то ещё, но вы не можете прочесть это без других частей. Возможно, вам сможет помочь Ювелир."); 
 		}
 
 		public override void SetDefaults()

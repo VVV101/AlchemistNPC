@@ -60,8 +60,9 @@ namespace AlchemistNPC.NPCs
 						{
 						Vector2 vel = new Vector2(0, -1);
 						vel *= 0f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("Drainer"), 250, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("Drainer"), 150, 0, Main.myPlayer);
 						}
+						Main.NewText("Barrier between world is stabilized.", 55, 55, 255);
 						npc.Transform(mod.NPCType("Explorer"));
 						return;
 					}

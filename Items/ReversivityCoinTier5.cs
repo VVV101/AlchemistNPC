@@ -12,7 +12,7 @@ namespace AlchemistNPC.Items
     {
         public override bool Autoload(ref string name)
 		{
-		return ModLoader.GetMod("CalamityMod") != null;
+		return (ModLoader.GetMod("CalamityMod") != null && ModLoader.GetMod("AlchemistNPCContentDisabler") == null);
 		}
 
         public override void SetStaticDefaults()

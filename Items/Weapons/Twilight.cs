@@ -14,6 +14,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Twilight : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Twilight (O-02-63)");
@@ -36,7 +40,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 15;
 			item.useStyle = 1;
 			item.value = 10000000;
-			item.rare = 12;
+			item.rare = 11;
             item.knockBack = 6f;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
@@ -47,6 +51,23 @@ namespace AlchemistNPC.Items.Weapons
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(mod.BuffType("Twilight"), 600);
+		}
+		
+		public override bool CanUseItem(Player player)
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+					{
+					item.damage = 350;
+					item.useTime = 10;
+					item.useAnimation = 10;
+					}
+					else
+					{
+					item.damage = 300;
+					item.useTime = 15;
+					item.useAnimation = 15;
+					}
+			return base.CanUseItem(player);
 		}
 		
 		public override void AddRecipes()

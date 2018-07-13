@@ -10,6 +10,10 @@ namespace AlchemistNPC.Items
 {
 	public class LilithEmblem : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Lilith Emblem");
@@ -36,7 +40,14 @@ namespace AlchemistNPC.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
+			if (!hideVisual)
+			{
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem = true;
+			}
+			if (hideVisual)
+			{
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem = false;
+			}
 			player.manaMagnet = true;
 			player.magicDamage += 0.1f;
 			player.magicCrit += 10;

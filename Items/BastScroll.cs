@@ -12,6 +12,10 @@ namespace AlchemistNPC.Items
 {
 	public class BastScroll : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Bast's Scroll");
@@ -25,7 +29,7 @@ namespace AlchemistNPC.Items
 			+"\nAttacks destroy enemy armor totally (may not work with some weapons)"
 			+"\nThrowing attacks go through tiles");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток Баст");
-			Tooltip.AddTranslation(GameCulture.Russian, "'Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!'\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего боя/метательного на 15%\nАтаки полностью разрушают броню противника (может не работать с некоторыми оружиями)\nМетательные атаки проходят сквозь блоки"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "''Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!''\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего боя/метательного на 15%\nАтаки полностью разрушают броню противника (может не работать с некоторыми оружиями)\nМетательные атаки проходят сквозь блоки"); 
 		}
 	
 		public override void SetDefaults()

@@ -8,6 +8,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Laetitia : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Laetitia (O-01-67)");
@@ -31,11 +35,19 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (AlchemistNPC.LaetitiaSet)
 			{
+			item.damage = 35;
 			item.useTime = 15;
 			item.useAnimation = 15;
 			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+			{
+			item.damage = 650;
+			item.useTime = 10;
+			item.useAnimation = 10;
+			}
 			if (!AlchemistNPC.LaetitiaSet)
 			{
+			item.damage = 35;
 			item.useTime = 30;
 			item.useAnimation = 30;
 			}

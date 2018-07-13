@@ -11,6 +11,10 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Legs)]
 	public class JustitiaLeggings : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Justitia Leggings (O-02-62)");

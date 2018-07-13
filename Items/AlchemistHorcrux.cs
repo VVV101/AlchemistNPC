@@ -36,6 +36,7 @@ namespace AlchemistNPC.Items
 
 		public override bool UseItem(Player player)
 		{
+			Main.NewText("Alchemist is spawned.", 255, 255, 255);
 			NPC.NewNPC((int)player.Center.X+2, (int)player.Center.Y, mod.NPCType("Alchemist"));
 			return true;
 		}

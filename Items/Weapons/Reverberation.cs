@@ -8,6 +8,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Reverberation : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Reverberation (T-04-53)");
@@ -54,7 +58,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (AlchemistNPC.RevSet)
+			if (AlchemistNPC.RevSet || (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true))
 				{
 					if (player.statMana >= 30)
 					{
@@ -76,6 +80,23 @@ namespace AlchemistNPC.Items.Weapons
 						}
 				}
 			return true;
+		}
+		
+		public override bool CanUseItem(Player player)
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+					{
+					item.damage = 150;
+					item.useTime = 10;
+					item.useAnimation = 10;
+					}
+					else
+					{
+					item.damage = 40;
+					item.useTime = 15;
+					item.useAnimation = 15;
+					}
+			return base.CanUseItem(player);
 		}
 	}
 }

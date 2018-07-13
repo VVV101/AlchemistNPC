@@ -11,18 +11,22 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class TwilightSuit : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			base.SetStaticDefaults();
 			DisplayName.SetDefault("Twilight Suit (O-02-63)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сумеречный Костюм (O-02-63)"); 
-			Tooltip.SetDefault("'Efforts of three birds to defeat the beast became one."
-				+ "\nIt could stop countless incidents but you’d have to be prepared to step into the Black Forest.'"
+			Tooltip.SetDefault("''Efforts of three birds to defeat the beast became one."
+				+ "\nIt could stop countless incidents but you’d have to be prepared to step into the Black Forest.''"
 				+ "\n[c/FF0000:EGO armor piece]"
 				+ "\n+200 maximum HP"
 				+ "\n+20% damage reduction"
 				+ "\nImmune to most vanilla debuffs");
-			Tooltip.AddTranslation(GameCulture.Russian, "Усилия трёх птиц, чтобы одолеть Зверя, став едиными.\nОно способно остановить бесчисленные несчастные случаи.\nНо вам нужно быть готовыми, чтобы войти в Тёмный Лес.\n[c/FF0000:Э.П.О.С часть брони]\n+200 к максимальному здоровью\n+20% к поглощению урона\nИммунитет к большинству немодовых дебаффов");
+			Tooltip.AddTranslation(GameCulture.Russian, "''Усилия трёх птиц, чтобы одолеть Зверя, став едиными.\nОно способно остановить бесчисленные несчастные случаи.\nНо вам нужно быть готовыми, чтобы войти в Тёмный Лес.''\n[c/FF0000:Э.П.О.С часть брони]\n+200 к максимальному здоровью\n+20% к поглощению урона\nИммунитет к большинству немодовых дебаффов");
 		}
 
 		public override void SetDefaults()

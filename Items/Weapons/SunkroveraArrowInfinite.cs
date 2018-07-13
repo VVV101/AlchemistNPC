@@ -6,6 +6,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class SunkroveraArrowInfinite : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Even holding these make you feel... uneasy."

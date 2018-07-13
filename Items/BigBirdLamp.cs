@@ -10,7 +10,10 @@ namespace AlchemistNPC.Items
 	[AutoloadEquip(EquipType.Waist)]
 	public class BigBirdLamp : ModItem
 	{
-
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Big Bird's Lamp (O-02-40)");

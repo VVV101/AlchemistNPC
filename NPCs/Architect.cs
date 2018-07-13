@@ -797,6 +797,9 @@ if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			shop.item[nextSlot].SetDefaults (ItemID.ExtendoGrip);
 			shop.item[nextSlot].shopCustomPrice = 150000;
             nextSlot++;
+			shop.item[nextSlot].SetDefaults (3624);
+			shop.item[nextSlot].shopCustomPrice = 150000;
+            nextSlot++;
 			}
 			if (NPC.downedBoss3)
 			{
@@ -810,8 +813,14 @@ if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 		}
 		if (Shop4)
 		{
+				shop.item[nextSlot].SetDefaults (ItemID.LivingLoom);
+				shop.item[nextSlot].shopCustomPrice = 20000;
+				nextSlot++;
 			if (NPC.downedBoss3)
-			{
+			{	
+				shop.item[nextSlot].SetDefaults (ItemID.AlchemyTable);
+				shop.item[nextSlot].shopCustomPrice = 33000;
+				nextSlot++;
 				shop.item[nextSlot].SetDefaults(ItemID.BoneWelder);
 				shop.item[nextSlot].shopCustomPrice = 20000;
 				nextSlot++;
@@ -861,18 +870,17 @@ if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 					shop.item[nextSlot].shopCustomPrice = 15000;
 					nextSlot++;
                 }
-		
 			if (NPC.downedMechBossAny)
 			{
-		shop.item[nextSlot].SetDefaults (ItemID.FleshCloningVaat);
-		shop.item[nextSlot].shopCustomPrice = 20000;
-		nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FleshCloningVaat);
+			shop.item[nextSlot].shopCustomPrice = 20000;
+			nextSlot++;
 			}
 			if (NPC.downedPlantBoss)
 			{
-		shop.item[nextSlot].SetDefaults (ItemID.LihzahrdFurnace);
-		shop.item[nextSlot].shopCustomPrice = 20000;
-		nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.LihzahrdFurnace);
+			shop.item[nextSlot].shopCustomPrice = 20000;
+			nextSlot++;
 			}
 		}
 		if (Shop5)
@@ -980,7 +988,7 @@ if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			shop.item[nextSlot].shopCustomPrice = 500;
 			nextSlot++;	
 			shop.item[nextSlot].SetDefaults (2155);
-			shop.item[nextSlot].shopCustomPrice = 500;
+			shop.item[nextSlot].shopCustomPrice = 30000;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (2236);
 			shop.item[nextSlot].shopCustomPrice = 500;
@@ -1082,7 +1090,7 @@ if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			shop.item[nextSlot].shopCustomPrice = 500;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (2133);
-			shop.item[nextSlot].shopCustomPrice = 500;
+			shop.item[nextSlot].shopCustomPrice = 30000;
 			nextSlot++;	
 			shop.item[nextSlot].SetDefaults (2134);
 			shop.item[nextSlot].shopCustomPrice = 500;
@@ -1217,7 +1225,7 @@ if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			shop.item[nextSlot].shopCustomPrice = 500;
 			nextSlot++;	
 			shop.item[nextSlot].SetDefaults (2147);
-			shop.item[nextSlot].shopCustomPrice = 500;
+			shop.item[nextSlot].shopCustomPrice = 30000;
 			nextSlot++;	
 			shop.item[nextSlot].SetDefaults (2148);
 			shop.item[nextSlot].shopCustomPrice = 500;
@@ -1325,7 +1333,7 @@ if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			shop.item[nextSlot].shopCustomPrice = 500;
 			nextSlot++;	
 			shop.item[nextSlot].SetDefaults (2143);
-			shop.item[nextSlot].shopCustomPrice = 500;
+			shop.item[nextSlot].shopCustomPrice = 30000;
 			nextSlot++;	
 			shop.item[nextSlot].SetDefaults (2144);
 			shop.item[nextSlot].shopCustomPrice = 500;
@@ -1439,7 +1447,7 @@ if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			shop.item[nextSlot].shopCustomPrice = 500;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (2151);
-			shop.item[nextSlot].shopCustomPrice = 500;
+			shop.item[nextSlot].shopCustomPrice = 30000;
 			nextSlot++;	
 			shop.item[nextSlot].SetDefaults (2152);
 			shop.item[nextSlot].shopCustomPrice = 500;

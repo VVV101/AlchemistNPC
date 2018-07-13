@@ -11,10 +11,7 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Rainbow Imbue");
 			Description.SetDefault("You enemies will feel your strike");
-			Main.debuff[Type] = false;
-			Main.pvpBuff[Type] = false;
-			Main.buffNoSave[Type] = false;
-			longerExpertDebuff = true;
+			Main.persistentBuff[Type] = true;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Радужное зачарование");
 			Description.AddTranslation(GameCulture.Russian, "Ваши враги почуствуют ваш удар"); 

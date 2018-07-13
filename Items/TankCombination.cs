@@ -16,7 +16,7 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Tank Combination (w/Modded)");
 			Tooltip.SetDefault("Grants buffs, which are necessary for Tanks (Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration, Titan Skin, Invincibility)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Танка (с модовыми)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Сочетание баффов Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов, Регенерации, Кожи Титана и Неуязвимости"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Включает в себя следующие баффы: Выносливость, Жизненные Силы, Железную Кожу\nОбсидиановую Кожу, Шипы, Регенерацию, Кожу Титана и Неуязвимость"); 
 		}    
 		public override void SetDefaults()
         {

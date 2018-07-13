@@ -6,6 +6,10 @@ namespace AlchemistNPC.Items.Placeable
 {
 	public class WingoftheWorld : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Wing of the World");

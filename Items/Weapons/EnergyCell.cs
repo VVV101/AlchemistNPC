@@ -7,6 +7,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class EnergyCell : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Requred to shoot from Quantum Destabilizer");

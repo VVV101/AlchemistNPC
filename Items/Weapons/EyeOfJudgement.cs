@@ -10,6 +10,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class EyeOfJudgement : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public static int counter = 15;
 		public override void SetStaticDefaults()
 		{

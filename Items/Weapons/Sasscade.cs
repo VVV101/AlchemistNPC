@@ -10,6 +10,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Sasscade : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetDefaults()
 		{
 		item.CloneDefaults(3389);
@@ -18,7 +22,7 @@ namespace AlchemistNPC.Items.Weapons
 		item.knockBack = 4;
 		item.value = 5000000;
 		item.rare = 11;
-		item.shootSpeed = 64f;
+		item.shootSpeed = 32f;
 		item.useTime = 10;
 		item.useAnimation = 10;
 		}

@@ -9,6 +9,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class GrinderMK4 : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Grinder MK4 (T-05-41)");
@@ -59,7 +63,14 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool CanUseItem(Player player)
 		{
-			// Ensures no more than one spear can be thrown out, use this when using autoReuse
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+					{
+					item.damage = 200;
+					}
+					else
+					{
+					item.damage = 35;
+					}
 			return player.ownedProjectileCounts[item.shoot] < 1; 
 		}
 	}

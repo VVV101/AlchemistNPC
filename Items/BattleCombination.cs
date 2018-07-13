@@ -9,7 +9,7 @@ using Terraria.Localization;
  
 namespace AlchemistNPC.Items
 {
-     public class BattleCombination : ModItem
+    public class BattleCombination : ModItem
     {
 		public override void SetStaticDefaults()
 		{

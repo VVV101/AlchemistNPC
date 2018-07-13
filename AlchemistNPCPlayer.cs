@@ -19,6 +19,7 @@ namespace AlchemistNPC
 		public bool ModPlayer = true;
 		public bool lf = false;
 		public int lamp = 0;
+		public bool ParadiseLost = false;
 		public bool Rampage = false;
 		public bool LilithEmblem = false;
 		public bool trigger = true;
@@ -34,6 +35,8 @@ namespace AlchemistNPC
 		public int LifeElixir = 0;
 		private const int maxFuaran = 1;
 		public int Fuaran = 0;
+		private const int maxKeepBuffs = 1;
+		public int KeepBuffs = 0;
 		
 		public override void ResetEffects()
 		{
@@ -46,6 +49,7 @@ namespace AlchemistNPC
 			AlchemistNPC.LaetitiaSet = false;
 			AlchemistNPC.Extractor = false;
 			AlchemistNPC.XtraT = false;
+			ParadiseLost = false;
 			Rampage = false;
 			LilithEmblem = false;
 			watchercrystal = false;
@@ -58,6 +62,15 @@ namespace AlchemistNPC
 			
 			player.statLifeMax2 += LifeElixir * 50;
 			player.statManaMax2 += Fuaran * 100;
+			
+			if (KeepBuffs == 1)
+			{
+			AlchemistNPC.KeepBuffs = true;
+			}
+			if (KeepBuffs == 0)
+			{
+			AlchemistNPC.KeepBuffs = false;
+			}
 		}
 	
 		public override void clientClone(ModPlayer clientClone)
@@ -72,6 +85,7 @@ namespace AlchemistNPC
 			packet.Write((byte)player.whoAmI);
 			packet.Write(LifeElixir);
 			packet.Write(Fuaran);
+			packet.Write(KeepBuffs);
 			packet.Send(toWho, fromWho);
 		}
 	
@@ -84,6 +98,7 @@ namespace AlchemistNPC
 			return new TagCompound {
 				{"LifeElixir", LifeElixir},
 				{"Fuaran", Fuaran},
+				{"KeepBuffs", KeepBuffs},
 			};
 		}
 	
@@ -91,6 +106,7 @@ namespace AlchemistNPC
 		{
 			LifeElixir = tag.GetInt("LifeElixir");
 			Fuaran = tag.GetInt("Fuaran");
+			KeepBuffs = tag.GetInt("KeepBuffs");
 		}
 	
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
@@ -218,6 +234,11 @@ namespace AlchemistNPC
 					damage = 2;
 					}
 				}
+			if (ParadiseLost)
+				{
+				if (damage < 150)
+				damage = 1;
+				}
         }
 		
 		public override void ModifyHitByProjectile(Projectile proj, ref int damage, ref bool crit) 	
@@ -237,6 +258,11 @@ namespace AlchemistNPC
 					{
 					damage = 2;
 					}
+				}
+			if (ParadiseLost)
+				{
+				if (damage < 150)
+				damage = 1;
 				}
         }
 	}

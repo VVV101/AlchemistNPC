@@ -7,6 +7,10 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class PinkGuyHead : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pink Guy's Hood");
@@ -19,8 +23,9 @@ namespace AlchemistNPC.Items.Armor
 		+ "\n+56 defense"
 		+ "\nIncreases movement speed greatly"
 		+ "\nPlayer is under permanent effect of Tank Combination"
-		+ "\nNational Ugandan Treasure can now be dropped from Moon Lord");
-		text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем/ближнем бою на 15% и добавляет 15% к шансу критического удара\n+56 защиты");
+		+ "\nNational Ugandan Treasure can now be dropped from Moon Lord"
+		+ "\nMay be required to equip set to all players in MP to make NUT drop");
+		text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем/ближнем бою на 15% и добавляет 15% к шансу критического удара\n+56 защиты\nНациональное Сокровище Уганды может выпасть с Лунного Лорда\nВ мультиплеере может быть необходимо экипировать сет на всех игроков");
 		mod.AddTranslation(text);
 		}
 

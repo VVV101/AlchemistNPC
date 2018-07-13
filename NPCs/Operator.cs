@@ -30,7 +30,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Operator";
-			return mod.Properties.Autoload;
+			return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
 		}
 
 		public override void SetStaticDefaults()

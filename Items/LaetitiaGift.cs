@@ -11,7 +11,10 @@ namespace AlchemistNPC.Items
 	[AutoloadEquip(EquipType.Neck)]
 	public class LaetitiaGift : ModItem
 	{
-
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Laetitia Gift (O-01-67-1)");
@@ -63,6 +66,14 @@ namespace AlchemistNPC.Items
 
 		public override bool CanUseItem(Player player)
 		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+					{
+					item.damage = 125;
+					}
+					else
+					{
+					item.damage = 30;
+					}
 			return (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).jr == true && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).lwm == false);
 		}
 		

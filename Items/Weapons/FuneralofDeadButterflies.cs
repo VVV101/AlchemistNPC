@@ -10,6 +10,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class FuneralofDeadButterflies : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Solemn Vow (T-01-68)");
@@ -27,9 +31,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.ranged = true;
 			item.width = 40;
 			item.height = 20;
-			item.useAnimation = 4;
-			item.useTime = 2;
-			item.reuseDelay = 20;
+			item.useAnimation = 6;
+			item.useTime = 6;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 4;
@@ -44,6 +47,8 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			Projectile.NewProjectile(position.X, position.Y+3, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y-3, speedX, speedY, type, damage, knockBack, player.whoAmI);
 			type = mod.ProjectileType("FDB");
 			return true;
 		}
@@ -56,6 +61,19 @@ namespace AlchemistNPC.Items.Weapons
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(8, 0);
+		}
+		
+		public override bool CanUseItem(Player player)
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+					{
+					item.damage = 125;
+					}
+					else
+					{
+					item.damage = 36;
+					}
+			return base.CanUseItem(player);
 		}
 		
 		public override void AddRecipes()

@@ -12,6 +12,10 @@ namespace AlchemistNPC.Items
 {
 	public class SephirothicFruit : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Sephirotic Fruit");

@@ -7,6 +7,10 @@ namespace AlchemistNPC.Items
 {
 	public class APMC : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("AI Programming and Memory Chip");
@@ -36,6 +40,7 @@ namespace AlchemistNPC.Items
 
 		public override bool UseItem(Player player)
 		{
+			Main.NewText("Operator is spawned.", 255, 255, 255);
 			NPC.NewNPC((int)player.Center.X+2, (int)player.Center.Y, mod.NPCType("Operator"));
 			return true;
 		}

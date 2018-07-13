@@ -7,6 +7,10 @@ namespace AlchemistNPC.Items
 {
 	public class HeartofYuiS : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Heart of Yui");

@@ -7,6 +7,10 @@ namespace AlchemistNPC.Items
 {
 	public class TornNote9 : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Torn Note #9");
@@ -19,7 +23,7 @@ namespace AlchemistNPC.Items
 			+"\nI will use that Portal Device. I just don't wanna die! My only hope is that I will not stuck inbetween worlds...'"
 			+"\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #9");
-			Tooltip.AddTranslation(GameCulture.Russian, "'Если кто-нибудь найдёт это, то пусть знает, что это - последняя записка.\nЯ выяснил, что Алхимик способен создать Эликсир Жизни\nЭто легендарный напиток, который способен увеличить максимальный запас жизней того, кто его использует...\nНо для его создания тебе потребуется собрать Алхимический набор и найти Философкий Камень.\nПри наличии всего этого, он сварит вам порцию Эликсира Жизни.\nО нет... Оно всё ещё преследует меня. И Тёмное Солнце светит прямо над моей головой.\nЯ использую портальное устройство. Я не хочу умирать! Моя единственная надежда - это то, что я не застряну в междумирье...'\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь."); 
+			Tooltip.AddTranslation(GameCulture.Russian, "'Если кто-нибудь найдёт это, то пусть знает, что это - последняя записка.\nЯ выяснила, что Алхимик способен создать Эликсир Жизни\nЭто легендарный напиток, который способен увеличить максимальный запас жизней того, кто его использует...\nНо для его создания тебе потребуется собрать Алхимический набор и найти Филосовский Камень.\nПри наличии всего этого, он сварит вам порцию Эликсира Жизни.\nО нет... Оно всё ещё преследует меня. И Тёмное Солнце светит прямо над моей головой.\nЯ использую портальное устройство. Я не хочу умирать! Моя единственная надежда - это то, что я не застряну в междумирье...'\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь."); 
 		}
 
 		public override void SetDefaults()

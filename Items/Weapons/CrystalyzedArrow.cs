@@ -6,6 +6,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class CrystalyzedArrow : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Explodes to shards on hit.");

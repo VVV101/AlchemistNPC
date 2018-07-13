@@ -14,6 +14,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Laoskadyn : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Laoskadyn");

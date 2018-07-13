@@ -9,8 +9,12 @@ using Terraria.Localization;
  
 namespace AlchemistNPC.Items
 {
-     public class SapphireBlueberrySoda : ModItem
+    public class SapphireBlueberrySoda : ModItem
     {
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Sapphire Blueberry Soda");

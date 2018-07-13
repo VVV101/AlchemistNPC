@@ -9,8 +9,12 @@ using Terraria.Localization;
  
 namespace AlchemistNPC.Items
 {
-     public class CrimsonCherrySoda : ModItem
+    public class CrimsonCherrySoda : ModItem
     {
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Crimson Cherry Soda");

@@ -9,6 +9,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Spore : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Spore (O-04-66)");
@@ -57,7 +61,14 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool CanUseItem(Player player)
 		{
-			// Ensures no more than one spear can be thrown out, use this when using autoReuse
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+					{
+					item.damage = 250;
+					}
+					else
+					{
+					item.damage = 55;
+					}
 			return player.ownedProjectileCounts[item.shoot] < 1; 
 		}
 	}

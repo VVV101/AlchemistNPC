@@ -11,6 +11,10 @@ namespace AlchemistNPC.Items
 {
     public class EnchantedMirror : ModItem
     {
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Enchanted Mirror");

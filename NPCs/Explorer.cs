@@ -87,7 +87,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Explorer";
-			return mod.Properties.Autoload;
+			return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
 		}
 
 		public override void SetStaticDefaults()
@@ -708,6 +708,8 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RealityPiercer"));
+        nextSlot++;
 		}
 	}
 }

@@ -8,6 +8,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class MagicBullet : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Magic Bullet (F-01-69)");
@@ -38,6 +42,23 @@ namespace AlchemistNPC.Items.Weapons
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(-15, 0);
+		}
+		
+		public override bool CanUseItem(Player player)
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+					{
+					item.damage = 600;
+					item.useTime = 10;
+					item.useAnimation = 10;
+					}
+					else
+					{
+					item.damage = 500;
+					item.useTime = 15;
+					item.useAnimation = 15;
+					}
+			return base.CanUseItem(player);
 		}
 		
 		public override void AddRecipes()

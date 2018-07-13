@@ -271,13 +271,13 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SummonerCombination"));
 			shop.item[nextSlot].shopCustomPrice = 30000;
             nextSlot++;
-if (Main.player[Main.myPlayer].anglerQuestsFinished >= 5)
+			if (Main.player[Main.myPlayer].anglerQuestsFinished >= 5)
 			{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("FishingCombination"));
 			shop.item[nextSlot].shopCustomPrice = 100000;
             nextSlot++;
 			}
-if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
 				if (NPC.downedGolemBoss)
 				{
@@ -286,40 +286,43 @@ if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
             nextSlot++;
 				}
 			}
-if (NPC.downedMoonlord)
-				{
+			if (NPC.downedMoonlord)
+			{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("UniversalCombination"));
 			shop.item[nextSlot].shopCustomPrice = 500000;
-            nextSlot++;
-				}
-shop.item[nextSlot].SetDefaults (ItemID.FlaskofPoison);
+			nextSlot++;
+			}
+			if (Main.hardMode)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.FlaskofPoison);
 			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.FlaskofFire);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FlaskofFire);
 			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.FlaskofParty);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FlaskofParty);
 			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.FlaskofGold);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FlaskofGold);
 			shop.item[nextSlot].shopCustomPrice = 15000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.FlaskofIchor);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FlaskofIchor);
 			shop.item[nextSlot].shopCustomPrice = 25000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.FlaskofCursedFlames);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FlaskofCursedFlames);
 			shop.item[nextSlot].shopCustomPrice = 25000;
-            nextSlot++;		
-if (NPC.downedPlantBoss)
-		{
-shop.item[nextSlot].SetDefaults (ItemID.FlaskofVenom);
+			nextSlot++;
+			}
+			if (NPC.downedPlantBoss)
+			{
+			shop.item[nextSlot].SetDefaults (ItemID.FlaskofVenom);
 			shop.item[nextSlot].shopCustomPrice = 30000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.FlaskofNanites);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FlaskofNanites);
 			shop.item[nextSlot].shopCustomPrice = 30000;
-            nextSlot++;	
-		}
-{
+			nextSlot++;	
+			}
+			bool WA = false;
 			for (int k = 0; k < 255; k++)
 			{
 				Player player = Main.player[k];
@@ -327,42 +330,48 @@ shop.item[nextSlot].SetDefaults (ItemID.FlaskofNanites);
 				{
 					for (int j = 0; j < player.inventory.Length; j++)
 					{
-						if (player.inventory[j].type == mod.ItemType("WatcherAmulet") || player.inventory[j].type == mod.ItemType("Autoinjector"))
-				{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RainbowFlask"));
-					shop.item[nextSlot].shopCustomPrice = 1000000;
-					nextSlot++;
-				}
+						if (player.inventory[j].type == mod.ItemType("WatcherAmulet") && ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RainbowFlask"));
+						shop.item[nextSlot].shopCustomPrice = 1000000;
+						nextSlot++;
+						WA = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("Autoinjector") && !WA)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RainbowFlask"));
+						shop.item[nextSlot].shopCustomPrice = 1000000;
+						nextSlot++;
+						}
 					}
 				}
 			}
-}
-	if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
-if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
-	{
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBrew"));
-		shop.item[nextSlot].shopCustomPrice = 50000;
-		nextSlot++;
-	}
+			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBrew"));
+					shop.item[nextSlot].shopCustomPrice = 50000;
+					nextSlot++;
+				}
 			}
 	if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			{
-if (Main.hardMode)
-{
-shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GasContainer"));
-shop.item[nextSlot].shopCustomPrice = 200;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CorrosionBeaker"));
-shop.item[nextSlot].shopCustomPrice = 350;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CombustionFlask"));
-shop.item[nextSlot].shopCustomPrice = 350;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("NitrogenVial"));
-shop.item[nextSlot].shopCustomPrice = 350;
-            nextSlot++;
-}	
+			if (Main.hardMode)
+				{
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GasContainer"));
+				shop.item[nextSlot].shopCustomPrice = 200;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CorrosionBeaker"));
+				shop.item[nextSlot].shopCustomPrice = 350;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CombustionFlask"));
+				shop.item[nextSlot].shopCustomPrice = 350;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("NitrogenVial"));
+				shop.item[nextSlot].shopCustomPrice = 350;
+				nextSlot++;
+				}	
 			}
     }
 }

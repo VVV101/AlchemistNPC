@@ -11,15 +11,19 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Legs)]
 	public class TwilightLeggings : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Twilight Leggings (O-02-63)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сумеречные Поножи (O-02-63)"); 
-			Tooltip.SetDefault("'Efforts of three birds to defeat the beast became one."
-			+ "\nIt could stop countless incidents but you’d have to be prepared to step into the Black Forest.'"
+			Tooltip.SetDefault("''Efforts of three birds to defeat the beast became one."
+			+ "\nIt could stop countless incidents but you’d have to be prepared to step into the Black Forest.''"
 			+ "\n[c/FF0000:EGO armor piece]"
 			+ "\n30% increased movement speed");
-			Tooltip.AddTranslation(GameCulture.Russian, "Усилия трёх птиц, чтобы одолеть Зверя, став едиными.\nОно способно остановить бесчисленные несчастные случаи.\nНо вам нужно быть готовыми, чтобы войти в Тёмный Лес.\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает скорость передвижения на 30%");
+			Tooltip.AddTranslation(GameCulture.Russian, "''Усилия трёх птиц, чтобы одолеть Зверя, став едиными.\nОно способно остановить бесчисленные несчастные случаи.\nНо вам нужно быть готовыми, чтобы войти в Тёмный Лес.''\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает скорость передвижения на 30%");
 		}
 
 		public override void SetDefaults()

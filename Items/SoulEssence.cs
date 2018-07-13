@@ -10,6 +10,10 @@ namespace AlchemistNPC.Items
 {
 	public class SoulEssence : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Soul Essence");

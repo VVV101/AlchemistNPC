@@ -8,6 +8,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class XtraT : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("XtraT");

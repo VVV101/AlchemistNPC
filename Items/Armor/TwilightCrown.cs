@@ -11,15 +11,19 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class TwilightCrown : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Twilight Crown (O-02-63)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сумеречная Корона (O-02-63)"); 
-			Tooltip.SetDefault("'Efforts of three birds to defeat the beast became one."
-			+ "\nIt could stop countless incidents but you’d have to be prepared to step into the Black Forest.'"
+			Tooltip.SetDefault("''Efforts of three birds to defeat the beast became one."
+			+ "\nIt could stop countless incidents but you’d have to be prepared to step into the Black Forest.''"
 			+ "\n[c/FF0000:EGO armor piece]"
 			+ "\nIncreases melee speed by 30%");
-			Tooltip.AddTranslation(GameCulture.Russian, "Усилия трёх птиц, чтобы одолеть Зверя, став едиными.\nОно способно остановить бесчисленные несчастные случаи.\nНо вам нужно быть готовыми, чтобы войти в Тёмный Лес.\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает скорость атак в ближнем бою 30%");
+			Tooltip.AddTranslation(GameCulture.Russian, "''Усилия трёх птиц, чтобы одолеть Зверя, став едиными.\nОно способно остановить бесчисленные несчастные случаи.\nНо вам нужно быть готовыми, чтобы войти в Тёмный Лес.''\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает скорость атак в ближнем бою 30%");
 		ModTranslation text = mod.CreateTranslation("TwilightSetBonus");
 		text.SetDefault("Increases current melee/magic damage by 30% and adds 15% to melee/magic critical strike chance"
 		+ "\nIncludes all bonuses from Big Bird Lamp");

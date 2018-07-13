@@ -7,6 +7,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class PlasmaRound : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Plasma Round");

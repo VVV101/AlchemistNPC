@@ -11,10 +11,15 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Justitia : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Justitia (O-02-62)");
-			Tooltip.SetDefault("''It is implicative of a tall bird's balance, that signifies a need to weigh sins in every dispute.''"
+			Tooltip.SetDefault("''It remembers the balance of the Long Bird that never forgot others' sins."
+			+"\nThis weapon may be able to not only cut flesh but trace of sins as well.''"
 			+ "\n[c/FF0000:EGO weapon]");
 			DisplayName.AddTranslation(GameCulture.Russian, "Юстиция (O-02-62)");
 			Tooltip.AddTranslation(GameCulture.Russian, "Он является отражением баланса Высокой Птицы, который показывает нужду взвесить грехи при каждом споре.\n[c/FF0000:Э.П.О.С. оружие]"); 
@@ -48,9 +53,29 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("JP"), damage, knockBack, player.whoAmI);
-            Main.projectile[p].scale = 1.5f;
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+				{
+				Main.projectile[p].scale = 2f;
+				}
+			else
+				{
+				Main.projectile[p].scale = 1.5f;
+				}
             return false;
         }
+		
+		public override bool CanUseItem(Player player)
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+					{
+					item.damage = 300;
+					}
+					else
+					{
+					item.damage = 150;
+					}
+			return base.CanUseItem(player);
+		}
 		
 		public override void AddRecipes()
 		{

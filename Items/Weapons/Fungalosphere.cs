@@ -8,7 +8,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Fungalosphere : ModItem
 	{
-
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetDefaults()
 		{
 			item.damage = 120;

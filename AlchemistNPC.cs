@@ -32,6 +32,7 @@ namespace AlchemistNPC
 		internal TeleportClass TeleportClass;
 		public static ModHotKey LampLight;
 		public static bool EyeOfJudgement = false;
+		public static bool KeepBuffs = false;
 		public static bool MemersRiposte = false;
 		public static bool PGSWear = false;
 		public static bool scroll = false;
@@ -105,6 +106,7 @@ namespace AlchemistNPC
 					Player lifeFruitsPlayer = Main.player[reader.ReadByte()];
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().LifeElixir = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().Fuaran = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().KeepBuffs = reader.ReadInt32();
 					break;
 				case AlchemistNPCMessageType.TeleportPlayer:
 					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);

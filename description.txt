@@ -5,6 +5,22 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Explorer is secret NPC. Try to figure out, how to spawn her.
+v7.1
+-Added support for AlchemistNPC Content Disabler mod. Congratulations, dear content haters!
+-Autoinjector can now be consumed to give player permanent effect.
+Buffs will never wear off after death.
+-Added Materia Transmutator MK2. Functions as Materia Transmutator, but now also has functionality of Draedon's Forge.
+Can be crafted after beating DoG => Calamity Mod required.
+-Added Paradise Lost EGO set, wings and weapon. Weapon has custom Pale damage type.
+Available after beating Moon Lord (no mods)/Ragnarok (Thorium)/Providence (Calamity).
+-Added Reality Piercer.
+-Added ability to disable Lilith's Emblem bees spawn by changing visibility of accessory.
+-Added Living Loom, Alchemy Table and Presserator to Architect's shops.
+-Materia Transmutator now also functions as Wing of the World, Crucible of Cosmos (Fargo's Mod), Thorium Anvil, Arcane Armor Fabricator and Soul Forge (Thorium Mod).
+-Changed some mechanics.
+-Changed some descriptions.
+-Changed some prices.
+-Improved Russian localization. Now all texts should fit the screen.
 v7.0
 -Fixed MP bug with additional HP/Mana. Thanks to Dark;Light#2919 for help!
 -Added new NPC, Explorer. Sells some special potions and research notes.
@@ -35,7 +51,7 @@ Ammo can be bought from Explorer, if you have TT in inventory.
 -Added Nyctosythia and Sunkrovera Arrows/Bullets. Post ML ammo.
 Nyctosythia ammo phases through walls and releases homing projectiles on enemy/wall impact.
 Sunkrovera ammo releases life stealing projectiles on enemy/wall impact.
--Added Shroomite Arrow/Bullet. Releases electric clouds on enemy/tile collide, which shooting shocking beams to enemies.
+-Added Enchanced Shroomite Arrow/Bullet. Releases electric clouds on enemy/tile collide, which shooting shocking beams to enemies.
 Available post Moon Lord. 
 -Added Nyctosythia/Sunkrovera Crystals. Materials for new ammo. Post Lunatic Cultist materials.
 -Added Beach Teleporter Potion. Teleports you to Beach (near the leftest or rightest palm), side depends on used mouse button.

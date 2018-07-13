@@ -16,7 +16,7 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Explorer Combination");
 			Tooltip.SetDefault("Grants buffs, which are necessary for exploring (Dangersense, Hunter, Spelunker, Night Owl, Shine, Mining, Gills, Flippers, Water Walking)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Исследователя");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Исследователя(Предчувствие, Охотник, Шахтёр, Ночное Зрение, Сияние, Добыча, Жабры, Ласты, Хождение по воде)"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Исследователя\nПредчувствие, Охотник, Шахтёр, Ночное Зрение, Сияние, Добыча, Жабры, Ласты, Хождение по воде"); 
 		}    
 		public override void SetDefaults()
         {

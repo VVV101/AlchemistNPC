@@ -10,6 +10,10 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class TheBeak : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("The Beak (O-02-56)");
@@ -25,12 +29,12 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.damage = 12;
-			item.ranged = true;
-			item.width = 40;
-			item.height = 20;
 			item.useAnimation = 20;
 			item.useTime = 10;
 			item.reuseDelay = 20;
+			item.ranged = true;
+			item.width = 40;
+			item.height = 20;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 4;
@@ -57,6 +61,25 @@ namespace AlchemistNPC.Items.Weapons
 		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(8, 4);
+		}
+		
+		public override bool CanUseItem(Player player)
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+					{
+					item.damage = 150;
+					item.useAnimation = 10;
+					item.useTime = 5;
+					item.reuseDelay = 5;
+					}
+					else
+					{
+					item.damage = 12;
+					item.useAnimation = 20;
+					item.useTime = 10;
+					item.reuseDelay = 20;
+					}
+			return base.CanUseItem(player);
 		}
 		
 		public override void AddRecipes()

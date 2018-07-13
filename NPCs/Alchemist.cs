@@ -553,9 +553,12 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("UnderworldTeleportationPotion"));
 		shop.item[nextSlot].shopCustomPrice = 50000;
 		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeaconTeleportator"));
-		shop.item[nextSlot].shopCustomPrice = 25000;
-		nextSlot++;
+			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
+			{
+			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeaconTeleportator"));
+			shop.item[nextSlot].shopCustomPrice = 25000;
+			nextSlot++;
+			}
 		}
 		if (NPC.downedPlantBoss)
 		{
@@ -628,7 +631,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 7500;
 				nextSlot++;
 				}	
-			{
+				bool OA = false;
 				for (int k = 0; k < 255; k++)
 				{
 					Player player = Main.player[k];
@@ -639,13 +642,19 @@ namespace AlchemistNPC.NPCs
 							if (player.inventory[j].type == mod.ItemType("OtherworldlyAmulet"))
 							{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EmagledFragmentation"));
-							shop.item[nextSlot].shopCustomPrice = 80000;
+							shop.item[nextSlot].shopCustomPrice = 100000;
+							nextSlot++;
+							OA = true;
+							}
+							if (player.inventory[j].type == mod.ItemType("Autoinjector") && !OA)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EmagledFragmentation"));
+							shop.item[nextSlot].shopCustomPrice = 100000;
 							nextSlot++;
 							}
 						}
 					}
 				}
-			}
 		}
 		if (tremorShop)
 		{

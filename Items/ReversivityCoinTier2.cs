@@ -10,6 +10,10 @@ namespace AlchemistNPC.Items
 {
     public class ReversivityCoinTier2 : ModItem
     {
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Reversivity Coin Tier 2");

@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
@@ -6,6 +8,10 @@ namespace AlchemistNPC.Items.Placeable
 {
 	public class MateriaTransmutator : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Same functionality as most of crafting stations in one"
@@ -37,8 +43,15 @@ namespace AlchemistNPC.Items.Placeable
 			recipe.AddIngredient(null, "PreHMPenny");
 			recipe.AddIngredient(null, "HMCraftPound");
 			recipe.AddIngredient(null, "SpecCraftPoint");
+			recipe.AddIngredient(null, "WingoftheWorld");
 			recipe.AddIngredient(ItemID.ManaCrystal);
 			recipe.AddIngredient(ItemID.DD2ElderCrystalStand);
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			{
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil")));
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator")));
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").TileType("SoulForge")));
+			}
 			recipe.AddIngredient(null, "EmagledFragmentation", 150);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -22,13 +23,19 @@ namespace AlchemistNPC.Tiles
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
 			}
+		if (type == mod.TileType("MateriaTransmutatorMK2"))
+			{
+				Main.LocalPlayer.adjHoney = true;
+				Main.LocalPlayer.adjLava = true;
+				Main.LocalPlayer.adjWater = true;
+			}
 		if (type == mod.TileType("SpecCraftPoint"))
 			{
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
 			}
-			return new int[0];
+			return base.AdjTiles(type);
 		}
 	}
 }
