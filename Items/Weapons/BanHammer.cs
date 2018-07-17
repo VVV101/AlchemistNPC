@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
 {
@@ -15,7 +16,11 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			Tooltip.SetDefault("[c/FF0000:Instantly kill any non-boss enemies]"
 			+"\n[c/FF0000:If part of the boss is not counted as boss, it would be killed too]");
-		}
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "班锤");
+            Tooltip.AddTranslation(GameCulture.Chinese, "[c/FF0000:秒杀一切非Boss敌人]" +
+                "\n[c/FF0000:如果Boss的某个部分不算做Boss, 同样也会被秒杀]");
+        }
 
 		public override void SetDefaults()
 		{

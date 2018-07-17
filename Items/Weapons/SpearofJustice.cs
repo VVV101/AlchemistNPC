@@ -128,7 +128,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nVery own spear of a [c/FF0000:True Hero]"
 			+"\nHas alternative attack mode on right-click"
 			+"\n200 or 400 mana is required for using alternative attack");
-		}
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "正义之矛");
+            Tooltip.AddTranslation(GameCulture.Chinese, "它的攻击可以摧毁沿途的一切\n一个[c/FF0000:真英雄]特有的矛\n右键会有特殊的攻击方式\n特殊攻击分别需要400点蓝和200点蓝");
+        }
 
 		public override void AddRecipes()
 		{

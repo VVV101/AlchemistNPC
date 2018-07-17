@@ -14,20 +14,23 @@ namespace AlchemistNPC.Items
 		{
 		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
 		}
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Lilith Emblem");
-			Tooltip.SetDefault("Gives 15% magic bonus damage and 10% to critical strike chance"
-			+ "\nDecreases mana usage by 15%"
-			+ "\nIncreases max mana by 50"
-			+ "\nIncreases mana regeneration rate"
-			+ "\nIncreases mana stars pickup range"
-			+ "\nAutomatically uses mana potions"
-			+ "\nYou shoot cluster of deadly bees while using magic weapons"
-			+ "\nDoesn't work with some very specific weapons");
-			DisplayName.AddTranslation(GameCulture.Russian, "Эмблема Лилит");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический урон на 15% и шанс критического удара на 10%\nУменьшает затраты маны на 15%\nУвеличивает максимальную ману на 50\nУскоряет восстановление маны\nУвеличивает радиус сбора звёзд\nАвтоматически использует зелья маны\nВы выстреливает кучку смертоносных пчёл при использовании любого магического оружия\nПоследнее не работает с некоторыми специфическими оружиями"); 
-		}
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Lilith Emblem");
+            Tooltip.SetDefault("Gives 15% magic bonus damage and 10% to critical strike chance"
+            + "\nDecreases mana usage by 15%"
+            + "\nIncreases max mana by 50"
+            + "\nIncreases mana regeneration rate"
+            + "\nIncreases mana stars pickup range"
+            + "\nAutomatically uses mana potions"
+            + "\nYou shoot cluster of deadly bees while using magic weapons"
+            + "\nDoesn't work with some very specific weapons");
+            DisplayName.AddTranslation(GameCulture.Russian, "Эмблема Лилит");
+            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический урон на 15% и шанс критического удара на 10%\nУменьшает затраты маны на 15%\nУвеличивает максимальную ману на 50\nУскоряет восстановление маны\nУвеличивает радиус сбора звёзд\nАвтоматически использует зелья маны\nВы выстреливает кучку смертоносных пчёл при использовании любого магического оружия\nПоследнее не работает с некоторыми специфическими оружиями");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "莉莉丝徽章");
+            Tooltip.AddTranslation(GameCulture.Chinese, "给予15%额外魔法伤害和10%暴击几率\n减少15%法力消耗\n增加50点最大法力值\n增加法力恢复速度\n增加法力星拾取范围\n自动使用法力药水\n当你使用魔法武器时会发射出致命的蜜蜂\n不作用于某些特别的武器");
+        }
 	
 		public override void SetDefaults()
 		{

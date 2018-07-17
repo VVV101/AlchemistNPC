@@ -17,8 +17,11 @@ namespace AlchemistNPC.Items
 				+ "\nLegends say that it can do something amazing");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(25, 36));
 			DisplayName.AddTranslation(GameCulture.Russian, "Амулет Иного Мира");
-			Tooltip.AddTranslation(GameCulture.Russian, "Можно добыть из сильнейшего из врагов.\nЛегенды говорят, что он способен на нечто впечатляющее"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Можно добыть из сильнейшего из врагов.\nЛегенды говорят, что он способен на нечто впечатляющее");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "异界护身符");
+            Tooltip.AddTranslation(GameCulture.Chinese, "只能从最强大的敌人那里得到\n传说可以用它做一些了不起的事情");
+        }    
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.BlessedApple);

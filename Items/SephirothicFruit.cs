@@ -24,8 +24,11 @@ namespace AlchemistNPC.Items
 			+"\nIncreases max amount of minions by 2"
 			+"\nMinions ignore enemy invincibility frames");
 			DisplayName.AddTranslation(GameCulture.Russian, "Плод Сефирот");
-			Tooltip.AddTranslation(GameCulture.Russian, "Последнее семя Ехидны... Хранит невероятные силы внутри\nПовышает урон прислужников на 15%\nУвеличивает максимальное количество прислужников на 2\nПрислужники игнорируют период неуязвимости у противника"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Последнее семя Ехидны... Хранит невероятные силы внутри\nПовышает урон прислужников на 15%\nУвеличивает максимальное количество прислужников на 2\nПрислужники игнорируют период неуязвимости у противника");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "瑟芙罗克之果");
+            Tooltip.AddTranslation(GameCulture.Chinese, "埃凯德娜最后的种子... 拥有不可思议的力量.\n增加15%召唤伤害\n增加2个最大召唤物数量\n召唤物无视敌人无敌帧");
+        }
 	
 		public override void SetDefaults()
 		{

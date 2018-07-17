@@ -16,8 +16,11 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Contains masks of all vanilla bosses"
 				+ "\nRequired for making ultimate accessory");
 			DisplayName.AddTranslation(GameCulture.Russian, "Набор Масок");
-			Tooltip.AddTranslation(GameCulture.Russian, "Содержит в себе маски всех базовых боссов\nНеобходим для создания ультимативного аксессуара"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Содержит в себе маски всех базовых боссов\nНеобходим для создания ультимативного аксессуара");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "面具捆绑包");
+            Tooltip.AddTranslation(GameCulture.Chinese, "打包了所有原版boss的面具\n是制作终极饰品的材料\n并不是Steam的游戏捆绑包哦!");
+        }    
 		public override void SetDefaults()
 		{
 			item.width = 32;

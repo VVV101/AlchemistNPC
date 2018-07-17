@@ -20,8 +20,11 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Cursed Flame, bound in ice.");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(3, 8));
 			DisplayName.AddTranslation(GameCulture.Russian, "Проклятый лёд");
-			Tooltip.AddTranslation(GameCulture.Russian, "Проклятое Пламя, заключённое в лёд"); 
-		}    
+			Tooltip.AddTranslation(GameCulture.Russian, "Проклятое Пламя, заключённое в лёд");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "诅咒之冰");
+            Tooltip.AddTranslation(GameCulture.Chinese, "诅咒之焰, 跃于冰内");
+        }    
 		public override void SetDefaults()
 		{
 			item.width = 32;

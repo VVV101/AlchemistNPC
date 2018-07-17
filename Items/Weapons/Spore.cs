@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using AlchemistNPC.Projectiles;
 using Terraria;
 using Terraria.ID;
@@ -22,8 +22,11 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nIts attack hits enemy several times"
 			+ "\nAfter certain amount of hits releases damaging spores into enemy");
 			DisplayName.AddTranslation(GameCulture.Russian, "Спора (O-04-66)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Копьё, покрытое спорами и вниманием.\nОно раскрывает разум, сияет словно звезда и постепенно сближается с носителем.\n[c/FF0000:Э.П.О.С. оружие]\nЕго атаки наносят урон противнику несколько раз\nПри нанесении определённого количество ударов выпускает атакующие споры во врага"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Копьё, покрытое спорами и вниманием.\nОно раскрывает разум, сияет словно звезда и постепенно сближается с носителем.\n[c/FF0000:Э.П.О.С. оружие]\nЕго атаки наносят урон противнику несколько раз\nПри нанесении определённого количество ударов выпускает атакующие споры во врага");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "荧光菌孢 (O-04-66)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'这是一支生长着孢子, 并且寄宿着情感的长矛.'\n'它能够揭示思维, 在他们脑海中如同繁星一般闪烁, 并且使他们逐渐变得驯服安分.'\n[c/FF0000:EGO 武器]\n攻击能多次伤害敌人\n在命中一定次数之后释放伤害性孢子进入敌人体内");
+        }
 
 		public override void SetDefaults()
 		{

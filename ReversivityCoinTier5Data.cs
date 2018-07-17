@@ -23,7 +23,7 @@ namespace AlchemistNPC
                     color.B,
                     Language.GetTextValue("LegacyTooltip.50"),
                     price,
-                    "Reversivity Coin Tier 5" 
+                    Language.GetTextValue("Mods.AlchemistNPC.ReversivityCoinTier5")
                 });
         }
     }

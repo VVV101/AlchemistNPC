@@ -16,8 +16,11 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Ranger Combination");
 			Tooltip.SetDefault("Grants buffs, which are necesary for Rangers (Archery, Ammo Reservation, Wrath, Rage)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Стрелка");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, необходимые стрелку (Лучник, Экономия Боеприпасов, Гнев, Ярость)"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, необходимые стрелку (Лучник, Экономия Боеприпасов, Гнев, Ярость)");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "射手药剂包");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些远程Buff (箭术, 弹药储备, 暴怒, 怒气)");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

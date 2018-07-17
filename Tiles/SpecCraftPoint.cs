@@ -29,7 +29,8 @@ namespace AlchemistNPC.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Special Crafting Point");
 			name.AddTranslation(GameCulture.Russian, "СпецКрафтовый Поинт");
-			AddMapEntry(new Color(200, 200, 200), name);
+            name.AddTranslation(GameCulture.Chinese, "特殊手工位点");
+            AddMapEntry(new Color(200, 200, 200), name);
 			disableSmartCursor = true;
 			adjTiles = new int[]
 			{

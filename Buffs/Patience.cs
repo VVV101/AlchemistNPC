@@ -16,8 +16,10 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Парализация Терпения");
-			Description.AddTranslation(GameCulture.Russian, "Обездвиживает цель"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Обездвиживает цель");
+            DisplayName.AddTranslation(GameCulture.Chinese, "耐力瘫痪");
+            Description.AddTranslation(GameCulture.Chinese, "冻结目标");
+        }
 
         public override void Update(NPC npc, ref int buffIndex)
         {

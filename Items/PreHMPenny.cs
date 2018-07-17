@@ -19,8 +19,11 @@ namespace AlchemistNPC.Items
             DisplayName.SetDefault("Simple Crafting Penny");
             Tooltip.SetDefault("Makes you look like a master of carpentry"
 			+"\nCan be placed as crafting station");
-            DisplayName.AddTranslation(GameCulture.Russian, "Простой Крафтовый Пенни");
-            Tooltip.AddTranslation(GameCulture.Russian, "Вы теперь мастер-слесарь\nМожет быть размещён как станция крафта");
+            DisplayName.AddTranslation(GameCulture.Russian, "РџСЂРѕСЃС‚РѕР№ РљСЂР°С„С‚РѕРІС‹Р№ РџРµРЅРЅРё");
+            Tooltip.AddTranslation(GameCulture.Russian, "Р’С‹ С‚РµРїРµСЂСЊ РјР°СЃС‚РµСЂ-СЃР»РµСЃР°СЂСЊ\nРњРѕР¶РµС‚ Р±С‹С‚СЊ СЂР°Р·РјРµС‰С‘РЅ РєР°Рє СЃС‚Р°РЅС†РёСЏ РєСЂР°С„С‚Р°");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "з®Ђж“ж‰‹е·ҐдѕїеЈ«");
+            Tooltip.AddTranslation(GameCulture.Chinese, "иї™и®©дЅ зњ‹иµ·жќҐеѓЏжЇдёЄе€¶йЂ е¤§ж№ї\nеЏЇд»Јж›їе·ҐдЅњеЏ°");
         }
         public override void SetDefaults()
         {

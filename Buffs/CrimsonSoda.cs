@@ -23,8 +23,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Эффект соды Кримзона");
-			Description.AddTranslation(GameCulture.Russian, "Значительно увеличивает регенерацию здоровья"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Значительно увеличивает регенерацию здоровья");
+            DisplayName.AddTranslation(GameCulture.Chinese, "绯红苏打加持");
+            Description.AddTranslation(GameCulture.Chinese, "极大增加生命回复速度");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
