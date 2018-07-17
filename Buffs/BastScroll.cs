@@ -21,5 +21,10 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток Баст");
 			Description.AddTranslation(GameCulture.Russian, "Атаки полностью разрушают броню противника."); 
 		}
+		
+		public override void Update(Player player, ref int buffIndex)
+		{
+		AlchemistNPC.BastScroll = true;
+		}
 	}
 }

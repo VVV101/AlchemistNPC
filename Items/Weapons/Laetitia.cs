@@ -15,7 +15,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Laetitia (O-01-67)");
-			Tooltip.SetDefault("It takes a lot of time, but its power cannot be ignored."
+			Tooltip.SetDefault("''It takes a lot of time, but its power cannot be ignored''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nShoots heavy damaging bullets 2 times in 1 second"
 			+ "\nCan be powered up by equipping full set of 'Laetitia'");
@@ -33,25 +33,34 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool CanUseItem(Player player)
 		{
-			if (AlchemistNPC.LaetitiaSet)
+			if (player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet == true)
 			{
 			item.damage = 35;
 			item.useTime = 15;
 			item.useAnimation = 15;
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
-			{
-			item.damage = 650;
-			item.useTime = 10;
-			item.useAnimation = 10;
-			}
-			if (!AlchemistNPC.LaetitiaSet)
+			if (player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet == false)
 			{
 			item.damage = 35;
 			item.useTime = 30;
 			item.useAnimation = 30;
 			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+			{
+			item.damage = 500;
+			item.useTime = 15;
+			item.useAnimation = 15;
+			}
 			return base.CanUseItem(player);
+		}
+		
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+			{
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage/2, knockBack, player.whoAmI);
+			}
+			return true;
 		}
 		
 		public override Vector2? HoldoutOffset()

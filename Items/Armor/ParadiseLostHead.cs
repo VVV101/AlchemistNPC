@@ -49,7 +49,7 @@ namespace AlchemistNPC.Items.Armor
 
 		public override void UpdateEquip(Player player)
 		{
-			player.statLifeMax2 += 100;
+			player.statManaMax2 += 100;
 			player.meleeSpeed *= 1.33f;
 		}
 		
@@ -72,9 +72,8 @@ namespace AlchemistNPC.Items.Armor
 			player.magicCrit += 25;
 			player.rangedCrit += 25;
             player.thrownCrit += 25;
-			PaleDamagePlayer modPlayer = PaleDamagePlayer.ModPlayer(player);
 		}
-
+		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);

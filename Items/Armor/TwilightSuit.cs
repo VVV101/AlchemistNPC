@@ -23,7 +23,7 @@ namespace AlchemistNPC.Items.Armor
 			Tooltip.SetDefault("''Efforts of three birds to defeat the beast became one."
 				+ "\nIt could stop countless incidents but you’d have to be prepared to step into the Black Forest.''"
 				+ "\n[c/FF0000:EGO armor piece]"
-				+ "\n+200 maximum HP"
+				+ "\n+150 maximum HP"
 				+ "\n+20% damage reduction"
 				+ "\nImmune to most vanilla debuffs");
 			Tooltip.AddTranslation(GameCulture.Russian, "''Усилия трёх птиц, чтобы одолеть Зверя, став едиными.\nОно способно остановить бесчисленные несчастные случаи.\nНо вам нужно быть готовыми, чтобы войти в Тёмный Лес.''\n[c/FF0000:Э.П.О.С часть брони]\n+200 к максимальному здоровью\n+20% к поглощению урона\nИммунитет к большинству немодовых дебаффов");

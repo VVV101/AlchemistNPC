@@ -20,6 +20,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.damage = 111;
+			item.crit = 100;
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
@@ -40,6 +41,10 @@ namespace AlchemistNPC.Items.Weapons
 			if (target.boss == false)
 			{
 				damage = 999999;
+			}
+			if (target.type == NPCID.DungeonGuardian)
+			{
+				damage = 999999999;
 			}
 		}
 

@@ -24,7 +24,8 @@ namespace AlchemistNPC.Buffs
 			player.nightVision = true;
 			player.detectCreature = true;
 			player.dangerSense = true;
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).Yui = true;
+			player.GetModPlayer<AlchemistNPCPlayer>(mod).YuiS = true;
+			player.GetModPlayer<AlchemistNPCPlayer>(mod).Yui = false;
 			player.buffTime[buffIndex] = 18000;
 			bool petProjectileNotSpawned = player.ownedProjectileCounts[mod.ProjectileType("YuiS")] <= 0;
 			if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)

@@ -19,7 +19,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Universal Combination");
 			Description.SetDefault("Perfect sum of Tank, Mage, Ranger and Summoner combinations");
-			Main.buffNoSave[Type] = false;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Универсала");

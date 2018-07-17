@@ -58,7 +58,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (AlchemistNPC.RevSet || (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true))
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).RevSet == true || (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true))
 				{
 					if (player.statMana >= 30)
 					{
@@ -71,7 +71,7 @@ namespace AlchemistNPC.Items.Weapons
 						}
 					}
 				}
-			if (!AlchemistNPC.RevSet)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).RevSet == false)
 				{
 					if (Main.rand.Next(2) == 0 && player.statMana >= 30)
 						{
@@ -86,7 +86,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 					{
-					item.damage = 150;
+					item.damage = 120;
 					item.useTime = 10;
 					item.useAnimation = 10;
 					}

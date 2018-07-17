@@ -10,7 +10,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Fortitude");
 			Description.SetDefault("You cannot be knockbacked");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Стойкость");

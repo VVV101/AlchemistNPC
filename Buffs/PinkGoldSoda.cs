@@ -19,7 +19,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Pink Gold Soda Effect");
 			Description.SetDefault("Removes most debuffs");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Эффект Розово-золотой Соды");

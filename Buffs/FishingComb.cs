@@ -19,7 +19,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Fishing Combination");
 			Description.SetDefault("Combination of Crate, Sonar, Fishing, Regeneration, Thorns, Iron Skin, Calming & Inferno buffs");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Рыбака");

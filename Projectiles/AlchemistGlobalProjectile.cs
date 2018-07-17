@@ -27,7 +27,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void SetDefaults(Projectile projectile)
 		{
-			if (AlchemistNPC.scroll == true && projectile.thrown == true)
+			if (AlchemistNPC.BastScroll == true && projectile.thrown == true)
 			{
 				projectile.tileCollide = false;
 			}
@@ -128,11 +128,12 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void OnHitNPC (Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
-			if (projectile.minion && AlchemistNPC.SF)
+			Player player = Main.player[projectile.owner];
+			if (projectile.minion && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).SF == true)
 			{
 				target.immune[projectile.owner] = 1;
 			}
-			if ((projectile.type == 443) && AlchemistNPC.XtraT)
+			if ((projectile.type == 443) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).XtraT == true)
 			{
 				target.AddBuff(mod.BuffType("Electrocute"), 300);
 				target.immune[projectile.owner] = 2;

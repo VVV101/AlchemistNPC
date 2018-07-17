@@ -174,6 +174,14 @@ namespace AlchemistNPC.NPCs
 		text.SetDefault("That was the most powerful and dangerous creature in the jungle, but you killed it. Does that mean that you are now the most dangerous creature in the jungle?");
 		text.AddTranslation(GameCulture.Russian, "Это было самое опасное и могущественное создание в джунглях, но ты убил его. Это значит что ты теперь - самое опасное существо джунглей?");
 		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryE11");
+		text.SetDefault("Otherworldly Amulet has much more functions then you ever thought... It could help Alchemist to make Emagled Fragmentations, it could summon mount Poro for you and it is required for making Autoinjector or Watcher Amulet.");
+		text.AddTranslation(GameCulture.Russian, "Амулет Иного мира имеет куда больше функций, чем ты бы мог подумать... Он может помочь Алхимику создавать Небесные Осколки, он может призвать для тебя ездового питомца Поро и он неободим для создания Автоинъектора или Амулета Дозорного.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryE12");
+		text.SetDefault("If you managed to create Watcher Amulet, then you could buy Flask of Rainbows from Young Brewer. It is a very powerful imbue, which can help you outcome great enemies.");
+		text.AddTranslation(GameCulture.Russian, "Если ты сможешь создать Амулет Дозорного, то тогда ты сможешь покупать Флаконы Радуги у Юного Зельевара. Это очень мощное зелье для покрытия оружия, которое может помочь тебе победить очень серьёзных противников.");
+		mod.AddTranslation(text);
 		}
 
 		public override void SetDefaults()
@@ -254,12 +262,14 @@ namespace AlchemistNPC.NPCs
 		string Entry8 = Language.GetTextValue("Mods.AlchemistNPC.EntryE8");
 		string Entry9 = Language.GetTextValue("Mods.AlchemistNPC.EntryE9");
 		string Entry10 = Language.GetTextValue("Mods.AlchemistNPC.EntryE10");
+		string Entry11 = Language.GetTextValue("Mods.AlchemistNPC.EntryE11");
+		string Entry12 = Language.GetTextValue("Mods.AlchemistNPC.EntryE12");
 		int Operator = NPC.FindFirstNPC(mod.NPCType("Operator"));
 			if (Operator >= 0 && Main.rand.Next(4) == 0)
 			{
 				return Entry8 + Main.npc[Operator].GivenName + Entry9;
 			}
-            switch (Main.rand.Next(8))
+            switch (Main.rand.Next(10))
             {
                 case 0:                                     
 				return Entry1;
@@ -275,6 +285,10 @@ namespace AlchemistNPC.NPCs
 				return Entry6;
 				case 6:
 				return Entry7;
+				case 7:
+				return Entry11;
+				case 8:
+				return Entry12;
                 default:
 				return Entry10;
             }
@@ -666,6 +680,9 @@ namespace AlchemistNPC.NPCs
         {
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ExplorersBrew"));
 		shop.item[nextSlot].shopCustomPrice = 250000;
+        nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TrueDiscordPotion"));
+		shop.item[nextSlot].shopCustomPrice = 330000;
         nextSlot++;
 		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ChromaticCrystal"));
 		shop.item[nextSlot].shopCustomPrice = 500000;

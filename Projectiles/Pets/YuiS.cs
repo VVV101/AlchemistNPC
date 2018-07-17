@@ -27,7 +27,7 @@ namespace AlchemistNPC.Projectiles.Pets
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Yui");
+			DisplayName.SetDefault("Yui S");
 
 		}
 
@@ -48,9 +48,9 @@ namespace AlchemistNPC.Projectiles.Pets
 			AlchemistNPCPlayer modPlayer = (AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer");
 			if (player.dead)
 			{
-				modPlayer.Yui = false;
+				modPlayer.YuiS = false;
 			}
-			if (modPlayer.Yui)
+			if (modPlayer.YuiS)
 			{
 				projectile.timeLeft = 2;
 			}

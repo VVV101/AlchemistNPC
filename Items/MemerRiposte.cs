@@ -47,7 +47,7 @@ namespace AlchemistNPC.Items
 			player.magicCrit -= 5;
 			player.rangedCrit -= 5;
 			player.thrownCrit -= 5;
-			AlchemistNPC.MemersRiposte = true;
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).MemersRiposte = true;
 		}
 
 		public override void AddRecipes()

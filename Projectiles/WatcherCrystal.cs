@@ -17,7 +17,7 @@ namespace AlchemistNPC.Projectiles
             projectile.width = 42;
             projectile.height = 40;  
             projectile.hostile = false;  
-            projectile.friendly = true;   
+            projectile.friendly = false;
             projectile.ignoreWater = true; 
             Main.projFrames[projectile.type] = 9;
             projectile.timeLeft = 18000;
@@ -55,7 +55,7 @@ namespace AlchemistNPC.Projectiles
                 float shootToY = target.position.Y + target.height * 0.5f - projectile.Center.Y;
                 float distance = (float)Math.Sqrt(shootToX * shootToX + shootToY * shootToY);
 
-                if (distance < 520f && !target.friendly && target.active)
+                if (distance < 520f && !target.friendly && target.active && target.type != 488)
                 {
                     if (projectile.ai[0] > 45f) // Time in (60 = 1 second) 
                     {

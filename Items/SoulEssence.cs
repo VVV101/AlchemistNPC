@@ -17,7 +17,7 @@ namespace AlchemistNPC.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Soul Essence");
-			Tooltip.SetDefault("Contains all traits of defeated foe");
+			Tooltip.SetDefault("Contains all traits of a defeated foe");
 			DisplayName.AddTranslation(GameCulture.Russian, "Эссенция Души");
 			Tooltip.AddTranslation(GameCulture.Russian, "Хранит все качества поверженного врага"); 
 		}    

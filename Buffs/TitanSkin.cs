@@ -10,7 +10,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Titan Skin");
 			Description.SetDefault("You have some heavy debuff immunity");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Кожа Титана");

@@ -19,7 +19,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Summoner Combination");
 			Description.SetDefault("Combination of Summoning, Bewitched and Wrath buffs");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Призывателя");

@@ -74,7 +74,7 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "Как ваш день, Управляющий? Могу я помочь вам?");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO2");
-		text.SetDefault("That 'The Great Thunder Bird' doesn't seems so dangerous. I am only hoping it is not the part of Apocalypse Bird...");
+		text.SetDefault("That 'The Great Thunder Bird' doesn't seems so dangerous. I am only hoping that it is not the part of Apocalypse Bird...");
 		text.AddTranslation(GameCulture.Russian, "Эта 'Великая Птица-Гром' не кажется такой уж опасной. Я только надеюсь, что она не является частью Птицы Апокалипсиса.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO3");
@@ -131,7 +131,7 @@ namespace AlchemistNPC.NPCs
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO16");
 		text.SetDefault("Anyway, there are some reasons for optimism. Blood Moon attracks some creatures, which cannot be seen in normal conditions.");
-		text.AddTranslation(GameCulture.Russian, "Как бы то ни было, есть некоторые причины для оптимизма. Кровавая Луна привлекает некоторых созданий, которых нельзя увидеть при обычных условиях.");
+		text.AddTranslation(GameCulture.Russian, "Как бы то ни было, есть причина и для оптимизма. Кровавая Луна привлекает некоторых созданий, которых нельзя увидеть при обычных условиях.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO17");
 		text.SetDefault("I read a few manuscripts about creature, named Slime God. They say that he is one of the first creatures in this world.");
@@ -142,12 +142,52 @@ namespace AlchemistNPC.NPCs
 		text.AddTranslation(GameCulture.Russian, "Ярим... Я уверена, что слышала это имя раньше. Но моя память повреждена. Попробуй узнать у Каламитас что-нибудь о нём...");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO19");
-		text.SetDefault("This carnivorous plant was really dangerous... At least HE Class. Glad to see you again in one piece after all.");
+		text.SetDefault("This carnivorous plant was really dangerous... At least HE Risk Class. Glad to see you again in one piece after all.");
 		text.AddTranslation(GameCulture.Russian, "Этот плотоядный цветок был опасен на самом деле... Рада видеть, что ты не пострадал.");
 		mod.AddTranslation(text);
 		text = mod.CreateTranslation("EntryO20");
 		text.SetDefault("This ancient machine was holding celestial powers inside. With its death, world can change forever...");
 		text.AddTranslation(GameCulture.Russian, "Эта древняя машина хранила в себе Небесные Силы. С её смертью, мир может измениться навсегда.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO21");
+		text.SetDefault("An insect the size of the Queen Bee defies current methods of classification. I propose insects of this size be given a new classification MI-XX. It is a wonder that nobody has used them for their own means, let us be the first.");
+		text.AddTranslation(GameCulture.Russian, "Размеры насекомого с Королеву Пчёл бросают вызов текущим методам класификации. Я предлагаю дать насекомому таких размеров новую классификацию MI-XX. Удивительно, что ещё никто не использовал их для себя.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO22");
+		text.SetDefault("It appears I was wrong about the queen bees. Their memory storage contains the ramblings of a scientist who was blinded by ambition, who cruelly introduced the plague to them. Let us classify them as MP-0X.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO23");
+		text.SetDefault("According to my notes, this Coznix you speak of was a lesser Void Observer, classified as OB-V-01. There are greater threats waiting behind the veil of reality.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO24");
+		text.SetDefault("This flying scouter..... curious. From the memory banks stored in the wreckage, this looks to have been a scouting ship for the Martians, to determine how hospitable Terraria is. I fear the pilot's last moments have been transmitted to the main Martian command centre.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO25");
+		text.SetDefault("Turning a mages' power in on himself and trapping him within it is no easy task, but to observe cruelty of such magnitude..... Permafrost, former lord of the Ice Castle, may you see peace.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO26");
+		text.SetDefault("The Starplate raider is a Genius Stardust Centipede, or a G-S-C3, popular with the Martian elite as lifelong companions and raiding partners. It must have wandered far from home, judging from the transmitter memory banks I recovered.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO27");
+		text.SetDefault("I took the time to analize the remains of this incredible creature, every time it attacked, the entire planet seem to resonate within its will, I can do nothing but to worry about the consequences of its death, at least you saved terraria of certain doom..........again.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO28");
+		text.SetDefault("Such an ancient presence is worth documenting - the material of its plates can withstand temperatures equal to the core of the Terrarian Sun! This will revolutionize containment procedures for ARS-0N prisoners if we can make materials half as resistant to heat!");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO29");
+		text.SetDefault("Whoever made the ravager deserves to be put in HI-MAX containment. All those tortured souls....... Well, at least you put them out of their misery.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO30");
+		text.SetDefault("Interesting... those bumblebirbs were actually meant to be clones of Yharon. I’m glad that experiment was a failure!");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO31");
+		text.SetDefault("You were lucky that thing got complacent and didn't open a portal to the Sun on your head. The sheer strength and intelligence it exhibited means I need to make a whole new category for the classification of Worms.");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO32");
+		text.SetDefault("I have my theories about the origin of this being, more than fear his soul (if he have one)... Irradiates negative energy, experimentation shown how in darkness this ''oblivion energy'', irradiated light but in light places irradiated shadow. I don't know were he came from but I know that whatever is his race, It must be contained at any cost!");
+		mod.AddTranslation(text);
+		text = mod.CreateTranslation("EntryO33");
+		text.SetDefault("Supreme Calamity has been defeated but she speaks of a being even stronger than herself. We must hope that he hasn't taken notice of us yet.");
 		mod.AddTranslation(text);
 		}
 
@@ -301,6 +341,19 @@ namespace AlchemistNPC.NPCs
 		string EntryO18 = Language.GetTextValue("Mods.AlchemistNPC.EntryO18");
 		string EntryO19 = Language.GetTextValue("Mods.AlchemistNPC.EntryO19");
 		string EntryO20 = Language.GetTextValue("Mods.AlchemistNPC.EntryO20");
+		string EntryO21 = Language.GetTextValue("Mods.AlchemistNPC.EntryO21");
+		string EntryO22 = Language.GetTextValue("Mods.AlchemistNPC.EntryO22");
+		string EntryO23 = Language.GetTextValue("Mods.AlchemistNPC.EntryO23");
+		string EntryO24 = Language.GetTextValue("Mods.AlchemistNPC.EntryO24");
+		string EntryO25 = Language.GetTextValue("Mods.AlchemistNPC.EntryO25");
+		string EntryO26 = Language.GetTextValue("Mods.AlchemistNPC.EntryO26");
+		string EntryO27 = Language.GetTextValue("Mods.AlchemistNPC.EntryO27");
+		string EntryO28 = Language.GetTextValue("Mods.AlchemistNPC.EntryO28");
+		string EntryO29 = Language.GetTextValue("Mods.AlchemistNPC.EntryO29");
+		string EntryO30 = Language.GetTextValue("Mods.AlchemistNPC.EntryO30");
+		string EntryO31 = Language.GetTextValue("Mods.AlchemistNPC.EntryO31");
+		string EntryO32 = Language.GetTextValue("Mods.AlchemistNPC.EntryO32");
+		string EntryO33 = Language.GetTextValue("Mods.AlchemistNPC.EntryO33");
 		if (Main.bloodMoon)
 			{
 				switch (Main.rand.Next(3))
@@ -389,6 +442,70 @@ namespace AlchemistNPC.NPCs
 				return EntryO10;
 				}
 			}
+		if (Main.rand.Next(5) == 0 && NPC.downedQueenBee)
+			{                                                 
+			return EntryO21;
+			}
+		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && Main.hardMode)
+		{
+			if (Main.rand.Next(5) == 0 && CalamityModDownedPlaguebringer)
+				{                                                 
+				return EntryO22;
+				}
+			if (Main.rand.Next(5) == 0 && CalamityModDownedCryogen)
+				{                                                 
+				return EntryO25;
+				}
+			if (Main.rand.Next(5) == 0 && CalamityModDownedProvidence)
+				{                                                 
+				return EntryO28;
+				}
+			if (Main.rand.Next(5) == 0 && CalamityModDownedRavager)
+				{                                                 
+				return EntryO29;
+				}
+			if (Main.rand.Next(5) == 0 && CalamityModDownedBirb)
+				{                                                 
+				return EntryO30;
+				}
+			if (Main.rand.Next(5) == 0 && CalamityModDownedDOG)
+				{                                                 
+				return EntryO31;
+				}
+			if (Main.rand.Next(5) == 0 && CalamityModDownedSCal)
+				{                                                 
+				return EntryO33;
+				}
+		}
+		if (ModLoader.GetLoadedMods().Contains("ThoriumMod") && Main.hardMode)
+		{
+			if (Main.rand.Next(5) == 0 && ThoriumModDownedFallenBeholder)
+				{                                                 
+				return EntryO23;
+				}
+			if (Main.rand.Next(5) == 0 && ThoriumModDownedStarScout)
+				{                                                 
+				return EntryO24;
+				}
+		}
+		if (ModLoader.GetLoadedMods().Contains("SacredTools") && Main.hardMode)
+		{
+			if (Main.rand.Next(5) == 0 && SacredToolsDownedAbbadon)
+				{                  
+				return EntryO32;
+				}
+		}
+		if (ModLoader.GetLoadedMods().Contains("SpiritMod") && Main.hardMode)
+		{
+			if (Main.rand.Next(5) == 0 && SpiritModDownedStarplateRaider)
+				{                                                 
+				return EntryO26;
+				}
+			if (Main.rand.Next(5) == 0 && SpiritModDownedOverseer)
+				{                                                 
+				return EntryO27;
+				}
+		}
             switch (Main.rand.Next(4))
             {
                 case 0:                                     
@@ -549,6 +666,10 @@ namespace AlchemistNPC.NPCs
         {
         get { return CalamityMod.CalamityWorld.downedProvidence; }
         }
+		public bool CalamityModDownedCryogen
+		{
+        get { return CalamityMod.CalamityWorld.downedCryogen; }
+        }
  
 		public bool ThoriumModDownedGTBird
         {
@@ -590,7 +711,19 @@ namespace AlchemistNPC.NPCs
         {
         get { return ThoriumMod.ThoriumWorld.downedRealityBreaker; }
         }
- 
+		public bool SpiritModDownedStarplateRaider
+		{
+        get { return SpiritMod.MyWorld.downedRaider; }
+        }
+		public bool SpiritModDownedOverseer
+		{
+        get { return SpiritMod.MyWorld.downedOverseer; }
+        }
+		public bool SacredToolsDownedAbbadon
+		{
+        get { return SacredTools.ModdedWorld.OblivionSpawns; }
+        }
+		
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
 			for (int k = 0; k < 255; k++)
@@ -797,6 +930,12 @@ namespace AlchemistNPC.NPCs
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("UnholyEssence"));
 					shop.item[nextSlot].shopCustomPrice = 500000;
+					nextSlot++;
+					}
+					if (CalamityModDownedPolter)
+					{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm"));
+					shop.item[nextSlot].shopCustomPrice = 1000000;
 					nextSlot++;
 					}
 					if (CalamityModDownedBirb)
@@ -1112,18 +1251,21 @@ namespace AlchemistNPC.NPCs
 					}
 					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 						{
-							if(CalamityModDownedPolter)
+							if (CalamityModDownedProvidence)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ProvidenceBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(35);
+								shop.item[nextSlot].shopCustomPrice = new int?(25);
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
 								nextSlot++;
+							}
+							if(CalamityModDownedPolter)
+							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PolterghastBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(5);
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;
 								nextSlot++;
 							}
-							if (CalamityModDownedBirb)
+							if (CalamityModDownedDOG && CalamityModDownedBirb)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(10);
@@ -1313,16 +1455,19 @@ namespace AlchemistNPC.NPCs
 						shop.item[nextSlot].shopCustomPrice = 7500000;
 						nextSlot++;
 						}
-						if(CalamityModDownedPolter)
+						if (CalamityModDownedProvidence)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ProvidenceBag"));
 							shop.item[nextSlot].shopCustomPrice = 150000000;
 							nextSlot++;
+						}
+						if (CalamityModDownedPolter)
+						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PolterghastBag"));
 							shop.item[nextSlot].shopCustomPrice = 150000000;
 							nextSlot++;
 						}
-						if (CalamityModDownedBirb)
+						if (CalamityModDownedDOG && CalamityModDownedBirb)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag"));
 							shop.item[nextSlot].shopCustomPrice = 300000000;

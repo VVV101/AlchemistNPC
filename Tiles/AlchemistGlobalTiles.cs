@@ -9,7 +9,6 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace AlchemistNPC.Tiles
 {

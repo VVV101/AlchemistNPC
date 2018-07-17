@@ -25,11 +25,11 @@ namespace AlchemistNPC.Projectiles.Minions
 		return true; 
 		}
 
-public override void CheckActive()
+		public override void CheckActive()
 		{
 			Player player = Main.player[projectile.owner];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
-			if (player.dead || !modPlayer.jr)
+			if ((player.dead && !modPlayer.LaetitiaSet && !modPlayer.ParadiseLost) || player.FindBuffIndex(mod.BuffType("LittleWitchMonster")) < -1)
 			{
 				modPlayer.lwm = false;
 			}
@@ -39,6 +39,19 @@ public override void CheckActive()
 			}
 		}
 
+		public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			Player player = Main.player[projectile.owner];
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+			{
+			damage = 125;
+			}
+			else
+			{
+			damage = 45;
+			}
+		}
+		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(BuffID.ShadowFlame, 600);

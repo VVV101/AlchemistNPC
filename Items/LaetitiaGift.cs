@@ -74,7 +74,7 @@ namespace AlchemistNPC.Items
 					{
 					item.damage = 30;
 					}
-			return (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).jr == true && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).lwm == false);
+			return ((player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet == true && player.GetModPlayer<AlchemistNPCPlayer>(mod).lwm == false) || (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).lwm == false));
 		}
 		
 		public override bool AltFunctionUse(Player player)

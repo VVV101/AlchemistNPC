@@ -613,6 +613,12 @@ shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("Invi
 shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TitanSkinPotion"));
 			shop.item[nextSlot].shopCustomPrice = 50000;
             nextSlot++;
+		if (NPC.downedMechBossAny)
+					{
+			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("DiscordPotion"));
+			shop.item[nextSlot].shopCustomPrice = 200000;
+            nextSlot++;
+					}
 		if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 					{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BlurringPotion"));

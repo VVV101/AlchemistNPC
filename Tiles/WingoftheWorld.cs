@@ -26,6 +26,7 @@ namespace AlchemistNPC.Tiles
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Wing of the World");
 			name.AddTranslation(GameCulture.Russian, "Крыло Мира");
@@ -34,7 +35,8 @@ namespace AlchemistNPC.Tiles
 			adjTiles = new int[]
 			{
 			TileID.Tables,
-			TileID.Chairs
+			TileID.Chairs,
+			TileID.Torches 
 			};
 		}
 

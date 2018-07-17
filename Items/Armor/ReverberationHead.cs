@@ -59,7 +59,7 @@ namespace AlchemistNPC.Items.Armor
 			player.setBonus = ReverberationSetBonus;
 			player.magicQuiver = true;
 			player.AddBuff(mod.BuffType("ShieldofSpring"), 300);
-			AlchemistNPC.RevSet = true;
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).RevSet = true;
 		}
 
 		public override void AddRecipes()

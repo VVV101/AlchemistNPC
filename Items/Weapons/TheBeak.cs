@@ -49,6 +49,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage/2, knockBack, player.whoAmI);
 			type = mod.ProjectileType("BB");
 			return true;
 		}
@@ -68,9 +69,9 @@ namespace AlchemistNPC.Items.Weapons
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 					{
 					item.damage = 150;
-					item.useAnimation = 10;
-					item.useTime = 5;
-					item.reuseDelay = 5;
+					item.useAnimation = 12;
+					item.useTime = 6;
+					item.reuseDelay = 6;
 					}
 					else
 					{

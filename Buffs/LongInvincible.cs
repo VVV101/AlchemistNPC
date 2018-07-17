@@ -10,7 +10,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Longer Invincibility");
 			Description.SetDefault("Your invincibility time is increased");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Продлённая неуязвимость");

@@ -23,9 +23,8 @@ namespace AlchemistNPC.Items.Armor
 		+ "\n+56 defense"
 		+ "\nIncreases movement speed greatly"
 		+ "\nPlayer is under permanent effect of Tank Combination"
-		+ "\nNational Ugandan Treasure can now be dropped from Moon Lord"
-		+ "\nMay be required to equip set to all players in MP to make NUT drop");
-		text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем/ближнем бою на 15% и добавляет 15% к шансу критического удара\n+56 защиты\nНациональное Сокровище Уганды может выпасть с Лунного Лорда\nВ мультиплеере может быть необходимо экипировать сет на всех игроков");
+		+ "\nNational Ugandan Treasure can now be dropped from Moon Lord");
+		text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем/ближнем бою на 15% и добавляет 15% к шансу критического удара\n+56 защиты\nНациональное Сокровище Уганды может выпасть с Лунного Лорда");
 		mod.AddTranslation(text);
 		}
 
@@ -45,7 +44,7 @@ namespace AlchemistNPC.Items.Armor
 
 		public override void UpdateArmorSet(Player player)
 		{
-			AlchemistNPC.PGSWear = true;
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).PGSWear = true;
 			string PGSetBonus = Language.GetTextValue("Mods.AlchemistNPC.PGSetBonus");
 			player.setBonus = PGSetBonus;
             player.statDefense += 56;

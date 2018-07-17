@@ -20,7 +20,6 @@ namespace AlchemistNPC.Buffs
 			DisplayName.SetDefault("Explorer Combination");
 			Description.SetDefault("Combination of Dangersense, Hunter, Spelunker, Night Owl, Shine & Mining buffs"
 			+"\nAlso gives effects of Gills, Flippers and Water Walking Potions");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Исследователя");

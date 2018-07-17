@@ -17,12 +17,12 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 		item.CloneDefaults(3389);
-		item.damage = 150;
+		item.damage = 125;
 		item.shoot = mod.ProjectileType("SasscadeYoyo");
 		item.knockBack = 4;
 		item.value = 5000000;
 		item.rare = 11;
-		item.shootSpeed = 32f;
+		item.shootSpeed = 24f;
 		item.useTime = 10;
 		item.useAnimation = 10;
 		}

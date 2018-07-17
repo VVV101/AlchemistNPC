@@ -53,12 +53,11 @@ namespace AlchemistNPC.Items.Armor
 		{
 			string LaetitiaSetBonus = Language.GetTextValue("Mods.AlchemistNPC.LaetitiaSetBonus");
 			player.setBonus = LaetitiaSetBonus;
-			AlchemistNPC.LaetitiaSet = true;
 			if (Main.hardMode)
 			{
 			player.minionDamage += 0.35f;
 			}
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).jr = true;
+			player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet = true;
 		}
 
 		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)

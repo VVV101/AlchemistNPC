@@ -13,7 +13,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Sunshine");
 			Description.SetDefault("You are producing light like miniature Sun");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Солнечное Сияние");

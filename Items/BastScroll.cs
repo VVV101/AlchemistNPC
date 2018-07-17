@@ -26,10 +26,11 @@ namespace AlchemistNPC.Items
 			+"\nBonus jumps could be disabled by changing visibility of accessory"
 			+"\n+10% damage reduction"
 			+"\nIncreases melee/throwing damage and crits by 15%"
-			+"\nAttacks destroy enemy armor totally (may not work with some weapons)"
+			+"\nMelee/throwing attacks destroy enemy defense (may not work with some weapons)"
+			+"\nDefense destruction effect is global for all players"
 			+"\nThrowing attacks go through tiles");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток Баст");
-			Tooltip.AddTranslation(GameCulture.Russian, "''Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!''\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего боя/метательного на 15%\nАтаки полностью разрушают броню противника (может не работать с некоторыми оружиями)\nМетательные атаки проходят сквозь блоки"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "''Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!''\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего боя/метательного на 15%\nБлижние и метательные атаки разрушают броню противника (может не работать с некоторыми оружиями)\nЭффект разрушения брони распространяется на все игроков\nМетательные атаки проходят сквозь блоки"); 
 		}
 	
 		public override void SetDefaults()
@@ -44,7 +45,7 @@ namespace AlchemistNPC.Items
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.AddBuff(mod.BuffType("BastScroll"), 60);
-			AlchemistNPC.scroll = true;
+			player.GetModPlayer<AlchemistNPCPlayer>(mod).Scroll = true;
 			player.endurance += 0.1f;
 			player.statDefense += 5;
 			player.thrownDamage += 0.15f;

@@ -1,11 +1,34 @@
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+using ReLogic.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
+using System.Security.Cryptography;
+using System.Text;
+using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.Enums;
+using Terraria.GameContent;
+using Terraria.GameContent.Achievements;
+using Terraria.GameContent.Events;
+using Terraria.GameContent.Tile_Entities;
+using Terraria.GameContent.UI;
+using Terraria.GameInput;
+using Terraria.Graphics.Capture;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
 using Terraria.ID;
+using Terraria.IO;
+using Terraria.Localization;
+using Terraria.ObjectData;
+using Terraria.Social;
+using Terraria.UI;
+using Terraria.UI.Chat;
+using Terraria.UI.Gamepad;
+using Terraria.Utilities;
+using Terraria.World.Generation;
+using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
@@ -16,6 +39,17 @@ namespace AlchemistNPC
 	public class AlchemistNPCPlayer : ModPlayer
 	{
 		public bool Yui = false;
+		public bool YuiS = false;
+		public bool Extractor = false;
+		public bool Scroll = false;
+		public bool EyeOfJudgement = false;
+		public bool LaetitiaSet = false;
+		public bool SF = false;
+		public bool PGSWear = false;
+		public bool RevSet = false;
+		public bool XtraT = false;
+		public bool BuffsKeep = false;
+		public bool MemersRiposte = false;
 		public bool ModPlayer = true;
 		public bool lf = false;
 		public int lamp = 0;
@@ -28,7 +62,6 @@ namespace AlchemistNPC
 		public bool rainbowdust = false;
 		public bool sscope = false;
 		public bool lwm = false;
-		public bool jr = false;
 		public bool DB = false;
 		
 		private const int maxLifeElixir = 2;
@@ -40,15 +73,16 @@ namespace AlchemistNPC
 		
 		public override void ResetEffects()
 		{
-			AlchemistNPC.EyeOfJudgement = false;
-			AlchemistNPC.MemersRiposte = false;
-			AlchemistNPC.PGSWear = false;
-			AlchemistNPC.scroll = false;
-			AlchemistNPC.RevSet = false;
-			AlchemistNPC.SF = false;
-			AlchemistNPC.LaetitiaSet = false;
-			AlchemistNPC.Extractor = false;
-			AlchemistNPC.XtraT = false;
+			AlchemistNPC.BastScroll = false;
+			EyeOfJudgement = false;
+			LaetitiaSet = false;
+			Scroll = false;
+			SF = false;
+			XtraT = false;
+			RevSet = false;
+			MemersRiposte = false;
+			PGSWear = false;
+			Extractor = false;
 			ParadiseLost = false;
 			Rampage = false;
 			LilithEmblem = false;
@@ -57,19 +91,19 @@ namespace AlchemistNPC
 			rainbowdust = false;
 			sscope = false;
 			lwm = false;
-			jr = false;
 			Yui = false;
+			YuiS = false;
 			
 			player.statLifeMax2 += LifeElixir * 50;
 			player.statManaMax2 += Fuaran * 100;
 			
 			if (KeepBuffs == 1)
 			{
-			AlchemistNPC.KeepBuffs = true;
+			BuffsKeep = true;
 			}
 			if (KeepBuffs == 0)
 			{
-			AlchemistNPC.KeepBuffs = false;
+			BuffsKeep = false;
 			}
 		}
 	
@@ -87,6 +121,11 @@ namespace AlchemistNPC
 			packet.Write(Fuaran);
 			packet.Write(KeepBuffs);
 			packet.Send(toWho, fromWho);
+		}
+	
+		public override void OnEnterWorld(Player player)
+		{
+			Main.NewText("If you don't like additional content or drops from the mod you could install AlchemistNPC Content Disabler mod.", 0, 255, 255);
 		}
 	
 		public override void SendClientChanges(ModPlayer clientPlayer)
@@ -130,7 +169,7 @@ namespace AlchemistNPC
 				target.AddBuff(BuffID.Ichor, 600);
 				target.AddBuff(BuffID.BetsysCurse, 600);
 				}
-			if (AlchemistNPC.scroll)
+			if (Scroll)
 				{
 				target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
 				target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
@@ -164,13 +203,12 @@ namespace AlchemistNPC
 				target.AddBuff(BuffID.Ichor, 600);
 				target.AddBuff(BuffID.BetsysCurse, 600);
 				}
-			if (AlchemistNPC.scroll)
+			if (proj.thrown && Scroll)
 				{
 				target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
 				target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
-				target.defense = 0;
 				}
-			if ((proj.type == ProjectileID.Electrosphere) && AlchemistNPC.XtraT)
+			if ((proj.type == ProjectileID.Electrosphere) && XtraT)
 				{
 				target.AddBuff(mod.BuffType("Electrocute"), 600);
 				}
@@ -179,6 +217,15 @@ namespace AlchemistNPC
 				target.AddBuff(mod.BuffType("Electrocute"), 600);
 				}
 			}
+		}
+		
+		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+		{
+			if (player.FindBuffIndex(mod.BuffType("Uganda")) > -1)
+			{
+				damageSource = PlayerDeathReason.ByCustomReason(player.name + " DIDN NO DE WEI!");
+			}
+			return true;
 		}
 		
 		public override void ProcessTriggers(TriggersSet triggersSet)
@@ -198,11 +245,51 @@ namespace AlchemistNPC
 				}
 				lf = false;
 			}
+			if (AlchemistNPC.DiscordBuff.JustPressed)
+			{
+				if (Main.myPlayer == player.whoAmI && player.FindBuffIndex(mod.BuffType("DiscordBuff")) > -1)
+				{
+				Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+				player.Teleport(vector2, 1, 0);
+				NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
+					if (player.chaosState)
+					{
+						player.statLife = player.statLife - player.statLifeMax2 / 3;
+						PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
+						if (Main.rand.Next(2) == 0)
+						damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
+						if (player.statLife <= 0)
+						player.KillMe(damageSource, 1.0, 0, false);
+						player.lifeRegenCount = 0;
+						player.lifeRegenTime = 0;
+					}
+				player.AddBuff(88, 600, true);
+				player.AddBuff(164, 60, true);
+				}
+				if (Main.myPlayer == player.whoAmI && player.FindBuffIndex(mod.BuffType("TrueDiscordBuff")) > -1)
+				{
+				Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+				player.Teleport(vector2, 1, 0);
+				NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
+					if (player.chaosState)
+					{
+						player.statLife = player.statLife - player.statLifeMax2 / 7;
+						PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
+						if (Main.rand.Next(2) == 0)
+						damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
+						if (player.statLife <= 0)
+						player.KillMe(damageSource, 1.0, 0, false);
+						player.lifeRegenCount = 0;
+						player.lifeRegenTime = 0;
+					}
+				player.AddBuff(88, 360, true);
+				}
+			}
 		}
 
 		public override void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
         {
-            if (AlchemistNPC.MemersRiposte && crit)
+            if (MemersRiposte && crit)
             {
                 damage *= 2;
             }
@@ -210,7 +297,7 @@ namespace AlchemistNPC
 		
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
-            if (AlchemistNPC.MemersRiposte && crit)
+            if (MemersRiposte && crit)
             {
                 damage *= 2;
             }
@@ -218,7 +305,7 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByNPC(NPC npc, ref int damage, ref bool crit) 		
         {
-            if (AlchemistNPC.MemersRiposte)
+            if (MemersRiposte)
             {
 				for (int h = 0; h < 1; h++) 
 					{
@@ -243,7 +330,7 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByProjectile(Projectile proj, ref int damage, ref bool crit) 	
         {
-			if (AlchemistNPC.MemersRiposte)
+			if (MemersRiposte)
             {
 				for (int h = 0; h < 1; h++) 
 					{

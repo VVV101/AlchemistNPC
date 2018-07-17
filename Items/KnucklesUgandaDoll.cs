@@ -32,7 +32,7 @@ namespace AlchemistNPC.Items
 		
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("Uganda"), 300);
+			player.AddBuff(mod.BuffType("Uganda"), 600);
 			return true;
 		}
     }

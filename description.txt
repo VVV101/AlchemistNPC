@@ -11,15 +11,31 @@ v7.1
 Buffs will never wear off after death.
 -Added Materia Transmutator MK2. Functions as Materia Transmutator, but now also has functionality of Draedon's Forge.
 Can be crafted after beating DoG => Calamity Mod required.
+-Added Discord Potion. Allows to teleport to cursor position by using hotkey.
+Inflicts Distorted for 1 second. Deals damage, equal to 1/3 of total HP if using repeteadly and inflicts 10 seconds of Chaos State.
+Available after beating any mechanical boss.
+-Added True Discord Potion. Allows to teleport to cursor position by using hotkey.
+Behaves same as Rod of Discord. Can be bought from Explorer.
+-Added Thorium and Spirit Combinations. Can be bought from Young Brewer.
+Available after beating any mechanical boss and if respective mods are activated.
 -Added Paradise Lost EGO set, wings and weapon. Weapon has custom Pale damage type.
 Available after beating Moon Lord (no mods)/Ragnarok (Thorium)/Providence (Calamity).
 -Added Reality Piercer.
 -Added ability to disable Lilith's Emblem bees spawn by changing visibility of accessory.
 -Added Living Loom, Alchemy Table and Presserator to Architect's shops.
+-Added recipes for Stopwatch, DPS Meter and Lifeform Analyzer.
 -Materia Transmutator now also functions as Wing of the World, Crucible of Cosmos (Fargo's Mod), Thorium Anvil, Arcane Armor Fabricator and Soul Forge (Thorium Mod).
+-Watcher Amulet projectile no longer aims Target Dummies.
+-Ban Hammer now oneshots Dungeon Guardian.
+-Added new lines for Operator through global mods progression.
+-Tried to balance most weapons.
+-Fixed most of the MP issues (including Extractor and PG's set).
+-Fixed not saving mod's buffs after leaving the world.
+-Fixed Wing of the World not counted as light source.
+-Nerfed Blurring Potion.
 -Changed some mechanics.
 -Changed some descriptions.
--Changed some prices.
+-Changed some prices and conditions.
 -Improved Russian localization. Now all texts should fit the screen.
 v7.0
 -Fixed MP bug with additional HP/Mana. Thanks to Dark;Light#2919 for help!

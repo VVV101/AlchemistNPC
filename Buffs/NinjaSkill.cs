@@ -10,7 +10,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Ninja");
 			Description.SetDefault("Now you have Ninja abilities");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Ниндзя");

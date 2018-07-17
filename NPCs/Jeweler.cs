@@ -538,6 +538,15 @@ if (Main.hardMode)
 		shop.item[nextSlot].SetDefaults (ItemID.Campfire);
 		shop.item[nextSlot].shopCustomPrice = 5000;
 		nextSlot++;
+			if (NPC.downedBoss2)
+			{
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Mistletoe"));
+				shop.item[nextSlot].shopCustomPrice = 50000;
+				nextSlot++;	
+				}
+			}
 		if (NPC.downedBoss3)
 			{
 			shop.item[nextSlot].SetDefaults (ItemID.WaterBucket);

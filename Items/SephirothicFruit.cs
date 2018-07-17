@@ -38,7 +38,7 @@ namespace AlchemistNPC.Items
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			AlchemistNPC.SF = true;
+			player.GetModPlayer<AlchemistNPCPlayer>(mod).SF = true;
             player.minionDamage += 0.15f;
 			++player.maxMinions;
 			++player.maxMinions;

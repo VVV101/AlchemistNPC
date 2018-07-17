@@ -61,7 +61,7 @@ namespace AlchemistNPC.Items.PaleDamageClass
 				string damageValue = splitText.First();
 				string damageWord = splitText.Last();
 				// Change the tooltip text
-				tt.text = damageValue + " pale " + damageWord;
+				tt.text = damageValue + " [c/00FFFF:pale] " + damageWord;
 			}
 		}
 	}

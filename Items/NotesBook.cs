@@ -18,9 +18,9 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Notes Book");
 			Tooltip.SetDefault("No matter its pages are torn, hidden information is now readeable."
-			+"\nCan open open portal to Other World"
+			+"\nCan open portal to the other world"
 			+"\nCan be used only on certain conditions"
-			+"\n''If you managed to collect all Notes, then you will be able to read this information"
+			+"\n''If you managed to collect all Notes, then you will be able to read this information."
 			+"\nMoon Lord is not ordinary creatures. Defeating him may do some unexpected effects..."
 			+"\nLike weakening barrier between worlds. Even way between worlds may appear."
 			+"\nThis barrier becomes especially weak during the event, called ''The Dark Sun''."

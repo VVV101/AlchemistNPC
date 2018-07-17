@@ -53,7 +53,7 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				item.useTime = 90;
 				item.useAnimation = 90;
-				item.damage = 250;
+				item.damage = 200;
 				item.shootSpeed = 64f;
 				item.shoot = mod.ProjectileType("SpearofJusticeG");
 			}

@@ -10,7 +10,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Grim Reaper");
 			Description.SetDefault("Hello! My name's Gregg, the Grim Reaper – and don't laugh!");
-			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Жнец");

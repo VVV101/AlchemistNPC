@@ -277,12 +277,36 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			shop.item[nextSlot].shopCustomPrice = 100000;
             nextSlot++;
 			}
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			{
+				if (NPC.downedMechBossAny)
+				{
+			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ThoriumCombination"));
+			shop.item[nextSlot].shopCustomPrice = 300000;
+            nextSlot++;
+				}
+			}
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
 				if (NPC.downedGolemBoss)
 				{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("CalamityCombination"));
 			shop.item[nextSlot].shopCustomPrice = 500000;
+            nextSlot++;
+				}
+			}
+			if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+			{
+				if (NPC.downedMechBossAny)
+				{
+			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SpiritCombination"));
+			shop.item[nextSlot].shopCustomPrice = 250000;
+            nextSlot++;
+				}
+				if (Main.hardMode)
+				{
+			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("AcidVial"));
+			shop.item[nextSlot].shopCustomPrice = 30000;
             nextSlot++;
 				}
 			}

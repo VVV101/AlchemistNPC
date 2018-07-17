@@ -14,9 +14,9 @@ namespace AlchemistNPC.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Torn Note #2");
-			Tooltip.SetDefault("'It is not well known, but the Wing of the World allows you to make EGO equipment, which is unique in some ways."
+			Tooltip.SetDefault("''It is not well known, but the Wing of the World allows you to make EGO equipment, which is unique in some ways."
 			+ "\nIf the Wing of the World is placed in empty housing, it can attract a special NPC, called Operator."
-			+ "\nAnd if you are wondering what EGO stands for, then here it is: Extermination of Geometrical Organ.'"
+			+ "\nAnd if you are wondering what EGO stands for, then here it is: Extermination of Geometrical Organ.''"
 			+ "\nThere is something else, but you couldn't read it. Not without parts #1 & #3. Maybe the Jeweler could help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #2");
 			Tooltip.AddTranslation(GameCulture.Russian, "'Это малоизвестно, но Крыло Мира позволяет создавать Э.П.О.С экипировку, которая по своему уникальна.\nЕсли Крыло Мира установить в свободном доме, то оно привлечёт особого NPC (Оператора)\nИ если кто-то всё ещё спрашивает, что означает Э.П.О.С., то вот: Экспериментально Полученные Орудия уСмирения.'\nТам есть что-то ещё, но вы не можете прочесть это без других частей. Возможно, вам сможет помочь Ювелир."); 

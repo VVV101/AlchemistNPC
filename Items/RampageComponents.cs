@@ -49,7 +49,7 @@ namespace AlchemistNPC.Items
 			player.ammoPotion = true;
 			player.rangedDamage += 0.1f;
 			player.rangedCrit += 10;
-			AlchemistNPC.XtraT = true;
+			player.GetModPlayer<AlchemistNPCPlayer>(mod).XtraT = true;
 		}
 
 		

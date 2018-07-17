@@ -13,7 +13,6 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Hate");
 			Description.SetDefault("You are ready to release your Hate");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Ненависть");

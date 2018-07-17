@@ -20,7 +20,7 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Contains concentrated Hate of a defeated foe"
 			+"\nCan be consumed"
 			+"\nConsuming grants Hate buff and Potion Sickness debuff for 2 minutes"
-			+"\nHeals 150 life"
+			+"\nHeals 150 HP"
 			+"\nHate buff gives +15% to all damages and crits and +20 to life regeneration"
 			+"\nAlso decreases your defense by 30 and endurance by 15%");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сосуд с Ненавистью");

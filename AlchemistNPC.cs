@@ -31,17 +31,10 @@ namespace AlchemistNPC
 		internal static AlchemistNPC instance;
 		internal TeleportClass TeleportClass;
 		public static ModHotKey LampLight;
-		public static bool EyeOfJudgement = false;
-		public static bool KeepBuffs = false;
-		public static bool MemersRiposte = false;
-		public static bool PGSWear = false;
-		public static bool scroll = false;
-		public static bool RevSet = false;
+		public static ModHotKey DiscordBuff;
 		public static bool SF = false;
+		public static bool BastScroll = false;
 		public static int DTH = 0;
-		public static bool LaetitiaSet = false;
-		public static bool Extractor = false;
-		public static bool XtraT = false;
 		public static float ppx = 0f;
 		public static float ppy = 0f;
 		public static string GithubUserName { get { return "VVV101"; } }
@@ -56,15 +49,8 @@ namespace AlchemistNPC
 		public override void Load()
 		{
 		Config.Load();
-		ModTranslation text = CreateTranslation("DC1");
-		text.SetDefault("Damage type changed to Magic");
-		text.AddTranslation(GameCulture.Russian, "Тип урона изменён на Магический");
-		AddTranslation(text);
-		text = CreateTranslation("DC2");
-		text.SetDefault("Damage type changed to Melee");
-		text.AddTranslation(GameCulture.Russian, "Тип урона изменён на Ближний");
-		AddTranslation(text);
 		LampLight = RegisterHotKey("Lamp Light Toggle", "L");
+		DiscordBuff = RegisterHotKey("Discord Buff Teleportation", "Q");
 		if (!Main.dedServ)
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
@@ -130,83 +116,123 @@ namespace AlchemistNPC
                  ItemID.EaterMask, ItemID.BrainMask
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:EvilMask", group);
-			group = new RecipeGroup(() => Lang.misc[37] + " " + "Cultist mask/hood", new int[]
+			group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "Cultist mask/hood", new int[]
          {
                  ItemID.BossMaskCultist, ItemID.WhiteLunaticHood, ItemID.BlueLunaticHood
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:CultistMask", group);
-			group = new RecipeGroup(() => Lang.misc[37] + " " + "tier 3 Hardmode Bar", new int[]
+			group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "tier 3 Hardmode Bar", new int[]
          {
                  ItemID.AdamantiteBar, ItemID.TitaniumBar
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:Tier3Bar", group);
-			group = new RecipeGroup(() => Lang.misc[37] + " " + "Crimson/Corruption bar", new int[]
+			group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "Crimson/Corruption bar", new int[]
          {
                  ItemID.DemoniteBar, ItemID.CrimtaneBar
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:EvilBar", group);
-		group = new RecipeGroup(() => Lang.misc[37] + " " + "evil mushroom", new int[]
+		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "evil mushroom", new int[]
          {
                  ItemID.VileMushroom, ItemID.ViciousMushroom
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:EvilMush", group);
-		group = new RecipeGroup(() => Lang.misc[37] + " " + "evil component", new int[]
+		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "evil component", new int[]
          {
                  ItemID.ShadowScale, ItemID.TissueSample
          });
-            RecipeGroup.RegisterGroup("AlchemistNPC:EvilComponent", group);	
-		group = new RecipeGroup(() => Lang.misc[37] + " " + "tier 2 anvil", new int[]
+            RecipeGroup.RegisterGroup("AlchemistNPC:EvilComponent", group);
+		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "evil drop", new int[]
+         {
+                 ItemID.RottenChunk, ItemID.Vertebrae
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPC:EvilDrop", group);
+		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "tier 2 anvil", new int[]
          {
                  ItemID.MythrilAnvil, ItemID.OrichalcumAnvil
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:AnyAnvil", group);
-		group = new RecipeGroup(() => Lang.misc[37] + " " + "tier 2 forge", new int[]
+		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "tier 2 forge", new int[]
          {
                  ItemID.AdamantiteForge, ItemID.TitaniumForge
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:AnyForge", group);
-		group = new RecipeGroup(() => Lang.misc[37] + " " + "tier 1 anvil", new int[]
+		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "tier 1 anvil", new int[]
          {
                  ItemID.IronAnvil, ItemID.LeadAnvil
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:AnyPreHMAnvil", group);
-		group = new RecipeGroup(() => Lang.misc[37] + " " + "Celestial Wings", new int[]
+		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "Celestial Wings", new int[]
          {
                  ItemID.WingsSolar, ItemID.WingsNebula, ItemID.WingsStardust, ItemID.WingsVortex
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:AnyCelestialWings", group);
+		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "tier 3 Watch", new int[]
+         {
+                 ItemID.GoldWatch, ItemID.PlatinumWatch
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPC:AnyWatch", group);
 			
         }
 		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(this);
-            recipe.AddIngredient(ItemID.CelestialStone);
+			recipe.AddIngredient(ItemID.CelestialStone);
 			recipe.AddIngredient(ItemID.GoldBar, 10);
-            recipe.AddTile(TileID.TinkerersWorkbench);
-            recipe.SetResult(ItemID.Sundial);
-            recipe.AddRecipe();
+			recipe.AddTile(TileID.TinkerersWorkbench);
+			recipe.SetResult(ItemID.Sundial);
+			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
-            recipe.AddIngredient(null, "EmagledFragmentation", 25);
-			recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(ItemID.FragmentStardust, 2);
-            recipe.AddRecipe();
+			recipe.AddRecipeGroup("AlchemistNPC:AnyWatch");
+			recipe.AddIngredient(ItemID.HermesBoots);
+			recipe.AddIngredient(ItemID.Wire, 15);
+			recipe.AddTile(TileID.TinkerersWorkbench);
+			recipe.SetResult(ItemID.Stopwatch);
+			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
-            recipe.AddIngredient(null, "EmagledFragmentation", 25);
-			recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(ItemID.FragmentNebula, 2);
-            recipe.AddRecipe();
+			recipe.AddRecipeGroup("AlchemistNPC:EvilBar", 10);
+			recipe.AddRecipeGroup("AlchemistNPC:AnyWatch");
+			recipe.AddIngredient(ItemID.Wire, 25);
+			recipe.AddIngredient(ItemID.Chain);
+			recipe.AddTile(TileID.TinkerersWorkbench);
+			recipe.SetResult(ItemID.DPSMeter);
+			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
-            recipe.AddIngredient(null, "EmagledFragmentation", 25);
-			recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(ItemID.FragmentVortex, 2);
-            recipe.AddRecipe();
+			recipe.AddIngredient(ItemID.TallyCounter);
+			recipe.AddIngredient(ItemID.BlackLens);
+			recipe.AddIngredient(ItemID.AntlionMandible);
+			recipe.AddRecipeGroup("AlchemistNPC:EvilDrop");
+			recipe.AddRecipeGroup("AlchemistNPC:EvilComponent");
+			recipe.AddIngredient(ItemID.Feather);
+			recipe.AddIngredient(ItemID.TatteredCloth);
+			recipe.AddIngredient(ItemID.Bone);
+			recipe.AddIngredient(ItemID.Wire, 25);
+			recipe.AddTile(TileID.TinkerersWorkbench);
+			recipe.SetResult(ItemID.LifeformAnalyzer);
+			recipe.AddRecipe();
+			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
+			{
 			recipe = new ModRecipe(this);
-            recipe.AddIngredient(null, "EmagledFragmentation", 25);
+			recipe.AddIngredient(null, "EmagledFragmentation", 25);
 			recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(ItemID.FragmentSolar, 2);
-            recipe.AddRecipe();
-			
+			recipe.SetResult(ItemID.FragmentStardust, 2);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "EmagledFragmentation", 25);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.SetResult(ItemID.FragmentNebula, 2);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "EmagledFragmentation", 25);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.SetResult(ItemID.FragmentVortex, 2);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "EmagledFragmentation", 25);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.SetResult(ItemID.FragmentSolar, 2);
+			recipe.AddRecipe();
+			}
 		}
     }
 	

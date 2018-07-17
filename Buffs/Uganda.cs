@@ -10,13 +10,13 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Uganda's Curse");
-			Description.SetDefault("DEW U NO DE WAY?");
+			Description.SetDefault("DEW U NO DE WEI?");
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Проклятие Уганды");
-			Description.AddTranslation(GameCulture.Russian, "DEW U NO DE WAY?"); 
+			Description.AddTranslation(GameCulture.Russian, "DEW U NO DE WEI?"); 
 		}
 
         public override void Update(Player player, ref int buffIndex)

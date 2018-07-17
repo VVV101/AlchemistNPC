@@ -70,7 +70,7 @@ namespace AlchemistNPC.Projectiles
 			{
 				projectile.Kill();
 			}
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(6) == 0)
 			{
 				for (int h = 0; h < 1; h++)
 				{

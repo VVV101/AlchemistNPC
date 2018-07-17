@@ -14,19 +14,20 @@ namespace AlchemistNPC.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Torn Note #7");
-			Tooltip.SetDefault("'Continuing on the Ultimate Accessories, there are 2 more."
+			Tooltip.SetDefault("''Continuing on the Ultimate Accessories, there are 2 more."
 			+"\nOne of them is the Autoinjector." 
 			+"\nIt increases all damage by 10% and crit by 8%."
 			+"\nIt also permanently grants you the effect of the Universal Combination."
+			+"\nIt can be consumed to give you permanent effect: buffs will never wear off after death"
 			+"\nHowever, the Autoinjector is pretty expensive as it requires a Masks Bundle..."
 			+"\nAnother one is Bast's Scroll."
 			+"\nIt increases Melee/Throwing damage & crit by 15%, gives 10% damage reduction."
 			+"\nIt also gives the abilities of a Master Ninja and allows a triple jump."
 			+"\nBut its most powerful abilities are:"
-			+"\nThrowing weapons go through tiles and any weapon destroys enemy defense totally...'"
+			+"\nThrowing weapons go through tiles and melee/throwing weapon destroys enemy defense...''"
 			+"\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #7");
-			Tooltip.AddTranslation(GameCulture.Russian, "'Не считая всех Ультимативных Аксессуаров, эти 2 более необычны.\nОдин из них - это Автоинъектор. Он увеличивает все виды урона на 10% и шансы критического удара на 8%\nТакже он даёт постоянный эффект Комбинации Универсала.\nНо он очень дорог в крафте, поскольку требует Набор Масок...\nДругой же - Свиток Баст.\nОн повышает урон и шанс критического удара оружия ближнего/метательного оружия на 15%\nЕщё он на 10% повышает поглощение урона, даёт умения Мастера Ниндзя и позволяет прыгать 3 раза.\nНо его самое могучие способности, это:\nМетательные атаки проходят сквозь блоки, а любые атаки разрушают броню противника полностью...'\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь."); 
+			Tooltip.AddTranslation(GameCulture.Russian, "'Не считая всех Ультимативных Аксессуаров, эти 2 более необычны.\nОдин из них - это Автоинъектор. Он увеличивает все виды урона на 10% и шансы критического удара на 8%\nТакже он даёт постоянный эффект Комбинации Универсала.\nТакже он может быть потрачен для получения постоянного эффекта:\nБаффы не будут пропадать после смерти.\nНо он очень дорог в крафте, поскольку требует Набор Масок...\nДругой же - Свиток Баст.\nОн повышает урон и шанс критического удара оружия ближнего/метательного оружия на 15%\nЕщё он на 10% повышает поглощение урона, даёт умения Мастера Ниндзя и позволяет прыгать 3 раза.\nНо его самое могучие способности, это:\nМетательные атаки проходят сквозь блоки\n Ближнее и метательное оружие разрушают броню противника...'\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь."); 
 		}
 
 		public override void SetDefaults()

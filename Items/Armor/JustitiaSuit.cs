@@ -24,7 +24,7 @@ namespace AlchemistNPC.Items.Armor
 				+ "\n[c/FF0000:EGO armor piece]"
 				+ "\n+100 maximum HP"
 				+ "\n+15% damage reduction");
-			Tooltip.AddTranslation(GameCulture.Russian, "Как и что-либо другое, оно имело надежду поначалу. Теперь же мечта о мире имеет место лишь в сказках.\n[c/FF0000:Э.П.О.С часть брони]\n+100 к максимальному здоровью\n+15% к поглощению урона");
+			Tooltip.AddTranslation(GameCulture.Russian, "Как и что-либо другое, оно имело надежду поначалу. Теперь же мечта о мире имеет место лишь в сказках.\n[c/FF0000:Э.П.О.С часть брони]\n+100 к максимальному здоровью\n+10% к поглощению урона");
 		}
 
 		public override void SetDefaults()

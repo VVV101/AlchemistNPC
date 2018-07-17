@@ -55,7 +55,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			target.immune[projectile.owner] = 2;
+			target.immune[projectile.owner] = 4;
 			projectile.penetrate--;
 			if (projectile.penetrate <= 0)
 			{

@@ -24,9 +24,10 @@ namespace AlchemistNPC.Items
 			+ "\nIncreases mana stars pickup range"
 			+ "\nAutomatically uses mana potions"
 			+ "\nYou shoot cluster of deadly bees while using magic weapons"
+			+ "\nHide visual to disable bees"
 			+ "\nDoesn't work with some very specific weapons");
 			DisplayName.AddTranslation(GameCulture.Russian, "Эмблема Лилит");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический урон на 15% и шанс критического удара на 10%\nУменьшает затраты маны на 15%\nУвеличивает максимальную ману на 50\nУскоряет восстановление маны\nУвеличивает радиус сбора звёзд\nАвтоматически использует зелья маны\nВы выстреливает кучку смертоносных пчёл при использовании любого магического оружия\nПоследнее не работает с некоторыми специфическими оружиями"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический урон на 15% и шанс критического удара на 10%\nУменьшает затраты маны на 15%\nУвеличивает максимальную ману на 50\nУскоряет восстановление маны\nУвеличивает радиус сбора звёзд\nАвтоматически использует зелья маны\nВы выстреливает кучку смертоносных пчёл при использовании любого магического оружия\nСмена видимости аксессуара выключает пчёл\nПоследнее не работает с некоторыми специфическими оружиями"); 
 		}
 	
 		public override void SetDefaults()

@@ -20,7 +20,6 @@ namespace AlchemistNPC.Buffs
 			DisplayName.SetDefault("Explorer's Brew");
 			Description.SetDefault("Grants all possible visions, increases mining speed greatly, greatly increases light radius around player and your attacks can Electrocute enemies"
 			+"\nAlso gives effects of Gills, Flippers and Water Walking Potions");
-			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Варево Исследователя");

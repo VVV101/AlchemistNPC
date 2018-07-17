@@ -17,22 +17,23 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Solemn Vow (T-01-68)");
-			Tooltip.SetDefault("''High atmosphere. One represents sadness of dead and other represents fear of living.''"
+			Tooltip.SetDefault("''The atmosphere is grave."
+			+ "\nOne represents the sadness of the dead, the other represents fear of the quick.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nInflicts Shadowflame and Frostburn"
 			+ "\n35% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Торжественная клятва (T-01-68)");
-			Tooltip.AddTranslation(GameCulture.Russian, "''Высокая атмосфера. Один отражает грусть мёртвых, а другой отражает страх живущих.''\n[c/FF0000:Э.П.О.С. оружие]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны"); 
+			Tooltip.AddTranslation(GameCulture.Russian, "''Атмосфера мертва. Один отражает грусть мёртвых, а другой отражает страх живущих.''\n[c/FF0000:Э.П.О.С. оружие]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны"); 
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 36;
+			item.damage = 26;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 20;
-			item.useAnimation = 6;
-			item.useTime = 6;
+			item.useAnimation = 10;
+			item.useTime = 10;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 4;
@@ -47,8 +48,8 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Projectile.NewProjectile(position.X, position.Y+3, speedX, speedY, type, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y-3, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y-5, speedX, speedY, type, damage/2, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage/2, knockBack, player.whoAmI);
 			type = mod.ProjectileType("FDB");
 			return true;
 		}
@@ -71,7 +72,7 @@ namespace AlchemistNPC.Items.Weapons
 					}
 					else
 					{
-					item.damage = 36;
+					item.damage = 26;
 					}
 			return base.CanUseItem(player);
 		}

@@ -26,10 +26,10 @@ namespace AlchemistNPC.Items.Armor
 			+ "\nThou want me to prove the miracle."
 			+ "\nThou shall believe in me and granted with life. I shall show you the power.''"
 				+ "\n[c/FF0000:EGO armor piece]"
-				+ "\n+300 maximum HP"
-				+ "\n+33% damage reduction"
+				+ "\n+200 maximum HP"
+				+ "\n+25% damage reduction"
 				+ "\nImmune to most vanilla debuffs");
-			Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Э.П.О.С часть брони]\n+300 к максимальному здоровью\n+33% к поглощению урона\nИммунитет к большинству немодовых дебаффов");
+			Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Э.П.О.С часть брони]\n+200 к максимальному здоровью\n+25% к поглощению урона\nИммунитет к большинству немодовых дебаффов");
 		}
 
 		public override void SetDefaults()

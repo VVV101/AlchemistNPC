@@ -357,24 +357,24 @@ namespace AlchemistNPC.NPCs
 		
 		public override void NPCLoot(NPC npc)
         {
-			if (AlchemistNPC.Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
+			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
 			{
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoulEssence"));
 			}
-			if (AlchemistNPC.Extractor && npc.boss == true && npc.lifeMax >= 55000 && (Main.rand.Next(10) == 0))
+			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).Extractor && npc.boss == true && npc.lifeMax >= 55000 && (Main.rand.Next(10) == 0))
 			{
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HateVial"));
+			}
+			if (npc.type == NPCID.MoonLordCore && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).PGSWear)
+			{
+				if (Main.rand.Next(4) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
+				}
 			}
 			if (npc.type == mod.NPCType("Operator"))
 			{
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("APMC"));
-			}
-			if (npc.type == NPCID.MoonLordCore && AlchemistNPC.PGSWear)
-			{
-				if (Main.rand.Next(4) == 0)
-                {
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
-				}
 			}
 			if (npc.type == NPCID.DungeonGuardian)
 			{
@@ -590,7 +590,7 @@ namespace AlchemistNPC.NPCs
 					}
 				if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Providence")) && Config.CoinsDrop)
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(12, 15));
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(9, 12));
 					}
 				if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Polterghast")) && Config.CoinsDrop)
 					{
