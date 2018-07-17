@@ -20,14 +20,18 @@ namespace AlchemistNPC.Items.Armor
 			DisplayName.SetDefault("somebody0214's Hood");
 			Tooltip.SetDefault("Great for impersonating a Sun Praiser!");
 			DisplayName.AddTranslation(GameCulture.Russian, "Капюшон somebody0214");
-			Tooltip.AddTranslation(GameCulture.Russian, "Отлично подходит для подражания Молящемуся Солнцу"); 
-			
-			ModTranslation text = mod.CreateTranslation("somebody0214SetBonus");
-		text.SetDefault("Increases current magic damage by 30% and adds 20% to magic critical strike chance"
-		+ "\n+32 defense"
-		+ "\n+25% damage reduction");
-		text.AddTranslation(GameCulture.Russian, "Увеличивает текущий магический урон на 30% и добаляет 20% к шансу критического удара\n+32 защиты\n25% поглощение урона");
-		mod.AddTranslation(text);
+            Tooltip.AddTranslation(GameCulture.Russian, "Отлично подходит для подражания Молящемуся Солнцу");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "somebody0214的兜帽");
+            base.Tooltip.AddTranslation(GameCulture.Chinese, "非常适合扮演太阳歌颂者!");
+
+            ModTranslation text = mod.CreateTranslation("somebody0214SetBonus");
+		    text.SetDefault("Increases current magic damage by 30% and adds 20% to magic critical strike chance"
+		    + "\n+32 defense"
+		    + "\n+25% damage reduction");
+            text.AddTranslation(GameCulture.Russian, "Увеличивает текущий магический урон на 30% и добаляет 20% к шансу критического удара\n+32 защиты\n25% поглощение урона");
+            text.AddTranslation(GameCulture.Chinese, "增加30%当前魔法伤害, 增加20%魔法暴击几率\n+32防御力\n增加25%伤害免疫");
+            mod.AddTranslation(text);
 		}
 		
 		public override void SetDefaults()

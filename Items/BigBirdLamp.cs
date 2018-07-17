@@ -23,8 +23,11 @@ namespace AlchemistNPC.Items
 			+"\nIncreases all damage and crits for 5%"
 			+"\nAttacks destroys enemy armor");
 			DisplayName.AddTranslation(GameCulture.Russian, "Лампа Большой Птицы (O-02-40)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Месяц спустя мы заключили, что не было никакого Зверя.\nСоздаёт свет вокруг персонажа\nПовышает все виды урона и шанс критической атаки на 5%\nАтаки разрушают броню противника"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Месяц спустя мы заключили, что не было никакого Зверя.\nСоздаёт свет вокруг персонажа\nПовышает все виды урона и шанс критической атаки на 5%\nАтаки разрушают броню противника");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "大鸟灯 (O-02-40)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'一个月后我们得出了结论：那些所谓的怪物根本就不存在.'\n[c/FF0000:EGO 礼物]\n点亮玩家周围\n增加5%全伤害和暴击\n攻击穿透敌人护甲");
+        }
 	
 		public override void SetDefaults()
 		{

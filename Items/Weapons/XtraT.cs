@@ -19,8 +19,11 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nBolt deals triple weapon damage and pierces through enemies and tiles"
 			+ "\n50% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "XtraT");
-			Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает 2 стрелы и энергетический снаряд\nЭнергетический снаряд наносит утроенный урон оружия и проходит сквозь противников и блоки\n50% шанс не потратить стрелы");
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает 2 стрелы и энергетический снаряд\nЭнергетический снаряд наносит утроенный урон оружия и проходит сквозь противников и блоки\n50% шанс не потратить стрелы");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "XtraT");
+            Tooltip.AddTranslation(GameCulture.Chinese, "发射两支箭和一个能量球\n能量球造成三倍伤害并且能穿透敌人和方块\n50%几率不消耗弹药");
+        }
 
 		public override void SetDefaults()
 		{

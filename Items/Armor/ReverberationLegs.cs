@@ -15,15 +15,18 @@ namespace AlchemistNPC.Items.Armor
 		{
 		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
 		}
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Reverberation Leggings (T-04-53)");
-			DisplayName.AddTranslation(GameCulture.Russian, "Поножи Реверберации (T-04-53)"); 
-			Tooltip.SetDefault("The sleek surface is tough as if it had been cured several times."
-			+ "\n[c/FF0000:EGO armor piece]"
-			+ "\nIncreases movement speed by 25%");
-			Tooltip.AddTranslation(GameCulture.Russian, "Гладкая поверхность всё так же прочна, как будто не была восстановлена несколько раз.\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает скорость передвижения на 25%");
-		}
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Reverberation Leggings (T-04-53)");
+            DisplayName.AddTranslation(GameCulture.Russian, "Поножи Реверберации (T-04-53)");
+            Tooltip.SetDefault("The sleek surface is tough as if it had been cured several times."
+            + "\n[c/FF0000:EGO armor piece]"
+            + "\nIncreases movement speed by 25%");
+            Tooltip.AddTranslation(GameCulture.Russian, "Гладкая поверхность всё так же прочна, как будто не была восстановлена несколько раз.\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает скорость передвижения на 25%");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "余香裤子 (T-04-53)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'经过数次加工处理后, 这件护甲的表面变得光滑而又坚硬.'\n[c/FF0000:EGO 盔甲]\n增加25%移动速度");
+        }
 
 		public override void SetDefaults()
 		{

@@ -19,8 +19,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nSadly, as prototype, that one is capable to transform to only one"
 			+"\nLaunches sharp shuriken, which stucks to enemy.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пандора (Форма 422)");
-			Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nК сожалению, этот экземпляр всего лишь прототип, способный лишь к одной трансформации\nЗапускает бритвенно-острый сюрикен, цепляющийся за противника"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nК сожалению, этот экземпляр всего лишь прототип, способный лишь к одной трансформации\nЗапускает бритвенно-острый сюрикен, цепляющийся за противника");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF422)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'来自地狱的武器, 有666种不同的形式 (外国666代表撒旦)'\n遗憾的是, 作为原型, 只能呈现一种形式");
+        }
 
 		public override void SetDefaults()
 		{

@@ -9,6 +9,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
+using Terraria.Localization;
 using AlchemistNPC;
 
 namespace AlchemistNPC
@@ -88,8 +89,26 @@ namespace AlchemistNPC
 			packet.Write(KeepBuffs);
 			packet.Send(toWho, fromWho);
 		}
-	
-		public override void SendClientChanges(ModPlayer clientPlayer)
+
+        //SBMW:You may forget this(from Decompile)
+        //SBMW:Sorry for unauthorized decomcompiling
+        public override void OnEnterWorld(Player player)
+        {
+            string enterText = Language.GetTextValue("Mods.AlchemistNPC.enterText");
+            Main.NewText(enterText, 0, byte.MaxValue, byte.MaxValue, false);
+        }
+
+        //SBMW:And this one
+        public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+        {
+            if (player.FindBuffIndex(mod.BuffType("Uganda")) > -1)
+            {
+                damageSource = PlayerDeathReason.ByCustomReason(player.name + " DIDN NO DE WEI!");
+            }
+            return true;
+        }
+
+        public override void SendClientChanges(ModPlayer clientPlayer)
 		{
 		}
 	

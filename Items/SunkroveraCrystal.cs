@@ -20,8 +20,11 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Ruby, containing Blood of Demons"
 			+"\nIt burns you even through gloves");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристалл Сункроверы");
-			Tooltip.AddTranslation(GameCulture.Russian, "Рубин, хранящий Кровь Демонов\nОбжигает вас даже сквозь перчатки"); 
-		}    
+			Tooltip.AddTranslation(GameCulture.Russian, "Рубин, хранящий Кровь Демонов\nОбжигает вас даже сквозь перчатки");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "森克罗维拉水晶");
+            Tooltip.AddTranslation(GameCulture.Chinese, "内含恶魔之血的红宝石\n即使带着手套也会烧伤你");
+        }    
 		public override void SetDefaults()
 		{
 			item.width = 32;

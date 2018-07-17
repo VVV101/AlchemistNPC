@@ -16,8 +16,11 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Mage Combination");
 			Tooltip.SetDefault("Grants buffs, which are necesary for Mages (Magic Power, Mana Regeneration, Сlairvoyance Wrath, Rage)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Мага");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Магов (Магическая Сила, Регенерация Маны, Ясновидение, Гнев, Ярость)"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Магов (Магическая Сила, Регенерация Маны, Ясновидение, Гнев, Ярость)");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "魔法药剂包");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些魔法buff(魔能, 法力再生, 暴怒, 怒气)");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

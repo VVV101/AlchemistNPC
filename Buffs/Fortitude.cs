@@ -14,8 +14,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Стойкость");
-			Description.AddTranslation(GameCulture.Russian, "Вам нельзя отбросить при атаке"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Вам нельзя отбросить при атаке");
+            DisplayName.AddTranslation(GameCulture.Chinese, "刚毅");
+            Description.AddTranslation(GameCulture.Chinese, "你无法被击退");
+        }
 		public override void Update(Player player, ref int buffIndex)
 		{
 			player.noKnockback = true;

@@ -23,8 +23,11 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nBullets are setting enemies ablaze"
 			+ "\n25% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Клюв (O-02-56)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Размер не имеет значения, пока он переполнен силой.\n[c/FF0000:Э.П.О.С. оружие]\nВыстреливает по 2 пули\nПули поджигают противника\n25% шанс не потратить патроны"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Размер не имеет значения, пока он переполнен силой.\n[c/FF0000:Э.П.О.С. оружие]\nВыстреливает по 2 пули\nПули поджигают противника\n25% шанс не потратить патроны");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "小喙 (O-02-56)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'虽然这只鸟的身材娇小, 可它有着很恐怖的嘴巴.'\n[c/FF0000:EGO 武器]\n一次射出两发子弹\n子弹会点燃敌人\n25%几率不消耗弹药");
+        }
 
 		public override void SetDefaults()
 		{

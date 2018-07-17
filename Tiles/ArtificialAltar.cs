@@ -27,7 +27,8 @@ namespace AlchemistNPC.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Artificial Altar");
 			name.AddTranslation(GameCulture.Russian, "Искусственный Алтарь");
-			AddMapEntry(new Color(200, 200, 200), name);
+            name.AddTranslation(GameCulture.Chinese, "人造祭坛");
+            AddMapEntry(new Color(200, 200, 200), name);
 			disableSmartCursor = true;
 			adjTiles = new int[]{ TileID.DemonAltar };
 		}

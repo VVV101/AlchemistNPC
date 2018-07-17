@@ -16,8 +16,11 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Alchemist Necklace");
 			Tooltip.SetDefault("Provides life regeneration, lowers cooldown of healing potions, and increases length of invincibility after taking damage");
 			DisplayName.AddTranslation(GameCulture.Russian, "Ожерелье Алхимика");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает регенерацию жизней, уменьшает откат лечебных зелий и увеличивает период неуязвимости после получения урона"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает регенерацию жизней, уменьшает откат лечебных зелий и увеличивает период неуязвимости после получения урона");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "炼金项链");
+            Tooltip.AddTranslation(GameCulture.Chinese, "加快生命回复速度, 减少生命药水的冷却时间, 并延长你受到伤害后的无敌时间");
+        }
 	
 		public override void SetDefaults()
 		{
