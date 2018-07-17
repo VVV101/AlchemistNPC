@@ -619,6 +619,12 @@ namespace AlchemistNPC
             text.SetDefault("I am alive...? I cannot believe this! Thank you!");
             text.AddTranslation(GameCulture.Chinese, "我...我还活着?! 我简直无法相信! 谢谢你!");
             AddTranslation(text);
+
+            text = CreateTranslation("pale");
+            text.SetDefault("pale");
+            text.AddTranslation(GameCulture.Chinese, "失色");
+            AddTranslation(text);
+
         }
     }
 	
