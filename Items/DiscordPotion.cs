@@ -20,8 +20,15 @@ namespace AlchemistNPC.Items
 			+"\nChaos State time is increased to 10 seconds"
 			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Раздора");
-			Tooltip.AddTranslation(GameCulture.Russian, "Позволяет телепортироваться на курсор при нажатии горячей клавиши\nНарушает гравитацию игрока на 1 секунду после использования\nНаносит значительные повреждения, если вы в Хаотическом состоянии\nДлительность дебаффа увеличена до 10 секунд\nЗелье не из Каламити мода"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Позволяет телепортироваться на курсор при нажатии горячей клавиши\nНарушает гравитацию игрока на 1 секунду после использования\nНаносит значительные повреждения, если вы в Хаотическом состоянии\nДлительность дебаффа увеличена до 10 секунд\nЗелье не из Каламити мода");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "混乱药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "允许使用快捷键传送到鼠标位置"
+            + "\n传送后扭曲玩家一秒钟"
+            + "\n混乱状态时使用会受到巨大的伤害"
+            + "\n混乱状态延长至10秒"
+            + "\n非灾厄Buff药剂");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

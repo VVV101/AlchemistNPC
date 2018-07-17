@@ -15,8 +15,11 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			Tooltip.SetDefault("Requred to shoot from Quantum Destabilizer");
 			DisplayName.AddTranslation(GameCulture.Russian, "Энергоячейка");
-			Tooltip.AddTranslation(GameCulture.Russian, "Необходима для стрельбы из Квантового Дестабилизатора"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Необходима для стрельбы из Квантового Дестабилизатора");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "能源电池");
+            Tooltip.AddTranslation(GameCulture.Chinese, "用于量子干扰器的能源");
+        }
 
 		public override void SetDefaults()
 		{

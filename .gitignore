@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs/AlchemistNPC/v15/Server/sqlite3/storage.ide-wal
+/.vs/AlchemistNPC/v15/Server/sqlite3
+/AlchemistNPC.sln
+/AlchemistNPC.csproj
+/obj/Release/AlchemistNPC.csproj.CoreCompileInputs.cache
+/obj/Debug

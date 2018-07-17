@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace AlchemistNPC.NPCs
 {
@@ -344,12 +345,14 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool PreNPCLoot(NPC npc)
 		{
-			if (npc.type == NPCID.MoonLordCore)
+            string barrierWeek = Language.GetTextValue("Mods.AlchemistNPC.barrierWeek");
+            string Eclipse = Language.GetTextValue("Mods.AlchemistNPC.Eclipse");
+            if (npc.type == NPCID.MoonLordCore)
 			{
 				if (!NPC.downedMoonlord)
 				{
-				Main.NewText("Barrier between worlds was weakened.", 255, 255, 255);
-				Main.NewText("Eclipse creatures become anxious.", 255, 50, 50);
+				Main.NewText(barrierWeek, 255, 255, 255);
+				Main.NewText(Eclipse, 255, 50, 50);
 				}
 			}
 			return true;

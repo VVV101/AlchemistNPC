@@ -16,8 +16,10 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Разрушение брони");
-			Description.AddTranslation(GameCulture.Russian, "Полное разрушение брони"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Полное разрушение брони");
+            DisplayName.AddTranslation(GameCulture.Chinese, "盔甲破损");
+            Description.AddTranslation(GameCulture.Chinese, "你的盔甲爆了");
+        }
 
         public override void Update(NPC npc, ref int buffIndex)
         {

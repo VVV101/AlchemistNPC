@@ -12,8 +12,11 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Architect Horcrux");
 			Tooltip.SetDefault("The piece of Architect's soul is inside it.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Крестраж Архитектора");
-			Tooltip.AddTranslation(GameCulture.Russian, "Часть души Архитектора находится внутри"); 
-		}
+			Tooltip.AddTranslation(GameCulture.Russian, "Часть души Архитектора находится внутри");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "建筑师魂器");
+            Tooltip.AddTranslation(GameCulture.Chinese, "里面有建筑师的一片灵魂");
+        }
 
 		public override void SetDefaults()
 		{

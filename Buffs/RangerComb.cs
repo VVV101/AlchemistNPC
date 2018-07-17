@@ -22,8 +22,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Стрелка");
-			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Лучника, Экономии Боеприпасов, Гнева и Ярости"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Лучника, Экономии Боеприпасов, Гнева и Ярости");
+            DisplayName.AddTranslation(GameCulture.Chinese, "射手药剂包");
+            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：箭术, 弹药储备, 暴怒, 怒气");
+        }
 		public override void Update(Player player, ref int buffIndex)
 		{
             player.thrownDamage += 0.1f;

@@ -26,8 +26,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\n33% chance to reduce damage taken by player to 2 hitpoints"
 			+"\nReduces player's endurance by 33%");
 			DisplayName.AddTranslation(GameCulture.Russian, "Глаз Правосудия");
-			Tooltip.AddTranslation(GameCulture.Russian, "Если ты продолжишь двигаться тем же путём...\nТо у тебя БУДУТ неприятности.\nБесконечно создаёт острые кости, которые наводятся на врагов\nСоздаёю 8 самонаводящихся костей у позиции курсора при применении\n33% шанс снизить полученный урон до 2 ХП при получении удара\nПонижает ваше сопротивление урону на 33%"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Если ты продолжишь двигаться тем же путём...\nТо у тебя БУДУТ неприятности.\nБесконечно создаёт острые кости, которые наводятся на врагов\nСоздаёю 8 самонаводящихся костей у позиции курсора при применении\n33% шанс снизить полученный урон до 2 ХП при получении удара\nПонижает ваше сопротивление урону на 33%");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "审判之眼");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'如果你继续现在的道路...\n你的日子不会好过'\n当你手持此物时会不断产生骨刺自动追踪敌人\n使用时在鼠标位置产生8根会追踪敌人的骨刺\n不占用召唤栏位, 可以结合其他召唤物使用\n33%的几率减少2点所受伤害\n降低33%耐力");
+        }    
 		public override void SetDefaults()
 		{
 			item.summon = true;

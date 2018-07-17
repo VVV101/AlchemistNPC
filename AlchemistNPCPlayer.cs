@@ -125,7 +125,8 @@ namespace AlchemistNPC
 	
 		public override void OnEnterWorld(Player player)
 		{
-			Main.NewText("If you don't like additional content or drops from the mod you could install AlchemistNPC Content Disabler mod.", 0, 255, 255);
+            string enterText = Language.GetTextValue("Mods.AlchemistNPC.enterText");
+            Main.NewText(enterText, 0, 255, 255);
 		}
 	
 		public override void SendClientChanges(ModPlayer clientPlayer)

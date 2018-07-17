@@ -16,8 +16,11 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.SetDefault("Crystal Dust Bullet");
 			Tooltip.SetDefault("Explodes into even deadlier shards");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пули с кристальной пылью");
-			Tooltip.AddTranslation(GameCulture.Russian, "Взрываются на ещё более смертоносные осколки при попадании"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Взрываются на ещё более смертоносные осколки при попадании");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "水晶尘子弹");
+            Tooltip.AddTranslation(GameCulture.Chinese, "爆炸变成致命碎片");
+        }    
 		public override void SetDefaults()
 		{
 			item.damage = 10;

@@ -23,8 +23,11 @@ namespace AlchemistNPC.Items
 			+"\nAlso lowers defense and endurance"
 			+"\nPerfect for filling Rage Meter");
 			DisplayName.AddTranslation(GameCulture.Russian, "Поглотитель");
-			Tooltip.AddTranslation(GameCulture.Russian, "Поглощает по 250-400 ХП, затем вылечивает на 250 ХП, пока вы держите его в руках\nТакже понижает вашу защиту и сопротивление урону\nИдеален для заполнения шкалы Ярости"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Поглощает по 250-400 ХП, затем вылечивает на 250 ХП, пока вы держите его в руках\nТакже понижает вашу защиту и сопротивление урону\nИдеален для заполнения шкалы Ярости");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "抽血机");
+            Tooltip.AddTranslation(GameCulture.Chinese, "抽出 250-400 血, 然后当持有时治疗200血\n同时降低防御力和耐力\n非常适合用来填充压力条\n温馨提示:这东西可能会把你搞死.什么?你问我是怎么知道的?你猜啊.");
+        }    
 		public override void SetDefaults()
 		{
 			item.width = 34;

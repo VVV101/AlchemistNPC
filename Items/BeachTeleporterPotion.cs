@@ -19,8 +19,11 @@ namespace AlchemistNPC.Items
 			+"\nSide depends on used mouse button"
 			+"\nWill not teleport you anywhere if no palms exist");
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Пляжу");
-			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас крайней Пальме\nСторона зависит от нажатой кнопки мыши\nНе телепортирует никуда, если пальм не существует в мире"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас крайней Пальме\nСторона зависит от нажатой кнопки мыши\nНе телепортирует никуда, если пальм не существует в мире");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "信标传送药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至信标处\n没有放置信标无法工作");
+        }    
 		public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.RecallPotion);

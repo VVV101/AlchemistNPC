@@ -13,8 +13,10 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристалл-наблюдатель");
-			Description.AddTranslation(GameCulture.Russian, "Силы Галактики поддерживают вас"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Силы Галактики поддерживают вас");
+            DisplayName.AddTranslation(GameCulture.Chinese, "凝视者水晶");
+            Description.AddTranslation(GameCulture.Chinese, "银河之力在你身边环绕");
+        }
 
 		public override void Update(Player player, ref int buffIndex)
 		{
