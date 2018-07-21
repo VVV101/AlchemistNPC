@@ -13,6 +13,7 @@ namespace AlchemistNPC.NPCs
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Otherworldly Portal");
+            DisplayName.AddTranslation(GameCulture.Chinese, "异界传送门");
 		}
 
 		public override void SetDefaults()
@@ -31,7 +32,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override string GetChat()
 		{
-			return "I am alive...? I cannot believe this! Thank you!";
+			return Language.GetTextValue("Mods.AlchemistNPC.portalOpen");
 		}
 		
 		public override void AI()
@@ -62,7 +63,8 @@ namespace AlchemistNPC.NPCs
 						vel *= 0f;
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("Drainer"), 150, 0, Main.myPlayer);
 						}
-						Main.NewText("Barrier between world is stabilized.", 55, 55, 255);
+                        string barrierStabilized = Language.GetTextValue("Mods.AlchemistNPC.barrierStabilized");
+                        Main.NewText(barrierStabilized, 55, 55, 255);
 						npc.Transform(mod.NPCType("Explorer"));
 						return;
 					}

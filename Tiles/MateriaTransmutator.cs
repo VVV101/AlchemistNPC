@@ -28,7 +28,8 @@ namespace AlchemistNPC.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Materia Transmutator");
 			name.AddTranslation(GameCulture.Russian, "Преобразователь Материи");
-			AddMapEntry(new Color(200, 200, 200), name);
+            name.AddTranslation(GameCulture.Chinese, "物质嬗变器");
+            AddMapEntry(new Color(200, 200, 200), name);
 			disableSmartCursor = true;
 			adjTiles = new int[]
 			{

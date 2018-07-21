@@ -22,8 +22,11 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Боевая комбинация");
-			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Выносливости, Жизненных Сил, Железной Кожи, Регенерации, Ярости и Гнева"); 
-		}
+            Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Выносливости, Жизненных Сил, Железной Кожи, Регенерации, Ярости и Гнева");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "战斗药剂包");
+            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：耐力, 生命力, 铁皮, 恢复, 暴怒, 怒气");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{

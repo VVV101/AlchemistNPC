@@ -19,8 +19,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nSpeeds up over time"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Улучшенная Грибная стрела");
-			Tooltip.AddTranslation(GameCulture.Russian, "Выпускает электрическое облако, стреляющее электическими лучами\nБесконечна"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Выпускает электрическое облако, стреляющее электическими лучами\nБесконечна");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "强化型菱形箭");
+            Tooltip.AddTranslation(GameCulture.Chinese, "释放出电云, 电云会向敌人发射电束\n越飞越快\n无限");
+        }
 
 		public override void SetDefaults()
 		{

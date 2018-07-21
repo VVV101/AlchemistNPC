@@ -25,8 +25,18 @@ namespace AlchemistNPC.Items
 			+ "\nAlso allows to run"
 			+ "\nHas very huge wing time and excellent horizontal speed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Крылья Сумерек (O-02-63)");
-			Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Э.П.О.С. Дар]\nРаботает как Крылья\nИмеют большое время полёта и великолепную горизонтальную скорость"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Э.П.О.С. Дар]\nРаботает как Крылья\nИмеют большое время полёта и великолепную горизонтальную скорость");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "失乐园之翼 (T-03-46)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'你不必担心, 我已经听到了你那略带惊恐的祈祷."
+            + "\n如今, 你还没有意识到, 痛苦这种事物再微小不过了吗?"
+            + "\n你要我证明奇迹."
+            + "\n你应该信任我, 将生命奉献给我. 然后, 我自然会向你展示, 什么叫做力量.'"
+            + "\n[c/FF0000:EGO 礼物]"
+            + "\n等同于翅膀"
+            + "\n允许奔跑"
+            + "\n拥有非常长的飞行时间和优秀的飞行速度");
+        }
 
 		public override void SetDefaults()
 		{

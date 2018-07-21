@@ -19,7 +19,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Reality Piercer");
 			Tooltip.SetDefault("Makes Explorer to come into unobserved world.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Прорыватель Реальности");
-			Tooltip.AddTranslation(GameCulture.Russian, "Позволяет Исследовательнице прийти в необследованный мир."); 
+            Tooltip.AddTranslation(GameCulture.Russian, "Позволяет Исследовательнице прийти в необследованный мир.");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "真实锐眼");
+            Tooltip.AddTranslation(GameCulture.Chinese, "允许探险家来到未被观察的世界");
 		}
 
 		public override void SetDefaults()

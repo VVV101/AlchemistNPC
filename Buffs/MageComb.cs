@@ -22,8 +22,11 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Мага");
-			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Магической Силы, Регенерации Маны, Ясновидения, Гнева и Ярости"); 
-		}
+            Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Магической Силы, Регенерации Маны, Ясновидения, Гнева и Ярости");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "魔法药剂包");
+            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：魔能, 魔力再生, 暴怒, 怒气");
+        }
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (player.FindBuffIndex(mod.BuffType("RangerComb")) >= 0)

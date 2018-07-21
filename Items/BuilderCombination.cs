@@ -16,8 +16,11 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Builder Combination");
 			Tooltip.SetDefault("Grants buffs, which are necessary for building (Calm, Builder, Mining)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Строителя");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для строительства (Добыча, Строитель и Покой)"); 
-		}    
+			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для строительства (Добыча, Строитель и Покой)");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "建筑师药剂包");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得你在建筑时需要的Buff(镇静, 建筑工, 挖矿)");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

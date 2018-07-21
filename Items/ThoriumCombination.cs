@@ -22,7 +22,11 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Grants most buffs from Thorium Mod potions"
 			+"\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Thorium");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Thorium\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy"); 
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Thorium\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "瑟银捆绑包");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得瑟银的大部分药水Buff" +
+                "\n嗜血, 精准, 对决, 狂怒, 创造力, 耳虫, 灵感爆发, 光辉, 圣洁");
 		}    
 
 		public override void SetDefaults()

@@ -16,8 +16,10 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Бледный урон Юстиции");
-			Description.AddTranslation(GameCulture.Russian, "Потеря жизней"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Потеря жизней");
+            DisplayName.AddTranslation(GameCulture.Chinese, "无力的审判鸟");
+            Description.AddTranslation(GameCulture.Chinese, "失去生命...");
+        }
 
         public override void Update(NPC npc, ref int buffIndex)
         {

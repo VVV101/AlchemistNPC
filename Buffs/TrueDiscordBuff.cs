@@ -18,7 +18,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Истинный Раздор");
-			Description.AddTranslation(GameCulture.Russian, "Вы можете телепортироваться к курсору, используя горячую клавишу\nПри применении ведёт себя аналогично Жезлу Раздора"); 
+            Description.AddTranslation(GameCulture.Russian, "Вы можете телепортироваться к курсору, используя горячую клавишу\nПри применении ведёт себя аналогично Жезлу Раздора");
+            DisplayName.AddTranslation(GameCulture.Chinese, "真·混乱传送");
+            Description.AddTranslation(GameCulture.Chinese, "你可以使用快捷键传送至鼠标位置" +
+                "\n相当于混乱法杖");
 		}
 		
 		public override void Update(Player player, ref int buffIndex)

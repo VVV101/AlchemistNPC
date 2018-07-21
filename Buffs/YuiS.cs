@@ -14,9 +14,11 @@ namespace AlchemistNPC.Buffs
 			+"\nEnlights treasures, creatures and traps");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.lightPet[Type] = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Юи"); 
-			Description.AddTranslation(GameCulture.Russian, "Добро пожаловать обратно в А... Погоди-ка, это не Альфхейм! Где мы?\nПодсвечивает сокровища, существ и ловушки");
-		}
+			DisplayName.AddTranslation(GameCulture.Russian, "Юи");
+            Description.AddTranslation(GameCulture.Russian, "Добро пожаловать обратно в А... Погоди-ка, это не Альфхейм! Где мы?\nПодсвечивает сокровища, существ и ловушки");
+            DisplayName.AddTranslation(GameCulture.Chinese, "小悠");
+            Description.AddTranslation(GameCulture.Chinese, "'欢迎回到亚... 等等, 这儿不是亚尔夫海姆! 我们在哪儿?'\n照亮宝物, 生物和陷阱");
+        }
 
 		public override void Update(Player player, ref int buffIndex)
 		{

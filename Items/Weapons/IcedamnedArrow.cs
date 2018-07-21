@@ -14,8 +14,11 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			Tooltip.SetDefault("The unusual usage of cursed materials.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Стрела Проклятого Льда");
-			Tooltip.AddTranslation(GameCulture.Russian, "Необычное использование Проклятого Материала"); 
-		}
+			Tooltip.AddTranslation(GameCulture.Russian, "Необычное использование Проклятого Материала");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "冰咒箭");
+            Tooltip.AddTranslation(GameCulture.Chinese, "被诅咒材料的独特用法");
+        }
 
 		public override void SetDefaults()
 		{

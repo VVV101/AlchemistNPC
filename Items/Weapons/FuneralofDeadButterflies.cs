@@ -23,7 +23,9 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nInflicts Shadowflame and Frostburn"
 			+ "\n35% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Торжественная клятва (T-01-68)");
-			Tooltip.AddTranslation(GameCulture.Russian, "''Атмосфера мертва. Один отражает грусть мёртвых, а другой отражает страх живущих.''\n[c/FF0000:Э.П.О.С. оружие]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны"); 
+            Tooltip.AddTranslation(GameCulture.Russian, "''Атмосфера мертва. Один отражает грусть мёртвых, а другой отражает страх живущих.''\n[c/FF0000:Э.П.О.С. оружие]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны"); 
+
+
 		}
 
 		public override void SetDefaults()

@@ -27,7 +27,8 @@ namespace AlchemistNPC.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Beacon");
 			name.AddTranslation(GameCulture.Russian, "Маяк");
-			AddMapEntry(new Color(200, 200, 200), name);
+            name.AddTranslation(GameCulture.Chinese, "信标");
+            AddMapEntry(new Color(200, 200, 200), name);
 			disableSmartCursor = true;
 		}
 
