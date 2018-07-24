@@ -16,12 +16,14 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Проклятие Уганды");
-			Description.AddTranslation(GameCulture.Russian, "DEW U NO DE WEI?"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "DEW U NO DE WEI?");
+            DisplayName.AddTranslation(GameCulture.Chinese, "乌干达之诅咒");
+            Description.AddTranslation(GameCulture.Chinese, "DEW U NO DE WAY?");
+        }
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.lifeRegen -= 99999;
+            player.lifeRegen -= 9999999;
         }
 	}
 }

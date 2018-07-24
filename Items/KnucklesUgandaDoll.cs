@@ -20,8 +20,11 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("National Ugandan Treasure");
 			Tooltip.SetDefault("I'm 100% sure this will kill you - Gregg");
 			DisplayName.AddTranslation(GameCulture.Russian, "Национальное сокровище Уганды");
-			Tooltip.AddTranslation(GameCulture.Russian, "Я на 100 процентов уверен, что это тебя убьёт - Gregg"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Я на 100 процентов уверен, что это тебя убьёт - Gregg");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "乌干达国宝");
+            Tooltip.AddTranslation(GameCulture.Chinese, "我100%确定这可以杀掉你 - 格雷格");
+        }    
 		public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.RecallPotion);
@@ -32,7 +35,7 @@ namespace AlchemistNPC.Items
 		
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("Uganda"), 600);
+			NPC.NewNPC((int)player.Center.X, (int)player.Center.Y-250, mod.NPCType("Knuckles"));
 			return true;
 		}
     }

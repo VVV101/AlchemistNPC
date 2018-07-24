@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace AlchemistNPC.Items.PaleDamageClass
 {
@@ -60,8 +61,9 @@ namespace AlchemistNPC.Items.PaleDamageClass
 				string[] splitText = tt.text.Split(' ');
 				string damageValue = splitText.First();
 				string damageWord = splitText.Last();
-				// Change the tooltip text
-				tt.text = damageValue + " [c/00FFFF:pale] " + damageWord;
+                // Change the tooltip text
+                string pale = Language.GetTextValue("Mods.AlchemistNPC.pale");
+				tt.text = damageValue + " [c/00FFFF:" + pale + "] " + damageWord;
 			}
 		}
 	}

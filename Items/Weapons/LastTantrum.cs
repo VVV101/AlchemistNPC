@@ -16,20 +16,23 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Shoots homing, all-eleminating bullets");
 			DisplayName.AddTranslation(GameCulture.Russian, "Последний Тантрум");
 			Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает самонаводящиеся пули, уничтожающие всё");
-		}
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "最终之怒");
+            Tooltip.AddTranslation(GameCulture.Chinese, "发射自动追踪、全元素伤害的子弹");
+        }
 
 		public override void SetDefaults()
 		{
-			item.damage = 33333;
+			item.damage = 22222;
 			item.ranged = true;
 			item.width = 92;
 			item.height = 40;
-			item.useTime = 2;
-			item.useAnimation = 2;
+			item.useTime = 3;
+			item.useAnimation = 3;
 			item.useStyle = 5;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 8;
-			item.value = 1000000;
+			item.value = 5000000;
 			item.rare = 8;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;

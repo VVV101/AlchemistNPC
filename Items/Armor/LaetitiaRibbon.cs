@@ -25,14 +25,18 @@ namespace AlchemistNPC.Items.Armor
 			+ "\nIncreases summon damage by 5%"
 			+ "\nDefense grows stronger when certain bosses are killed"
 			+ "\nArmor's current defense will be shown in inventory");
-			Tooltip.AddTranslation(GameCulture.Russian, "Ленточка на плаще отражает мольбу дитя о счастье. Дитя, что не может покинуть своих друзей.\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает урон прислужников на 5%\nЗащита брони увеличивается после победы над определённым боссами\nТекущая защита брони будет показана в инвентаре");
-		
-		ModTranslation text = mod.CreateTranslation("LaetitiaSetBonus");
-		text.SetDefault("Allows to summon Little Witch Monster from the Gift"
-		+ "\nMinion damage grows stronger by additional 35% in Hardmode"
-		+ "\nDoubles speed of Laetitia Rifle");
-		text.AddTranslation(GameCulture.Russian, "Позволяет призвать Монстра Маленькой Ведьмы из Дара.\nУрон прислужников дополнительно увеличивается на 35% в Хардмоде.");
-		mod.AddTranslation(text);
+            Tooltip.AddTranslation(GameCulture.Russian, "Ленточка на плаще отражает мольбу дитя о счастье. Дитя, что не может покинуть своих друзей.\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает урон прислужников на 5%\nЗащита брони увеличивается после победы над определённым боссами\nТекущая защита брони будет показана в инвентаре");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "蕾蒂希娅缎带 (O-01-67)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'外套上精美的丝带和蝴蝶结寄托着少女对幸福的向往, 一个孩子不能离开朋友.'\n[c/FF0000:EGO 盔甲]\n增加5%召唤物伤害\n击败一些Boss之后增加防御力\n盔甲的当前防御力会显示在盔甲上");
+
+            ModTranslation text = mod.CreateTranslation("LaetitiaSetBonus");
+		    text.SetDefault("Allows to summon Little Witch Monster from the Gift"
+		    + "\nMinion damage grows stronger by additional 25% in Hardmode"
+		    + "\nDoubles speed of Laetitia Rifle");
+            text.AddTranslation(GameCulture.Russian, "Позволяет призвать Монстра Маленькой Ведьмы из Дара.\nУрон прислужников дополнительно увеличивается на 25% в Хардмоде.");
+            text.AddTranslation(GameCulture.Chinese, "允许召唤来自礼物的小巫怪\n肉后增加25%召唤伤害\n蕾蒂希娅来复枪射速加倍");
+            mod.AddTranslation(text);
 		}
 		
 		public override void SetDefaults()
@@ -55,10 +59,10 @@ namespace AlchemistNPC.Items.Armor
 			player.setBonus = LaetitiaSetBonus;
 			if (Main.hardMode)
 			{
-			player.minionDamage += 0.35f;
+			player.minionDamage += 0.25f;
 			}
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet = true;
-		}
+            player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet = true;
+        }
 
 		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
 		{

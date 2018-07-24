@@ -19,8 +19,10 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток Баст");
-			Description.AddTranslation(GameCulture.Russian, "Атаки полностью разрушают броню противника."); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Атаки полностью разрушают броню противника.");
+            DisplayName.AddTranslation(GameCulture.Chinese, "巴斯特卷轴");
+            Description.AddTranslation(GameCulture.Chinese, "攻击完全摧毁敌人护甲");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{

@@ -16,8 +16,11 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Contains some Lunar Materials"
 				+ "\nRequired for making Elixir of Life");
 			DisplayName.AddTranslation(GameCulture.Russian, "Алхимический набор");
-			Tooltip.AddTranslation(GameCulture.Russian, "Содержит в себе немного материалов Лунара\nНеобходим для создания Эликсира Жизни"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Содержит в себе немного материалов Лунара\nНеобходим для создания Эликсира Жизни");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "炼金捆绑包");
+            Tooltip.AddTranslation(GameCulture.Chinese, "包含一些月之材料\n制作仙丹需要用到它");
+        }    
 		public override void SetDefaults()
 		{
 			item.width = 32;

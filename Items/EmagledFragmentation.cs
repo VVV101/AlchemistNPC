@@ -17,8 +17,11 @@ namespace AlchemistNPC.Items
 				+ "\n25 of it could be transformed into 2 fragments of any type.");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(10, 4));
 			DisplayName.AddTranslation(GameCulture.Russian, "Небесные обломки");
-			Tooltip.AddTranslation(GameCulture.Russian, "То, из чего рождаются все Небесные Фрагменты.\n25 могут быть преобразованы в 2 фрагмента любого типа."); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "То, из чего рождаются все Небесные Фрагменты.\n25 могут быть преобразованы в 2 фрагмента любого типа.");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "始源碎片");
+            Tooltip.AddTranslation(GameCulture.Chinese, "所有天界碎片的起源. \n25片始源碎片可以转化为2片任意的天界碎片");
+        }    
 		public override void SetDefaults()
 		{
 			item.width = 30;

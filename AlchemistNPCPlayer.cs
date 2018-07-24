@@ -38,6 +38,7 @@ namespace AlchemistNPC
 {
 	public class AlchemistNPCPlayer : ModPlayer
 	{
+		public bool Traps = false;
 		public bool Yui = false;
 		public bool YuiS = false;
 		public bool Extractor = false;
@@ -93,6 +94,7 @@ namespace AlchemistNPC
 			lwm = false;
 			Yui = false;
 			YuiS = false;
+			Traps = false;
 			
 			player.statLifeMax2 += LifeElixir * 50;
 			player.statManaMax2 += Fuaran * 100;
@@ -125,7 +127,11 @@ namespace AlchemistNPC
 	
 		public override void OnEnterWorld(Player player)
 		{
-			Main.NewText("If you don't like additional content or drops from the mod you could install AlchemistNPC Content Disabler mod.", 0, 255, 255);
+            string enterText = Language.GetTextValue("Mods.AlchemistNPC.enterText");
+			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null && Config.StartMessage)
+			{
+            Main.NewText(enterText, 0, 255, 255);
+			}
 		}
 	
 		public override void SendClientChanges(ModPlayer clientPlayer)
@@ -171,9 +177,12 @@ namespace AlchemistNPC
 				}
 			if (Scroll)
 				{
-				target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
-				target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
-				target.defense = 0;
+					if (target.type != mod.NPCType("Knuckles"))
+					{
+					target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
+					target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
+					target.defense = 0;
+					}
 				}
 			if (player.FindBuffIndex(mod.BuffType("ExplorersBrew")) > -1)
 				{
@@ -205,8 +214,11 @@ namespace AlchemistNPC
 				}
 			if (proj.thrown && Scroll)
 				{
-				target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
-				target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
+				if (target.type != mod.NPCType("Knuckles"))
+					{
+					target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
+					target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
+					}
 				}
 			if ((proj.type == ProjectileID.Electrosphere) && XtraT)
 				{
@@ -222,6 +234,10 @@ namespace AlchemistNPC
 		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
 			if (player.FindBuffIndex(mod.BuffType("Uganda")) > -1)
+			{
+				damageSource = PlayerDeathReason.ByCustomReason(player.name + " DIDN NO DE WEI!");
+			}
+			if (NPC.AnyNPCs(mod.NPCType("Knuckles")))
 			{
 				damageSource = PlayerDeathReason.ByCustomReason(player.name + " DIDN NO DE WEI!");
 			}

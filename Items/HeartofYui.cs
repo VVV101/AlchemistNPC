@@ -18,7 +18,10 @@ namespace AlchemistNPC.Items
 			+"\nEnlights treasures, creatures and traps");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сердце Юи"); 
 			Tooltip.AddTranslation(GameCulture.Russian, "Вызывает Фею-Помошника\nПодсвечивает сокровища, существ и ловушки");
-		}
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "小悠之心");
+            Tooltip.AddTranslation(GameCulture.Chinese, "召唤小精灵助手\n照亮宝物, 生物和陷阱");
+        }
 
 		public override void SetDefaults()
 		{
@@ -32,8 +35,9 @@ namespace AlchemistNPC.Items
 			item.useTime = 20;
 			item.rare = 8;
 			item.noMelee = true;
-			item.value = Item.sellPrice(5, 0, 0, 0);
+			item.value = Item.sellPrice(3, 0, 0, 0);
 			item.buffType = mod.BuffType("Yui");
+			item.expert = true;
 		}
 
 		public override void UseStyle(Player player)

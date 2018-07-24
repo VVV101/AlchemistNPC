@@ -1,7 +1,13 @@
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
+using Terraria.Localization;
+using Terraria.World.Generation;
 
 namespace AlchemistNPC.Items.Weapons
 {
@@ -15,25 +21,30 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			Tooltip.SetDefault("[c/FF0000:Instantly kill any non-boss enemies]"
 			+"\n[c/FF0000:If part of the boss is not counted as boss, it would be killed too]");
-		}
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "班锤");
+            Tooltip.AddTranslation(GameCulture.Chinese, "[c/FF0000:秒杀一切非Boss敌人]" +
+                "\n[c/FF0000:如果Boss的某个部分不算做Boss, 同样也会被秒杀]");
+        }
 
 		public override void SetDefaults()
 		{
-			item.damage = 111;
-			item.crit = 100;
+			item.CloneDefaults(ItemID.Muramasa);
 			item.melee = true;
+			item.damage = 88;
+			item.crit = 100;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.hammer = 666;
-			item.useStyle = 1;
-			item.knockBack = 16;
 			item.value = 10000000;
 			item.rare = 11;
+            item.knockBack = 10f;
+            item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
 			item.expert = true;
+			item.scale = 1.5f;
 		}
 		
 		public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
@@ -50,7 +61,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.Next(2) == 0)
 			{
 				Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, mod.DustType("Electrocute"));
 			}

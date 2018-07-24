@@ -14,8 +14,10 @@ namespace AlchemistNPC.Buffs
 			Main.persistentBuff[Type] = true;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Радужное зачарование");
-			Description.AddTranslation(GameCulture.Russian, "Ваши враги почуствуют ваш удар"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Ваши враги почуствуют ваш удар");
+            DisplayName.AddTranslation(GameCulture.Chinese, "彩虹侵染");
+            Description.AddTranslation(GameCulture.Chinese, "你的敌人将受到你的迎头痛击");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{

@@ -126,7 +126,9 @@ namespace AlchemistNPC.Projectiles
 			}
 		}
 		
-		public override void OnHitNPC (Projectile projectile, NPC target, int damage, float knockback, bool crit)
+		
+		
+		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
 			Player player = Main.player[projectile.owner];
 			if (projectile.minion && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).SF == true)
@@ -136,6 +138,41 @@ namespace AlchemistNPC.Projectiles
 			if ((projectile.type == 443) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).XtraT == true)
 			{
 				target.AddBuff(mod.BuffType("Electrocute"), 300);
+				target.immune[projectile.owner] = 2;
+			}
+			if ((projectile.type == 98) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
+			{
+				projectile.damage += 20;
+				target.immune[projectile.owner] = 1;
+			}
+			if ((projectile.type == 184) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
+			{
+				projectile.damage += 20;
+				target.immune[projectile.owner] = 1;
+			}
+			if ((projectile.type == 185) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
+			{
+				projectile.damage += 20;
+				target.immune[projectile.owner] = 3;
+			}
+			if ((projectile.type == 186) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
+			{
+				projectile.damage += 10;
+				target.immune[projectile.owner] = 1;
+			}
+			if ((projectile.type == 187) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
+			{
+				projectile.damage += 20;
+				target.immune[projectile.owner] = 2;
+			}
+			if ((projectile.type == 188) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
+			{
+				projectile.damage += 20;
+				target.immune[projectile.owner] = 2;
+			}
+			if ((projectile.type == 654) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
+			{
+				projectile.damage += 20;
 				target.immune[projectile.owner] = 2;
 			}
 		}

@@ -21,7 +21,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Spirit Combination");
 			Tooltip.SetDefault("Grants most buffs from Spirit Mod potions (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Spirit");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Spirit (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)"); 
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Spirit (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "魂灵药剂包");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得大部分魂灵Buff (符文之力, 灵魂之护, 魂灵, 星之燃烧, 坚定和毒素)");
 		}    
 
 		public override void SetDefaults()

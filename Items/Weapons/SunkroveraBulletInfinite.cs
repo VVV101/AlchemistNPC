@@ -18,8 +18,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nReleases life stealing projectiles on enemy/wall impact"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пули с кристальной пылью");
-			Tooltip.AddTranslation(GameCulture.Russian, "Её сияние вызывает у вас дрожь.\nВыпускает похищающие жизнь снаряды при попадании\nБесконечна"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Её сияние вызывает у вас дрожь.\nВыпускает похищающие жизнь снаряды при попадании\nБесконечна");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "森克罗维拉弹");
+            Tooltip.AddTranslation(GameCulture.Chinese, "即便是带着它你也能感受到那份...压力\n击中墙壁或敌人后释放带有生命偷取的子弹\n无限");
+        }    
 		public override void SetDefaults()
 		{
 			item.damage = 16;

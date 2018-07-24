@@ -22,8 +22,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Рыбака");
-			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Ящиков, Сонара, Рыбалки, Регенерации, Шипов, Железной Кожи, Покоя и Инферно"); 
-		}
+            Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Ящиков, Сонара, Рыбалки, Регенерации, Шипов, Железной Кожи, Покоя и Инферно");
+            DisplayName.AddTranslation(GameCulture.Chinese, "钓鱼药剂包");
+            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：声呐, 钓鱼, 恢复, 镇静, 荆棘, 铁皮, 狱火, 宝匣");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{

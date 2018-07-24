@@ -18,8 +18,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nPhases through walls, releases homing projectiles on enemy/wall impact"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Никтосифиевая пуля");
-			Tooltip.AddTranslation(GameCulture.Russian, "Чем дальше держать их от себя, тем лучше.\nПроходят сквозь стены, выпускают самонаводящиеся снаряды при попадании\nБесконечна"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Чем дальше держать их от себя, тем лучше.\nПроходят сквозь стены, выпускают самонаводящиеся снаряды при попадании\nБесконечна");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "夜蛾弹");
+            Tooltip.AddTranslation(GameCulture.Chinese, "最好尽可能快的抓住它\n可穿墙, 第一次撞击墙壁或敌人后释放追踪敌人的子弹\n无限");
+        }    
 		public override void SetDefaults()
 		{
 			item.damage = 20;

@@ -29,8 +29,10 @@ namespace AlchemistNPC.Projectiles
 		{
 			if (target.lifeMax <= 300000)
 			damage = target.life/100;
-			if (target.lifeMax > 300000)
+			if (target.lifeMax > 300000 && target.lifeMax < 1000000)
 			damage = target.life/300;
+			if (target.lifeMax >= 1000000)
+			damage = target.life/400;
 		}
 	}
 }

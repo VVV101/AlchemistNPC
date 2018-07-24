@@ -5,6 +5,24 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Explorer is secret NPC. Try to figure out, how to spawn her.
+v7.2
+-Added Chinese translation by 抗药又坚硬汉化组 (SBMW GROUP). Thanks for your hard work!
+-Operator is now available with Content Disabler mod. She will not have EGOs shop.
+Her spawn condition would be the same (but she no longer requires Wing of the World in house).
+-Added config option for disabling the world entering message. Message also will disappear if Content Disabler mod is ON.
+-Added Trapper Potion. Empowers any traps. Available after beating Golem.
+-Added abilities of Big Bird's Lamp to Twilight and Paradise Lost Leggings, Twilight and Paradise Lost Wings.
+-Added Kinetic Potion from Thorium in Brewer's 2nd shop. Available in hardmode.
+Also added to Thorium Combination.
+-Added Revivify Potion from Calamity in Brewer's 2nd shop. Available in hardmode.
+-Added Onyx from Thorium to Jeweler's shop. Available after beating EoW/BoC.
+-Astrum Deus now actually drops Reversity Coins tier 3.
+-Fixed some problems with Treasure Bags shops of Operator.
+-Fixed recipe for Reversity Coins tier 3 (Calamity mod requirement).
+-Changed prices and conditions of some modded Treasure Bags.
+-Reworked National Ugandan Treasure. You will definetly like it :).
+-Nerfed some of EGO equipment.
+-Some secrets and easter eggs.
 v7.1
 -Added support for AlchemistNPC Content Disabler mod. Congratulations, dear content haters!
 -Autoinjector can now be consumed to give player permanent effect.

@@ -22,8 +22,10 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Эффект Сапфировой Соды");
-			Description.AddTranslation(GameCulture.Russian, "Убирает дебафф Ослабление Волшебства"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Убирает дебафф Ослабление Волшебства");
+            DisplayName.AddTranslation(GameCulture.Chinese, "宝蓝苏打加持");
+            Description.AddTranslation(GameCulture.Chinese, "移除魔力病Debuff");
+        }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{

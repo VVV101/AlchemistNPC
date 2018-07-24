@@ -13,8 +13,11 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Ниндзя");
-			Description.AddTranslation(GameCulture.Russian, "Теперь вы обладаете способностями Ниндзя"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Теперь вы обладаете способностями Ниндзя");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "忍者");
+            Description.AddTranslation(GameCulture.Chinese, "你现在拥有忍者的能力");
+        }
 		public override void Update(Player player, ref int buffIndex)
 		{
 			player.thrownDamage += 0.05f;

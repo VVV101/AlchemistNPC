@@ -12,7 +12,8 @@ namespace AlchemistNPC
 		public static bool TS = true;
 		public static bool TornNotesDrop = true;
 		public static bool CoinsDrop = true;
-        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv7.json");
+		public static bool StartMessage = true;
+        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv71.json");
         static Preferences Configuration = new Preferences(ConfigPath);
 
         public static void Load()
@@ -50,6 +51,11 @@ namespace AlchemistNPC
 			{
             CoinsDrop = true;
 			}
+			if(StartMessage != true && StartMessage != false)
+			{
+            StartMessage = true;
+			}
+			Configuration.Get<bool>("StartMessage", ref Config.StartMessage);
 			return true;
 			}
 		else
@@ -65,6 +71,7 @@ namespace AlchemistNPC
 			Configuration.Put("TreasureBagsShop", TS);
 			Configuration.Put("TornNotesDrop", TornNotesDrop);
 			Configuration.Put("CoinsDrop", CoinsDrop);
+			Configuration.Put("StartMessage", StartMessage);
             Configuration.Save(true);
         }
     }

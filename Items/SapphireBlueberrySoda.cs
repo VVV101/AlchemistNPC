@@ -18,10 +18,13 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Sapphire Blueberry Soda");
-			Tooltip.SetDefault("Restores 175 mana, removes Mana Sickness for a short time.");
+			Tooltip.SetDefault("Restores 200 mana, removes Mana Sickness for a short time.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сода Сапфировой Голубики");
-			Tooltip.AddTranslation(GameCulture.Russian, "Восстанавливает 175 маны, убирает Магическую слабость в течении короткого времени"); 
-		}    
+            Tooltip.AddTranslation(GameCulture.Russian, "Восстанавливает 200 маны, убирает Магическую слабость в течении короткого времени");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "宝蓝蓝莓苏打水");
+            Tooltip.AddTranslation(GameCulture.Chinese, "恢复200点法力值, 短时间内移除法力病Debuff.");
+        }    
 		public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.SuperManaPotion);
@@ -29,13 +32,13 @@ namespace AlchemistNPC.Items
             item.consumable = true;
             item.value = 0;
             item.rare = 6;
-			item.healMana = 175;
+			item.healMana = 200;
             return;
         }
 		
 		public override bool UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("SapphireSoda"), 600);
+			player.AddBuff(mod.BuffType("SapphireSoda"), 900);
 			return true;
 		}
     }

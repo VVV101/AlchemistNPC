@@ -19,8 +19,10 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Щит Весны");
-			Description.AddTranslation(GameCulture.Russian, "Уменьшает весь входящий урон на 15%"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Уменьшает весь входящий урон на 15%");
+            DisplayName.AddTranslation(GameCulture.Chinese, "源泉之盾");
+            Description.AddTranslation(GameCulture.Chinese, "减免15%所有伤害");
+        }
 		public override void Update(Player player, ref int buffIndex)
 		{
 		player.endurance += 0.15f;

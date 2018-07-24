@@ -17,8 +17,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nReleases heavy damaging light beams and inflicts Daybroken debuff"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Хромоварийная стрела (Бесконечная)");
-			Tooltip.AddTranslation(GameCulture.Russian, "Достойное применение Святого материала\nВыпускает наносящие значительный урон лучи света и накладывает мощный дебафф\nБесконечна"); 
-		}
+            Tooltip.AddTranslation(GameCulture.Russian, "Достойное применение Святого материала\nВыпускает наносящие значительный урон лучи света и накладывает мощный дебафф\nБесконечна");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "炫彩箭 (无限)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "神圣材料的合理使用 (无限)\n释放出粗大的破坏光束并给予破日Debuff\n无限");
+        }
 
 		public override void SetDefaults()
 		{

@@ -46,10 +46,6 @@ namespace AlchemistNPC.Projectiles.Minions
 			{
 			damage = 125;
 			}
-			else
-			{
-			damage = 45;
-			}
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
@@ -57,6 +53,11 @@ namespace AlchemistNPC.Projectiles.Minions
 			target.AddBuff(BuffID.ShadowFlame, 600);
 			target.AddBuff(BuffID.Ichor, 600);
 			target.immune[projectile.owner] = 3;
+			Player player = Main.player[projectile.owner];
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+			{
+			damage = 125;
+			}
 		}
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)

@@ -17,8 +17,11 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Increases light radius greatly"
 			+"\nNON-CALAMITY BUFF POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Солнечного Сияния");
-			Tooltip.AddTranslation(GameCulture.Russian, "Значительно увеличивает радиус освещения вокруг персонажа"); 
-		}    
+			Tooltip.AddTranslation(GameCulture.Russian, "Значительно увеличивает радиус освещения вокруг персонажа");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "阳光药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "极大的增强光照半径\n非灾厄BUFF药剂");
+        }    
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

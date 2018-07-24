@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace AlchemistNPC.NPCs
 {
@@ -135,6 +136,14 @@ namespace AlchemistNPC.NPCs
 			{
 				if (NPC.downedMoonlord)
 				{
+				cooldown = 4;
+				randExtraCooldown = 4;
+				}
+			}
+			if (npc.type == NPCID.Steampunker)
+			{
+				if (NPC.downedMoonlord)
+				{
 				cooldown = 3;
 				randExtraCooldown = 3;
 				}
@@ -150,6 +159,14 @@ namespace AlchemistNPC.NPCs
 
 		public override void TownNPCAttackProj(NPC npc, ref int projType, ref int attackDelay)
 		{
+			if (npc.type == NPCID.ArmsDealer)
+				{
+					if (NPC.downedMoonlord)
+					{
+					attackDelay = 4;
+					projType = ProjectileID.MoonlordBullet;		
+					}
+				}
 			if (npc.type == NPCID.Steampunker)
 				{
 					if (NPC.downedMoonlord)
@@ -184,6 +201,13 @@ namespace AlchemistNPC.NPCs
 
 		public override void DrawTownAttackGun(NPC npc, ref float scale, ref int item, ref int closeness)
 		{
+			if (npc.type == NPCID.ArmsDealer)
+				{
+					if (NPC.downedMoonlord)
+					{
+					item = ItemID.Megashark;
+					}
+				}
 			if (npc.type == NPCID.Steampunker)
 				{
 					if (NPC.downedMoonlord)
@@ -227,36 +251,36 @@ namespace AlchemistNPC.NPCs
  
         public override void UpdateLifeRegen(NPC npc, ref int damage)
         {
-            if (corrosion)  //this tells the game to use the public bool customdebuff from NPCsINFO.cs
+            if (corrosion)
             {
-                npc.lifeRegen -= 1500;      //this make so the npc lose life, the highter is the value the faster the npc lose life
+                npc.lifeRegen -= 1500;
                 if (damage < 149)
                 {
-                    damage = 150;  // this is the damage dealt when the npc lose health
+                    damage = 150;
                 }
             }
-			if (justitiapale)  //this tells the game to use the public bool customdebuff from NPCsINFO.cs
+			if (justitiapale)
             {
-                npc.lifeRegen -= 2000;      //this make so the npc lose life, the highter is the value the faster the npc lose life
+                npc.lifeRegen -= 2000;
                 if (damage < 199)
                 {
-                    damage = 200;  // this is the damage dealt when the npc lose health
+                    damage = 200;
                 }
             }
-			if (electrocute)  //this tells the game to use the public bool customdebuff from NPCsINFO.cs
+			if (electrocute)
             {
-                npc.lifeRegen -= 1500;      //this make so the npc lose life, the highter is the value the faster the npc lose life
+                npc.lifeRegen -= 1500;
                 if (damage < 149)
                 {
-                    damage = 150;  // this is the damage dealt when the npc lose health
+                    damage = 150;
                 }
             }
-			if (twilight)  //this tells the game to use the public bool customdebuff from NPCsINFO.cs
+			if (twilight)
             {
-                npc.lifeRegen -= 5000;      //this make so the npc lose life, the highter is the value the faster the npc lose life
+                npc.lifeRegen -= 5000;
                 if (damage < 499)
                 {
-                    damage = 500;  // this is the damage dealt when the npc lose health
+                    damage = 500;
                 }
             }
         }
@@ -344,15 +368,26 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool PreNPCLoot(NPC npc)
 		{
-			if (npc.type == NPCID.MoonLordCore)
+            string barrierWeek = Language.GetTextValue("Mods.AlchemistNPC.barrierWeek");
+            string Eclipse = Language.GetTextValue("Mods.AlchemistNPC.Eclipse");
+            if (npc.type == NPCID.MoonLordCore)
 			{
 				if (!NPC.downedMoonlord)
 				{
-				Main.NewText("Barrier between worlds was weakened.", 255, 255, 255);
-				Main.NewText("Eclipse creatures become anxious.", 255, 50, 50);
+				Main.NewText(barrierWeek, 255, 255, 255);
+				Main.NewText(Eclipse, 255, 50, 50);
 				}
 			}
 			return true;
+		}
+		
+		public override bool SpecialNPCLoot(NPC npc)
+		{
+			if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumDeusHead")) && Config.CoinsDrop)
+					{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(2, 4));
+					}
+			return false;
 		}
 		
 		public override void NPCLoot(NPC npc)
@@ -371,6 +406,11 @@ namespace AlchemistNPC.NPCs
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
 				}
+			}
+			if (npc.type == mod.NPCType("Knuckles"))
+			{
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LastTantrum"));
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PlatinumCoin, 25);
 			}
 			if (npc.type == mod.NPCType("Operator"))
 			{
@@ -564,17 +604,13 @@ namespace AlchemistNPC.NPCs
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
 					}
-				if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumDeusHead")) && Config.CoinsDrop)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
-					}
 				if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath")) && Config.CoinsDrop)
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(9, 12));
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(3, 6));
 					}
 				if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ScavangerBody")) && Config.CoinsDrop)
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(9, 12));
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(3, 6));
 					}
 				if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss")) && Config.CoinsDrop)
 					{

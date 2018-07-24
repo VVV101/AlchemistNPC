@@ -17,12 +17,14 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Иссушение");
-			Description.AddTranslation(GameCulture.Russian, "Лишает защиты и поглощения урона пока удерживается Поглотитель"); 
-		}
+			Description.AddTranslation(GameCulture.Russian, "Лишает защиты и поглощения урона пока удерживается Поглотитель");
+            DisplayName.AddTranslation(GameCulture.Chinese, "抽血");
+            Description.AddTranslation(GameCulture.Chinese, "极大降低防御力和耐力");
+        }
 
         public override void Update(Player player, ref int buffIndex)
         {
-			player.endurance -= 0.25f;
+			player.endurance -= 0.15f;
 			player.statDefense -= 300;
 			player.longInvince = false;
         }
