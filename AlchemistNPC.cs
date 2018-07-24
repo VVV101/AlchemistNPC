@@ -54,6 +54,10 @@ namespace AlchemistNPC
             string HotkeyBuff = Language.GetTextValue("Mods.AlchemistNPC.DiscordBuffTeleportation");
             LampLight = RegisterHotKey(HotkeyLamp, "L");
             DiscordBuff = RegisterHotKey(HotkeyBuff, "Q");
+<<<<<<< HEAD
+=======
+
+>>>>>>> b4c8e646bdaca57099dbf46e900d1c4333acf969
 		if (!Main.dedServ)
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
