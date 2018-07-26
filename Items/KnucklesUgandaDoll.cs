@@ -30,6 +30,7 @@ namespace AlchemistNPC.Items
             item.CloneDefaults(ItemID.RecallPotion);
             item.maxStack = 99;
             item.consumable = true;
+			item.scale = 0.5f;
             return;
         }
 		

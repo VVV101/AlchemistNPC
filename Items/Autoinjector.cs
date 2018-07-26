@@ -52,7 +52,7 @@ namespace AlchemistNPC.Items
             player.thrownCrit += 8;
 			player.pStone = true;
 			player.longInvince = true;
-			player.AddBuff(mod.BuffType("UniversalComb"), 1);
+			player.AddBuff(mod.BuffType("UniversalComb"), 2);
 		}
 
 		public override bool CanUseItem(Player player)

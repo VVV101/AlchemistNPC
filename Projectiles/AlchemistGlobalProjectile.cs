@@ -142,37 +142,72 @@ namespace AlchemistNPC.Projectiles
 			}
 			if ((projectile.type == 98) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				projectile.damage += 20;
+				if (Main.expertMode){
+				projectile.damage += 40;
+				}
+				else{
+				projectile.damage += 20;	
+				}
 				target.immune[projectile.owner] = 1;
 			}
 			if ((projectile.type == 184) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				projectile.damage += 20;
+				if (Main.expertMode){
+				projectile.damage += 40;
+				}
+				else{
+				projectile.damage += 20;	
+				}
 				target.immune[projectile.owner] = 1;
 			}
 			if ((projectile.type == 185) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				projectile.damage += 20;
+				if (Main.expertMode){
+				projectile.damage += 40;
+				}
+				else{
+				projectile.damage += 20;	
+				}
 				target.immune[projectile.owner] = 3;
 			}
 			if ((projectile.type == 186) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				projectile.damage += 10;
+				if (Main.expertMode){
+				projectile.damage += 20;
+				}
+				else{
+				projectile.damage += 10;	
+				}
 				target.immune[projectile.owner] = 1;
 			}
 			if ((projectile.type == 187) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				projectile.damage += 20;
+				if (Main.expertMode){
+				projectile.damage += 40;
+				}
+				else{
+				projectile.damage += 20;	
+				}
 				target.immune[projectile.owner] = 2;
 			}
 			if ((projectile.type == 188) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				projectile.damage += 20;
+				if (Main.expertMode){
+				projectile.damage += 40;
+				}
+				else{
+				projectile.damage += 20;	
+				}
 				target.immune[projectile.owner] = 2;
 			}
 			if ((projectile.type == 654) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				projectile.damage += 20;
+				if (Main.expertMode){
+				projectile.damage += 40;
+				}
+				else{
+				projectile.damage += 20;	
+				}
 				target.immune[projectile.owner] = 2;
 			}
 		}

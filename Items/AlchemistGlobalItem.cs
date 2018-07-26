@@ -33,6 +33,7 @@ namespace AlchemistNPC.Items
 		
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
+			 string Knuckles = Language.GetTextValue("Mods.AlchemistNPC.Knuckles");
             //SBMW:Vanilla
             string KingSlime = Language.GetTextValue("Mods.AlchemistNPC.KingSlime");
             string EyeofCthulhu = Language.GetTextValue("Mods.AlchemistNPC.EyeofCthulhu");
@@ -73,6 +74,7 @@ namespace AlchemistNPC.Items
             //SBMW:ThoriumMod
             string ThunderBird = Language.GetTextValue("Mods.AlchemistNPC.ThunderBird");
             string QueenJellyfish = Language.GetTextValue("Mods.AlchemistNPC.QueenJellyfish");
+			string CountEcho = Language.GetTextValue("Mods.AlchemistNPC.CountEcho");
             string GraniteEnergyStorm = Language.GetTextValue("Mods.AlchemistNPC.GraniteEnergyStorm");
             string TheBuriedChampion = Language.GetTextValue("Mods.AlchemistNPC.TheBuriedChampion");
             string TheStarScouter = Language.GetTextValue("Mods.AlchemistNPC.TheStarScouter");
@@ -82,6 +84,13 @@ namespace AlchemistNPC.Items
             string AbyssionTheForgottenOne = Language.GetTextValue("Mods.AlchemistNPC.AbyssionTheForgottenOne");
             string TheRagnarok = Language.GetTextValue("Mods.AlchemistNPC.TheRagnarok");
 
+			
+			 if (item.type == mod.ItemType("KnucklesBag"))
+			{
+				TooltipLine line = new TooltipLine(mod, "Knuckles", Knuckles);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+			}
             if (item.type == ItemID.KingSlimeBossBag)
 			{
 				TooltipLine line = new TooltipLine(mod, "KingSlime", KingSlime);
@@ -295,6 +304,12 @@ namespace AlchemistNPC.Items
 				if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("JellyFishBag")))
 				{
 				TooltipLine line = new TooltipLine(mod, "QueenJellyfish", QueenJellyfish);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("CountBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "CountEcho", CountEcho);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 				}

@@ -301,7 +301,7 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 				if (NPC.downedGolemBoss)
 				{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("CalamityCombination"));
-			shop.item[nextSlot].shopCustomPrice = 500000;
+			shop.item[nextSlot].shopCustomPrice = 350000;
             nextSlot++;
 				}
 			}

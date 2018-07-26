@@ -611,6 +611,9 @@ if (NPC.downedGolemBoss)
 			shop.item[nextSlot].SetDefaults (ItemID.WoodenSpike);
 			shop.item[nextSlot].shopCustomPrice = 20000;
 			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.SpearTrap);
+			shop.item[nextSlot].shopCustomPrice = 50000;
+			nextSlot++; 
 			shop.item[nextSlot].SetDefaults (ItemID.SpikyBallTrap);
 			shop.item[nextSlot].shopCustomPrice = 50000;
 			nextSlot++; 

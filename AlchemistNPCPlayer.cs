@@ -128,14 +128,10 @@ namespace AlchemistNPC
 		public override void OnEnterWorld(Player player)
 		{
             string enterText = Language.GetTextValue("Mods.AlchemistNPC.enterText");
-<<<<<<< HEAD
 			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null && Config.StartMessage)
 			{
             Main.NewText(enterText, 0, 255, 255);
 			}
-=======
-            Main.NewText(enterText, 0, 255, 255);
->>>>>>> b4c8e646bdaca57099dbf46e900d1c4333acf969
 		}
 	
 		public override void SendClientChanges(ModPlayer clientPlayer)

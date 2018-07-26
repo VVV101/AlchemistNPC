@@ -10,12 +10,19 @@ v7.2
 -Operator is now available with Content Disabler mod. She will not have EGOs shop.
 Her spawn condition would be the same (but she no longer requires Wing of the World in house).
 -Added config option for disabling the world entering message. Message also will disappear if Content Disabler mod is ON.
--Added Trapper Potion. Empowers any traps. Available after beating Golem.
+-Added Trapper Potion. Empowers any traps. 
+Available after beating Golem.
 -Added abilities of Big Bird's Lamp to Twilight and Paradise Lost Leggings, Twilight and Paradise Lost Wings.
 -Added Kinetic Potion from Thorium in Brewer's 2nd shop. Available in hardmode.
 Also added to Thorium Combination.
 -Added Revivify Potion from Calamity in Brewer's 2nd shop. Available in hardmode.
 -Added Onyx from Thorium to Jeweler's shop. Available after beating EoW/BoC.
+-Added Count Echo's Treasure Bag to Operator.
+-Added Spear Trap to Jeweler's Arena shop.
+-Added infinite version of Crystal Dust Bullets and Crystalyzed Arrows.
+-Added Autoinjector MK2.
+-Calamity combination now only takes 1 buff slot.
+Makes you immune to buffs which it is contains.
 -Astrum Deus now actually drops Reversity Coins tier 3.
 -Fixed some problems with Treasure Bags shops of Operator.
 -Fixed recipe for Reversity Coins tier 3 (Calamity mod requirement).

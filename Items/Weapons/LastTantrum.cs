@@ -33,7 +33,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 8;
 			item.value = 5000000;
-			item.rare = 8;
+			item.rare = 11;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
 			item.shoot = 10; //idk why but all the guns in the vanilla source have this

@@ -813,6 +813,10 @@ namespace AlchemistNPC.NPCs
         {
         get { return ThoriumMod.ThoriumWorld.downedJelly; }
         }
+		public bool ThoriumModDownedViscount
+        {
+        get { return ThoriumMod.ThoriumWorld.downedBat; }
+        }
         public bool ThoriumModDownedStorm
         {
         get { return ThoriumMod.ThoriumWorld.downedStorm; }
@@ -1435,6 +1439,13 @@ namespace AlchemistNPC.NPCs
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
 								nextSlot++;
 								}
+								if (ThoriumModDownedViscount)
+								{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CountBag"));
+								shop.item[nextSlot].shopCustomPrice = new int?(20);
+								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+								nextSlot++;
+								}
 								if (ThoriumModDownedStorm)
 								{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GraniteBag"));
@@ -1651,6 +1662,12 @@ namespace AlchemistNPC.NPCs
 								{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("JellyFishBag"));
 								shop.item[nextSlot].shopCustomPrice = 750000;
+								nextSlot++;
+								}
+								if (ThoriumModDownedViscount)
+								{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CountBag"));
+								shop.item[nextSlot].shopCustomPrice = 850000;
 								nextSlot++;
 								}
 								if (ThoriumModDownedStorm)

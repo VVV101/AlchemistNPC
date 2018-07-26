@@ -767,7 +767,7 @@ if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			if (Main.hardMode)
 							{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CadencePotion"));
-			shop.item[nextSlot].shopCustomPrice = 50000;
+			shop.item[nextSlot].shopCustomPrice = 40000;
             nextSlot++;
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("FabsolsVodka"));
 			shop.item[nextSlot].shopCustomPrice = 100000;
@@ -778,7 +778,7 @@ if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			if (NPC.downedGolemBoss)
 								{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TitanScalePotion"));
-			shop.item[nextSlot].shopCustomPrice = 50000;
+			shop.item[nextSlot].shopCustomPrice = 40000;
             nextSlot++;
 								}
 							}

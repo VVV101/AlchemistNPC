@@ -54,10 +54,6 @@ namespace AlchemistNPC
             string HotkeyBuff = Language.GetTextValue("Mods.AlchemistNPC.DiscordBuffTeleportation");
             LampLight = RegisterHotKey(HotkeyLamp, "L");
             DiscordBuff = RegisterHotKey(HotkeyBuff, "Q");
-<<<<<<< HEAD
-=======
-
->>>>>>> b4c8e646bdaca57099dbf46e900d1c4333acf969
 		if (!Main.dedServ)
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
@@ -379,6 +375,9 @@ namespace AlchemistNPC
 
 
             //SBMW:Treasure Bag
+			text = CreateTranslation("Knuckles");
+            text.SetDefault("Uganda Knuckles Treasure Bag");
+            AddTranslation(text);
             //SBMW:Vanilla
             text = CreateTranslation("KingSlime");
             text.SetDefault("King Slime Treasure Bag");
@@ -554,6 +553,11 @@ namespace AlchemistNPC
 
             text = CreateTranslation("QueenJellyfish");
             text.SetDefault("The Queen Jellyfish Treasure Bag");
+            text.AddTranslation(GameCulture.Chinese, "水母皇后宝藏袋");
+            AddTranslation(text);
+			
+			text = CreateTranslation("CountEcho");
+            text.SetDefault("Count Echo Treasure Bag");
             text.AddTranslation(GameCulture.Chinese, "水母皇后宝藏袋");
             AddTranslation(text);
 

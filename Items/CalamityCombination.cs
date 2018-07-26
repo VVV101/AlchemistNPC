@@ -40,18 +40,9 @@ namespace AlchemistNPC.Items
             item.height = 32;
             item.value = Item.sellPrice(0, 10, 0, 0);
             item.rare = 10;
-            item.buffType = ModLoader.GetMod("CalamityMod").BuffType("YharimPower");           //this is where you put your Buff
+            item.buffType = item.buffType = mod.BuffType("CalamityComb");           //this is where you put your Buff
             item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
         }
-		
-		public override bool UseItem(Player player)
-		{
-				player.AddBuff((ModLoader.GetMod("CalamityMod").BuffType("Cadence")), 52000, true);
-				player.AddBuff((ModLoader.GetMod("CalamityMod").BuffType("TitanScale")), 52000, true);
-				player.AddBuff((ModLoader.GetMod("CalamityMod").BuffType("FabsolVodka")), 52000, true);
-				player.AddBuff((ModLoader.GetMod("CalamityMod").BuffType("Omniscience")), 52000, true);
-				return true;
-		}
 		
 		public override void AddRecipes()
 		{

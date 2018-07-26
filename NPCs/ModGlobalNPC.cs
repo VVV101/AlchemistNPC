@@ -402,15 +402,10 @@ namespace AlchemistNPC.NPCs
 			}
 			if (npc.type == NPCID.MoonLordCore && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).PGSWear)
 			{
-				if (Main.rand.Next(4) == 0)
+				if (Main.rand.Next(2) == 0)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
 				}
-			}
-			if (npc.type == mod.NPCType("Knuckles"))
-			{
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LastTantrum"));
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PlatinumCoin, 25);
 			}
 			if (npc.type == mod.NPCType("Operator"))
 			{
@@ -658,6 +653,10 @@ namespace AlchemistNPC.NPCs
 					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("QueenJelly")) && Config.CoinsDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(3, 6));
+					}
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("Viscount")) && Config.CoinsDrop)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(5, 7));
 					}
 					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("GraniteEnergyStorm")) && Config.CoinsDrop)
 					{
