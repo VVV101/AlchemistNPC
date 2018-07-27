@@ -24,5 +24,10 @@ namespace AlchemistNPC.Buffs
             DisplayName.AddTranslation(GameCulture.Chinese, "审判");
             Description.AddTranslation(GameCulture.Chinese, "你产生锋利的骨刺穿透你的敌人\n有33%的概率减少2点所受伤害\n耐力降低33%");
         }
+		
+		public override void Update(Player player, ref int buffIndex)
+        {
+            player.yoraiz0rEye = 9 - 2;
+        }
 	}
 }

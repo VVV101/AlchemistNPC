@@ -20,6 +20,10 @@ namespace AlchemistNPC.Items
 			{
 				type = mod.ProjectileType("Chloroshard");
 			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Rampage == true && type == 1)
+			{
+				type = mod.ProjectileType("ChloroshardArrow");
+			}
 			return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 		
@@ -28,6 +32,10 @@ namespace AlchemistNPC.Items
 			if (type == ProjectileID.Bullet && player.GetModPlayer<AlchemistNPCPlayer>().Rampage)
 			{
 				type = mod.ProjectileType("Chloroshard");
+			}
+			if (type == 1 && player.GetModPlayer<AlchemistNPCPlayer>().Rampage)
+			{
+				type = mod.ProjectileType("ChloroshardArrow");
 			}
 		}
 		

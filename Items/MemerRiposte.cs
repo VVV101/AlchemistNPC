@@ -42,6 +42,8 @@ namespace AlchemistNPC.Items
             player.rangedDamage += 0.15f;
             player.magicDamage += 0.15f;
             player.minionDamage += 0.15f;
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)
+			{
 			player.meleeCrit /= 2;
 			player.magicCrit /= 2;
 			player.rangedCrit /= 2;
@@ -50,6 +52,18 @@ namespace AlchemistNPC.Items
 			player.magicCrit -= 5;
 			player.rangedCrit -= 5;
 			player.thrownCrit -= 5;
+			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2)
+			{
+			player.meleeCrit /= 2;
+			player.magicCrit /= 2;
+			player.rangedCrit /= 2;
+			player.thrownCrit /= 2;
+			player.meleeCrit += 10;
+			player.magicCrit += 10;
+			player.rangedCrit += 10;
+			player.thrownCrit += 10;
+			}
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).MemersRiposte = true;
 			player.buffImmune[mod.BuffType("Uganda")] = true;
 		}

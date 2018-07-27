@@ -38,6 +38,7 @@ namespace AlchemistNPC
 {
 	public class AlchemistNPCPlayer : ModPlayer
 	{
+		public bool AutoinjectorMK2 = false;
 		public bool Traps = false;
 		public bool Yui = false;
 		public bool YuiS = false;
@@ -75,6 +76,7 @@ namespace AlchemistNPC
 		public override void ResetEffects()
 		{
 			AlchemistNPC.BastScroll = false;
+			AutoinjectorMK2 = false;
 			EyeOfJudgement = false;
 			LaetitiaSet = false;
 			Scroll = false;
