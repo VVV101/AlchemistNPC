@@ -381,15 +381,6 @@ namespace AlchemistNPC.NPCs
 			return true;
 		}
 		
-		public override bool SpecialNPCLoot(NPC npc)
-		{
-			if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumDeusHead")) && Config.CoinsDrop)
-					{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(2, 4));
-					}
-			return false;
-		}
-		
 		public override void NPCLoot(NPC npc)
         {
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
