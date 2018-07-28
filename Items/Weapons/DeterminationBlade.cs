@@ -56,7 +56,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (AlchemistNPC.DTH >= 5)
 			{
-			player.AddBuff(mod.BuffType("Hate"), 60);
+			player.AddBuff(mod.BuffType("Hate"), 2);
 			}
 		}
 		

@@ -125,6 +125,11 @@ namespace AlchemistNPC.Items.Weapons
 			return false;
 		}
 		
+		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		{
+			target.AddBuff(mod.BuffType("Twilight"), 600);
+		}
+		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);

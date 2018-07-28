@@ -27,7 +27,7 @@ namespace AlchemistNPC.Buffs
         public override void Update(NPC npc, ref int buffIndex)
         {
 			npc.GetGlobalNPC<ModGlobalNPC>(mod).electrocute = true;
-			if (Main.rand.Next(30) == 0)
+			if (Main.rand.Next(20) == 0)
 			{
 			npc.velocity.X = 0.1f;
 			npc.velocity.Y = 0.1f;

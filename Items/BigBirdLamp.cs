@@ -57,8 +57,10 @@ namespace AlchemistNPC.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.CloudinaBottle);
 			recipe.AddIngredient(null, "DivineLava", 30);
-			recipe.AddIngredient(ItemID.SoulofFright, 15);
-			recipe.AddIngredient(ItemID.SoulofSight, 15);
+			recipe.AddIngredient(ItemID.PutridScent);
+			recipe.AddIngredient(ItemID.Ectoplasm, 15);
+			recipe.AddIngredient(ItemID.SoulofFright, 25);
+			recipe.AddIngredient(ItemID.SoulofSight, 25);
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

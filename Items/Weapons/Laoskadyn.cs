@@ -22,9 +22,9 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			DisplayName.SetDefault("Laoskadyn");
 			Tooltip.SetDefault("Drops exploding homing needles from the sky on swing"
-			+"\nNeedles release damaging fires");
+			+"\nNeedles release damaging flames");
 			DisplayName.AddTranslation(GameCulture.Russian, "Лаоскадин");
-            Tooltip.AddTranslation(GameCulture.Russian, "Вызывает падение взрывающихся игл с небес при взмахе\nИгры выпускают наносящие урон огни");
+            Tooltip.AddTranslation(GameCulture.Russian, "Вызывает падение взрывающихся игл с небес при взмахе\nИглы выпускают наносящие урон огни");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "劳斯卡丁");
             Tooltip.AddTranslation(GameCulture.Chinese, "挥舞时从天上降下自动追踪敌人的针\n针会释放出有伤害的火焰");

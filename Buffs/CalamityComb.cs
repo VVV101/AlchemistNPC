@@ -18,7 +18,8 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Calamity Combination");
-			Description.SetDefault("Perfect sum of Calamity buffs");
+			Description.SetDefault("Perfect sum of Calamity buffs"
+			+"\nYharim's Stimulants, Cadence, Fabsol's Vodka, Titan Scale and Omniscience");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Каламити");

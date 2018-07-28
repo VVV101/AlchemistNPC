@@ -1,10 +1,39 @@
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Terraria;
+using Microsoft.Xna.Framework.Input;
+using ReLogic.Utilities;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using Terraria.Audio;
+using Terraria.DataStructures;
+using Terraria.Enums;
+using Terraria.GameContent;
+using Terraria.GameContent.Achievements;
+using Terraria.GameContent.Events;
+using Terraria.GameContent.Tile_Entities;
+using Terraria.GameContent.UI;
+using Terraria.GameInput;
+using Terraria.Graphics.Capture;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
 using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Utilities;
+using Terraria.IO;
 using Terraria.Localization;
+using Terraria.ObjectData;
+using Terraria.Social;
+using Terraria.UI;
+using Terraria.UI.Chat;
+using Terraria.UI.Gamepad;
+using Terraria.Utilities;
+using Terraria.World.Generation;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
+using Terraria.GameInput;
+using AlchemistNPC;
  
 namespace AlchemistNPC.NPCs
 {
@@ -22,7 +51,7 @@ namespace AlchemistNPC.NPCs
 			npc.boss = true;
 			npc.width = 96;
 			npc.height = 76;
-			npc.damage = 333333;
+			npc.damage = 666666;
 			npc.defense = 1;
 			npc.lifeMax = 333333;
 			npc.HitSound = SoundID.NPCHit1;
@@ -41,6 +70,11 @@ namespace AlchemistNPC.NPCs
 		DisplayName.SetDefault("Ugandan Knuckles");
 		}
 		
+		public override void BossHeadRotation(ref float rotation)
+        {
+            rotation = npc.rotation;
+        }
+		
 		public override void AI()
 		{
 			npc.buffImmune[mod.BuffType("ArmorDestruction")] = true;
@@ -54,6 +88,13 @@ namespace AlchemistNPC.NPCs
 			damage1 = 100;
 			damage2 = 150;
 			damage3 = 175;
+			}
+			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+			if (player.statDefense > 250 || player.endurance > 0.40f || player.statLifeMax2 > 1300)
+			{
+			damage1 = 666666;
+			damage2 = 666666;
+			damage3 = 666666;
 			}
 			if (!Main.expertMode)
 			{
@@ -296,6 +337,18 @@ namespace AlchemistNPC.NPCs
 		public override void OnHitPlayer(Player target, int damage, bool crit)
 		{
 		target.AddBuff(mod.BuffType("Uganda"), 1200);
+		if (target.statDefense > 250 || target.endurance > 0.40f || target.statLifeMax2 > 1300)
+			{
+			target.AddBuff(mod.BuffType("TrueUganda"), 3600);
+			}
+		}
+		
+		public override void ModifyHitPlayer(Player player, ref int damage, ref bool crit)
+		{
+			if (player.statDefense > 250 || player.endurance > 0.40f || player.statLifeMax2 > 1300)
+			{
+			damage = 666666;
+			}
 		}
 		
 		public override void NPCLoot()

@@ -373,7 +373,6 @@ namespace AlchemistNPC
             text.AddTranslation(GameCulture.Chinese, "如果你不喜欢AlchemistNPC中的附加物品或掉落物, 你可以安装 AlchemistNPC Content Disabler 取消他们");
             AddTranslation(text);
 
-
             //SBMW:Treasure Bag
 			text = CreateTranslation("Knuckles");
             text.SetDefault("Uganda Knuckles Treasure Bag");
