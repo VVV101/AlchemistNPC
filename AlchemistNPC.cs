@@ -95,6 +95,7 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().LifeElixir = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().Fuaran = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().KeepBuffs = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().WellFed = reader.ReadInt32();
 					break;
 				case AlchemistNPCMessageType.TeleportPlayer:
 					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);

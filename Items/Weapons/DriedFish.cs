@@ -46,28 +46,28 @@ namespace AlchemistNPC.Items.Weapons
 			target.AddBuff(BuffID.Wet, 600);
 			Vector2 vel1 = new Vector2(-1, -1);
 			vel1 *= 12f;
-			Projectile.NewProjectile(target.position.X+200, target.position.Y+200, vel1.X, vel1.Y, mod.ProjectileType("DriedFishBubble"), damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X+200, target.position.Y+200, vel1.X, vel1.Y, mod.ProjectileType("DriedFishBubble"), damage/4, 0, Main.myPlayer);
 			Vector2 vel2 = new Vector2(1, 1);
 			vel2 *= 12f;
-			Projectile.NewProjectile(target.position.X-200, target.position.Y-200, vel2.X, vel2.Y, mod.ProjectileType("DriedFishBubble"), damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X-200, target.position.Y-200, vel2.X, vel2.Y, mod.ProjectileType("DriedFishBubble"), damage/4, 0, Main.myPlayer);
 			Vector2 vel3 = new Vector2(1, -1);
 			vel3 *= 12f;
-			Projectile.NewProjectile(target.position.X-200, target.position.Y+200, vel3.X, vel3.Y, mod.ProjectileType("DriedFishBubble"), damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X-200, target.position.Y+200, vel3.X, vel3.Y, mod.ProjectileType("DriedFishBubble"), damage/4, 0, Main.myPlayer);
 			Vector2 vel4 = new Vector2(-1, 1);
 			vel4 *= 12f;
-			Projectile.NewProjectile(target.position.X+200, target.position.Y-200, vel4.X, vel4.Y, mod.ProjectileType("DriedFishBubble"), damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X+200, target.position.Y-200, vel4.X, vel4.Y, mod.ProjectileType("DriedFishBubble"), damage/4, 0, Main.myPlayer);
 			Vector2 vel5 = new Vector2(0, -1);
 			vel5 *= 12f;
-			Projectile.NewProjectile(target.position.X, target.position.Y+200, vel5.X, vel5.Y, mod.ProjectileType("DriedFishBubble"), damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X, target.position.Y+200, vel5.X, vel5.Y, mod.ProjectileType("DriedFishBubble"), damage/4, 0, Main.myPlayer);
 			Vector2 vel6 = new Vector2(0, 1);
 			vel6 *= 12f;
-			Projectile.NewProjectile(target.position.X, target.position.Y-200, vel6.X, vel6.Y, mod.ProjectileType("DriedFishBubble"), damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X, target.position.Y-200, vel6.X, vel6.Y, mod.ProjectileType("DriedFishBubble"), damage/4, 0, Main.myPlayer);
 			Vector2 vel7 = new Vector2(1, 0);
 			vel7 *= 12f;
-			Projectile.NewProjectile(target.position.X-200, target.position.Y, vel7.X, vel7.Y, mod.ProjectileType("DriedFishBubble"), damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X-200, target.position.Y, vel7.X, vel7.Y, mod.ProjectileType("DriedFishBubble"), damage/4, 0, Main.myPlayer);
 			Vector2 vel8 = new Vector2(-1, 0);
 			vel8 *= 12f;
-			Projectile.NewProjectile(target.position.X+200, target.position.Y, vel8.X, vel8.Y, mod.ProjectileType("DriedFishBubble")	,damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X+200, target.position.Y, vel8.X, vel8.Y, mod.ProjectileType("DriedFishBubble") ,damage/4, 0, Main.myPlayer);
 		}
 	}
 }

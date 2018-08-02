@@ -44,6 +44,8 @@ namespace AlchemistNPC
 		public bool NebulaFish = false;
 		public bool VortexFish = false;
 		public bool StardustFish = false;
+		public bool MiniShark = false;
+		public bool Manna = false;
 		public bool Traps = false;
 		public bool Yui = false;
 		public bool YuiS = false;
@@ -78,6 +80,8 @@ namespace AlchemistNPC
 		public int Fuaran = 0;
 		private const int maxKeepBuffs = 1;
 		public int KeepBuffs = 0;
+		private const int maxWellFed = 1;
+		public int WellFed = 0;
 		
 		public override void ResetEffects()
 		{
@@ -88,6 +92,8 @@ namespace AlchemistNPC
 			NebulaFish = false;
 			VortexFish = false;
 			StardustFish = false;
+			MiniShark = false;
+			Manna = false;
 			Akumu = false;
 			AutoinjectorMK2 = false;
 			EyeOfJudgement = false;
@@ -122,6 +128,10 @@ namespace AlchemistNPC
 			{
 			BuffsKeep = false;
 			}
+			if (WellFed == 1)
+			{
+			player.AddBuff(BuffID.WellFed, 2);
+			}
 		}
 	
 		public override void clientClone(ModPlayer clientClone)
@@ -137,6 +147,7 @@ namespace AlchemistNPC
 			packet.Write(LifeElixir);
 			packet.Write(Fuaran);
 			packet.Write(KeepBuffs);
+			packet.Write(WellFed);
 			packet.Send(toWho, fromWho);
 		}
 	
@@ -159,6 +170,7 @@ namespace AlchemistNPC
 				{"LifeElixir", LifeElixir},
 				{"Fuaran", Fuaran},
 				{"KeepBuffs", KeepBuffs},
+				{"WellFed", WellFed},
 			};
 		}
 	
@@ -167,6 +179,7 @@ namespace AlchemistNPC
 			LifeElixir = tag.GetInt("LifeElixir");
 			Fuaran = tag.GetInt("Fuaran");
 			KeepBuffs = tag.GetInt("KeepBuffs");
+			WellFed = tag.GetInt("WellFed");
 		}
 	
 		public override void AnglerQuestReward(float quality, List<Item> rewardItems)
@@ -206,6 +219,20 @@ namespace AlchemistNPC
 				stardust.stack = 25;
 				rewardItems.Add(stardust);
 			}
+			if (MiniShark)
+			{
+				Item minishark = new Item();
+				minishark.SetDefaults(ItemID.Minishark);
+				minishark.stack = 1;
+				rewardItems.Add(minishark);
+			}
+			if (Manna)
+			{
+				Item manna = new Item();
+				manna.SetDefaults(mod.ItemType("MannafromHeaven"));
+				manna.stack = 1;
+				rewardItems.Add(manna);
+			}
 		}
 
 		public override void CatchFish(Item fishingRod, Item bait, int power, int liquidType, int poolSize, int worldLayer, int questFish, ref int caughtType, ref bool junk)
@@ -214,7 +241,7 @@ namespace AlchemistNPC
 			{
 				return;
 			}
-			if (questFish == mod.ItemType("MutantFish") && Main.rand.Next(10) == 0)
+			if (questFish == mod.ItemType("MutantFish") && Main.rand.Next(8) == 0)
 			{
 				caughtType = mod.ItemType("MutantFish");
 			}
@@ -233,6 +260,18 @@ namespace AlchemistNPC
 			if (player.ZoneTowerStardust && questFish == mod.ItemType("StardustFish") && Main.rand.Next(5) == 0)
 			{
 				caughtType = mod.ItemType("StardustFish");
+			}
+			if (player.ZoneBeach && questFish == mod.ItemType("MiniShark") && Main.rand.Next(8) == 0)
+			{
+				caughtType = mod.ItemType("MiniShark");
+			}
+			if (player.ZoneDesert && questFish == mod.ItemType("MosesFish") && Main.rand.Next(20) == 0 && power < 55)
+			{
+				caughtType = mod.ItemType("MosesFish");
+			}
+			if (player.ZoneDesert && questFish == mod.ItemType("MosesFish") && Main.rand.Next(10) == 0 && power >= 55)
+			{
+				caughtType = mod.ItemType("MosesFish");
 			}
 		}
 	

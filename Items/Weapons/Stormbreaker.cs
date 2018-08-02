@@ -28,8 +28,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.melee = true;
 			item.damage = 200;
 			item.crit = 21;
-			item.width = 40;
-			item.height = 34;
+			item.width = 50;
+			item.height = 40;
 			item.useTime = 10;
 			item.useAnimation = 10;
 			item.hammer = 600;

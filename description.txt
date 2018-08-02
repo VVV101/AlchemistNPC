@@ -7,19 +7,25 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Explorer is secret NPC. Try to figure out, how to spawn her.
 v7.3
 -Added Ebony & Ivory, twin handguns. Available after beating Moon Lord.
--Added Mutant Fish as new hardmode Angler's quest with custom reward.
--Added Dried Fish, special Angel reward. 
-Early hardmode true melee weapon.
--Added Solar/Nebula/Vortex/Stardust quest fishes. 
-Available after beating Lunatic Cultist.
--Added Potion of Darkness, Revengeance exclusive potion. 
-Fills Rage and causes Heart Attack for 5 minutes. Has 5 minutes cooldown. Available in hardmode.
 -Added fixed Quantum Destabilizer. 
 Does not consume any ammo, has a bit bigger damage output. Can be crafted.
 -Added Stormbreaker, post Moon Lord melee weapon, reference to Infinity War.
 Has 2 types of attack.
 -Added Pandora with more attacks unlocked. Can be crafted with Pandora PF422 and some other ingredients.
 Available post Providence with Calamity mod and post Ragnarok with Thorium Mod.
+-Added Dried Fish, unique Angel's quest reward. 
+Early hardmode true melee weapon.
+-Added Mutant Fish fishing quest with unique reward.
+Available after beating Wall of Flesh.
+-Added Moses Fish fishing quest with unique reward.
+Available after beating all Mechanical Bosses.
+-Added Solar/Nebula/Vortex/Stardust quest fishes with custom rewards. 
+Available after beating Lunatic Cultist.
+-Added Mini Shark quest fish with custom reward.
+Available anytime.
+-Added Manna from Heaven, unique Angler's quest reward.
+-Added Potion of Darkness, Revengeance exclusive potion.
+Fills Rage and causes Heart Attack for 5 minutes. Has 5 minutes cooldown. Available in hardmode.
 -Added support for Thorium Mod damage types boosts (except TRUE).
 Including combinations, both Autoinjectors, Memer's Riposte, Paradise Lost set bonus, Big Bird's Lamp, Ninja Potion and Hate Vial.
 -Added support for Mod of Redemption Druidic damage type boost. 

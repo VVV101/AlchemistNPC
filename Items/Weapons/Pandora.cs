@@ -34,7 +34,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.CloneDefaults(ItemID.PiranhaGun);
 			item.ranged = false;
 			item.thrown = true;
-			item.damage = 100;
+			item.damage = 110;
 			item.useStyle = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
