@@ -53,6 +53,14 @@ namespace AlchemistNPC.Items
 			player.magicCrit -= 5;
 			player.rangedCrit -= 5;
 			player.thrownCrit -= 5;
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				ThoriumBoosts(player);
+				}
+				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				{
+				RedemptionBoost(player);
+				}
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2)
 			{
@@ -64,11 +72,57 @@ namespace AlchemistNPC.Items
 			player.magicCrit += 10;
 			player.rangedCrit += 10;
 			player.thrownCrit += 10;
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				ThoriumBoosts(player);
+				}
+				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				{
+				RedemptionBoost(player);
+				}
 			}
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).MemersRiposte = true;
 			player.buffImmune[mod.BuffType("Uganda")] = true;
 		}
-
+		
+		
+		private void RedemptionBoost(Player player)
+        {
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			RedemptionPlayer.druidDamage += 0.15f;
+				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)
+				{
+				RedemptionPlayer.druidCrit /= 2;
+				}
+				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2)
+				{
+				RedemptionPlayer.druidCrit /= 2;
+				RedemptionPlayer.druidCrit += 10;
+				}
+        }
+		
+		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+		
+		private void ThoriumBoosts(Player player)
+        {
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumPlayer.symphonicDamage += 0.15f;
+			ThoriumPlayer.radiantBoost += 0.15f;
+				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)
+				{
+				ThoriumPlayer.symphonicCrit /= 2;
+				ThoriumPlayer.radiantCrit /= 2;
+				}
+				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2)
+				{
+				ThoriumPlayer.symphonicCrit /= 2;
+				ThoriumPlayer.radiantCrit /= 2;
+				ThoriumPlayer.symphonicCrit += 10;
+				ThoriumPlayer.radiantCrit += 10;
+				}
+        }
+		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
+		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);

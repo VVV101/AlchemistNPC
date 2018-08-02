@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
@@ -35,6 +36,33 @@ namespace AlchemistNPC.Buffs
 		player.lifeRegen += 20;
 		player.endurance -= 0.15f;
 		player.statDefense -= 30;
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				ThoriumBoosts(player);
+				}
+				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				{
+				RedemptionBoost(player);
+				}
 		}
+		
+		private void RedemptionBoost(Player player)
+        {
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			RedemptionPlayer.druidDamage += 0.15f;
+            RedemptionPlayer.druidCrit += 15;
+        }
+		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+		
+		private void ThoriumBoosts(Player player)
+        {
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumPlayer.symphonicDamage += 0.15f;
+            ThoriumPlayer.symphonicCrit += 15;
+			ThoriumPlayer.radiantBoost += 0.15f;
+            ThoriumPlayer.radiantCrit += 15;
+        }
+		
+		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

@@ -5,6 +5,35 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Explorer is secret NPC. Try to figure out, how to spawn her.
+v7.3
+-Added Ebony & Ivory, twin handguns. Available after beating Moon Lord.
+-Added Mutant Fish as new hardmode Angler's quest with custom reward.
+-Added Dried Fish, special Angel reward. 
+Early hardmode true melee weapon.
+-Added Solar/Nebula/Vortex/Stardust quest fishes. 
+Available after beating Lunatic Cultist.
+-Added Potion of Darkness, Revengeance exclusive potion. 
+Fills Rage and causes Heart Attack for 5 minutes. Has 5 minutes cooldown. Available in hardmode.
+-Added fixed Quantum Destabilizer. 
+Does not consume any ammo, has a bit bigger damage output. Can be crafted.
+-Added Stormbreaker, post Moon Lord melee weapon, reference to Infinity War.
+Has 2 types of attack.
+-Added Pandora with more attacks unlocked. Can be crafted with Pandora PF422 and some other ingredients.
+Available post Providence with Calamity mod and post Ragnarok with Thorium Mod.
+-Added support for Thorium Mod damage types boosts (except TRUE).
+Including combinations, both Autoinjectors, Memer's Riposte, Paradise Lost set bonus, Big Bird's Lamp, Ninja Potion and Hate Vial.
+-Added support for Mod of Redemption Druidic damage type boost. 
+Same ways of boost included.
+-Added new ability for Akumu. Now it makes shield which reflects projectiles while its owner has less than 25% HP.
+But this makes weapon deal only 50% of its damage.
+-Added Secret Note #2,3. 
+Obtainable through combining Torn Notes 4,5,6 and 7,8,9.
+-Now Notes book crafted through combining all 3 Secret Notes.
+-Added visual for Shield of Spring.
+-Fixed MP bugs with Otherworldly Portal.
+-Added missing texts on Russian, fixed some of existing ones.
+-Nerfed Pandora PF422.
+-Changed some condition for modded treasure bags.
 v.7.2.1
 -Hotfix for SpecialNPCLoot. Removed Astrum Deus coins drop.
 v7.2

@@ -1,9 +1,9 @@
 author = Gregg/VVV101, somebody0214, RebooT
-version = 7.2.1
+version = 7.3
 displayName = AlchemistNPC
 homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v5-0.52798/
 hideCode = false
-weakReferences = SacredTools, CalamityMod, ThoriumMod, SpiritMod
+weakReferences = SacredTools, CalamityMod, ThoriumMod, SpiritMod, Redemption
 hideResources = false
 includeSource = true
 buildIgnore = *.user, obj\*, bin\*, .vs\*, .git*, referenceImages*.png, .gitattributes, *.csproj

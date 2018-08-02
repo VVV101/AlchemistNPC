@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -60,6 +62,33 @@ namespace AlchemistNPC.Buffs
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("TitanScale")] = true;
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("FabsolVodka")] = true;
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("Omniscience")] = true;
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				ThoriumBoosts(player);
+				}
+				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				{
+				RedemptionBoost(player);
+				}
 		}
+		
+		private void RedemptionBoost(Player player)
+        {
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			RedemptionPlayer.druidDamage += 0.2f;
+            RedemptionPlayer.druidCrit += 5;
+        }
+		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+		
+		private void ThoriumBoosts(Player player)
+        {
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumPlayer.symphonicDamage += 0.2f;
+            ThoriumPlayer.symphonicCrit += 5;
+			ThoriumPlayer.radiantBoost += 0.2f;
+            ThoriumPlayer.radiantCrit += 5;
+        }
+		
+		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

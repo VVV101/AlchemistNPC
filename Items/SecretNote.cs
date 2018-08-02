@@ -13,15 +13,16 @@ namespace AlchemistNPC.Items
 		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Secret Note");
+			DisplayName.SetDefault("Secret Note #1");
 			Tooltip.SetDefault("'If you are reading this, then know, that you could spawn your own Grim Reaper."
-			+ "\nTo do this, you simply need to find the 'Suspicious Looking Scythe', which drops with 1/150 chance from any Treasure Bag in Hardmode."
+			+ "\nTo do this, you simply need to find the ''Suspicious Looking Scythe'';"
+			+ "\nIt drops with a very low chance from any Treasure Bag in Hardmode."
 			+ "\nGLHF!'"
 			+ "\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Тайная записка");
-            Tooltip.AddTranslation(GameCulture.Russian, "'Если ты читаешь это, то знай, что ты можешь призвать своего собственного Жнеца.\nДля того, чтобы сделать это, найти предмет 'Подозрительно Выглядящая Коса'.\nC вероятностью 1/80 выпадает из любой сумки босса в Хардмоде.\nGLHF!'");
+            Tooltip.AddTranslation(GameCulture.Russian, "'Если ты читаешь это, то знай, что ты можешь призвать своего собственного Жнеца.\nДля того, чтобы сделать это, найти предмет 'Подозрительно Выглядящая Коса'.\nC вероятностью 1/150 выпадает из любой сумки босса в Хардмоде.\nGLHF!''\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь.");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "秘密笔记");
+            DisplayName.AddTranslation(GameCulture.Chinese, "秘密笔记 #1");
             Tooltip.AddTranslation(GameCulture.Chinese, "'如果你阅读这篇文章, 之后就会知道, 你可以召唤出自己的死神." +
                 "\n要做到这一点, 你需要找到一个叫做“可疑镰刀”的物品, 它有1/150的几率从任意肉后宝藏袋中掉落." +
                 "\nGLHF!(祝你好运)" +

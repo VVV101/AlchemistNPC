@@ -149,7 +149,7 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA16");
             text.SetDefault(" to stop mocking me? I know my potions can't make you stronger, but at least they aren't as dangerous to drink.");
-            text.AddTranslation(GameCulture.Russian, "перестать дразнить меня? Я знаю, что мои зелья не сделают тебя сильнее, но их хотя бы не столь опасно пить.");
+            text.AddTranslation(GameCulture.Russian, " перестать дразнить меня? Я знаю, что мои зелья не сделают тебя сильнее, но их хотя бы не столь опасно пить.");
             text.AddTranslation(GameCulture.Chinese, " 别再嘲笑我?我知道我的药剂不能让你变强,但是至少他们喝起来不危险.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA17");
@@ -502,6 +502,15 @@ namespace AlchemistNPC.NPCs
 			}
 		}
  
+		public bool CalamityModDownedGuardian
+		{
+		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		}
+		public bool CalamityModDownedPolter
+		{
+		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		}
+ 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
 		if (baseShop){
@@ -525,6 +534,21 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ItemID.SuperHealingPotion);
 		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
+		}
+		if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+		{
+			if(CalamityModDownedGuardian)
+			{
+			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("SupremeHealingPotion"));
+			shop.item[nextSlot].shopCustomPrice = 500000;
+			nextSlot++;
+			}
+			if(CalamityModDownedPolter)
+			{
+			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("OmegaHealingPotion"));
+			shop.item[nextSlot].shopCustomPrice = 2000000;
+			nextSlot++;
+			}
 		}
 		shop.item[nextSlot].SetDefaults (ItemID.LesserManaPotion);
 		shop.item[nextSlot].shopCustomPrice = 500;

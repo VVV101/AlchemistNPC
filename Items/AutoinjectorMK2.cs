@@ -61,19 +61,6 @@ namespace AlchemistNPC.Items
 			{
 			player.AddBuff(mod.BuffType("CalamityComb"), 2);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-			{
-			player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("CritChance"), 2, true);
-            player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("BloodRush"), 2, true);
-			player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("CombatProwess"), 2, true);
-			player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("Frenzy"), 2, true);
-			player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("CreativityDrop"), 2, true);
-			player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("EarwormBuff"), 2, true);
-			player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("InspirationReach"), 2, true);
-			player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("RadiantBoost"), 2, true);
-			player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("HolyBonus"), 2, true);
-			player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("DashBuff"), 2, true);
-			}
 			if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
 			{
 			player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("SpiritBuff"), 2, true);
@@ -83,6 +70,43 @@ namespace AlchemistNPC.Items
 			player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("TurtlePotionBuff"), 2, true);
 			player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("BismitePotionBuff"), 2, true);
 			}
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				ThoriumBoosts(player);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("CritChance"), 2, true);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("BloodRush"), 2, true);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("CombatProwess"), 2, true);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("Frenzy"), 2, true);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("CreativityDrop"), 2, true);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("EarwormBuff"), 2, true);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("InspirationReach"), 2, true);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("RadiantBoost"), 2, true);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("HolyBonus"), 2, true);
+				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("DashBuff"), 2, true);
+				}
+				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				{
+				RedemptionBoost(player);
+				}
 		}
+		
+		private void RedemptionBoost(Player player)
+        {
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			RedemptionPlayer.druidDamage += 0.15f;
+            RedemptionPlayer.druidCrit += 10;
+        }
+		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+		
+		private void ThoriumBoosts(Player player)
+        {
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumPlayer.symphonicDamage += 0.15f;
+            ThoriumPlayer.symphonicCrit += 10;
+			ThoriumPlayer.radiantBoost += 0.15f;
+            ThoriumPlayer.radiantCrit += 10;
+        }
+		
+		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

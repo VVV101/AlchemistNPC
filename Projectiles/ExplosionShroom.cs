@@ -43,13 +43,13 @@ namespace AlchemistNPC.Projectiles
 
                 if (distance < 400f && !target.friendly && target.active)
                 {
-                    if (projectile.ai[0] > 30f)
+                    if (projectile.ai[0] > 25f)
                     {
                         distance = 1.6f / distance;
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
 						Main.PlaySound(SoundID.Item93.WithVolume(.9f), projectile.position);
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, mod.ProjectileType("Electrobeam"), projectile.damage*2, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, mod.ProjectileType("Electrobeam"), projectile.damage, 0, Main.myPlayer, 0f, 0f);
                         projectile.ai[0] = 0f;
                     }
                 }

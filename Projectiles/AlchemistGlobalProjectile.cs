@@ -33,6 +33,40 @@ namespace AlchemistNPC.Projectiles
 			}
 		}
 
+		public override bool OnTileCollide(Projectile projectile, Vector2 oldVelocity)
+        {
+            if (projectile.aiStyle == 88 && projectile.knockBack == .5f || (projectile.knockBack >= .2f && projectile.knockBack < .5f))
+            {
+                if (projectile.velocity.X != oldVelocity.X)
+                {
+                    projectile.velocity.X = -oldVelocity.X;
+                    if(Math.Abs(projectile.velocity.X) <= 4)
+                    {
+                        projectile.velocity.X *= 2;
+                    }
+                }
+                if (projectile.velocity.Y != oldVelocity.Y)
+                {
+                    projectile.velocity.Y = -oldVelocity.Y;
+                    if (Math.Abs(projectile.velocity.Y) <= 4)
+                    {
+                        projectile.velocity.Y *= 2;
+                    }
+                }
+                return true;
+            }
+            return true;
+        }
+		
+        public override bool? CanHitNPC(Projectile projectile, NPC target)
+        {
+            if (projectile.aiStyle == 88 && ((projectile.knockBack == .5f || projectile.knockBack == .4f) || (projectile.knockBack >= .4f && projectile.knockBack < .5f)) && target.immune[projectile.owner] > 0)
+            {
+                return false;
+            }
+            return null;
+        }
+		
 		public void createBee(Projectile projectile) {
 			Player player = Main.player[projectile.owner]; 
 			Vector2 vel = new Vector2(0, -1);
@@ -124,9 +158,38 @@ namespace AlchemistNPC.Projectiles
 					}
 				}
 			}
+			if (projectile.aiStyle == 88 && projectile.knockBack == .5f || (projectile.knockBack >= .2f && projectile.knockBack < .5f))
+            {
+                projectile.hostile = false;
+                projectile.friendly = true;
+                projectile.melee = true;
+                projectile.penetrate = -1;
+                if((projectile.knockBack >= .45f && projectile.knockBack < .5f) && projectile.oldVelocity != projectile.velocity && Main.rand.Next(0, 4)==0)
+                {
+                    projectile.knockBack -= .0125f;
+                    Vector2 vector83 = projectile.velocity.RotatedByRandom(.1f);
+                    Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector83.X, vector83.Y, projectile.type, projectile.damage, projectile.knockBack-.025f, projectile.owner, projectile.velocity.ToRotation(), projectile.ai[1]);
+                }
+            }
 		}
 		
+		public override void ModifyHitPlayer(Projectile projectile, Player target, ref int damage, ref bool crit)	
+		{
+			Player player = Main.player[projectile.owner];
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Akumu == true && projectile.hostile)
+			{
+				ReflectProjectile(projectile);
+				damage = 0;
+			}
+		}
 		
+		public void ReflectProjectile(Projectile proj)
+		{
+			proj.velocity *= -1;
+			proj.damage *= 25;
+			proj.hostile = false;
+			proj.friendly = true;
+		}
 		
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
@@ -210,6 +273,11 @@ namespace AlchemistNPC.Projectiles
 				}
 				target.immune[projectile.owner] = 2;
 			}
+			
+			if (projectile.aiStyle == 88 && (projectile.knockBack >= .2f && projectile.knockBack <= .5f))
+            {
+                target.immune[projectile.owner] = 3;
+            }
 		}
 	}
 }

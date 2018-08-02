@@ -10,8 +10,9 @@ namespace AlchemistNPC.Items.Weapons
 	{
 		public override bool Autoload(ref string name)
 		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		return (ModLoader.GetMod("Redemption") == null && ModLoader.GetMod("AlchemistNPCContentDisabler") == null);
 		}
+		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Reverberation (T-04-53)");

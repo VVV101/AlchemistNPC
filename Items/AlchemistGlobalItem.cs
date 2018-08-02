@@ -41,7 +41,7 @@ namespace AlchemistNPC.Items
 		
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
-			 string Knuckles = Language.GetTextValue("Mods.AlchemistNPC.Knuckles");
+			string Knuckles = Language.GetTextValue("Mods.AlchemistNPC.Knuckles");
             //SBMW:Vanilla
             string KingSlime = Language.GetTextValue("Mods.AlchemistNPC.KingSlime");
             string EyeofCthulhu = Language.GetTextValue("Mods.AlchemistNPC.EyeofCthulhu");

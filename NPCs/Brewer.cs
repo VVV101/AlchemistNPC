@@ -52,7 +52,7 @@ namespace AlchemistNPC.NPCs
 
             ModTranslation text = mod.CreateTranslation("ShopB1");
             text.SetDefault("1st shop (Vanilla)                     ");
-            text.AddTranslation(GameCulture.Russian, "1-ый магазин (без модовоых)");
+            text.AddTranslation(GameCulture.Russian, "1-ый магазин (без модовых)");
             text.AddTranslation(GameCulture.Chinese, "第一商店 (原版)              ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("ShopB2");
@@ -468,6 +468,11 @@ namespace AlchemistNPC.NPCs
 		get { return SacredTools.ModdedWorld.downedLunarians; }
 		}
  
+		public bool CalamityModRevengeance
+		{
+        get { return CalamityMod.CalamityWorld.revenge; }
+        }
+ 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
 		if (Shop1)
@@ -630,7 +635,7 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("FortitudePotion"));
 			shop.item[nextSlot].shopCustomPrice = 15000;
 			nextSlot++;
-		if (Main.hardMode)
+			if (Main.hardMode)
 				{		
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("InvincibilityPotion"));
 				shop.item[nextSlot].shopCustomPrice = 30000;
@@ -638,6 +643,15 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TitanSkinPotion"));
 				shop.item[nextSlot].shopCustomPrice = 50000;
 				nextSlot++;
+					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					{
+						if (CalamityModRevengeance)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("HeartAttackPotion"));
+						shop.item[nextSlot].shopCustomPrice = 250000;
+						nextSlot++;
+						}
+					}
 		if (NPC.downedMechBossAny)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("DiscordPotion"));
@@ -686,33 +700,33 @@ namespace AlchemistNPC.NPCs
 		{
 				if (NPC.downedBoss3)
 				{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("FrostCoatingItem"));
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ExplosiveCoatingItem"));
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GorganCoatingItem"));
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("LifeLeechCoatingItem"));
-			shop.item[nextSlot].shopCustomPrice = 5000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ToxicCoatingItem"));
-			shop.item[nextSlot].shopCustomPrice = 2500;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CreativityPotion"));
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("EarwormPotion"));
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("FrostCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 5000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ExplosiveCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 5000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GorganCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 5000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("LifeLeechCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 5000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ToxicCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 2500;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CreativityPotion"));
+				shop.item[nextSlot].shopCustomPrice = 10000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("EarwormPotion"));
+				shop.item[nextSlot].shopCustomPrice = 10000;
+				nextSlot++;
 				}
-			if (Main.hardMode)
+				if (Main.hardMode)
 				{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("InspirationReachPotion"));
-			shop.item[nextSlot].shopCustomPrice = 20000;
-            nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("InspirationReachPotion"));
+				shop.item[nextSlot].shopCustomPrice = 20000;
+				nextSlot++;
 				}
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GlowingPotion"));
 			shop.item[nextSlot].shopCustomPrice = 20000;
@@ -748,42 +762,42 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].shopCustomPrice = 20000;
             nextSlot++;
 		}
-if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			{
+				if (NPC.downedBoss3)
+				{
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PotionofOmniscience"));
+				shop.item[nextSlot].shopCustomPrice = 20000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZergPotion"));
+				shop.item[nextSlot].shopCustomPrice = 30000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZenPotion"));
+				shop.item[nextSlot].shopCustomPrice = 30000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharimsStimulants"));
+				shop.item[nextSlot].shopCustomPrice = 100000;
+				nextSlot++;
+					if (Main.hardMode)
 					{
-						if (NPC.downedBoss3)
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CadencePotion"));
+					shop.item[nextSlot].shopCustomPrice = 40000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("FabsolsVodka"));
+					shop.item[nextSlot].shopCustomPrice = 100000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("RevivifyPotion"));
+					shop.item[nextSlot].shopCustomPrice = 50000;
+					nextSlot++;
+						if (NPC.downedGolemBoss)
 						{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PotionofOmniscience"));
-			shop.item[nextSlot].shopCustomPrice = 20000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZergPotion"));
-			shop.item[nextSlot].shopCustomPrice = 30000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZenPotion"));
-			shop.item[nextSlot].shopCustomPrice = 30000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharimsStimulants"));
-			shop.item[nextSlot].shopCustomPrice = 100000;
-            nextSlot++;
-			if (Main.hardMode)
-							{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CadencePotion"));
-			shop.item[nextSlot].shopCustomPrice = 40000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("FabsolsVodka"));
-			shop.item[nextSlot].shopCustomPrice = 100000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("RevivifyPotion"));
-			shop.item[nextSlot].shopCustomPrice = 50000;
-            nextSlot++;
-			if (NPC.downedGolemBoss)
-								{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TitanScalePotion"));
-			shop.item[nextSlot].shopCustomPrice = 40000;
-            nextSlot++;
-								}
-							}
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TitanScalePotion"));
+						shop.item[nextSlot].shopCustomPrice = 40000;
+						nextSlot++;
 						}
 					}
+				}
+			}
 		}
 		if (Shop3)
 		{

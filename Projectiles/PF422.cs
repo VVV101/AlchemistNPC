@@ -11,7 +11,7 @@ namespace AlchemistNPC.Projectiles
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("PF422");     //The English name of the projectile
+			DisplayName.SetDefault("PF422");
 			Main.projFrames[projectile.type] = 4;
 		}
 
@@ -21,7 +21,7 @@ namespace AlchemistNPC.Projectiles
 			projectile.ranged = false;
 			projectile.thrown = true;
 			projectile.aiStyle = 39;
-			aiType = 190;           //Act exactly like default Bullet
+			aiType = 190;
 		}
 		
 		public override void AI()

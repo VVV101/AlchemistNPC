@@ -32,7 +32,6 @@ using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.GameInput;
 using AlchemistNPC;
  
 namespace AlchemistNPC.NPCs

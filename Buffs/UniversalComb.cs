@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -81,6 +83,33 @@ namespace AlchemistNPC.Buffs
             player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
 			++player.maxMinions;
 			++player.maxMinions;
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				ThoriumBoosts(player);
+				}
+				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				{
+				RedemptionBoost(player);
+				}
 		}
+		
+		private void RedemptionBoost(Player player)
+        {
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			RedemptionPlayer.druidDamage += 0.1f;
+            RedemptionPlayer.druidCrit += 10;
+        }
+		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+		
+		private void ThoriumBoosts(Player player)
+        {
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumPlayer.symphonicDamage += 0.1f;
+            ThoriumPlayer.symphonicCrit += 10;
+			ThoriumPlayer.radiantBoost += 0.1f;
+            ThoriumPlayer.radiantCrit += 10;
+        }
+		
+		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

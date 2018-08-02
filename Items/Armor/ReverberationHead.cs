@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -28,8 +29,8 @@ namespace AlchemistNPC.Items.Armor
             Tooltip.AddTranslation(GameCulture.Chinese, "'经过数次加工处理后, 这件护甲的表面变得光滑而又坚硬.'\n[c/FF0000:EGO 盔甲]\n增加20%远程伤害");
 
             ModTranslation text = mod.CreateTranslation("ReverberationSetBonus");
-            text.SetDefault("Forms shield around weilder. Shield reduces all incoming damage by 15%\nSpeeds up all arrows\nImproves Reverberation Crossbow:\nLowers manacost for additional projectiles\nMakes crossbow shot multiple projectiles");
-            text.AddTranslation(GameCulture.Russian, "Создаёт щит вокруг владельца. Щит уменьшает весь входящий урон на 15%\nУскоряет все стрелы\nУлучшает арбалет 'Реверберация'\nУменьшает затраты маны на выстрел дополнительными снарядами\nАрбалет будет выстреливать несколько дополнительных снарядов");
+            text.SetDefault("Forms shield around weilder. Shield reduces all incoming damage by 15%\nSpeeds up all arrows\nImproves Reverberation Crossbow:\nLowers manacost for additional projectiles\nMakes crossbow shot multiple projectiles\nBoosts Druidic type damage and critical strike chance by 20%");
+            text.AddTranslation(GameCulture.Russian, "Создаёт щит вокруг владельца. Щит уменьшает весь входящий урон на 15%\nУскоряет все стрелы\nУлучшает арбалет 'Реверберация'\nУменьшает затраты маны на выстрел дополнительными снарядами\nАрбалет будет выстреливать несколько дополнительных снарядов\nУведичивает Друидский тип урона и шанс критического удара на 20%");
             text.AddTranslation(GameCulture.Chinese, "在玩家周围形成一圈护盾. 护盾减少15%全部即将到来的伤害\n加速全部箭矢\n加强余香弩:\n降低额外子弹的魔法消耗\n让弩发射更多的子弹");
             mod.AddTranslation(text);
         }
@@ -65,7 +66,33 @@ namespace AlchemistNPC.Items.Armor
 			player.magicQuiver = true;
 			player.AddBuff(mod.BuffType("ShieldofSpring"), 300);
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).RevSet = true;
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				ThoriumBoosts(player);
+				}
+				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				{
+				RedemptionBoost(player);
+				}
 		}
+		
+		private void RedemptionBoost(Player player)
+        {
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			RedemptionPlayer.druidDamage += 0.1f;
+            RedemptionPlayer.druidCrit += 8;
+        }
+		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+		
+		private void ThoriumBoosts(Player player)
+        {
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumPlayer.symphonicDamage += 0.1f;
+            ThoriumPlayer.symphonicCrit += 8;
+			ThoriumPlayer.radiantBoost += 0.1f;
+            ThoriumPlayer.radiantCrit += 8;
+        }
+		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 
 		public override void AddRecipes()
 		{

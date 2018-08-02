@@ -87,7 +87,34 @@ namespace AlchemistNPC.Items.Armor
 			player.magicCrit += 25;
 			player.rangedCrit += 25;
             player.thrownCrit += 25;
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				ThoriumBoosts(player);
+				}
+				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				{
+				RedemptionBoost(player);
+				}
 		}
+		
+		private void RedemptionBoost(Player player)
+        {
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			RedemptionPlayer.druidDamage *= 1.35f;
+            RedemptionPlayer.druidCrit += 25;
+        }
+		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+		
+		private void ThoriumBoosts(Player player)
+        {
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumPlayer.symphonicDamage *= 1.35f;
+            ThoriumPlayer.symphonicCrit += 25;
+			ThoriumPlayer.radiantBoost *= 1.35f;
+            ThoriumPlayer.radiantCrit += 25;
+        }
+		
+		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 		
 		public override void AddRecipes()
 		{

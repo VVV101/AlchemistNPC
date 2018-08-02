@@ -38,7 +38,7 @@ namespace AlchemistNPC.Items
 			item.defense = 4;
 			item.lifeRegen = 2;
 		}
-
+		
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.thrownDamage += 0.1f;
@@ -53,7 +53,34 @@ namespace AlchemistNPC.Items
 			player.pStone = true;
 			player.longInvince = true;
 			player.AddBuff(mod.BuffType("UniversalComb"), 2);
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				ThoriumBoosts(player);
+				}
+				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				{
+				RedemptionBoost(player);
+				}
 		}
+		
+		private void RedemptionBoost(Player player)
+        {
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			RedemptionPlayer.druidDamage += 0.1f;
+            RedemptionPlayer.druidCrit += 8;
+        }
+		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+		
+		private void ThoriumBoosts(Player player)
+        {
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumPlayer.symphonicDamage += 0.1f;
+            ThoriumPlayer.symphonicCrit += 8;
+			ThoriumPlayer.radiantBoost += 0.1f;
+            ThoriumPlayer.radiantCrit += 8;
+        }
+		
+		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 
 		public override bool CanUseItem(Player player)
 		{

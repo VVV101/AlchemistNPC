@@ -31,7 +31,6 @@ using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.GameInput;
 using AlchemistNPC;
 
 namespace AlchemistNPC
@@ -39,6 +38,12 @@ namespace AlchemistNPC
 	public class AlchemistNPCPlayer : ModPlayer
 	{
 		public bool AutoinjectorMK2 = false;
+		public bool Akumu = false;
+		public bool DriedFish = false;
+		public bool SolarFish = false;
+		public bool NebulaFish = false;
+		public bool VortexFish = false;
+		public bool StardustFish = false;
 		public bool Traps = false;
 		public bool Yui = false;
 		public bool YuiS = false;
@@ -65,6 +70,7 @@ namespace AlchemistNPC
 		public bool sscope = false;
 		public bool lwm = false;
 		public bool DB = false;
+		public int DisasterGauge = 0;
 		
 		private const int maxLifeElixir = 2;
 		public int LifeElixir = 0;
@@ -76,6 +82,13 @@ namespace AlchemistNPC
 		public override void ResetEffects()
 		{
 			AlchemistNPC.BastScroll = false;
+			AlchemistNPC.Stormbreaker = false;
+			DriedFish = false;
+			SolarFish = false;
+			NebulaFish = false;
+			VortexFish = false;
+			StardustFish = false;
+			Akumu = false;
 			AutoinjectorMK2 = false;
 			EyeOfJudgement = false;
 			LaetitiaSet = false;
@@ -154,6 +167,73 @@ namespace AlchemistNPC
 			LifeElixir = tag.GetInt("LifeElixir");
 			Fuaran = tag.GetInt("Fuaran");
 			KeepBuffs = tag.GetInt("KeepBuffs");
+		}
+	
+		public override void AnglerQuestReward(float quality, List<Item> rewardItems)
+		{
+			if (DriedFish)
+			{
+				Item vobla = new Item();
+				vobla.SetDefaults(mod.ItemType("DriedFish"));
+				vobla.stack = 1;
+				rewardItems.Add(vobla);
+			}
+			if (SolarFish)
+			{
+				Item solar = new Item();
+				solar.SetDefaults(ItemID.FragmentSolar);
+				solar.stack = 25;
+				rewardItems.Add(solar);
+			}
+			if (NebulaFish)
+			{
+				Item nebula = new Item();
+				nebula.SetDefaults(ItemID.FragmentNebula);
+				nebula.stack = 25;
+				rewardItems.Add(nebula);
+			}
+			if (VortexFish)
+			{
+				Item vortex = new Item();
+				vortex.SetDefaults(ItemID.FragmentVortex);
+				vortex.stack = 25;
+				rewardItems.Add(vortex);
+			}
+			if (StardustFish)
+			{
+				Item stardust = new Item();
+				stardust.SetDefaults(ItemID.FragmentStardust);
+				stardust.stack = 25;
+				rewardItems.Add(stardust);
+			}
+		}
+
+		public override void CatchFish(Item fishingRod, Item bait, int power, int liquidType, int poolSize, int worldLayer, int questFish, ref int caughtType, ref bool junk)
+		{
+			if (junk)
+			{
+				return;
+			}
+			if (questFish == mod.ItemType("MutantFish") && Main.rand.Next(10) == 0)
+			{
+				caughtType = mod.ItemType("MutantFish");
+			}
+			if (player.ZoneTowerSolar && questFish == mod.ItemType("SolarFish") && Main.rand.Next(5) == 0)
+			{
+				caughtType = mod.ItemType("SolarFish");
+			}
+			if (player.ZoneTowerNebula && questFish == mod.ItemType("NebulaFish") && Main.rand.Next(5) == 0)
+			{
+				caughtType = mod.ItemType("NebulaFish");
+			}
+			if (player.ZoneTowerVortex && questFish == mod.ItemType("VortexFish") && Main.rand.Next(5) == 0)
+			{
+				caughtType = mod.ItemType("VortexFish");
+			}
+			if (player.ZoneTowerStardust && questFish == mod.ItemType("StardustFish") && Main.rand.Next(5) == 0)
+			{
+				caughtType = mod.ItemType("StardustFish");
+			}
 		}
 	
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
@@ -318,6 +398,10 @@ namespace AlchemistNPC
             if (MemersRiposte && crit)
             {
                 damage *= 2;
+            }
+			if (proj.type == mod.ProjectileType("DemonicBullet") && crit && Main.rand.Next(200) == 0)
+            {
+                damage = 33333;
             }
 		}
 		

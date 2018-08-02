@@ -24,7 +24,9 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("It means ''demon'' on Japanese"
 			+"\nIts slice pierces through any amount of enemies on its way"
 			+"\nLeft click launcher short travelling projectile"
-			+"\nRight click slices the air in place");
+			+"\nRight click slices the air in place"
+			+"\nWhile at 25% of life or lower, Akumu generates projectile reflecting shield"
+			+"\nThis would drop weapon power until life will go back to 25%");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Акуму''");
             Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''демон'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши");
 
@@ -50,6 +52,15 @@ namespace AlchemistNPC.Items.Weapons
 			item.shootSpeed = 8f;
 		}
 		
+		public override void HoldItem(Player player)
+		{
+			if (player.statLife < player.statLifeMax2/4)
+			{
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Akumu = true;
+			player.AddBuff(mod.BuffType("Akumu"), 2);
+			}
+		}
+		
 		public override bool AltFunctionUse(Player player)
 		{
 			return true;
@@ -72,6 +83,10 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			if (player.statLife < player.statLifeMax2/4)
+			{
+			damage /= 2;
+			}
 			if (player.altFunctionUse != 2)
 			{
 			item.noMelee = false;

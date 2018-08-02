@@ -13,6 +13,8 @@ namespace AlchemistNPC.NPCs
 	{
 		public static bool OH = false;
 		public static bool SN = false;
+		public static bool SN2 = false;
+		public static bool SN3 = false;
 		public static bool AS = false;
 		public static bool TN1 = false;
 		public static bool TN2 = false;
@@ -135,6 +137,8 @@ namespace AlchemistNPC.NPCs
 		public override void ResetEffects()
 		{
 		SN = false;
+		SN2 = false;
+		SN3 = false;
 		AS = false;
 		TN1 = false;
 		TN2 = false;
@@ -163,7 +167,7 @@ namespace AlchemistNPC.NPCs
 			animationType = NPCID.Merchant;
 		}
 		
-public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
 			if (NPC.downedBoss1)
 			{
@@ -293,6 +297,14 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 						{
 							SN = true;
 						}
+						if (player.inventory[j].type == mod.ItemType("SecretNote2"))
+						{
+							SN2 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("SecretNote3"))
+						{
+							SN3 = true;
+						}
 						if (player.inventory[j].type == mod.ItemType("TornNote1"))
 						{
 							TN1 = true;
@@ -336,7 +348,15 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			{
 			button2 = Combine;
 			}
-			if (SN && TN4 && TN5 && TN6 && TN7 && TN8 && TN9)
+			if (TN4 && TN5 && TN6 && !SN2)
+			{
+			button2 = Combine;
+			}
+			if (TN7 && TN8 && TN9 && !SN3)
+			{
+			button2 = Combine;
+			}
+			if (SN && SN2 && SN3)
 			{
 			button2 = Combine;
 			}
@@ -377,19 +397,15 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 						}
 					}
 				}
-				if (SN && TN4 && TN5 && TN6 && TN7 && TN8 && TN9)
+				if (TN4 && TN5 && TN6 && !SN2)
 				{
-					player.QuickSpawnItem(mod.ItemType("NotesBook"));
+					player.QuickSpawnItem(mod.ItemType("SecretNote2"));
 					shop = false;
-					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("SecretNote")))
+					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("TornNote4")))
 					{
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == mod.ItemType("SecretNote"))
-							{
-								inventory[k].stack--;
-							}
 							if (inventory[k].type == mod.ItemType("TornNote4"))
 							{
 								inventory[k].stack--;
@@ -402,6 +418,18 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 							{
 								inventory[k].stack--;
 							}
+						}
+					}
+				}
+				if (TN7 && TN8 && TN9 && !SN3)
+				{
+					player.QuickSpawnItem(mod.ItemType("SecretNote3"));
+					shop = false;
+					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("TornNote7")))
+					{
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
 							if (inventory[k].type == mod.ItemType("TornNote7"))
 							{
 								inventory[k].stack--;
@@ -413,7 +441,31 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 							if (inventory[k].type == mod.ItemType("TornNote9"))
 							{
 								inventory[k].stack--;
-							}	
+							}
+						}
+					}
+				}
+				if (SN && SN2 && SN3)
+				{
+					player.QuickSpawnItem(mod.ItemType("NotesBook"));
+					shop = false;
+					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("SecretNote")))
+					{
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
+							if (inventory[k].type == mod.ItemType("SecretNote"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("SecretNote2"))
+							{
+								inventory[k].stack--;
+							}
+							if (inventory[k].type == mod.ItemType("SecretNote3"))
+							{
+								inventory[k].stack--;
+							}
 						}
 					}
 				}

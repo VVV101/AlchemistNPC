@@ -57,13 +57,7 @@ namespace AlchemistNPC.NPCs
                 {
                     if (Main.player[index].active && Main.player[index].talkNPC == npc.whoAmI)
                     {
-						for (int h = 0; h < 1; h++) 
-						{
-						Vector2 vel = new Vector2(0, -1);
-						vel *= 0f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("Drainer"), 150, 0, Main.myPlayer);
-						}
-                        string barrierStabilized = Language.GetTextValue("Mods.AlchemistNPC.barrierStabilized");
+						string barrierStabilized = Language.GetTextValue("Mods.AlchemistNPC.barrierStabilized");
                         Main.NewText(barrierStabilized, 55, 55, 255);
 						npc.Transform(mod.NPCType("Explorer"));
 						return;

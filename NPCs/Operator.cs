@@ -182,51 +182,63 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO22");
             text.SetDefault("It appears I was wrong about the queen bees. Their memory storage contains the ramblings of a scientist who was blinded by ambition, who cruelly introduced the plague to them. Let us classify them as MP-0X.");
-            text.AddTranslation(GameCulture.Chinese, "看来我对蜂后的看法是错的. 它们的记忆中储存着一个被野心蒙蔽了双眼的科学家的漫谈, 他残酷地把瘟疫带给它们. 让我们把它们归类为MP-0X.");
+            text.AddTranslation(GameCulture.Russian, "Похоже, что я была неправа по поводу Королев Пчёл. Их память хранит бредовые мысли учёного, ослеплённого своими амбициями, того, кто жестоко заразил их чумой. Давайте классифицируем их как МР-0Х.");
+			text.AddTranslation(GameCulture.Chinese, "看来我对蜂后的看法是错的. 它们的记忆中储存着一个被野心蒙蔽了双眼的科学家的漫谈, 他残酷地把瘟疫带给它们. 让我们把它们归类为MP-0X.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO23");
             text.SetDefault("According to my notes, this Coznix you speak of was a lesser Void Observer, classified as OB-V-01. There are greater threats waiting behind the veil of reality.");
-            text.AddTranslation(GameCulture.Chinese, "根据我的记录, 你所说的那个克兹尼格斯是一个较弱的虚空巡查者, 被归类为OB-V-01. 在现实的面纱后面有着更大的威胁在等待着.");
+            text.AddTranslation(GameCulture.Russian, "Согласно моим записям, этот Козникс, о котором ты говорил, является малым Созерцателем Пустоты, классифицированном как OB-V-01. Похоже, что существуют ещё большие опасности за Границей Реальности.");
+			text.AddTranslation(GameCulture.Chinese, "根据我的记录, 你所说的那个克兹尼格斯是一个较弱的虚空巡查者, 被归类为OB-V-01. 在现实的面纱后面有着更大的威胁在等待着.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO24");
             text.SetDefault("This flying scouter..... curious. From the memory banks stored in the wreckage, this looks to have been a scouting ship for the Martians, to determine how hospitable Terraria is. I fear the pilot's last moments have been transmitted to the main Martian command centre.");
-            text.AddTranslation(GameCulture.Chinese, "这个飞行侦察者.....好奇. 从储存在残骸中的数据库来看, 这似乎是一艘为火星人而设的侦察船, 用来确定地球人的居住环境. 我担心飞行员最后看到的已经被上传到中央火星指挥中心.");
+			text.AddTranslation(GameCulture.Russian, "Этот летающая тарелка... интересна. Согласно носителям данных с места крушения, это корабль-разведчик Марсиан, целью которого является проверка того, насколько мир Террарии подходит для жизни. Боюсь, что последним, что успел сделать пилот этого корабля, была отправка сообщения в Главный Командный Центр Марсиан.");           
+			text.AddTranslation(GameCulture.Chinese, "这个飞行侦察者.....好奇. 从储存在残骸中的数据库来看, 这似乎是一艘为火星人而设的侦察船, 用来确定地球人的居住环境. 我担心飞行员最后看到的已经被上传到中央火星指挥中心.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO25");
             text.SetDefault("Turning a mages' power in on himself and trapping him within it is no easy task, but to observe cruelty of such magnitude..... Permafrost, former lord of the Ice Castle, may you see peace.");
-            text.AddTranslation(GameCulture.Chinese, "把一个法师的力量转移到自己身上并且用它困住他并非易事, 但是观察如此残酷的行为...永冻之土, 前冰堡之王, 愿你看到和平.");
+            text.AddTranslation(GameCulture.Russian, "Обращение силы мага против его самого и его заключение ей же непростая задача, но видя такую жестокость... Вечный Хлад, бывший властелин Ледяного Замка, может ты теперь обретёшь покой.");
+			text.AddTranslation(GameCulture.Chinese, "把一个法师的力量转移到自己身上并且用它困住他并非易事, 但是观察如此残酷的行为...永冻之土, 前冰堡之王, 愿你看到和平.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO26");
             text.SetDefault("The Starplate raider is a Genius Stardust Centipede, or a G-S-C3, popular with the Martian elite as lifelong companions and raiding partners. It must have wandered far from home, judging from the transmitter memory banks I recovered.");
-            text.AddTranslation(GameCulture.Chinese, "星盘袭击者是个天才星尘蜈蚣, 或是G-S-C3, 作为终身伴侣和合作伙伴在火星精英中很受欢迎. 从我恢复出的巡航机的存储芯片来看, 他一定在离家很远的地方探索着");
+            text.AddTranslation(GameCulture.Russian, "Звёздный Рейндер это Гениальная Сороконожка Звёздной Пыли или G-S-C3, известная среди Марсианской Элиты как долгоживущий компаньон и партнёры для рейдерских экспедиций. Похоже, она ушла очень далеко от дома, судя по блокам данных, что я смогла восстановить.");
+			text.AddTranslation(GameCulture.Chinese, "星盘袭击者是个天才星尘蜈蚣, 或是G-S-C3, 作为终身伴侣和合作伙伴在火星精英中很受欢迎. 从我恢复出的巡航机的存储芯片来看, 他一定在离家很远的地方探索着");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO27");
-            text.SetDefault("I took the time to analize the remains of this incredible creature, every time it attacked, the entire planet seem to resonate within its will, I can do nothing but to worry about the consequences of its death, at least you saved terraria of certain doom..........again.");
-            text.AddTranslation(GameCulture.Chinese, "我花了时间对这个不可思议的生物的遗体进行了分析, 每次它攻击的时候, 整个星球似乎都在它的意愿中产生共鸣, 我除了担心它的死亡的后果之外, 什么都做不了, 至少你又一次从末日中拯救了Terraria...又一次");
+            text.SetDefault("I took the time to analize the remains of this incredible creature. Every time it attacked, the entire planet seem to resonate within its will. I can do nothing but to worry about the consequences of its death. At least, you saved Terraria of certain doom..........again.");
+            text.AddTranslation(GameCulture.Russian, "Я потратила некоторое время, чтобы проанализировать останки этого невероятного творения. Каждый раз, когда оно атаковало, вся планета резонировала против его воли. Я не могу сделать ничего, кроме как волноваться о последствиях его смерти. Во всяком случае, ты спас Террарию от незавидной судьбы...... вновь.");
+			text.AddTranslation(GameCulture.Chinese, "我花了时间对这个不可思议的生物的遗体进行了分析, 每次它攻击的时候, 整个星球似乎都在它的意愿中产生共鸣, 我除了担心它的死亡的后果之外, 什么都做不了, 至少你又一次从末日中拯救了Terraria...又一次");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO28");
             text.SetDefault("Such an ancient presence is worth documenting - the material of its plates can withstand temperatures equal to the core of the Terrarian Sun! This will revolutionize containment procedures for ARS-0N prisoners if we can make materials half as resistant to heat!");
-            text.AddTranslation(GameCulture.Chinese, "这样一个古老的存在是值得记录的--它外表的材料可以承受与地球太阳核心的温度相等的温度!如果我们能使材料具有一半的耐热性, 这将彻底改变对 ARS-0N 囚犯的控制装置!");
+            text.AddTranslation(GameCulture.Russian, "Столь древняя сущность заслуживает документирования. Материалы её пластин могут выдержать температуру, равную ядру Солнца Террарии! Это революционизирует методы сдерживания для ARS-0N узников если мы сможем создать материалы, которые будут иметь хотя бы половину подобной стойкости.");
+			text.AddTranslation(GameCulture.Chinese, "这样一个古老的存在是值得记录的--它外表的材料可以承受与地球太阳核心的温度相等的温度!如果我们能使材料具有一半的耐热性, 这将彻底改变对 ARS-0N 囚犯的控制装置!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO29");
-            text.SetDefault("Whoever made the ravager deserves to be put in HI-MAX containment. All those tortured souls....... Well, at least you put them out of their misery.");
-            text.AddTranslation(GameCulture.Chinese, "那些制造毁灭魔像的人就应该被关进 HI-MAX 监狱中去. 这些可怜的灵魂受尽了折磨......好吧, 至少你将他们从痛苦之渊中解放出来");
+            text.SetDefault("Whoever made the Ravager deserves to be put in HI-MAX containment. All those tortured souls....... Well, at least you put them out of their misery.");
+			text.AddTranslation(GameCulture.Russian, "Тот, кто создал Опустошителя, заслуживает быть заключённый в Камере Максимального Содержания. Все эти измученные души.... Ну, по крайней мере ты освободил их от бренного существования.");
+			text.AddTranslation(GameCulture.Chinese, "那些制造毁灭魔像的人就应该被关进 HI-MAX 监狱中去. 这些可怜的灵魂受尽了折磨......好吧, 至少你将他们从痛苦之渊中解放出来");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO30");
-            text.SetDefault("Interesting... those bumblebirbs were actually meant to be clones of Yharon. I’m glad that experiment was a failure!");
-            text.AddTranslation(GameCulture.Chinese, "有意思...那些癫痫鸟实际上是丛林龙犽戎的克隆体. 我很高兴看到那些实验都失败了!");
+            text.SetDefault("Interesting... those Bumblebirbs were actually meant to be clones of Yharon. I’m glad that experiment was a failure!");
+            text.AddTranslation(GameCulture.Russian, "Интересно... Эти Птицешмели были запланированы как клоны Ярона. Как я рада, что этот эксперимент провалился.");
+			text.AddTranslation(GameCulture.Chinese, "有意思...那些癫痫鸟实际上是丛林龙犽戎的克隆体. 我很高兴看到那些实验都失败了!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO31");
-            text.SetDefault("You were lucky that thing got complacent and didn't open a portal to the Sun on your head. The sheer strength and intelligence it exhibited means I need to make a whole new category for the classification of Worms.");
-            text.AddTranslation(GameCulture.Chinese, "你很幸运, 那东西膨胀了, 没有直接在你头上开个直通太阳的传送门. 他所展示出的力量和智慧, 意味着我要对蠕虫的类别做一个全新的分类");
+            text.SetDefault("You were lucky that thing got complacent and didn't open a portal to the Sun on our heads. The sheer strength and intelligence it exhibited means I need to make a whole new category for the classification of Worms.");
+			text.AddTranslation(GameCulture.Russian, "Какое счастье, что ты не открыл портал на Солнце над нашими головами. Эта абсолютная сила и интеллект, что он продемонстрировал, означают, что мне потребуется создать совершенно новую категорию для классификации Червей.");           
+			text.AddTranslation(GameCulture.Chinese, "你很幸运, 那东西膨胀了, 没有直接在你头上开个直通太阳的传送门. 他所展示出的力量和智慧, 意味着我要对蠕虫的类别做一个全新的分类");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO32");
-            text.SetDefault("I have my theories about the origin of this being, more than fear his soul (if he have one)... Irradiates negative energy, experimentation shown how in darkness this ''oblivion energy'', irradiated light but in light places irradiated shadow. I don't know were he came from but I know that whatever is his race, It must be contained at any cost!");
-            text.AddTranslation(GameCulture.Chinese, "对于这生物的起源我有些基本的猜测, 而不是单纯害怕他的灵魂(如果他有灵魂的话)...反辐射能量, 研究表明, 这种'湮灭能量'在黑暗中发出光芒, 在光明中辐射黑暗. 我不知道它是怎么来的, 但是我知道我们必须付出一切代价封印它.");
+            text.SetDefault("I have my theories about the origin of this being, more than fear his soul (if he have one)... Irradiates negative energy, experimentation shown how in darkness this ''oblivion energy'', irradiated light but in light places irradiated shadow. I don't know where he came from but I know that whatever is his race, It must be contained at any cost!");
+			text.AddTranslation(GameCulture.Russian, "У меня есть теории о происхождении этого существа, которые пугают меня даже больше, чем его душа (если она у него вообще есть)... Излучает негативную энергию, поглащает свет и создаёт тени. Не знаю, откуда он пришёл, но знаю, что кто бы он ни был, его нужно сдержать любой ценой!");           
+			text.AddTranslation(GameCulture.Chinese, "对于这生物的起源我有些基本的猜测, 而不是单纯害怕他的灵魂(如果他有灵魂的话)...反辐射能量, 研究表明, 这种'湮灭能量'在黑暗中发出光芒, 在光明中辐射黑暗. 我不知道它是怎么来的, 但是我知道我们必须付出一切代价封印它.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO33");
             text.SetDefault("Supreme Calamity has been defeated but she speaks of a being even stronger than herself. We must hope that he hasn't taken notice of us yet.");
-            text.AddTranslation(GameCulture.Chinese, "至尊灾厄眼被击败了, 但是他说还有一个比他更为强大的存在, 我们必须祈祷他还没有注意到我们.");
+            text.AddTranslation(GameCulture.Russian, "Совершенная Каламитас была побеждена, но она говорила о существе, ещё более сильном, чем она сама. Мы можем лишь надеяться, что он ещё не обратил на нас внимания.");
+			text.AddTranslation(GameCulture.Chinese, "至尊灾厄眼被击败了, 但是他说还有一个比他更为强大的存在, 我们必须祈祷他还没有注意到我们.");
             mod.AddTranslation(text);
         }
 
@@ -804,6 +816,14 @@ namespace AlchemistNPC.NPCs
 		{
         get { return CalamityMod.CalamityWorld.downedCryogen; }
         }
+		public bool CalamityModDownedLeviathan
+        {
+        get { return CalamityMod.CalamityWorld.downedLeviathan; }
+        }
+		public bool CalamityModDownedAstrageldon
+        {
+        get { return CalamityMod.CalamityWorld.downedAstrageldon; }
+        }
  
 		public bool ThoriumModDownedGTBird
         {
@@ -1356,16 +1376,22 @@ namespace AlchemistNPC.NPCs
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 							nextSlot++;
 						}
-						if (CalamityModDownedAstrum)
+						if (CalamityModDownedLeviathan)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag"));
 							shop.item[nextSlot].shopCustomPrice = new int?(30);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 							nextSlot++;
+						}
+						if (CalamityModDownedAstrageldon)
+						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
 							shop.item[nextSlot].shopCustomPrice = new int?(20);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 							nextSlot++;
+						}
+						if (CalamityModDownedAstrum)
+						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
 							shop.item[nextSlot].shopCustomPrice = new int?(30);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
@@ -1584,23 +1610,26 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 								}
 						}
-						if (CalamityModDownedAstrum)
+						if (CalamityModDownedLeviathan)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag"));
 							shop.item[nextSlot].shopCustomPrice = 3500000;
 							nextSlot++;
-						if (!CalamityModDownedProvidence)
+						}
+						if (!CalamityModDownedProvidence && CalamityModDownedAstrageldon)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
 							shop.item[nextSlot].shopCustomPrice = 4000000;
 							nextSlot++;
 						}
-						if (CalamityModDownedProvidence)
+						if (CalamityModDownedProvidence && CalamityModDownedAstrageldon)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
 							shop.item[nextSlot].shopCustomPrice = 15000000;
 							nextSlot++;
 						}
+						if (CalamityModDownedAstrum)
+						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
 							shop.item[nextSlot].shopCustomPrice = 3500000;
 							nextSlot++;

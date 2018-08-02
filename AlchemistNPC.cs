@@ -34,6 +34,7 @@ namespace AlchemistNPC
 		public static ModHotKey DiscordBuff;
 		public static bool SF = false;
 		public static bool BastScroll = false;
+		public static bool Stormbreaker = false;
 		public static int DTH = 0;
 		public static float ppx = 0f;
 		public static float ppy = 0f;
@@ -84,10 +85,6 @@ namespace AlchemistNPC
 		Config.Load();
 		}
 		
-		public static bool CalamityLoaded = ModLoader.GetMod("CalamityMod") != null;
-		public static bool ThoriumLoaded = ModLoader.GetMod("ThoriumMod") != null;
-		public static bool SacredToolsLoaded = ModLoader.GetMod("SacredTools") != null;
-		
 		public override void HandlePacket(BinaryReader reader, int whoAmI)
 		{
 		AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();
@@ -128,9 +125,10 @@ namespace AlchemistNPC
             string tier2forge = Language.GetTextValue("Mods.AlchemistNPC.tier2forge");
             string tier1anvil = Language.GetTextValue("Mods.AlchemistNPC.tier1anvil");
             string celestialWings = Language.GetTextValue("Mods.AlchemistNPC.CelestialWings");
+			string LunarHamaxe = Language.GetTextValue("Mods.AlchemistNPC.LunarHamaxe");
             string tier3Watch = Language.GetTextValue("Mods.AlchemistNPC.tier3Watch");
 
-            RecipeGroup group = new RecipeGroup(() => Lang.misc[37] + " " + evilBossMask, new int[]
+            RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + evilBossMask, new int[]
          {
                  ItemID.EaterMask, ItemID.BrainMask
          });
@@ -185,6 +183,11 @@ namespace AlchemistNPC
                  ItemID.WingsSolar, ItemID.WingsNebula, ItemID.WingsStardust, ItemID.WingsVortex
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:AnyCelestialWings", group);
+		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + LunarHamaxe, new int[]
+         {
+                 ItemID.LunarHamaxeSolar, ItemID.LunarHamaxeNebula, ItemID.LunarHamaxeStardust, ItemID.LunarHamaxeVortex
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPC:AnyLunarHamaxe", group);
 		group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + tier3Watch, new int[]
          {
                  ItemID.GoldWatch, ItemID.PlatinumWatch
@@ -253,7 +256,7 @@ namespace AlchemistNPC
 			recipe.AddRecipe();
 			}
 		}
-
+		
         //SBMW:Transtation method
         public void SetTranslation()
         {
@@ -360,6 +363,10 @@ namespace AlchemistNPC
             text = CreateTranslation("CelestialWings");
             text.SetDefault("Celestial Wings");
             text.AddTranslation(GameCulture.Chinese, "四柱翅膀");
+            AddTranslation(text);
+			
+			text = CreateTranslation("LunarHamaxe");
+            text.SetDefault("Lunar Hamaxe");
             AddTranslation(text);
 
             text = CreateTranslation("tier3Watch");
