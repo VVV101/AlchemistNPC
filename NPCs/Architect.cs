@@ -621,8 +621,8 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 }
 			}
 				if (Shop2)
-{
-		shop.item[nextSlot].SetDefaults (ItemID.RedBrick);
+				{
+			shop.item[nextSlot].SetDefaults (ItemID.RedBrick);
 			shop.item[nextSlot].shopCustomPrice = 2;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.Ebonwood);
@@ -643,7 +643,7 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 			shop.item[nextSlot].SetDefaults (ItemID.RichMahogany);
 			shop.item[nextSlot].shopCustomPrice = 15;
 			nextSlot++;
-if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+		if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 				{
 				if (NPC.downedGoblins)
 						{

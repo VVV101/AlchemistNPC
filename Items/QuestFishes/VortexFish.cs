@@ -1,13 +1,13 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace AlchemistNPC.Items
+namespace AlchemistNPC.Items.QuestFishes
 {
-	public class StardustFish : ModItem
+	public class VortexFish : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stardust Fish");
+			DisplayName.SetDefault("Vortex Fish");
 		}
 
 		public override void SetDefaults()
@@ -22,7 +22,7 @@ namespace AlchemistNPC.Items
 
 		public override void UpdateInventory(Player player)
 		{
-		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).StardustFish = true;
+		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).VortexFish = true;
 		}
 		
 		public override bool IsQuestFish()
@@ -32,13 +32,17 @@ namespace AlchemistNPC.Items
 
 		public override bool IsAnglerQuestAvailable()
 		{
-			return Main.hardMode &&  NPC.downedAncientCultist;
+			if (Main.hardMode && NPC.downedAncientCultist)
+			{
+				return true;
+			}
+			return false;
 		}
 
 		public override void AnglerQuestChat(ref string description, ref string catchLocation)
 		{
 			description = "There's this unearthly looking fish... probably looks that way because it's from celestial bodies of water. Probably tastes heavenly too, so go get it for me!";
-			catchLocation = "Caught nearby Stardust Pillar.";
+			catchLocation = "Caught nearby Vortex Pillar.";
 		}
 	}
 }

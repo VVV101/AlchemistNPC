@@ -5,6 +5,10 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Explorer is secret NPC. Try to figure out, how to spawn her.
+v7.4
+-Fixed Quest fishes availability conditions.
+-Made Secret boss immune to Abyssal Shell.
+-Made Secret boss to instantly kill player if you are cheating.
 v7.3.1
 -Fixed Bandwidth error (I hope).
 -Added Dinasty Wood and Shingles to Architect.

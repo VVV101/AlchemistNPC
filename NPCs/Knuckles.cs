@@ -74,8 +74,15 @@ namespace AlchemistNPC.NPCs
             rotation = npc.rotation;
         }
 		
+		private readonly Mod Bluemagic = ModLoader.GetMod("Bluemagic");
+		
 		public override void AI()
 		{
+			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+				player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AbyssalShell")] = true;
+				}
 			npc.buffImmune[mod.BuffType("ArmorDestruction")] = true;
 			npc.velocity *= 1.5f;
 			npc.defense = 1;
@@ -88,9 +95,16 @@ namespace AlchemistNPC.NPCs
 			damage2 = 150;
 			damage3 = 175;
 			}
-			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+			
 			if (player.statDefense > 250 || player.endurance > 0.40f || player.statLifeMax2 > 1300)
 			{
+			player.dead = true;
+			if (!player.dead)
+				{
+				Main.NewText("Die, Cheater!", 255, 0, 0);
+				}
+			npc.velocity = new Vector2(2, -10);
+			npc.velocity *= 5f;
 			damage1 = 666666;
 			damage2 = 666666;
 			damage3 = 666666;

@@ -45,8 +45,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.useStyle = 1;
 			item.value = 10000000;
 			item.rare = 13;
-            item.knockBack = 8f;
-            item.autoReuse = true;
+			item.knockBack = 8f;
+			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 			item.shoot = mod.ProjectileType("Akumu");
 			item.shootSpeed = 8f;

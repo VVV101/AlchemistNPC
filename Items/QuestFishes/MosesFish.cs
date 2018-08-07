@@ -1,7 +1,7 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace AlchemistNPC.Items
+namespace AlchemistNPC.Items.QuestFishes
 {
 	public class MosesFish : ModItem
 	{
@@ -33,7 +33,11 @@ namespace AlchemistNPC.Items
 		public override bool IsAnglerQuestAvailable()
 		{
 			Player player = Main.player[Main.myPlayer];
-			return (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3);
+			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+			{
+				return true;
+			}
+			return false;
 		}
 
 		public override void AnglerQuestChat(ref string description, ref string catchLocation)

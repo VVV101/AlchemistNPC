@@ -1,7 +1,7 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace AlchemistNPC.Items
+namespace AlchemistNPC.Items.QuestFishes
 {
 	public class MutantFish : ModItem
 	{
