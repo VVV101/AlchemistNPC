@@ -30,7 +30,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 16;
 			item.maxStack = 1;
 			item.consumable = false;
-			item.knockBack = 4f;
+			item.knockBack = 4;
 			item.value = Item.sellPrice(0, 0, 1, 0);
 			item.rare = 10;
 			item.shoot = mod.ProjectileType("ChromovariaBullet");

@@ -55,7 +55,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.useStyle = 1;
 			item.value = 10000000;
 			item.rare = 11;
-            item.knockBack = 8f;
+            item.knockBack = 8;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 			item.shoot = mod.ProjectileType("ParadiseLostProjectile");

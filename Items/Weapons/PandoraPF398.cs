@@ -20,7 +20,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nCharged Laser Device"
 			+"\nAttacking raises Disaster LV"
 			+"\nLV3 allows to change weapon"
-			+"\nRight click to change form");
+			+"\nRight click unlocks 2 special attacks");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пандора (Форма 398)");
             Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nЗаряжаемый лазер\nПри наборе 3-го уровня Бедствия, вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");
 
@@ -48,19 +48,19 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void HoldItem(Player player)
 		{
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 50)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 30)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV0"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 50 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 100)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 30 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 60)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV1"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 100 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 150)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 60 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 90)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV2"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 150)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 90)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV3"), 2);
 			}
@@ -98,7 +98,7 @@ namespace AlchemistNPC.Items.Weapons
 			if (player.altFunctionUse == 2 && player.HasBuff(mod.BuffType("DisasterLV3")))
 			{
 				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge = 0;
-				item.SetDefaults(mod.ItemType("Pandora"));
+				item.SetDefaults(mod.ItemType("PandoraPF594"));
 			}
 			return false;
 		}

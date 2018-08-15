@@ -422,7 +422,7 @@ namespace AlchemistNPC.NPCs
 				{
 					if (npc.FindBuffIndex(119) >= 0 && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
 					{
-					Main.NewText("Young Brewer is spawned.", 255, 255, 255);
+					Main.NewText("A young Brewer is spawned.", 255, 255, 255);
 					NPC.NewNPC((int)npc.Center.X+2, (int)npc.Center.Y, mod.NPCType("Young Brewer"));
 					}
 			if (Shop1 && S1A)

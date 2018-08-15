@@ -16,7 +16,7 @@ namespace AlchemistNPC.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.SporeTrap);
-			projectile.magic = true; 
+			projectile.magic = true;
 			aiType = ProjectileID.ChlorophyteBullet;
 		}
 		
@@ -28,7 +28,7 @@ namespace AlchemistNPC.Projectiles
 		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
 			if (target.lifeMax <= 300000)
-			damage = target.life/100;
+			damage = target.life/200;
 			if (target.lifeMax > 300000 && target.lifeMax < 1000000)
 			damage = target.life/300;
 			if (target.lifeMax >= 1000000)

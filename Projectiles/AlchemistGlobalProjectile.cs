@@ -111,6 +111,16 @@ namespace AlchemistNPC.Projectiles
 			);			
 		}
 		
+		public override bool PreAI(Projectile projectile)
+		{
+			NPC npc = Main.npc[projectile.owner];
+			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1)
+			{
+				projectile.damage /= 2;
+			}
+			return true;
+		}
+		
 		public override void AI(Projectile projectile)
 		{
 			Player player = Main.player[projectile.owner];
@@ -171,30 +181,20 @@ namespace AlchemistNPC.Projectiles
                     Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector83.X, vector83.Y, projectile.type, projectile.damage, projectile.knockBack-.025f, projectile.owner, projectile.velocity.ToRotation(), projectile.ai[1]);
                 }
             }
-		}
-		
-		public override void ModifyHitPlayer(Projectile projectile, Player target, ref int damage, ref bool crit)	
-		{
-			Player player = Main.player[projectile.owner];
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Akumu == true && projectile.hostile)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).TS == true && projectile.type == ProjectileID.NebulaArcanum)
 			{
-				ReflectProjectile(projectile);
-				damage = 0;
+				projectile.penetrate = 1;
 			}
-		}
-		
-		public void ReflectProjectile(Projectile proj)
-		{
-			proj.velocity *= -1;
-			proj.damage *= 25;
-			proj.hostile = false;
-			proj.friendly = true;
 		}
 		
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
 			Player player = Main.player[projectile.owner];
 			if (projectile.minion && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).SF == true)
+			{
+				target.immune[projectile.owner] = 1;
+			}
+			if ((projectile.type == 340) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Pandora == true)
 			{
 				target.immune[projectile.owner] = 1;
 			}

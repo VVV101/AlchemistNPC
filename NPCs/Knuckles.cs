@@ -98,13 +98,13 @@ namespace AlchemistNPC.NPCs
 			
 			if (player.statDefense > 250 || player.endurance > 0.40f || player.statLifeMax2 > 1300)
 			{
-			player.dead = true;
 			if (!player.dead)
-				{
-				Main.NewText("Die, Cheater!", 255, 0, 0);
-				}
+			{
+			Main.NewText("Die, Cheater!", 255, 0, 0);
+			}
+			player.dead = true;
 			npc.velocity = new Vector2(2, -10);
-			npc.velocity *= 5f;
+			npc.velocity *= 3f;
 			damage1 = 666666;
 			damage2 = 666666;
 			damage3 = 666666;

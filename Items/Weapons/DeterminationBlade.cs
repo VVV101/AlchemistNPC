@@ -40,7 +40,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.useStyle = 1;
 			item.value = 1000000;
 			item.rare = 10;
-            item.knockBack = 8f;
+            item.knockBack = 8;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 			item.shoot = mod.ProjectileType("DBD");

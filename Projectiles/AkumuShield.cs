@@ -39,10 +39,6 @@ namespace AlchemistNPC.Projectiles
 			projectile.position.X = player.position.X-15;
 			projectile.position.Y = player.position.Y;
 			projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(0f);
-			if (projectile.spriteDirection == -1)
-			{
-				projectile.rotation -= MathHelper.ToRadians(180f);
-			}
 			if (projectile.frameCounter < 20)
 				projectile.frame = 0;
 			else if (projectile.frameCounter >= 20 && projectile.frameCounter < 40)
@@ -59,10 +55,28 @@ namespace AlchemistNPC.Projectiles
 				projectile.frameCounter = 0;
 			projectile.frameCounter++;
 			
-			if (player.statLife > player.statLifeMax2/4 || player.dead)
+			if (player.statLife > player.statLifeMax2/4 || player.dead || player.GetModPlayer<AlchemistNPCPlayer>().Akumu == false)
 			{
 				projectile.Kill();
 			}
+			for(int i = 0; i < 1000; ++i)
+			{
+				if(Main.projectile[i].active && i != projectile.whoAmI )
+				{
+					if(Main.projectile[i].Hitbox.Intersects(projectile.Hitbox) && !Main.projectile[i].friendly)
+					{
+					ReflectProjectile(Main.projectile[i]);
+					}
+				}
+			}
 		}
+			
+			public void ReflectProjectile(Projectile proj)
+			{
+				proj.velocity *= -1;
+				proj.damage *= 25;
+				proj.hostile = false;
+				proj.friendly = true;
+			}
 	}
 }

@@ -35,14 +35,10 @@ namespace AlchemistNPC.Projectiles
 		}
 		public override void AI()
 		{
-			Player player = Main.player[projectile.owner]; 
+			Player player = Main.player[projectile.owner];
 			projectile.position.X = player.position.X;
 			projectile.position.Y = player.position.Y-10;
 			projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(0f);
-			if (projectile.spriteDirection == -1)
-			{
-				projectile.rotation -= MathHelper.ToRadians(180f);
-			}
 			if (projectile.frameCounter < 10)
 				projectile.frame = 0;
 			else if (projectile.frameCounter >= 10 && projectile.frameCounter < 20)

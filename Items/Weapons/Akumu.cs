@@ -44,8 +44,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 30;
 			item.useStyle = 1;
 			item.value = 10000000;
-			item.rare = 13;
-			item.knockBack = 8f;
+			item.rare = 12;
+			item.knockBack = 8;
 			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 			item.shoot = mod.ProjectileType("Akumu");
@@ -90,16 +90,7 @@ namespace AlchemistNPC.Items.Weapons
 			if (player.altFunctionUse != 2)
 			{
 			item.noMelee = false;
-			Vector2 SPos = player.position;
-			position = SPos;
-			if (player.direction == 1)
-				{
-				Projectile.NewProjectile(position.X+10, position.Y, speedX, speedY, mod.ProjectileType("AkumuThrow"), damage, knockBack, player.whoAmI);
-				}
-				if (player.direction == -1)
-				{
-				Projectile.NewProjectile(position.X-10, position.Y, speedX, speedY, mod.ProjectileType("AkumuThrow"), damage, knockBack, player.whoAmI);
-				}
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("AkumuThrow"), damage, knockBack, player.whoAmI);
 			}
 			if (player.altFunctionUse == 2)
 			{

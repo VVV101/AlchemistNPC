@@ -60,6 +60,10 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Leeland");
             text.AddTranslation(GameCulture.Russian, "Леланд");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("Atreus");
+            text.SetDefault("Atreus");
+            text.AddTranslation(GameCulture.Russian, "Атреус");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry1");
             text.SetDefault("I'm trading potions which were made by my parents.");
             text.AddTranslation(GameCulture.Russian, "Я продаю зелья, которые были сделаны моими родителями.");
@@ -123,7 +127,7 @@ namespace AlchemistNPC.NPCs
 			animationType = NPCID.Angler;
 		}
 		
-public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
 			if (Main.hardMode)
 			{
@@ -147,7 +151,8 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			string Lucas = Language.GetTextValue("Mods.AlchemistNPC.Lucas");
 			string Porky = Language.GetTextValue("Mods.AlchemistNPC.Porky");
 			string Leeland = Language.GetTextValue("Mods.AlchemistNPC.Leeland");
-			switch (WorldGen.genRand.Next(5))
+			string Atreus = Language.GetTextValue("Mods.AlchemistNPC.Atreus");
+			switch (WorldGen.genRand.Next(6))
             {
                 case 0:
                     return Harold;
@@ -159,6 +164,8 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
                     return Lucas;
 				case 4:
                     return Porky;
+				case 5:
+                    return Atreus;
                 default:
                     return Leeland;
             }
@@ -260,9 +267,12 @@ public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("VanTankCombination"));
 			shop.item[nextSlot].shopCustomPrice = 90000;
             nextSlot++;
+			if (Main.hardMode)
+			{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TankCombination"));
 			shop.item[nextSlot].shopCustomPrice = 160000;
             nextSlot++;
+			}
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BattleCombination"));
 			shop.item[nextSlot].shopCustomPrice = 120000;
             nextSlot++;

@@ -30,13 +30,13 @@ namespace AlchemistNPC.Items.Weapons
 			item.CloneDefaults(ItemID.PiranhaGun);
 			item.ranged = false;
 			item.thrown = true;
-			item.damage = 100;
+			item.damage = 88;
 			item.useStyle = 1;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.noUseGraphic = true;
 			item.rare = 11;
-			item.knockBack = 8f;
+			item.knockBack = 8;
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

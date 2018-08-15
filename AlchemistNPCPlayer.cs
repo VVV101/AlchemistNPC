@@ -38,6 +38,9 @@ namespace AlchemistNPC
 	public class AlchemistNPCPlayer : ModPlayer
 	{
 		public bool AutoinjectorMK2 = false;
+		public bool Pandora = false;
+		public bool TS = false;
+		public bool Symbiote = false;
 		public bool Akumu = false;
 		public bool DriedFish = false;
 		public bool SolarFish = false;
@@ -85,8 +88,12 @@ namespace AlchemistNPC
 		
 		public override void ResetEffects()
 		{
+			Item.potionDelay = 3600;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
+			Pandora = false;
+			TS = false;
+			Symbiote = false;
 			DriedFish = false;
 			SolarFish = false;
 			NebulaFish = false;
@@ -132,6 +139,15 @@ namespace AlchemistNPC
 			{
 			player.AddBuff(BuffID.WellFed, 2);
 			}
+		}
+	
+		public override bool CanBeHitByProjectile(Projectile projectile)
+		{
+			if (player.FindBuffIndex(mod.BuffType("Akumu")) > -1 || player.FindBuffIndex(mod.BuffType("TrueAkumu")) > -1)
+			{
+			return false;
+			}
+			return true;
 		}
 	
 		public override void clientClone(ModPlayer clientClone)

@@ -40,7 +40,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.hammer = 666;
 			item.value = 10000000;
 			item.rare = 11;
-            item.knockBack = 10f;
+            item.knockBack = 10;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 			item.expert = true;

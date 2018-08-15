@@ -26,7 +26,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			item.CloneDefaults(ItemID.Muramasa);
 			item.melee = true;
-			item.damage = 200;
+			item.damage = 150;
 			item.crit = 21;
 			item.width = 50;
 			item.height = 40;
@@ -36,7 +36,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.axe = 120;
 			item.value = 10000000;
 			item.rare = 11;
-            item.knockBack = 10f;
+            item.knockBack = 10;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 			item.expert = true;
@@ -53,9 +53,9 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (player.altFunctionUse != 2)
 			{
-				item.useTime = 10;
-				item.useAnimation = 10;
-				item.damage = 200;
+				item.useTime = 15;
+				item.useAnimation = 15;
+				item.damage = 150;
 				item.shootSpeed = 12f;
 				item.shoot = 0;
 				item.noMelee = false;
@@ -63,9 +63,9 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (player.altFunctionUse == 2)
 			{
-				item.useTime = 10;
-				item.useAnimation = 10;
-				item.damage = 200;
+				item.useTime = 15;
+				item.useAnimation = 15;
+				item.damage = 150;
 				item.shootSpeed = 24f;
 				item.shoot = mod.ProjectileType("Stormbreaker");
 				item.noMelee = true;
@@ -86,12 +86,14 @@ namespace AlchemistNPC.Items.Weapons
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(mod.BuffType("Electrocute"), 300);
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(2) == 0)
 			{
 			Vector2 vector82 =  -Main.player[Main.myPlayer].Center + Main.MouseWorld;
             float ai = Main.rand.Next(100);
             Vector2 vector83 = Vector2.Normalize(vector82) * item.shootSpeed;
-            Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X, vector83.Y, 580, damage/2, .5f, player.whoAmI, vector82.ToRotation(), ai);
+            Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X, vector83.Y, 580, damage/3, .5f, player.whoAmI, vector82.ToRotation(), ai);
+			Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X+10, vector83.Y+10, 580, damage/3, .5f, player.whoAmI, vector82.ToRotation(), ai);
+			Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X-10, vector83.Y-10, 580, damage/3, .5f, player.whoAmI, vector82.ToRotation(), ai);
 			}
 		}
 		

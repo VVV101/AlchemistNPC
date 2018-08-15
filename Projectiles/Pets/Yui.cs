@@ -10,19 +10,14 @@ namespace AlchemistNPC.Projectiles.Pets
 	{
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(ProjectileID.ZephyrFish);
+			projectile.CloneDefaults(87);
 			projectile.width = 72;
 			projectile.height = 64;
-			projectile.netImportant = true;
-			projectile.friendly = true;
 			projectile.ignoreWater = true;
-			aiType = ProjectileID.ZephyrFish;
-			ProjectileID.Sets.TrailingMode[projectile.type] = 2;
-			ProjectileID.Sets.Homing[projectile.type] = true;
+			projectile.aiStyle = 11;
+			aiType = 87;
 			Main.projFrames[projectile.type] = 4;
 			ProjectileID.Sets.LightPet[projectile.type] = true;
-			Main.projPet[projectile.type] = true;
-			projectile.scale = 1f;
 		}
 
 		public override void SetStaticDefaults()

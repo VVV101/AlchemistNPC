@@ -30,7 +30,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 16;
 			item.maxStack = 999;
 			item.consumable = true;
-			item.knockBack = 4f;
+			item.knockBack = 4;
 			item.value = Item.sellPrice(0, 1, 0, 0);
 			item.rare = 11;
 			item.shoot = mod.ProjectileType("ShroomiteBullet");

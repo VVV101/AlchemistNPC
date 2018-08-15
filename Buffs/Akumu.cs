@@ -11,7 +11,7 @@ namespace AlchemistNPC.Buffs
 	{
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Akumu's defense");
+			DisplayName.SetDefault("Akumu's Shield");
 			Description.SetDefault("Reflecting any hostile projectiles");
 			Main.debuff[Type] = false;
 			canBeCleared = true;

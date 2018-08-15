@@ -32,8 +32,9 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.ChainGun);
-			item.damage = 99;
+			item.damage = 77;
 			item.ranged = true;
+			item.knockBack = 3;
 			item.width = 50;
 			item.height = 30;
 			item.useTime = 3;
@@ -48,19 +49,19 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void HoldItem(Player player)
 		{
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 50)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 100)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV0"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 50 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 100)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 100 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 200)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV1"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 100 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 150)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 200 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 300)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV2"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 150)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 300)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV3"), 2);
 			}

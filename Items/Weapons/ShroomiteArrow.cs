@@ -32,7 +32,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 38;
 			item.maxStack = 999;
 			item.consumable = true;             //You need to set the item consumable so that the ammo would automatically consumed
-			item.knockBack = 1.5f;
+			item.knockBack = 1;
 			item.value = 10000;
 			item.rare = 11;
 			item.shoot = mod.ProjectileType("ShroomiteArrow");   //The projectile shoot when your weapon using this ammo

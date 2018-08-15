@@ -1063,7 +1063,7 @@ namespace AlchemistNPC.NPCs
 					if (NPC.downedMoonlord)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BarofLife"));
-					shop.item[nextSlot].shopCustomPrice = 3000000;
+					shop.item[nextSlot].shopCustomPrice = 2000000;
 					nextSlot++;
 					}
 				}

@@ -29,7 +29,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 22;
 			item.maxStack = 999;
 			item.consumable = true;
-			item.knockBack = 1f;
+			item.knockBack = 1;
 			item.value = Item.sellPrice(0, 0, 75, 0);
 			item.rare = 10;
 			item.shoot = mod.ProjectileType("QuantumDestabilizer");

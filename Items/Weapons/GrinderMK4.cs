@@ -34,7 +34,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 24;
 			item.useTime = 30;
 			item.shootSpeed = 3.7f;
-			item.knockBack = 6.5f;
+			item.knockBack = 6;
 			item.width = 32;
 			item.height = 32;
 			item.scale = 1f;

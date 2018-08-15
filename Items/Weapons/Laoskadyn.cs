@@ -42,7 +42,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.useStyle = 1;
 			item.value = 1000000;
 			item.rare = 11;
-            item.knockBack = 6f;
+            item.knockBack = 6;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
 			item.scale = 1f;

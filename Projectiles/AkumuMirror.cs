@@ -39,10 +39,6 @@ namespace AlchemistNPC.Projectiles
 			projectile.position.X = player.position.X-40;
 			projectile.position.Y = player.position.Y-10;
 			projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(180f);
-			if (projectile.spriteDirection == -1)
-			{
-				projectile.rotation -= MathHelper.ToRadians(0f);
-			}
 			if (projectile.frameCounter < 10)
 				projectile.frame = 0;
 			else if (projectile.frameCounter >= 10 && projectile.frameCounter < 20)

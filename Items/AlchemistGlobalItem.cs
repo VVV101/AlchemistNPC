@@ -14,6 +14,20 @@ namespace AlchemistNPC.Items
 	public class AlchemistGlobalItem : GlobalItem
 	{	
 		public static bool on = false;
+		
+		public override float UseTimeMultiplier(Item item, Player player)	
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Symbiote == true)
+			{
+				return 1.2f;
+			}
+			if (player.FindBuffIndex(mod.BuffType("ThoriumCombo")) > -1)
+			{
+				return 1.08f;
+			}
+			return 1f;
+		}
+		
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Rampage == true && type == 14)
@@ -378,7 +392,7 @@ namespace AlchemistNPC.Items
 			{
 				player.QuickSpawnItem(mod.ItemType("SuspiciousLookingScythe"));
 			}
-			if (Main.hardMode && context == "bossBag" && Main.rand.Next(150) == 0)
+			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(150) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("HeartofYui"));
 			}

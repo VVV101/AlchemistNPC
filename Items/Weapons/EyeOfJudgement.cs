@@ -36,18 +36,18 @@ namespace AlchemistNPC.Items.Weapons
 			item.summon = true;
 			item.damage = 100;
 			item.width = 34;
-			item.mana = 30;
+			item.mana = 25;
 			item.height = 36;
 			item.noUseGraphic = true;
 			item.useStyle = 1;
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.maxStack = 1;
-			item.value = 100000;
+			item.value = 1000000;
 			item.holdStyle = 1;
 			item.rare = 12;
 			item.scale = 1f;
-			item.knockBack = 4f;
+			item.knockBack = 4;
 			item.shoot = mod.ProjectileType("SharpBone");
 			item.autoReuse = true;
 		}

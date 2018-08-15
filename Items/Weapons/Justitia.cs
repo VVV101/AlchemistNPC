@@ -43,7 +43,7 @@ namespace AlchemistNPC.Items.Weapons
             item.channel = true;
             item.noMelee = true;
             item.damage = 166;
-            item.knockBack = 4f;
+            item.knockBack = 4;
             item.autoReuse = false;
             item.noMelee = true;
             item.melee = true;

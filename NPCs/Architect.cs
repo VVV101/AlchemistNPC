@@ -631,9 +631,6 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 			shop.item[nextSlot].SetDefaults (ItemID.Shadewood);
 			shop.item[nextSlot].shopCustomPrice = 10;
 			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.DynastyWood);
-			shop.item[nextSlot].shopCustomPrice = 100;
-			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.BorealWood);
 			shop.item[nextSlot].shopCustomPrice = 10;
 			nextSlot++;
@@ -652,6 +649,15 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 						nextSlot++;
 						}
 				}
+			shop.item[nextSlot].SetDefaults (ItemID.DynastyWood);
+			shop.item[nextSlot].shopCustomPrice = 100;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.RedDynastyShingles);
+			shop.item[nextSlot].shopCustomPrice = 100;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.BlueDynastyShingles);
+			shop.item[nextSlot].shopCustomPrice = 100;
+			nextSlot++;
 			if (Main.hardMode)
 			{
 			shop.item[nextSlot].SetDefaults (ItemID.Pearlwood);

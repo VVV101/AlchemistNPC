@@ -51,20 +51,20 @@ namespace AlchemistNPC
 		{
 		Config.Load();
             //SBMW:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language, first load after build mod may not work 
-            string HotkeyLamp = Language.GetTextValue("Mods.AlchemistNPC.LampLightToggle");
-            string HotkeyBuff = Language.GetTextValue("Mods.AlchemistNPC.DiscordBuffTeleportation");
-            LampLight = RegisterHotKey(HotkeyLamp, "L");
-            DiscordBuff = RegisterHotKey(HotkeyBuff, "Q");
+            string LampLightToggle = Language.GetTextValue("Mods.AlchemistNPC.LampLightToggle");
+            string DiscordBuffTeleportation = Language.GetTextValue("Mods.AlchemistNPC.DiscordBuffTeleportation");
+            LampLight = RegisterHotKey(LampLightToggle, "L");
+            DiscordBuff = RegisterHotKey(DiscordBuffTeleportation, "Q");
 		if (!Main.dedServ)
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
 			}
-		ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ItemType<Items.ReversivityCoinTier1>(), 999L));
-		ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ItemType<Items.ReversivityCoinTier2>(), 999L));
-		ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ItemType<Items.ReversivityCoinTier3>(), 999L));
-		ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ItemType<Items.ReversivityCoinTier4>(), 999L));
-		ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ItemType<Items.ReversivityCoinTier5>(), 999L));
-		ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ItemType<Items.ReversivityCoinTier6>(), 999L));
+		ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ItemType<Items.Misc.ReversivityCoinTier1>(), 999L));
+		ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ItemType<Items.Misc.ReversivityCoinTier2>(), 999L));
+		ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ItemType<Items.Misc.ReversivityCoinTier3>(), 999L));
+		ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ItemType<Items.Misc.ReversivityCoinTier4>(), 999L));
+		ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ItemType<Items.Misc.ReversivityCoinTier5>(), 999L));
+		ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ItemType<Items.Misc.ReversivityCoinTier6>(), 999L));
 		instance = this;
 
             SetTranslation();
@@ -610,17 +610,17 @@ namespace AlchemistNPC
 
             //SBMW:Some other translation
             text = CreateTranslation("Portal");
-            text.SetDefault("Otherworldly Portal was opened.");
+            text.SetDefault("An Otherworldly Portal was opened.");
             text.AddTranslation(GameCulture.Chinese, "连接另一个世界的传送门已开启");
             AddTranslation(text);
 
             text = CreateTranslation("barrierWeek");
-            text.SetDefault("Barrier between worlds was weakened.");
+            text.SetDefault("The Barrier between worlds was weakened.");
             text.AddTranslation(GameCulture.Chinese, "世界间的屏障已变得脆弱不堪");
             AddTranslation(text);
 
             text = CreateTranslation("barrierStabilized");
-            text.SetDefault("Barrier between world is stabilized.");
+            text.SetDefault("The Barrier between world is stabilized.");
             text.AddTranslation(GameCulture.Chinese, "世界间的屏障重新归于稳定");
             AddTranslation(text);
 

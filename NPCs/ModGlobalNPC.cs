@@ -33,6 +33,30 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 		
+		public override void ModifyHitByItem(NPC npc, Player player, Item item, ref int damage, ref float knockback, ref bool crit)
+		{
+			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1)
+			{
+				damage += damage/5;
+			}
+		}
+		
+		public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1)
+			{
+				damage += damage/5;
+			}
+		}
+		
+		public override void ModifyHitPlayer(NPC npc, Player target, ref int damage, ref bool crit)
+		{
+			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1)
+			{
+				damage /= 2;
+			}
+		}
+		
 		public override void SetupShop(int type, Chest shop, ref int nextSlot)
 		{
 			if (ModLoader.GetLoadedMods().Contains("Tremor"))
@@ -319,6 +343,22 @@ namespace AlchemistNPC.NPCs
 				}
 				Lighting.AddLight(npc.position, 1f, 1f, 1f);
 			}
+			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) >= 0)
+			{
+				if (Main.rand.Next(4) < 3)
+				{
+					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, mod.DustType("CrystalDust"), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 3.5f);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust].velocity *= 1.8f;
+					Main.dust[dust].velocity.Y -= 0.5f;
+					if (Main.rand.Next(4) == 0)
+					{
+						Main.dust[dust].noGravity = false;
+						Main.dust[dust].scale *= 0.6f;
+					}
+				}
+				Lighting.AddLight(npc.position, 1f, 1f, 1f);
+			}
 			if (justitiapale)
 			{
 				if (Main.rand.Next(4) < 3)
@@ -383,6 +423,10 @@ namespace AlchemistNPC.NPCs
 		
 		public override void NPCLoot(NPC npc)
         {
+			if (Main.rand.Next(10000) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HolyAvenger"));
+				}
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
 			{
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoulEssence"));

@@ -40,24 +40,24 @@ namespace AlchemistNPC.Items.Weapons
 			item.autoReuse = true;
 			item.noUseGraphic = true;
 			item.rare = 12;
-			item.knockBack = 8f;
+			item.knockBack = 8;
 		}
 		
 		public override void HoldItem(Player player)
 		{
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 10)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 5)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV0"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 10 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 20)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 5 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 10)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV1"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 20 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 30)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 10 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 15)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV2"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 30)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 15)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV3"), 2);
 			}

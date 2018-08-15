@@ -21,7 +21,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nAttacking raises Disaster LV"
 			+"\nLV3 allows to change weapon"
 			+"\nRight click to change form");
-			DisplayName.AddTranslation(GameCulture.Russian, "Пандора (Форма 134)");
+			DisplayName.AddTranslation(GameCulture.Russian, "Пандора (Форма 124)");
             Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nЗапускает 3 мощных самонаводящихся ракеты\nПри наборе 3-го уровня Бедствия, вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF124)");
@@ -29,13 +29,14 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.SnowmanCannon);
-			item.damage = 222;
+			item.damage = 88;
+			item.ranged = true;
 			item.crit = 21;
 			item.width = 56;
 			item.height = 30;
-			item.useTime = 10;
-			item.useAnimation = 10;
+			item.useTime = 15;
+			item.useAnimation = 15;
+			item.useStyle = 5;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 8;
 			item.value = 1000000;
@@ -43,23 +44,25 @@ namespace AlchemistNPC.Items.Weapons
 			item.autoReuse = true;
 			item.shoot = 340;
 			item.shootSpeed = 32f;
+			item.UseSound = SoundID.Item11;
 		}
 		
 		public override void HoldItem(Player player)
 		{
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 50)
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Pandora = true;
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 40)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV0"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 50 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 100)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 40 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 80)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV1"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 100 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 150)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 80 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 120)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV2"), 2);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 150)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 120)
 			{
 			player.AddBuff(mod.BuffType("DisasterLV3"), 2);
 			}
