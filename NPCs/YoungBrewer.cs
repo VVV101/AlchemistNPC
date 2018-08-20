@@ -336,35 +336,38 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].shopCustomPrice = 500000;
 			nextSlot++;
 			}
-			if (Main.hardMode)
+			if (NPC.downedQueenBee)
 			{
-			shop.item[nextSlot].SetDefaults (ItemID.FlaskofPoison);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.FlaskofFire);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.FlaskofParty);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.FlaskofGold);
-			shop.item[nextSlot].shopCustomPrice = 15000;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.FlaskofIchor);
-			shop.item[nextSlot].shopCustomPrice = 25000;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.FlaskofCursedFlames);
-			shop.item[nextSlot].shopCustomPrice = 25000;
-			nextSlot++;
-			}
-			if (NPC.downedPlantBoss)
-			{
-			shop.item[nextSlot].SetDefaults (ItemID.FlaskofVenom);
-			shop.item[nextSlot].shopCustomPrice = 30000;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.FlaskofNanites);
-			shop.item[nextSlot].shopCustomPrice = 30000;
-			nextSlot++;	
+				shop.item[nextSlot].SetDefaults (ItemID.FlaskofPoison);
+				shop.item[nextSlot].shopCustomPrice = 10000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.FlaskofFire);
+				shop.item[nextSlot].shopCustomPrice = 10000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.FlaskofParty);
+				shop.item[nextSlot].shopCustomPrice = 10000;
+				nextSlot++;
+				if (Main.hardMode)
+				{
+				shop.item[nextSlot].SetDefaults (ItemID.FlaskofGold);
+				shop.item[nextSlot].shopCustomPrice = 15000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.FlaskofIchor);
+				shop.item[nextSlot].shopCustomPrice = 25000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.FlaskofCursedFlames);
+				shop.item[nextSlot].shopCustomPrice = 25000;
+				nextSlot++;
+				}
+				if (NPC.downedPlantBoss)
+				{
+				shop.item[nextSlot].SetDefaults (ItemID.FlaskofVenom);
+				shop.item[nextSlot].shopCustomPrice = 30000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.FlaskofNanites);
+				shop.item[nextSlot].shopCustomPrice = 30000;
+				nextSlot++;	
+				}
 			}
 			bool WA = false;
 			for (int k = 0; k < 255; k++)
@@ -407,14 +410,23 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 200;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CorrosionBeaker"));
-				shop.item[nextSlot].shopCustomPrice = 350;
+				shop.item[nextSlot].shopCustomPrice = 250;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CombustionFlask"));
-				shop.item[nextSlot].shopCustomPrice = 350;
+				shop.item[nextSlot].shopCustomPrice = 250;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("NitrogenVial"));
-				shop.item[nextSlot].shopCustomPrice = 350;
+				shop.item[nextSlot].shopCustomPrice = 250;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("AphrodisiacVial"));
+				shop.item[nextSlot].shopCustomPrice = 250;
+				nextSlot++;
+					if (NPC.downedPlantBoss)
+					{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("PlasmaVial"));
+					shop.item[nextSlot].shopCustomPrice = 350;
+					nextSlot++;
+					}
 				}	
 			}
     }

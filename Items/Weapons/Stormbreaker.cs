@@ -24,24 +24,20 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Muramasa);
+			item.CloneDefaults(3858);
 			item.melee = true;
-			item.damage = 150;
+			item.damage = 100;
 			item.crit = 21;
 			item.width = 50;
 			item.height = 40;
-			item.useTime = 10;
-			item.useAnimation = 10;
 			item.hammer = 600;
 			item.axe = 120;
 			item.value = 10000000;
 			item.rare = 11;
             item.knockBack = 10;
-            item.autoReuse = true;
-			item.UseSound = SoundID.Item1;
 			item.expert = true;
 			item.scale = 1.5f;
-			item.shootSpeed = 12f;
+			item.shoot = mod.ProjectileType("StormbreakerSwing");
 		}
 
 		public override bool AltFunctionUse(Player player)
@@ -53,13 +49,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (player.altFunctionUse != 2)
 			{
-				item.useTime = 15;
-				item.useAnimation = 15;
-				item.damage = 150;
-				item.shootSpeed = 12f;
-				item.shoot = 0;
-				item.noMelee = false;
-				item.noUseGraphic = false;
+				item.shoot = mod.ProjectileType("StormbreakerSwing");
 			}
 			if (player.altFunctionUse == 2)
 			{
@@ -73,28 +63,6 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			
 			return base.CanUseItem(player);
-		}
-		
-		public override void MeleeEffects(Player player, Rectangle hitbox)
-		{
-			if (Main.rand.Next(2) == 0)
-			{
-				Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, mod.DustType("Electrocute"));
-			}
-		}
-		
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
-		{
-			target.AddBuff(mod.BuffType("Electrocute"), 300);
-			if (Main.rand.Next(2) == 0)
-			{
-			Vector2 vector82 =  -Main.player[Main.myPlayer].Center + Main.MouseWorld;
-            float ai = Main.rand.Next(100);
-            Vector2 vector83 = Vector2.Normalize(vector82) * item.shootSpeed;
-            Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X, vector83.Y, 580, damage/3, .5f, player.whoAmI, vector82.ToRotation(), ai);
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X+10, vector83.Y+10, 580, damage/3, .5f, player.whoAmI, vector82.ToRotation(), ai);
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X-10, vector83.Y-10, 580, damage/3, .5f, player.whoAmI, vector82.ToRotation(), ai);
-			}
 		}
 		
 		public override void AddRecipes()

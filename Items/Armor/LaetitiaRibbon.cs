@@ -45,7 +45,7 @@ namespace AlchemistNPC.Items.Armor
 			item.height = 18;
 			item.value = 100000;
 			item.rare = 7;
-			item.defense = ad;
+			item.defense = 3;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -61,6 +61,11 @@ namespace AlchemistNPC.Items.Armor
 			{
 			player.minionDamage += 0.25f;
 			}
+			if (NPC.downedPlantBoss)
+			{
+			player.SporeSac();
+            player.sporeSac = true;
+			}
             player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet = true;
         }
 
@@ -74,17 +79,45 @@ namespace AlchemistNPC.Items.Armor
 			player.minionDamage += 0.05f;
 			item.defense = ad;
 			ad = 3;
-			if (NPC.downedBoss3 && !Main.hardMode)
+			if (NPC.downedQueenBee)
 			{
-			ad = 5;
+				ad = 4;
 			}
-			if (Main.hardMode && !NPC.downedMechBossAny)
+			if (NPC.downedBoss3)
 			{
-			ad = 8;
+				ad = 5;
+			}
+			if (Main.hardMode)
+			{
+				ad = 8;
 			}
 			if (NPC.downedMechBossAny)
 			{
-			ad = 12;
+				ad = 10;
+			}
+			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+			{
+				ad = 12;
+			}
+			if (NPC.downedPlantBoss)
+			{
+				ad = 14;
+			}
+			if (NPC.downedGolemBoss)
+			{
+				ad = 16;
+			}
+			if (NPC.downedFishron)
+			{
+				ad = 18;
+			}
+			if (NPC.downedAncientCultist)
+			{
+				ad = 19;
+			}
+			if (NPC.downedMoonlord)
+			{
+				ad = 22;
 			}
 		}
 		
@@ -92,17 +125,45 @@ namespace AlchemistNPC.Items.Armor
 		{
 		item.defense = ad;
 		ad = 3;
-		if (NPC.downedBoss3 && !Main.hardMode)
+			if (NPC.downedQueenBee)
 			{
-			ad = 5;
+				ad = 4;
 			}
-		if (Main.hardMode && !NPC.downedMechBossAny)
+			if (NPC.downedBoss3)
 			{
-			ad = 8;
+				ad = 5;
 			}
-		if (NPC.downedMechBossAny)
+			if (Main.hardMode)
 			{
-			ad = 12;
+				ad = 8;
+			}
+			if (NPC.downedMechBossAny)
+			{
+				ad = 10;
+			}
+			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+			{
+				ad = 12;
+			}
+			if (NPC.downedPlantBoss)
+			{
+				ad = 14;
+			}
+			if (NPC.downedGolemBoss)
+			{
+				ad = 16;
+			}
+			if (NPC.downedFishron)
+			{
+				ad = 18;
+			}
+			if (NPC.downedAncientCultist)
+			{
+				ad = 19;
+			}
+			if (NPC.downedMoonlord)
+			{
+				ad = 22;
 			}
 		}
 		

@@ -17,12 +17,11 @@ namespace AlchemistNPC.Tiles
 		{
 			Main.tileLighted[Type] = true;
 			Main.tileFrameImportant[Type] = true;
-			Main.tileNoAttach[Type] = true;
 			Main.tileLavaDeath[Type] = true;
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x4);
-			TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 16, 16 };
+			TileObjectData.newTile.CoordinateHeights = new[]{16, 16, 16, 18};
 			TileObjectData.newTile.StyleHorizontal = true;
-			TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+			TileObjectData.newTile.StyleWrapLimit = 36;
 			TileObjectData.addTile(Type);
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Wellcheers");

@@ -11,13 +11,16 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("''Cera Sumat'', Holy Avenger");
-			Tooltip.SetDefault("Legendary sword of Old Duke Ehld."
-			+"\nTrue melee sword"
-			+"\nWeakens enemies on hit"
-			+"\nStats are growing through progression"
+			Tooltip.SetDefault("[c/00FF00:Legendary Sword] of Old Duke Ehld."
+			+"\nTrue Melee sword"
+			+"\nInflicts Curse of Light debuff"
+			+"\nMakes enemies take 20% more damage from player"
+			+"\n25% to take only half of the damage from debuffed enemy"
+			+"\n[c/00FF00:Stats are growing up through progression]"
+			+"\nBoosts heavily after entering hardmode"
 			+"\nBoosted stats will be shown after the first swing");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Сера Сумат'', Святой Мститель");
-            Tooltip.AddTranslation(GameCulture.Russian, "Легендарный меч Старого Графа Эхлда\nОслабляет противников при ударе\nПоказатели увеличивается по мере прохождения");
+            Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарный Меч] Старого Графа Эхлда\nОслабляет противников при ударе\n[c/00FF00:Показатели увеличивается по мере прохождения]");
 
 		}
 
@@ -52,49 +55,49 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (NPC.downedBoss2)
 			{
-				item.damage = 24;
+				item.damage = 22;
 			}
 			if (NPC.downedQueenBee)
 			{
-				item.damage = 28;
+				item.damage = 24;
 			}
 			if (NPC.downedBoss3)
 			{
-				item.damage = 32;
+				item.damage = 26;
 			}
 			if (Main.hardMode)
 			{
-				item.damage = 40;
+				item.damage = 32;
 				item.useTime = 10;
 				item.useAnimation = 10;
 			}
 			if (NPC.downedMechBossAny)
 			{
-				item.damage = 48;
+				item.damage = 36;
 			}
 			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
-				item.damage = 60;
+				item.damage = 40;
 			}
 			if (NPC.downedPlantBoss)
 			{
-				item.damage = 72;
+				item.damage = 48;
 			}
 			if (NPC.downedGolemBoss)
 			{
-				item.damage = 81;
+				item.damage = 56;
 			}
 			if (NPC.downedFishron)
 			{
-				item.damage = 90;
+				item.damage = 64;
 			}
 			if (NPC.downedAncientCultist)
 			{
-				item.damage = 100;
+				item.damage = 81;
 			}
 			if (NPC.downedMoonlord)
 			{
-				item.damage = 125;
+				item.damage = 100;
 			}
 			return true;
 		}
@@ -111,13 +114,19 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			target.buffImmune[mod.BuffType("CurseOfLight")] = false;
 			target.AddBuff(mod.BuffType("CurseOfLight"), 36000);
-			if (Main.hardMode && !NPC.downedMechBossAny)
+			if (Main.hardMode && !NPC.downedMechBoss1 && !NPC.downedMechBoss2 && !NPC.downedMechBoss3)
+			{
+			Vector2 vel1 = new Vector2(0, 0);
+			vel1 *= 0f;
+			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/5, 0, Main.myPlayer);
+			}
+			if (Main.hardMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3 && !NPC.downedGolemBoss)
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
 			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/4, 0, Main.myPlayer);
 			}
-			if (Main.hardMode && NPC.downedMechBossAny)
+			if (Main.hardMode && NPC.downedGolemBoss)
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;

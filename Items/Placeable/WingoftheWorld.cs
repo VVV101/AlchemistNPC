@@ -24,8 +24,8 @@ namespace AlchemistNPC.Items.Placeable
 
 		public override void SetDefaults()
 		{
-			item.width = 32;
-			item.height = 28;
+			item.width = 48;
+			item.height = 60;
 			item.maxStack = 99;
 			item.useTurn = true;
 			item.autoReuse = true;

@@ -114,7 +114,7 @@ namespace AlchemistNPC.Projectiles
 		public override bool PreAI(Projectile projectile)
 		{
 			NPC npc = Main.npc[projectile.owner];
-			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1)
+			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1 && Main.rand.Next(4) == 0)
 			{
 				projectile.damage /= 2;
 			}
@@ -184,6 +184,15 @@ namespace AlchemistNPC.Projectiles
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).TS == true && projectile.type == ProjectileID.NebulaArcanum)
 			{
 				projectile.penetrate = 1;
+			}
+		}
+		
+		public override void ModifyHitNPC (Projectile projectile, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			Player player = Main.player[projectile.owner];
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).SFU == true && projectile.minion && Main.rand.Next(10) == 0)
+			{
+				crit = true;
 			}
 		}
 		

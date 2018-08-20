@@ -18,7 +18,8 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("True Discord Potion");
-            Tooltip.SetDefault("Allows to teleport on cursor position by hotkey"
+			Tooltip.SetDefault("[c/00FF00:Unique Explorer's potion]"
+            + "\nAllows to teleport on cursor position by hotkey"
             + "\nBehaves exactly like Rod of Discord"
             + "\nNON-CALAMITY BUFF POTION");
             DisplayName.AddTranslation(GameCulture.Russian, "Зелье Раздора");

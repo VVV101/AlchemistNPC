@@ -42,20 +42,48 @@ namespace AlchemistNPC.Items.Armor
 
 		public override void UpdateEquip(Player player)
 		{
-			player.minionDamage += 0.20f;
+			player.minionDamage += 0.2f;
 			item.defense = ad;
 			ad = 5;
-			if (NPC.downedBoss3 && !Main.hardMode)
+			if (NPC.downedQueenBee)
 			{
-			ad = 7;
+				ad = 6;
+			}
+			if (NPC.downedBoss3)
+			{
+				ad = 7;
 			}
 			if (Main.hardMode)
 			{
-			ad = 10;
+				ad = 10;
 			}
-			if (NPC.downedMechBoss3)
+			if (NPC.downedMechBossAny)
 			{
-			ad = 14;
+				ad = 12;
+			}
+			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+			{
+				ad = 14;
+			}
+			if (NPC.downedPlantBoss)
+			{
+				ad = 16;
+			}
+			if (NPC.downedGolemBoss)
+			{
+				ad = 18;
+			}
+			if (NPC.downedFishron)
+			{
+				ad = 20;
+			}
+			if (NPC.downedAncientCultist)
+			{
+				ad = 21;
+			}
+			if (NPC.downedMoonlord)
+			{
+				ad = 24;
 			}
 		}
 		
@@ -63,17 +91,45 @@ namespace AlchemistNPC.Items.Armor
 		{
 		item.defense = ad;
 		ad = 5;
-		if (NPC.downedBoss3 && !Main.hardMode)
+			if (NPC.downedQueenBee)
 			{
-			ad = 7;
+				ad = 6;
 			}
-		if (Main.hardMode && !NPC.downedMechBossAny)
+			if (NPC.downedBoss3)
 			{
-			ad = 10;
+				ad = 7;
+			}
+			if (Main.hardMode)
+			{
+				ad = 10;
 			}
 			if (NPC.downedMechBossAny)
 			{
-			ad = 14;
+				ad = 12;
+			}
+			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+			{
+				ad = 14;
+			}
+			if (NPC.downedPlantBoss)
+			{
+				ad = 16;
+			}
+			if (NPC.downedGolemBoss)
+			{
+				ad = 18;
+			}
+			if (NPC.downedFishron)
+			{
+				ad = 20;
+			}
+			if (NPC.downedAncientCultist)
+			{
+				ad = 21;
+			}
+			if (NPC.downedMoonlord)
+			{
+				ad = 24;
 			}
 		}
 

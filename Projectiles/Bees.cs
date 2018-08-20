@@ -50,6 +50,16 @@ namespace AlchemistNPC.Projectiles
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			target.immune[projectile.owner] = 1;
+			projectile.penetrate = 1;
+			Player player = Main.player[projectile.owner];
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BeeHeal == true)
+			{
+				if (Main.rand.Next(10) == 0)
+				{
+				player.statLife += 2;
+				player.HealEffect(2, true);
+				}
+			}
 		}
 	}
 }

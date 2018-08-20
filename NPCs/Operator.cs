@@ -869,6 +869,7 @@ namespace AlchemistNPC.NPCs
         {
         get { return ThoriumMod.ThoriumWorld.downedRealityBreaker; }
         }
+		
 		public bool SpiritModDownedStarplateRaider
 		{
         get { return SpiritMod.MyWorld.downedRaider; }
@@ -877,9 +878,34 @@ namespace AlchemistNPC.NPCs
 		{
         get { return SpiritMod.MyWorld.downedOverseer; }
         }
+		
+		public bool SacredToolsDownedPumpkin
+		{
+        get { return SacredTools.ModdedWorld.downedPumpboi; }
+        }
+		public bool SacredToolsDownedHarpyPreHM
+		{
+        get { return SacredTools.ModdedWorld.downedHarpy; }
+        }
+		public bool SacredToolsDownedHarpyHM
+		{
+        get { return SacredTools.ModdedWorld.downedRaynare; }
+        }
 		public bool SacredToolsDownedAbbadon
 		{
         get { return SacredTools.ModdedWorld.OblivionSpawns; }
+        }
+		public bool SacredToolsDownedAraghur
+		{
+        get { return SacredTools.ModdedWorld.FlariumSpawns; }
+        }
+		public bool SacredToolsDownedLunarians
+		{
+        get { return SacredTools.ModdedWorld.downedLunarians; }
+        }
+		public bool SacredToolsDownedChallenger
+		{
+        get { return SacredTools.ModdedWorld.downedChallenger; }
         }
 		
 		public override void SetupShop(Chest shop, ref int nextSlot)
@@ -1012,7 +1038,7 @@ namespace AlchemistNPC.NPCs
 					if (CalamityModDownedCalamitas)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("UnholyCore"));
-					shop.item[nextSlot].shopCustomPrice = 250000;
+					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
 					}
 					if (NPC.downedPlantBoss)
@@ -1030,7 +1056,7 @@ namespace AlchemistNPC.NPCs
 					if (CalamityModDownedAstrum)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstralJelly"));
-					shop.item[nextSlot].shopCustomPrice = 250000;
+					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Stardust"));
 					shop.item[nextSlot].shopCustomPrice = 100000;
@@ -1039,16 +1065,16 @@ namespace AlchemistNPC.NPCs
 				}
 				if (NPC.downedGolemBoss)
 				{
-				shop.item[nextSlot].SetDefaults (ItemID.ShinyStone);
-				shop.item[nextSlot].shopCustomPrice = 50000;
-				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.BeetleHusk);
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
 					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
+						shop.item[nextSlot].shopCustomPrice = 30000;
+						nextSlot++;
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Tenebris"));
-						shop.item[nextSlot].shopCustomPrice = 10000;
+						shop.item[nextSlot].shopCustomPrice = 50000;
 						nextSlot++;
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Lumenite"));
 						shop.item[nextSlot].shopCustomPrice = 50000;
@@ -1536,6 +1562,61 @@ namespace AlchemistNPC.NPCs
 								}
 							}
 						}
+						if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+						{
+							if (NPC.downedBoss3)	
+							{
+								if (SacredToolsDownedPumpkin)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("PumpkinBag"));
+									shop.item[nextSlot].shopCustomPrice = new int?(10);
+									shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+									nextSlot++;
+									}
+								if (SacredToolsDownedHarpyPreHM)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("HarpyBag"));
+									shop.item[nextSlot].shopCustomPrice = new int?(15);
+									shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+									nextSlot++;
+									}
+								if (SacredToolsDownedHarpyHM)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("HarpyBag2"));
+									shop.item[nextSlot].shopCustomPrice = new int?(10);
+									shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+									nextSlot++;
+									}
+								if (SacredToolsDownedAbbadon)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("OblivionBag"));
+									shop.item[nextSlot].shopCustomPrice = new int?(10);
+									shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+									nextSlot++;
+									}
+								if (SacredToolsDownedAraghur)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("SerpentBag"));
+									shop.item[nextSlot].shopCustomPrice = new int?(15);
+									shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+									nextSlot++;
+									}
+								if (SacredToolsDownedLunarians)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("LunarBag"));
+									shop.item[nextSlot].shopCustomPrice = new int?(5);
+									shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
+									nextSlot++;
+									}
+								if (SacredToolsDownedChallenger)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("ChallengerBag"));
+									shop.item[nextSlot].shopCustomPrice = new int?(10);
+									shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
+									nextSlot++;
+									}
+							}
+						}
 				}
 				if (!Config.CoinsDrop ||  ModLoader.GetMod("AlchemistNPCContentDisabler") != null)
 				{
@@ -1753,6 +1834,54 @@ namespace AlchemistNPC.NPCs
 									nextSlot++;
 									}
 								}
+							}
+						}
+					if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+						{
+							if (NPC.downedBoss3)	
+							{
+								if (SacredToolsDownedPumpkin)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("PumpkinBag"));
+									shop.item[nextSlot].shopCustomPrice = 500000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedHarpyPreHM)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("HarpyBag"));
+									shop.item[nextSlot].shopCustomPrice = 1000000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedHarpyHM)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("HarpyBag2"));
+									shop.item[nextSlot].shopCustomPrice = 2000000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedAbbadon)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("OblivionBag"));
+									shop.item[nextSlot].shopCustomPrice = 5000000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedAraghur)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("SerpentBag"));
+									shop.item[nextSlot].shopCustomPrice = 7500000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedLunarians)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("LunarBag"));
+									shop.item[nextSlot].shopCustomPrice = 10000000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedChallenger)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("ChallengerBag"));
+									shop.item[nextSlot].shopCustomPrice = 15000000;
+									nextSlot++;
+									}
 							}
 						}
 				}

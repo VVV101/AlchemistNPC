@@ -28,7 +28,7 @@ namespace AlchemistNPC.Projectiles
 			if (projectile.penetrate <= 0)
 			{
 				projectile.Kill();
-				for (int h = 0; h < 5; h++)
+				for (int h = 0; h < 3; h++)
 				{
 					Vector2 vel = new Vector2(0, -1);
 					float rand = Main.rand.NextFloat() * 6.283f;
@@ -47,7 +47,7 @@ namespace AlchemistNPC.Projectiles
 			{
 				projectile.Kill();
 				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
-				for (int h = 0; h < 7; h++)
+				for (int h = 0; h < 3; h++)
 				{
 					Vector2 vel = new Vector2(0, -1);
 					float rand = Main.rand.NextFloat() * 6.283f;

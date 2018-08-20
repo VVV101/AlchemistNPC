@@ -38,6 +38,7 @@ namespace AlchemistNPC
 	public class AlchemistNPCPlayer : ModPlayer
 	{
 		public bool AutoinjectorMK2 = false;
+		public bool BeeHeal = false;
 		public bool Pandora = false;
 		public bool TS = false;
 		public bool Symbiote = false;
@@ -56,6 +57,7 @@ namespace AlchemistNPC
 		public bool Scroll = false;
 		public bool EyeOfJudgement = false;
 		public bool LaetitiaSet = false;
+		public bool SFU = false;
 		public bool SF = false;
 		public bool PGSWear = false;
 		public bool RevSet = false;
@@ -91,6 +93,7 @@ namespace AlchemistNPC
 			Item.potionDelay = 3600;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
+			BeeHeal = false;
 			Pandora = false;
 			TS = false;
 			Symbiote = false;
@@ -106,6 +109,7 @@ namespace AlchemistNPC
 			EyeOfJudgement = false;
 			LaetitiaSet = false;
 			Scroll = false;
+			SFU = false;
 			SF = false;
 			XtraT = false;
 			RevSet = false;
@@ -130,6 +134,7 @@ namespace AlchemistNPC
 			if (KeepBuffs == 1)
 			{
 			BuffsKeep = true;
+			player.pStone = true;
 			}
 			if (KeepBuffs == 0)
 			{

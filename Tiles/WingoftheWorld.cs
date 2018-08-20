@@ -17,12 +17,11 @@ namespace AlchemistNPC.Tiles
 			Main.tileLighted[Type] = true;
 			Main.tileSolidTop[Type] = false;
 			Main.tileFrameImportant[Type] = true;
-			Main.tileNoAttach[Type] = true;
 			Main.tileTable[Type] = true;
 			Main.tileLavaDeath[Type] = false;
-			TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-			TileObjectData.newTile.Origin = new Point16(0, 1);
-			TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
+			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x4);
+			TileObjectData.newTile.CoordinateHeights = new[]{16, 16, 16, 18};
+			TileObjectData.newTile.StyleHorizontal = true;
 			TileObjectData.addTile(Type);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
@@ -39,6 +38,7 @@ namespace AlchemistNPC.Tiles
 			TileID.Chairs,
 			TileID.Torches 
 			};
+			animationFrameHeight = 74;
 		}
 
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
@@ -50,6 +50,12 @@ namespace AlchemistNPC.Tiles
 				g = 0.9f;
 				b = 0.5f;
 			}
+		}
+		
+		public override void AnimateTile(ref int frame, ref int frameCounter)
+		{
+			frame = Main.tileFrame[TileID.FireflyinaBottle];
+			frameCounter = Main.tileFrameCounter[TileID.FireflyinaBottle];
 		}
 		
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

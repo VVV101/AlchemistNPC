@@ -12,8 +12,7 @@ namespace AlchemistNPC.Projectiles
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("CAE");
-			ProjectileID.Sets.TrailCacheLength[projectile.type] = 30;
+			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
 			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
 		}
 

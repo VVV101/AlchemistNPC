@@ -28,6 +28,7 @@ namespace AlchemistNPC.Projectiles
 			projectile.timeLeft = 99999;
 			projectile.tileCollide = false;
 			projectile.friendly = false;
+			projectile.magic = false;
 			aiType = ProjectileID.LaserMachinegunLaser;
 			projectile.extraUpdates = 1;
 			projectile.scale = 1.5f;

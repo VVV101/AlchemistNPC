@@ -65,8 +65,9 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(ItemID.ChlorophyteBullet, 3996);
 			recipe.AddIngredient(ItemID.SniperScope);
 			recipe.AddIngredient(ItemID.MagicQuiver);
-			recipe.AddIngredient(ItemID.LunarBar, 16);
-            recipe.AddIngredient(ItemID.FragmentVortex, 18);
+			recipe.AddIngredient(ItemID.LunarBar, 15);
+            recipe.AddIngredient(ItemID.FragmentVortex, 25);
+			recipe.AddIngredient(null, "EmagledFragmentation", 100);
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();

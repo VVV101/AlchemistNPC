@@ -21,7 +21,7 @@ namespace AlchemistNPC.Tiles
 			Main.tileNoAttach[Type] = true;
 			Main.tileLavaDeath[Type] = true;
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x4);
-			TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 16, 16 };
+			TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 16, 18 };
 			TileObjectData.newTile.StyleHorizontal = true;
 			TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
 			TileObjectData.addTile(Type);
@@ -84,7 +84,7 @@ namespace AlchemistNPC.Tiles
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("Fargowiltas").TileType("CrucibleCosmosSheet");
 				}
 			dustType = mod.DustType("JustitiaPale");
-			animationFrameHeight = 72;
+			animationFrameHeight = 74;
 		}
 		
 		public override void NumDust(int i, int j, bool fail, ref int num)
