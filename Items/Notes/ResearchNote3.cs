@@ -17,7 +17,7 @@ namespace AlchemistNPC.Items.Notes
 			Tooltip.SetDefault("'In my interdimensional travels I once met one scientist, called [c/00FF00:Stanford]."
 			+"\nHe asked for my help in making weapon, which could even cause damage to Godlike Creature."
 			+"\nIt took us about half year to actually made working [c/00FF00:Prototype #618] aka [c/00FF00:'Quantum Destabilizer']..."
-			+"\nAny [c/00FF00:Chargable Blaster] would fit as base."
+			+"\n[c/00FF00:Charged Blaster] from Martians would fit as base."
 			+"\nLens from [c/00FF00:Heat Ray] would be just fine." 
 			+"\nSome parts should be made from both Luminite and Celestial Fragments..."
 			+"\nSo, [c/00FF00:Alchemical Bundle] is needed here."

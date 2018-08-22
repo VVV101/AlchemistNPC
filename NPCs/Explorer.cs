@@ -702,7 +702,7 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ExplorersBrew"));
 		shop.item[nextSlot].shopCustomPrice = 250000;
         nextSlot++;
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TrueDiscordPotion"));
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("PerfectDiscordPotion"));
 		shop.item[nextSlot].shopCustomPrice = 330000;
         nextSlot++;
 		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ChromaticCrystal"));

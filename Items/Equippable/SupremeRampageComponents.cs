@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 
 namespace AlchemistNPC.Items.Equippable
 {
-	public class TrueRampageComponents : ModItem
+	public class SupremeRampageComponents : ModItem
 	{
 		public override bool Autoload(ref string name)
 		{
@@ -17,12 +17,12 @@ namespace AlchemistNPC.Items.Equippable
 		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True Rampage Components");
+			DisplayName.SetDefault("Supreme Rampage Components");
 			Tooltip.SetDefault("Turns Musket Balls into deadly Chloroshard Bullets"
 			+ "\nThey work like crazy combination of Chlorophyte and Crystal Dust Bullets"
 			+ "\nGives effect of Sniper Scope (15% bonus ranged damage and crit, ability to zoom)"
 			+ "\nHide visual to disable Sniper Scope effect"
-			+ "\nIncreases armor penetration by 30"
+			+ "\nIncreases armor penetration by 40"
 			+ "\nAmmo Reservation Effect"
 			+ "\nSpeeds up all arrows"
 			+ "\nEmpowers any Electrospheres greatly"
@@ -30,7 +30,7 @@ namespace AlchemistNPC.Items.Equippable
 			+ "\nto look down on his followers in chaos and anarchy as the world is already aflame,"
 			+ "\nout he tossed an canister of gasoline and out from his mouth, his words were: Screw it.''");
 			DisplayName.AddTranslation(GameCulture.Russian, "Истинные Компоненты Буйства");
-            Tooltip.AddTranslation(GameCulture.Russian, "Превращяет мушкетные пули в смертоносные Хлорофитово-осколочные пули\nОни работают как безумная комбинация Хлорифитовых и Пыле-кристальных пуль\nДаёт эффект Снайперского прицела \n15% бонусного урона и шанса критического удара для дальнего боя\nОтключение видимости выключает эффект Снайперского Прицела\nУвеличивает пробивание брони на 30\nЭффект Экономии Патронов\n''And the lord poked his head out from the patron clouds,\nto look down on his followers in chaos and anarchy as the world is already aflame,\nout he tossed an canister of gasoline and out from his mouth, his words were: Screw it.''");
+            Tooltip.AddTranslation(GameCulture.Russian, "Превращяет мушкетные пули в смертоносные Хлорофитово-осколочные пули\nОни работают как безумная комбинация Хлорифитовых и Пыле-кристальных пуль\nДаёт эффект Снайперского прицела \n15% бонусного урона и шанса критического удара для дальнего боя\nОтключение видимости выключает эффект Снайперского Прицела\nУвеличивает пробивание брони на 40\nЭффект Экономии Патронов\n''And the lord poked his head out from the patron clouds,\nto look down on his followers in chaos and anarchy as the world is already aflame,\nout he tossed an canister of gasoline and out from his mouth, his words were: Screw it.''");
         }
 	
 		public override void SetDefaults()
@@ -49,7 +49,7 @@ namespace AlchemistNPC.Items.Equippable
 			{
 				player.scope = true;
 			}
-			player.armorPenetration += 30;
+			player.armorPenetration += 40;
 			player.magicQuiver = true;
 			player.ammoPotion = true;
 			player.rangedDamage += 0.15f;

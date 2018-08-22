@@ -6,48 +6,50 @@ The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of th
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Explorer is secret NPC. Try to figure out, how to spawn her.
 v7.4
+-Added Sacred Tools, Spirit and Enigma mods support for Operator's Modded Treasure Bags shops.
+-Added "Cera Sumat", Holy Avenger true melee Legendary Sword. Boosting stats through game progression. Inflicts heavy enemy weakening debuff.
+Can drop from any enemy with 1:15000 chance.
 -Added Symbiote, post Moon Lord (post DoG and post Ragnarok) accessory.
-Increases damage and crit by 10%, decreases cooldown of healing potions. Has 2 states depending on HP.
--Added Dark Magic Wand. Direct upgrade for Magic Wand.
+Increases damage and crit by 10%, heavily decreases cooldown of healing potions. Has 2 states depending on HP.
+-Added Dark Magic Wand. Direct upgrade for Magic Wand. Releases wider beam.
 Available post Moon Lord (post Providence and Ragnarok).
 -Added True Sasscade Yo-yo. Direct upgrade for Sasscade. Shoots Nebula Arcanums to nearby enemies.
 Available post Moon Lord (post Providence and Ragnarok).
--Added Eye of Pure Judgement. Direct upgrade for Eye of Judgement.
+-Added Eye of Pure Judgement. Direct upgrade for Eye of Judgement. Working twice as fast now and endurance drop is now only 17%.
 Available post Moon Lord (post Providence and Ragnarok).
--Added True Akumu. Direct upgrade for Akumu. Not lowers power while shield is active and shield now activates at 35% of HP.
+-Added Unchained Akumu. Direct upgrade for Akumu. Not lowers power while shield is active and shield now activates at 35% of HP.
 Available post Moon Lord (post Providence and Ragnarok).
 -Added Ultimate Sephirothic Fruit. Provides one more minion slot and minions can do critical hit with 10% chance.
 Available post Moon Lord (post DoG and Ragnarok).
--Added True Rampage Components. Increases ranged damage and crit by additional 5% and increases armor penetration by 30.
+-Added Supreme Rampage Components. Increases ranged damage and crit by additional 5% and increases armor penetration by 40.
 Available post Moon Lord (post DoG and Ragnarok).
 -Added Lilith Charm. Increased magic damage and crit by additional 5%, decreased mana usage by 10%, increased mana regen even more and bees now have low chance to heal you on enemy hit.
 Available post Moon Lord (post DoG and Ragnarok).
 -Added Pandora PF594 and PF666 forms. Work as special attacks.
 Using resets Pandora to PF422 form.
--Added "Cera Sumat", Holy Avenger true melee legendary sword. Boosting stats through game progression.
-Can drop from any enemy with 1:10000 chance.
--Added Sacred Tools support for Operator's Modded Treasure Bags shop.
+-Added infinite variations for Seeping and Icedamned Arrow.
+-Added Living Shards to Operator's shop. Available after beating Golem.
+-Added support for Material Trader NPCs max HP boosts.
+-Added Informating Note. Available pre Skeletron. Has no usage.
+-Added some new sprites.
 -Reversity Coins now will only drop in Expert Worlds.
 -Now Laetitia set stats boosting through all vanilla progression.
 -Now consuming Autoinjector also gives permanent cooldown reduction of healing potions.
 -Now Thorium Combination only takes 4 slots instead of 10.
--Added infinite variations for Seeping and Icedamned Arrow.
--Added Living Shards to Operator's shop. Available after beating Golem.
 -Flasks of Poison, Fire and Party are now available in Young Brewer's shop pre-hardmode.
 -Improved Akumu Shield. Now it reflects projectiles before they hitting the player.
 -Changed behavior for light pet.
 -Changed mechanics for Stormbreaker.
 -Changed prices for some materials.
 -Changed sprite for Wing of the World. Just place tile again to fix possible issues.
--Polished mechanics for Akumu and True Akumu.
+-Polished mechanics for Akumu and Unchained Akumu.
 -Fixed tiles placement. Now they are not floating above for a little.
 -Fixed Quest fishes availability conditions (would only work after the next tModloader update).
 -Fixed hotkey translations.
 -Nerfed Crystal Dust Bullets.
 -Made Secret boss immune to Abyssal Shell.
--Made Secret boss to instantly kill player if you are cheating.
+-Made Secret boss to instantly kill player if cheating.
 -Sorted some of the code.
--Added some new sprites.
 v7.3.1
 -Fixed Bandwidth error (I hope).
 -Added Dinasty Wood and Shingles to Architect.

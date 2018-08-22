@@ -12,7 +12,7 @@ using AlchemistNPC;
 
 namespace AlchemistNPC.Items.Weapons
 {
-	public class TrueAkumu : ModItem
+	public class UnchainedAkumu : ModItem
 	{
 		public override bool Autoload(ref string name)
 		{
@@ -20,17 +20,14 @@ namespace AlchemistNPC.Items.Weapons
 		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("True ''Akumu''");
+			DisplayName.SetDefault("Unchained ''Akumu''");
 			Tooltip.SetDefault("It means ''demon'' on Japanese"
 			+"\nIts slice pierces through any amount of enemies on its way"
 			+"\nLeft click launcher short travelling projectile"
 			+"\nRight click slices the air in place"
 			+"\nWhile at 35% of life or lower, Akumu generates projectile reflecting shield");
-			DisplayName.AddTranslation(GameCulture.Russian, "Истинная ''Акуму''");
+			DisplayName.AddTranslation(GameCulture.Russian, "Освобождённая ''Акуму''");
             Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''демон'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши");
-
-            DisplayName.AddTranslation(GameCulture.Chinese, "''Akumu''");
-            Tooltip.AddTranslation(GameCulture.Chinese, "在日语里, 'Akumu'的意思是'恶魔'\n它发射出的剑气能穿透经过的所有敌人\n左键发射剑气\n右键近距离攻击");
         }
 
 		public override void SetDefaults()

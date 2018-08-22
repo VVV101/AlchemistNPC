@@ -9,7 +9,7 @@ using Terraria.Localization;
  
 namespace AlchemistNPC.Items
 {
-    public class TrueDiscordPotion : ModItem
+    public class PerfectDiscordPotion : ModItem
     {
 		public override bool Autoload(ref string name)
 		{
@@ -17,16 +17,16 @@ namespace AlchemistNPC.Items
 		}
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("True Discord Potion");
+            DisplayName.SetDefault("Perfect Discord Potion");
 			Tooltip.SetDefault("[c/00FF00:Unique Explorer's potion]"
             + "\nAllows to teleport on cursor position by hotkey"
             + "\nBehaves exactly like Rod of Discord"
             + "\nNON-CALAMITY BUFF POTION");
-            DisplayName.AddTranslation(GameCulture.Russian, "Зелье Раздора");
-            Tooltip.AddTranslation(GameCulture.Russian, "Позволяет телепортироваться на курсор при нажатии горячей клавиши\nПри применении ведёт себя аналогично Жезлу Раздора\nЗелье не из Каламити мода");
+            DisplayName.AddTranslation(GameCulture.Russian, "Превосходное Зелье Раздора");
+            Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Уникальное Зелье Исследовательницы]\nПозволяет телепортироваться на курсор при нажатии горячей клавиши\nПри применении ведёт себя аналогично Жезлу Раздора\nЗелье не из Каламити мода");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "真·混乱药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "允许使用快捷键传送到鼠标位置"
+            Tooltip.AddTranslation(GameCulture.Chinese, "[c/00FF00:特调探险者药剂]\n允许使用快捷键传送到鼠标位置"
             + "\n效果等同于混乱法杖"
             + "\n非灾厄Buff药剂");
         }    

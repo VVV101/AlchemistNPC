@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace AlchemistNPC.Items.Weapons
 {
-	public class MagicWandUnchained : ModItem
+	public class DarkMagicWand : ModItem
 	{
 		public override bool Autoload(ref string name)
 		{

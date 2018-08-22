@@ -15,10 +15,12 @@ namespace AlchemistNPC.NPCs
 		public static bool Shop2 = false;
 		public static bool Shop3 = false;
 		public static bool Shop4 = false;
+		public static bool Shop5 = false;
 		public static bool S1A = false;
 		public static bool S2A = false;
 		public static bool S3A = false;
 		public static bool S4A = false;
+		public static bool S5A = false;
 		public override string Texture
 		{
 			get
@@ -65,6 +67,11 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Modded Treasure Bags Shop");
             text.AddTranslation(GameCulture.Russian, "Магазин сумок модовых Боссов");
             text.AddTranslation(GameCulture.Chinese, "模组宝藏袋商店    ");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("ModdedTreasureBagsShop2");
+            text.SetDefault("Modded Treasure Bags Shop #2");
+            text.AddTranslation(GameCulture.Russian, "Магазин сумок модовых Боссов #2");
+            text.AddTranslation(GameCulture.Chinese, "模组宝藏袋商店#2    ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("CycleShopO");
             text.SetDefault("Cycle shop");
@@ -249,6 +256,7 @@ namespace AlchemistNPC.NPCs
 		S2A = false;
 		S3A = false;
 		S4A = false;
+		S5A = false;
 		}
 		
 		public override void SetDefaults()
@@ -621,13 +629,14 @@ namespace AlchemistNPC.NPCs
 		string BossDropsShop = Language.GetTextValue("Mods.AlchemistNPC.BossDropsShop");
 		string VanillaTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.VanillaTreasureBagsShop");
 		string ModdedTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop");
+		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop2");
 		string CycleShopO = Language.GetTextValue("Mods.AlchemistNPC.CycleShopO");
 		if (Config.TS && Main.expertMode)
 		{
 			if (Shop1)
 			{
 			button = BossDropsShop;
-			S4A = false;
+			S5A = false;
 			S1A = true;
 			}
 			if (Shop2)
@@ -648,6 +657,12 @@ namespace AlchemistNPC.NPCs
 			S3A = false;
 			S4A = true;
 			}
+			if (Shop5)
+			{
+			button = ModdedTreasureBagsShop2;
+			S4A = false;
+			S5A = true;
+			}
 			button2 = CycleShopO;
 		}
 			if (!Config.TS || !Main.expertMode)
@@ -662,7 +677,7 @@ namespace AlchemistNPC.NPCs
 				if (Shop1)
 				{
 				button = BossDropsShop;
-				S4A = false;
+				S5A = false;
 				S1A = true;
 				}
 				if (Shop3)
@@ -676,6 +691,12 @@ namespace AlchemistNPC.NPCs
 				button = ModdedTreasureBagsShop;
 				S3A = false;
 				S4A = true;
+				}
+				if (Shop5)
+				{
+				button = ModdedTreasureBagsShop2;
+				S4A = false;
+				S5A = true;
 				}
 			}
 			if (ModLoader.GetMod("AlchemistNPCContentDisabler") != null && (!Config.TS || !Main.expertMode))
@@ -725,8 +746,13 @@ namespace AlchemistNPC.NPCs
 						}
 				if (Shop4 && S4A)
 						{
-						Shop1 = true;
+						Shop5 = true;
 						Shop4 = false;
+						}
+				if (Shop5 && S5A)
+						{
+						Shop1 = true;
+						Shop5 = false;
 						}
 				}
 				if (!Config.TS || !Main.expertMode)
@@ -749,8 +775,13 @@ namespace AlchemistNPC.NPCs
 							}
 					if (Shop4 && S4A)
 							{
-							Shop1 = true;
+							Shop5 = true;
 							Shop4 = false;
+							}
+					if (Shop5 && S5A)
+							{
+							Shop1 = true;
+							Shop5 = false;
 							}
 				}
 			}
@@ -870,15 +901,6 @@ namespace AlchemistNPC.NPCs
         get { return ThoriumMod.ThoriumWorld.downedRealityBreaker; }
         }
 		
-		public bool SpiritModDownedStarplateRaider
-		{
-        get { return SpiritMod.MyWorld.downedRaider; }
-        }
-		public bool SpiritModDownedOverseer
-		{
-        get { return SpiritMod.MyWorld.downedOverseer; }
-        }
-		
 		public bool SacredToolsDownedPumpkin
 		{
         get { return SacredTools.ModdedWorld.downedPumpboi; }
@@ -906,6 +928,80 @@ namespace AlchemistNPC.NPCs
 		public bool SacredToolsDownedChallenger
 		{
         get { return SacredTools.ModdedWorld.downedChallenger; }
+        }
+		
+		public bool SpiritModDownedScarabeus
+		{
+        get { return SpiritMod.MyWorld.downedScarabeus; }
+        }
+		public bool SpiritModDownedBane
+		{
+        get { return SpiritMod.MyWorld.downedReachBoss; }
+        }
+		public bool SpiritModDownedFlier
+		{
+        get { return SpiritMod.MyWorld.downedAncientFlier; }
+        }
+		public bool SpiritModDownedStarplateRaider
+		{
+        get { return SpiritMod.MyWorld.downedRaider; }
+        }
+		public bool SpiritModDownedInfernon
+		{
+        get { return SpiritMod.MyWorld.downedInfernon; }
+        }
+		public bool SpiritModDownedDusking
+		{
+        get { return SpiritMod.MyWorld.downedDusking; }
+        }
+		public bool SpiritModDownedEtherialUmbra
+		{
+        get { return SpiritMod.MyWorld.downedSpiritCore; }
+        }
+		public bool SpiritModDownedIlluminantMaster
+		{
+        get { return SpiritMod.MyWorld.downedIlluminantMaster; }
+        }
+		public bool SpiritModDownedAtlas
+		{
+        get { return SpiritMod.MyWorld.downedAtlas; }
+        }
+		public bool SpiritModDownedOverseer
+		{
+        get { return SpiritMod.MyWorld.downedOverseer; }
+        }
+		
+		public bool EnigmaDownedSharkron
+		{
+        get { return Laugicality.LaugicalityWorld.downedDuneSharkron; }
+        }
+		public bool EnigmaDownedHypothema
+		{
+        get { return Laugicality.LaugicalityWorld.downedHypothema; }
+        }
+		public bool EnigmaDownedRagnar
+		{
+        get { return Laugicality.LaugicalityWorld.downedRagnar; }
+        }
+		public bool EnigmaDownedAnDio
+		{
+        get { return Laugicality.LaugicalityWorld.downedAnDio; }
+        }
+		public bool EnigmaDownedAnnihilator
+		{
+        get { return Laugicality.LaugicalityWorld.downedAnnihilator; }
+        }
+		public bool EnigmaDownedSlybertron
+		{
+        get { return Laugicality.LaugicalityWorld.downedSlybertron; }
+        }
+		public bool EnigmaDownedSteamTrain
+		{
+        get { return Laugicality.LaugicalityWorld.downedSteamTrain; }
+        }
+		public bool EnigmaDownedEtheria
+		{
+        get { return Laugicality.LaugicalityWorld.downedTrueEtheria; }
         }
 		
 		public override void SetupShop(Chest shop, ref int nextSlot)
@@ -1195,6 +1291,11 @@ namespace AlchemistNPC.NPCs
 			}
 			if (Shop3)
 			{
+				if (!NPC.downedBoss3)
+				{
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("InformatingNote"));
+				nextSlot++;
+				}
 				if (Config.CoinsDrop && ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
@@ -1338,6 +1439,11 @@ namespace AlchemistNPC.NPCs
 			}
 			if (Shop4)
 			{
+				if (!NPC.downedBoss3)
+				{
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("InformatingNote"));
+				nextSlot++;
+				}
 				if (Config.CoinsDrop && ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
@@ -1884,6 +1990,259 @@ namespace AlchemistNPC.NPCs
 									}
 							}
 						}
+				}
+			}
+			if (Shop5)
+			{
+				if (!NPC.downedBoss3)
+				{
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("InformatingNote"));
+				nextSlot++;
+				}
+				if (Config.CoinsDrop && ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
+				{
+					if (NPC.downedBoss3 && Main.expertMode)
+					{
+						if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+						{
+							if (SpiritModDownedScarabeus)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("BagOScarabs"));
+							shop.item[nextSlot].shopCustomPrice = new int?(5);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (SpiritModDownedBane)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("ReachBossBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (SpiritModDownedFlier)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("FlyerBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(20);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (SpiritModDownedStarplateRaider)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("SteamRaiderBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(5);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier2ID;
+							nextSlot++;
+							}
+							if (SpiritModDownedInfernon)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("InfernonBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier2ID;
+							nextSlot++;
+							}
+							if (SpiritModDownedDusking)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("DuskingBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+							if (SpiritModDownedEtherialUmbra)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("SpiritCoreBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+							if (SpiritModDownedIlluminantMaster)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("IlluminantBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(20);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+							if (SpiritModDownedAtlas)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("AtlasBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+							nextSlot++;
+							}
+							if (SpiritModDownedOverseer)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("OverseerBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(30);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+							nextSlot++;
+							}
+						}
+						if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+						{
+							if (EnigmaDownedSharkron)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("DuneSharkronTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(5);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (EnigmaDownedHypothema)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("HypothemaTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (EnigmaDownedRagnar)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("RagnarTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(20);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (EnigmaDownedAnDio)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("AnDioTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier2ID;
+							nextSlot++;
+							}
+							if (EnigmaDownedAnnihilator)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("AnnihilatorTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+							if (EnigmaDownedSlybertron)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("SlybertronTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+							if (EnigmaDownedSteamTrain)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("SteamTrainTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+						}
+					}
+				}
+				if (!Config.CoinsDrop ||  ModLoader.GetMod("AlchemistNPCContentDisabler") != null)
+				{
+					if (NPC.downedBoss3 && Main.expertMode)
+					{
+						if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+						{
+							if (SpiritModDownedScarabeus)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("BagOScarabs"));
+							shop.item[nextSlot].shopCustomPrice = 300000;
+							nextSlot++;
+							}
+							if (SpiritModDownedBane)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("ReachBossBag"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+							}
+							if (SpiritModDownedFlier)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("FlyerBag"));
+							shop.item[nextSlot].shopCustomPrice = 750000;
+							nextSlot++;
+							}
+							if (SpiritModDownedStarplateRaider)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("SteamRaiderBag"));
+							shop.item[nextSlot].shopCustomPrice = 1000000;
+							nextSlot++;
+							}
+							if (SpiritModDownedInfernon)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("InfernonBag"));
+							shop.item[nextSlot].shopCustomPrice = 2000000;
+							nextSlot++;
+							}
+							if (SpiritModDownedDusking)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("DuskingBag"));
+							shop.item[nextSlot].shopCustomPrice = 2500000;
+							nextSlot++;
+							}
+							if (SpiritModDownedEtherialUmbra)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("SpiritCoreBag"));
+							shop.item[nextSlot].shopCustomPrice = 2500000;
+							nextSlot++;
+							}
+							if (SpiritModDownedIlluminantMaster)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("IlluminantBag"));
+							shop.item[nextSlot].shopCustomPrice = 3000000;
+							nextSlot++;
+							}
+							if (SpiritModDownedAtlas)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("AtlasBag"));
+							shop.item[nextSlot].shopCustomPrice = 4000000;
+							nextSlot++;
+							}
+							if (SpiritModDownedOverseer)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("OverseerBag"));
+							shop.item[nextSlot].shopCustomPrice = 8000000;
+							nextSlot++;
+							}
+						}
+						if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+						{
+							if (EnigmaDownedSharkron)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("DuneSharkronTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = 300000;
+							nextSlot++;
+							}
+							if (EnigmaDownedHypothema)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("HypothemaTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+							}
+							if (EnigmaDownedRagnar)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("RagnarTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = 750000;
+							nextSlot++;
+							}
+							if (EnigmaDownedAnDio)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("AnDioTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = 1000000;
+							nextSlot++;
+							}
+							if (EnigmaDownedAnnihilator)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("AnnihilatorTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = 2000000;
+							nextSlot++;
+							}
+							if (EnigmaDownedSlybertron)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("SlybertronTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = 2000000;
+							nextSlot++;
+							}
+							if (EnigmaDownedSteamTrain)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("SteamTrainTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = 2000000;
+							nextSlot++;
+							}
+						}
+					}
 				}
 			}
 		}

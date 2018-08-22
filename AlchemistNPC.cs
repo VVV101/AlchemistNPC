@@ -548,7 +548,7 @@ namespace AlchemistNPC
             AddTranslation(text);
 
             text = CreateTranslation("Yharon");
-            text.SetDefault("Yharon Treasure Bag");
+            text.SetDefault("Jungle Dragon, Yharon Treasure Bag");
             text.AddTranslation(GameCulture.Chinese, "犽戎宝藏袋");
             AddTranslation(text);
 
@@ -608,6 +608,105 @@ namespace AlchemistNPC
             text.AddTranslation(GameCulture.Chinese, "灾难之灵宝藏袋");
             AddTranslation(text);
 
+			 //SacredTools
+            text = CreateTranslation("FlamingPumpkin");
+            text.SetDefault("The Flaming Pumpkin Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Jensen");
+            text.SetDefault("Jansen, the Grand Harpy Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Raynare");
+            text.SetDefault("Harpy Queen, Raynare Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Abaddon");
+            text.SetDefault("Abaddon, the Emissary of Nightmares Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Araghur");
+            text.SetDefault("Araghur, the Flare Serpent Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Lunarians");
+            text.SetDefault("The Lunarians Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Challenger");
+            text.SetDefault("The Challenger Treasure Bag");
+            AddTranslation(text);
+			
+			//SpiritMod
+            text = CreateTranslation("Scarabeus");
+            text.SetDefault("Scarabeus Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Bane");
+            text.SetDefault("Vinewrath Bane Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Flier");
+            text.SetDefault("Ancient Flier Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Raider");
+            text.SetDefault("Starplate Raider Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Infernon");
+            text.SetDefault("Infernon Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Dusking");
+            text.SetDefault("Dusking Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("EtherialUmbra");
+            text.SetDefault("Etherial Umbra Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("IlluminantMaster");
+            text.SetDefault("Illuminant Master Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Atlas");
+            text.SetDefault("Atlas Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Overseer");
+            text.SetDefault("Overseer Treasure Bag");
+            AddTranslation(text);
+			
+			//SpiritMod
+            text = CreateTranslation("Sharkron");
+            text.SetDefault("Dune Sharkron Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Hypothema");
+            text.SetDefault("Hypothema Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Ragnar");
+            text.SetDefault("Ragnar Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("AnDio");
+            text.SetDefault("Andesia & Dioritus Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Annihilator");
+            text.SetDefault("The Annihilator Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Slybertron");
+            text.SetDefault("Slybertron Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("SteamTrain");
+            text.SetDefault("Steam Train Treasure Bag");
+            AddTranslation(text);
+			
             //SBMW:Some other translation
             text = CreateTranslation("Portal");
             text.SetDefault("An Otherworldly Portal was opened.");

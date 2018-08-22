@@ -137,6 +137,16 @@ namespace AlchemistNPC.NPCs
 					npc.lifeMax = 500;
 					}
 				}
+			if (ModLoader.GetLoadedMods().Contains("MaterialTraderNpc"))
+				{
+				if (npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Jungle Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cavern Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cool Guy")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Desert Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Dungeon Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Evil Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Hell Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Holy Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Ocean Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Sky Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Winter Trader")))
+					{
+						if (NPC.downedMoonlord)
+						{
+						npc.lifeMax = 500;
+						}
+					}
+				}
 		}
 		
 		public override void TownNPCAttackStrength(NPC npc, ref int damage, ref float knockback)
@@ -407,12 +417,22 @@ namespace AlchemistNPC.NPCs
 				Main.NewText(Eclipse, 255, 50, 50);
 				}
 			}
+			if (Main.expertMode)
+				{
+					if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+					{
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Infernon")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier2"), Main.rand.Next(6, 9));
+						}
+					}
+				}
 			return true;
 		}
 		
 		public override void NPCLoot(NPC npc)
         {
-			if (Main.rand.Next(10000) == 0)
+			if (Main.rand.Next(15000) == 0)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HolyAvenger"));
 				}
@@ -746,6 +766,80 @@ namespace AlchemistNPC.NPCs
 						if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("ChallengerBoss")) && Config.CoinsDrop)
 						{
 							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(6, 9));
+						}
+					}
+				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+					{
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Scarabeus")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(2, 3));
+						}
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("ReachBoss")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(6, 9));
+						}
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("AncientFlyer")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(9, 12));
+						}
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("SteamRaiderHead")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier2"), Main.rand.Next(3, 6));
+						}
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Dusking")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(3, 6));
+						}
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("SpiritCore")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(3, 6));
+						}
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("IlluminantMaster")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
+						}
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Atlas")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(6, 9));
+						}
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Overseer")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), 50);
+						}
+					}
+				if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+					{
+						if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("DuneSharkron")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(2, 3));
+						}
+						if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Hypothema")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(6, 9));
+						}
+						if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Ragnar")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(9, 12));
+						}
+						if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("AnDio3")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier2"), Main.rand.Next(4, 6));
+						}
+						if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Slybertron")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
+						}
+						if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("TheAnnihilator")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
+						}
+						if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("SteamTrain")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
+						}
+						if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Etheria")) && Config.CoinsDrop)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), 33);
 						}
 					}
 			}

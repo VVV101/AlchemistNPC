@@ -10,11 +10,6 @@ namespace AlchemistNPC.Projectiles
 {
 	public class CAE : ModProjectile
 	{
-		public override void SetStaticDefaults()
-		{
-			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
-			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
-		}
 
 		public override void SetDefaults()
 		{
@@ -25,7 +20,6 @@ namespace AlchemistNPC.Projectiles
 			projectile.height = 56;
 			projectile.penetrate = 30;
 			projectile.timeLeft = 30;
-			projectile.scale = 1f;
 			projectile.tileCollide = false;
 			aiType = ProjectileID.LaserMachinegunLaser;
 		}
@@ -38,13 +32,6 @@ namespace AlchemistNPC.Projectiles
 						projectile.velocity.X, projectile.velocity.Y, 200, Scale: 1.2f);
 					dust.velocity += projectile.velocity * 0.3f;
 					dust.velocity *= 0.2f;
-				}
-				if (Main.rand.Next(3) == 0)
-				{
-					Dust dust = Dust.NewDustDirect(projectile.position, projectile.height, projectile.width, mod.DustType("SA"),
-						0, 0, 254, Scale: 0.8f);
-					dust.velocity += projectile.velocity * 0.5f;
-					dust.velocity *= 0.5f;
 				}
 		}
 		

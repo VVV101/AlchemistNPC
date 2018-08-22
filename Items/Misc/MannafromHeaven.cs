@@ -28,7 +28,7 @@ namespace AlchemistNPC.Items.Misc
 
 		public override bool CanUseItem(Player player)
 		{
-			return player.statManaMax >= 200 && player.GetModPlayer<AlchemistNPCPlayer>().WellFed < 1;
+			return player.GetModPlayer<AlchemistNPCPlayer>().WellFed < 1;
 		}
 
 		public override bool UseItem(Player player)

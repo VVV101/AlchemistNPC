@@ -105,7 +105,36 @@ namespace AlchemistNPC.Items
             string TheLich = Language.GetTextValue("Mods.AlchemistNPC.TheLich");
             string AbyssionTheForgottenOne = Language.GetTextValue("Mods.AlchemistNPC.AbyssionTheForgottenOne");
             string TheRagnarok = Language.GetTextValue("Mods.AlchemistNPC.TheRagnarok");
-
+			
+			//SacredTools
+			string FlamingPumpkin = Language.GetTextValue("Mods.AlchemistNPC.FlamingPumpkin");
+            string Jensen = Language.GetTextValue("Mods.AlchemistNPC.Jensen");
+			string Raynare = Language.GetTextValue("Mods.AlchemistNPC.Raynare");
+            string Abaddon = Language.GetTextValue("Mods.AlchemistNPC.Abaddon");
+            string Araghur = Language.GetTextValue("Mods.AlchemistNPC.Araghur");
+            string Lunarians = Language.GetTextValue("Mods.AlchemistNPC.Lunarians");
+            string Challenger = Language.GetTextValue("Mods.AlchemistNPC.Challenger");
+			
+			//SpiritMod
+			string Scarabeus = Language.GetTextValue("Mods.AlchemistNPC.Scarabeus");
+            string Bane = Language.GetTextValue("Mods.AlchemistNPC.Bane");
+			string Flier = Language.GetTextValue("Mods.AlchemistNPC.Flier");
+            string Raider = Language.GetTextValue("Mods.AlchemistNPC.Raider");
+            string Infernon = Language.GetTextValue("Mods.AlchemistNPC.Infernon");
+            string Dusking = Language.GetTextValue("Mods.AlchemistNPC.Dusking");
+            string EtherialUmbra = Language.GetTextValue("Mods.AlchemistNPC.EtherialUmbra");
+			string IlluminantMaster = Language.GetTextValue("Mods.AlchemistNPC.IlluminantMaster");
+			string Atlas = Language.GetTextValue("Mods.AlchemistNPC.Atlas");
+			string Overseer = Language.GetTextValue("Mods.AlchemistNPC.Overseer");
+			
+			//Enigma
+			string Sharkron = Language.GetTextValue("Mods.AlchemistNPC.Sharkron");
+            string Hypothema = Language.GetTextValue("Mods.AlchemistNPC.Hypothema");
+			string Ragnar = Language.GetTextValue("Mods.AlchemistNPC.Ragnar");
+            string AnDio = Language.GetTextValue("Mods.AlchemistNPC.AnDio");
+            string Annihilator = Language.GetTextValue("Mods.AlchemistNPC.Annihilator");
+            string Slybertron = Language.GetTextValue("Mods.AlchemistNPC.Slybertron");
+            string SteamTrain = Language.GetTextValue("Mods.AlchemistNPC.SteamTrain");
 			
 			 if (item.type == mod.ItemType("KnucklesBag"))
 			{
@@ -380,6 +409,159 @@ namespace AlchemistNPC.Items
 				if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("RagBag")))
 				{
 				TooltipLine line = new TooltipLine(mod, "TheRagnarok", TheRagnarok);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+			}
+			if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+			{
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("PumpkinBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "FlamingPumpkin", FlamingPumpkin);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("HarpyBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Jensen", Jensen);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("HarpyBag2")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Raynare", Raynare);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("OblivionBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Abaddon", Abaddon);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("SerpentBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Araghur", Araghur);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("LunarBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Lunarians", Lunarians);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("ChallengerBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Challenger", Challenger);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+			}
+			if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+			{
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("BagOScarabs")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Scarabeus", Scarabeus);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("ReachBossBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Bane", Bane);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("FlyerBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Flier", Flier);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("SteamRaiderBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Raider", Raider);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("InfernonBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Infernon", Infernon);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("DuskingBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Dusking", Dusking);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("SpiritCoreBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "EqualityComparer", EtherialUmbra);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("IlluminantBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "IlluminantMaster", IlluminantMaster);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("AtlasBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Atlas", Atlas);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("OverseerBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Overseer", Overseer);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+			}
+			if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+			{
+				if (item.type == (ModLoader.GetMod("Laugicality").ItemType("DuneSharkronTreasureBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Sharkron", Sharkron);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("Laugicality").ItemType("HypothemaTreasureBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Hypothema", Hypothema);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("Laugicality").ItemType("RagnarTreasureBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Ragnar", Ragnar);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("Laugicality").ItemType("AnDioTreasureBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "AnDio", AnDio);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("Laugicality").ItemType("AnnihilatorTreasureBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Annihilator", Annihilator);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("Laugicality").ItemType("SlybertronTreasureBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Slybertron", Slybertron);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("Laugicality").ItemType("SteamTrainTreasureBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "SteamTrain", SteamTrain);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 				}
