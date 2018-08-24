@@ -27,23 +27,13 @@ namespace AlchemistNPC.Projectiles
 					dust.velocity += projectile.velocity * 0.3f;
 					dust.velocity *= 0.2f;
 				}
-				if (Main.rand.Next(4) == 0)
-				{
-					Dust dust = Dust.NewDustDirect(projectile.position, projectile.height, projectile.width, mod.DustType("SA"),
-						0, 0, 254, Scale: 0.75f);
-					dust.velocity += projectile.velocity * 0.5f;
-					dust.velocity *= 0.5f;
-				}
 		}
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
-			projectile.penetrate--;
-			if (projectile.penetrate <= 0)
-			{
-				projectile.Kill();
-				Main.PlaySound(SoundID.Item12, projectile.position);
-				Vector2 vel = new Vector2(-1, -1);
+			projectile.Kill();
+			Main.PlaySound(SoundID.Item12, projectile.position);
+			Vector2 vel = new Vector2(-1, -1);
 			vel *= 3f;
 			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
 			Vector2 vel2 = new Vector2(1, 1);
@@ -55,7 +45,6 @@ namespace AlchemistNPC.Projectiles
 			Vector2 vel4 = new Vector2(-1, 1);
 			vel4 *= 3f;
 			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
-			}
 			return false;
 		}
 		

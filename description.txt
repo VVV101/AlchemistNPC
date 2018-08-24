@@ -7,8 +7,12 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Explorer is secret NPC. Try to figure out, how to spawn her.
 v7.4
 -Added Sacred Tools, Spirit and Enigma mods support for Operator's Modded Treasure Bags shops.
+-Added Alchemist Charm tier 1-4. Gives you chance not to consume potion while placed in inventory. 
+Drops after beating Eye of Cthulhu for the first time.
 -Added "Cera Sumat", Holy Avenger true melee Legendary Sword. Boosting stats through game progression. Inflicts heavy enemy weakening debuff.
 Can drop from any enemy with 1:15000 chance.
+-Added "Light of Cera Sumat" and Pommel. Direct upgrade for Holy Avenger.
+Available post Moon Lord.
 -Added Symbiote, post Moon Lord (post DoG and post Ragnarok) accessory.
 Increases damage and crit by 10%, heavily decreases cooldown of healing potions. Has 2 states depending on HP.
 -Added Dark Magic Wand. Direct upgrade for Magic Wand. Releases wider beam.
@@ -38,11 +42,13 @@ Using resets Pandora to PF422 form.
 -Now Thorium Combination only takes 4 slots instead of 10.
 -Flasks of Poison, Fire and Party are now available in Young Brewer's shop pre-hardmode.
 -Improved Akumu Shield. Now it reflects projectiles before they hitting the player.
--Changed behavior for light pet.
+-Changed behavior for light pet in both forms.
 -Changed mechanics for Stormbreaker.
 -Changed prices for some materials.
 -Changed sprite for Wing of the World. Just place tile again to fix possible issues.
 -Polished mechanics for Akumu and Unchained Akumu.
+-Fixed rare crash with Thorium Combination.
+-Fixed Materia Transmutator recipe with Thorium mod active.
 -Fixed tiles placement. Now they are not floating above for a little.
 -Fixed Quest fishes availability conditions (would only work after the next tModloader update).
 -Fixed hotkey translations.

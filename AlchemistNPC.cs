@@ -118,6 +118,7 @@ namespace AlchemistNPC
             string evilBossMask = Language.GetTextValue("Mods.AlchemistNPC.evilBossMask");
             string cultist = Language.GetTextValue("Mods.AlchemistNPC.cultist");
             string tier3HardmodeBar = Language.GetTextValue("Mods.AlchemistNPC.tier3HardmodeBar");
+			string hardmodeComponent = Language.GetTextValue("Mods.AlchemistNPC.hardmodeComponent");
             string evilBar = Language.GetTextValue("Mods.AlchemistNPC.evilBar");
             string evilMushroom = Language.GetTextValue("Mods.AlchemistNPC.evilMushroom");
             string evilComponent = Language.GetTextValue("Mods.AlchemistNPC.evilComponent");
@@ -144,6 +145,11 @@ namespace AlchemistNPC
                  ItemID.AdamantiteBar, ItemID.TitaniumBar
          });
             RecipeGroup.RegisterGroup("AlchemistNPC:Tier3Bar", group);
+			group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + hardmodeComponent, new int[]
+         {
+                 ItemID.CursedFlame, ItemID.Ichor
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPC:HardmodeComponent", group);
 			group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + evilBar, new int[]
          {
                  ItemID.DemoniteBar, ItemID.CrimtaneBar
@@ -324,6 +330,10 @@ namespace AlchemistNPC
             text = CreateTranslation("tier3HardmodeBar");
             text.SetDefault("tier 3 Hardmode Bar");
             text.AddTranslation(GameCulture.Chinese, "三级肉后锭(精金/钛金)");
+            AddTranslation(text);
+			
+			text = CreateTranslation("hardmodeComponent");
+            text.SetDefault("Hardmode component");
             AddTranslation(text);
 
             text = CreateTranslation("evilBar");

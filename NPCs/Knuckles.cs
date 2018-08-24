@@ -74,8 +74,6 @@ namespace AlchemistNPC.NPCs
             rotation = npc.rotation;
         }
 		
-		private readonly Mod Bluemagic = ModLoader.GetMod("Bluemagic");
-		
 		public override void AI()
 		{
 			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
@@ -84,7 +82,7 @@ namespace AlchemistNPC.NPCs
 				player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AbyssalShell")] = true;
 				}
 			npc.buffImmune[mod.BuffType("ArmorDestruction")] = true;
-			npc.velocity *= 1.5f;
+			npc.velocity *= 1.25f;
 			npc.defense = 1;
 			int damage1 = 200;
 			int damage2 = 300;
@@ -95,16 +93,14 @@ namespace AlchemistNPC.NPCs
 			damage2 = 150;
 			damage3 = 175;
 			}
-			
 			if (player.statDefense > 250 || player.endurance > 0.40f || player.statLifeMax2 > 1300)
 			{
-			if (!player.dead)
-			{
-			Main.NewText("Die, Cheater!", 255, 0, 0);
-			}
 			player.dead = true;
-			npc.velocity = new Vector2(2, -10);
-			npc.velocity *= 3f;
+				if (player.dead)
+				{
+				npc.velocity = new Vector2(2, -10);
+				npc.velocity *= 3f;
+				}
 			damage1 = 666666;
 			damage2 = 666666;
 			damage3 = 666666;
@@ -350,10 +346,6 @@ namespace AlchemistNPC.NPCs
 		public override void OnHitPlayer(Player target, int damage, bool crit)
 		{
 		target.AddBuff(mod.BuffType("Uganda"), 1200);
-		if (target.statDefense > 250 || target.endurance > 0.40f || target.statLifeMax2 > 1300)
-			{
-			target.AddBuff(mod.BuffType("TrueUganda"), 3600);
-			}
 		}
 		
 		public override void ModifyHitPlayer(Player player, ref int damage, ref bool crit)

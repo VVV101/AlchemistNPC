@@ -51,9 +51,9 @@ namespace AlchemistNPC.Items.Placeable
 			recipe.AddIngredient(ItemID.DD2ElderCrystalStand);
 			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			{
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil")));
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator")));
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").TileType("SoulForge")));
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ThoriumAnvil")));
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ArcaneArmorFabricator")));
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("SoulForge")));
 			}
 			recipe.AddIngredient(null, "EmagledFragmentation", 150);
 			recipe.SetResult(this);

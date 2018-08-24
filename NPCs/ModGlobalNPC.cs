@@ -417,6 +417,27 @@ namespace AlchemistNPC.NPCs
 				Main.NewText(Eclipse, 255, 50, 50);
 				}
 			}
+			if (npc.type == NPCID.EyeofCthulhu)
+			{
+				if (!NPC.downedBoss1)
+				{
+					if (Main.netMode == 0)
+                    {
+                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AlchemistCharmTier1"));
+                    }
+                    if (Main.netMode == 1)
+                    {
+                        for (int i = 0; i < 200; i++)
+                        {
+                            if(Main.player[i].active)
+                            {
+                                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AlchemistCharmTier1"));
+                            }
+                        }
+
+                    }
+				}
+			}
 			if (Main.expertMode)
 				{
 					if (ModLoader.GetLoadedMods().Contains("SpiritMod"))

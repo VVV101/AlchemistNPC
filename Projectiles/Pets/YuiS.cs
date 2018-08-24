@@ -10,13 +10,13 @@ namespace AlchemistNPC.Projectiles.Pets
 	{
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(87);
+			projectile.CloneDefaults(492);
 			projectile.width = 72;
 			projectile.height = 64;
 			projectile.ignoreWater = true;
-			projectile.aiStyle = 11;
-			aiType = 87;
-			Main.projFrames[projectile.type] = 4;
+			projectile.aiStyle = 90;
+			aiType = 492;
+			Main.projFrames[projectile.type] = 8;
 			ProjectileID.Sets.LightPet[projectile.type] = true;
 			projectile.scale = 0.5f;
 		}
@@ -42,7 +42,7 @@ namespace AlchemistNPC.Projectiles.Pets
 			}
 			Player player = Main.player[projectile.owner];
 			AlchemistNPCPlayer modPlayer = (AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer");
-			if (player.dead)
+			if (player.dead || player.FindBuffIndex(mod.BuffType("YuiS")) <= -1)
 			{
 				modPlayer.YuiS = false;
 			}

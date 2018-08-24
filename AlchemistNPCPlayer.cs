@@ -38,6 +38,10 @@ namespace AlchemistNPC
 	public class AlchemistNPCPlayer : ModPlayer
 	{
 		public bool AutoinjectorMK2 = false;
+		public bool AlchemistCharmTier1 = false;
+		public bool AlchemistCharmTier2 = false;
+		public bool AlchemistCharmTier3 = false;
+		public bool AlchemistCharmTier4 = false;
 		public bool BeeHeal = false;
 		public bool Pandora = false;
 		public bool TS = false;
@@ -93,6 +97,10 @@ namespace AlchemistNPC
 			Item.potionDelay = 3600;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
+			AlchemistCharmTier1 = false;
+			AlchemistCharmTier2 = false;
+			AlchemistCharmTier3 = false;
+			AlchemistCharmTier4 = false;
 			BeeHeal = false;
 			Pandora = false;
 			TS = false;

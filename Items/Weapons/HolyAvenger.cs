@@ -1,8 +1,37 @@
 using Microsoft.Xna.Framework;
-using Terraria;
+using Microsoft.Xna.Framework.Input;
+using ReLogic.Utilities;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using Terraria.Audio;
+using Terraria.DataStructures;
+using Terraria.Enums;
+using Terraria.GameContent;
+using Terraria.GameContent.Achievements;
+using Terraria.GameContent.Events;
+using Terraria.GameContent.Tile_Entities;
+using Terraria.GameContent.UI;
+using Terraria.GameInput;
+using Terraria.Graphics.Capture;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
 using Terraria.ID;
-using Terraria.ModLoader;
+using Terraria.IO;
 using Terraria.Localization;
+using Terraria.ObjectData;
+using Terraria.Social;
+using Terraria.UI;
+using Terraria.UI.Chat;
+using Terraria.UI.Gamepad;
+using Terraria.Utilities;
+using Terraria.World.Generation;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
+using AlchemistNPC;
 
 namespace AlchemistNPC.Items.Weapons
 {
@@ -26,6 +55,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
+			item.CloneDefaults(ItemID.Muramasa);
 			item.damage = 16;
 			item.melee = true;
 			item.width = 40;
@@ -39,6 +69,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.scale = 1.5f;
+			item.prefix = 81;
 		}
 
 		public override bool CanUseItem(Player player)
@@ -110,6 +141,11 @@ namespace AlchemistNPC.Items.Weapons
 			}
 		}
 
+		public override int ChoosePrefix (UnifiedRandom rand)
+		{
+			return 81;
+		}
+		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.buffImmune[mod.BuffType("CurseOfLight")] = false;

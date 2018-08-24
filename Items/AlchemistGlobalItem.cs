@@ -15,6 +15,45 @@ namespace AlchemistNPC.Items
 	{	
 		public static bool on = false;
 		
+		public bool CalamityModDownedSCal
+		{
+		get { return CalamityMod.CalamityWorld.downedSCal; }
+		}
+		
+		public override bool ConsumeItem(Item item, Player player)	
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier4 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
+			{
+				if (CalamityModDownedSCal)
+				{
+				return false;
+				}
+				else if (Main.rand.NextFloat() >= .25f)
+				{
+				return false;
+				}
+			}
+			
+			else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier3 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
+			{
+				if (Main.rand.Next(2) == 0)
+				return false;
+			}
+			
+			else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier2 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
+			{
+				if (Main.rand.Next(4) == 0)
+				return false;
+			}
+			
+			else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier1 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
+			{
+				if (Main.rand.Next(10) == 0)
+				return false;
+			}
+			return true;
+		}
+		
 		public override float UseTimeMultiplier(Item item, Player player)	
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Symbiote == true)

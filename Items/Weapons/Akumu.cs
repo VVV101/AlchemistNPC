@@ -21,7 +21,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("''Akumu''");
-			Tooltip.SetDefault("It means ''demon'' on Japanese"
+			Tooltip.SetDefault("It means ''[c/FF00FF:nightmare]'' on Japanese"
 			+"\nIts slice pierces through any amount of enemies on its way"
 			+"\nLeft click launcher short travelling projectile"
 			+"\nRight click slices the air in place"

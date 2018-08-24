@@ -18,12 +18,12 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.SetDefault("Pandora");
 			Tooltip.SetDefault("'A weapon of the underworld, capable of 666 different forms'"
 			+"\nFixed Pandora with unlocked damaging potential"
-			+"\nLaunches sharp shuriken, which stucks to enemy."
+			+"\nBase form 422: Launches sharp shuriken, which sticks to enemies."
 			+"\nAttacking raises Disaster LV"
 			+"\nLV3 allows to change weapon"
 			+"\nRight click to change form");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пандора");
-            Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nЗапускает бритвенно-острый сюрикен, цепляющийся за противника\nПри наборе 3-го уровня Бедствия, вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");
+            Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nБазовая форма 422: Запускает бритвенно-острый сюрикен, цепляющийся за противников\nПри наборе 3-го уровня Бедствия, вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉");
             Tooltip.AddTranslation(GameCulture.Chinese, "'来自地狱的武器, 有666种不同的形式 (外国666代表撒旦)'\n遗憾的是, 作为原型, 只能呈现一种形式");

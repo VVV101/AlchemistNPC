@@ -17,6 +17,11 @@ namespace AlchemistNPC.Buffs
 {
 	public class ThoriumComb : ModBuff
 	{
+		public override bool Autoload(ref string name, ref string texture)
+		{
+		return ModLoader.GetMod("ThoriumMod") != null;
+		}
+		
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Thorium Combination");

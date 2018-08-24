@@ -10,7 +10,6 @@ namespace AlchemistNPC.Projectiles
 {
 	public class CAE : ModProjectile
 	{
-
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.LaserMachinegunLaser);
