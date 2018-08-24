@@ -98,16 +98,14 @@ namespace AlchemistNPC.Projectiles
 			return false;
 		}
 
-		/// <summary>
-		/// Change the behavior after hit a NPC
-		/// </summary>
+		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			damage *= 3;
+		}
+		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			target.immune[projectile.owner] = 1;
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-			Vector2 vel = new Vector2(0, -1);
-			vel *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionDummy"), projectile.damage/2, 0, Main.myPlayer);
+			target.immune[projectile.owner] = 5;
 		}
 
 		/// <summary>

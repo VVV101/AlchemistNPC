@@ -456,6 +456,10 @@ namespace AlchemistNPC
             text.AddTranslation(GameCulture.Chinese, "石巨人宝藏袋");
             AddTranslation(text);
 
+			text = CreateTranslation("Betsy");
+            text.SetDefault("Betsy Treasure Bag");
+            AddTranslation(text);
+			
             text = CreateTranslation("DukeFishron");
             text.SetDefault("Duke Fishron Treasure Bag");
             text.AddTranslation(GameCulture.Chinese, "猪鲨公爵宝藏袋");
@@ -563,6 +567,14 @@ namespace AlchemistNPC
             AddTranslation(text);
 
             //SBMW:ThoriumMod
+			text = CreateTranslation("DarkMage");
+            text.SetDefault("Dark Mage Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Ogre");
+            text.SetDefault("Ogre Treasure Bag");
+            AddTranslation(text);
+			
             text = CreateTranslation("ThunderBird");
             text.SetDefault("The Great Thunder Bird Treasure Bag");
             text.AddTranslation(GameCulture.Chinese, "惊雷王鹰宝藏袋");

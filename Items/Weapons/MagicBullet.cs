@@ -15,15 +15,15 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Magic Bullet (F-01-69)");
-			Tooltip.SetDefault("Though, unable to fully extract its original power, the magical power it holds is still potent."
+			Tooltip.SetDefault("''Though, unable to fully extract its original power, the magical power it holds is still potent.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nBullet, shot by this weapon will go through tiles"
 			+ "\nPierces through multiple enemies");
 			DisplayName.AddTranslation(GameCulture.Russian, "Волшебная Пуля (F-01-69)");
-            Tooltip.AddTranslation(GameCulture.Russian, "Несмотря на невозможность извлечения его полного потенциала, магическая мощь этого оружия всё ещё велика.\n[c/FF0000:Э.П.О.С. оружие]\nПули проходят сквозь блони\nПробивает значительное количество противников одним выстрелом");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Несмотря на невозможность извлечения его полного потенциала, магическая мощь этого оружия всё ещё велика.''\n[c/FF0000:Э.П.О.С. оружие]\nПули проходят сквозь блони\nПробивает значительное количество противников одним выстрелом");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "魔弹 (F-01-69)");
-            Tooltip.AddTranslation(GameCulture.Chinese, "'尽管无法完全提取该异常核心中那股深奥的力量, 但利用那神奇力量所研制出来的武器仍然无比强大.'\n[c/FF0000:EGO 武器]\n从该武器射出的子弹能穿透方块\n子弹能穿透多个敌人");
+            Tooltip.AddTranslation(GameCulture.Chinese, "''尽管无法完全提取该异常核心中那股深奥的力量, 但利用那神奇力量所研制出来的武器仍然无比强大.''\n[c/FF0000:EGO 武器]\n从该武器射出的子弹能穿透方块\n子弹能穿透多个敌人");
         }
 
 		public override void SetDefaults()

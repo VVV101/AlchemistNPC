@@ -356,6 +356,15 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 		
+		public override void ModifyHitByProjectile(Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int	hitDirection)	
+		{
+			if (projectile.type == 358)
+			{
+			npc.life = 1;
+			damage = 999999999;
+			}
+		}
+		
 		public override void NPCLoot()
 		{
 			if (Main.expertMode)
@@ -376,6 +385,12 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool StrikeNPC(ref double damage, int defense, ref float knockback, int hitDirection, ref bool crit)	
 		{
+			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+			if (player.HeldItem.type == ItemID.WaterGun)
+			{
+				defense = 0;
+				return true;
+			}
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte == false)
 			{
 			damage = 1;

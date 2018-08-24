@@ -31,6 +31,11 @@ namespace AlchemistNPC.Projectiles
 			{
 				projectile.tileCollide = false;
 			}
+			if (projectile.type == 358)
+			{
+				projectile.damage = 1;
+				projectile.friendly = true;
+			}
 		}
 
 		public override bool OnTileCollide(Projectile projectile, Vector2 oldVelocity)
@@ -193,6 +198,10 @@ namespace AlchemistNPC.Projectiles
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).SFU == true && projectile.minion && Main.rand.Next(10) == 0)
 			{
 				crit = true;
+			}
+			if (projectile.type == 358)
+			{
+				damage = 1;
 			}
 		}
 		

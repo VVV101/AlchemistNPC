@@ -20,6 +20,14 @@ namespace AlchemistNPC.Items
 		get { return CalamityMod.CalamityWorld.downedSCal; }
 		}
 		
+		public override void HoldItem(Item item, Player player)
+		{
+			if (item.type == 2272 && NPC.AnyNPCs(mod.NPCType("Knuckles")))
+			{
+				item.damage = 1;
+			}
+		}
+		
 		public override bool ConsumeItem(Item item, Player player)	
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier4 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
@@ -108,6 +116,7 @@ namespace AlchemistNPC.Items
             string SkeletronPrime = Language.GetTextValue("Mods.AlchemistNPC.SkeletronPrime");
             string Plantera = Language.GetTextValue("Mods.AlchemistNPC.Plantera");
             string Golem = Language.GetTextValue("Mods.AlchemistNPC.Golem");
+			string Betsy = Language.GetTextValue("Mods.AlchemistNPC.Betsy");
             string DukeFishron = Language.GetTextValue("Mods.AlchemistNPC.DukeFishron");
             string MoonLord = Language.GetTextValue("Mods.AlchemistNPC.MoonLord");
 
@@ -133,6 +142,8 @@ namespace AlchemistNPC.Items
             string Yharon = Language.GetTextValue("Mods.AlchemistNPC.Yharon");
 
             //SBMW:ThoriumMod
+			string DarkMage = Language.GetTextValue("Mods.AlchemistNPC.DarkMage");
+			string Ogre = Language.GetTextValue("Mods.AlchemistNPC.Ogre");
             string ThunderBird = Language.GetTextValue("Mods.AlchemistNPC.ThunderBird");
             string QueenJellyfish = Language.GetTextValue("Mods.AlchemistNPC.QueenJellyfish");
 			string CountEcho = Language.GetTextValue("Mods.AlchemistNPC.CountEcho");
@@ -250,6 +261,12 @@ namespace AlchemistNPC.Items
 			if (item.type == ItemID.GolemBossBag)
 			{
 				TooltipLine line = new TooltipLine(mod, "Golem", Golem);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+			}
+			if (item.type == ItemID.BossBagBetsy)
+			{
+				TooltipLine line = new TooltipLine(mod, "Betsy", Betsy);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 			}
@@ -385,6 +402,18 @@ namespace AlchemistNPC.Items
 			}
 			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			{
+				if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("DarkMageBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "DarkMage", DarkMage);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("OgreBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Ogre", Ogre);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
 				if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("ThunderBirdBag")))
 				{
 				TooltipLine line = new TooltipLine(mod, "ThunderBird", ThunderBird);
@@ -643,6 +672,20 @@ namespace AlchemistNPC.Items
 			{
 				player.QuickSpawnItem(mod.ItemType("somebody0214Hood"));
 				player.QuickSpawnItem(mod.ItemType("somebody0214Robe"));
+			}
+		}
+		
+		public override void HorizontalWingSpeeds(Item 	item, Player	player, ref float speed, ref float acceleration)	
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 390)
+			{
+			speed *= 0.3f;
+			acceleration *= 0.3f;
+			}
+			else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 210)
+			{
+			speed *= 0.8f;
+			acceleration *= 0.8f;
 			}
 		}
 		

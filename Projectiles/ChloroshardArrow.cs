@@ -30,13 +30,13 @@ namespace AlchemistNPC.Projectiles
 			if (projectile.penetrate <= 0)
 			{
 				projectile.Kill();
-				for (int h = 0; h < 3; h++)
+				for (int h = 0; h < 2; h++)
 				{
 					Vector2 vel = new Vector2(0, -1);
 					float rand = Main.rand.NextFloat() * 6.283f;
 					vel = vel.RotatedBy(rand);
 					vel *= 5f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Home"), projectile.damage/4, 0, Main.myPlayer);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Chloroshard1"), projectile.damage/4, 0, Main.myPlayer);
 				}
 			}
 			return false;
@@ -44,13 +44,13 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-				for (int h = 0; h < 3; h++)
+				for (int h = 0; h < 2; h++)
 				{
 					Vector2 vel = new Vector2(0, -1);
 					float rand = Main.rand.NextFloat() * 6.283f;
 					vel = vel.RotatedBy(rand);
 					vel *= 5f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Home"), projectile.damage/4, 0, Main.myPlayer);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Chloroshard1"), projectile.damage/4, 0, Main.myPlayer);
 				}
 			}
 		}

@@ -14,11 +14,9 @@ namespace AlchemistNPC.Projectiles
 
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(ProjectileID.ChlorophyteBullet);
-			projectile.damage = 75;
-			projectile.ranged = true; 
+			projectile.CloneDefaults(616);
 			projectile.timeLeft = 180;
-			aiType = ProjectileID.ChlorophyteBullet;
+			aiType = 616;
 		}
 	}
 }

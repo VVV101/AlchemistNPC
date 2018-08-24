@@ -82,6 +82,7 @@ namespace AlchemistNPC
 		public bool lwm = false;
 		public bool DB = false;
 		public int DisasterGauge = 0;
+		public int chargetime = 0;
 		
 		private const int maxLifeElixir = 2;
 		public int LifeElixir = 0;

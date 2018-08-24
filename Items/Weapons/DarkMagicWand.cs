@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
@@ -16,9 +17,11 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			DisplayName.SetDefault("Dark Magic Wand");
 			Tooltip.SetDefault("Royal Dark Magic Wand"
-			+"\nShoots wide beam that can eliminate everything on its way.");
+			+"\nShoots wide beam that can eliminate everything on its way."
+			+"\nThe longer you are holding the beam, the more powerful it becomes"
+			+"\nMana cost grows respectively");
 			DisplayName.AddTranslation(GameCulture.Russian, "Тёмная Волшебная Палочка");
-            Tooltip.AddTranslation(GameCulture.Russian, "Королевская Тёмная Волшебная Палочка\nИспускает широкий луч, который способен уничтожить всё на своём пути.");
+            Tooltip.AddTranslation(GameCulture.Russian, "Королевская Тёмная Волшебная Палочка\nИспускает широкий луч, который способен уничтожить всё на своём пути\nЧем дольше удерживается луч, тем мощнее он становится\nЗатраты маны увеличиваются соответственно");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "魔杖");
             Tooltip.AddTranslation(GameCulture.Chinese, "皇家魔杖\n发射一束能消灭一切的激光束");
@@ -26,7 +29,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 175;
+			item.damage = 150;
 			item.noMelee = true;
 			item.magic = true;
 			item.channel = true;                            //Channel so that you can held the weapon [Important]
@@ -42,6 +45,25 @@ namespace AlchemistNPC.Items.Weapons
 			item.knockBack = 1;			
 			item.shoot = mod.ProjectileType("MagicWandC");
 			item.value = Item.sellPrice(1, 0, 0, 0);
+		}
+		
+		public override void UseStyle(Player player)
+		{
+			item.damage = 150;
+			item.mana = 10;
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime++;
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 390)
+			{
+				item.damage = 250;
+				item.mana = 30;
+				player.moveSpeed *= 0.50f;
+			}
+			else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 210)
+			{
+				item.damage = 200;
+				item.mana = 20;
+				player.moveSpeed *= 0.8f;
+			}
 		}
 		
 		public override void AddRecipes()

@@ -438,14 +438,26 @@ namespace AlchemistNPC.NPCs
                     }
 				}
 			}
-			if (Main.expertMode)
+			if (Main.expertMode && Config.CoinsDrop)
 				{
 					if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
 					{
-						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Infernon")) && Config.CoinsDrop)
+						if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Infernon")))
 						{
 							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier2"), Main.rand.Next(6, 9));
 						}
+					}
+					if (npc.type == NPCID.DD2DarkMageT1 || npc.type == NPCID.DD2DarkMageT3)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(12, 15));
+					}
+					if (npc.type == NPCID.DD2OgreT2 || npc.type == NPCID.DD2OgreT3)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(3, 6));
+					}
+					if (npc.type == NPCID.DD2Betsy)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(3, 6));
 					}
 				}
 			return true;

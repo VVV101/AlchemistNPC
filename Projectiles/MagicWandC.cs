@@ -13,6 +13,8 @@ namespace AlchemistNPC.Projectiles
 	{
 		private const int MAX_CHARGE = 30;
 		private const float MOVE_DISTANCE = 60f;
+		public int supercharge = 0;
+		public int hypercharge = 0;
 
 		public float Distance
 		{
@@ -55,29 +57,82 @@ namespace AlchemistNPC.Projectiles
 		/// </summary>
 		public void DrawLaser(SpriteBatch spriteBatch, Texture2D texture, Vector2 start, Vector2 unit, float step, int damage, float rotation = 0f, float scale = 1f, float maxDist = 2000f, Color color = default(Color), int transDist = 50)
 		{
+			
 			Vector2 origin = start;
 			float r = unit.ToRotation() + rotation;
-
-			#region Draw laser body
-			for (float i = transDist; i <= Distance; i += step)
+			
+			if (Charge == MAX_CHARGE && supercharge < 180)
 			{
-				Color c = Color.White;
-				origin = start + i * unit;
-				spriteBatch.Draw(texture, origin - Main.screenPosition,
-					new Rectangle(0, 26, 28, 26), i < transDist ? Color.Transparent : c, r,
-					new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				texture = mod.GetTexture("Projectiles/MagicWandC");
+				#region Draw laser body
+				for (float i = transDist; i <= Distance; i += step)
+				{
+					Color c = Color.White;
+					origin = start + i * unit;
+					spriteBatch.Draw(texture, origin - Main.screenPosition,
+						new Rectangle(0, 26, 28, 26), i < transDist ? Color.Transparent : c, r,
+						new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				}
+				#endregion
+
+				#region Draw laser tail
+				spriteBatch.Draw(texture, start + unit * (transDist - step) - Main.screenPosition,
+					new Rectangle(0, 0, 28, 26), Color.White, r, new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				#endregion
+
+				#region Draw laser head
+				spriteBatch.Draw(texture, start + (Distance + step) * unit - Main.screenPosition,
+					new Rectangle(0, 52, 28, 26), Color.White, r, new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				#endregion
 			}
-			#endregion
+			if (Charge == MAX_CHARGE && supercharge >= 180 && hypercharge < 180)
+			{
+				texture = mod.GetTexture("Projectiles/MagicWandB");
+				#region Draw laser body
+				for (float i = transDist; i <= Distance; i += step)
+				{
+					Color c = Color.White;
+					origin = start + i * unit;
+					spriteBatch.Draw(texture, origin - Main.screenPosition,
+						new Rectangle(0, 26, 28, 26), i < transDist ? Color.Transparent : c, r,
+						new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				}
+				#endregion
 
-			#region Draw laser tail
-			spriteBatch.Draw(texture, start + unit * (transDist - step) - Main.screenPosition,
-				new Rectangle(0, 0, 28, 26), Color.White, r, new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
-			#endregion
+				#region Draw laser tail
+				spriteBatch.Draw(texture, start + unit * (transDist - step) - Main.screenPosition,
+					new Rectangle(0, 0, 28, 26), Color.White, r, new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				#endregion
 
-			#region Draw laser head
-			spriteBatch.Draw(texture, start + (Distance + step) * unit - Main.screenPosition,
-				new Rectangle(0, 52, 28, 26), Color.White, r, new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
-			#endregion
+				#region Draw laser head
+				spriteBatch.Draw(texture, start + (Distance + step) * unit - Main.screenPosition,
+					new Rectangle(0, 52, 28, 26), Color.White, r, new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				#endregion
+			}
+			if (Charge == MAX_CHARGE && supercharge >= 180 && hypercharge >= 180)
+			{
+				texture = mod.GetTexture("Projectiles/MagicWandA");
+				#region Draw laser body
+				for (float i = transDist; i <= Distance; i += step)
+				{
+					Color c = Color.White;
+					origin = start + i * unit;
+					spriteBatch.Draw(texture, origin - Main.screenPosition,
+						new Rectangle(0, 26, 28, 26), i < transDist ? Color.Transparent : c, r,
+						new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				}
+				#endregion
+
+				#region Draw laser tail
+				spriteBatch.Draw(texture, start + unit * (transDist - step) - Main.screenPosition,
+					new Rectangle(0, 0, 28, 26), Color.White, r, new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				#endregion
+
+				#region Draw laser head
+				spriteBatch.Draw(texture, start + (Distance + step) * unit - Main.screenPosition,
+					new Rectangle(0, 52, 28, 26), Color.White, r, new Vector2(28 / 2, 26 / 2), 1.5f, 0, 0);
+				#endregion
+			}
 		}
 
 		/// <summary>
@@ -97,17 +152,28 @@ namespace AlchemistNPC.Projectiles
 			}
 			return false;
 		}
-
-		/// <summary>
-		/// Change the behavior after hit a NPC
-		/// </summary>
+		
+		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			Player player = Main.player[projectile.owner];
+			damage *= 3;
+			if (damage > 5000)
+			{
+				damage = 5000;
+			}
+			if (player.FindBuffIndex(BuffID.ManaSickness) > -1)
+			{
+				damage /= 2;
+			}
+		}
+		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			target.immune[projectile.owner] = 1;
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
-			Vector2 vel = new Vector2(0, -1);
-			vel *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionDummy"), projectile.damage/2, 0, Main.myPlayer);
+			if (Main.rand.Next(3) == 0)
+			{
+				projectile.damage += 1;
+			}
+			target.immune[projectile.owner] = 5;
 		}
 
 		/// <summary>
@@ -144,12 +210,14 @@ namespace AlchemistNPC.Projectiles
 			if (!player.channel)
 			{
 				projectile.Kill();
+				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime = 0;
 			}
 			else
 			{
 				if (Main.time % 10 < 1 && !player.CheckMana(player.inventory[player.selectedItem].mana, true))
 				{
 					projectile.Kill();
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime = 0;
 				}
 				Vector2 offset = projectile.velocity;
 				offset *= MOVE_DISTANCE - 20;
@@ -224,6 +292,15 @@ namespace AlchemistNPC.Projectiles
 			//Add lights
 			DelegateMethods.v3_1 = new Vector3(0.8f, 0.8f, 1f);
 			Utils.PlotTileLine(projectile.Center, projectile.Center + projectile.velocity * (Distance - MOVE_DISTANCE), 26, new Utils.PerLinePoint(DelegateMethods.CastLight));
+			
+			if (MAX_CHARGE >= 30)
+			{
+				supercharge++;
+				if (supercharge >= 180)		
+				{
+					hypercharge++;
+				}					
+			}
 		}
 
 		public override bool ShouldUpdatePosition()

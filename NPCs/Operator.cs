@@ -1,6 +1,7 @@
 using System.Linq;
 using Terraria;
 using Terraria.ID;
+using Terraria.GameContent.Events;
 using Terraria.ModLoader;
 using Terraria.Localization;
 using Terraria.World.Generation;
@@ -1325,6 +1326,16 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
 					nextSlot++;
 					}
+					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+						{
+							if (DD2Event.DownedInvasionT1)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("DarkMageBag"));
+								shop.item[nextSlot].shopCustomPrice = new int?(30);
+								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+								nextSlot++;
+							}
+						}
 					if (Main.hardMode && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.WallOfFleshBossBag);
@@ -1332,7 +1343,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier2ID;
 					nextSlot++;
 					}
-					if (NPC.downedPlantBoss && Main.expertMode)
+					if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3 && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.DestroyerBossBag);
 					shop.item[nextSlot].shopCustomPrice = new int?(10);
@@ -1346,17 +1357,40 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = new int?(15);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
+					}
+					if (NPC.downedPlantBoss && Main.expertMode)
+					{
 					shop.item[nextSlot].SetDefaults (ItemID.PlanteraBossBag);
 					shop.item[nextSlot].shopCustomPrice = new int?(30);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
 					}
+					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+						{
+							if (DD2Event.DownedInvasionT2)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("OgreBag"));
+								shop.item[nextSlot].shopCustomPrice = new int?(10);
+								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+								nextSlot++;
+							}
+						}
 					if (NPC.downedAncientCultist && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.GolemBossBag);
 					shop.item[nextSlot].shopCustomPrice = new int?(5);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 					nextSlot++;
+					}
+					if (DD2Event.DownedInvasionT3)
+					{
+					shop.item[nextSlot].SetDefaults (ItemID.BossBagBetsy);
+					shop.item[nextSlot].shopCustomPrice = new int?(10);
+					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+					nextSlot++;
+					}
+					if (NPC.downedAncientCultist && Main.expertMode)
+					{
 					shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
 					shop.item[nextSlot].shopCustomPrice = new int?(10);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
@@ -1396,13 +1430,22 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 1500000;
 					nextSlot++;
 					}
+					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+						{
+							if (DD2Event.DownedInvasionT1)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DarkMageBag"));
+								shop.item[nextSlot].shopCustomPrice = 2000000;
+								nextSlot++;
+							}
+						}
 					if (Main.hardMode && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.WallOfFleshBossBag);
 					shop.item[nextSlot].shopCustomPrice = 2000000;
 					nextSlot++;
 					}
-					if (NPC.downedPlantBoss && Main.expertMode)
+					if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3 && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.DestroyerBossBag);
 					shop.item[nextSlot].shopCustomPrice = 2000000;
@@ -1413,6 +1456,18 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].SetDefaults (ItemID.SkeletronPrimeBossBag);
 					shop.item[nextSlot].shopCustomPrice = 2000000;
 					nextSlot++;
+					}
+					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+						{
+							if (DD2Event.DownedInvasionT2)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("OgreBag"));
+								shop.item[nextSlot].shopCustomPrice = 3000000;
+								nextSlot++;
+							}
+						}
+					if (NPC.downedPlantBoss && Main.expertMode)
+					{
 					shop.item[nextSlot].SetDefaults (ItemID.PlanteraBossBag);
 					shop.item[nextSlot].shopCustomPrice = 3000000;
 					nextSlot++;
@@ -1422,8 +1477,17 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].SetDefaults (ItemID.GolemBossBag);
 					shop.item[nextSlot].shopCustomPrice = 3000000;
 					nextSlot++;
-					shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
+					}
+					if (DD2Event.DownedInvasionT3)
+					{
+					shop.item[nextSlot].SetDefaults (ItemID.BossBagBetsy);
 					shop.item[nextSlot].shopCustomPrice = 4000000;
+					nextSlot++;
+					}
+					if (NPC.downedAncientCultist && Main.expertMode)
+					{
+					shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
+					shop.item[nextSlot].shopCustomPrice = 5000000;
 					nextSlot++;
 					}
 					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
