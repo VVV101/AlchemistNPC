@@ -110,7 +110,14 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(ItemID.HerculesBeetle, 1);
 			recipe.AddIngredient(ItemID.DestroyerEmblem, 1);
 			recipe.AddIngredient(null, "MasksBundle", 1);
+			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
+			{
 			recipe.AddTile(null, "MateriaTransmutator");
+			}
+			if (ModLoader.GetMod("AlchemistNPCContentDisabler") != null)
+			{
+			recipe.AddTile(TileID.LunarCraftingStation);
+			}
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)

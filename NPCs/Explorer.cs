@@ -743,6 +743,11 @@ namespace AlchemistNPC.NPCs
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("PlasmaRound"));
 							nextSlot++;
 							}
+							if (player.inventory[j].type == mod.ItemType("ChaingunMeatGrinder"))
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MGB"));
+							nextSlot++;
+							}
 						}
 					}
 				}

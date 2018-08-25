@@ -81,8 +81,10 @@ namespace AlchemistNPC
 		public bool sscope = false;
 		public bool lwm = false;
 		public bool DB = false;
+		public bool MeatGrinderOnUse = false;
 		public int DisasterGauge = 0;
 		public int chargetime = 0;
+		public int MeatGrinderUsetime = 0;
 		
 		private const int maxLifeElixir = 2;
 		public int LifeElixir = 0;
@@ -98,6 +100,7 @@ namespace AlchemistNPC
 			Item.potionDelay = 3600;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
+			MeatGrinderOnUse = false;
 			AlchemistCharmTier1 = false;
 			AlchemistCharmTier2 = false;
 			AlchemistCharmTier3 = false;
