@@ -21,6 +21,12 @@ namespace AlchemistNPC.Projectiles
 			aiType = 503;
 		}
 		
+		public override bool PreKill(int timeLeft)
+		{
+			projectile.type = 503;
+			return true;
+		}
+		
 		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
 			Player player = Main.player[projectile.owner]; 

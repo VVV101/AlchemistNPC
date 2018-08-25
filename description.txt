@@ -55,7 +55,7 @@ Avalilable after beating Old One's Army tier 1, 2 (only while Thorium mod is act
 -Changed sprite for Wing of the World. Just place tile again to fix possible issues.
 -Polished mechanics for Akumu and Unchained Akumu.
 -Fixed rare crash with Thorium Combination.
--Fixed Materia Transmutator recipe with Thorium mod active.
+-Fixed Materia Transmutator recipe with Thorium and Content Disabler mods active.
 -Fixed tiles placement. Now they are not floating above for a little.
 -Fixed Quest fishes availability conditions (would only work after the next tModloader update).
 -Fixed hotkey translations.

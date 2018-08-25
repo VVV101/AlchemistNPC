@@ -23,6 +23,12 @@ namespace AlchemistNPC.Projectiles
 			aiType = 503;
 		}
 		
+		public override bool PreKill(int timeLeft)
+		{
+			projectile.type = 503;
+			return true;
+		}
+		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 		target.immune[projectile.owner] = 1;

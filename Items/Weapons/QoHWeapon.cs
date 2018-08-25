@@ -42,13 +42,14 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 12;   
 			item.knockBack = 4;
 			item.value = Item.sellPrice(1, 0, 0, 0);
+			item.autoReuse = true;
 		}
 		
 		public override bool CanUseItem(Player player)
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 					{
-					item.damage = 111;
+					item.damage = 125;
 					item.useTime = 10;
 					item.useAnimation = 10;
 					}
@@ -81,7 +82,7 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
+			Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
 			speedX = perturbedSpeed.X;
 			speedY = perturbedSpeed.Y;
 			return true;
