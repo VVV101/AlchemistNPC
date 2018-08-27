@@ -23,7 +23,8 @@ namespace AlchemistNPC.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.LaserMachinegunLaser);
-			projectile.hostile = true;
+			projectile.hostile = false;
+			projectile.friendly = false;
 			projectile.width = 98;
 			projectile.height = 98;
 			projectile.penetrate = 2;
@@ -57,8 +58,6 @@ namespace AlchemistNPC.Projectiles
 		public override void OnHitPlayer(Player target, int damage, bool crit)	
 		{
 			Player player = Main.player[projectile.owner]; 
-			player.statLife += 200;
-			player.HealEffect(200, true);
 			projectile.penetrate--;
 			if (projectile.penetrate <= 0)
 			{

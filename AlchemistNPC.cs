@@ -242,22 +242,22 @@ namespace AlchemistNPC
 			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
 			{
 			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "EmagledFragmentation", 25);
+			recipe.AddIngredient(null, "EmagledFragmentation", 10);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(ItemID.FragmentStardust, 2);
 			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "EmagledFragmentation", 25);
+			recipe.AddIngredient(null, "EmagledFragmentation", 10);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(ItemID.FragmentNebula, 2);
 			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "EmagledFragmentation", 25);
+			recipe.AddIngredient(null, "EmagledFragmentation", 10);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(ItemID.FragmentVortex, 2);
 			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "EmagledFragmentation", 25);
+			recipe.AddIngredient(null, "EmagledFragmentation", 10);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(ItemID.FragmentSolar, 2);
 			recipe.AddRecipe();

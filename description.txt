@@ -5,6 +5,14 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Explorer is secret NPC. Try to figure out, how to spawn her.
+v7.4.1
+-Fixed MP issues with Pillars.
+-Fixed random warns with CAE projectile and "Light of Cera Sumat".
+-Fixed recipe for Unchained Akumu.
+-Changed recipes for Alchemist Charm Tiers 2-4.
+-Changed Drainer mechanic. Now less likely to stupidly kill player.
+-Emagled Fragmentation now renamed to Celestial's Particle.
+-New sprite for Otherworldly Amulet.
 v7.4
 -Added Sacred Tools, Spirit and Enigma mods support for Operator's Modded Treasure Bags shops.
 -Added Alchemist Charm tier 1-4. Gives you chance not to consume potion while placed in inventory. 

@@ -39,6 +39,7 @@ namespace AlchemistNPC.Items.Misc
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "AlchemistCharmTier1");
 			recipe.AddRecipeGroup("AlchemistNPC:EvilBar", 15);
 			recipe.AddRecipeGroup("AlchemistNPC:EvilComponent", 20);
 			recipe.AddTile(TileID.Anvils);

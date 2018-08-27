@@ -106,5 +106,29 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			return false;
 		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "Akumu");
+			recipe.AddIngredient(null, "ChromaticCrystal", 5);
+			recipe.AddIngredient(null, "SunkroveraCrystal", 5);
+			recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			{
+			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 10);
+			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
+			}
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			{
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 5);
+			}
+			recipe.AddIngredient(null, "EmagledFragmentation", 150);
+			recipe.AddTile(null, "MateriaTransmutator");
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }

@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using ReLogic.Utilities;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
@@ -73,29 +74,42 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool CanUseItem(Player player)
 		{
-			if (CalamityModDownedGuardian)
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
-				item.damage = 120;
+				if (CalamityModDownedGuardian)
+				{
+					item.damage = 120;
+				}
 			}
-			if (CalamityModDownedProvidence || ThoriumModDownedRagnarok)
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			{
-				item.damage = 130;
+				if (ThoriumModDownedRagnarok)
+				{
+					item.damage = 125;
+				}
 			}
-			if (CalamityModDownedPolter)
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
-				item.damage = 150;
-			}
-			if (CalamityModDownedDOG)
-			{
-				item.damage = 200;
-			}
-			if (CalamityModDownedYharon)
-			{
-				item.damage = 300;
-			}
-			if (CalamityModDownedSCal)
-			{
-				item.damage = 400;
+				if (CalamityModDownedProvidence)
+				{
+					item.damage = 130;
+				}
+				if (CalamityModDownedPolter)
+				{
+					item.damage = 150;
+				}
+				if (CalamityModDownedDOG)
+				{
+					item.damage = 200;
+				}
+				if (CalamityModDownedYharon)
+				{
+					item.damage = 300;
+				}
+				if (CalamityModDownedSCal)
+				{
+					item.damage = 400;
+				}
 			}
 			return true;
 		}

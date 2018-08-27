@@ -116,14 +116,16 @@ namespace AlchemistNPC.Projectiles
 			);			
 		}
 		
-		public override bool PreAI(Projectile projectile)
+		public override void ModifyHitPlayer(Projectile projectile, Player target, ref int damage, ref bool crit)	
 		{
-			NPC npc = Main.npc[projectile.owner];
-			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1 && Main.rand.Next(4) == 0)
+			for (int k = 0; k < 200; k++)
 			{
-				projectile.damage /= 2;
+				NPC npc = Main.npc[k];
+				if (npc.HasBuff(mod.BuffType("CurseOfLight")) && (Main.rand.Next(4) == 0))
+				{
+					damage /= 2;
+				}
 			}
-			return true;
 		}
 		
 		public override void AI(Projectile projectile)

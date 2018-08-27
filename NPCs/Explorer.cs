@@ -174,8 +174,8 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "运气不错, 我带着我的次元盒, 所以我可以制作药水, 由我发明的药水");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE7");
-            text.SetDefault("Emagled Fragmentations are pretty interesting... You can use them for crafting some special accessories and equipment or just can make Celestial Fragments.");
-            text.AddTranslation(GameCulture.Russian, "Небесные обломки довольно интересны... Ты можешь использовать их для крафта специальных аксессуаров и снаряжения или всего лишь для изготовления Небесных Фрагментов.");
+            text.SetDefault("Celestial's Particles are pretty interesting... You can use them for crafting some special accessories and equipment or just can make Celestial Fragments.");
+            text.AddTranslation(GameCulture.Russian, "Частицы Божества довольно интересны... Ты можешь использовать их для крафта специальных аксессуаров и снаряжения или всего лишь для изготовления Небесных Фрагментов.");
             text.AddTranslation(GameCulture.Chinese, "始源碎片十分的有趣...你可以用他们制造一些特殊的饰品和装备或者是天界碎片");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE8");
@@ -194,8 +194,8 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "那是丛林中最为强大和危险的生物, 但是你杀了它. 这是否意味着以后你就是丛林中最强大最危险的生物了呢?");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE11");
-            text.SetDefault("Otherworldly Amulet has much more functions then you ever thought... It could help Alchemist to make Emagled Fragmentations, it could summon mount Poro for you and it is required for making Autoinjector or Watcher Amulet.");
-            text.AddTranslation(GameCulture.Russian, "Амулет Иного мира имеет куда больше функций, чем ты бы мог подумать... Он может помочь Алхимику создавать Небесные Осколки, он может призвать для тебя ездового питомца Поро и он неободим для создания Автоинъектора или Амулета Дозорного.");
+            text.SetDefault("Otherworldly Amulet has much more functions then you ever thought... It could help Alchemist to make Celestial's Particles, it could summon mount Poro for you and it is required for making Autoinjector or Watcher Amulet.");
+            text.AddTranslation(GameCulture.Russian, "Амулет Иного мира имеет куда больше функций, чем ты бы мог подумать... Он может помочь Алхимику создавать Частицы Божества, он может призвать для тебя ездового питомца Поро и он неободим для создания Автоинъектора или Амулета Дозорного.");
             text.AddTranslation(GameCulture.Chinese, "异界护身符拥有着远超你想象的力量...它可以帮助炼金师制作始源碎片, 可以召唤坐骑魄罗, 同时也是制作自动注射器和凝视者护符的材料");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE12");

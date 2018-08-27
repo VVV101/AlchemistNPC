@@ -40,6 +40,7 @@ namespace AlchemistNPC.Items.Misc
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "AlchemistCharmTier3");
 			recipe.AddIngredient(ItemID.LunarBar, 10);
 			recipe.AddIngredient(ItemID.FragmentSolar, 5);
 			recipe.AddIngredient(ItemID.FragmentNebula, 5);

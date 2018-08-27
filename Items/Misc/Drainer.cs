@@ -14,13 +14,11 @@ namespace AlchemistNPC.Items.Misc
 		{
 		return (ModLoader.GetMod("CalamityMod") != null && ModLoader.GetMod("AlchemistNPCContentDisabler") == null);
 		}
-		
-		public static int counter = 30;
+
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Drainer");
-			Tooltip.SetDefault("Drains 250-400 HP, then heal by 200 while held"
-			+"\nAlso lowers defense and endurance"
+			Tooltip.SetDefault("Drains 1/4 of HP"
 			+"\nPerfect for filling Rage Meter");
 			DisplayName.AddTranslation(GameCulture.Russian, "Поглотитель");
             Tooltip.AddTranslation(GameCulture.Russian, "Поглощает по 250-400 ХП, затем вылечивает на 250 ХП, пока вы держите его в руках\nТакже понижает вашу защиту и сопротивление урону\nИдеален для заполнения шкалы Ярости");
@@ -33,26 +31,36 @@ namespace AlchemistNPC.Items.Misc
 			item.width = 34;
 			item.height = 36;
 			item.maxStack = 1;
+			item.useTime = 30;
+			item.useAnimation = 30;
+			item.useStyle = 2;
 			item.value = 100000;
-			item.holdStyle = 1;
-			item.rare = 8;
-			item.scale = 0.5f;
+			item.rare = 9;
+			item.UseSound = SoundID.Item4;
 		}
 
-		public override void HoldItem(Player player)
+		public override bool UseItem(Player player)
 		{
-		player.AddBuff(mod.BuffType("Drainer"), 20);
-		if (counter == 30)
-			{
-				for (int h = 0; h < 1; h++) {
-				Vector2 vel = new Vector2(0, -1);
-				vel *= 0f;
-				Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("Drainer"), 100, 0, player.whoAmI);
-				counter = 0;
-				}
+		CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
+			for (int h = 0; h < 1; h++) {
+			Vector2 vel = new Vector2(0, -1);
+			vel *= 0f;
+			Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("Drainer"), 0, 0, player.whoAmI);
 			}
-		counter++;
+		player.Hurt(PlayerDeathReason.LegacyEmpty(), 2, 0, false, false, false, -1);
+		CalamityPlayer.stress += 2500;
+		player.statLife = (player.statLife - player.statLifeMax2 / 4);
+		PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
+		if (Main.rand.Next(2) == 0)
+		damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
+		if (player.statLife <= 0)
+		player.KillMe(damageSource, 1.0, 0, false);
+		player.lifeRegenCount = 0;
+		player.lifeRegenTime = 0;
+		return true;
 		}
+		
+		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private Vector2 GetLightPosition(Player player)
 		{
@@ -60,22 +68,6 @@ namespace AlchemistNPC.Items.Misc
 			position.X += Main.mouseX;
 			position.Y += player.gravDir == 1 ? Main.mouseY : Main.screenHeight - Main.mouseY;
 			return position;
-		}
-		
-		public override void HoldStyle(Player player)
-		{
-			Vector2 position = GetLightPosition(player);
-			if ((position.Y >= player.Center.Y) == (player.gravDir == 1))
-			{
-				player.itemLocation.X = player.Center.X + 6f * player.direction;
-				player.itemLocation.Y = player.position.Y + 21f + 23f * player.gravDir + player.mount.PlayerOffsetHitbox;
-			}
-			else
-			{
-				player.itemLocation.X = player.Center.X;
-				player.itemLocation.Y = player.position.Y + 21f - 3f * player.gravDir + player.mount.PlayerOffsetHitbox;
-			}
-			player.itemRotation = 0f;
 		}
 		
 		public override void AddRecipes()
