@@ -15,6 +15,7 @@ namespace AlchemistNPC.Items.Equippable
 			DisplayName.SetDefault("Otherworldly Amulet");
 			Tooltip.SetDefault("Only obtainable from the strongest of enemies."
 				+ "\nLegends say that it can do something amazing");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(25, 36));
 			DisplayName.AddTranslation(GameCulture.Russian, "Амулет Иного Мира");
             Tooltip.AddTranslation(GameCulture.Russian, "Можно добыть из сильнейшего из врагов.\nЛегенды говорят, что он способен на нечто впечатляющее");
 
@@ -24,10 +25,11 @@ namespace AlchemistNPC.Items.Equippable
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.BlessedApple);
-			item.width = 46;
-			item.height = 46;
+			item.width = 32;
+			item.height = 30;
 			item.value = 5000000;
 			item.rare = 11;
+			item.noUseGraphic = true;
 			item.mountType = mod.MountType("Poro");
 		}
 	}

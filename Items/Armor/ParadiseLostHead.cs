@@ -64,7 +64,7 @@ namespace AlchemistNPC.Items.Armor
 		public override void UpdateEquip(Player player)
 		{
 			player.statManaMax2 += 100;
-			player.meleeSpeed *= 1.33f;
+			player.meleeSpeed += 0.33f;
 		}
 		
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -78,11 +78,11 @@ namespace AlchemistNPC.Items.Armor
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost = true;
 			player.setBonus = ParadiseLostSetBonus;
 			player.AddBuff(mod.BuffType("BigBirdLamp"), 60);
-			player.meleeDamage *= 1.35f;
-			player.magicDamage *= 1.35f;
-			player.minionDamage *= 1.35f;
-			player.magicDamage *= 1.35f;
-			player.thrownDamage *= 1.35f;
+			player.meleeDamage += 0.35f;
+			player.magicDamage += 0.35f;
+			player.minionDamage += 0.35f;
+			player.magicDamage += 0.35f;
+			player.thrownDamage += 0.35f;
 			player.meleeCrit += 25;
 			player.magicCrit += 25;
 			player.rangedCrit += 25;
@@ -100,7 +100,7 @@ namespace AlchemistNPC.Items.Armor
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage *= 1.35f;
+			RedemptionPlayer.druidDamage += 0.35f;
             RedemptionPlayer.druidCrit += 25;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
@@ -108,9 +108,9 @@ namespace AlchemistNPC.Items.Armor
 		private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage *= 1.35f;
+            ThoriumPlayer.symphonicDamage += 0.35f;
             ThoriumPlayer.symphonicCrit += 25;
-			ThoriumPlayer.radiantBoost *= 1.35f;
+			ThoriumPlayer.radiantBoost += 0.35f;
             ThoriumPlayer.radiantCrit += 25;
         }
 		

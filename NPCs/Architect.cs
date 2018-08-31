@@ -44,7 +44,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Architect";
-			return mod.Properties.Autoload;
+			return Config.ArchitectSpawn;
 		}
 
 		public override void SetStaticDefaults()

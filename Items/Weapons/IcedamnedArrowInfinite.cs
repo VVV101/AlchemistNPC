@@ -12,6 +12,7 @@ namespace AlchemistNPC.Items.Weapons
 		}
 		public override void SetStaticDefaults()
 		{
+			DisplayName.SetDefault("Icedamned Arrow");
 			Tooltip.SetDefault("The unusual usage of cursed materials\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Стрела Проклятого Льда");
 			Tooltip.AddTranslation(GameCulture.Russian, "Необычное использование Проклятого Материала\nБесконечна");

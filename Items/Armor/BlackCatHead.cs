@@ -60,7 +60,7 @@ namespace AlchemistNPC.Items.Armor
             string BlackCatSetBonus = Language.GetTextValue("Mods.AlchemistNPC.BlackCatSetBonus");
 			player.setBonus = BlackCatSetBonus;
             player.statDefense += 48;
-            player.meleeDamage *= 1.25f;
+            player.meleeDamage += 0.25f;
 			player.meleeCrit += 15;
 			player.moveSpeed += 0.33f;
 			player.AddBuff(mod.BuffType("BattleComb"), 30);

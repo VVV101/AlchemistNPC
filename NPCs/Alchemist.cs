@@ -27,7 +27,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Alchemist";
-			return mod.Properties.Autoload;
+			return Config.AlchemistSpawn;
 		}
 		
 		public override void SetStaticDefaults()

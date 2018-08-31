@@ -23,7 +23,7 @@ namespace AlchemistNPC.Items.Weapons
 		item.knockBack = 4;
 		item.value = 5000000;
 		item.rare = 11;
-		item.shootSpeed = 24f;
+		item.shootSpeed = 12f;
 		item.useTime = 10;
 		item.useAnimation = 10;
 		}

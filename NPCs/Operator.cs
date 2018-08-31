@@ -33,7 +33,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Operator";
-			return mod.Properties.Autoload;
+			return Config.OperatorSpawn;
 		}
 
 		public override void SetStaticDefaults()

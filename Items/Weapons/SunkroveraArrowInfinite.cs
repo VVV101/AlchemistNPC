@@ -12,6 +12,7 @@ namespace AlchemistNPC.Items.Weapons
 		}
 		public override void SetStaticDefaults()
 		{
+			DisplayName.SetDefault("Sunkrovera Arrow");
 			Tooltip.SetDefault("Even holding these make you feel... uneasy."
 			+"\nReleases life stealing projectiles on enemy/wall impact"
 			+"\nInfinite");

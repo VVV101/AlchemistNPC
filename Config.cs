@@ -13,7 +13,14 @@ namespace AlchemistNPC
 		public static bool TornNotesDrop = true;
 		public static bool CoinsDrop = true;
 		public static bool StartMessage = true;
-        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv71.json");
+		public static bool AlchemistSpawn = true;
+		public static bool BrewerSpawn = true;
+		public static bool JewelerSpawn = true;
+		public static bool ArchitectSpawn = true;
+		public static bool YoungBrewerSpawn = true;
+		public static bool OperatorSpawn = true;
+		public static bool ExplorerSpawn = true;
+        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv741.json");
         static Preferences Configuration = new Preferences(ConfigPath);
 
         public static void Load()
@@ -55,6 +62,34 @@ namespace AlchemistNPC
 			{
             StartMessage = true;
 			}
+			if(AlchemistSpawn != true && AlchemistSpawn != false)
+			{
+            AlchemistSpawn = true;
+			}
+			if(BrewerSpawn != true && BrewerSpawn != false)
+			{
+            BrewerSpawn = true;
+			}
+			if(JewelerSpawn != true && JewelerSpawn != false)
+			{
+            JewelerSpawn = true;
+			}
+			if(ArchitectSpawn != true && ArchitectSpawn != false)
+			{
+            ArchitectSpawn = true;
+			}
+			if(YoungBrewerSpawn != true && YoungBrewerSpawn != false)
+			{
+            YoungBrewerSpawn = true;
+			}
+			if(OperatorSpawn != true && OperatorSpawn != false)
+			{
+            OperatorSpawn = true;
+			}
+			if(ExplorerSpawn != true && ExplorerSpawn != false)
+			{
+            ExplorerSpawn = true;
+			}
 			Configuration.Get<bool>("StartMessage", ref Config.StartMessage);
 			return true;
 			}
@@ -72,6 +107,13 @@ namespace AlchemistNPC
 			Configuration.Put("TornNotesDrop", TornNotesDrop);
 			Configuration.Put("CoinsDrop", CoinsDrop);
 			Configuration.Put("StartMessage", StartMessage);
+			Configuration.Put("AlchemistSpawn", AlchemistSpawn);
+			Configuration.Put("BrewerSpawn", BrewerSpawn);
+			Configuration.Put("JewelerSpawn", JewelerSpawn);
+			Configuration.Put("ArchitectSpawn", ArchitectSpawn);
+			Configuration.Put("YoungBrewerSpawn", YoungBrewerSpawn);
+			Configuration.Put("OperatorSpawn", OperatorSpawn);
+			Configuration.Put("ExplorerSpawn", ExplorerSpawn);
             Configuration.Save(true);
         }
     }

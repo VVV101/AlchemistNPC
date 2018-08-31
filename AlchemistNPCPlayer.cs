@@ -32,11 +32,13 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
+using AlchemistNPC.Items;
 
 namespace AlchemistNPC
 {
 	public class AlchemistNPCPlayer : ModPlayer
 	{
+		public bool Luck = false;
 		public bool AutoinjectorMK2 = false;
 		public bool AlchemistCharmTier1 = false;
 		public bool AlchemistCharmTier2 = false;
@@ -98,6 +100,8 @@ namespace AlchemistNPC
 		public override void ResetEffects()
 		{
 			Item.potionDelay = 3600;
+			Luck = false;
+			AlchemistGlobalItem.Luck = false;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
 			MeatGrinderOnUse = false;

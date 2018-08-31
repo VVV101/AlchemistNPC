@@ -24,8 +24,8 @@ namespace AlchemistNPC.Projectiles
 		{
 			DisplayName.SetDefault("Sasscade Yoyo");
 			ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = -1f;
-			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 500f;
-			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 20f;
+			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 400f;
+			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 17f;
 
 		}
 
@@ -46,15 +46,15 @@ namespace AlchemistNPC.Projectiles
 
                 if (distance < 500f && !target.friendly && target.active)
                 {
-                    if (projectile.ai[0] > 45f) // Time in (60 = 1 second) 
+                    if (projectile.ai[0] > 60f) // Time in (60 = 1 second) 
                     {
                         distance = 1.6f / distance;
 
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
-						if (Main.rand.Next(12) == 0)
+						if (Main.rand.Next(20) == 0)
 						{
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, ProjectileID.NebulaArcanum, projectile.damage/2, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, ProjectileID.NebulaArcanum, projectile.damage/3, 0, Main.myPlayer, 0f, 0f);
 						}
                         projectile.ai[0] = 0f;
                     }

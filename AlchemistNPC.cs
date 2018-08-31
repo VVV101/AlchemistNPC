@@ -77,7 +77,7 @@ namespace AlchemistNPC
 		
 		public static string ConfigFileRelativePath 
 		{
-		get { return "Mod Configs/Alchemist.json"; }
+		get { return "Mod Configs/Alchemistv741.json"; }
 		}
 
 		public static void ReloadConfigFromFile() 

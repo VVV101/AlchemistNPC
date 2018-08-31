@@ -32,8 +32,8 @@ namespace AlchemistNPC.Items.Misc
 
 		public override void SetDefaults()
 		{
-			item.width = 32;
-			item.height = 32;
+			item.width = 56;
+			item.height = 56;
 			item.value = 100000;
 			item.rare = 11;
 		}

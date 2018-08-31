@@ -12,6 +12,7 @@ namespace AlchemistNPC.Items.Weapons
 		}
 		public override void SetStaticDefaults()
 		{
+			DisplayName.SetDefault("Crystalyzed Arrow");
 			Tooltip.SetDefault("Explodes to shards on hit"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристальные стрелы");

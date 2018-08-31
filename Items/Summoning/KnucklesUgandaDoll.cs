@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items.Summoning
 		{
 			DisplayName.SetDefault("National Ugandan Treasure");
 			Tooltip.SetDefault("''I'm 100% sure this will kill you'' - Gregg"
-			+"\nUsing this may cause disasterous consiquences..."
+			+"\nUsing this may cause disasterous consequences..."
 			+"\nBut the reward can retribute all your sufferings");
 			DisplayName.AddTranslation(GameCulture.Russian, "Национальное сокровище Уганды");
             Tooltip.AddTranslation(GameCulture.Russian, "''Я на 100 процентов уверен, что это тебя убьёт'' - Gregg\nПрименение этого может вызвать нехорошие последствия...\nНо награда способна возместить все ваши страдания");
@@ -38,7 +38,7 @@ namespace AlchemistNPC.Items.Summoning
 		
 		public override bool UseItem(Player player)
 		{
-			NPC.NewNPC((int)player.Center.X, (int)player.Center.Y-250, mod.NPCType("Knuckles"));
+			NPC.NewNPC((int)player.Center.X, (int)player.Center.Y-300, mod.NPCType("Knuckles"));
 			return true;
 		}
     }

@@ -46,7 +46,7 @@ namespace AlchemistNPC.Items.Armor
 
 		public override void UpdateEquip(Player player)
 		{
-			player.rangedDamage *= 1.2f;
+			player.rangedDamage += 0.2f;
 		}
 		
 		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)

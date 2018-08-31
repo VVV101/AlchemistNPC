@@ -14,6 +14,7 @@ namespace AlchemistNPC.Items
 	public class AlchemistGlobalItem : GlobalItem
 	{	
 		public static bool on = false;
+		public static bool Luck = false;
 		
 		public bool CalamityModDownedSCal
 		{
@@ -26,6 +27,62 @@ namespace AlchemistNPC.Items
 			{
 				item.damage = 1;
 			}
+		}
+		
+		public override void UpdateInventory(Item item, Player player)
+		{
+			if (item.type == mod.ItemType("LuckCharm"))
+			{
+				Luck = true;
+			}
+		}
+		
+		public override int ChoosePrefix(Item item, UnifiedRandom rand)
+		{
+			if (Luck == true)
+			{
+				if (item.melee)
+				{
+					if (Main.rand.Next(10) == 0)
+					return 59;
+				
+					if (Main.rand.Next(20) == 0)
+					return 81;
+				}
+				if (item.ranged)
+				{
+					if (Main.rand.Next(10) == 0)
+					return 20;
+				
+					if (Main.rand.Next(20) == 0)
+					return 82;
+				}
+				if (item.magic)
+				{
+					if (Main.rand.Next(10) == 0)
+					return 28;
+				
+					if (Main.rand.Next(20) == 0)
+					return 83;
+				}
+				if (item.summon)
+				{
+					if (Main.rand.Next(10) == 0)
+					return 57;
+				
+					if (Main.rand.Next(20) == 0)
+					return 83;
+				}
+				if (item.thrown)
+				{
+					if (Main.rand.Next(10) == 0)
+					return 20;
+				
+					if (Main.rand.Next(20) == 0)
+					return 82;
+				}
+			}
+		return -1;
 		}
 		
 		public override bool ConsumeItem(Item item, Player player)	

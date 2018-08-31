@@ -25,9 +25,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nIts slice pierces through any amount of enemies on its way"
 			+"\nLeft click launcher short travelling projectile"
 			+"\nRight click slices the air in place"
-			+"\nWhile at 35% of life or lower, Akumu generates projectile reflecting shield");
+			+"\nWhile at 35% HP or lower, Akumu generates projectile reflecting shield"
+			+"\nWhile above 35% HP, Akumu releases flying minion");
 			DisplayName.AddTranslation(GameCulture.Russian, "Освобождённая ''Акуму''");
-            Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''демон'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши");
+            Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''демон'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши\nПри здоровье ниже 35% призывает отражающий снаряды щит\nПри здоровье выше 35% создаёт летающего прислужника");
         }
 
 		public override void SetDefaults()
@@ -50,6 +51,10 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override void HoldItem(Player player)
 		{
+			if (player.statLife > player.statLifeMax2*0.35f)
+			{
+			player.AddBuff(mod.BuffType("TrueAkumuAttack"), 2);
+			}
 			if (player.statLife < player.statLifeMax2*0.35f)
 			{
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Akumu = true;
@@ -82,7 +87,7 @@ namespace AlchemistNPC.Items.Weapons
 			if (player.altFunctionUse != 2)
 			{
 			item.noMelee = false;
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("AkumuThrow"), damage*2, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("AkumuThrow"), damage, knockBack, player.whoAmI);
 			}
 			if (player.altFunctionUse == 2)
 			{

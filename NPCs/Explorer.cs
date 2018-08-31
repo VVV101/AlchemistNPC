@@ -87,7 +87,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Explorer";
-			return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+			return ((ModLoader.GetMod("AlchemistNPCContentDisabler") == null) && Config.ExplorerSpawn);
 		}
 
 		public override void SetStaticDefaults()
@@ -367,7 +367,7 @@ namespace AlchemistNPC.NPCs
 						{
 							C24 = true;
 						}
-						if (player.inventory[j].type == 2890)
+						if (player.inventory[j].type == mod.ItemType("CaughtUnicorn"))
 						{
 							C25 = true;
 						}
@@ -502,25 +502,30 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 3389)
+							if (inventory[k].type == 3389 && C11)
 							{
 								inventory[k].stack--;
+								C11 = false;
 							}
-							if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
+							if (inventory[k].type == mod.ItemType("AlchemicalBundle")&& C12)
 							{
 								inventory[k].stack--;
+								C12 = false;
 							}
-							if (inventory[k].type == 1326)
+							if (inventory[k].type == 1326 && C13)
 							{
 								inventory[k].stack--;
+								C13 = false;
 							}
-							if (inventory[k].type == 3366)
+							if (inventory[k].type == 3366 && C14)
 							{
 								inventory[k].stack--;
+								C14 = false;
 							}
-							if (inventory[k].type == mod.ItemType("ResearchNote1"))
+							if (inventory[k].type == mod.ItemType("ResearchNote1") && C15)
 							{
 								inventory[k].stack--;
+								C15 = false;
 							}
 						}
 					}
@@ -535,29 +540,35 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 495)
+							if (inventory[k].type == 495 && C21)
 							{
 								inventory[k].stack--;
+								C21 = false;
 							}
-							if (inventory[k].type == 3541)
+							if (inventory[k].type == 3541 && C22)
 							{
 								inventory[k].stack--;
+								C22 = false;
 							}
-							if (inventory[k].type == 493)
+							if (inventory[k].type == 493 && C23)
 							{
 								inventory[k].stack--;
+								C23 = false;
 							}
-							if (inventory[k].type == 1611)
+							if (inventory[k].type == 1611 && C24)
 							{
 								inventory[k].stack--;
+								C24 = false;
 							}
-							if (inventory[k].type == 2890)
+							if (inventory[k].type == mod.ItemType("CaughtUnicorn") && C25)
 							{
 								inventory[k].stack--;
+								C25 = false;
 							}
-							if (inventory[k].type == mod.ItemType("ResearchNote2"))
+							if (inventory[k].type == mod.ItemType("ResearchNote2") && C26)
 							{
 								inventory[k].stack--;
+								C26 = false;
 							}
 						}
 					}
@@ -572,25 +583,30 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 2882)
+							if (inventory[k].type == 2882 && C31)
 							{
 								inventory[k].stack--;
+								C31 = false;
 							}
-							if (inventory[k].type == 1295)
+							if (inventory[k].type == 1295 && C32)
 							{
 								inventory[k].stack--;
+								C32 = false;
 							}
-							if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
+							if (inventory[k].type == mod.ItemType("AlchemicalBundle") && C33)
 							{
 								inventory[k].stack--;
+								C33 = false;
 							}
-							if (inventory[k].type == 1858)
+							if (inventory[k].type == 1858 && C34)
 							{
 								inventory[k].stack--;
+								C34 = false;
 							}
-							if (inventory[k].type == mod.ItemType("ResearchNote3"))
+							if (inventory[k].type == mod.ItemType("ResearchNote3") && C35)
 							{
 								inventory[k].stack--;
+								C35 = false;
 							}
 						}
 					}
@@ -605,25 +621,30 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
+							if (inventory[k].type == mod.ItemType("AlchemicalBundle") && C41)
 							{
 								inventory[k].stack--;
+								C41 = false;
 							}
-							if (inventory[k].type == 1363)
+							if (inventory[k].type == 1363 && C42)
 							{
 								inventory[k].stack--;
+								C42 = false;
 							}
-							if (inventory[k].type == mod.ItemType("HateVial"))
+							if (inventory[k].type == mod.ItemType("HateVial") && C43)
 							{
 								inventory[k].stack--;
+								C43 = false;
 							}
-							if (inventory[k].type == mod.ItemType("RainbowFlask"))
+							if (inventory[k].type == mod.ItemType("RainbowFlask") && C44)
 							{
 								inventory[k].stack--;
+								C44 = false;
 							}
-							if (inventory[k].type == mod.ItemType("ResearchNote4"))
+							if (inventory[k].type == mod.ItemType("ResearchNote4") && C45)
 							{
 								inventory[k].stack--;
+								C45 = false;
 							}
 						}
 					}
@@ -638,25 +659,30 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 1156)
+							if (inventory[k].type == 1156 && C51)
 							{
 								inventory[k].stack--;
+								C51 = false;
 							}
-							if (inventory[k].type == mod.ItemType("RainbowFlask"))
+							if (inventory[k].type == mod.ItemType("AlchemicalBundle") && C52)
 							{
 								inventory[k].stack--;
+								C52 = false;
 							}
-							if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
+							if (inventory[k].type == mod.ItemType("RainbowFlask") && C53)
 							{
 								inventory[k].stack--;
+								C53 = false;
 							}
-							if (inventory[k].type == 900)
+							if (inventory[k].type == 900 && C54)
 							{
 								inventory[k].stack--;
+								C54 = false;
 							}
-							if (inventory[k].type == mod.ItemType("ResearchNote5"))
+							if (inventory[k].type == mod.ItemType("ResearchNote5") && C55)
 							{
 								inventory[k].stack--;
+								C55 = false;
 							}
 						}
 					}
@@ -671,25 +697,30 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 1327)
+							if (inventory[k].type == 1327 && C61)
 							{
 								inventory[k].stack--;
+								C61 = false;
 							}
-							if (inventory[k].type == mod.ItemType("HateVial"))
+							if (inventory[k].type == mod.ItemType("HateVial") && C62)
 							{
 								inventory[k].stack--;
+								C62 = false;
 							}
-							if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
+							if (inventory[k].type == mod.ItemType("AlchemicalBundle") && C63)
 							{
 								inventory[k].stack--;
+								C63 = false;
 							}
-							if (inventory[k].type == 1865)
+							if (inventory[k].type == 1865 && C64)
 							{
 								inventory[k].stack--;
+								C64 = false;
 							}
-							if (inventory[k].type == mod.ItemType("ResearchNote6"))
+							if (inventory[k].type == mod.ItemType("ResearchNote6") && C65)
 							{
 								inventory[k].stack--;
+								C65 = false;
 							}
 						}
 					}

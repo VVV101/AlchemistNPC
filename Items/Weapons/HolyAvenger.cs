@@ -46,7 +46,6 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nMakes enemies take 20% more damage from player"
 			+"\n25% to take only half of the damage from debuffed enemy"
 			+"\n[c/00FF00:Stats are growing up through progression]"
-			+"\nBoosts heavily after entering hardmode"
 			+"\nBoosted stats will be shown after the first swing");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Сера Сумат'', Святой Мститель");
             Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарный Меч] Старого Графа Эхлда\nОслабляет противников при ударе\n[c/00FF00:Показатели увеличивается по мере прохождения]");
@@ -69,7 +68,6 @@ namespace AlchemistNPC.Items.Weapons
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.scale = 1.5f;
-			item.prefix = 81;
 		}
 
 		public override bool CanUseItem(Player player)

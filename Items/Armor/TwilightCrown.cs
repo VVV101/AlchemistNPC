@@ -47,7 +47,7 @@ namespace AlchemistNPC.Items.Armor
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeSpeed *= 1.30f;
+			player.meleeSpeed += 0.30f;
 		}
 		
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -59,8 +59,8 @@ namespace AlchemistNPC.Items.Armor
 		{
 			string TwilightSetBonus = Language.GetTextValue("Mods.AlchemistNPC.TwilightSetBonus");
 			player.setBonus = TwilightSetBonus;
-			player.meleeDamage *= 1.35f;
-			player.magicDamage *= 1.35f;
+			player.meleeDamage += 0.35f;
+			player.magicDamage += 0.35f;
 			player.meleeCrit += 20;
 			player.magicCrit += 20;
 			player.AddBuff(mod.BuffType("BigBirdLamp"), 300);

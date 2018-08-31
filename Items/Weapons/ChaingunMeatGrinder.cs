@@ -93,9 +93,15 @@ namespace AlchemistNPC.Items.Weapons
 			Vector2 vector = player.RotatedRelativePoint(player.MountedCenter, true);
 			speedX = perturbedSpeed.X;
 			speedY = perturbedSpeed.Y;
-			Projectile.NewProjectile(vector.X, vector.Y+4, speedX, speedY, 638, damage, knockBack, player.whoAmI);
+			Vector2 perturbedSpeed2 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(3));
+			Vector2 perturbedSpeed3 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(3));
+			float speedX2 = perturbedSpeed2.X;
+			float speedY2 = perturbedSpeed2.Y;
+			float speedX3 = perturbedSpeed3.X;
+			float speedY3 = perturbedSpeed3.Y;
+			Projectile.NewProjectile(vector.X, vector.Y+4, speedX2, speedY2, 638, damage, knockBack, player.whoAmI);
 			Projectile.NewProjectile(vector.X, vector.Y, speedX, speedY, 638, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(vector.X, vector.Y-4, speedX, speedY, 638, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(vector.X, vector.Y-4, speedX3, speedY3, 638, damage, knockBack, player.whoAmI);
 			return false;
 		}
 		

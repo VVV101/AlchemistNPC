@@ -44,7 +44,7 @@ namespace AlchemistNPC.Items.Armor
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeSpeed *= 1.20f;
+			player.meleeSpeed += 0.20f;
 		}
 		
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -56,7 +56,7 @@ namespace AlchemistNPC.Items.Armor
 		{
 			string JustitiaSetBonus = Language.GetTextValue("Mods.AlchemistNPC.JustitiaSetBonus");
 			player.setBonus = JustitiaSetBonus;
-			player.meleeDamage *= 1.30f;
+			player.meleeDamage += 0.30f;
 			player.meleeCrit += 15;
 		}
 

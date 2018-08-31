@@ -69,7 +69,6 @@ namespace AlchemistNPC.Items.Weapons
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.scale = 1.5f;
-			item.prefix = 81;
 		}
 
 		public override bool CanUseItem(Player player)

@@ -93,7 +93,7 @@ namespace AlchemistNPC.NPCs
 			damage2 = 150;
 			damage3 = 175;
 			}
-			if (player.statDefense > 250 || player.endurance > 0.40f || player.statLifeMax2 > 1300)
+			if (player.statDefense > 250 || player.endurance > 0.50f || player.statLifeMax2 > 1300)
 			{
 			player.dead = true;
 				if (player.dead)
@@ -350,7 +350,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override void ModifyHitPlayer(Player player, ref int damage, ref bool crit)
 		{
-			if (player.statDefense > 250 || player.endurance > 0.40f || player.statLifeMax2 > 1300)
+			if (player.statDefense > 250 || player.endurance > 0.50f || player.statLifeMax2 > 1300)
 			{
 			damage = 666666;
 			}

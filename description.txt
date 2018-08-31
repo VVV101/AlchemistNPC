@@ -5,14 +5,32 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Explorer is secret NPC. Try to figure out, how to spawn her.
+v7.5
+-Fixed multiple non-stackeable items consuming on creating Explorer weapons.
+-Added Caught Unicorn item. Required for Research Note#2 recipe.
+-Now Caught Unicorn is required for Research Note#2 recipe.
+-Fixed set bonuses for some sets.
+-Fixed drop for Charm of Luck. Now will always drop from Wall of Flesh.
+-Nerfed Sasscade and True Sasscade Yo-yos.
 v7.4.1
+-Added config options for disabling certain town NPCs spawn (AlchemistNPCv741.json).
+-Added Charm of Luck. Drops after beating Wall of Flesh for the first time.
+Gives better chance to get good reforge.
+-Added Waspnades, direct upgrade for Beenades. Releasing Wasps instead of Bees.
+Available after beating Plantera.
+-Added Cursed Ice, Divine Lava and Elemental Waspnades, direct upgrades for Waspnades. Inflicting several debuffs and dealing more damage.
+Available after beating Plantera (Elemental is available after beating Moon Lord).
+-Fixed Fabsol drop with Calamity Combination.
+-Fixed Sasscade and True Sasscade Yo-yos line breaking.
 -Fixed MP issues with Pillars.
--Fixed random warns with CAE projectile and "Light of Cera Sumat".
+-Fixed random warns and crashes with CAE projectile and "Cera Sumat".
 -Fixed recipe for Unchained Akumu.
+-Changed mechanic of Unchained Akumu while player have >35% of HP.
 -Changed recipes for Alchemist Charm Tiers 2-4.
 -Changed Drainer mechanic. Now less likely to stupidly kill player.
+-Raised damage reduction cap for secret boss to 50%.
 -Emagled Fragmentation now renamed to Celestial's Particle.
--New sprite for Otherworldly Amulet.
+-New sprite for Extractor.
 v7.4
 -Added Sacred Tools, Spirit and Enigma mods support for Operator's Modded Treasure Bags shops.
 -Added Alchemist Charm tier 1-4. Gives you chance not to consume potion while placed in inventory. 
