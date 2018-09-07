@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
@@ -19,14 +20,36 @@ namespace AlchemistNPC.Buffs
 			Description.AddTranslation(GameCulture.Russian, "Атакует ближайших противников");
         }
 		
+		public bool CalamityModRevengeance
+		{
+        get { return CalamityMod.CalamityWorld.revenge; }
+        }
+		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (player.ownedProjectileCounts[mod.ProjectileType("AkumuSphere")] == 0)
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
-				for (int h = 0; h < 1; h++) {
-				Vector2 vel = new Vector2(0, -1);
-				vel *= 0f;
-				Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("AkumuSphere"), 3000, 0, player.whoAmI);
+				if (CalamityModRevengeance)
+				{
+					if (player.ownedProjectileCounts[mod.ProjectileType("AkumuSphere")] == 0)
+					{
+						for (int h = 0; h < 1; h++) {
+						Vector2 vel = new Vector2(0, -1);
+						vel *= 0f;
+						Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("AkumuSphere"), 3000, 0, player.whoAmI);
+						}
+					}
+				}
+			}
+			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			{
+				if (player.ownedProjectileCounts[mod.ProjectileType("AkumuSphere")] == 0)
+				{
+					for (int h = 0; h < 1; h++) {
+					Vector2 vel = new Vector2(0, -1);
+					vel *= 0f;
+					Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("AkumuSphere"), 1000, 0, player.whoAmI);
+					}
 				}
 			}
 		}

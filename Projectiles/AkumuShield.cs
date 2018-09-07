@@ -75,7 +75,7 @@ namespace AlchemistNPC.Projectiles
 			public void ReflectProjectile(Projectile proj)
 			{
 				proj.velocity *= -1;
-				proj.damage *= 25;
+				proj.damage *= 10;
 				proj.hostile = false;
 				proj.friendly = true;
 			}

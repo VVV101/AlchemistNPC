@@ -26,11 +26,10 @@ namespace AlchemistNPC.Items.Equippable
 			+ "\nAmmo Reservation Effect"
 			+ "\nSpeeds up all arrows"
 			+ "\nEmpowers any Electrospheres greatly"
-			+ "\n''And the lord poked his head out from the patron clouds,"
-			+ "\nto look down on his followers in chaos and anarchy as the world is already aflame,"
-			+ "\nout he tossed an canister of gasoline and out from his mouth, his words were: Screw it.''");
+			+ "\n''And the Heavens have opened, and God reached down upon my life, and said upon me:"
+			+ "\nRek thigh scrbs, an fk ther sht ahp.''");
 			DisplayName.AddTranslation(GameCulture.Russian, "Истинные Компоненты Буйства");
-            Tooltip.AddTranslation(GameCulture.Russian, "Превращяет мушкетные пули в смертоносные Хлорофитово-осколочные пули\nОни работают как безумная комбинация Хлорифитовых и Пыле-кристальных пуль\nДаёт эффект Снайперского прицела \n15% бонусного урона и шанса критического удара для дальнего боя\nОтключение видимости выключает эффект Снайперского Прицела\nУвеличивает пробивание брони на 40\nЭффект Экономии Патронов\n''And the lord poked his head out from the patron clouds,\nto look down on his followers in chaos and anarchy as the world is already aflame,\nout he tossed an canister of gasoline and out from his mouth, his words were: Screw it.''");
+            Tooltip.AddTranslation(GameCulture.Russian, "Превращяет мушкетные пули в смертоносные Хлорофитово-осколочные пули\nОни работают как безумная комбинация Хлорифитовых и Пыле-кристальных пуль\nДаёт эффект Снайперского прицела \n15% бонусного урона и шанса критического удара для дальнего боя\nОтключение видимости выключает эффект Снайперского Прицела\nУвеличивает пробивание брони на 40\nЭффект Экономии Патронов\n''And the Heavens have opened, and God reached down upon my life, and said upon me:\nRek thigh scrbs, an fk ther sht ahp.''");
         }
 	
 		public override void SetDefaults()

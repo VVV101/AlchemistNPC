@@ -8,12 +8,19 @@ using Terraria.Localization;
 
 namespace AlchemistNPC.NPCs
 {
+	[AutoloadHead]
 	public class OtherworldlyPortal : ModNPC
 	{
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Otherworldly Portal");
+			DisplayName.AddTranslation(GameCulture.Russian, "Портал Иного Мира");
             DisplayName.AddTranslation(GameCulture.Chinese, "异界传送门");
+			ModTranslation text = mod.CreateTranslation("PortalName");
+            text.SetDefault("Otherworldly Portal");
+            text.AddTranslation(GameCulture.Russian, "Портал Иного Мира");
+            text.AddTranslation(GameCulture.Chinese, "异界传送门");
+            mod.AddTranslation(text);
 		}
 
 		public override void SetDefaults()
@@ -34,6 +41,12 @@ namespace AlchemistNPC.NPCs
 		{
 			return Language.GetTextValue("Mods.AlchemistNPC.portalOpen");
 		}
+		
+		public override string TownNPCName()
+        {
+			string PortalName = Language.GetTextValue("Mods.AlchemistNPC.PortalName");
+            return PortalName;
+        }
 		
 		public override void AI()
         {

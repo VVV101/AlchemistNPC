@@ -32,7 +32,6 @@ namespace AlchemistNPC.Projectiles
 			return false;
 		}
 			
-		
 		public override void AI()
 		{
 			projectile.tileCollide = false;

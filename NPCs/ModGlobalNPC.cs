@@ -47,6 +47,15 @@ namespace AlchemistNPC.NPCs
 			{
 				damage += damage/5;
 			}
+			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+			if (player.HasBuff(mod.BuffType("LaserBattery")) && projectile.type == 433)
+			{
+				projectile.ranged = true;
+				if (Main.rand.Next(4) == 0)
+				{
+					crit = true;
+				}
+			}
 		}
 		
 		public override void ModifyHitPlayer(NPC npc, Player target, ref int damage, ref bool crit)

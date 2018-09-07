@@ -38,6 +38,7 @@ namespace AlchemistNPC
 {
 	public class AlchemistNPCPlayer : ModPlayer
 	{
+		public int Shield = 0;
 		public bool Luck = false;
 		public bool AutoinjectorMK2 = false;
 		public bool AlchemistCharmTier1 = false;
@@ -99,9 +100,14 @@ namespace AlchemistNPC
 		
 		public override void ResetEffects()
 		{
+			if (Shield < 0)
+			{
+				Shield = 0;
+			}
 			Item.potionDelay = 3600;
 			Luck = false;
 			AlchemistGlobalItem.Luck = false;
+			AlchemistGlobalItem.Luck2 = false;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
 			MeatGrinderOnUse = false;
@@ -483,14 +489,17 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByNPC(NPC npc, ref int damage, ref bool crit) 		
         {
-            if (MemersRiposte)
+			if (MemersRiposte)
             {
-				for (int h = 0; h < 1; h++) 
-					{
-					Vector2 vel = new Vector2(0, -1);
-					vel *= 0f;
-					Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("Returner"), damage*5, 0, player.whoAmI);
-					}
+				Vector2 vel = new Vector2(0, -1);
+				vel *= 0f;
+				Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("Returner"), damage*5, 0, player.whoAmI);
+			}
+			if (Shield > 0)
+            {
+				int damage2 = damage;
+				damage -= Shield;
+				Shield -= damage2;
 			}
 			if (player.FindBuffIndex(mod.BuffType("Judgement")) > -1)
 				{
@@ -510,12 +519,15 @@ namespace AlchemistNPC
         {
 			if (MemersRiposte)
             {
-				for (int h = 0; h < 1; h++) 
-					{
-					Vector2 vel = new Vector2(0, -1);
-					vel *= 0f;
-					Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("Returner"), damage*5, 0, player.whoAmI);
-					}
+				Vector2 vel = new Vector2(0, -1);
+				vel *= 0f;
+				Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("Returner"), damage*5, 0, player.whoAmI);
+			}
+			if (Shield > 0)
+            {
+				int damage2 = damage;
+				damage -= Shield;
+				Shield -= damage2;
 			}
 			if (player.FindBuffIndex(mod.BuffType("Judgement")) > -1)
 				{

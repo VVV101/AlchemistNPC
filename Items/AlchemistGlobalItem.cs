@@ -15,6 +15,7 @@ namespace AlchemistNPC.Items
 	{	
 		public static bool on = false;
 		public static bool Luck = false;
+		public static bool Luck2 = false;
 		
 		public bool CalamityModDownedSCal
 		{
@@ -35,6 +36,11 @@ namespace AlchemistNPC.Items
 			{
 				Luck = true;
 			}
+			if (item.type == mod.ItemType("LuckCharmT2"))
+			{
+				Luck = true;
+				Luck2 = true;
+			}
 		}
 		
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)
@@ -49,7 +55,7 @@ namespace AlchemistNPC.Items
 					if (Main.rand.Next(20) == 0)
 					return 81;
 				}
-				if (item.ranged)
+				if (item.ranged && !item.consumable)
 				{
 					if (Main.rand.Next(10) == 0)
 					return 20;
@@ -73,13 +79,27 @@ namespace AlchemistNPC.Items
 					if (Main.rand.Next(20) == 0)
 					return 83;
 				}
-				if (item.thrown)
+				if (item.thrown && !item.consumable)
 				{
 					if (Main.rand.Next(10) == 0)
 					return 20;
 				
 					if (Main.rand.Next(20) == 0)
 					return 82;
+				}
+			}
+			if (Luck2 == true)
+			{
+				if (item.accessory)
+				{
+					if (Main.rand.Next(10) == 0)
+					return 72;
+				
+					else if (Main.rand.Next(10) == 0)
+					return 68;
+				
+					else if (Main.rand.Next(10) == 0)
+					return 65;
 				}
 			}
 		return -1;

@@ -1148,15 +1148,24 @@ namespace AlchemistNPC.NPCs
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofChaos"));
 					shop.item[nextSlot].shopCustomPrice = 50000;
-					nextSlot++; 
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Tenebris"));
+					shop.item[nextSlot].shopCustomPrice = 50000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Lumenite"));
+					shop.item[nextSlot].shopCustomPrice = 50000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DepthCells"));
+					shop.item[nextSlot].shopCustomPrice = 100000;
+					nextSlot++;
 					}
 					if (CalamityModDownedAstrum)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstralJelly"));
-					shop.item[nextSlot].shopCustomPrice = 150000;
+					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Stardust"));
-					shop.item[nextSlot].shopCustomPrice = 100000;
+					shop.item[nextSlot].shopCustomPrice = 30000;
 					nextSlot++;
 					}
 				}
@@ -1170,15 +1179,6 @@ namespace AlchemistNPC.NPCs
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
 						shop.item[nextSlot].shopCustomPrice = 30000;
 						nextSlot++;
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Tenebris"));
-						shop.item[nextSlot].shopCustomPrice = 50000;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Lumenite"));
-						shop.item[nextSlot].shopCustomPrice = 50000;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DepthCells"));
-						shop.item[nextSlot].shopCustomPrice = 100000;
-						nextSlot++;
 					}
 				}
 				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
@@ -1186,7 +1186,7 @@ namespace AlchemistNPC.NPCs
 					if (NPC.downedMoonlord)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BarofLife"));
-					shop.item[nextSlot].shopCustomPrice = 2000000;
+					shop.item[nextSlot].shopCustomPrice = 1000000;
 					nextSlot++;
 					}
 				}
@@ -1222,10 +1222,10 @@ namespace AlchemistNPC.NPCs
 					if (CalamityModDownedBirb)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel"));
-					shop.item[nextSlot].shopCustomPrice = 5000000;
+					shop.item[nextSlot].shopCustomPrice = 3000000;
 					nextSlot++;				
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy"));
-					shop.item[nextSlot].shopCustomPrice = 5000000;
+					shop.item[nextSlot].shopCustomPrice = 3000000;
 					nextSlot++;
 					}
 				}
@@ -1367,7 +1367,7 @@ namespace AlchemistNPC.NPCs
 					}
 					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 						{
-							if (DD2Event.DownedInvasionT2)
+							if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("OgreBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(10);
@@ -1382,7 +1382,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 					nextSlot++;
 					}
-					if (DD2Event.DownedInvasionT3)
+					if (DD2Event.DownedInvasionT3 && NPC.downedGolemBoss)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.BossBagBetsy);
 					shop.item[nextSlot].shopCustomPrice = new int?(10);
@@ -1459,7 +1459,7 @@ namespace AlchemistNPC.NPCs
 					}
 					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 						{
-							if (DD2Event.DownedInvasionT2)
+							if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("OgreBag"));
 								shop.item[nextSlot].shopCustomPrice = 3000000;
@@ -1478,7 +1478,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 3000000;
 					nextSlot++;
 					}
-					if (DD2Event.DownedInvasionT3)
+					if (DD2Event.DownedInvasionT3 && NPC.downedGolemBoss)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.BossBagBetsy);
 					shop.item[nextSlot].shopCustomPrice = 4000000;
