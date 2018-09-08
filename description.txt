@@ -15,11 +15,15 @@ Available after beating Moon Lord.
 Available after beating Golem on Expert Mode.
 -Added Mechanical Wings. Allows to flight and shooting nearby enemies with laser.
 Available after beating Golem.
+-Added Celestial Hook, upgrade for Lunar Hook. Faster by all means and reaches even further.
+Available post Moonlord (post Providence/post Ragnarok with Calamity/Thorium mods loaded)
 -Added Caught Unicorn item. Now required for Research Note#2 recipe instead of Gold Bunny.
 -Added head icon for Otherworldly Portal.
 -Tenebris, Lumenyl and Depth Cells are now available after beating Plantera in Operator's shop.
 -Changed prices for some items.
 -Thorium and Spirit buffs can now be toggled by turning of visibility of Autoinjector MK2.
+-Fixed targeting for some "shooting" projectiles.
+-Fixed hitboxes for "Akumu" and Unchained "Akumu" shields.
 -Fixed multiple non-stackeable items consuming on creating Explorer weapons.
 -Fixed set bonuses for some sets.
 -Fixed drop for Charm of Luck. Now will always drop from Wall of Flesh.

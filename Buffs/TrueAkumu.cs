@@ -28,7 +28,7 @@ namespace AlchemistNPC.Buffs
 				for (int h = 0; h < 1; h++) {
 				Vector2 vel = new Vector2(0, -1);
 				vel *= 0f;
-				Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("TrueAkumuShield"), 0, 0, player.whoAmI);
+				Projectile.NewProjectile(player.position.X-15, player.position.Y, vel.X, vel.Y, mod.ProjectileType("TrueAkumuShield"), 0, 0, player.whoAmI);
 				}
 			}
 		}

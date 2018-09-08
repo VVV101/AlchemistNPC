@@ -60,7 +60,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 					{
-					item.damage = 350;
+					item.damage = 300;
 					item.useTime = 10;
 					item.useAnimation = 10;
 					}

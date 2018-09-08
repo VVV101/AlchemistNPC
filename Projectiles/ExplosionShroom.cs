@@ -41,7 +41,7 @@ namespace AlchemistNPC.Projectiles
                 float shootToY = target.position.Y + target.height * 0.5f - projectile.Center.Y;
                 float distance = (float)Math.Sqrt(shootToX * shootToX + shootToY * shootToY);
 
-                if (distance < 400f && !target.friendly && target.active)
+                if (distance < 400f && target.catchItem == 0 && !target.friendly && target.active)
                 {
                     if (projectile.ai[0] > 25f)
                     {

@@ -32,7 +32,7 @@ namespace AlchemistNPC.Buffs
                 float shootToY = target.position.Y + target.height * 0.5f - player.Center.Y;
                 float distance = (float)Math.Sqrt(shootToX * shootToX + shootToY * shootToY);
 
-                if (distance < 350f && !target.friendly && target.active && target.type != 488 && target.type != 374)
+                if (distance < 350f && target.catchItem == 0 && !target.friendly && target.active && target.type != 488)
                 {
                     if (counter > 20)
                     {

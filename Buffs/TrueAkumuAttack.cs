@@ -40,6 +40,17 @@ namespace AlchemistNPC.Buffs
 						}
 					}
 				}
+				else
+				{
+					if (player.ownedProjectileCounts[mod.ProjectileType("AkumuSphere")] == 0)
+					{
+						for (int h = 0; h < 1; h++) {
+						Vector2 vel = new Vector2(0, -1);
+						vel *= 0f;
+						Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("AkumuSphere"), 1000, 0, player.whoAmI);
+						}
+					}
+				}
 			}
 			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{

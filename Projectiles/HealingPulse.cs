@@ -31,6 +31,16 @@ namespace AlchemistNPC.Projectiles
 				NPC target = Main.npc[k];
 				if(target.Hitbox.Intersects(projectile.Hitbox) && target.friendly && target.life != target.lifeMax)
 				{
+						for (int i = 0; i < 10; i++)
+						{
+							int dustType = Main.rand.Next(74, 75);
+							int dustIndex = Dust.NewDust(target.position, target.width, target.height, dustType);
+							Dust dust = Main.dust[dustIndex];
+							dust.velocity.X = dust.velocity.X + Main.rand.Next(-50, 51) * 0.1f;
+							dust.velocity.Y = dust.velocity.Y + Main.rand.Next(-50, 51) * 0.1f;
+							dust.scale *= 0.9f;
+							dust.noGravity = true;
+						}
 						target.life += 10;
 						target.HealEffect(10, true);
 						if (target.life > target.lifeMax)

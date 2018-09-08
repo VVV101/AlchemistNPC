@@ -97,19 +97,15 @@ namespace AlchemistNPC.Items.Weapons
 				item.noMelee = true;
 				if (player.direction == 1)
 				{
-					for (int h = 0; h < 1; h++) {
 					Vector2 vel = new Vector2(0, 0);
 					vel *= 0f;
 					Projectile.NewProjectile(position.X, position.Y, vel.X, vel.Y, mod.ProjectileType("Akumu"), damage, knockBack, player.whoAmI);
-					}
 				}
 				if (player.direction == -1)
 				{
-					for (int h = 0; h < 1; h++) {
 					Vector2 vel = new Vector2(-1, 0);
 					vel *= 0f;
 					Projectile.NewProjectile(position.X, position.Y, vel.X, vel.Y, mod.ProjectileType("AkumuMirror"), damage, knockBack, player.whoAmI);
-					}
 				}
 			}
 			return false;

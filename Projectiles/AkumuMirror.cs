@@ -23,7 +23,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			projectile.CloneDefaults(ProjectileID.LaserMachinegunLaser);
 			projectile.magic = false;
-			projectile.ranged = true;
+			projectile.melee = true;
 			projectile.width = 60;
 			projectile.height = 46;
 			projectile.penetrate = 200;
