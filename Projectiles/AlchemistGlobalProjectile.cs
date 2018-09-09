@@ -2,29 +2,29 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Linq;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using AlchemistNPC.Projectiles;
 using System.IO;
-using AlchemistNPC;
+using AlchemistNPC.NPCs;
 using Terraria.ModLoader.IO;
 
 namespace AlchemistNPC.Projectiles
 {
-   public class AlchemistGlobalProjectile : GlobalProjectile
-   {
+	public class AlchemistGlobalProjectile : GlobalProjectile
+	{
 		public bool firstTime = true;
+
+		public static int[] npcOwner = Enumerable.Repeat(-1, Main.maxProjectiles).ToArray();
 
 		public override bool InstancePerEntity
 		{
-			get
-			{
-				return true;
-			}
+			get { return true; }
 		}
-		
+
 		public override void SetDefaults(Projectile projectile)
 		{
 			if (AlchemistNPC.BastScroll == true && projectile.thrown == true)
@@ -36,44 +36,50 @@ namespace AlchemistNPC.Projectiles
 				projectile.damage = 1;
 				projectile.friendly = true;
 			}
+			if(Main.netMode != 2 && projectile.hostile && Main.myPlayer < 255)
+			{
+				// TODO: when an npc shoot a projectile who spawn projectiles, set them all to this npc
+				npcOwner[projectile.whoAmI] = ModGlobalNPC.npcNow;
+			}
 		}
 
 		public override bool OnTileCollide(Projectile projectile, Vector2 oldVelocity)
-        {
-            if (projectile.aiStyle == 88 && projectile.knockBack == .5f || (projectile.knockBack >= .2f && projectile.knockBack < .5f))
-            {
-                if (projectile.velocity.X != oldVelocity.X)
-                {
-                    projectile.velocity.X = -oldVelocity.X;
-                    if(Math.Abs(projectile.velocity.X) <= 4)
-                    {
-                        projectile.velocity.X *= 2;
-                    }
-                }
-                if (projectile.velocity.Y != oldVelocity.Y)
-                {
-                    projectile.velocity.Y = -oldVelocity.Y;
-                    if (Math.Abs(projectile.velocity.Y) <= 4)
-                    {
-                        projectile.velocity.Y *= 2;
-                    }
-                }
-                return true;
-            }
-            return true;
-        }
-		
-        public override bool? CanHitNPC(Projectile projectile, NPC target)
-        {
-            if (projectile.aiStyle == 88 && ((projectile.knockBack == .5f || projectile.knockBack == .4f) || (projectile.knockBack >= .4f && projectile.knockBack < .5f)) && target.immune[projectile.owner] > 0)
-            {
-                return false;
-            }
-            return null;
-        }
-		
-		public void createBee(Projectile projectile) {
-			Player player = Main.player[projectile.owner]; 
+		{
+			if (projectile.aiStyle == 88 && projectile.knockBack == .5f || (projectile.knockBack >= .2f && projectile.knockBack < .5f))
+			{
+				if (projectile.velocity.X != oldVelocity.X)
+				{
+					projectile.velocity.X = -oldVelocity.X;
+					if (Math.Abs(projectile.velocity.X) <= 4)
+					{
+						projectile.velocity.X *= 2;
+					}
+				}
+				if (projectile.velocity.Y != oldVelocity.Y)
+				{
+					projectile.velocity.Y = -oldVelocity.Y;
+					if (Math.Abs(projectile.velocity.Y) <= 4)
+					{
+						projectile.velocity.Y *= 2;
+					}
+				}
+				return true;
+			}
+			return true;
+		}
+
+		public override bool? CanHitNPC(Projectile projectile, NPC target)
+		{
+			if (projectile.aiStyle == 88 && ((projectile.knockBack == .5f || projectile.knockBack == .4f) || (projectile.knockBack >= .4f && projectile.knockBack < .5f)) && target.immune[projectile.owner] > 0)
+			{
+				return false;
+			}
+			return null;
+		}
+
+		public void createBee(Projectile projectile)
+		{
+			Player player = Main.player[projectile.owner];
 			Vector2 vel = new Vector2(0, -1);
 			float rand = Main.rand.NextFloat() * 6.283f;
 			vel = vel.RotatedBy(rand);
@@ -84,13 +90,14 @@ namespace AlchemistNPC.Projectiles
 				vel.X,
 				vel.Y,
 				mod.ProjectileType("Bees"),
-				projectile.damage/2,
+				projectile.damage / 2,
 				0,
 				projectile.owner
 			);
 		}
-		
-		public void createNAG(Projectile projectile) {
+
+		public void createNAG(Projectile projectile)
+		{
 			Projectile.NewProjectile(
 				projectile.Center.X,
 				projectile.Center.Y,
@@ -100,10 +107,11 @@ namespace AlchemistNPC.Projectiles
 				projectile.damage,
 				0,
 				Main.myPlayer
-			);			
+			);
 		}
-		
-		public void createNBG(Projectile projectile) {
+
+		public void createNBG(Projectile projectile)
+		{
 			Projectile.NewProjectile(
 				projectile.Center.X,
 				projectile.Center.Y,
@@ -113,21 +121,21 @@ namespace AlchemistNPC.Projectiles
 				projectile.damage,
 				0,
 				Main.myPlayer
-			);			
+			);
 		}
-		
-		public override void ModifyHitPlayer(Projectile projectile, Player target, ref int damage, ref bool crit)	
+
+		public override void ModifyHitPlayer(Projectile projectile, Player target, ref int damage, ref bool crit)
 		{
-			for (int k = 0; k < 200; k++)
+			if(projectile.whoAmI >= 0 || projectile.whoAmI < Main.maxProjectiles)
 			{
-				NPC npc = Main.npc[k];
-				if (npc.HasBuff(mod.BuffType("CurseOfLight")) && (Main.rand.Next(4) == 0))
+				var owner = npcOwner[projectile.whoAmI];
+				if (owner > -1 && Main.npc[owner].HasBuff(mod.BuffType("CurseOfLight")) && Main.rand.Next(4) == 0)
 				{
 					damage /= 2;
 				}
 			}
 		}
-		
+
 		public override void AI(Projectile projectile)
 		{
 			Player player = Main.player[projectile.owner];
@@ -139,25 +147,25 @@ namespace AlchemistNPC.Projectiles
 				}
 				firstTime = false;
 			}
-			
+
 			if (firstTime && !projectile.hostile && projectile.type == mod.ProjectileType("NyctosythiaArrow"))
 			{
 				createNAG(projectile);
 				firstTime = false;
 			}
-			
+
 			if (firstTime && !projectile.hostile && projectile.type == mod.ProjectileType("NyctosythiaBullet"))
 			{
 				createNBG(projectile);
 				firstTime = false;
 			}
-			
+
 			if (projectile.type == mod.ProjectileType("DTH"))
 			{
 				if (Main.rand.Next(45) == 0)
+				{
+					for (int g = 0; g < 3; g++)
 					{
-						for (int g = 0; g < 3; g++)
-						{
 						Vector2 vel = new Vector2(0, -1);
 						float rand = Main.rand.NextFloat() * 6.283f;
 						vel = vel.RotatedBy(rand);
@@ -171,30 +179,30 @@ namespace AlchemistNPC.Projectiles
 						projectile.damage,
 						0,
 						Main.myPlayer
-						);	
+						);
 					}
 				}
 			}
 			if (projectile.aiStyle == 88 && projectile.knockBack == .5f || (projectile.knockBack >= .2f && projectile.knockBack < .5f))
-            {
-                projectile.hostile = false;
-                projectile.friendly = true;
-                projectile.melee = true;
-                projectile.penetrate = -1;
-                if((projectile.knockBack >= .45f && projectile.knockBack < .5f) && projectile.oldVelocity != projectile.velocity && Main.rand.Next(0, 4)==0)
-                {
-                    projectile.knockBack -= .0125f;
-                    Vector2 vector83 = projectile.velocity.RotatedByRandom(.1f);
-                    Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector83.X, vector83.Y, projectile.type, projectile.damage, projectile.knockBack-.025f, projectile.owner, projectile.velocity.ToRotation(), projectile.ai[1]);
-                }
-            }
+			{
+				projectile.hostile = false;
+				projectile.friendly = true;
+				projectile.melee = true;
+				projectile.penetrate = -1;
+				if ((projectile.knockBack >= .45f && projectile.knockBack < .5f) && projectile.oldVelocity != projectile.velocity && Main.rand.Next(0, 4) == 0)
+				{
+					projectile.knockBack -= .0125f;
+					Vector2 vector83 = projectile.velocity.RotatedByRandom(.1f);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector83.X, vector83.Y, projectile.type, projectile.damage, projectile.knockBack - .025f, projectile.owner, projectile.velocity.ToRotation(), projectile.ai[1]);
+				}
+			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).TS == true && projectile.type == ProjectileID.NebulaArcanum)
 			{
 				projectile.penetrate = 1;
 			}
 		}
-		
-		public override void ModifyHitNPC (Projectile projectile, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+
+		public override void ModifyHitNPC(Projectile projectile, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
 			Player player = Main.player[projectile.owner];
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).SFU == true && projectile.minion && Main.rand.Next(10) == 0)
@@ -206,7 +214,7 @@ namespace AlchemistNPC.Projectiles
 				damage = 1;
 			}
 		}
-		
+
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
 			Player player = Main.player[projectile.owner];
@@ -225,79 +233,93 @@ namespace AlchemistNPC.Projectiles
 			}
 			if ((projectile.type == 98) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				if (Main.expertMode){
-				projectile.damage += 40;
+				if (Main.expertMode)
+				{
+					projectile.damage += 40;
 				}
-				else{
-				projectile.damage += 20;	
+				else
+				{
+					projectile.damage += 20;
 				}
 				target.immune[projectile.owner] = 1;
 			}
 			if ((projectile.type == 184) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				if (Main.expertMode){
-				projectile.damage += 40;
+				if (Main.expertMode)
+				{
+					projectile.damage += 40;
 				}
-				else{
-				projectile.damage += 20;	
+				else
+				{
+					projectile.damage += 20;
 				}
 				target.immune[projectile.owner] = 1;
 			}
 			if ((projectile.type == 185) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				if (Main.expertMode){
-				projectile.damage += 40;
+				if (Main.expertMode)
+				{
+					projectile.damage += 40;
 				}
-				else{
-				projectile.damage += 20;	
+				else
+				{
+					projectile.damage += 20;
 				}
 				target.immune[projectile.owner] = 3;
 			}
 			if ((projectile.type == 186) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				if (Main.expertMode){
-				projectile.damage += 20;
+				if (Main.expertMode)
+				{
+					projectile.damage += 20;
 				}
-				else{
-				projectile.damage += 10;	
+				else
+				{
+					projectile.damage += 10;
 				}
 				target.immune[projectile.owner] = 1;
 			}
 			if ((projectile.type == 187) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				if (Main.expertMode){
-				projectile.damage += 40;
+				if (Main.expertMode)
+				{
+					projectile.damage += 40;
 				}
-				else{
-				projectile.damage += 20;	
+				else
+				{
+					projectile.damage += 20;
 				}
 				target.immune[projectile.owner] = 2;
 			}
 			if ((projectile.type == 188) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				if (Main.expertMode){
-				projectile.damage += 40;
+				if (Main.expertMode)
+				{
+					projectile.damage += 40;
 				}
-				else{
-				projectile.damage += 20;	
+				else
+				{
+					projectile.damage += 20;
 				}
 				target.immune[projectile.owner] = 2;
 			}
 			if ((projectile.type == 654) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Traps == true)
 			{
-				if (Main.expertMode){
-				projectile.damage += 40;
+				if (Main.expertMode)
+				{
+					projectile.damage += 40;
 				}
-				else{
-				projectile.damage += 20;	
+				else
+				{
+					projectile.damage += 20;
 				}
 				target.immune[projectile.owner] = 2;
 			}
-			
+
 			if (projectile.aiStyle == 88 && (projectile.knockBack >= .2f && projectile.knockBack <= .5f))
-            {
-                target.immune[projectile.owner] = 3;
-            }
+			{
+				target.immune[projectile.owner] = 3;
+			}
 		}
 	}
 }
