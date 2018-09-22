@@ -113,11 +113,17 @@ namespace AlchemistNPC.NPCs
 			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 				{
 				player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AbyssalShell")] = true;
+				npc.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AParalyzed")] = true;
+				npc.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("Paralyzed")] = true;
 				}
 			npc.buffImmune[mod.BuffType("ArmorDestruction")] = true;
 			npc.buffImmune[mod.BuffType("Twilight")] = true;
 			npc.buffImmune[mod.BuffType("Electrocute")] = true;
 			npc.buffImmune[mod.BuffType("Patience")] = true;
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("ExoFreeze")] = true;
+				}
 			int damage1 = 150;
 			int damage2 = 125;
 			int damage3 = 200;

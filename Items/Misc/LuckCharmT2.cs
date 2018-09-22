@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Misc
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Charm of Absolute Luck");
-			Tooltip.SetDefault("While placed in inventory, you have better change of getting good/best reforge"
+			Tooltip.SetDefault("While placed in inventory, you have better chance of getting good/best reforge"
 			+"\nAlso affects accessories (Menacing->Lucky->Warding");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Абсолютной Удачи");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет более высокий шанс получить лучшую перековку\nРаботает и с аксессуарами (Грозный->Удачливый->Оберегающий)");
@@ -37,10 +37,9 @@ namespace AlchemistNPC.Items.Misc
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "LuckCharm");
 			recipe.AddIngredient(ItemID.ShroomiteBar, 10);
-			recipe.AddIngredient(ItemID.PygmyNecklace);
-			recipe.AddIngredient(ItemID.SoulofFright, 5);
-			recipe.AddIngredient(ItemID.SoulofSight, 5);
-			recipe.AddIngredient(ItemID.SoulofMight, 5);
+			recipe.AddIngredient(ItemID.SoulofFright, 10);
+			recipe.AddIngredient(ItemID.SoulofSight, 10);
+			recipe.AddIngredient(ItemID.SoulofMight, 10);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

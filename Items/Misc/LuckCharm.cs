@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Misc
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Charm of Luck");
-			Tooltip.SetDefault("While placed in inventory, you have better change of getting good/best reforge"
+			Tooltip.SetDefault("While placed in inventory, you have better chance of getting good/best reforge"
 			+"\nNot affects accessories");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Удачи");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет более высокий шанс получить лучшую перековку\nНе работает с аксессуарами");

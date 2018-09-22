@@ -92,7 +92,7 @@ namespace AlchemistNPC.Projectiles
 			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("RickPortal4"), 75, 0, Main.myPlayer);
 			break;
 			case 4:
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("RickPortal5"), 100, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("RickPortal5"), 150, 0, Main.myPlayer);
 			break;
 			}
 			return true;

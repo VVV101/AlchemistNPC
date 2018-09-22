@@ -39,6 +39,7 @@ namespace AlchemistNPC.Items.Armor
 		public override bool UseItem(Player player)
 		{
 			NPC.NewNPC((int)player.Center.X, (int)player.Center.Y-300, mod.NPCType("BillCipher"));
+			Main.NewText("Bill Cipher has awoken!", 175, 75, 255);
 			return true;
 		}
 		
