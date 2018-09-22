@@ -72,6 +72,12 @@ namespace AlchemistNPC.Items
 					case 8:
 						HandleBeaconTeleport(player, syncData);
 						break;
+					case 9:
+						HandleJungleTeleport(player, syncData);
+						break;
+					case 10:
+						HandleJungleTeleportLeft(player, syncData);
+						break;
 					default:
 						break;
 				}
@@ -198,6 +204,48 @@ namespace AlchemistNPC.Items
 					if (Main.tile[x, y] == null) continue;
 					if (Main.tile[x, y].type != 323) continue;
 					pos = new Vector2((x) * 16, (y+4) * 16);
+					break;
+				}
+			}
+			if (pos != prePos)
+			{
+				RunTeleport(player, new Vector2(pos.X, pos.Y), syncData, false);
+			}
+			else return;
+		}
+		
+		private static void HandleJungleTeleport(Player player, bool syncData = false)
+		{
+			Vector2 prePos = player.position;
+			Vector2 pos = prePos;
+			for (int y = 2400; y > 0; --y)
+				{
+					for (int x = 0; x < Main.tile.GetLength(0); ++x)
+					{
+					if (Main.tile[x, y] == null) continue;
+					if (Main.tile[x, y].type != 60) continue;
+					pos = new Vector2((x) * 16, (y-5) * 16);
+					break;
+				}
+			}
+			if (pos != prePos)
+			{
+				RunTeleport(player, new Vector2(pos.X, pos.Y), syncData, false);
+			}
+			else return;
+		}
+		
+		private static void HandleJungleTeleportLeft(Player player, bool syncData = false)
+		{
+			Vector2 prePos = player.position;
+			Vector2 pos = prePos;
+			for (int y = 2400; y > 0; --y)
+			{
+				for (int x = 8400; x > 0; --x)
+				{
+					if (Main.tile[x, y] == null) continue;
+					if (Main.tile[x, y].type != 60) continue;
+					pos = new Vector2((x) * 16, (y-5) * 16);
 					break;
 				}
 			}

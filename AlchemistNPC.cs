@@ -395,6 +395,9 @@ namespace AlchemistNPC
 			text = CreateTranslation("Knuckles");
             text.SetDefault("Uganda Knuckles Treasure Bag");
             AddTranslation(text);
+			text = CreateTranslation("BillCipher");
+            text.SetDefault("Bill Cipher Treasure Bag");
+            AddTranslation(text);
             //SBMW:Vanilla
             text = CreateTranslation("KingSlime");
             text.SetDefault("King Slime Treasure Bag");

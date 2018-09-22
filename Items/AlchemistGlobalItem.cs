@@ -179,6 +179,7 @@ namespace AlchemistNPC.Items
 		
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
+			string BillCipher = Language.GetTextValue("Mods.AlchemistNPC.BillCipher");
 			string Knuckles = Language.GetTextValue("Mods.AlchemistNPC.Knuckles");
             //SBMW:Vanilla
             string KingSlime = Language.GetTextValue("Mods.AlchemistNPC.KingSlime");
@@ -263,9 +264,15 @@ namespace AlchemistNPC.Items
             string Slybertron = Language.GetTextValue("Mods.AlchemistNPC.Slybertron");
             string SteamTrain = Language.GetTextValue("Mods.AlchemistNPC.SteamTrain");
 			
-			 if (item.type == mod.ItemType("KnucklesBag"))
+			if (item.type == mod.ItemType("KnucklesBag"))
 			{
 				TooltipLine line = new TooltipLine(mod, "Knuckles", Knuckles);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+			}
+			if (item.type == mod.ItemType("BillCipherBag"))
+			{
+				TooltipLine line = new TooltipLine(mod, "BillCipher", BillCipher);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 			}
@@ -723,37 +730,46 @@ namespace AlchemistNPC.Items
 			{
 				player.QuickSpawnItem(mod.ItemType("HeartofYui"));
 			}
-			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(150) == 0)
+			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(200) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("BanHammer"));
 			}
-			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(100) == 0)
+			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(150) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("PinkGuyHead"));
 				player.QuickSpawnItem(mod.ItemType("PinkGuyBody"));
 				player.QuickSpawnItem(mod.ItemType("PinkGuyLegs"));
 			}
-			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(100) == 0)
+			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(150) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("BlackCatHead"));
 				player.QuickSpawnItem(mod.ItemType("BlackCatBody"));
 				player.QuickSpawnItem(mod.ItemType("BlackCatLegs"));
 			}
-			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(100) == 0)
+			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(150) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("Skyline222Hair"));
 				player.QuickSpawnItem(mod.ItemType("Skyline222Body"));
 				player.QuickSpawnItem(mod.ItemType("Skyline222Legs"));
 			}
-			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(100) == 0)
+			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(150) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("somebody0214Hood"));
 				player.QuickSpawnItem(mod.ItemType("somebody0214Robe"));
+			}
+			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(300) == 0)
+			{
+				player.QuickSpawnItem(mod.ItemType("StrangeTopHat"));
 			}
 		}
 		
 		public override void HorizontalWingSpeeds(Item 	item, Player	player, ref float speed, ref float acceleration)	
 		{
+			if (player.HasBuff(mod.BuffType("Exhausted")))
+			{
+			speed *= 0.6f;
+			acceleration *= 0.6f;
+			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 390)
 			{
 			speed *= 0.3f;

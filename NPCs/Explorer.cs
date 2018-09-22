@@ -40,6 +40,11 @@ namespace AlchemistNPC.NPCs
 		public static bool C63 = false;
 		public static bool C64 = false;
 		public static bool C65 = false;
+		public static bool C71 = false;
+		public static bool C72 = false;
+		public static bool C73 = false;
+		public static bool C74 = false;
+		public static bool C75 = false;
 		
 		public override string Texture
 		{
@@ -82,6 +87,11 @@ namespace AlchemistNPC.NPCs
 		C63 = false;
 		C64 = false;
 		C65 = false;
+		C71 = false;
+		C72 = false;
+		C73 = false;
+		C74 = false;
+		C75 = false;
 		}
 		
 		public override bool Autoload(ref string name)
@@ -142,6 +152,11 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Create #6");
             text.AddTranslation(GameCulture.Russian, "Создать №6");
             text.AddTranslation(GameCulture.Chinese, "制造 #6");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("Create7");
+            text.SetDefault("Create #7");
+            text.AddTranslation(GameCulture.Russian, "Создать №7");
+            text.AddTranslation(GameCulture.Chinese, "制造 #7");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE1");
             text.SetDefault("So, were my notes any useful for you?");
@@ -323,6 +338,7 @@ namespace AlchemistNPC.NPCs
 			string Create4 = Language.GetTextValue("Mods.AlchemistNPC.Create4");
 			string Create5 = Language.GetTextValue("Mods.AlchemistNPC.Create5");
 			string Create6 = Language.GetTextValue("Mods.AlchemistNPC.Create6");
+			string Create7 = Language.GetTextValue("Mods.AlchemistNPC.Create7");
             button = Language.GetTextValue("LegacyInterface.28");
 			for (int k = 0; k < 255; k++)
 			{
@@ -455,6 +471,26 @@ namespace AlchemistNPC.NPCs
 						{
 							C65 = true;
 						}
+						if (player.inventory[j].type == 3384)
+						{
+							C71 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+						{
+							C72 = true;
+						}
+						if (player.inventory[j].type == 3569)
+						{
+							C73 = true;
+						}
+						if (player.inventory[j].type == 3122)
+						{
+							C74 = true;
+						}
+						if (player.inventory[j].type == mod.ItemType("ResearchNote7"))
+						{
+							C75 = true;
+						}
 					}
 				}
 			}
@@ -481,6 +517,10 @@ namespace AlchemistNPC.NPCs
 			if (C61 && C62 && C63 && C64 && C65)
 			{
 			button2 = Create6;
+			}
+			if (C71 && C72 && C73 && C74 && C75)
+			{
+			button2 = Create7;
 			}
         }
  
@@ -725,6 +765,44 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
+				if (C71 && C72 && C73 && C74 && C75)
+				{
+					Player player = Main.player[Main.myPlayer];
+					player.QuickSpawnItem(mod.ItemType("PortalGun"));
+					shop = false;
+					if (Main.player[Main.myPlayer].HasItem(3384))
+					{
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
+							if (inventory[k].type == 3384 && C71)
+							{
+								inventory[k].stack--;
+								C71 = false;
+							}
+							if (inventory[k].type == mod.ItemType("AlchemicalBundle") && C72)
+							{
+								inventory[k].stack--;
+								C72 = false;
+							}
+							if (inventory[k].type == 3569 && C73)
+							{
+								inventory[k].stack--;
+								C73 = false;
+							}
+							if (inventory[k].type == 3122 && C74)
+							{
+								inventory[k].stack--;
+								C74 = false;
+							}
+							if (inventory[k].type == mod.ItemType("ResearchNote7") && C75)
+							{
+								inventory[k].stack--;
+								C75 = false;
+							}
+						}
+					}
+				}
 			}
 		}
  
@@ -757,6 +835,8 @@ namespace AlchemistNPC.NPCs
         nextSlot++;
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote6"));
         nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote7"));
+        nextSlot++;
 		for (int k = 0; k < 255; k++)
 				{
 					Player player = Main.player[k];
@@ -777,6 +857,11 @@ namespace AlchemistNPC.NPCs
 							if (player.inventory[j].type == mod.ItemType("ChaingunMeatGrinder"))
 							{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MGB"));
+							nextSlot++;
+							}
+							if (player.inventory[j].type == mod.ItemType("PortalGun"))
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ConcentratedDarkMatter"));
 							nextSlot++;
 							}
 						}

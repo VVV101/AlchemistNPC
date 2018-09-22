@@ -8,6 +8,8 @@ The Explorer is secret NPC. Try to figure out, how to spawn her.
 v7.5
 -Added Charm of Absolute Luck. Also affects accessories now. Can be crafted after beating Golem.
 Charm of Luck only affects weapons/endless pouches/quivers.
+-Added Portal Gun, reference to Rick and Morty. Opens portals to dangerous dimensions, letting the things from there damaging the enemies.
+Explorer's weapon.
 -Added Shield Belt, reference to Unreal Tournament. 
 Reduces incoming damage by up to 150, then requires recharge. Damage reduction is weaker on Revengeance/Death Mode (minimal damage is 30).
 Available after beating Moon Lord.
@@ -15,8 +17,21 @@ Available after beating Moon Lord.
 Available after beating Golem on Expert Mode.
 -Added Mechanical Wings. Allows to flight and shooting nearby enemies with laser.
 Available after beating Golem.
+-Added Jungle Teleporter Potion. Allows to teleport to the leftest or rightest top jungle point.
+Available in hardmode.
 -Added Celestial Hook, upgrade for Lunar Hook. Faster by all means and reaches even further.
-Available post Moonlord (post Providence/post Ragnarok with Calamity/Thorium mods loaded)
+Available post Moonlord (post Providence/post Ragnarok with Calamity/Thorium mods loaded).
+-Added "Wail of Banshee" scroll. One use item. Kills all normal enemies onscreen. Inflicts debuff Exhausted for 1 minute.
+May drop from random boss with >=75000 HP after beating Moon Lord.
+-Added "Executioner's Eyes" scroll. One use item. For 1 minute makes you deal 15% more damage (not lowered by any caps), +5% critical strike chance and your critical hits may crit again with 5%, dealing 4x damage. 
+Inflicts debuff Exhausted for 1 minute after ending of effect. 
+May drop from random boss with >=75000 HP after beating Moon Lord.
+-Added "Symbol Of Pain" scroll. One use item. Makes you deal 25% more damage (not lowered by any caps) and making enemies deal 1/4 less damage for 1 minute. Inflicts debuff Exhausted for 1 minute. 
+May drop from random boss with >=75000 HP after beating Moon Lord.
+-Added "Meteor Swarm" scroll. One use item. Makes short Meteor Rain from the sky. Inflicts debuff Exhausted for 1 minute.
+May drop from random boss with >=75000 HP after beating Moon Lord.
+-Added "Cloak of Fear" scroll. One use item. Makes normal enemies feared for 10 seconds if they come nearby you. Inflicts debuff Exhausted for 30 seconds after ending of effect.
+May drop from random boss with >=75000 HP after beating Moon Lord.
 -Added Caught Unicorn item. Now required for Research Note#2 recipe instead of Gold Bunny.
 -Added head icon for Otherworldly Portal.
 -Tenebris, Lumenyl and Depth Cells are now available after beating Plantera in Operator's shop.
@@ -30,6 +45,7 @@ Available post Moonlord (post Providence/post Ragnarok with Calamity/Thorium mod
 -Fixed Charm of Luck effect worked on consumables.
 -Fixed Old One's Army Treasure Bags availability.
 -Nerfed Sasscade and True Sasscade Yo-yos.
+-Secrets
 v7.4.1
 -Added config options for disabling certain town NPCs spawn (AlchemistNPCv741.json).
 -Added Charm of Luck. Drops after beating Wall of Flesh for the first time.
