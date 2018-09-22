@@ -133,7 +133,7 @@ namespace AlchemistNPC.Projectiles
 				{
 					damage /= 2;
 				}
-				if (npc.HasBuff(mod.BuffType("SymbolOfPain")))
+				if (Main.npc[owner].HasBuff(mod.BuffType("SymbolOfPain")))
 				{
 					damage -= damage/4;
 				}
