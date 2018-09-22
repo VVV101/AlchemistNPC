@@ -18,6 +18,7 @@ namespace AlchemistNPC.Items
 		{
 			item.CloneDefaults(ItemID.AmethystHook);
 			item.shootSpeed = 24f;
+			item.rare = 11;
 			item.shoot = mod.ProjectileType("CelestialHookProjectile");
 		}
 		
@@ -56,6 +57,7 @@ namespace AlchemistNPC.Items
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.GemHookAmethyst);
+			projectile.height = 22;
 		}
 
 		public override bool? CanUseGrapple(Player player)

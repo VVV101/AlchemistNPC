@@ -37,8 +37,8 @@ namespace AlchemistNPC.Items.Armor
                 "\n你要我证明奇迹." +
                 "\n你应该信任我, 将生命奉献给我. 然后, 我自然会向你展示, 什么叫做力量.'" +
                 "\n[c/FF0000:EGO 盔甲]" +
-                "\n增加 30 最大生命值" +
-                "\n增加 33% 伤害减免" +
+                "\n增加 200 最大生命值" +
+                "\n增加 25% 伤害减免" +
                 "\n免疫大部分原版Debuff");
         }
 
@@ -53,8 +53,8 @@ namespace AlchemistNPC.Items.Armor
 
 		public override void UpdateEquip(Player player)
 		{
-			player.statLifeMax2 += 300;
-			player.endurance += 0.33f;
+			player.statLifeMax2 += 200;
+			player.endurance += 0.25f;
 			player.buffImmune[46] = true;
             player.noKnockback = true;
             player.fireWalk = true;

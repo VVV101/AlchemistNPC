@@ -537,7 +537,7 @@ namespace AlchemistNPC.NPCs
 		}
 		if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 		{
-			if(CalamityModDownedGuardian)
+			if(CalamityModDownedGuardian && !CalamityModDownedPolter)
 			{
 			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("SupremeHealingPotion"));
 			shop.item[nextSlot].shopCustomPrice = 500000;
@@ -616,6 +616,9 @@ namespace AlchemistNPC.NPCs
 		if (Main.hardMode)
 		{
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("UnderworldTeleportationPotion"));
+		shop.item[nextSlot].shopCustomPrice = 50000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("JungleTeleporterPotion"));
 		shop.item[nextSlot].shopCustomPrice = 50000;
 		nextSlot++;
 			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)

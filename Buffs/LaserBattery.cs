@@ -40,7 +40,7 @@ namespace AlchemistNPC.Buffs
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
 						Main.PlaySound(SoundID.Item93.WithVolume(.6f), player.position);
-                        Projectile.NewProjectile(player.Center.X, player.Center.Y+4, shootToX, shootToY, 433, 60, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(player.Center.X, player.Center.Y+4, shootToX, shootToY, 433, 60, 6, Main.myPlayer, 0f, 0f);
                         counter = 0;
                     }
                 }

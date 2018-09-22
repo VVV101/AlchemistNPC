@@ -30,7 +30,16 @@ namespace AlchemistNPC.Items.Armor
 			item.height = 18;
 			item.value = 1000000;
 			item.rare = 12;
+			item.useTime = 10;
+			item.useAnimation = 10;
+			item.useStyle = 2;
 			item.vanity = true;
+		}
+		
+		public override bool UseItem(Player player)
+		{
+			NPC.NewNPC((int)player.Center.X, (int)player.Center.Y-300, mod.NPCType("BillCipher"));
+			return true;
 		}
 		
 		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)

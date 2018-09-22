@@ -40,6 +40,7 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public bool Luck = false;
+		public bool Illuminati = false;
 		public bool AutoinjectorMK2 = false;
 		public bool AlchemistCharmTier1 = false;
 		public bool AlchemistCharmTier2 = false;
@@ -115,6 +116,7 @@ namespace AlchemistNPC
 			AlchemistCharmTier2 = false;
 			AlchemistCharmTier3 = false;
 			AlchemistCharmTier4 = false;
+			Illuminati = false;
 			BeeHeal = false;
 			Pandora = false;
 			TS = false;
@@ -322,6 +324,11 @@ namespace AlchemistNPC
 		{	
 			if (target.friendly == false)
 			{
+			if (Illuminati)
+				{
+				target.buffImmune[BuffID.Midas] = false;
+				target.AddBuff(BuffID.Midas, 600);
+				}
 			if (player.FindBuffIndex(mod.BuffType("RainbowFlaskBuff")) > -1)
 				{
 				target.buffImmune[BuffID.BetsysCurse] = false;
@@ -354,11 +361,16 @@ namespace AlchemistNPC
 				}
 			}
 		}
-			
+		
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
 		{
 			if (target.friendly == false)
 			{
+			if (Illuminati)
+				{
+				target.buffImmune[BuffID.Midas] = false;
+				target.AddBuff(BuffID.Midas, 600);
+				}
 			if (player.FindBuffIndex(mod.BuffType("RainbowFlaskBuff")) > -1)
 				{
 				target.buffImmune[BuffID.BetsysCurse] = false;
@@ -404,6 +416,15 @@ namespace AlchemistNPC
 			if (NPC.AnyNPCs(mod.NPCType("Knuckles")))
 			{
 				damageSource = PlayerDeathReason.ByCustomReason(player.name + " DIDN NO DE WEI!");
+			}
+			if (NPC.AnyNPCs(mod.NPCType("BillCipher")))
+			{
+				damageSource = PlayerDeathReason.ByCustomReason(player.name + " was evaporated by the new master of this world.");
+			}
+			if (Illuminati && !player.HasBuff(mod.BuffType("IlluminatiCooldown")))
+			{
+				player.statLife = 1;
+				return false;
 			}
 			return true;
 		}
@@ -466,9 +487,13 @@ namespace AlchemistNPC
 				}
 			}
 		}
-
+		
 		public override void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
         {
+			if (player.HasBuff(mod.BuffType("ExecutionersEyes")) && crit && Main.rand.Next(20) == 0)
+            {
+                damage *= 2;
+            }
             if (MemersRiposte && crit)
             {
                 damage *= 2;
@@ -477,6 +502,10 @@ namespace AlchemistNPC
 		
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
+			if (player.HasBuff(mod.BuffType("ExecutionersEyes")) && crit && Main.rand.Next(20) == 0)
+            {
+                damage *= 2;
+            }
             if (MemersRiposte && crit)
             {
                 damage *= 2;
@@ -489,6 +518,12 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByNPC(NPC npc, ref int damage, ref bool crit) 		
         {
+			if (Illuminati)
+            {
+				Vector2 vel = new Vector2(0, -1);
+				vel *= 0f;
+				Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("IlluminatiFreeze"), 0, 0, player.whoAmI);
+			}
 			if (MemersRiposte)
             {
 				Vector2 vel = new Vector2(0, -1);
@@ -517,6 +552,12 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByProjectile(Projectile proj, ref int damage, ref bool crit) 	
         {
+			if (Illuminati)
+            {
+				Vector2 vel = new Vector2(0, -1);
+				vel *= 0f;
+				Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("IlluminatiFreeze"), 0, 0, player.whoAmI);
+			}
 			if (MemersRiposte)
             {
 				Vector2 vel = new Vector2(0, -1);

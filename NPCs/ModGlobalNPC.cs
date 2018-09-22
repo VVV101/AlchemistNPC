@@ -24,6 +24,15 @@ namespace AlchemistNPC.NPCs
 		public bool N7 = false;
 		public bool N8 = false;
 		public bool N9 = false;
+		public int bc = 0;
+		public int bc2 = 0;
+		public bool start = false;
+		public bool intermedia1 = false;
+		public bool stop1 = false;
+		public bool intermedia2 = false;
+		public bool stop2 = false;
+		public bool phase2 = false;
+		public bool phase3 = false;
 		
 		public override bool InstancePerEntity
 		{
@@ -39,6 +48,14 @@ namespace AlchemistNPC.NPCs
 			{
 				damage += damage/5;
 			}
+			if (npc.FindBuffIndex(mod.BuffType("SymbolOfPain")) > -1)
+			{
+				damage += damage/4;
+			}
+			if (player.HasBuff(mod.BuffType("ExecutionersEyes")))
+			{
+				damage += (damage/20)*3;
+			}
 		}
 		
 		public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
@@ -46,6 +63,10 @@ namespace AlchemistNPC.NPCs
 			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1)
 			{
 				damage += damage/5;
+			}
+			if (npc.FindBuffIndex(mod.BuffType("SymbolOfPain")) > -1)
+			{
+				damage += damage/4;
 			}
 			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
 			if (player.HasBuff(mod.BuffType("LaserBattery")) && projectile.type == 433)
@@ -56,6 +77,10 @@ namespace AlchemistNPC.NPCs
 					crit = true;
 				}
 			}
+			if (player.HasBuff(mod.BuffType("ExecutionersEyes")))
+			{
+				damage += (damage/20)*3;
+			}
 		}
 		
 		public override void ModifyHitPlayer(NPC npc, Player target, ref int damage, ref bool crit)
@@ -63,6 +88,10 @@ namespace AlchemistNPC.NPCs
 			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1 && Main.rand.Next(4) == 0)
 			{
 				damage /= 2;
+			}
+			if (npc.FindBuffIndex(mod.BuffType("SymbolOfPain")) > -1)
+			{
+				damage -= damage/4;
 			}
 		}
 		
@@ -372,6 +401,11 @@ namespace AlchemistNPC.NPCs
 				npc.color = new Color(255, 255, 255, 100);
 				Lighting.AddLight(npc.position, 1f, 1f, 1f);
 			}
+			if (npc.FindBuffIndex(mod.BuffType("SymbolOfPain")) >= 0)
+			{
+				npc.color = new Color(255, 10, 10, 100);
+				Lighting.AddLight(npc.position, 1f, 1f, 1f);
+			}
 			if (justitiapale)
 			{
 				if (Main.rand.Next(4) < 3)
@@ -479,6 +513,26 @@ namespace AlchemistNPC.NPCs
 		
 		public override void NPCLoot(NPC npc)
         {
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WailOfBanshee"));
+				}
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExecutionersEyes"));
+				}
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SymbolOfPain"));
+				}
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MeteorSwarm"));
+				}
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CloakOfFear"));
+				}
 			if (npc.type == NPCID.WallofFlesh)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LuckCharm"));
@@ -902,5 +956,78 @@ namespace AlchemistNPC.NPCs
 					}
 			}
         }
+		
+		public override void AI(NPC npc)
+		{
+			if (npc.type == mod.NPCType("BillCipher"))
+			{
+				if (npc.life == npc.lifeMax && !start)
+				{
+					Main.NewText("You dared summon me? This is going to be fun!", 10, 255, 10);
+					start = true;
+				}
+				if (npc.life <= (npc.lifeMax - npc.lifeMax/4) && !intermedia1 && !stop1)
+				{
+					Main.NewText("Hey you! Yes, you! I am asking the one who is controlling this ''puppet''!", 30, 255, 30);
+					Main.NewText("Do you really think that you would be able to defeat me? That's hilarious!", 30, 255, 30);
+					npc.dontTakeDamage = true;
+					intermedia1 = true;
+				}
+				if (intermedia1 && !stop1)
+				{
+					npc.velocity.X = 0f;
+					npc.velocity.Y = 0f;
+					bc++;
+					if (bc >= 300)
+					{
+						npc.life += 50000;
+						npc.HealEffect(50000, true);
+						npc.dontTakeDamage = false;
+						stop1 = true;
+						intermedia1 = false;
+					}
+				}
+				if (npc.life <= npc.lifeMax/2 && !phase2)
+				{
+					Main.NewText("Enough playing around, now you are gonna die!", 150, 100, 30);
+					Main.NewText("Madness is unleashed!", 150, 100, 30);
+					phase2 = true;
+					for (int index1 = 0; index1 < 30; ++index1)
+					{
+					float X = npc.Center.X + Main.rand.Next(-2500, 2500);
+					float Y = npc.Center.Y + Main.rand.Next(-2500, 2500);
+					Projectile.NewProjectile(X, Y, 0f, 0f, mod.ProjectileType("Madness"), 200, 0, Main.myPlayer);
+					}
+				}
+				if (npc.life <= npc.lifeMax/4 && !intermedia2 && !stop2)
+				{
+					Main.NewText("You are starting to annoy me, worm!", 210, 50, 20);
+					Main.NewText("Don't start thinking you're safe behind that screen...", 210, 50, 20);
+					Main.NewText("I will come to your dreams and will turn them into the horrible nightmare!", 210, 50, 10);
+					npc.dontTakeDamage = true;
+					intermedia2 = true;
+				}
+				if (intermedia2 && !stop2)
+				{
+					npc.velocity.X = 0f;
+					npc.velocity.Y = 0f;
+					bc2++;
+					if (bc2 >= 300)
+					{
+						npc.life += 50000;
+						npc.HealEffect(50000, true);
+						npc.dontTakeDamage = false;
+						stop2 = true;
+						intermedia2 = false;
+					}
+				}
+				if (npc.life <= npc.lifeMax/10 && !phase3)
+				{
+					Main.NewText("I will not get defeated again!", 255, 0, 0);
+					Main.NewText("Prepare to suffer!", 255, 0, 0);
+					phase3 = true;
+				}
+			}
+		}
 	}
 }
