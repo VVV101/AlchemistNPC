@@ -126,10 +126,10 @@ namespace AlchemistNPC.Projectiles
 
 		public override void ModifyHitPlayer(Projectile projectile, Player target, ref int damage, ref bool crit)
 		{
-			for (int k = 0; k < 200; k++)
+			if(projectile.whoAmI >= 0 || projectile.whoAmI < Main.maxProjectiles)
 			{
-				NPC npc = Main.npc[k];
-				if (npc.HasBuff(mod.BuffType("CurseOfLight")) && (Main.rand.Next(4) == 0))
+				var owner = npcOwner[projectile.whoAmI];
+				if (owner > -1 && Main.npc[owner].HasBuff(mod.BuffType("CurseOfLight")) && Main.rand.Next(4) == 0)
 				{
 					damage /= 2;
 				}
