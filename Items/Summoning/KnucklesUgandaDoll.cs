@@ -38,8 +38,7 @@ namespace AlchemistNPC.Items.Summoning
 		
 		public override bool UseItem(Player player)
 		{
-			NPC.NewNPC((int)player.Center.X, (int)player.Center.Y-300, mod.NPCType("Knuckles"));
-			Main.NewText("Ugandan Knuckles has awoken!", 175, 75, 255);
+			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Knuckles"));
 			return true;
 		}
     }

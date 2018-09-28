@@ -10,6 +10,7 @@ namespace AlchemistNPC.Buffs
 {
 	public class Hate : ModBuff
 	{
+		public static int count = 0;
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Hate");
@@ -24,6 +25,16 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
+		if (player.statLife < player.statLifeMax2)
+		{
+			if (count >= 12)
+			{
+			count = 0;
+			player.statLife += 5;
+			player.HealEffect(5, true);
+			}
+			count++;
+		}
 		player.thrownDamage += 0.15f;
         player.meleeDamage += 0.15f;
         player.rangedDamage += 0.15f;

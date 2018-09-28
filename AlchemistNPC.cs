@@ -13,6 +13,7 @@ using Terraria.UI;
 using Terraria.DataStructures;
 using Terraria.GameContent.UI;
 using AlchemistNPC.Items;
+using AlchemistNPC.Interface;
 
 namespace AlchemistNPC
 {
@@ -28,6 +29,7 @@ namespace AlchemistNPC
 			};
 		}
 
+		public static Mod Instance;
 		internal static AlchemistNPC instance;
 		internal TeleportClass TeleportClass;
 		public static ModHotKey LampLight;
@@ -49,6 +51,7 @@ namespace AlchemistNPC
 		
 		public override void Load()
 		{
+		Instance = this;
 		Config.Load();
             //SBMW:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language, first load after build mod may not work 
             string LampLightToggle = Language.GetTextValue("Mods.AlchemistNPC.LampLightToggle");
@@ -70,6 +73,11 @@ namespace AlchemistNPC
             SetTranslation();
 		}
 
+		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
+		{
+			InterfaceHelper.ModifyInterfaceLayers(layers);
+		}
+		
 		public override void Unload()
 		{
 			instance = null;

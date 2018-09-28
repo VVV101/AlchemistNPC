@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Scroll ''Executioner's Eyes''");
 			Tooltip.SetDefault("One-use item"
-			+"\nThis scroll is containing Spell ''Executioner's Eyes''"
+			+"\nContains the spell ''Executioner's Eyes''"
 			+"\nWhile used, you are getting your damage multiplied by 15% for 1 minute"
 			+"\nAlso increases critical strike chance by 5%"
 			+"\nGives you 5% chance to crit your crit, dealing 4x damage"

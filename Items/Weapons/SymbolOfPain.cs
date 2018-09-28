@@ -17,7 +17,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			DisplayName.SetDefault("Scroll ''Symbol of Pain''");
 			Tooltip.SetDefault("One-use item"
-			+"\nThis scroll is containing Spell ''Symbol of Pain''"
+			+"\nContains the spell ''Symbol of Pain''"
 			+"\nWhile used, all enemies on the screen would be heavily weakened for 1 minute"
 			+"\nMakes you deal 25% more damage to affected enemies (not lowered by any caps)"
 			+"\nAlso making them deal 1/4 less damage"

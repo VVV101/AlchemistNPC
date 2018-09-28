@@ -5,6 +5,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using AlchemistNPC.NPCs;
 
 namespace AlchemistNPC.Items.Armor
 {
@@ -38,8 +39,8 @@ namespace AlchemistNPC.Items.Armor
 		
 		public override bool UseItem(Player player)
 		{
-			NPC.NewNPC((int)player.Center.X, (int)player.Center.Y-300, mod.NPCType("BillCipher"));
-			Main.NewText("Bill Cipher has awoken!", 175, 75, 255);
+			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("BillCipher"));
+			BillCipher.introduction = 0;
 			return true;
 		}
 		

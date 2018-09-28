@@ -248,6 +248,10 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Совершенная Каламитас была побеждена, но она говорила о существе, ещё более сильном, чем она сама. Мы можем лишь надеяться, что он ещё не обратил на нас внимания.");
 			text.AddTranslation(GameCulture.Chinese, "至尊灾厄眼被击败了, 但是他说还有一个比他更为强大的存在, 我们必须祈祷他还没有注意到我们.");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryO34");
+            text.SetDefault("I’m honestly not sure why giant spinning skulls are the key to everything, but somehow they seem to contain the power of celestial beings within them...");
+            text.AddTranslation(GameCulture.Russian, "Я на самом деле не уверена, почему гигантские вращающиеся черепа - ключ ко всему, но каким-то образом они хранят в себе мощь божественных созданий...");
+            mod.AddTranslation(text);
         }
 
 		public override void ResetEffects()
@@ -459,6 +463,7 @@ namespace AlchemistNPC.NPCs
 		string EntryO31 = Language.GetTextValue("Mods.AlchemistNPC.EntryO31");
 		string EntryO32 = Language.GetTextValue("Mods.AlchemistNPC.EntryO32");
 		string EntryO33 = Language.GetTextValue("Mods.AlchemistNPC.EntryO33");
+		string EntryO34 = Language.GetTextValue("Mods.AlchemistNPC.EntryO34");
 		if (Main.bloodMoon)
 			{
 				switch (Main.rand.Next(3))
@@ -611,7 +616,7 @@ namespace AlchemistNPC.NPCs
 				return EntryO27;
 				}
 		}
-            switch (Main.rand.Next(4))
+            switch (Main.rand.Next(5))
             {
                 case 0:                                     
 				return EntryO1;
@@ -619,6 +624,8 @@ namespace AlchemistNPC.NPCs
 				return EntryO3;
                 case 2:
 				return EntryO4;
+				case 3:
+				return EntryO34;
                 default:
 				return EntryO7;
             }
@@ -1044,30 +1051,39 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 2500;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.TissueSample);
-				shop.item[nextSlot].shopCustomPrice = 10000;
+				shop.item[nextSlot].shopCustomPrice = 75000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.Vertebrae);
-				shop.item[nextSlot].shopCustomPrice = 10000;
+				shop.item[nextSlot].shopCustomPrice = 75000;
+				}
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Petal"));
+					shop.item[nextSlot].shopCustomPrice = 10000;
+					nextSlot++;
 				}
 				if (NPC.downedQueenBee)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.BeeWax);
-				shop.item[nextSlot].shopCustomPrice = 20000;
+				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
 				}
 				if (NPC.downedBoss3)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.Bone);
-				shop.item[nextSlot].shopCustomPrice = 20000;
+				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
 				}
 				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-					{
-					if (CalamityModDownedHiveMind || CalamityModDownedPerforators)
+				{
+					if (CalamityModDownedHiveMind)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TrueShadowScale"));
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
+					}
+					if (CalamityModDownedPerforators)
+					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BloodSample"));
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;

@@ -20,7 +20,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			DisplayName.SetDefault("Scroll ''Meteor Swarm''");
 			Tooltip.SetDefault("One-use item"
-			+"\nThis scroll is containing Spell ''Meteor Swarm''"
+			+"\nContains the spell ''Meteor Swarm''"
 			+"\nWhile used, causes short meteorite rain around player's position"
 			+"\nExhausts player for 1 minute, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Метеоритного Роя''");

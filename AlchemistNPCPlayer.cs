@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ReLogic.Utilities;
 using System;
@@ -33,12 +34,17 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 using AlchemistNPC.Items;
+using AlchemistNPC.Mounts;
 
 namespace AlchemistNPC
 {
 	public class AlchemistNPCPlayer : ModPlayer
 	{
 		public int Shield = 0;
+		public int fc = 0;
+		public bool ShieldBelt = false;
+		public bool MysticAmuletMount = false;
+		public bool TerrarianBlock = false;
 		public bool Luck = false;
 		public bool Illuminati = false;
 		public bool AutoinjectorMK2 = false;
@@ -106,7 +112,10 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			ShieldBelt = false;
+			MysticAmuletMount = false;
 			Luck = false;
+			TerrarianBlock = false;
 			AlchemistGlobalItem.Luck = false;
 			AlchemistGlobalItem.Luck2 = false;
 			AlchemistNPC.BastScroll = false;
@@ -518,6 +527,10 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByNPC(NPC npc, ref int damage, ref bool crit) 		
         {
+			if (TerrarianBlock && Main.dayTime)
+            {
+				damage -= damage/3;
+			}
 			if (Illuminati)
             {
 				Vector2 vel = new Vector2(0, -1);
@@ -552,6 +565,10 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByProjectile(Projectile proj, ref int damage, ref bool crit) 	
         {
+			if (TerrarianBlock && !Main.dayTime)
+            {
+				damage -= damage/3;
+			}
 			if (Illuminati)
             {
 				Vector2 vel = new Vector2(0, -1);
@@ -583,5 +600,96 @@ namespace AlchemistNPC
 				damage = 1;
 				}
         }
+		
+		public override void PostUpdate()
+		{
+			if (MysticAmuletMount)
+			{
+				player.hairFrame.Y = 5 * player.hairFrame.Height;
+				player.headFrame.Y = 5 * player.headFrame.Height;
+				player.legFrame.Y = 5 * player.legFrame.Height;
+			}
+		}
+		
+		public static readonly PlayerLayer MiscEffects = new PlayerLayer("AlchemistNPC", "MiscEffects", PlayerLayer.MiscEffectsFront, delegate(PlayerDrawInfo drawInfo)
+			{
+				if (drawInfo.shadow != 0f)
+				{
+					return;
+				}
+				Player drawPlayer = drawInfo.drawPlayer;
+				if (drawPlayer.dead)
+				{
+					return;
+				}
+				Mod mod = ModLoader.GetMod("AlchemistNPC");
+				AlchemistNPCPlayer modPlayer = drawPlayer.GetModPlayer<AlchemistNPCPlayer>(mod);
+				if (modPlayer.MysticAmuletMount && modPlayer.fc <= 10)
+				{
+					Texture2D texture = mod.GetTexture("Mounts/MysticAmulet");
+					int drawX = (int)(drawInfo.position.X + drawPlayer.width / 2f - Main.screenPosition.X);
+					int drawY = (int)(drawInfo.position.Y + drawPlayer.height / 2f - Main.screenPosition.Y);
+					float strength = 1f;
+					if (strength > 1f)
+					{
+						strength = 2f - strength;
+					}
+					strength = 0.4f + strength * 0.2f;
+					DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0);
+					data.shader = drawInfo.drawPlayer.miscDyes[3].dye;
+					Main.playerDrawData.Add(data);
+				}
+				if (modPlayer.MysticAmuletMount && modPlayer.fc > 10 && modPlayer.fc <= 20)
+				{
+					Texture2D texture = mod.GetTexture("Mounts/MysticAmulet2");
+					int drawX = (int)(drawInfo.position.X + drawPlayer.width / 2f - Main.screenPosition.X);
+					int drawY = (int)(drawInfo.position.Y + drawPlayer.height / 2f - Main.screenPosition.Y);
+					float strength = 1f;
+					if (strength > 1f)
+					{
+						strength = 2f - strength;
+					}
+					strength = 0.4f + strength * 0.2f;
+					DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0);
+					data.shader = drawInfo.drawPlayer.miscDyes[3].dye;
+					Main.playerDrawData.Add(data);
+				}
+				if (modPlayer.MysticAmuletMount && modPlayer.fc > 20 &&  modPlayer.fc <= 30)
+				{
+					Texture2D texture = mod.GetTexture("Mounts/MysticAmulet3");
+					int drawX = (int)(drawInfo.position.X + drawPlayer.width / 2f - Main.screenPosition.X);
+					int drawY = (int)(drawInfo.position.Y + drawPlayer.height / 2f - Main.screenPosition.Y);
+					float strength = 1f;
+					if (strength > 1f)
+					{
+						strength = 2f - strength;
+					}
+					strength = 0.4f + strength * 0.2f;
+					DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0);
+					data.shader = drawInfo.drawPlayer.miscDyes[3].dye;
+					Main.playerDrawData.Add(data);
+				}
+				if (modPlayer.MysticAmuletMount && modPlayer.fc > 30 &&  modPlayer.fc <= 40)
+				{
+					Texture2D texture = mod.GetTexture("Mounts/MysticAmulet4");
+					int drawX = (int)(drawInfo.position.X + drawPlayer.width / 2f - Main.screenPosition.X);
+					int drawY = (int)(drawInfo.position.Y + drawPlayer.height / 2f - Main.screenPosition.Y);
+					float strength = 1f;
+					if (strength > 1f)
+					{
+						strength = 2f - strength;
+					}
+					strength = 0.4f + strength * 0.2f;
+					DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0);
+					data.shader = drawInfo.drawPlayer.miscDyes[3].dye;
+					Main.playerDrawData.Add(data);
+				}
+			});
+
+			public override void ModifyDrawLayers(List<PlayerLayer> layers)
+			{
+				MiscEffects.visible = true;
+				layers.Add(MiscEffects);
+			}
 	}
 }

@@ -17,7 +17,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			DisplayName.SetDefault("Scroll ''Wail Of Banshee''");
 			Tooltip.SetDefault("One-use item"
-			+"\nThis scroll is containing Spell ''Wail of Banshee''"
+			+"\nContains the spell ''Wail of Banshee''"
 			+"\nWhile used, all normal enemies on the screen will instantly die"
 			+"\nExhausts player for 1 minute, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Вопль Баньши''");

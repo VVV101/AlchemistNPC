@@ -17,6 +17,7 @@ namespace AlchemistNPC.Projectiles
 	public class AlchemistGlobalProjectile : GlobalProjectile
 	{
 		public bool firstTime = true;
+		public static int counter = 0;
 
 		public static int[] npcOwner = Enumerable.Repeat(-1, Main.maxProjectiles).ToArray();
 
@@ -133,7 +134,7 @@ namespace AlchemistNPC.Projectiles
 				{
 					damage /= 2;
 				}
-				if (Main.npc[owner].HasBuff(mod.BuffType("SymbolOfPain")))
+				if (owner > -1 && Main.npc[owner].HasBuff(mod.BuffType("SymbolOfPain")))
 				{
 					damage -= damage/4;
 				}
@@ -323,6 +324,11 @@ namespace AlchemistNPC.Projectiles
 			if (projectile.aiStyle == 88 && (projectile.knockBack >= .2f && projectile.knockBack <= .5f))
 			{
 				target.immune[projectile.owner] = 3;
+			}
+			
+			if (player.HeldItem.type == mod.ItemType("TerrarianW") && projectile.type == 88)
+			{
+				target.immune[projectile.owner] = 1;
 			}
 		}
 	}

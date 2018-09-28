@@ -20,12 +20,12 @@ namespace AlchemistNPC.Items.Equippable
 			DisplayName.SetDefault("Laetitia Gift (O-01-67-1)");
 			Tooltip.SetDefault("She says that she has many friends, but they can't come with you. So she came up with this brilliant idea!"
 			+ "\n[c/FF0000:EGO Gift/Weapon]"
-			+ "\n[c/FF0000:Warning!!! Will slowly consume your life if Little Witch Monster is not summoned]"
-			+ "\nAllows to summon Little Witch Monster if full set of Laetitia EGO armor is on"
+			+ "\n[c/FF0000:Warning!!! Will slowly consume your life if full set of armor is not equipped]"
+			+ "\nAllows to summon Little Witch Monster if full set of armor is on"
 			+ "\nLittle Witch Monster will dissapear if EGO armor set is not on"
 			+ "\nIncreases maximum amount of minions by 3");
 			DisplayName.AddTranslation(GameCulture.Russian, "Дар Летиции (O-01-67-1)");
-            Tooltip.AddTranslation(GameCulture.Russian, "Она говорила, что у неё много друзей, но они не смогут пойти с тобой. И тогда ей пришла в голову блестящая идея!\n[c/FF0000:Э.П.О.С Дар/Оружие]\n[c/FF0000:Осторожно!!! Будет медленно пожирать ваше HP, если Монстр Маленькой Ведьмы не призван]\nПозволяет призвать Монстра Маленькой Ведьмы если одет полный сет Э.П.О.С брони Летиции.\nМонстр Маленькой Ведьмы пропадёт если если Э.П.О.С броня не одета\nУвеличивает максимальное число прислужников на 3");
+            Tooltip.AddTranslation(GameCulture.Russian, "Она говорила, что у неё много друзей, но они не смогут пойти с тобой. И тогда ей пришла в голову блестящая идея!\n[c/FF0000:Э.П.О.С Дар/Оружие]\n[c/FF0000:Осторожно!!! Будет медленно пожирать ваше HP, если полный сет брони не одет]\nПозволяет призвать Монстра Маленькой Ведьмы если одет полный сет Э.П.О.С брони Летиции.\nМонстр Маленькой Ведьмы пропадёт если если Э.П.О.С броня не одета\nУвеличивает максимальное число прислужников на 3");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "蕾蒂希娅的礼物 (O-01-67-1)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'它总是说, 它有许多朋友, 虽然它们都没法跟它待在一起. 于是, 她想出了这个绝妙的主意!'\n[c/FF0000:EGO 礼物/武器]\n[c/FF0000:警告!!! 如果没有召唤小巫怪, 会慢慢消耗你的生命值]\n如果穿着全套蕾蒂希娅EGO盔甲, 则可以召唤一只小巫怪\n如果脱下蕾蒂希娅EGO盔甲, 小巫怪会消失\n增加3个最大召唤物数量");
@@ -59,7 +59,7 @@ namespace AlchemistNPC.Items.Equippable
 			++player.maxMinions;
 			++player.maxMinions;
 			++player.maxMinions;
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).lwm == false)
+			if (player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet == false)
 			{
 			player.lifeRegen -= 20;
 			}

@@ -49,7 +49,7 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
 		{
-			if (target.boss == false)
+			if (target.boss == false || target.type != 325 || target.type != 327 || target.type != 325 || target.type != 344 || target.type != 345 || target.type != 346)
 			{
 				damage = 999999;
 			}

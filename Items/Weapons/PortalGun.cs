@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Weapons
 		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Portal Gun");
+			DisplayName.SetDefault("Rick's Portal Gun");
 			Tooltip.SetDefault("Copy of Rick Sanchez's Portal Gun"
 			+"\nOpens portals to the random dangerous dimensions"
 			+"\nHope this thing wouldn't cause appearence of SEAL team Ricks");
@@ -21,7 +21,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 1;
+			item.damage = 100;
 			item.ranged = true;
 			item.width = 32;
 			item.height = 32;

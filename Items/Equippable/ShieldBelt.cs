@@ -38,7 +38,12 @@ namespace AlchemistNPC.Items.Equippable
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.AddBuff(mod.BuffType("ShieldBelt"), 2);
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ShieldBelt = true;
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Shield < 150)
+			{
+				if (Main.rand.Next(4) == 0)
+				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Shield++;
+			}
 		}
 
 		public override void AddRecipes()

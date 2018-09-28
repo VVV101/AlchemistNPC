@@ -51,6 +51,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void HoldItem(Player player)
 		{
 			player.AddBuff(mod.BuffType("DisasterLV3"), 2);
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge = 500;
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -81,6 +82,7 @@ namespace AlchemistNPC.Items.Weapons
 			Vector2 vel8 = new Vector2(-1, 0);
 			vel8 *= 8f;
 			Projectile.NewProjectile(player.position.X+30, player.position.Y, vel8.X, vel8.Y, ProjectileID.VortexBeaterRocket, item.damage/2, 0, Main.myPlayer);
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge = 0;
 			item.SetDefaults(mod.ItemType("Pandora"));
 			}
 			if (player.altFunctionUse == 2)

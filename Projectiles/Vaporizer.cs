@@ -7,28 +7,33 @@ using System;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class DeadlyLaser : ModProjectile
+	public class Vaporizer : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Deadly Lazer");
+			DisplayName.SetDefault("Vaporizer");
 		}
 
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(100);
+			projectile.CloneDefaults(302);
 			projectile.width = 6;
 			projectile.tileCollide = false;
 			projectile.aiStyle = 1;
-			aiType = 100;
+			aiType = 302;
 		}
 		
-		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
 			if (target.friendly)
 			{
-			damage /= 20;
+			damage /= 30;
 			}
+		}
+		
+		public override void ModifyHitPlayer(Player target, ref int damage, ref bool crit)
+		{
+			target.AddBuff(mod.BuffType("Petrified"), 20);
 		}
 	}
 }

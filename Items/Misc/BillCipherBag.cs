@@ -1,4 +1,6 @@
 using Terraria;
+using Microsoft.Xna.Framework;
+using System.Linq;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -33,7 +35,25 @@ namespace AlchemistNPC.Items.Misc
 			player.TryGettingDevArmor();
 			player.QuickSpawnItem(mod.ItemType("WrathOfTheCelestial"));
 			player.QuickSpawnItem(mod.ItemType("IlluminatiGift"));
+			if (player.HasBuff(mod.BuffType("GrimReaper")) && Main.rand.Next(5) == 0)
+			{
+				player.QuickSpawnItem(mod.ItemType("MysticAmulet"));
+			}
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			{
+				if (CalamityModRevengeance)
+				{
+					player.QuickSpawnItem(mod.ItemType("MysticAmulet"));
+				}
+			}
 			player.QuickSpawnItem(ItemID.PlatinumCoin, 100);
 		}
+		
+		public bool CalamityModRevengeance
+		{
+        get { return CalamityMod.CalamityWorld.revenge; }
+        }
+		
+		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 	}
 }

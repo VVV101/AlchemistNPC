@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Scroll ''Cloak of Fear''");
 			Tooltip.SetDefault("One-use item"
-			+"\nThis scroll is containing Spell ''Cloak of Fear''"
+			+"\nContains the spell ''Cloak of Fear''"
 			+"\nMakes non-boss enemies nearby player to change their movement direction"
 			+"\nExhausts player for 30 seconds after ending of effect, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Плащ Страха''");

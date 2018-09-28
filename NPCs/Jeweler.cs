@@ -538,6 +538,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.DiamondRing);
 				shop.item[nextSlot].shopCustomPrice = 2000000;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HorrifyingSkull"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
 				if (ModLoader.GetLoadedMods().Contains("Tremor"))
 				{
 					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Rupicide"));

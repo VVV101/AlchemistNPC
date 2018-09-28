@@ -74,7 +74,10 @@ namespace AlchemistNPC.Items
 
         public override void RightClick(Player player)
         {
+			if (Main.myPlayer == player.whoAmI)
+			{
             TeleportClass.HandleTeleport(3);
+			}
         }
     }
 }

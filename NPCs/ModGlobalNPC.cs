@@ -35,9 +35,9 @@ namespace AlchemistNPC.NPCs
 		public int bc = 0;
 		public int bc2 = 0;
 		public bool start = false;
-		public bool intermedia1 = false;
+		public bool intermission1 = false;
 		public bool stop1 = false;
-		public bool intermedia2 = false;
+		public bool intermission2 = false;
 		public bool stop2 = false;
 		public bool phase2 = false;
 		public bool phase3 = false;
@@ -460,7 +460,7 @@ namespace AlchemistNPC.NPCs
 				}
 			}
 		}
-
+		
 		public override bool PreNPCLoot(NPC npc)
 		{
 			string barrierWeek = Language.GetTextValue("Mods.AlchemistNPC.barrierWeek");
@@ -579,7 +579,7 @@ namespace AlchemistNPC.NPCs
 			{
 				if (!Main.expertMode)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(5, 10));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(20, 30));
 					if (Main.rand.Next(10) == 0)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OtherworldlyAmulet"));
@@ -587,7 +587,7 @@ namespace AlchemistNPC.NPCs
 				}
 				if (Main.expertMode)
 				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(15, 20));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmagledFragmentation"), Main.rand.Next(40, 50));
 					if (Main.rand.Next(5) == 0)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("OtherworldlyAmulet"));
@@ -967,21 +967,33 @@ namespace AlchemistNPC.NPCs
 		
 		public override void AI(NPC npc)
 		{
+			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+			if (npc.type == mod.NPCType("Knuckles"))
+			{
+				if (!start)
+				{
+					npc.position.Y = player.position.Y - 300;
+					npc.position.X = player.position.X;
+					start = true;
+				}
+			}
 			if (npc.type == mod.NPCType("BillCipher"))
 			{
 				if (npc.life == npc.lifeMax && !start)
 				{
+					npc.position.Y = player.position.Y - 300;
+					npc.position.X = player.position.X;
 					Main.NewText("You dared summon me? This is going to be fun!", 10, 255, 10);
 					start = true;
 				}
-				if (npc.life <= (npc.lifeMax - npc.lifeMax/4) && !intermedia1 && !stop1)
+				if (npc.life <= (npc.lifeMax - npc.lifeMax/4) && !intermission1 && !stop1)
 				{
 					Main.NewText("Hey you! Yes, you! I am asking the one who is controlling this ''puppet''!", 30, 255, 30);
 					Main.NewText("Do you really think that you would be able to defeat me? That's hilarious!", 30, 255, 30);
 					npc.dontTakeDamage = true;
-					intermedia1 = true;
+					intermission1 = true;
 				}
-				if (intermedia1 && !stop1)
+				if (intermission1 && !stop1)
 				{
 					npc.velocity.X = 0f;
 					npc.velocity.Y = 0f;
@@ -992,7 +1004,7 @@ namespace AlchemistNPC.NPCs
 						npc.HealEffect(50000, true);
 						npc.dontTakeDamage = false;
 						stop1 = true;
-						intermedia1 = false;
+						intermission1 = false;
 					}
 				}
 				if (npc.life <= npc.lifeMax/2 && !phase2)
@@ -1007,15 +1019,15 @@ namespace AlchemistNPC.NPCs
 					Projectile.NewProjectile(X, Y, 0f, 0f, mod.ProjectileType("Madness"), 200, 0, Main.myPlayer);
 					}
 				}
-				if (npc.life <= npc.lifeMax/4 && !intermedia2 && !stop2)
+				if (npc.life <= npc.lifeMax/4 && !intermission2 && !stop2)
 				{
 					Main.NewText("You are starting to annoy me, worm!", 210, 50, 20);
 					Main.NewText("Don't start thinking you're safe behind that screen...", 210, 50, 20);
 					Main.NewText("I will come to your dreams and will turn them into the horrible nightmare!", 210, 50, 10);
 					npc.dontTakeDamage = true;
-					intermedia2 = true;
+					intermission2 = true;
 				}
-				if (intermedia2 && !stop2)
+				if (intermission2 && !stop2)
 				{
 					npc.velocity.X = 0f;
 					npc.velocity.Y = 0f;
@@ -1026,10 +1038,10 @@ namespace AlchemistNPC.NPCs
 						npc.HealEffect(50000, true);
 						npc.dontTakeDamage = false;
 						stop2 = true;
-						intermedia2 = false;
+						intermission2 = false;
 					}
 				}
-				if (npc.life <= npc.lifeMax/10 && !phase3)
+				if (npc.life <= npc.lifeMax*0.15f && !phase3)
 				{
 					Main.NewText("I will not get defeated again!", 255, 0, 0);
 					Main.NewText("Prepare to suffer!", 255, 0, 0);

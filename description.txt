@@ -8,7 +8,7 @@ The Explorer is secret NPC. Try to figure out, how to spawn her.
 v7.5
 -Added Charm of Absolute Luck. Also affects accessories now. Can be crafted after beating Golem.
 Charm of Luck only affects weapons/endless pouches/quivers.
--Added Portal Gun, reference to Rick and Morty. Opens portals to dangerous dimensions, letting the things from there damaging the enemies.
+-Added Rick's Portal Gun, reference to Rick and Morty. Opens portals to dangerous dimensions, letting the things from there damaging the enemies.
 Explorer's weapon.
 -Added Shield Belt, reference to Unreal Tournament. 
 Reduces incoming damage by up to 150, then requires recharge. Damage reduction is weaker on Revengeance/Death Mode (minimal damage is 30).
@@ -32,11 +32,23 @@ May drop from random boss with >=75000 HP after beating Moon Lord.
 May drop from random boss with >=75000 HP after beating Moon Lord.
 -Added "Cloak of Fear" scroll. One use item. Makes normal enemies feared for 10 seconds if they come nearby you. Inflicts debuff Exhausted for 30 seconds after ending of effect.
 May drop from random boss with >=75000 HP after beating Moon Lord.
+-Added Terrarian-A (V-05-516) and Terrarian-W (V-05-516) EGO equipment. Both available at early hardmode.
+A is an accessory which gives effect of Cross Necklace and have special effect at day or night time.
+W is a pre mechanical boss combination of Laser and Clockwork Assault Rifles.
 -Added Caught Unicorn item. Now required for Research Note#2 recipe instead of Gold Bunny.
+-Added Horrifying Skull. Summons Dungeon Guardian.
+Can be bought from Jeweler after beating Skeletron for 15 gold each.
+-Increased amount of dropped Celestial's Particles from DG.
+-Added petals from Thorium mod to Operator's shop.
 -Added head icon for Otherworldly Portal.
+-Added interface bars for Disaster Gauge and Shield Belt's Charge.
 -Tenebris, Lumenyl and Depth Cells are now available after beating Plantera in Operator's shop.
+-Pumpking, Mourning Wood, Ice Queen, Santa NK1 and Everscream now cannot be instakilled by Ban Hammer.
+-Laetitia's Gift no longer consumes life if full set of armor is on.
+-Added new line for Operator.
 -Changed prices for some items.
 -Thorium and Spirit buffs can now be toggled by turning of visibility of Autoinjector MK2.
+-Fixed bosses mp desync problem.
 -Fixed targeting for some "shooting" projectiles.
 -Fixed hitboxes for "Akumu" and Unchained "Akumu" shields.
 -Fixed multiple non-stackeable items consuming on creating Explorer weapons.
@@ -45,7 +57,7 @@ May drop from random boss with >=75000 HP after beating Moon Lord.
 -Fixed Charm of Luck effect worked on consumables.
 -Fixed Old One's Army Treasure Bags availability.
 -Nerfed Sasscade and True Sasscade Yo-yos.
--Secrets
+-Some secret stuff.
 v7.4.1
 -Added config options for disabling certain town NPCs spawn (AlchemistNPCv741.json).
 -Added Charm of Luck. Drops after beating Wall of Flesh for the first time.
