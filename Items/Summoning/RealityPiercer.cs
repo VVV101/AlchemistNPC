@@ -36,6 +36,7 @@ namespace AlchemistNPC.Items.Summoning
 			item.useTime = 30;
 			item.useStyle = 4;
 			item.consumable = true;
+			item.makeNPC = (short)mod.NPCType("Explorer");
 		}
 
 		public override bool CanUseItem(Player player)
@@ -43,11 +44,9 @@ namespace AlchemistNPC.Items.Summoning
 			return (!NPC.AnyNPCs(mod.NPCType("Explorer")));
 		}
 
-		public override bool UseItem(Player player)
+		public override void OnConsumeItem(Player player)
 		{
 			Main.NewText("An Explorer has come.", 255, 255, 255);
-			NPC.NewNPC((int)player.Center.X+Main.rand.Next(-150,150), (int)player.Center.Y, mod.NPCType("Explorer"));
-			return true;
 		}
 	}
 }

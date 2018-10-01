@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 
-namespace Fargowiltas.Items.CaughtNPCs
+namespace AlchemistNPC.Items.Summoning
 {
     public class CaughtUnicorn : ModItem
     {

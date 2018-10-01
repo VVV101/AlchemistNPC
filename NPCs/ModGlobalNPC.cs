@@ -32,6 +32,9 @@ namespace AlchemistNPC.NPCs
 			return true;
 		}
 
+		public bool i1 = false;
+		public bool i2 = false;
+		public bool i3 = false;
 		public int bc = 0;
 		public int bc2 = 0;
 		public bool start = false;
@@ -197,6 +200,41 @@ namespace AlchemistNPC.NPCs
 			{
 				Main.npcCatchable[npc.type] = true;
 				npc.catchItem = (short)mod.ItemType("CaughtUnicorn");
+			}
+			if (npc.type == mod.NPCType("Alchemist"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("AlchemistHorcrux");
+			}
+			if (npc.type == mod.NPCType("Brewer"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("BrewerHorcrux");
+			}
+			if (npc.type == mod.NPCType("Architect"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("ArchitectHorcrux");
+			}
+			if (npc.type == mod.NPCType("Jeweler"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("JewelerHorcrux");
+			}
+			if (npc.type == mod.NPCType("Operator"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("APMC");
+			}
+			if (npc.type == mod.NPCType("OtherworldlyPortal"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("NotesBook");
+			}
+			if (npc.type == mod.NPCType("Explorer"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("RealityPiercer");
 			}
 		}
 
@@ -547,7 +585,7 @@ namespace AlchemistNPC.NPCs
 			}
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
-				if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasBuff(mod.BuffType("CalamityComb")) && npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS")))
+				if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasBuff(mod.BuffType("CalamityComb")) && npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS")) && CalamityModRevengeance)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModLoader.GetMod("CalamityMod").ItemType("Fabsol"));
 				}
@@ -965,6 +1003,13 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 		
+		public bool CalamityModRevengeance
+		{
+        get { return CalamityMod.CalamityWorld.revenge; }
+        }
+		
+		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
+		
 		public override void AI(NPC npc)
 		{
 			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
@@ -979,12 +1024,37 @@ namespace AlchemistNPC.NPCs
 			}
 			if (npc.type == mod.NPCType("BillCipher"))
 			{
-				if (npc.life == npc.lifeMax && !start)
+				if (npc.life == npc.lifeMax && !start && player.name != "Bill")
 				{
 					npc.position.Y = player.position.Y - 300;
 					npc.position.X = player.position.X;
-					Main.NewText("You dared summon me? This is going to be fun!", 10, 255, 10);
+					if (player.name == "Dipper" || player.name == "Mabel" || player.name == "Stanford" || player.name == "Stanlee" || player.name == "Stan")
+					{
+						Main.NewText("WHAT? You again? I was already defeated with your help! What else do you want from me?", 10, 255, 10);	
+					}
+					else
+					{
+						Main.NewText("You dared summon me? This is going to be fun!", 10, 255, 10);	
+					}
 					start = true;
+				}
+				if (npc.life <= npc.lifeMax*0.6f && !i1)
+				{
+					Main.NewText("Hey, catch this!", 10, 255, 10);
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VoodooDoll"));
+					i1 = true;
+				}
+				if (npc.life <= npc.lifeMax*0.4f && !i2)
+				{
+					Main.NewText("Hey, catch this!", 10, 255, 10);
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ScreamingHead"));
+					i2 = true;
+				}
+				if (npc.life <= npc.lifeMax*0.2f && !i3)
+				{
+					Main.NewText("Hey, catch this!", 10, 255, 10);
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CursedMirror"));
+					i3 = true;
 				}
 				if (npc.life <= (npc.lifeMax - npc.lifeMax/4) && !intermission1 && !stop1)
 				{

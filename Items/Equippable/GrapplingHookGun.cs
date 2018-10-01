@@ -5,53 +5,29 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using System.Linq;
 
-namespace AlchemistNPC.Items
+namespace AlchemistNPC.Items.Equippable
 {
-	class CelestialHookItem : ModItem
+	class GrapplingHookGunItem : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Celestial Hook");
+			DisplayName.SetDefault("Grappling Hook Gun");
 		}
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.AmethystHook);
-			item.shootSpeed = 24f;
+			item.shootSpeed = 28f;
 			item.rare = 11;
-			item.shoot = mod.ProjectileType("CelestialHookProjectile");
-		}
-		
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.LunarHook);
-			recipe.AddIngredient(null, "ChromaticCrystal", 5);
-			recipe.AddIngredient(null, "SunkroveraCrystal", 5);
-			recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-			{
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 10);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
-			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-			{
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 5);
-			}
-			recipe.AddIngredient(null, "EmagledFragmentation", 50);
-			recipe.AddTile(null, "MateriaTransmutator");
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			item.shoot = mod.ProjectileType("GrapplingHookGunProjectile");
 		}
 	}
-	class CelestialHookProjectile : ModProjectile
+	class GrapplingHookGunProjectile : ModProjectile
 	{
 		public static int counter = 0;
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Celestial Hook");
+			DisplayName.SetDefault("Grappling Hook Gun Projectile");
 		}
 
 		public override void SetDefaults()
@@ -70,7 +46,7 @@ namespace AlchemistNPC.Items
 					hooksOut++;
 				}
 			}
-			if (hooksOut > 4)
+			if (hooksOut > 0)
 			{
 				return false;
 			}
@@ -79,22 +55,22 @@ namespace AlchemistNPC.Items
 
 		public override float GrappleRange()
 		{
-			return 640f;
+			return 900f;
 		}
 
 		public override void NumGrappleHooks(Player player, ref int numHooks)
 		{
-			numHooks = 4;
+			numHooks = 1;
 		}
 
 		public override void GrappleRetreatSpeed(Player player, ref float speed)
 		{
-			speed = 24f;
+			speed = 28f;
 		}
 
 		public override void GrapplePullSpeed(Player player, ref float speed)
 		{
-			speed = 18;
+			speed = 24;
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
@@ -112,10 +88,6 @@ namespace AlchemistNPC.Items
 				center += distToProj;                   //update draw position
 				distToProj = playerCenter - center;    //update distance
 				distance = distToProj.Length();
-
-				spriteBatch.Draw(mod.GetTexture("Items/CelestialHookChain"), new Vector2(center.X - Main.screenPosition.X, center.Y - Main.screenPosition.Y),
-					new Rectangle(0, 0, Main.chain30Texture.Width, Main.chain30Texture.Height), lightColor, projRotation,
-					new Vector2(Main.chain30Texture.Width * 0.5f, Main.chain30Texture.Height * 0.5f), 1f, SpriteEffects.None, 0f);
 			}
 			return true;
 		}

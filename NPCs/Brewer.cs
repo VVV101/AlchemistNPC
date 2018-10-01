@@ -414,17 +414,23 @@ namespace AlchemistNPC.NPCs
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop) 
 		{
-		if (firstButton)
+			if (firstButton)
             {
                 shop = true;
             }
-		else
+			else
+			{
+				if (npc.FindBuffIndex(119) >= 0 && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
 				{
-					if (npc.FindBuffIndex(119) >= 0 && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
+					for (int k = 0; k < 255; k++)
 					{
-					Main.NewText("A young Brewer is spawned.", 255, 255, 255);
-					NPC.NewNPC((int)npc.Center.X+2, (int)npc.Center.Y, mod.NPCType("Young Brewer"));
+						Player player = Main.player[k];
+						if (player.active)
+						{
+						NPC.SpawnOnPlayer(k, mod.NPCType("Young Brewer"));
+						}
 					}
+				}
 			if (Shop1 && S1A)
 						{
 						Shop2 = true;

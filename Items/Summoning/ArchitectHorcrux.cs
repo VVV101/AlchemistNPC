@@ -30,6 +30,7 @@ namespace AlchemistNPC.Items.Summoning
 			item.useStyle = 4;
 			item.consumable = true;
 			item.UseSound = SoundID.Item37;
+			item.makeNPC = (short)mod.NPCType("Architect");
 		}
 
 		public override bool CanUseItem(Player player)
@@ -37,11 +38,9 @@ namespace AlchemistNPC.Items.Summoning
 			return !NPC.AnyNPCs(mod.NPCType("Architect"));
 		}
 
-		public override bool UseItem(Player player)
+		public override void OnConsumeItem(Player player)
 		{
 			Main.NewText("An Architect is spawned.", 255, 255, 255);
-			NPC.NewNPC((int)player.Center.X+2, (int)player.Center.Y, mod.NPCType("Architect"));
-			return true;
 		}
 	}
 }

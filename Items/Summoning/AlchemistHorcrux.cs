@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
@@ -20,28 +21,28 @@ namespace AlchemistNPC.Items.Summoning
 
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 20;
-			item.maxStack = 30;
-			item.value = 15000;
-			item.rare = 6;
-			item.useAnimation = 30;
-			item.useTime = 30;
-			item.useStyle = 4;
-			item.consumable = true;
-			item.UseSound = SoundID.Item37;
+			item.width = 46;
+            item.height = 42;
+            item.maxStack = 1;
+            item.rare = 10;
+            item.useStyle = 1;
+            item.useAnimation = 15;
+            item.useTime = 15;
+            item.consumable = true;
+            item.noMelee = true;
+            item.noUseGraphic = true;
+            item.UseSound = SoundID.Item37;
+			item.makeNPC = (short)mod.NPCType("Alchemist");
 		}
 
 		public override bool CanUseItem(Player player)
 		{
 			return !NPC.AnyNPCs(mod.NPCType("Alchemist"));
 		}
-
-		public override bool UseItem(Player player)
+		
+		public override void OnConsumeItem(Player player)
 		{
-			Main.NewText("Alchemist is spawned.", 255, 255, 255);
-			NPC.NewNPC((int)player.Center.X+2, (int)player.Center.Y, mod.NPCType("Alchemist"));
-			return true;
+			Main.NewText("An Alchemist is spawned.", 255, 255, 255);
 		}
 	}
 }

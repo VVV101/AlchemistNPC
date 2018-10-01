@@ -49,6 +49,7 @@ namespace AlchemistNPC.NPCs
 		public static int counter = 0;
 		public static int counter2 = 0;
 		public static int counter3 = 0;
+		public static int counter4 = 0;
 		public override void SetDefaults()
 		{
 			npc.CloneDefaults(4);
@@ -84,6 +85,12 @@ namespace AlchemistNPC.NPCs
 			Main.dayTime = false;
 			Main.monolithType = 3;
 			Main.time = 0.0;
+			counter4++;
+			if (npc.life < npc.lifeMax && counter4 >= 2)
+			{
+				npc.life++;
+				counter4 = 0;
+			}
 			if (npc.velocity.X < 0)
 			{
 				npc.rotation = 1.25f;
@@ -98,6 +105,19 @@ namespace AlchemistNPC.NPCs
 			float TPX = npc.position.X + npc.width * 0.5f - player.Center.X;
             float TPY = npc.position.Y + npc.height * 0.5f - player.Center.Y;
             float distance = (float)Math.Sqrt(TPX * TPX + TPY * TPY);
+			if (player.name == "Bill")
+			{
+				if (introduction < 1)
+				{
+				Main.NewText("What? Are you my namesake? Well, I don't want to fight you.", 10, 255, 10);
+				Main.NewText("Here, catch my present! Bye!", 10, 255, 10);
+				player.QuickSpawnItem(mod.ItemType("BillCipherBag"));
+				}
+				npc.boss = false;
+				npc.velocity = new Vector2(0, -10);
+				npc.velocity *= 3f;
+				
+			}
 			if (distance > 2100f && introduction >= 300)
 			{
 				Main.NewText("Don't think that you can hide from me, mortal!", 10, 255, 10);
@@ -127,7 +147,7 @@ namespace AlchemistNPC.NPCs
 				}
 			int damage1 = 200;
 			int damage2 = 150;
-			int damage3 = 400;
+			int damage3 = 250;
 			if (introduction < 300)
 			{
 				npc.dontTakeDamage = true;
@@ -288,7 +308,7 @@ namespace AlchemistNPC.NPCs
 					{
 						delta = new Vector2(0f, 5f);
 					}
-					delta *= 7f;
+					delta *= 6f;
 					float numberProjectiles = 15;
 					float rotation = MathHelper.ToRadians(2);
 					delta += Vector2.Normalize(new Vector2(delta.X, delta.Y)) * 45f;
@@ -308,6 +328,31 @@ namespace AlchemistNPC.NPCs
 					CalamityPlayer.stress = 0;
 					CalamityPlayer.adrenaline = 0;
 				}
+			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).CursedMirror == true)
+			{
+				npc.reflectingProjectiles = true;
+			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).CursedMirror == false)
+			{
+				npc.reflectingProjectiles = false;
+			}
+		}
+		
+		public override void OnHitByItem(Player player, Item item, int damage, float knockback, bool crit)
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Voodoo == true)
+			{
+				player.statLife--;
+			}
+		}
+		
+		public override void OnHitByProjectile(Projectile projectile, int damage, float knockback, bool crit)
+		{
+			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Voodoo == true)
+			{
+				player.statLife--;
 			}
 		}
 		
@@ -393,7 +438,9 @@ namespace AlchemistNPC.NPCs
 			}
 			else
 			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GoldenKnuckles"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WrathOfTheCelestial"));
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GrapplingHookGunItem"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PlatinumCoin, 50);
 			}
 		}
@@ -416,7 +463,7 @@ namespace AlchemistNPC.NPCs
 			}
 			if (player.HeldItem.type == mod.ItemType("LastTantrum"))
 			{
-			damage /= 300;
+			damage /= 250;
 			}
 		return false;
 		}

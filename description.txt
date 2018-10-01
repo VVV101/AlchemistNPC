@@ -49,6 +49,7 @@ Can be bought from Jeweler after beating Skeletron for 15 gold each.
 -Changed prices for some items.
 -Thorium and Spirit buffs can now be toggled by turning of visibility of Autoinjector MK2.
 -Fixed bosses mp desync problem.
+-Fixed town NPCs summoning mp desync problem.
 -Fixed targeting for some "shooting" projectiles.
 -Fixed hitboxes for "Akumu" and Unchained "Akumu" shields.
 -Fixed multiple non-stackeable items consuming on creating Explorer weapons.
@@ -56,6 +57,7 @@ Can be bought from Jeweler after beating Skeletron for 15 gold each.
 -Fixed drop for Charm of Luck. Now will always drop from Wall of Flesh.
 -Fixed Charm of Luck effect worked on consumables.
 -Fixed Old One's Army Treasure Bags availability.
+-Fixed Fabsol being able to drop in non-Revengeance worlds.
 -Nerfed Sasscade and True Sasscade Yo-yos.
 -Some secret stuff.
 v7.4.1

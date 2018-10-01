@@ -42,6 +42,8 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public int fc = 0;
+		public bool Voodoo = false;
+		public bool CursedMirror = false;
 		public bool ShieldBelt = false;
 		public bool MysticAmuletMount = false;
 		public bool TerrarianBlock = false;
@@ -112,6 +114,8 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			CursedMirror = false;
+			Voodoo = false;
 			ShieldBelt = false;
 			MysticAmuletMount = false;
 			Luck = false;

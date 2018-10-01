@@ -33,7 +33,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void ModifyHitPlayer(Player target, ref int damage, ref bool crit)
 		{
-			target.AddBuff(mod.BuffType("Petrified"), 20);
+			target.AddBuff(mod.BuffType("Petrified"), 10);
 		}
 	}
 }
