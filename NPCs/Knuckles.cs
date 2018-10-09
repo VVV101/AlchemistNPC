@@ -343,13 +343,10 @@ namespace AlchemistNPC.NPCs
 				}
 			}
 		}
-		public override void OnHitPlayer(Player target, int damage, bool crit)
-		{
-		target.AddBuff(mod.BuffType("Uganda"), 1200);
-		}
 		
 		public override void ModifyHitPlayer(Player player, ref int damage, ref bool crit)
 		{
+			player.AddBuff(mod.BuffType("TrueUganda"), 1200);
 			if (player.statDefense > 250 || player.endurance > 0.50f || player.statLifeMax2 > 1300)
 			{
 			damage = 666666;

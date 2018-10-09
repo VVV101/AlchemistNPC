@@ -49,10 +49,15 @@ namespace AlchemistNPC.Tiles
 			frameCounter = Main.tileFrameCounter[TileID.FireflyinaBottle];
 		}
 		
+		public override void PlaceInWorld(int i, int j, Item item) 	
+		{
+			counter = 0;
+		}
+		
 		public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref Color drawColor, ref int nextSpecialDrawIndex) 	
 		{
 			counter++;
-			if (counter == 40)
+			if (counter == 60)
 			{
 			Projectile.NewProjectile((i + 1.5f) * 16f, (j + 1.5f) * 16f, 0f, 0f, mod.ProjectileType("HealingPulse"), 0, 10f, Main.myPlayer, 0f, 0f);
 			counter = 0;

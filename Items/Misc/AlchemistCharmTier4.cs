@@ -18,10 +18,11 @@ namespace AlchemistNPC.Items.Misc
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Alchemist Charm Tier 4");
-			Tooltip.SetDefault("While placed in inventory, you have very high chance not to consume potion"
+			Tooltip.SetDefault("While this is in your inventory, you have a very high chance not to consume potion"
+			+"\nAllows to use potions from Piggy Bank by Quick Buff"
 			+"\nMakes potions to not consume if Supreme Calamitas is defeated");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Тир 4");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет очень большой шанс не потратить зелье\nЗелья не будут тратиться, если побеждена Supreme Calamitas");
+            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет очень большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nЗелья не будут тратиться, если побеждена Supreme Calamitas");
         }
 
 		public override void SetDefaults()
@@ -35,6 +36,7 @@ namespace AlchemistNPC.Items.Misc
 		public override void UpdateInventory(Player player)
 		{
 		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier4 = true;
+		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DistantPotionsUse = true;
 		}
 		
 		public override void AddRecipes()

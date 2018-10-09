@@ -184,7 +184,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "如果你想得到我研究成果的一部分, 就拿起笔记然后看看你能不能帮忙. 所有的成果都归你!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE6");
-            text.SetDefault("Lucklly, I get my Interdimensional Casket with me, so I can make potions, which were invented by me.");
+            text.SetDefault("Luckily, I get my Interdimensional Casket with me, so I can make potions, which were invented by me.");
             text.AddTranslation(GameCulture.Russian, "Хорошо, что я забрала Межизмеренческую Шкатулку с собой, так что я могу делать изобретённые мной зелья.");
             text.AddTranslation(GameCulture.Chinese, "运气不错, 我带着我的次元盒, 所以我可以制作药水, 由我发明的药水");
             mod.AddTranslation(text);
@@ -194,7 +194,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "始源碎片十分的有趣...你可以用他们制造一些特殊的饰品和装备或者是天界碎片");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE8");
-            text.SetDefault("If you already found Otherworldly Amulet, then you can make ");
+            text.SetDefault("If you already found the Otherworldly Amulet, then you can make ");
             text.AddTranslation(GameCulture.Russian, "Если ты уже нашёл Амулет Иного Мира, то тогда сможешь сделать так, чтобы ");
             text.AddTranslation(GameCulture.Chinese, "如果你已经找到了异界护身符, 你就可以让 ");
             mod.AddTranslation(text);

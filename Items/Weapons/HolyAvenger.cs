@@ -55,7 +55,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Muramasa);
-			item.damage = 16;
+			item.damage = 12;
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
@@ -76,7 +76,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 15;
 			if (NPC.downedSlimeKing)
 			{
-				item.damage = 18;
+				item.damage = 16;
 			}
 			if (NPC.downedBoss1)
 			{

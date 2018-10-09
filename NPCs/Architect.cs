@@ -256,9 +256,9 @@ namespace AlchemistNPC.NPCs
 			animationType = NPCID.Guide;
         }
 		
-public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
-            if (numTownNPCs >= 5 && NPC.downedBoss2)
+            if (numTownNPCs >= 5 && NPC.downedBoss2 && Config.ArchitectSpawn)
                 {
                  return true;
                 }

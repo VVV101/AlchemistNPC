@@ -84,7 +84,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Анджела");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO1");
-            text.SetDefault("How are you day, Manager? Can I help you?");
+            text.SetDefault("How is your day, Manager? Can I help you?");
             text.AddTranslation(GameCulture.Russian, "Как ваш день, Управляющий? Могу я помочь вам?");
             text.AddTranslation(GameCulture.Chinese, "您好吗, 主管, 我能为您做什么?");
             mod.AddTranslation(text);
@@ -94,7 +94,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "那个'大雷鸟'看起来并不怎么危险. 我只希望它不是天启鸟的一部分...");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO3");
-            text.SetDefault("Hello, Manager! Isn't this day silent, does it?");
+            text.SetDefault("Hello, Manager! Isn't this day silent, is it?");
             text.AddTranslation(GameCulture.Russian, "Приветствую, Управляющий! Тихий сегодня денёк, не правда ли?");
             text.AddTranslation(GameCulture.Chinese, "您好, 主管! 今天真安静, 不是么?");
             mod.AddTranslation(text);
@@ -104,7 +104,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "您想要什么特别的东西吗, 主管?");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO5");
-            text.SetDefault("Eater of Worlds is Abnomality with risk class TETH. And now it is contained. Do you need something from it?");
+            text.SetDefault("Eater of Worlds is an Abnormality with risk class TETH. And now it is contained. Do you need something from it?");
             text.AddTranslation(GameCulture.Russian, "Пожиратель Миров - это аномалия с уровнем угрозы TETH. Теперь он захвачен. Нужно ли вам что-нибудь от него?");
             text.AddTranslation(GameCulture.Chinese, "世界吞噬者为异常, 危险等级: TETH. 现在它已经被写入了. 您需要些来自它的物品吗?");
             mod.AddTranslation(text);
@@ -114,7 +114,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "如果您成功阻止诸神黄昏, 那么您可以做您想做的一切.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO7");
-            text.SetDefault("Eye of Cthtulhu is pretty strange creature. It seems like it is just a small part of something really dangerous. It would be better for us if it never escapes.");
+            text.SetDefault("Eye of Cthulhu is a pretty strange creature. It seems like it is just a small part of something really dangerous. It would be better for us if it never escapes.");
             text.AddTranslation(GameCulture.Russian, "Глаз Ктулху - довольно странное создание. Похоже, что он является малой частью чего-то по настоящему опасного. Лучше никогда не позволяйте ему сбежать.");
             text.AddTranslation(GameCulture.Chinese, "克苏鲁之眼是个特别奇怪的生物. 它看起来像是个十分危险的东西的一部分. 如果它没有逃跑对我们来说更好.");
             mod.AddTranslation(text);
@@ -282,7 +282,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss2)
+			if (NPC.downedBoss2 && Config.OperatorSpawn)
 			{
 			return true;
 			}

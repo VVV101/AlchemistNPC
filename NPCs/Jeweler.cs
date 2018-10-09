@@ -169,7 +169,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss1)
+			if (NPC.downedBoss1 && Config.JewelerSpawn)
 			{
 			return true;
 			}
@@ -595,6 +595,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 150000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ArchitectHorcrux"));
+				shop.item[nextSlot].shopCustomPrice = 150000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("MusicianHorcrux"));
 				shop.item[nextSlot].shopCustomPrice = 150000;
 				nextSlot++;
 				}

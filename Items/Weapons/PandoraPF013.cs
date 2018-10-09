@@ -18,11 +18,11 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("'A weapon of the underworld, capable of 666 different forms'"
 			+"\nFixed Pandora with unlocked damaging potential"
 			+"\nLaunches 2 heavy damaging homing rockets."
-			+"\nAttacking raises Disaster LV"
-			+"\nLV3 allows to change weapon"
+			+"\nAttacking raises Disaster Gauge"
+			+"\n500 allows to change weapon"
 			+"\nRight click to change form");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пандора (Форма 013)");
-            Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nЗапускает 2 мощных самонаводящихся ракеты\nПри наборе 3-го уровня Бедствия, вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");
+            Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nЗапускает 2 мощных самонаводящихся ракеты\nПри наборе полной шкалы Бедствия вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF013)");
         }
@@ -45,27 +45,6 @@ namespace AlchemistNPC.Items.Weapons
 			item.autoReuse = true;
 			item.shoot = 340;
 			item.shootSpeed = 32f;
-		}
-		
-		public override void HoldItem(Player player)
-		{
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Pandora = true;
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 160)
-			{
-			player.AddBuff(mod.BuffType("DisasterLV0"), 2);
-			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 160 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 320)
-			{
-			player.AddBuff(mod.BuffType("DisasterLV1"), 2);
-			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 320 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 480)
-			{
-			player.AddBuff(mod.BuffType("DisasterLV2"), 2);
-			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 480)
-			{
-			player.AddBuff(mod.BuffType("DisasterLV3"), 2);
-			}
 		}
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -96,11 +75,11 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				return true;
 			}
-			if (player.altFunctionUse == 2 && player.HasBuff(mod.BuffType("DisasterLV3")) == false)
+			if (player.altFunctionUse == 2 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge < 500)
 			{
 				return false;
 			}
-			if (player.altFunctionUse == 2 && player.HasBuff(mod.BuffType("DisasterLV3")))
+			if (player.altFunctionUse == 2 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge >= 500)
 			{
 				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge = 0;
 				item.SetDefaults(mod.ItemType("PandoraPF124"));

@@ -28,7 +28,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.damage = 369;
 			item.noMelee = true;
 			item.magic = true;
-			item.mana = 15;
+			item.mana = 10;
 			item.rare = 11;
 			item.width = 40;
 			item.height = 40;
@@ -51,13 +51,13 @@ namespace AlchemistNPC.Items.Weapons
 			Vector2 perturbedSpeed4 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
 			Vector2 perturbedSpeed5 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
 			Vector2 perturbedSpeed6 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage*10, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed1.X, perturbedSpeed1.Y, type, damage*10, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed2.X, perturbedSpeed2.Y, type, damage*10, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed3.X, perturbedSpeed3.Y, type, damage*10, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed4.X, perturbedSpeed4.Y, type, damage*10, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed5.X, perturbedSpeed5.Y, type, damage*10, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed6.X, perturbedSpeed6.Y, type, damage*10, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage*4, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed1.X, perturbedSpeed1.Y, type, damage*4, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed2.X, perturbedSpeed2.Y, type, damage*4, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed3.X, perturbedSpeed3.Y, type, damage*4, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed4.X, perturbedSpeed4.Y, type, damage*4, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed5.X, perturbedSpeed5.Y, type, damage*4, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, perturbedSpeed6.X, perturbedSpeed6.Y, type, damage*4, knockBack, player.whoAmI);
 			return false;
 		}
 	}

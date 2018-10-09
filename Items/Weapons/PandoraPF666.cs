@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("'A weapon of the underworld, capable of 666 different forms'"
 			+"\nFixed Pandora with unlocked damaging potential"
 			+"\nSpecial attack #2 (Released Energy)"
-			+"\nAttack depletes Disaster gauge"
+			+"\nAttack depletes Disaster Gauge"
 			+"\nRight click to change special attack");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пандора (Форма 666)");
             Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nСпециальная Атака №2 (Высвобождение энергии)\nАтака опусташает шкалу Бедствия\nНажмите правую кнопку мыши для смены специальной атаки");
@@ -34,8 +34,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.crit = 100;
 			item.width = 56;
 			item.height = 30;
-			item.useTime = 90;
-			item.useAnimation = 90;
+			item.useTime = 40;
+			item.useAnimation = 40;
 			item.noMelee = true;
 			item.knockBack = 8;
 			item.rare = 12;
@@ -49,7 +49,6 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void HoldItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("DisasterLV3"), 2);
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge = 500;
 		}
 

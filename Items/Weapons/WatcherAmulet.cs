@@ -29,12 +29,12 @@ namespace AlchemistNPC.Items.Weapons
         }    
 		public override void SetDefaults()
 		{
-			item.damage = 500;
+			item.damage = 250;
 			item.mana = 100;
 			item.width = 32;
 			item.height = 32;
-			item.useTime = 10;
-			item.useAnimation = 10;
+			item.useTime = 30;
+			item.useAnimation = 30;
 			item.useStyle = 1;
 			item.noUseGraphic = true;
 			item.noMelee = true;
@@ -82,15 +82,15 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			Vector2 SPos = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
 			position = SPos;
-			for (int l = 0; l < Main.projectile.Length; l++)
+			if (player.ownedProjectileCounts[mod.ProjectileType("WatcherCrystal")] < player.maxTurrets)
 			{
-				Projectile proj = Main.projectile[l];
-				if (proj.active && proj.type == item.shoot && proj.owner == player.whoAmI)
-				{
-					proj.active = false;
-				}
+				return true;
 			}
-			return player.altFunctionUse != 2;
+			else
+			{
+				return false;
+			}
+			return false;
 		}
 	}
 }

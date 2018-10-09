@@ -139,6 +139,35 @@ namespace AlchemistNPC.Items
 			return true;
 		}
 		
+		private void BluemagicGodmode(Player player)
+        {
+			Bluemagic.BluemagicPlayer BluemagicPlayer = player.GetModPlayer<Bluemagic.BluemagicPlayer>(Bluemagic);
+			BluemagicPlayer.godmode = false;
+        }
+		private readonly Mod Bluemagic = ModLoader.GetMod("Bluemagic");
+		
+		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+		{
+			if (ModLoader.GetLoadedMods().Contains("Bluemagic"))
+			{
+				if (item.type == (ModLoader.GetMod("Bluemagic").ItemType("RainbowStar")) && NPC.AnyNPCs(mod.NPCType("BillCipher")))
+				{
+				BluemagicGodmode(player);
+				player.endurance -= 1f;
+				player.statDefense -= 1337;
+				}
+			}
+		}
+		
+		public override bool ConsumeAmmo(Item item, Player player)
+		{
+			if (player.HasBuff(mod.BuffType("DemonSlayer")))
+			{
+			return Main.rand.NextFloat() >= .25f;
+			}
+			return true;
+		}
+		
 		public override float UseTimeMultiplier(Item item, Player player)	
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Symbiote == true)
@@ -154,6 +183,10 @@ namespace AlchemistNPC.Items
 		
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			if (player.HasBuff(mod.BuffType("DemonSlayer")) && item.thrown && Main.rand.Next(3) == 0)
+			{
+				Projectile.NewProjectile(position.X, position.Y-12, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Rampage == true && type == 14)
 			{
 				type = mod.ProjectileType("Chloroshard");
@@ -757,7 +790,13 @@ namespace AlchemistNPC.Items
 				player.QuickSpawnItem(mod.ItemType("somebody0214Hood"));
 				player.QuickSpawnItem(mod.ItemType("somebody0214Robe"));
 			}
-			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(300) == 0)
+			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(250) == 0)
+			{
+				player.QuickSpawnItem(mod.ItemType("BloodMoonCirclet"));
+				player.QuickSpawnItem(mod.ItemType("BloodMoonDress"));
+				player.QuickSpawnItem(mod.ItemType("BloodMoonStockings"));
+			}
+			if (NPC.downedMoonlord && context == "bossBag" && Main.rand.Next(300) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("StrangeTopHat"));
 			}
@@ -779,6 +818,14 @@ namespace AlchemistNPC.Items
 			{
 			speed *= 0.8f;
 			acceleration *= 0.8f;
+			}
+		}
+		
+		public override bool CloneNewInstances
+		{
+			get
+			{
+				return true;
 			}
 		}
 		

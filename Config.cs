@@ -20,7 +20,8 @@ namespace AlchemistNPC
 		public static bool YoungBrewerSpawn = true;
 		public static bool OperatorSpawn = true;
 		public static bool ExplorerSpawn = true;
-        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv741.json");
+		public static bool MusicianSpawn = true;
+        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv75.json");
         static Preferences Configuration = new Preferences(ConfigPath);
 
         public static void Load()
@@ -90,6 +91,10 @@ namespace AlchemistNPC
 			{
             ExplorerSpawn = true;
 			}
+			if(MusicianSpawn != true && MusicianSpawn != false)
+			{
+            MusicianSpawn = true;
+			}
 			Configuration.Get<bool>("StartMessage", ref Config.StartMessage);
 			return true;
 			}
@@ -114,6 +119,7 @@ namespace AlchemistNPC
 			Configuration.Put("YoungBrewerSpawn", YoungBrewerSpawn);
 			Configuration.Put("OperatorSpawn", OperatorSpawn);
 			Configuration.Put("ExplorerSpawn", ExplorerSpawn);
+			Configuration.Put("MusicianSpawn", MusicianSpawn);
             Configuration.Save(true);
         }
     }

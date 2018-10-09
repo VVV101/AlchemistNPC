@@ -1,10 +1,38 @@
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Terraria;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using ReLogic.Utilities;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using Terraria.Audio;
+using Terraria.DataStructures;
+using Terraria.Enums;
+using Terraria.GameContent;
+using Terraria.GameContent.Achievements;
+using Terraria.GameContent.Events;
+using Terraria.GameContent.Tile_Entities;
+using Terraria.GameContent.UI;
+using Terraria.GameInput;
+using Terraria.Graphics.Capture;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
 using Terraria.ID;
-using Terraria.ModLoader;
+using Terraria.IO;
 using Terraria.Localization;
+using Terraria.ObjectData;
+using Terraria.Social;
+using Terraria.UI;
+using Terraria.UI.Chat;
+using Terraria.UI.Gamepad;
+using Terraria.Utilities;
+using Terraria.World.Generation;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 namespace AlchemistNPC.NPCs
 {
@@ -32,6 +60,7 @@ namespace AlchemistNPC.NPCs
 			return true;
 		}
 
+		public bool cheat = false;
 		public bool i1 = false;
 		public bool i2 = false;
 		public bool i3 = false;
@@ -179,7 +208,7 @@ namespace AlchemistNPC.NPCs
 					npc.lifeMax = 500;
 				}
 			}
-			if (npc.type == mod.NPCType("Alchemist") || npc.type == mod.NPCType("Brewer") || npc.type == mod.NPCType("Young Brewer") || npc.type == mod.NPCType("Jeweler") || npc.type == mod.NPCType("Architect"))
+			if (npc.type == mod.NPCType("Alchemist") || npc.type == mod.NPCType("Brewer") || npc.type == mod.NPCType("Young Brewer") || npc.type == mod.NPCType("Jeweler") || npc.type == mod.NPCType("Architect") || npc.type == mod.NPCType("Musician"))
 			{
 				if (NPC.downedMoonlord)
 				{
@@ -235,6 +264,11 @@ namespace AlchemistNPC.NPCs
 			{
 				Main.npcCatchable[npc.type] = true;
 				npc.catchItem = (short)mod.ItemType("RealityPiercer");
+			}
+			if (npc.type == mod.NPCType("Musician"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("MusicianHorcrux");
 			}
 		}
 
@@ -428,13 +462,13 @@ namespace AlchemistNPC.NPCs
 			}
 			if (npc.FindBuffIndex(mod.BuffType("ArmorDestruction")) >= 0)
 			{
-				if (Main.rand.Next(4) < 3)
+				if (Main.rand.Next(4) < 2)
 				{
 					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, mod.DustType("BastScroll"), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 3.5f);
 					Main.dust[dust].noGravity = true;
 					Main.dust[dust].velocity *= 1.8f;
 					Main.dust[dust].velocity.Y -= 0.5f;
-					if (Main.rand.Next(4) == 0)
+					if (Main.rand.Next(3) == 0)
 					{
 						Main.dust[dust].noGravity = false;
 						Main.dust[dust].scale *= 0.5f;
@@ -454,13 +488,13 @@ namespace AlchemistNPC.NPCs
 			}
 			if (justitiapale)
 			{
-				if (Main.rand.Next(4) < 3)
+				if (Main.rand.Next(4) < 2)
 				{
 					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, mod.DustType("JustitiaPale"), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 3.5f);
 					Main.dust[dust].noGravity = true;
 					Main.dust[dust].velocity *= 1.8f;
 					Main.dust[dust].velocity.Y -= 0.5f;
-					if (Main.rand.Next(4) == 0)
+					if (Main.rand.Next(3) == 0)
 					{
 						Main.dust[dust].noGravity = false;
 						Main.dust[dust].scale *= 0.5f;
@@ -469,28 +503,28 @@ namespace AlchemistNPC.NPCs
 			}
 			if (electrocute)
 			{
-				if (Main.rand.Next(4) < 3)
+				if (Main.rand.Next(4) < 2)
 				{
 					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, mod.DustType("Electrocute"), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 3.5f);
 					Main.dust[dust].noGravity = true;
 					Main.dust[dust].velocity *= 1.8f;
 					Main.dust[dust].velocity.Y -= 0.5f;
-					if (Main.rand.Next(8) == 0)
+					if (Main.rand.Next(4) == 0)
 					{
 						Main.dust[dust].noGravity = true;
-						Main.dust[dust].scale *= 0.8f;
+						Main.dust[dust].scale *= 0.6f;
 					}
 				}
 			}
 			if (twilight)
 			{
-				if (Main.rand.Next(4) < 3)
+				if (Main.rand.Next(4) < 2)
 				{
 					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, mod.DustType("JustitiaPale"), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 3.5f);
 					Main.dust[dust].noGravity = true;
 					Main.dust[dust].velocity *= 1.8f;
 					Main.dust[dust].velocity.Y -= 0.5f;
-					if (Main.rand.Next(4) == 0)
+					if (Main.rand.Next(3) == 0)
 					{
 						Main.dust[dust].noGravity = false;
 						Main.dust[dust].scale *= 0.5f;
@@ -559,23 +593,23 @@ namespace AlchemistNPC.NPCs
 
 		public override void NPCLoot(NPC npc)
 		{
-			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WailOfBanshee"));
 				}
-			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ExecutionersEyes"));
 				}
-			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SymbolOfPain"));
 				}
-			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MeteorSwarm"));
 				}
-			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(20) == 0)
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CloakOfFear"));
 				}
@@ -1034,7 +1068,7 @@ namespace AlchemistNPC.NPCs
 					}
 					else
 					{
-						Main.NewText("You dared summon me? This is going to be fun!", 10, 255, 10);	
+						Main.NewText("You dared summon me? This is going to be fun!", 10, 255, 10);
 					}
 					start = true;
 				}

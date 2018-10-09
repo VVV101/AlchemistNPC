@@ -28,12 +28,16 @@ namespace AlchemistNPC.Projectiles
 		{
 			projectile.velocity *= 1.2f;
 			projectile.velocity *= 1.02f;
+			if (projectile.rotation >= 10f)
+			{
+				projectile.rotation = 1f;
+			}
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 		target.immune[projectile.owner] = 2;
-		projectile.rotation *= 1.1f;
+		projectile.rotation++;
 		}
 	}
 }

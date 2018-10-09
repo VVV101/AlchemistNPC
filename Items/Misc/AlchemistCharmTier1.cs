@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Misc
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Alchemist Charm Tier 1");
-			Tooltip.SetDefault("While placed in inventory, you have low chance not to consume potion");
+			Tooltip.SetDefault("While this is in your inventory, you have a low chance not to consume potion");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Тир 1");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет малый шанс не потратить зелье");
         }

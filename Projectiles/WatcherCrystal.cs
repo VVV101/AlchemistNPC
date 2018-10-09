@@ -34,7 +34,6 @@ namespace AlchemistNPC.Projectiles
 	
         public override void AI()
         {
-            
 			{
 			Player player = Main.player[projectile.owner];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
@@ -57,14 +56,13 @@ namespace AlchemistNPC.Projectiles
 
                 if (distance < 520f && target.catchItem == 0 && !target.friendly && target.active && target.type != 488)
                 {
-                    if (projectile.ai[0] > 45f) // Time in (60 = 1 second) 
+                    if (projectile.ai[0] > 60f) // Time in (60 = 1 second) 
                     {
                         distance = 1.6f / distance;
 
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
-                        int damage = 500; 
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, 617, damage, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, 617, projectile.damage, 0, Main.myPlayer, 0f, 0f);
                         projectile.ai[0] = 0f;
                     }
                 }

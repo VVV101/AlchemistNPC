@@ -41,31 +41,55 @@ namespace AlchemistNPC.Items.Weapons
 				item.magic = false;
 				item.ranged = true;
 				item.damage = 18;
+				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+				{
+					item.damage = 36;
+				}
 			}
 			else
 			{
 				item.UseSound = SoundID.Item12;
 				item.mana = 5;
-				item.useAnimation = 12;
-				item.useTime = 4;
-				item.reuseDelay = 14;
+				item.useAnimation = 18;
+				item.useTime = 6;
+				item.reuseDelay = 20;
 				item.shoot = 88;
 				item.useAmmo = 0;
 				item.ranged = false;
 				item.magic = true;
 				item.damage = 25;
+				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
+				{
+					item.damage = 100;
+				}
 			}
 			return base.CanUseItem(player);
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (player.altFunctionUse == 2)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 			{
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
+				if (player.altFunctionUse == 2)
+				{
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage*2, knockBack, player.whoAmI);
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage*2, knockBack, player.whoAmI);
+				}
+				else
+				{
+					Projectile.NewProjectile(position.X, position.Y-6, speedX, speedY, type, damage*2, knockBack, player.whoAmI);
+					Projectile.NewProjectile(position.X, position.Y+6, speedX, speedY, type, damage*2, knockBack, player.whoAmI);
+				}
 			}
-			else
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == false)
 			{
+				if (player.altFunctionUse == 2)
+				{
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
+				}
+				else
+				{
+				}
 			}
 			return true;
 		}

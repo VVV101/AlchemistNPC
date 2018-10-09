@@ -50,13 +50,14 @@ namespace AlchemistNPC.NPCs
 		public static int counter2 = 0;
 		public static int counter3 = 0;
 		public static int counter4 = 0;
+		public static int counter5 = 0;
 		public override void SetDefaults()
 		{
 			npc.CloneDefaults(4);
-			npc.boss = true;
+			npc.boss = false;
 			npc.width = 82;
 			npc.height = 70;
-			npc.damage = 1000;
+			npc.damage = 800;
 			npc.defense = 20;
 			npc.lifeMax = 333333;
 			npc.HitSound = SoundID.NPCHit1;
@@ -82,6 +83,8 @@ namespace AlchemistNPC.NPCs
 		
 		public override void AI()
 		{
+			npc.boss = true;
+			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
 			Main.dayTime = false;
 			Main.monolithType = 3;
 			Main.time = 0.0;
@@ -101,7 +104,59 @@ namespace AlchemistNPC.NPCs
 				npc.rotation = -1.25f;
 				npc.spriteDirection = 1;
 			}
-			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+			if (introduction >= 300)
+			{
+				counter5++;
+				if (counter5 == 1)
+				{
+					Vector2 delta = player.Center - npc.Center;
+					float magnitude = (float)Math.Sqrt(delta.X * delta.X + delta.Y * delta.Y);
+					if (magnitude > 0)
+					{
+						delta *= (5f / magnitude);
+					}
+					else
+					{
+						delta = new Vector2(0f, 5f);
+					}
+					delta *= 2f;
+					npc.velocity = delta;
+				}
+				if (counter5 == 60)
+				{
+					Vector2 delta = player.Center - npc.Center;
+					float magnitude = (float)Math.Sqrt(delta.X * delta.X + delta.Y * delta.Y);
+					if (magnitude > 0)
+					{
+						delta *= (5f / magnitude);
+					}
+					else
+					{
+						delta = new Vector2(0f, 5f);
+					}
+					delta *= 2f;
+					npc.velocity = delta;
+				}
+				if (counter5 == 120)
+				{
+					Vector2 delta = player.Center - npc.Center;
+					float magnitude = (float)Math.Sqrt(delta.X * delta.X + delta.Y * delta.Y);
+					if (magnitude > 0)
+					{
+						delta *= (5f / magnitude);
+					}
+					else
+					{
+						delta = new Vector2(0f, 5f);
+					}
+					delta *= 2f;
+					npc.velocity = delta;
+				}
+				if (counter5 == 600)
+				{
+				counter5 = 0;
+				}
+			}
 			float TPX = npc.position.X + npc.width * 0.5f - player.Center.X;
             float TPY = npc.position.Y + npc.height * 0.5f - player.Center.Y;
             float distance = (float)Math.Sqrt(TPX * TPX + TPY * TPY);
@@ -118,7 +173,7 @@ namespace AlchemistNPC.NPCs
 				npc.velocity *= 3f;
 				
 			}
-			if (distance > 2100f && introduction >= 300)
+			if (distance > 2500f && introduction >= 300)
 			{
 				Main.NewText("Don't think that you can hide from me, mortal!", 10, 255, 10);
 				switch(Main.rand.Next(2))
@@ -131,7 +186,7 @@ namespace AlchemistNPC.NPCs
 					break;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 				{
 				player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AbyssalShell")] = true;
 				npc.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AParalyzed")] = true;
@@ -173,7 +228,7 @@ namespace AlchemistNPC.NPCs
 							delta = new Vector2(0f, 5f);
 						}
 						delta *= 4f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 800, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 500, 0, Main.myPlayer);
 					}
 					if (counter >= 20)
 					{
@@ -249,13 +304,13 @@ namespace AlchemistNPC.NPCs
 					Vector2 delta5 = delta.RotatedByRandom(MathHelper.ToRadians(15));
 					Vector2 delta6 = delta.RotatedByRandom(MathHelper.ToRadians(10));
 					Vector2 delta7 = delta.RotatedByRandom(MathHelper.ToRadians(10));
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 800, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 500, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta2.X, delta2.Y, 100, damage2, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta3.X, delta3.Y, 100, damage2, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta4.X, delta4.Y, 100, damage2, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta5.X, delta5.Y, 100, damage2, 0, Main.myPlayer);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 800, 0, Main.myPlayer);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 800, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 500, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 500, 0, Main.myPlayer);
 				}
 				counter++;
 			}
@@ -337,6 +392,12 @@ namespace AlchemistNPC.NPCs
 			{
 				npc.reflectingProjectiles = false;
 			}
+		}
+		
+		public override void ModifyHitPlayer(Player player, ref int damage, ref bool crit)
+		{
+		player.buffImmune[mod.BuffType("MindBurn")] = false;
+		player.AddBuff(mod.BuffType("MindBurn"), 1200);
 		}
 		
 		public override void OnHitByItem(Player player, Item item, int damage, float knockback, bool crit)
@@ -440,8 +501,14 @@ namespace AlchemistNPC.NPCs
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GoldenKnuckles"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WrathOfTheCelestial"));
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserCannon"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GrapplingHookGunItem"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PlatinumCoin, 50);
+			}
+			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BillIsDowned < 1)
+			{
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BillIsDowned++;
 			}
 		}
 		

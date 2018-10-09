@@ -52,8 +52,7 @@ namespace AlchemistNPC.Buffs
 			player.dangerSense = true;
 			player.endurance += 0.1f;
 			player.lifeForce = true;
-            player.statLifeMax2 += player.statLifeMax / 5;
-			player.statLifeMax2 -= 50;
+            player.statLifeMax2 += player.statLifeMax / 10;
 			player.lifeMagnet = true;
 			player.calmed = true;
 			player.discount = true;

@@ -34,7 +34,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			Player player = Main.player[projectile.owner];
 			projectile.position.X = player.Center.X;
-			projectile.position.Y = player.Center.Y - 80;
+			projectile.position.Y = player.Center.Y - 100;
 			if (++projectile.frameCounter >= 10)
             {
                 projectile.frameCounter = 0;

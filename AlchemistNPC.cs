@@ -54,8 +54,8 @@ namespace AlchemistNPC
 		Instance = this;
 		Config.Load();
             //SBMW:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language, first load after build mod may not work 
-            string LampLightToggle = Language.GetTextValue("Mods.AlchemistNPC.LampLightToggle");
-            string DiscordBuffTeleportation = Language.GetTextValue("Mods.AlchemistNPC.DiscordBuffTeleportation");
+            string LampLightToggle = Language.GetTextValue("Lamp Light Toggle");
+            string DiscordBuffTeleportation = Language.GetTextValue("Discord Buff Teleportation");
             LampLight = RegisterHotKey(LampLightToggle, "L");
             DiscordBuff = RegisterHotKey(DiscordBuffTeleportation, "Q");
 		if (!Main.dedServ)
@@ -85,7 +85,7 @@ namespace AlchemistNPC
 		
 		public static string ConfigFileRelativePath 
 		{
-		get { return "Mod Configs/Alchemistv741.json"; }
+		get { return "Mod Configs/Alchemistv75.json"; }
 		}
 
 		public static void ReloadConfigFromFile() 
@@ -104,6 +104,7 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().Fuaran = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().KeepBuffs = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().WellFed = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BillIsDowned = reader.ReadInt32();
 					break;
 				case AlchemistNPCMessageType.TeleportPlayer:
 					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);

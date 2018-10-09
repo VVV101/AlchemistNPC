@@ -36,28 +36,16 @@ namespace AlchemistNPC.Items.Equippable
 			projectile.height = 22;
 		}
 
-		public override bool? CanUseGrapple(Player player)
-		{
-			int hooksOut = 0;
-			for (int l = 0; l < 5; l++)
-			{
-				if (Main.projectile[l].active && Main.projectile[l].owner == Main.myPlayer && Main.projectile[l].type == projectile.type)
-				{
-					hooksOut++;
-				}
-			}
-			if (hooksOut > 0)
-			{
-				return false;
-			}
-			return true;
-		}
-
 		public override float GrappleRange()
 		{
 			return 900f;
 		}
 
+		public override bool? SingleGrappleHook(Player player)
+		{
+			return true;
+		}
+		
 		public override void NumGrappleHooks(Player player, ref int numHooks)
 		{
 			numHooks = 1;
@@ -65,7 +53,7 @@ namespace AlchemistNPC.Items.Equippable
 
 		public override void GrappleRetreatSpeed(Player player, ref float speed)
 		{
-			speed = 28f;
+			speed = 56f;
 		}
 
 		public override void GrapplePullSpeed(Player player, ref float speed)

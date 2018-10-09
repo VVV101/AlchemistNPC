@@ -7,6 +7,7 @@ using ReLogic.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
+using AlchemistNPC.Interface;
 
 namespace AlchemistNPC.Interface
 {
@@ -29,7 +30,7 @@ namespace AlchemistNPC.Interface
 
 		private static bool DrawShieldBar()
 		{
-			int anchorX = Main.screenWidth / 2 - 100;
+			int anchorX = Main.screenWidth / 2 - 175;
 			Player player = Main.player[Main.myPlayer];
 			if (player.ghost)
 			{
@@ -52,19 +53,19 @@ namespace AlchemistNPC.Interface
 			string maxText = "Shield Charge: " + 150 + "/" + 150;
 			Vector2 maxTextSize = font.MeasureString(maxText);
 			Color textColor = new Color(Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor);
-			Main.spriteBatch.DrawString(font, "Shield Charge:", new Vector2(anchorX + barSize / 2 - maxTextSize.X / 2f, 6f), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
-			Main.spriteBatch.DrawString(font, chargeText, new Vector2(anchorX + barSize / 2 + maxTextSize.X / 2f, 6f), textColor, 0f, new Vector2(font.MeasureString(chargeText).X, 0f), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.DrawString(font, "Shield Charge:", new Vector2(anchorX + barSize / 2 - maxTextSize.X / 2f, 42f), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.DrawString(font, chargeText, new Vector2(anchorX + barSize / 2 + maxTextSize.X / 2f, 42f), textColor, 0f, new Vector2(font.MeasureString(chargeText).X, 0f), 1f, SpriteEffects.None, 0f);
 
 			float fill = Shield / 150;
-			Main.spriteBatch.Draw(mod.GetTexture("ShieldBar"), new Vector2(anchorX, 32f), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
-			Main.spriteBatch.Draw(mod.GetTexture("ShieldCharge"), new Vector2(anchorX + padding, 32f + padding), new Rectangle(0, 0, (int)(fill * chargeSize), chargeHeight), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.Draw(mod.GetTexture("Interface/ShieldBar"), new Vector2(anchorX, 64f), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.Draw(mod.GetTexture("Interface/ShieldCharge"), new Vector2(anchorX + padding, 64f + padding), new Rectangle(0, 0, (int)(fill * chargeSize), chargeHeight), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
 
 			return true;
 		}
 		
 		private static bool DrawDisasterBar()
 		{
-			int anchorX = Main.screenWidth / 2 + 100;
+			int anchorX = Main.screenWidth / 2 + 175;
 			Player player = Main.player[Main.myPlayer];
 			if (player.ghost)
 			{
@@ -72,7 +73,7 @@ namespace AlchemistNPC.Interface
 			}
 			Mod mod = AlchemistNPC.Instance;
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
-			if (!player.HasBuff(mod.BuffType("DisasterLV0")) && !player.HasBuff(mod.BuffType("DisasterLV1")) && !player.HasBuff(mod.BuffType("DisasterLV2")) && !player.HasBuff(mod.BuffType("DisasterLV3")))
+			if (player.HeldItem.type != mod.ItemType("Pandora") && player.HeldItem.type != mod.ItemType("PandoraPF013") && player.HeldItem.type != mod.ItemType("PandoraPF124") && player.HeldItem.type != mod.ItemType("PandoraPF262") && player.HeldItem.type != mod.ItemType("PandoraPF398") && player.HeldItem.type != mod.ItemType("PandoraPF594") && player.HeldItem.type != mod.ItemType("PandoraPF666"))
 			{
 				return true;
 			}
@@ -87,12 +88,12 @@ namespace AlchemistNPC.Interface
 			string maxText = "Disaster Gauge: " + 500 + "/" + 500;
 			Vector2 maxTextSize = font.MeasureString(maxText);
 			Color textColor = new Color(Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor);
-			Main.spriteBatch.DrawString(font, "Disaster Gauge:", new Vector2(anchorX + barSize / 2 - maxTextSize.X / 2f, 6f), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
-			Main.spriteBatch.DrawString(font, chargeText, new Vector2(anchorX + barSize / 2 + maxTextSize.X / 2f, 6f), textColor, 0f, new Vector2(font.MeasureString(chargeText).X, 0f), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.DrawString(font, "Disaster Gauge:", new Vector2(anchorX + barSize / 2 - maxTextSize.X / 2f, 42f), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.DrawString(font, chargeText, new Vector2(anchorX + barSize / 2 + maxTextSize.X / 2f, 42f), textColor, 0f, new Vector2(font.MeasureString(chargeText).X, 0f), 1f, SpriteEffects.None, 0f);
 
 			float fill = Gauge / 500;
-			Main.spriteBatch.Draw(mod.GetTexture("DisasterBar"), new Vector2(anchorX, 32f), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
-			Main.spriteBatch.Draw(mod.GetTexture("DisasterCharge"), new Vector2(anchorX + padding, 32f + padding), new Rectangle(0, 0, (int)(fill * chargeSize), chargeHeight), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.Draw(mod.GetTexture("Interface/DisasterBar"), new Vector2(anchorX, 64f), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.Draw(mod.GetTexture("Interface/DisasterCharge"), new Vector2(anchorX + padding, 64f + padding), new Rectangle(0, 0, (int)(fill * chargeSize), chargeHeight), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
 
 			return true;
 		}

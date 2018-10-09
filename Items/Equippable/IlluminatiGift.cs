@@ -36,8 +36,8 @@ namespace AlchemistNPC.Items.Equippable
 		public override void SetDefaults()
 		{
 			item.stack = 1;
-			item.width = 26;
-			item.height = 26;
+			item.width = 34;
+			item.height = 34;
 			item.value = 1000000;
 			item.rare = 11;
 			item.accessory = true;

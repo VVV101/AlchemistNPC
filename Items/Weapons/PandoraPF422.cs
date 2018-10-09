@@ -37,6 +37,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.noUseGraphic = true;
 			item.rare = 11;
 			item.knockBack = 8;
+			item.shoot = mod.ProjectileType("PF422");
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

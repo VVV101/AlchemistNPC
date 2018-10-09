@@ -35,6 +35,7 @@ namespace AlchemistNPC.Items.Misc
 			player.TryGettingDevArmor();
 			player.QuickSpawnItem(mod.ItemType("GoldenKnuckles"));
 			player.QuickSpawnItem(mod.ItemType("WrathOfTheCelestial"));
+			player.QuickSpawnItem(mod.ItemType("LaserCannon"));
 			player.QuickSpawnItem(mod.ItemType("GrapplingHookGunItem"));
 			player.QuickSpawnItem(mod.ItemType("IlluminatiGift"));
 			if (player.HasBuff(mod.BuffType("GrimReaper")) && Main.rand.Next(5) == 0)

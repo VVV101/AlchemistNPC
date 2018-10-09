@@ -226,7 +226,7 @@ namespace AlchemistNPC.NPCs
 		
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss1)
+			if (NPC.downedBoss1 && Config.AlchemistSpawn)
 			{
 			return true;
 			}
@@ -419,6 +419,7 @@ namespace AlchemistNPC.NPCs
         {
 			string TremorShop = Language.GetTextValue("Mods.AlchemistNPC.TremorShop");
 			string BrewElixir = Language.GetTextValue("Mods.AlchemistNPC.BrewElixir");
+			string Gregg = Language.GetTextValue("Mods.AlchemistNPC.Gregg");
             button = Language.GetTextValue("LegacyInterface.28");
 			for (int k = 0; k < 255; k++)
 			{
@@ -453,7 +454,8 @@ namespace AlchemistNPC.NPCs
 			for (int k = 0; k < 255; k++)
 			{
 				Player player = Main.player[k];
-				if (player.name == "Gregg" && NPC.downedMoonlord && !Tantrum)
+				int Alchemist = NPC.FindFirstNPC(mod.NPCType("Alchemist"));
+				if (player.name == "Gregg" && Main.npc[Alchemist].GivenName == Gregg && NPC.downedMoonlord && !Tantrum)
 				{
 				button2 = "Secret";
 				}

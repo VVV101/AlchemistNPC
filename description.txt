@@ -1,11 +1,13 @@
-This mod adds 7 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect and Explorer), who sell potions, materials and some other stuff. 
+This mod adds 8 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect, Musician and Explorer), who sell potions, materials and some other stuff. 
 New combinations of potions are sold by the Young Brewer.
 The spawn condition for the Alchemist, the Jeweler & the Brewer is to kill the Eye of Ctulhu. 
 The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
-The Explorer is secret NPC. Try to figure out, how to spawn her.
+The Musician will come if you defeat Skeletron.
+The Explorer is a secret NPC. Try to figure out, how to spawn her.
 v7.5
+-Added new NPC, Musician. Sells diffirent music boxes. Comes after beating Skeletron.
 -Added Charm of Absolute Luck. Also affects accessories now. Can be crafted after beating Golem.
 Charm of Luck only affects weapons/endless pouches/quivers.
 -Added Rick's Portal Gun, reference to Rick and Morty. Opens portals to dangerous dimensions, letting the things from there damaging the enemies.
@@ -38,6 +40,7 @@ W is a pre mechanical boss combination of Laser and Clockwork Assault Rifles.
 -Added Caught Unicorn item. Now required for Research Note#2 recipe instead of Gold Bunny.
 -Added Horrifying Skull. Summons Dungeon Guardian.
 Can be bought from Jeweler after beating Skeletron for 15 gold each.
+-Now Alchemist Charm tier 2-4 allows to use potions from Piggy Bank by Quick Buff button.
 -Increased amount of dropped Celestial's Particles from DG.
 -Added petals from Thorium mod to Operator's shop.
 -Added head icon for Otherworldly Portal.
@@ -48,6 +51,8 @@ Can be bought from Jeweler after beating Skeletron for 15 gold each.
 -Added new line for Operator.
 -Changed prices for some items.
 -Thorium and Spirit buffs can now be toggled by turning of visibility of Autoinjector MK2.
+-Watcher Amulet now supports sentries count increase.
+-Config options for disabling spawn of NPCs now working properly.
 -Fixed bosses mp desync problem.
 -Fixed town NPCs summoning mp desync problem.
 -Fixed targeting for some "shooting" projectiles.
@@ -57,8 +62,11 @@ Can be bought from Jeweler after beating Skeletron for 15 gold each.
 -Fixed drop for Charm of Luck. Now will always drop from Wall of Flesh.
 -Fixed Charm of Luck effect worked on consumables.
 -Fixed Old One's Army Treasure Bags availability.
+-Fixed Cadance HP boosting effect of Calamity Combination.
 -Fixed Fabsol being able to drop in non-Revengeance worlds.
 -Nerfed Sasscade and True Sasscade Yo-yos.
+-Nerfed earlygame stats of Holy Avenger.
+-Nerfed Watcher Amulet.
 -Some secret stuff.
 v7.4.1
 -Added config options for disabling certain town NPCs spawn (AlchemistNPCv741.json).

@@ -53,6 +53,13 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				damage = 999999;
 			}
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (target.type == mod.NPCType("CeaselessVoid"))
+					{
+						damage = 1;
+					}
+				}
 			if (target.type == NPCID.DungeonGuardian)
 			{
 				damage = 999999999;

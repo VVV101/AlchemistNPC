@@ -18,9 +18,10 @@ namespace AlchemistNPC.Items.Misc
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Alchemist Charm Tier 2");
-			Tooltip.SetDefault("While placed in inventory, you have moderate chance not to consume potion");
+			Tooltip.SetDefault("While this is in your inventory, you have a moderate chance not to consume potion"
+			+"\nAllows to use potions from Piggy Bank by Quick Buff");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Тир 2");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет средний шанс не потратить зелье");
+            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет средний шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа");
         }
 
 		public override void SetDefaults()
@@ -34,6 +35,7 @@ namespace AlchemistNPC.Items.Misc
 		public override void UpdateInventory(Player player)
 		{
 		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier2 = true;
+		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DistantPotionsUse = true;
 		}
 		
 		public override void AddRecipes()

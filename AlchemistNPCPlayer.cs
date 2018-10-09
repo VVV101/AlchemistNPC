@@ -42,6 +42,7 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public int fc = 0;
+		public bool DistantPotionsUse = false;
 		public bool Voodoo = false;
 		public bool CursedMirror = false;
 		public bool ShieldBelt = false;
@@ -106,6 +107,8 @@ namespace AlchemistNPC
 		public int KeepBuffs = 0;
 		private const int maxWellFed = 1;
 		public int WellFed = 0;
+		private const int maxBillIsDowned = 1;
+		public int BillIsDowned = 0;
 		
 		public override void ResetEffects()
 		{
@@ -114,6 +117,7 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			DistantPotionsUse = false;
 			CursedMirror = false;
 			Voodoo = false;
 			ShieldBelt = false;
@@ -181,6 +185,10 @@ namespace AlchemistNPC
 			{
 			player.AddBuff(BuffID.WellFed, 2);
 			}
+			if (BillIsDowned == 1)
+			{
+			player.AddBuff(mod.BuffType("DemonSlayer"), 2);
+			}
 		}
 	
 		public override bool CanBeHitByProjectile(Projectile projectile)
@@ -206,6 +214,7 @@ namespace AlchemistNPC
 			packet.Write(Fuaran);
 			packet.Write(KeepBuffs);
 			packet.Write(WellFed);
+			packet.Write(BillIsDowned);
 			packet.Send(toWho, fromWho);
 		}
 	
@@ -229,15 +238,17 @@ namespace AlchemistNPC
 				{"Fuaran", Fuaran},
 				{"KeepBuffs", KeepBuffs},
 				{"WellFed", WellFed},
+				{"BillIsDowned", BillIsDowned},
 			};
 		}
-	
+		
 		public override void Load(TagCompound tag)
 		{
 			LifeElixir = tag.GetInt("LifeElixir");
 			Fuaran = tag.GetInt("Fuaran");
 			KeepBuffs = tag.GetInt("KeepBuffs");
 			WellFed = tag.GetInt("WellFed");
+			BillIsDowned = tag.GetInt("BillIsDowned");
 		}
 	
 		public override void AnglerQuestReward(float quality, List<Item> rewardItems)
@@ -434,7 +445,7 @@ namespace AlchemistNPC
 			{
 				damageSource = PlayerDeathReason.ByCustomReason(player.name + " was evaporated by the new master of this world.");
 			}
-			if (Illuminati && !player.HasBuff(mod.BuffType("IlluminatiCooldown")))
+			if (Illuminati && !player.HasBuff(mod.BuffType("IlluminatiCooldown")) && !player.HasBuff(mod.BuffType("MindBurn")) && !player.HasBuff(mod.BuffType("TrueUganda")))
 			{
 				player.statLife = 1;
 				return false;
@@ -458,6 +469,88 @@ namespace AlchemistNPC
 				lamp = 0;
 				}
 				lf = false;
+			}
+			if (DistantPotionsUse && PlayerInput.Triggers.Current.QuickBuff)
+			{
+				LegacySoundStyle type1 = (LegacySoundStyle) null;
+				for (int index1 = 0; index1 < 40; ++index1)
+				  {
+					if (player.CountBuffs() == 22)
+					  return;
+					if (player.bank.item[index1].stack > 0 && player.bank.item[index1].type > 0 && (player.bank.item[index1].buffType > 0 && !player.bank.item[index1].summon) && player.bank.item[index1].buffType != 90)
+					{
+					  int type2 = player.bank.item[index1].buffType;
+					  bool flag = true;
+					  for (int index2 = 0; index2 < 22; ++index2)
+					  {
+						if (type2 == 27 && (player.buffType[index2] == type2 || player.buffType[index2] == 101 || player.buffType[index2] == 102))
+						{
+						  flag = false;
+						  break;
+						}
+						if (player.buffType[index2] == type2)
+						{
+						  flag = false;
+						  break;
+						}
+						if (Main.meleeBuff[type2] && Main.meleeBuff[player.buffType[index2]])
+						{
+						  flag = false;
+						  break;
+						}
+					  }
+					  if (Main.lightPet[player.bank.item[index1].buffType] || Main.vanityPet[player.bank.item[index1].buffType])
+					  {
+						for (int index2 = 0; index2 < 22; ++index2)
+						{
+						  if (Main.lightPet[player.buffType[index2]] && Main.lightPet[player.bank.item[index1].buffType])
+							flag = false;
+						  if (Main.vanityPet[player.buffType[index2]] && Main.vanityPet[player.bank.item[index1].buffType])
+							flag = false;
+						}
+					  }
+					  if (player.bank.item[index1].mana > 0 & flag)
+					  {
+						if (player.statMana >= (int) ((double) player.bank.item[index1].mana * (double) player.manaCost))
+						{
+						  player.manaRegenDelay = (int) player.maxRegenDelay;
+						  player.statMana = player.statMana - (int) ((double) player.bank.item[index1].mana * (double) player.manaCost);
+						}
+						else
+						  flag = false;
+					  }
+					  if (player.whoAmI == Main.myPlayer && player.bank.item[index1].type == 603 && !Main.cEd)
+						flag = false;
+					  if (type2 == 27)
+					  {
+						type2 = Main.rand.Next(3);
+						if (type2 == 0)
+						  type2 = 27;
+						if (type2 == 1)
+						  type2 = 101;
+						if (type2 == 2)
+						  type2 = 102;
+					  }
+					  if (flag)
+					  {
+						type1 = player.bank.item[index1].UseSound;
+						int time1 = player.bank.item[index1].buffTime;
+						if (time1 == 0)
+						  time1 = 3600;
+						player.AddBuff(type2, time1, true);
+						if (player.bank.item[index1].consumable)
+						{
+						  --player.bank.item[index1].stack;
+						  if (player.bank.item[index1].stack <= 0)
+							player.bank.item[index1].TurnToAir();
+						}
+					  }
+					}
+				  }
+				if (type1 == null)
+				return;
+				Main.PlaySound(type1, player.position);
+				Recipe.FindRecipes();
 			}
 			if (AlchemistNPC.DiscordBuff.JustPressed)
 			{
@@ -531,6 +624,10 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByNPC(NPC npc, ref int damage, ref bool crit) 		
         {
+			if (npc.type == mod.NPCType("BillCipher"))
+            {
+				player.AddBuff(mod.BuffType("MindBurn"), 1200);
+			}
 			if (TerrarianBlock && Main.dayTime)
             {
 				damage -= damage/3;
