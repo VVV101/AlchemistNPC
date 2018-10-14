@@ -1056,7 +1056,7 @@ namespace AlchemistNPC.NPCs
 					start = true;
 				}
 			}
-			if (npc.type == mod.NPCType("BillCipher"))
+			if (npc.type == mod.NPCType("BillCipher") && !ModLoader.GetLoadedMods().Contains("AlchemistNPCContentDisabler"))
 			{
 				if (npc.life == npc.lifeMax && !start && player.name != "Bill")
 				{

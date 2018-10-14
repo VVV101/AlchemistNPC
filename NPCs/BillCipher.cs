@@ -51,9 +51,9 @@ namespace AlchemistNPC.NPCs
 		public static int counter3 = 0;
 		public static int counter4 = 0;
 		public static int counter5 = 0;
+		
 		public override void SetDefaults()
 		{
-			npc.CloneDefaults(4);
 			npc.boss = false;
 			npc.width = 82;
 			npc.height = 70;
@@ -65,6 +65,8 @@ namespace AlchemistNPC.NPCs
 			npc.value = 333f;
 			npc.knockBackResist = -1;
 			npc.aiStyle = 5;
+			npc.noTileCollide = true;
+			npc.noGravity = true;
 			aiType = 9;
 			music = MusicID.Boss2;
 			bossBag = mod.ItemType("BillCipherBag");
@@ -80,6 +82,11 @@ namespace AlchemistNPC.NPCs
         {
             rotation = 0;
         }
+		
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
+		{
+			return 0f;
+		}
 		
 		public override void AI()
 		{

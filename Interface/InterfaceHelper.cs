@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.Xna.Framework;
@@ -73,7 +74,7 @@ namespace AlchemistNPC.Interface
 			}
 			Mod mod = AlchemistNPC.Instance;
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
-			if (player.HeldItem.type != mod.ItemType("Pandora") && player.HeldItem.type != mod.ItemType("PandoraPF013") && player.HeldItem.type != mod.ItemType("PandoraPF124") && player.HeldItem.type != mod.ItemType("PandoraPF262") && player.HeldItem.type != mod.ItemType("PandoraPF398") && player.HeldItem.type != mod.ItemType("PandoraPF594") && player.HeldItem.type != mod.ItemType("PandoraPF666"))
+			if (modPlayer.PH == false)
 			{
 				return true;
 			}

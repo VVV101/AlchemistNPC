@@ -57,8 +57,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.CloneDefaults(ItemID.Muramasa);
 			item.damage = 12;
 			item.melee = true;
-			item.width = 40;
-			item.height = 40;
+			item.width = 78;
+			item.height = 78;
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = 1;

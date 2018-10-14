@@ -25,6 +25,15 @@ namespace AlchemistNPC.Projectiles
 			projectile.tileCollide = false;
 		}
 		
+		public override bool? CanHitNPC(NPC target)
+		{
+			if (target.townNPC || target.type == mod.NPCType("BillCipher"))
+			{
+				return false;
+			}
+			return true;
+		}
+		
 		public override void AI()
 		{
 			for (int k = 0; k < 255; k++)

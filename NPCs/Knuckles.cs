@@ -344,6 +344,11 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 		
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
+		{
+			return 0f;
+		}
+		
 		public override void ModifyHitPlayer(Player player, ref int damage, ref bool crit)
 		{
 			player.AddBuff(mod.BuffType("TrueUganda"), 1200);

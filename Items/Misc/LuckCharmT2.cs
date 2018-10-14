@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items.Misc
 		{
 			DisplayName.SetDefault("Charm of Absolute Luck");
 			Tooltip.SetDefault("While placed in inventory, you have better chance of getting good/best reforge"
-			+"\nAlso affects accessories (Menacing->Lucky->Warding");
+			+"\nAlso affects accessories (Menacing->Lucky->Warding)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Абсолютной Удачи");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет более высокий шанс получить лучшую перековку\nРаботает и с аксессуарами (Грозный->Удачливый->Оберегающий)");
         }

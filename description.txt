@@ -6,6 +6,13 @@ The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of th
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
+v7.5.2
+-Fixed some MP issues.
+-Fixed Disaster Gauge appearing with Content Disabler.
+-Balls of Madness can no longer hurt friendly NPCs.
+-New sprites for Cera Sumat, Holy Avenger and The Light of Cera Sumat.
+v7.5.1
+-Fixed incompatibility with Content Disabler.
 v7.5
 -Added new NPC, Musician. Sells diffirent music boxes. Comes after beating Skeletron.
 -Added Charm of Absolute Luck. Also affects accessories now. Can be crafted after beating Golem.

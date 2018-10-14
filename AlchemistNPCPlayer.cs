@@ -42,6 +42,7 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public int fc = 0;
+		public bool PH = false;
 		public bool DistantPotionsUse = false;
 		public bool Voodoo = false;
 		public bool CursedMirror = false;
@@ -117,6 +118,7 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			PH = false;
 			DistantPotionsUse = false;
 			CursedMirror = false;
 			Voodoo = false;

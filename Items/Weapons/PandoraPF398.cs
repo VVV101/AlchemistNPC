@@ -46,6 +46,11 @@ namespace AlchemistNPC.Items.Weapons
 			item.value = Item.sellPrice(1, 0, 0, 0);
 		}
 
+		public override void HoldItem(Player player)
+		{
+		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).PH = true;
+		}
+		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge += 10;

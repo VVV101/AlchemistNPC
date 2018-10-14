@@ -25,7 +25,7 @@ namespace AlchemistNPC.Items.Weapons
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF666)");
         }
-
+		
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.SnowmanCannon);
@@ -49,6 +49,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void HoldItem(Player player)
 		{
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).PH = true;
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge = 500;
 		}
 

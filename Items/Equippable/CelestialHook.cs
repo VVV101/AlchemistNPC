@@ -9,6 +9,11 @@ namespace AlchemistNPC.Items.Equippable
 {
 	class CelestialHookItem : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
+		}
+		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Celestial Hook");

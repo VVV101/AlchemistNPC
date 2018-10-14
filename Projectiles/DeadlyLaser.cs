@@ -27,7 +27,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			if (target.friendly)
 			{
-			damage /= 20;
+			damage = 5;
 			}
 		}
 	}
