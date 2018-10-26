@@ -9,10 +9,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class DarkMagicWand : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Dark Magic Wand");

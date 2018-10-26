@@ -11,6 +11,7 @@ namespace AlchemistNPC.Projectiles.Minions
 			projectile.CloneDefaults(391);
 			projectile.minionSlots = 1;
             Main.projFrames[projectile.type] = 11;
+			projectile.aiStyle = 26;
             aiType = 391;
 		}
 
@@ -29,13 +30,20 @@ namespace AlchemistNPC.Projectiles.Minions
 		{
 			Player player = Main.player[projectile.owner];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
-			if ((player.dead && !modPlayer.LaetitiaSet && !modPlayer.ParadiseLost) || player.FindBuffIndex(mod.BuffType("LittleWitchMonster")) < -1)
+			if (player.dead || !modPlayer.LaetitiaGift)
 			{
 				modPlayer.lwm = false;
+				projectile.Kill();
 			}
-			if (modPlayer.lwm)
+			if (!player.HasBuff(mod.BuffType("LittleWitchMonster")))
 			{
-				projectile.timeLeft = 2;
+				modPlayer.lwm = false;
+				projectile.Kill();
+			}
+			if (!modPlayer.LaetitiaSet && !modPlayer.ParadiseLost)
+			{
+				modPlayer.lwm = false;
+				projectile.Kill();
 			}
 		}
 
@@ -44,7 +52,7 @@ namespace AlchemistNPC.Projectiles.Minions
 			Player player = Main.player[projectile.owner];
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 			{
-			damage = 125;
+			damage *= 4;
 			}
 		}
 		
@@ -52,11 +60,11 @@ namespace AlchemistNPC.Projectiles.Minions
 		{
 			target.AddBuff(BuffID.ShadowFlame, 600);
 			target.AddBuff(BuffID.Ichor, 600);
-			target.immune[projectile.owner] = 3;
+			target.immune[projectile.owner] = 4;
 			Player player = Main.player[projectile.owner];
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 			{
-			damage = 125;
+			damage *= 4;
 			}
 		}
 		

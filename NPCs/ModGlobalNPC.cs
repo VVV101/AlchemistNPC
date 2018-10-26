@@ -84,11 +84,11 @@ namespace AlchemistNPC.NPCs
 
 		public override void ModifyHitByItem(NPC npc, Player player, Item item, ref int damage, ref float knockback, ref bool crit)
 		{
-			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1)
+			if (npc.HasBuff(mod.BuffType("CurseOfLight")))
 			{
 				damage += damage / 5;
 			}
-			if (npc.FindBuffIndex(mod.BuffType("SymbolOfPain")) > -1)
+			if (npc.HasBuff(mod.BuffType("SymbolOfPain")))
 			{
 				damage += damage/4;
 			}
@@ -100,11 +100,11 @@ namespace AlchemistNPC.NPCs
 
 		public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
-			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1)
+			if (npc.HasBuff(mod.BuffType("CurseOfLight")))
 			{
 				damage += damage / 5;
 			}
-			if (npc.FindBuffIndex(mod.BuffType("SymbolOfPain")) > -1)
+			if (npc.HasBuff(mod.BuffType("SymbolOfPain")))
 			{
 				damage += damage/4;
 			}
@@ -125,11 +125,11 @@ namespace AlchemistNPC.NPCs
 
 		public override void ModifyHitPlayer(NPC npc, Player target, ref int damage, ref bool crit)
 		{
-			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) > -1 && Main.rand.Next(4) == 0)
+			if (npc.HasBuff(mod.BuffType("CurseOfLight")) && Main.rand.Next(4) == 0)
 			{
 				damage /= 2;
 			}
-			if (npc.FindBuffIndex(mod.BuffType("SymbolOfPain")) > -1)
+			if (npc.HasBuff(mod.BuffType("SymbolOfPain")))
 			{
 				damage -= damage/4;
 			}
@@ -137,6 +137,17 @@ namespace AlchemistNPC.NPCs
 
 		public override void SetupShop(int type, Chest shop, ref int nextSlot)
 		{
+			Player player = Main.player[Main.myPlayer];
+			if (type == mod.NPCType("Brewer") || type == mod.NPCType("Alchemist") || type == mod.NPCType("Young Brewer"))
+			{
+				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
+				{
+					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Discount)
+					{
+						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/4;
+					}
+				}
+			}
 			if (ModLoader.GetLoadedMods().Contains("Tremor"))
 			{
 				if (type == ModLoader.GetMod("Tremor").NPCType("Lady Moon"))
@@ -460,7 +471,7 @@ namespace AlchemistNPC.NPCs
 				}
 				Lighting.AddLight(npc.position, 1f, 1f, 1f);
 			}
-			if (npc.FindBuffIndex(mod.BuffType("ArmorDestruction")) >= 0)
+			if (npc.HasBuff(mod.BuffType("ArmorDestruction")))
 			{
 				if (Main.rand.Next(4) < 2)
 				{
@@ -476,12 +487,12 @@ namespace AlchemistNPC.NPCs
 				}
 				Lighting.AddLight(npc.position, 1f, 1f, 1f);
 			}
-			if (npc.FindBuffIndex(mod.BuffType("CurseOfLight")) >= 0)
+			if (npc.HasBuff(mod.BuffType("CurseOfLight")))
 			{
 				npc.color = new Color(255, 255, 255, 100);
 				Lighting.AddLight(npc.position, 1f, 1f, 1f);
 			}
-			if (npc.FindBuffIndex(mod.BuffType("SymbolOfPain")) >= 0)
+			if (npc.HasBuff(mod.BuffType("SymbolOfPain")))
 			{
 				npc.color = new Color(255, 10, 10, 100);
 				Lighting.AddLight(npc.position, 1f, 1f, 1f);
@@ -549,21 +560,7 @@ namespace AlchemistNPC.NPCs
 			{
 				if (!NPC.downedBoss1)
 				{
-					if (Main.netMode == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AlchemistCharmTier1"));
-					}
-					if (Main.netMode == 1)
-					{
-						for (int i = 0; i < 200; i++)
-						{
-							if (Main.player[i].active)
-							{
-								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AlchemistCharmTier1"));
-							}
-						}
-
-					}
+					npc.DropItemInstanced(npc.position, npc.Size, mod.ItemType("AlchemistCharmTier1"));
 				}
 			}
 			if (Main.expertMode && Config.CoinsDrop)
@@ -1056,7 +1053,7 @@ namespace AlchemistNPC.NPCs
 					start = true;
 				}
 			}
-			if (npc.type == mod.NPCType("BillCipher") && !ModLoader.GetLoadedMods().Contains("AlchemistNPCContentDisabler"))
+			if (npc.type == mod.NPCType("BillCipher"))
 			{
 				if (npc.life == npc.lifeMax && !start && player.name != "Bill")
 				{

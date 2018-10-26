@@ -10,14 +10,10 @@ namespace AlchemistNPC.Items.Materials
 {
 	public class CrystalDust : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Crystal Dust");
-			Tooltip.SetDefault("Dust, which is made from Crystal Shards.");
+			Tooltip.SetDefault("Dust made from Crystal Shards.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристальная пыль");
 			Tooltip.AddTranslation(GameCulture.Russian, "Пьль, сделанная из осколков кристалла");
 

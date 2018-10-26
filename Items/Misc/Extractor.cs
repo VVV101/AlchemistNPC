@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Misc
 {
 	public class Extractor : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public static int count = 0;
 		public override void SetStaticDefaults()
 		{

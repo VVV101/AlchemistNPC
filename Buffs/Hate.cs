@@ -14,7 +14,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Hate");
-			Description.SetDefault("You are ready to release your Hate");
+			Description.SetDefault("You are ready to unleash your Hate");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Ненависть");

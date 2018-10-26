@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items
 {
     public class ExplorersBrew : ModItem
     {
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Explorer's Brew");

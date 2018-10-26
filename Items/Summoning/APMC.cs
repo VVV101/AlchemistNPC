@@ -7,10 +7,6 @@ namespace AlchemistNPC.Items.Summoning
 {
 	public class APMC : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("AI Programming and Memory Chip");
@@ -37,6 +33,13 @@ namespace AlchemistNPC.Items.Summoning
 			item.makeNPC = (short)mod.NPCType("Operator");
 		}
 
+		public override void HoldItem(Player player)
+		{
+		Player.tileRangeX += 600;
+        Player.tileRangeY += 600;
+		}
+		
+		
 		public override bool CanUseItem(Player player)
 		{
 			return !NPC.AnyNPCs(mod.NPCType("Operator"));

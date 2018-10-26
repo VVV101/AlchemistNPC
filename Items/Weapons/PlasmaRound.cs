@@ -7,17 +7,13 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class PlasmaRound : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Plasma Round");
 			Tooltip.SetDefault("Contains raw energy inside"
 			+"\nRequired for using Tritantrum");
 			DisplayName.AddTranslation(GameCulture.Russian, "Плазменный заряд");
-            Tooltip.AddTranslation(GameCulture.Russian, "Содержит грубую энергию внутри\nНеобходима для использования Тритантрума");
+            Tooltip.AddTranslation(GameCulture.Russian, "Содержит чистую энергию внутри\nНеобходима для использования Тритантрума");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "等离子体");
             Tooltip.AddTranslation(GameCulture.Chinese, "里面包含原始能量\n是三项之怒的弹药");

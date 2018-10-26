@@ -7,15 +7,11 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class PinkGuyHead : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pink Guy's Hood");
 			DisplayName.AddTranslation(GameCulture.Russian, "Капюшон Розового Парня"); 
-			Tooltip.SetDefault("A legendary clothing maybe? No one knows, but once you wear it, you can't go back.");
+			Tooltip.SetDefault("Could this be a legendary piece of clothing? No one knows, but once you wear it, you can't go back.");
             Tooltip.AddTranslation(GameCulture.Russian, "Возможно, это легендарное одеяние? Никто не знает, но, одев его однажды, вы уже не сможете его снять.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "Pink Guy的兜帽");

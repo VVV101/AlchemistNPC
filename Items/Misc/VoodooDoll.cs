@@ -11,16 +11,12 @@ namespace AlchemistNPC.Items.Misc
 {
 	public class VoodooDoll : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Voodoo Doll");
-			Tooltip.SetDefault("Your very own doll\nWill make you take part of your damage");
+			Tooltip.SetDefault("Your very own doll\nWill make you take part of your dealt damage");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кукла Вуду");
-            Tooltip.AddTranslation(GameCulture.Russian, "Ваша кукла\nЗаставляет вас получать часть урона боссу");
+            Tooltip.AddTranslation(GameCulture.Russian, "Ваша кукла\nЗаставляет вас получать часть урона, наносимого боссу");
         }
 
 		public override void SetDefaults()

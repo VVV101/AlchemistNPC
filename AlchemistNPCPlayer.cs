@@ -43,6 +43,7 @@ namespace AlchemistNPC
 		public int Shield = 0;
 		public int fc = 0;
 		public bool PH = false;
+		public bool Discount = false;
 		public bool DistantPotionsUse = false;
 		public bool Voodoo = false;
 		public bool CursedMirror = false;
@@ -75,6 +76,7 @@ namespace AlchemistNPC
 		public bool Scroll = false;
 		public bool EyeOfJudgement = false;
 		public bool LaetitiaSet = false;
+		public bool LaetitiaGift = false;
 		public bool SFU = false;
 		public bool SF = false;
 		public bool PGSWear = false;
@@ -119,6 +121,7 @@ namespace AlchemistNPC
 			}
 			Item.potionDelay = 3600;
 			PH = false;
+			Discount = false;
 			DistantPotionsUse = false;
 			CursedMirror = false;
 			Voodoo = false;
@@ -151,6 +154,7 @@ namespace AlchemistNPC
 			AutoinjectorMK2 = false;
 			EyeOfJudgement = false;
 			LaetitiaSet = false;
+			LaetitiaGift = false;
 			Scroll = false;
 			SFU = false;
 			SF = false;
@@ -195,7 +199,7 @@ namespace AlchemistNPC
 	
 		public override bool CanBeHitByProjectile(Projectile projectile)
 		{
-			if (player.FindBuffIndex(mod.BuffType("Akumu")) > -1 || player.FindBuffIndex(mod.BuffType("TrueAkumu")) > -1)
+			if (player.HasBuff(mod.BuffType("Akumu")) || player.HasBuff(mod.BuffType("TrueAkumu")))
 			{
 			return false;
 			}
@@ -223,7 +227,7 @@ namespace AlchemistNPC
 		public override void OnEnterWorld(Player player)
 		{
             string enterText = Language.GetTextValue("Mods.AlchemistNPC.enterText");
-			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null && Config.StartMessage)
+			if (Config.StartMessage)
 			{
             Main.NewText(enterText, 0, 255, 255);
 			}
@@ -355,7 +359,7 @@ namespace AlchemistNPC
 				target.buffImmune[BuffID.Midas] = false;
 				target.AddBuff(BuffID.Midas, 600);
 				}
-			if (player.FindBuffIndex(mod.BuffType("RainbowFlaskBuff")) > -1)
+			if (player.HasBuff(mod.BuffType("RainbowFlaskBuff")))
 				{
 				target.buffImmune[BuffID.BetsysCurse] = false;
 				target.buffImmune[BuffID.Ichor] = false;
@@ -365,7 +369,7 @@ namespace AlchemistNPC
 				target.AddBuff(BuffID.Ichor, 600);
 				target.AddBuff(BuffID.Daybreak, 600);
 				}
-			if (player.FindBuffIndex(mod.BuffType("BigBirdLamp")) > -1)
+			if (player.HasBuff(mod.BuffType("BigBirdLamp")))
 				{
 				target.buffImmune[BuffID.BetsysCurse] = false;
 				target.buffImmune[BuffID.Ichor] = false;
@@ -381,7 +385,7 @@ namespace AlchemistNPC
 					target.defense = 0;
 					}
 				}
-			if (player.FindBuffIndex(mod.BuffType("ExplorersBrew")) > -1)
+			if (player.HasBuff(mod.BuffType("ExplorersBrew")))
 				{
 				target.AddBuff(mod.BuffType("Electrocute"), 600);
 				}
@@ -397,7 +401,7 @@ namespace AlchemistNPC
 				target.buffImmune[BuffID.Midas] = false;
 				target.AddBuff(BuffID.Midas, 600);
 				}
-			if (player.FindBuffIndex(mod.BuffType("RainbowFlaskBuff")) > -1)
+			if (player.HasBuff(mod.BuffType("RainbowFlaskBuff")))
 				{
 				target.buffImmune[BuffID.BetsysCurse] = false;
 				target.buffImmune[BuffID.Ichor] = false;
@@ -407,7 +411,7 @@ namespace AlchemistNPC
 				target.AddBuff(BuffID.Ichor, 600);
 				target.AddBuff(BuffID.Daybreak, 600);
 				}
-			if (player.FindBuffIndex(mod.BuffType("BigBirdLamp")) > -1)
+			if (player.HasBuff(mod.BuffType("BigBirdLamp")))
 				{
 				target.buffImmune[BuffID.BetsysCurse] = false;
 				target.buffImmune[BuffID.Ichor] = false;
@@ -426,7 +430,7 @@ namespace AlchemistNPC
 				{
 				target.AddBuff(mod.BuffType("Electrocute"), 600);
 				}
-			if (player.FindBuffIndex(mod.BuffType("ExplorersBrew")) > -1)
+			if (player.HasBuff(mod.BuffType("ExplorersBrew")))
 				{
 				target.AddBuff(mod.BuffType("Electrocute"), 600);
 				}
@@ -435,7 +439,7 @@ namespace AlchemistNPC
 		
 		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
-			if (player.FindBuffIndex(mod.BuffType("Uganda")) > -1)
+			if (player.HasBuff(mod.BuffType("TrueUganda")))
 			{
 				damageSource = PlayerDeathReason.ByCustomReason(player.name + " DIDN NO DE WEI!");
 			}
@@ -556,7 +560,7 @@ namespace AlchemistNPC
 			}
 			if (AlchemistNPC.DiscordBuff.JustPressed)
 			{
-				if (Main.myPlayer == player.whoAmI && player.FindBuffIndex(mod.BuffType("DiscordBuff")) > -1)
+				if (Main.myPlayer == player.whoAmI && player.HasBuff(mod.BuffType("DiscordBuff")))
 				{
 				Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
 				player.Teleport(vector2, 1, 0);
@@ -575,7 +579,7 @@ namespace AlchemistNPC
 				player.AddBuff(88, 600, true);
 				player.AddBuff(164, 60, true);
 				}
-				if (Main.myPlayer == player.whoAmI && player.FindBuffIndex(mod.BuffType("TrueDiscordBuff")) > -1)
+				if (Main.myPlayer == player.whoAmI && player.HasBuff(mod.BuffType("TrueDiscordBuff")))
 				{
 				Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
 				player.Teleport(vector2, 1, 0);
@@ -652,7 +656,7 @@ namespace AlchemistNPC
 				damage -= Shield;
 				Shield -= damage2;
 			}
-			if (player.FindBuffIndex(mod.BuffType("Judgement")) > -1)
+			if (player.HasBuff(mod.BuffType("Judgement")))
 				{
 					if (Main.rand.Next(3) == 0)
 					{
@@ -690,7 +694,7 @@ namespace AlchemistNPC
 				damage -= Shield;
 				Shield -= damage2;
 			}
-			if (player.FindBuffIndex(mod.BuffType("Judgement")) > -1)
+			if (player.HasBuff(mod.BuffType("Judgement")))
 				{
 					if (Main.rand.Next(3) == 0)
 					{

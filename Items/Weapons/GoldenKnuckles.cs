@@ -14,10 +14,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class GoldenKnuckles : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Golden Knuckles");

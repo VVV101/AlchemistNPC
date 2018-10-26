@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 using System.Linq;
 
 namespace AlchemistNPC.Items.Equippable
@@ -12,6 +13,9 @@ namespace AlchemistNPC.Items.Equippable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Grappling Hook Gun");
+			Tooltip.SetDefault("Shoots insanely fast hook very far away");
+			DisplayName.AddTranslation(GameCulture.Russian, "Пистолет с крюком-кошкой");
+			Tooltip.AddTranslation(GameCulture.Russian, "Запускает крайне быстрый крюк очень далеко");
 		}
 
 		public override void SetDefaults()

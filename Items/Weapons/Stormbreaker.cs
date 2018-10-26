@@ -1,25 +1,49 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+using ReLogic.Utilities;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using Terraria;
+using System.Security.Cryptography;
+using System.Text;
+using Terraria.Audio;
+using Terraria.DataStructures;
+using Terraria.Enums;
+using Terraria.GameContent;
+using Terraria.GameContent.Achievements;
+using Terraria.GameContent.Events;
+using Terraria.GameContent.Tile_Entities;
+using Terraria.GameContent.UI;
+using Terraria.GameInput;
+using Terraria.Graphics.Capture;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
 using Terraria.ID;
+using Terraria.IO;
+using Terraria.Localization;
+using Terraria.ObjectData;
+using Terraria.Social;
+using Terraria.UI;
+using Terraria.UI.Chat;
+using Terraria.UI.Gamepad;
+using Terraria.Utilities;
+using Terraria.World.Generation;
+using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.Localization;
-using Terraria.World.Generation;
+using AlchemistNPC;
 
 namespace AlchemistNPC.Items.Weapons
 {
 	public class Stormbreaker : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Forged to fight the most powerful beings in the universe. Wield it wisely.");
+			Tooltip.SetDefault("Forged to fight the most powerful beings in the universe. Wield it wisely."
+			+"\nRight click in inventory to change damage type");
+			
+			DisplayName.AddTranslation(GameCulture.Russian, "Громобой");
+			Tooltip.AddTranslation(GameCulture.Russian, "Выкован для противодействия самым мощным существам во вселенной. Используй его мудро.\nПравый клик в инвентаре меняет тип урона");
         }
 
 		public override void SetDefaults()
@@ -63,6 +87,21 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			
 			return base.CanUseItem(player);
+		}
+		
+		public override bool CanRightClick()
+        {            
+            return true;
+        }
+
+        public override void RightClick(Player player)
+        {
+            Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("StormbreakerThrown"), 1, false, 82);
+        }
+		
+		public override int ChoosePrefix (UnifiedRandom rand)
+		{
+			return 81;
 		}
 		
 		public override void AddRecipes()

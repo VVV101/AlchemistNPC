@@ -66,7 +66,7 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry1");
             text.SetDefault("I'm trading potions which were made by my parents.");
-            text.AddTranslation(GameCulture.Russian, "Я продаю зелья, которые были сделаны моими родителями.");
+            text.AddTranslation(GameCulture.Russian, "Я продаю зелья, сделанные моими родителями.");
             text.AddTranslation(GameCulture.Chinese, "我出售我父母做的药剂.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry2");
@@ -377,7 +377,7 @@ namespace AlchemistNPC.NPCs
 				{
 					for (int j = 0; j < player.inventory.Length; j++)
 					{
-						if (player.inventory[j].type == mod.ItemType("WatcherAmulet") && ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
+						if (player.inventory[j].type == mod.ItemType("WatcherAmulet"))
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RainbowFlask"));
 						shop.item[nextSlot].shopCustomPrice = 1000000;

@@ -8,10 +8,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class QuantumDestabilizerFixed : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Fixed Quantum Destabilizer");

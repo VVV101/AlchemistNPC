@@ -7,10 +7,6 @@ namespace AlchemistNPC.Items.Notes
 {
 	public class TornNote8 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Torn Note #8");
@@ -20,7 +16,7 @@ namespace AlchemistNPC.Items.Notes
 			+"\nThat journal can be a great experience for everyone. I wonder if anyone will ever find it...''"
 			+"\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #8");
-            Tooltip.AddTranslation(GameCulture.Russian, "'Я нашёл один древний свиток с весьма значительной информацией...\nТам сказано что Голем хранит внутри своего тела лабораторный журнал Ведьмы, известной как Фуаран.\nОн способен значительно увеличить магический потенциал любого мага, слабого или сильного - нет значения...\nЭтот журнал может быть важным опытом для любого. Хотел бы я узнать, найдётся ли он когда-нибудь...'\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь.");
+            Tooltip.AddTranslation(GameCulture.Russian, "'Я нашла один древний свиток с весьма ценной информацией...\nТам сказано что Голем хранит внутри своего тела лабораторный журнал Ведьмы, известный как Фуаран.\nОн способен значительно увеличить магический потенциал любого мага, слабого или сильного - нет значения...\nЭтот журнал может быть важным опытом для любого. Хотела бы я узнать, найдётся ли он когда-нибудь...'\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "破损的笔记 #8");
             Tooltip.AddTranslation(GameCulture.Chinese, "'我发现了一个古老的卷轴，里面有很多有价值的信息..." +

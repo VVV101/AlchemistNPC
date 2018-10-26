@@ -9,12 +9,8 @@ using Terraria.Localization;
  
 namespace AlchemistNPC.Items
 {
-     public class CloakOfFear : ModItem
+    public class CloakOfFear : ModItem
     {
-        public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Scroll ''Cloak of Fear''");

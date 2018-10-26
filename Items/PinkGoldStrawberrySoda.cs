@@ -11,19 +11,15 @@ namespace AlchemistNPC.Items
 {
     public class PinkGoldStrawberrySoda : ModItem
     {
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
 		{
 		DisplayName.SetDefault("Pink Gold Strawberry Soda");
 		Tooltip.SetDefault("Heals for 150 hp and 150 mana, removes most debuffs for a short time");
 		DisplayName.AddTranslation(GameCulture.Russian, "Сода Розово-Золотой Клубники");
-            Tooltip.AddTranslation(GameCulture.Russian, "Пополняет 150 жизней и маны, убирает большинство дебаффов в течение короткого времени");
-
-            DisplayName.AddTranslation(GameCulture.Chinese, "桃金草莓苏打水");
-            Tooltip.AddTranslation(GameCulture.Chinese, "恢复150点生命值和150点法力值, 短时间内移除大部分Debuff");
+        Tooltip.AddTranslation(GameCulture.Russian, "Пополняет 150 жизней и маны, убирает большинство дебаффов в течение короткого времени");
+		
+        DisplayName.AddTranslation(GameCulture.Chinese, "桃金草莓苏打水");
+        Tooltip.AddTranslation(GameCulture.Chinese, "恢复150点生命值和150点法力值, 短时间内移除大部分Debuff");
         }    
 		public override void SetDefaults()
         {

@@ -7,17 +7,13 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class SunkroveraBullet : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Sunkrovera Bullet");
 			Tooltip.SetDefault("Its glow makes you chill."
 			+"\nReleases life stealing projectiles on enemy/wall impact");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пули с кристальной пылью");
-            Tooltip.AddTranslation(GameCulture.Russian, "Её сияние вызывает у вас дрожь.\nВыпускает похищающие жизнь снаряды при попадании");
+            Tooltip.AddTranslation(GameCulture.Russian, "Её сияние вызывает у вас дрожь.\nВыпускает похищающие жизнь снаряды при попадании во врага/стену");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "森克罗维拉弹");
             Tooltip.AddTranslation(GameCulture.Chinese, "即便是带着它你也能感受到那份...压力\n击中墙壁或敌人后释放带有生命偷取的子弹");

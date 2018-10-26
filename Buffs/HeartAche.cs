@@ -9,13 +9,13 @@ namespace AlchemistNPC.Buffs
 	{
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Heart Ache");
+			DisplayName.SetDefault("Heartache");
 			Description.SetDefault("You cannot use Potion of Darkness now");
 			Main.debuff[Type] = true;
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = false;
 			canBeCleared = false;
-			DisplayName.AddTranslation(GameCulture.Russian, "Боль Сердца");
+			DisplayName.AddTranslation(GameCulture.Russian, "Боль в cердце");
 			Description.AddTranslation(GameCulture.Russian, "Вы не можете использовать Зелье Тьмы сейчас");
         }
 	}

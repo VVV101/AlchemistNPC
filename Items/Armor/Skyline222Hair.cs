@@ -7,10 +7,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class Skyline222Hair : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Skyline222's (Noire) hairstyle");
@@ -25,7 +21,7 @@ namespace AlchemistNPC.Items.Armor
 		    text.SetDefault("Increases current ranged/minion damage by 20% and adds 20% to ranged critical strike chance"
 		    + "\n+40 defense"
 		    + "\nPrices are lower");
-            text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем бою/прислужников на 20% и добаляет 20% к шансу критического удара\n+48 защиты\nЦены в магазинах ниже");
+            text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем бою/прислужников на 20% и добаляет 20% к шансу критического удара\n+40 защиты\nЦены в магазинах ниже");
             text.AddTranslation(GameCulture.Chinese, "增加20%当前远程/召唤伤害, 增加20%远程暴击几率\n+40防御力\n让NPC降价");
             mod.AddTranslation(text);
 		}

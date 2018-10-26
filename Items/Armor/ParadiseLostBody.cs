@@ -12,10 +12,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class ParadiseLostBody: ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			base.SetStaticDefaults();
@@ -29,7 +25,7 @@ namespace AlchemistNPC.Items.Armor
 				+ "\n+200 maximum HP"
 				+ "\n+25% damage reduction"
 				+ "\nImmune to most vanilla debuffs");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Э.П.О.С часть брони]\n+200 к максимальному здоровью\n+25% к поглощению урона\nИммунитет к большинству немодовых дебаффов");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы хотите, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Часть брони Э.П.О.С.]\n+200 к максимальному здоровью\n+25% к поглощению урона\nИммунитет к большинству стандартных дебаффов");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "失乐园上衣 (T-03-46)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'你不必担心, 我已经听到了你那略带惊恐的祈祷." +

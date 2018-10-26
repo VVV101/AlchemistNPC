@@ -12,10 +12,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Legs)]
 	public class ParadiseLostLegs : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Paradise Lost Leggings (T-03-46)");
@@ -26,7 +22,7 @@ namespace AlchemistNPC.Items.Armor
             + "\nThou shall believe in me and granted with life. I shall show you the power.''"
             + "\n[c/FF0000:EGO armor piece]"
             + "\n66% increased movement speed");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Э.П.О.С часть брони]\nУвеличивает скорость передвижения на 66%");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Часть брони Э.П.О.С.]\nУвеличивает скорость передвижения на 66%");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "失乐园护腿 (T-03-46)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'你不必担心, 我已经听到了你那略带惊恐的祈祷." +

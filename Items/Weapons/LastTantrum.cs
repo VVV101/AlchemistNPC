@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Last Tantrum");
-			Tooltip.SetDefault("Shoots homing, all-eleminating bullets");
+			Tooltip.SetDefault("Shoots homing bullets that eradicate everything");
 			DisplayName.AddTranslation(GameCulture.Russian, "Последний Тантрум");
 			Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает самонаводящиеся пули, уничтожающие всё");
 

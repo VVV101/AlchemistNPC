@@ -15,10 +15,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class ParadiseLost : PaleDamageItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Paradise Lost (T-03-46)");
@@ -31,7 +27,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nRight click slices the air in place"
 			+"\nFull set of Paradise Lost is required to use this weapon");
 			DisplayName.AddTranslation(GameCulture.Russian, "Потерянный Рай (T-03-46)");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Я постучал в дверь, и она открылась.\nЯ из конца, я просто остаюсь.\nЯ тот, кто зажег фонарь перед лицом мира.\nМои близкие, я покажу вам лучший путь с этого момента.''\n[c/FF0000:Э.П.О.С. оружие]\nЗапускает проходящий сквозь стены снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши\nТребуется полный сет Потерянного Рая для использования");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Я постучал в дверь, и она открылась.\nЯ из конца, я просто остаюсь.\nЯ тот, кто зажег фонарь.\nМои близкие, я покажу вам лучший путь с этого момента.''\n[c/FF0000:Оружие Э.П.О.С.]\nЗапускает проходящий сквозь стены снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши\nТребуется полный сет Потерянного Рая для использования");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "失乐园 (T-03-46)");
             Tooltip.AddTranslation(GameCulture.Chinese, "乐园的大门因我的敲击而缓缓打开." +

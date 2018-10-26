@@ -8,10 +8,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Laetitia : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Laetitia (O-01-67)");
@@ -20,7 +16,7 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nShoots heavy damaging bullets 2 times in 1 second"
 			+ "\nCan be powered up by equipping full set of 'Laetitia'");
 			DisplayName.AddTranslation(GameCulture.Russian, "Летиция (O-01-67)");
-            Tooltip.AddTranslation(GameCulture.Russian, "Пусть это занимает много времени, но его мощь нельзя игнорировать.\n[c/FF0000:Э.П.О.С. оружие]\nВыстреливает мощные пули 2 раза в секунду\nМожет быть усилен экипировкой полного сета 'Летиция'");
+            Tooltip.AddTranslation(GameCulture.Russian, "Пусть она и требует много времени, но ее мощь нельзя игнорировать.\n[c/FF0000:Оружие Э.П.О.С.]\nВыстреливает мощные пули 2 раза в секунду\nМожет быть усилена экипировкой полного сета 'Летиция'");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "蕾蒂希娅 (O-01-67)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'粗糙的结构设计令它的外表有些老旧, 可它仍有不可忽视的威力.'\n[c/FF0000:EGO 武器]\n一秒发射两发威力巨大的子弹\n身着全套'蕾蒂希娅'可提升伤害");

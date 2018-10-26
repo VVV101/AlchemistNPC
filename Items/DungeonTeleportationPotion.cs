@@ -17,7 +17,7 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Dungeon Teleportation Potion");
 			Tooltip.SetDefault("Teleports you to Dungeon entrance");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье телепортации в Данж");
-			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас ко входу в Данж\nНе работает в мультиплеере :(");
+			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас ко входу в Данж");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "地牢传送药剂");
             Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至地牢入口");

@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Equippable
 {
 	public class AutoinjectorMK2 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Autoinjector MK2");
@@ -24,7 +20,7 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nHiding visual disables Thorium and Spirit buffs"
 				+ "\nLowers critical strike chance reduction of Memer's Riposte");
 				DisplayName.AddTranslation(GameCulture.Russian, "Автоинъектор MK2");
-            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает регенерацию жизней \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт постоянный эффект Комбинации Универсала\nТакже даёт эффекты модовых Комбинаций\nМожно отключить эффекты модовых баффов Ториума и Спирита\nПонижает уменьшение шанса критического удара Ответа Мемеру");
+            Tooltip.AddTranslation(GameCulture.Russian, "Усиливает регенерацию \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт постоянный эффект Комбинации Универсала\nТакже даёт эффекты модовых Комбинаций\nМожно отключить эффекты модовых баффов Ториума и Спирита с помощью изменения видимости\nПонижает уменьшение шанса критического удара Ответа Мемеру");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "自动注射器");
             Tooltip.AddTranslation(GameCulture.Chinese, "提供生命回复, 降低治疗药水的冷却时间, 延长收到伤害后的无敌时间\n增加15%全伤害和10%全伤害的暴击几率\n同时永久给予万能药剂包buff（包含坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包）");

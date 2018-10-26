@@ -22,7 +22,7 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Строителя");
-			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Добычи, Строителя и Покоя");
+			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Строителя, Шахтера и Покоя");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "建筑师药剂包");
             Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：镇静, 建筑工, 挖矿");

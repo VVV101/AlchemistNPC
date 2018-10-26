@@ -8,10 +8,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class PandoraPF594 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pandora (PF594)");
@@ -21,7 +17,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nAttack depletes Disaster Gauge"
 			+"\nRight click to change special attack");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пандора (Форма 594)");
-            Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nСпециальная Атака №1 (самонаводящиеся ракеты вокруг)\nАтака опусташает шкалу Бедствия\nНажмите правую кнопку мыши для смены специальной атаки");
+            Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nСпециальная Атака №1 (самонаводящиеся ракеты вокруг)\nАтака опустошает шкалу Бедствия\nНажмите правую кнопку мыши для смены специальной атаки");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF594)");
         }

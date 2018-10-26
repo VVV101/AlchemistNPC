@@ -25,8 +25,8 @@ namespace AlchemistNPC.Buffs
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = false;
-			DisplayName.AddTranslation(GameCulture.Russian, "Плащ Страха Дебафф");
-			Description.AddTranslation(GameCulture.Russian, "Заставляет изменить направление движения противников вблизи игрока");
+			DisplayName.AddTranslation(GameCulture.Russian, "Дебафф Плаща Страха");
+			Description.AddTranslation(GameCulture.Russian, "Заставляет обычных врагов около игрока менять направление движения");
         }
 		
 		public override void Update(NPC npc, ref int buffIndex)

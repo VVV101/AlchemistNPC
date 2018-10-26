@@ -30,7 +30,7 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (player.FindBuffIndex(mod.BuffType("MageComb")) >= 0 ||  player.FindBuffIndex(mod.BuffType("RangerComb")) >= 0 || player.FindBuffIndex(mod.BuffType("BattleComb")) >= 0)
+			if (player.HasBuff(mod.BuffType("MageComb")) ||  player.HasBuff(mod.BuffType("RangerComb")) || player.HasBuff(mod.BuffType("BattleComb")))
 			{
 			++player.maxMinions;
 			++player.maxMinions;

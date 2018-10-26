@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace AlchemistNPC.Items.QuestFishes
 {
@@ -8,6 +9,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Moses Fish");
+			DisplayName.AddTranslation(GameCulture.Russian, "Рыба-Моисей");
 		}
 
 		public override void SetDefaults()
@@ -42,7 +44,7 @@ namespace AlchemistNPC.Items.QuestFishes
 
 		public override void AnglerQuestChat(ref string description, ref string catchLocation)
 		{
-			description = "You heard about Moses, don't you? Then hear what I found in one old fairy tale book. There said that Moses still returning to our world even after his life. And he is prefering Desert pools. Long story short, I want you to get me this fish! It could be the really hard catch, but the reward can be great too!";
+			description = "You heard about Moses, don't you? Then hear what I found in one old fairy tale book. There said that Moses still returning to our world even after his life. And he is prefering Desert pools. Long story short, I want you to get me this fish! It could be a really hard catch, but the reward can be great too!";
 			catchLocation = "Caught in Desert.";
 		}
 	}

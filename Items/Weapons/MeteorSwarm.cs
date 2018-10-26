@@ -12,10 +12,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class MeteorSwarm : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Scroll ''Meteor Swarm''");
@@ -24,7 +20,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nWhile used, causes short meteorite rain around player's position"
 			+"\nExhausts player for 1 minute, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Метеоритного Роя''");
-            Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Метеоритный Рой''\nКогда применён, вызывает короткий метеоритный дождь возле позиции игрока\nИстощает игрока на 1 минуту, не позволяя ему использовать магию");
+            Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Метеоритный Рой''\nИспользование вызывает короткий метеоритный дождь возле позиции игрока\nИстощает игрока на 1 минуту, не позволяя ему использовать магию");
         }
 
 		public override void SetDefaults()

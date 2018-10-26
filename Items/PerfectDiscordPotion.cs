@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items
 {
     public class PerfectDiscordPotion : ModItem
     {
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Perfect Discord Potion");

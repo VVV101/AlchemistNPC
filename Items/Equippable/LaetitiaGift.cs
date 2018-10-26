@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Equippable
 	[AutoloadEquip(EquipType.Neck)]
 	public class LaetitiaGift : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Laetitia Gift (O-01-67-1)");
@@ -33,65 +29,30 @@ namespace AlchemistNPC.Items.Equippable
 	
 		public override void SetDefaults()
 		{
-			item.damage = 30;
-			item.summon = true;
-			item.mana = 10;
 			item.width = 26;
 			item.height = 28;
-			item.useTime = 36;
-			item.useAnimation = 36;
-			item.useStyle = 1;
-			item.noMelee = true;
-			item.knockBack = 3f;
 			item.value = Item.buyPrice(0, 30, 0, 0);
 			item.rare = 7;
-			item.UseSound = SoundID.Item44;
-			item.shoot = mod.ProjectileType("LittleWitchMonster");
-			item.shootSpeed = 10f;
-			item.buffType = mod.BuffType("LittleWitchMonster");
-			item.buffTime = 3600;
 			item.accessory = true;
 			
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
+			player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaGift = true;
 			++player.maxMinions;
 			++player.maxMinions;
 			++player.maxMinions;
-			if (player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet == false)
+			if (player.ownedProjectileCounts[mod.ProjectileType("LittleWitchMonster")] != 1)
 			{
 			player.lifeRegen -= 20;
 			}
-		}
-
-		public override bool CanUseItem(Player player)
-		{
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
-					{
-					item.damage = 125;
-					}
-					else
-					{
-					item.damage = 30;
-					}
-			return ((player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet == true && player.GetModPlayer<AlchemistNPCPlayer>(mod).lwm == false) || (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).lwm == false));
-		}
-		
-		public override bool AltFunctionUse(Player player)
-		{
-			return true;
-		}
-
-		public override bool UseItem(Player player)
-		{
-			if (player.altFunctionUse == 2)
+			if (player.ownedProjectileCounts[mod.ProjectileType("LittleWitchMonster")] < 1)
 			{
-				player.MinionNPCTargetAim();
+			player.AddBuff(mod.BuffType("LittleWitchMonster"), 60);
 			}
-			return base.UseItem(player);
 		}
-		
+
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
@@ -102,11 +63,6 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-		}
-		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			return player.altFunctionUse != 2;
 		}
 	}
 }

@@ -50,7 +50,7 @@ namespace AlchemistNPC.Items
 		
 		public override bool CanUseItem(Player player)
 		{
-		if (CalamityModRevengeance && player.FindBuffIndex(mod.BuffType("HeartAche")) <= -1)
+		if (CalamityModRevengeance && !player.HasBuff(mod.BuffType("HeartAche")))
 			{
 			return true;
 			}

@@ -34,7 +34,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			Player player = Main.player[projectile.owner];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
-			if (player.dead || player.FindBuffIndex(mod.BuffType("GrimReaper")) <= -1)
+			if (player.dead || !player.HasBuff(mod.BuffType("GrimReaper")))
 			{
 				modPlayer.grimreaper = false;
 			}

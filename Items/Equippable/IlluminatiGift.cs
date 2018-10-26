@@ -13,20 +13,16 @@ namespace AlchemistNPC.Items.Equippable
 {
 	public class IlluminatiGift : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Illuminati Gift");
 			Tooltip.SetDefault("Increases all items reach and quantity of dropped coins"
 				+ "\nStated above would work if accessory is visible"
 				+ "\nMost traders provide discounts"
-				+ "\nParalizes all enemies on screen after being hit"
+				+ "\nParalyzes all enemies on screen after being hit"
 				+ "\nIf you HP reaches 10% or less, activates special regeneration"
 				+ "\nThis ability has 2 minute cooldown"
-				+ "\nIf hit was supposed to kill you, you will survive"
+				+ "\nIf damage taken would have killed you, you will survive"
 				+ "\nWould only work if cooldown is not active"
 				+ "\nAllows to inflict Midas Touch debuff by any attack");
 				DisplayName.AddTranslation(GameCulture.Russian, "Дар Иллюминатов");

@@ -10,19 +10,15 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class WatcherAmulet : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Watcher Amulet");
 			Tooltip.SetDefault("No wonder it had an oddly shaped amulet in the middle."
 				+ "\nBy obtaining certain essentials you have awakened the true form of this amulet."
-				+ "\nWhat unearthly powers does it have? No one knows.");
+				+ "\nWhat unearthly powers does it have? Nobody knows.");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(25, 12));
 			DisplayName.AddTranslation(GameCulture.Russian, "Дозорный Амулет");
-            Tooltip.AddTranslation(GameCulture.Russian, "Неудивательно, что он имел амулет странной формы в середине.\nДобыв необходимые материалы, вы пробудили его истинную силу.\nКакую невероятную мощь он имеет в себе? Никто не знает.");
+            Tooltip.AddTranslation(GameCulture.Russian, "Неудивительно, что он имел амулет странной формы в середине.\nДобыв необходимые материалы, вы пробудили его истинную силу.\nКакую невероятную мощь он имеет в себе? Никто не знает.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "凝视者护符");
             Tooltip.AddTranslation(GameCulture.Chinese, "怪不得中间有个奇形怪状的护身符.\n通过某种方式, 你唤醒了这个护身符的真实形态.\n它拥有怎样的可怕力量？没人知道.");

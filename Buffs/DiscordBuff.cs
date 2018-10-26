@@ -20,7 +20,7 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Раздор");
-            Description.AddTranslation(GameCulture.Russian, "Позволяет телепортироваться на курсор при нажатии горячей клавиши\nНарушает гравитацию игрока на 1 секунду после использования\nНаносит значительные повреждения, если вы в Хаотическом состоянии\nДлительность дебаффа увеличена до 10 секунд");
+            Description.AddTranslation(GameCulture.Russian, "Позволяет телепортироваться к курсору при нажатии горячей клавиши\nНарушает гравитацию игрока на 1 секунду после использования\nНаносит значительные повреждения, если вы в Хаотическом состоянии\nДлительность дебаффа (Хаотическое Состояние) увеличена до 10 секунд");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "混乱传送");
             Description.AddTranslation(GameCulture.Chinese, "你可以使用快捷键传送到鼠标位置" +

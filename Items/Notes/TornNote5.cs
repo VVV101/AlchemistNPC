@@ -7,10 +7,6 @@ namespace AlchemistNPC.Items.Notes
 {
 	public class TornNote5 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Torn Note #5");

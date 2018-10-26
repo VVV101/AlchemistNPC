@@ -17,7 +17,7 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Символ Боли");
-			Description.AddTranslation(GameCulture.Russian, "Ослабляет Противника");
+			Description.AddTranslation(GameCulture.Russian, "Ослабляет противников");
         }
 	}
 }

@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Equippable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mystic Amulet");
-			Tooltip.SetDefault("Provides its weilder ability of Telekinesis"
+			Tooltip.SetDefault("Grants Telekinesis ability to its wielder"
 				+ "\nCan be used for flying");
 			DisplayName.AddTranslation(GameCulture.Russian, "Мистический Амулет");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт носителю способность к Телекинезу\nПозволяет летать");

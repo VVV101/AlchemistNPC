@@ -9,18 +9,14 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Pandora : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pandora");
 			Tooltip.SetDefault("'A weapon of the underworld, capable of 666 different forms'"
 			+"\nFixed Pandora with unlocked damaging potential"
 			+"\nBase form 422: Launches sharp shuriken, which sticks to enemies."
-			+"\nAttacking raises Disaster Gauge"
-			+"\n500 allows to change weapon"
+			+"\nAttacking fills Disaster Gauge"
+			+"\nFull gauge allows you to switch weapon's form"
 			+"\nRight click to change form");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пандора");
             Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nБазовая форма 422: Запускает бритвенно-острый сюрикен, цепляющийся за противников\nПри наборе полной шкалы Бедствия вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");

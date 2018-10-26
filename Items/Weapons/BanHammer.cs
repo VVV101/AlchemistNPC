@@ -13,14 +13,13 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class BanHammer : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("[c/FF0000:Instantly kill any non-boss enemies]"
-			+"\n[c/FF0000:If part of the boss is not counted as boss, it would be killed too]");
+			Tooltip.SetDefault("[c/FF0000:Instantly kills any non-boss enemies]"
+			+"\n[c/FF0000:If a part of the boss doesn't count as boss, it would be killed too]");
+			
+			DisplayName.AddTranslation(GameCulture.Russian, "Банхаммер");
+			Tooltip.AddTranslation(GameCulture.Russian, "[c/FF0000:Мгновенно убивает всё, что не является боссом.]\n[c/FF0000:Если часть босса не считается боссом - она будет уничтожена.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "班锤");
             Tooltip.AddTranslation(GameCulture.Chinese, "[c/FF0000:秒杀一切非Boss敌人]" +
@@ -49,9 +48,13 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
 		{
-			if (target.boss == false || target.type != 325 || target.type != 327 || target.type != 325 || target.type != 344 || target.type != 345 || target.type != 346)
+			if (target.boss == false)
 			{
 				damage = 999999;
+			}
+			if (target.type == 325 || target.type == 327 || target.type == 325 || target.type == 344 || target.type == 345 || target.type == 346)
+			{
+				damage = 88;
 			}
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 				{

@@ -6,6 +6,22 @@ The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of th
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
+v7.6.1
+-Fixed issue when Cera Sumat, Holy Avenger and The Light of Cera Sumat were not killing some enemies properly.
+v7.6
+-Removed support for Content Disabler mod (as AlchemistNPC Lite is released now).
+-Alchemist Charm Tier 3 and 4 are now providing real discounts for potions traders (Alchemist, Brewer and Young Brewer).
+-Added Cone of Cold magic book. Shoots spread of ice cold projectiles. They may slow or freeze normal enemies and some minibosses.
+Available early hardmode.
+-Improved translations for English and Russian languages by drh#1109 (except EGO items).
+-Increased use range of town NPC summoning items.
+-Stormbreaker can now be turned into thrown weapon. Modifiers are fixed to Legendary (melee) and Unreal (Thrown).
+-Curse of Light debuff no longer affects Plaguebringer Goliath and Queen Bee.
+-Fixed Mechanical Wings conflicting with boots.
+-Fixed Laetitia's Gift mechanics. Now it spawns Little Witch Monster automatically if you have Laetitia or Paradise Lost set equipped.
+Also fixed problem with draining HP while sets were equipped.
+-Fixed Alchemist Charm Tier 1 drop for MP.
+-Fixed sizes of Cera Sumat, Holy Avenger and The Light of Cera Sumat.
 v7.5.2
 -Fixed some MP issues.
 -Fixed Disaster Gauge appearing with Content Disabler.

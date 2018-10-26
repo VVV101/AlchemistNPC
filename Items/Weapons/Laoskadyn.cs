@@ -14,17 +14,13 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Laoskadyn : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Laoskadyn");
-			Tooltip.SetDefault("Drops exploding homing needles from the sky on swing"
+			Tooltip.SetDefault("Rains exploding homing needles from the sky on swing"
 			+"\nNeedles release damaging flames");
 			DisplayName.AddTranslation(GameCulture.Russian, "Лаоскадин");
-            Tooltip.AddTranslation(GameCulture.Russian, "Вызывает падение взрывающихся игл с небес при взмахе\nИглы выпускают наносящие урон огни");
+            Tooltip.AddTranslation(GameCulture.Russian, "Сбрасывает взрывающиеся самонаводящиеся иглы с небес\nИглы испускают наносящие урон огни");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "劳斯卡丁");
             Tooltip.AddTranslation(GameCulture.Chinese, "挥舞时从天上降下自动追踪敌人的针\n针会释放出有伤害的火焰");

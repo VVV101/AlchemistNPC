@@ -9,11 +9,11 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Titan Skin");
-			Description.SetDefault("You have some heavy debuff immunity");
+			Description.SetDefault("You are immune to some annoying debuffs");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Кожа Титана");
-			Description.AddTranslation(GameCulture.Russian, "Вы имеете иммунитет к некоторым серьёзным дебаффам");
+			Description.AddTranslation(GameCulture.Russian, "Иммунитет к некоторым наедоедливым дебаффам");
             DisplayName.AddTranslation(GameCulture.Chinese, "泰坦皮肤");
             Description.AddTranslation(GameCulture.Chinese, "你免疫一些Debuff");
         }

@@ -49,7 +49,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\n[c/00FF00:Stats are growing up through post Moon Lord progression]"
 			+"\nBoosted stats will be shown after the first swing");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Свет Сера Сумат''");
-            Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарный Меч] Старого Графа Эхлда\nОслабляет противников при ударе\n[c/00FF00:Показатели увеличивается по мере пост Мунлордного прохождения]");
+            Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарный Меч] Старого Графа Эхлда\nОслабляет противников при ударе\nОслабленные противники получают на 20% больше урона\n25% шанс получить половину урона от ослабленных противников\n[c/00FF00:Показатели увеличивается по мере пост Мунлордного прохождения]");
 
 		}
 
@@ -68,7 +68,6 @@ namespace AlchemistNPC.Items.Weapons
 			item.rare = 11;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.scale = 1.5f;
 		}
 
 		public override bool CanUseItem(Player player)
@@ -124,7 +123,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.buffImmune[mod.BuffType("CurseOfLight")] = false;
-			target.AddBuff(mod.BuffType("CurseOfLight"), 36000);
+			target.AddBuff(mod.BuffType("CurseOfLight"), 300);
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
 			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/2, 0, Main.myPlayer);

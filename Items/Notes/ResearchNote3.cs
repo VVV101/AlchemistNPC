@@ -7,25 +7,21 @@ namespace AlchemistNPC.Items.Notes
 {
 	public class ResearchNote3 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Research Note#3");
-			Tooltip.SetDefault("'In my interdimensional travels I once met one scientist, called [c/00FF00:Stanford]."
-			+"\nHe asked for my help in making weapon, which could even cause damage to Godlike Creature."
+			DisplayName.SetDefault("Research Note #3");
+			Tooltip.SetDefault("'In my interdimensional travels I have met a scientist, name's [c/00FF00:Stanford]."
+			+"\nHe asked fme to aid him in making a weapon which could cause damage to a Godlike Creature."
 			+"\nIt took us about half year to actually made working [c/00FF00:Prototype #618] aka [c/00FF00:'Quantum Destabilizer']..."
 			+"\n[c/00FF00:Charged Blaster] from Martians would fit as base."
 			+"\nLens from [c/00FF00:Heat Ray] would be just fine." 
 			+"\nSome parts should be made from both Luminite and Celestial Fragments..."
-			+"\nSo, [c/00FF00:Alchemical Bundle] is needed here."
-			+"\nAs specially accurate weapon, it also requires [c/00FF00:Sniper Scope]."
+			+"\nAs usual, [c/00FF00:Alchemical Bundle] is needed here."
+			+"\nSince this is an extremely accurate weapon, it also requires [c/00FF00:Sniper Scope]."
 			+"\nBut the biggest problem here is the Power Source. We can't just get energy from nothing..."
 			+"\nWell, for some money, I could sell you special Energy Cells for it.'");
 			DisplayName.AddTranslation(GameCulture.Russian, "Запись исследования №3");
-            Tooltip.AddTranslation(GameCulture.Russian, "'В моих межизмеренческих странствиях я однажды встретила учёного, которого звали [c/00FF00:Стэнфорд].\nОн попросил помощи в создании оружия, способного повредить даже богоподобному созданию.\nУ нас ушло полгода на создание [c/00FF00:Прототипа №618] или [c/00FF00:'Квантового Дестабилизатора'].\nВ качестве основы подойдёт любой [c/00FF00:Заряжаемый Бластер].\nЛинза из [c/00FF00:Теплового Луча] будет здесь в самый раз.\nНекоторые части должны быть изготовлены из Люминита и Небесных Фрагментов...\nПоэтому здесь необходим [c/00FF00:Алхимический набор].\nКак особо точное оружие, прототип №618 также требует наличие [c/00FF00:Снайперского Прицела].\nНо главной проблемой является Источник Питания. Энергия не берётся из ничего...\nНу, за некоторую сумму я могу изготовить для него особые [c/00FF00:Энергоячейки].'");
+            Tooltip.AddTranslation(GameCulture.Russian, "'В моих межизмеренческих странствиях я однажды встретила учёного, которого звали [c/00FF00:Стэнфорд].\nОн попросил помощи в создании оружия, способного повредить даже богоподобному созданию.\nУ нас ушло полгода на создание [c/00FF00:Прототипа №618] или [c/00FF00:'Квантового Дестабилизатора'].\nВ качестве основы подойдёт любой [c/00FF00:Заряжаемый Бластер].\nЛинза из [c/00FF00:Теплового Луча] будет здесь в самый раз.\nНекоторые части должны быть изготовлены из Люминита и Небесных Фрагментов...\nКак обычно, здесь необходим [c/00FF00:Алхимический набор].\nКак особо точное оружие, прототип №618 также требует наличие [c/00FF00:Снайперского Прицела].\nНо главной проблемой является Источник Питания. Энергия не берётся из ничего...\nНу, за некоторую сумму я могу изготовить для него особые [c/00FF00:Энергоячейки].'");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "研究笔记#3");
             Tooltip.AddTranslation(GameCulture.Chinese, "'在次元旅行中我遇见过一个科学家, 名字叫做 [c/00FF00:斯坦福] ." +

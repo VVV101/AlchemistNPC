@@ -161,7 +161,7 @@ namespace AlchemistNPC.Projectiles
 			{
 				damage = 5000;
 			}
-			if (player.FindBuffIndex(BuffID.ManaSickness) > -1)
+			if (player.HasBuff(BuffID.ManaSickness))
 			{
 				damage /= 2;
 			}

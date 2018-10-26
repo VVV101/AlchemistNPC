@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Summoning
 {
 	public class RealityPiercer : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Reality Piercer");
@@ -39,6 +35,12 @@ namespace AlchemistNPC.Items.Summoning
 			item.makeNPC = (short)mod.NPCType("Explorer");
 		}
 
+		public override void HoldItem(Player player)
+		{
+		Player.tileRangeX += 600;
+        Player.tileRangeY += 600;
+		}
+		
 		public override bool CanUseItem(Player player)
 		{
 			return (!NPC.AnyNPCs(mod.NPCType("Explorer")));

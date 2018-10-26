@@ -13,10 +13,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class ParadiseLostHead : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
             DisplayName.SetDefault("Paradise Lost Crown of Thorns (T-03-46)");
@@ -28,7 +24,7 @@ namespace AlchemistNPC.Items.Armor
             + "\n[c/FF0000:EGO armor piece]"
             + "\n+100 max mana"
             + "\nIncreases melee speed by 33%");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Э.П.О.С часть брони]\n+100 к максимуму маны\nУвеличивает скорость атак в ближнем бою 35%");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы хотите, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Часть брони Э.П.О.С.]\n+100 к максимуму маны\nУвеличивает скорость ближнего боя на 35%");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "失乐园荆棘王冠 (T-03-46)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'你不必担心, 我已经听到了你那略带惊恐的祈祷." +
@@ -40,11 +36,11 @@ namespace AlchemistNPC.Items.Armor
                 "\n增加 33% 近战速度");
 
             ModTranslation text = mod.CreateTranslation("ParadiseLostSetBonus");
-            text.SetDefault("Increases all damage by 35% and adds 25% to critical strike chances"
-            + "\nMakes EGO weapons deal much more damage"
-            + "\nChanges would be seen after first usage of weapon"
-            + "\nIf you are taking less than 150 damage, then it would be nullified.");
-            text.AddTranslation(GameCulture.Russian, "Увеличивает все виды урона на 35% и добаляет 25% к шансу критического удара\nЭ.П.О.С. оружия будут наносить значительно больше урона\nЕсли вы получаете меньше 150 урона, то урон будет предотвращён");
+            text.SetDefault("Increases all damage by 35% and adds 25% to critical strike chance"
+            + "\nIncreases damage dealt by EGO weapons"
+            + "\nChanges would be seen after first usage of weapons"
+            + "\nIf hit taken deals less than 150 damage, then it will be nullified.");
+            text.AddTranslation(GameCulture.Russian, "Увеличивает любой урон на 35% и добаляет 25% к шансу критического удара\nУвеличивает урон наносимый оружием Э.П.О.С.\nЕсли вы получаете меньше 150 урона, то урон будет аннулирован");
             text.AddTranslation(GameCulture.Chinese, "增加 35% 所有伤害, 增加 25% 暴击几率"
             + "\n使用 EGO 武器造成更多伤害"
             + "\n第一次使用武器后就能看见变化"

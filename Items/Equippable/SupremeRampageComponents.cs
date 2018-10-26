@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Equippable
 {
 	public class SupremeRampageComponents : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Supreme Rampage Components");
@@ -29,7 +25,7 @@ namespace AlchemistNPC.Items.Equippable
 			+ "\n''And the Heavens have opened, and God reached down upon my life, and said upon me:"
 			+ "\nRek thigh scrbs, an fk ther sht ahp.''");
 			DisplayName.AddTranslation(GameCulture.Russian, "Истинные Компоненты Буйства");
-            Tooltip.AddTranslation(GameCulture.Russian, "Превращяет мушкетные пули в смертоносные Хлорофитово-осколочные пули\nОни работают как безумная комбинация Хлорифитовых и Пыле-кристальных пуль\nДаёт эффект Снайперского прицела \n15% бонусного урона и шанса критического удара для дальнего боя\nОтключение видимости выключает эффект Снайперского Прицела\nУвеличивает пробивание брони на 40\nЭффект Экономии Патронов\n''And the Heavens have opened, and God reached down upon my life, and said upon me:\nRek thigh scrbs, an fk ther sht ahp.''");
+            Tooltip.AddTranslation(GameCulture.Russian, "Превращает мушкетные пули в смертоносные Хлорофитово-осколочные пули\nОни работают как безумная комбинация Хлорифитовых и Пыле-кристальных пуль\nДаёт эффект Снайперского прицела \n15% бонусного урона и шанса критического удара для дальнего боя\nОтключение видимости выключает эффект Снайперского Прицела\nУвеличивает пробивание брони на 40\nЭффект Экономии Патронов\nУскоряет все стрелы\nУсиливает любое оружие, стреляющее Электросферами\n''И разверзлись Небеса, спустив послание Бога, завещавшее мне:\nДй им всм п щщам, и рздлбй вс чт вдишь.''");
         }
 	
 		public override void SetDefaults()

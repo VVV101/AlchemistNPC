@@ -12,10 +12,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class StrangeTopHat : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Strange Top Hat");

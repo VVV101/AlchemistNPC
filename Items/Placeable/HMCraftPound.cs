@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Placeable
 {
     public class HMCraftPound : ModItem
     {
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Superb Crafting Pound");

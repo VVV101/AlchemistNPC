@@ -16,7 +16,7 @@ namespace AlchemistNPC.Buffs
 			Description.SetDefault("Increased attack speed");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Атакующий режим симбионта");
+			DisplayName.AddTranslation(GameCulture.Russian, "Атакующий режим симбиота");
 			Description.AddTranslation(GameCulture.Russian, "Скорость атаки увеличена");
         }
 	}

@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Legs)]
 	public class BloodMoonStockings : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Blood Moon stockings and boots");

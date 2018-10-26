@@ -7,15 +7,11 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class PinkGuyBody : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pink Guy's Suit");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинезон Розового Парня"); 
-			Tooltip.SetDefault("Forged from the darkest of materials. Only the best of the bests can wear it.");
+			Tooltip.SetDefault("Forged from the darkest of materials. Only the best of the best can wear it.");
             Tooltip.AddTranslation(GameCulture.Russian, "Скован из темнейших материалов. Лишь лучшие из лучших могут носить его.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "Pink Guy的衣服");

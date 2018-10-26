@@ -21,7 +21,7 @@ namespace AlchemistNPC.Buffs
 			Description.SetDefault("Increases life regeneration greatly");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Эффект соды Кримзона");
+			DisplayName.AddTranslation(GameCulture.Russian, "Эффект Алой Соды");
 			Description.AddTranslation(GameCulture.Russian, "Значительно увеличивает регенерацию здоровья");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "绯红苏打加持");

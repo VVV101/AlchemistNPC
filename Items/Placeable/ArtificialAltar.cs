@@ -6,10 +6,6 @@ namespace AlchemistNPC.Items.Placeable
 {
 	public class ArtificialAltar : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Artificial Altar, made by occult powers");

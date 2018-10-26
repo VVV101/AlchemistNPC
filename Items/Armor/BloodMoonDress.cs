@@ -11,11 +11,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class BloodMoonDress : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
-		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Blood Moon Dress");

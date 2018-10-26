@@ -15,7 +15,7 @@ namespace AlchemistNPC.Items.Misc
 			DisplayName.SetDefault("Life Elixir");
 			Tooltip.SetDefault("Permanently increases maximum life by 50. Can be used twice.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Эликсир Жизни");
-			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальное здоровье на 50. Можно использовать только 2 раза.");
+			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальное здоровье на 50. Можно использовать дважды.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "仙丹");
             Tooltip.AddTranslation(GameCulture.Chinese, "永久增加50最大生命值. 能使用两次.");

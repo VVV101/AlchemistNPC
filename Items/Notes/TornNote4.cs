@@ -7,10 +7,6 @@ namespace AlchemistNPC.Items.Notes
 {
 	public class TornNote4 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Torn Note #4");
@@ -20,7 +16,7 @@ namespace AlchemistNPC.Items.Notes
 			+"\nBut it also allows your minions to ignore invincibility frames''"
 			+"\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #4");
-            Tooltip.AddTranslation(GameCulture.Russian, "'После победы на Лунным Лордом ты сможешь скрафтить Ультимативные Аксессуары.\nОдин из них - это Плод Сефирот.\nОн не только увеливает урон прислужников на 15% и дают 2 дополнительных слота для прислужников...\nТакже он позволяет прислужникам игнорировать период неуязвимости противника.'\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь.");
+            Tooltip.AddTranslation(GameCulture.Russian, "'После победы на Лунным Лордом ты сможешь скрафтить Ультимативные Аксессуары.\nОдин из них - это Плод Сефирот.\nОн не только увеливает урон прислужников на 15% и дает 2 дополнительных слота для прислужников...\nНо так же он позволяет прислужникам игнорировать период неуязвимости противника.'\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "破损的笔记 #4");
             Tooltip.AddTranslation(GameCulture.Chinese, "'在击败月亮领主之后, 你可以制造一些终极饰品." +

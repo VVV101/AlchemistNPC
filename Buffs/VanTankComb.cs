@@ -29,9 +29,9 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (player.FindBuffIndex(mod.BuffType("BattleComb")) >= 0)
+			if (player.HasBuff(mod.BuffType("BattleComb")))
 			{
-				if (player.FindBuffIndex(mod.BuffType("TankComb")) >= 0)
+				if (player.HasBuff(mod.BuffType("TankComb")))
 				{
 				}
 				else
@@ -53,7 +53,7 @@ namespace AlchemistNPC.Buffs
 			}
 			else
 			{
-				if (player.FindBuffIndex(mod.BuffType("TankComb")) >= 0)
+				if (player.HasBuff(mod.BuffType("TankComb")))
 				{
 				}
 				else

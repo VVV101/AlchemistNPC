@@ -7,17 +7,13 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class NyctosythiaBullet : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nyctosythia Bullet");
-			Tooltip.SetDefault("Better to hold it as far, as possible."
+			Tooltip.SetDefault("Don't keep them close."
 			+"\nPhases through walls, releases homing projectiles on enemy/wall impact");
 			DisplayName.AddTranslation(GameCulture.Russian, "Никтосифиевая пуля");
-            Tooltip.AddTranslation(GameCulture.Russian, "Чем дальше держать их от себя, тем лучше.\nПроходят сквозь стены, выпускают самонаводящиеся снаряды при попадании");
+            Tooltip.AddTranslation(GameCulture.Russian, "Чем дальше держать их от себя, тем лучше.\nПроходят сквозь стены, выпускают самонаводящиеся снаряды при попадании в противника/cтену");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "夜蛾弹");
             Tooltip.AddTranslation(GameCulture.Chinese, "最好尽可能快的抓住它\n可穿墙, 第一次撞击墙壁或敌人后释放追踪敌人的子弹");

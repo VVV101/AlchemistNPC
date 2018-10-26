@@ -9,10 +9,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class QoHWeapon : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("''In the name of Love and Hate'' (O-01-04)");
@@ -23,7 +19,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nShots 4 different types of projectile"
 			+"\nThey may restore HP, Mana, inflict debuff or deal double damage.");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Во Имя Любви и Ненависти'' (O-01-04)");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Волшебный жезл, излучающий любовную энергию Магической Девочки.\nПлохие люди будут очищены её святым сиянием и будут рождены вновь.\nОни сгорят. Они не захотят пробудиться.''n[c/FF0000:Э.П.О.С. оружие]\nВыстреливает 4 типа снарядов\nОни могут восстановить ХП, Ману, наложить дебафф или нанести двойной урон");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Волшебный жезл, излучающий любовную энергию Магической Девочки.\nПлохие люди будут очищены её святым сиянием и будут рождены вновь.\nОни сгорят. Они не захотят пробудиться.''n[c/FF0000:Оружие Э.П.О.С.]\nВыстреливает 4 типа снарядов\nОни могут восстановить ХП, Ману, наложить дебафф или нанести двойной урон");
         }
 
 		public override void SetDefaults()

@@ -6,10 +6,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class NyctosythiaArrowInfinite : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nyctosythia Arrow");
@@ -17,7 +13,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nPhases through walls, releases homing projectiles on enemy/wall impact"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Никтосифиевая стрела");
-            Tooltip.AddTranslation(GameCulture.Russian, "Эти стрелы поглощают любой свет.\nПроходят сквозь стены, выпускают самонаводящиеся снаряды при попадании\nБесконечна");
+            Tooltip.AddTranslation(GameCulture.Russian, "Эти стрелы поглощают любой свет.\nПроходят сквозь стены, выпускают самонаводящиеся снаряды при попадании в противника/cтену\nБесконечна");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "夜蛾箭");
             Tooltip.AddTranslation(GameCulture.Chinese, "这些箭消耗任意形式的光\n可穿墙, 第一次撞击墙壁或敌人后释放追踪敌人的子弹\n无限");

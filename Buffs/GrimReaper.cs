@@ -15,6 +15,7 @@ namespace AlchemistNPC.Buffs
             Main.buffNoTimeDisplay[Type] = true;
 			Main.vanityPet[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Жнец");
+			Description.AddTranslation(GameCulture.Russian, "Привет! Мое имя Грегг, я Жнец - пожалуйста, не надо смеяться!");
 		}
 
 		public override void Update(Player player, ref int buffIndex)

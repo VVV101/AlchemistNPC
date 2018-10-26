@@ -12,10 +12,6 @@ namespace AlchemistNPC.Items.Equippable
 {
 	public class BastScroll : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Bast's Scroll");
@@ -30,7 +26,7 @@ namespace AlchemistNPC.Items.Equippable
 			+"\nDefense destruction effect is global for all players"
 			+"\nThrowing attacks go through tiles");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток Баст");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!''\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего боя/метательного на 15%\nБлижние и метательные атаки разрушают броню противника (может не работать с некоторыми оружиями)\nЭффект разрушения брони распространяется на все игроков\nМетательные атаки проходят сквозь блоки");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!''\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего/метательного боя на 15%\nБлижние и метательные атаки разрушают броню противника (может не работать с некоторым оружием)\nЭффект разрушения брони распространяется на все игроков\nМетательные атаки проходят сквозь блоки");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "巴斯特卷轴");
             Tooltip.AddTranslation(GameCulture.Chinese, "'强者猎杀弱者——那就是自然规律! 而我遵循规律!'\n给予忍者大师的效果\n让你跳的更高\n允许三段跳\n隐藏饰品可关闭三段跳\n增加10%伤害免疫\n增加15%近战/投掷伤害和暴击\n攻击完全穿透敌人的护甲\n穿甲效果在多人适用于所有玩家\n投掷物可穿越方块");

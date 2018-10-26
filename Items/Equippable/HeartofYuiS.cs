@@ -7,15 +7,11 @@ namespace AlchemistNPC.Items.Equippable
 {
 	public class HeartofYuiS : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Heart of Yui");
 			Tooltip.SetDefault("Summons small Pixie Helper"
-			+"\nEnlights treasures, creatures and traps");
+			+"\nHighlights treasures, creatures and traps");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сердце Юи");
             Tooltip.AddTranslation(GameCulture.Russian, "Вызывает маленькую Фею-Помошника\nПодсвечивает сокровища, существ и ловушки");
 

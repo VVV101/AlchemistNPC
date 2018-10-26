@@ -39,11 +39,6 @@ namespace AlchemistNPC.NPCs
 	[AutoloadBossHead]
 	class Knuckles : ModNPC
 	{
-		public override bool Autoload(ref string name)
-		{
-			return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
-		
 		public override void SetDefaults()
 		{
 			npc.CloneDefaults(NPCID.DungeonGuardian);

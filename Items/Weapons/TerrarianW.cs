@@ -11,9 +11,9 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Terrarian-W (V-05-516)");
-			Tooltip.SetDefault("''Angela's actions have rewrote the understandings of souls themselves''\n[c/FF0000:EGO weapon]\nLeft click to shoot burst of lasers\nRight click to shoot burst of bullets\n33% chance not to consume ammo");
+			Tooltip.SetDefault("''Angela's actions have rewritten the very understandment of souls''\n[c/FF0000:EGO weapon]\nLeft click to shoot burst of lasers\nRight click to shoot burst of bullets\n33% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Terrarian-W (V-05-516)");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Действия Анджелы переписали само понимание душ''\n[c/FF0000:Э.П.О.С. Оружие]\nНа левый клик выстреливает очередью из лазеров\n\nНа правый клик выстреливает очередью из пуль\n33% шанс не потратить патроны");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Действия Анджелы переписали само понимание душ''\n[c/FF0000:Оружие Э.П.О.С.]\nЛевая кнопка мыши выстреливает очередью из лазеров\nПравая кнопка мыши выстреливает очередью из пуль\n33% шанс не потратить патроны");
 		}
 
 		public override void SetDefaults()

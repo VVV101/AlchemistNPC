@@ -14,21 +14,17 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Akumu : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("''Akumu''");
-			Tooltip.SetDefault("It means ''[c/FF00FF:nightmare]'' on Japanese"
+			Tooltip.SetDefault("It means ''[c/FF00FF:demon]'' in Japanese"
 			+"\nIts slice pierces through any amount of enemies on its way"
-			+"\nLeft click launcher short travelling projectile"
+			+"\nLeft click launches a short travelling projectile"
 			+"\nRight click slices the air in place"
 			+"\nWhile at 25% of life or lower, Akumu generates projectile reflecting shield"
-			+"\nThis would drop weapon power until life will go back to 25%");
+			+"\nThis would lower weapon's power until life regens back to 25%");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Акуму''");
-            Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''демон'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши");
+            Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''демон'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши\nЕсли здоровье ниже 25% Акуму создает щит, отражающий снаряды\nНаличие щита снижает урон Акуму");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "''Akumu''");
             Tooltip.AddTranslation(GameCulture.Chinese, "在日语里, 'Akumu'的意思是'恶魔'\n它发射出的剑气能穿透经过的所有敌人\n左键发射剑气\n右键近距离攻击");

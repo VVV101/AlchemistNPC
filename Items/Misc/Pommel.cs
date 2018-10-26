@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Misc
 {
     public class Pommel : ModItem
     {
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Pommel");

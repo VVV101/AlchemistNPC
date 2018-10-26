@@ -7,15 +7,11 @@ namespace AlchemistNPC.Items.Notes
 {
 	public class SecretNote3 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Secret Note #3");
 			Tooltip.SetDefault("''In one ancient scroll I found quite... unpleasant information."
-			+ "\nThere said something about... Pink Guy? I have no idea who is this."
+			+ "\nIt said something about... Pink Guy? I have no idea who is this."
 			+ "\nSo, if you find his armor and equip it as actual armor in fight against Moon Lord..."
 			+ "\nYou may get something very unique."
 			+ "\nBut you need to be very careful with that thing..."

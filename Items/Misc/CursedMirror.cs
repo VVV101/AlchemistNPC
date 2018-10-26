@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Misc
 {
 	public class CursedMirror : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Cursed Mirror");

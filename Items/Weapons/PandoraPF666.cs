@@ -8,20 +8,16 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class PandoraPF666 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pandora (PF666)");
 			Tooltip.SetDefault("'A weapon of the underworld, capable of 666 different forms'"
 			+"\nFixed Pandora with unlocked damaging potential"
-			+"\nSpecial attack #2 (Released Energy)"
+			+"\nSpecial attack #2 (Energy Release)"
 			+"\nAttack depletes Disaster Gauge"
 			+"\nRight click to change special attack");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пандора (Форма 666)");
-            Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nСпециальная Атака №2 (Высвобождение энергии)\nАтака опусташает шкалу Бедствия\nНажмите правую кнопку мыши для смены специальной атаки");
+            Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nСпециальная Атака №2 (Высвобождение энергии)\nАтака опустошает шкалу Бедствия\nНажмите правую кнопку мыши для смены специальной атаки");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF666)");
         }

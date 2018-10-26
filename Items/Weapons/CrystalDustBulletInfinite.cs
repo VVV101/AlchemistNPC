@@ -7,17 +7,13 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class CrystalDustBulletInfinite : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Crystal Dust Bullet");
 			Tooltip.SetDefault("Explodes into even deadlier shards"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пули с кристальной пылью");
-            Tooltip.AddTranslation(GameCulture.Russian, "Взрываются на ещё более смертоносные осколки при попадании\nБесконечная");
+            Tooltip.AddTranslation(GameCulture.Russian, "Разрываются на ещё более смертоносные осколки при попадании\nБесконечная");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "水晶尘子弹");
             Tooltip.AddTranslation(GameCulture.Chinese, "爆炸变成致命碎片\n无限");

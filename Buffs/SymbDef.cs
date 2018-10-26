@@ -16,7 +16,7 @@ namespace AlchemistNPC.Buffs
 			Description.SetDefault("Increased life regeneration, defense and damage reduction");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Защитный режим симбионта");
+			DisplayName.AddTranslation(GameCulture.Russian, "Защитный режим симбиота");
 			Description.AddTranslation(GameCulture.Russian, "Регенерация, сопротивление урона и защита увеличены");
         }
 	}

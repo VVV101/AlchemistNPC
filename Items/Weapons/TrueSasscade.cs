@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class TrueSasscade : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetDefaults()
 		{
 		item.CloneDefaults(3389);

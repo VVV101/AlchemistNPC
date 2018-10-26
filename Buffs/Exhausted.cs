@@ -15,7 +15,7 @@ namespace AlchemistNPC.Buffs
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Истощён");
+			DisplayName.AddTranslation(GameCulture.Russian, "Истощение");
 			Description.AddTranslation(GameCulture.Russian, "Вы не можете использовать магию сейчас, снижена скорость горизонтального полёта, понижена скорость ближнего боя");
         }
 

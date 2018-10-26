@@ -9,10 +9,6 @@ namespace AlchemistNPC.Items.Equippable
 	[AutoloadEquip(EquipType.Wings)]
 	public class ParadiseLostWings : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Paradise Lost Wings (T-03-46)");
@@ -21,11 +17,11 @@ namespace AlchemistNPC.Items.Equippable
 			+ "\nThou want me to prove the miracle."
 			+ "\nThou shall believe in me and granted with life. I shall show you the power.''"
 			+ "\n[c/FF0000:EGO Gift]"
-			+ "\nWorks as Wings"
+			+ "\nCounts as wings"
 			+ "\nAlso allows to run"
 			+ "\nHas very huge wing time and excellent horizontal speed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Крылья Потерянного Рая (T-03-46)");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Э.П.О.С. Дар]\nРаботает как Крылья\nИмеют большое время полёта и великолепную горизонтальную скорость");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Не беспокойтесь, я услышал ваши молитвы..\nНе осознали вы ещё что боль - ничто?\nВы желаете, чтобы я доказал чудо.\nВы продолжаете верить в меня и готовы расстаться с жизнью. Я покажу вам СИЛУ.''\n[c/FF0000:Э.П.О.С. Дар]\nСчитается крыльями\nИмеют большое время полёта и великолепную горизонтальную скорость");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "失乐园之翼 (T-03-46)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'你不必担心, 我已经听到了你那略带惊恐的祈祷."

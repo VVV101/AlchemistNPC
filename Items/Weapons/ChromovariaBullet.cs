@@ -7,10 +7,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class ChromovariaBullet : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Chromovaria Bullet");

@@ -10,17 +10,13 @@ namespace AlchemistNPC.Items.Materials
 {
 	public class NyctosythiaCrystal : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nyctosythia Crystal");
 			Tooltip.SetDefault("Diamond of Nihility"
 			+"\nConsumes any form of light");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристалл Никтосифии");
-			Tooltip.AddTranslation(GameCulture.Russian, "Алмаз Нигилизма\nПоглощает свет любой формы");
+			Tooltip.AddTranslation(GameCulture.Russian, "Алмаз Нигилизма\nПоглощает любой вид света");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "夜蛾水晶");
             Tooltip.AddTranslation(GameCulture.Chinese, "夜蛾的钻石\n消耗任意形式的光");

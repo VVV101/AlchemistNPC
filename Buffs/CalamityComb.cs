@@ -25,7 +25,7 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Каламити");
-			Description.AddTranslation(GameCulture.Russian, "Идеальное сочетание баффов Каламити мода");
+			Description.AddTranslation(GameCulture.Russian, "Идеальное сочетание баффов Каламити мода\nДает эффект Стимулянтов Ярима, Каденции, Водки Фабсола, Титановой Чешуи и Всевидения");
             DisplayName.AddTranslation(GameCulture.Chinese, "万能药剂包");
             Description.AddTranslation(GameCulture.Chinese, "完美结合了以下药剂包的Buff：\n坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包");
         }

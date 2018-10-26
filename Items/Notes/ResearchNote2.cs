@@ -7,20 +7,16 @@ namespace AlchemistNPC.Items.Notes
 {
 	public class ResearchNote2 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Research Note#2");
+			DisplayName.SetDefault("Research Note #2");
 			Tooltip.SetDefault("''I have found some information about the [c/00FF00:Royal Magic Wand] in one ancient manuscript."
-			+"\nThere said... That no matter how exactly Wand was destroyed, it can still be recreated."
+			+"\nTWhat I found was that no matter how exactly Wand was destroyed, it can still be recreated."
 			+"\nBase for Magic Wand is [c/00FF00:the Rainbow Rod]."
 			+"\n[c/00FF00:Last Prism] could work as Magical Focus..." 
 			+"\n[c/00FF00:Angel Wings] are required too."
-			+"\n[c/00FF00:Butterfly Dust] may be useful to cheat allowed user check."
-			+"\nAnd you will need to catch [c/00FF00:Unicorn] as power source.''");
+			+"\n[c/00FF00:Butterfly Dust] may be useful to bypass allowed user check."
+			+"\nAnd you will need to catch a [c/00FF00:Unicorn] as power source.''");
 			DisplayName.AddTranslation(GameCulture.Russian, "Запись исследования №2");
             Tooltip.AddTranslation(GameCulture.Russian, "''Я нашла информацию о Королевской Волшебной Палочке в одном древнем манускрипте.\nТам сказано, что не важно, как именно Палочка была разрушена. Её всё равно можно воссоздать.\nОсновой послужит [c/00FF00:Радужный Жезл].\n[c/00FF00:Последняя Призма] подойдёт в качестве Магического Фокуса...\n[c/00FF00:Крылья Ангела] тоже необходимы.\n[c/00FF00:Пыль Бабочки] может быть полезна для обхода проверки пользователя.\nИ ещё тебе придётся поймать [c/00FF00:Единорога] как источник питания.''");
 

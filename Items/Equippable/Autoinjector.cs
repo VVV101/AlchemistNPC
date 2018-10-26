@@ -21,7 +21,7 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nBuffs will never wear off after death"
 				+ "\nWill also give permanent effect of Philosopher's Stone");
 				DisplayName.AddTranslation(GameCulture.Russian, "Автоинъектор");
-            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает регенерацию жизней \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт постоянный эффект Комбинации Универсала\nОна включает в себя эффекты Комбинаций Мага, Стрелка, Призывателя и Танка\nМожет быть использован для получения постоянного позитивного эффекта\nБаффы не будут исчезать после смерти\nТакже даст постоянный эффект Философского камня");
+            Tooltip.AddTranslation(GameCulture.Russian, "Усиливает регенерацию \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт постоянный эффект Комбинации Универсала\nОна включает в себя эффекты Комбинаций Мага, Стрелка, Призывателя и Танка\nМожет быть использован для получения постоянного позитивного эффекта\nБаффы не будут исчезать после смерти\nТакже даст постоянный эффект Философского камня");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "自动注射器");
             Tooltip.AddTranslation(GameCulture.Chinese, "提供生命回复, 降低治疗药水的冷却时间, 延长收到伤害后的无敌时间\n增加10%全伤害和8%全伤害的暴击几率\n同时永久给予万能药剂包buff（包含坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包）");
@@ -110,18 +110,9 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(ItemID.HerculesBeetle, 1);
 			recipe.AddIngredient(ItemID.DestroyerEmblem, 1);
 			recipe.AddIngredient(null, "MasksBundle", 1);
-			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
-			{
 			recipe.AddTile(null, "MateriaTransmutator");
-			}
-			if (ModLoader.GetMod("AlchemistNPCContentDisabler") != null)
-			{
-			recipe.AddTile(TileID.LunarCraftingStation);
-			}
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
-			{
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "WatcherAmulet", 1);
 			recipe.AddRecipeGroup("AlchemistNPC:Tier3Bar", 25);
@@ -138,7 +129,6 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-			}
 		}
 	}
 }

@@ -10,19 +10,15 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class EbonyIvory : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Ebony & Ivory");
 			Tooltip.SetDefault("''Twin handguns of a Demon Hunter''"
-			+ "\nCan do very rare critical hit, which would deal 66666 damage"
+			+ "\nCan very rarely crit for 66666 damage"
 			+ "\nShoot custom demonic bullets, which are exploding on hit"
 			+ "\n66% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Чёрный и Белый");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Парные пистолеты Демона-Охотника''\nМогут сделать очень редкий критический удар, наносящий 66666 повреждений\n66% шанс не потратить патроны"); 
+            Tooltip.AddTranslation(GameCulture.Russian, "''Парные пистолеты Демона-Охотника''\nМогут нанести очень редкий критический удар, наносящий 66666 урона\n66% шанс не потратить патроны"); 
 		}
 
 		public override void SetDefaults()

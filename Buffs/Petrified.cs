@@ -13,7 +13,7 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Окаменён");
-			Description.AddTranslation(GameCulture.Russian, "Вы полностью обращены в камень");
+			Description.AddTranslation(GameCulture.Russian, "Вы окаменели");
         }
 
 		public override void Update(Player player, ref int buffIndex)

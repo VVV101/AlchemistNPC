@@ -6,17 +6,13 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class CrystalyzedArrowInfinite : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Crystalyzed Arrow");
 			Tooltip.SetDefault("Explodes to shards on hit"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристальные стрелы");
-			Tooltip.AddTranslation(GameCulture.Russian, "Взрывается на осколки при попадании\nБесконечна");
+			Tooltip.AddTranslation(GameCulture.Russian, "Разрываются на осколки при попадании\nБесконечна");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "水晶尘之箭");
             Tooltip.AddTranslation(GameCulture.Chinese, "爆炸变成致命碎片\n无限");

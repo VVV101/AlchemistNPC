@@ -14,7 +14,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Laser Battery");
-			Description.SetDefault("Ready to shooting");
+			Description.SetDefault("Ready to fire");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Лазерная батарея");

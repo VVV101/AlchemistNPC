@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Tritantrum : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Tritantrum");
@@ -21,7 +17,7 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nRequires special ammo"
 			+ "\n50% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Тритантрум");
-            Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает взрывающиеся плазменные шары\nТребует особые патроны для стрельбы\n50% шанс не потратить стрелы");
+            Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает взрывающиеся плазменные шары\nТребует особые патроны для стрельбы\n50% шанс не потратить патроны");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "三项之怒");
             Tooltip.AddTranslation(GameCulture.Chinese, "发射会爆炸的等离子体\n需要特殊弹药\n50%的几率不消耗弹药");

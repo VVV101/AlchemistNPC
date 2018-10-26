@@ -10,14 +10,10 @@ namespace AlchemistNPC.Items.Misc
 {
     public class ReversivityCoinTier2 : ModItem
     {
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Reversivity Coin Tier 2");
-			DisplayName.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Второй");
+			DisplayName.AddTranslation(GameCulture.Russian, "Монета Реверсии Второго Уровня");
             Tooltip.SetDefault("Can be used for buying Treasure Bags from Operator");
 			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки сумок у Оператора");
 

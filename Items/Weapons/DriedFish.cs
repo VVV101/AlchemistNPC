@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Dried Fish");
-			Tooltip.SetDefault("Releases damaging bubbles on enemy hit");
+			Tooltip.SetDefault("Releases damaging bubbles on enemy hits");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сушёная Вобла");
             Tooltip.AddTranslation(GameCulture.Russian, "Выпускает ранящие пузыри при ударе по противнику");
 		}

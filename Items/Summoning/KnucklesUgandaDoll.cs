@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Summoning
 {
     public class KnucklesUgandaDoll : ModItem
     {
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("National Ugandan Treasure");

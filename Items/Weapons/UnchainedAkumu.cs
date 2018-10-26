@@ -14,16 +14,12 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class UnchainedAkumu : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Unchained ''Akumu''");
-			Tooltip.SetDefault("It means ''[c/FF00FF:nightmare]'' on Japanese"
+			Tooltip.SetDefault("It means ''[c/FF00FF:demon]'' in Japanese"
 			+"\nIts slice pierces through any amount of enemies on its way"
-			+"\nLeft click launcher short travelling projectile"
+			+"\nLeft click launches a short travelling projectile"
 			+"\nRight click slices the air in place"
 			+"\nWhile at 35% HP or lower, Akumu generates projectile reflecting shield"
 			+"\nWhile above 35% HP, Akumu releases flying minion");

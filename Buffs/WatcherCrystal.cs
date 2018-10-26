@@ -9,7 +9,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Watcher Crystal");
-			Description.SetDefault("The powers of galaxy supports you");
+			Description.SetDefault("The powers of galaxy support you");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристалл-наблюдатель");

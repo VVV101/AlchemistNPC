@@ -9,12 +9,8 @@ using Terraria.Localization;
  
 namespace AlchemistNPC.Items
 {
-     public class ExecutionersEyes : ModItem
+    public class ExecutionersEyes : ModItem
     {
-        public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Scroll ''Executioner's Eyes''");

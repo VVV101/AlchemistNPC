@@ -9,10 +9,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class WrathOfTheCelestial : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Wrath of the Celestial");

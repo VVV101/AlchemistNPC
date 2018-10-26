@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Placeable
 {
     public class SpecCraftPoint : ModItem
     {
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Special Crafting Point");
@@ -43,25 +39,25 @@ namespace AlchemistNPC.Items.Placeable
 			item.createTile = mod.TileType("SpecCraftPoint");
         }
 
-        public override void AddRecipes()
-        {
-        ModRecipe recipe = new ModRecipe(mod);
-        recipe.AddIngredient(ItemID.HoneyDispenser);
-		recipe.AddIngredient(ItemID.SteampunkBoiler);
-		recipe.AddIngredient(ItemID.FleshCloningVaat);
-		recipe.AddIngredient(ItemID.SkyMill);
-		recipe.AddIngredient(ItemID.Solidifier);
-		recipe.AddIngredient(ItemID.Keg);
-		recipe.AddIngredient(ItemID.IceMachine);
-		recipe.AddIngredient(ItemID.GlassKiln);
-        recipe.AddIngredient(ItemID.LivingLoom);
-		recipe.AddIngredient(ItemID.BoneWelder);
-		recipe.AddIngredient(ItemID.WaterBucket);
-		recipe.AddIngredient(ItemID.LavaBucket);
-		recipe.AddIngredient(ItemID.HoneyBucket);
-		recipe.AddTile(TileID.CrystalBall);
-        recipe.SetResult(this, 1);
-        recipe.AddRecipe();
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.HoneyDispenser);
+			recipe.AddIngredient(ItemID.SteampunkBoiler);
+			recipe.AddIngredient(ItemID.FleshCloningVaat);
+			recipe.AddIngredient(ItemID.SkyMill);
+			recipe.AddIngredient(ItemID.Solidifier);
+			recipe.AddIngredient(ItemID.Keg);
+			recipe.AddIngredient(ItemID.IceMachine);
+			recipe.AddIngredient(ItemID.GlassKiln);
+			recipe.AddIngredient(ItemID.LivingLoom);
+			recipe.AddIngredient(ItemID.BoneWelder);
+			recipe.AddIngredient(ItemID.WaterBucket);
+			recipe.AddIngredient(ItemID.LavaBucket);
+			recipe.AddIngredient(ItemID.HoneyBucket);
+			recipe.AddTile(TileID.CrystalBall);
+			recipe.SetResult(this, 1);
+			recipe.AddRecipe();
         }
     }
 }

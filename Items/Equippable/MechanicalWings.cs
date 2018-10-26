@@ -9,15 +9,11 @@ namespace AlchemistNPC.Items.Equippable
 	[AutoloadEquip(EquipType.Wings)]
 	public class MechanicalWings : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mechanical Wings");
 			Tooltip.SetDefault("Allows to flight"
-			+ "\nShooting nearby enemies with deadly laser");
+			+ "\nShoots deadly lasers at nearby enemies ");
 			DisplayName.AddTranslation(GameCulture.Russian, "Механические Крылья");
             Tooltip.AddTranslation(GameCulture.Russian, "Позволяют летать\nСтреляют в ближайших противников лазерами");
         }
@@ -33,8 +29,6 @@ namespace AlchemistNPC.Items.Equippable
 		
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.accRunSpeed = 2f;
-            player.moveSpeed = player.moveSpeed + 0.08f;
 			player.wingTimeMax = 120;
 			player.AddBuff(mod.BuffType("LaserBattery"), 2);
 		}

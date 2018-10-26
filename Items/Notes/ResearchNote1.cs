@@ -7,17 +7,13 @@ namespace AlchemistNPC.Items.Notes
 {
 	public class ResearchNote1 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Research Note#1");
-			Tooltip.SetDefault("'I know that Sasscade Yo-Yo exists. But how exactly it can be made?"
+			DisplayName.SetDefault("Research Note #1");
+			Tooltip.SetDefault("'I know that Sasscade Yo-Yo exists. But how do you make it?"
 			+"\nI am pretty sure that the [c/00FF00:Terrarian Yo-Yo] is the first component."
-			+"\nAn [c/00FF00:Alchemical Bundle] may be the second component..."
-			+"\nBut what could be third? I think that it is something, related to the Sass..." 
+			+"\nAn [c/00FF00:Alchemical Bundle] should be the second component..."
+			+"\nBut what could be the third one? I think that it is something, related to the Sass..." 
 			+"\nMaybe inner part of the [c/00FF00:Rod of Discord] can be it?"
 			+"\nAnd the final component... Is the [c/00FF00:Yo-yo Bag]. I am 100% sure about this.'");
 			DisplayName.AddTranslation(GameCulture.Russian, "Запись исследования №1");

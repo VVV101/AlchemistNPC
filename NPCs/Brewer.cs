@@ -115,7 +115,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "我不认为那是洞穴探险药水.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB3");
-            text.SetDefault("I got my degrees from Riddle University.");
+            text.SetDefault("I got my degrees in Riddle University.");
             text.AddTranslation(GameCulture.Russian, "Я получила своё образование в Университете Загадок.");
             text.AddTranslation(GameCulture.Chinese, "我得到了来自谜语大学的学位");
             mod.AddTranslation(text);
@@ -130,13 +130,13 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "哇哦，面包屑和海狸唾液!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB6");
-            text.SetDefault("Hi, *cough* that wasn't an inferno potion!");
+            text.SetDefault("Hi, *cough* that wasn't an Inferno potion!");
             text.AddTranslation(GameCulture.Russian, "Привет, *кашель* это точно не было зельем Инферно!");
             text.AddTranslation(GameCulture.Chinese, "嗨, *咳咳* 那不是地狱降临药剂!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB7");
             text.SetDefault("Have you seen two mechanical eyes around?");
-            text.AddTranslation(GameCulture.Russian, "Ты не видел двух Механических Глаз поблизости?");
+            text.AddTranslation(GameCulture.Russian, "Ты не видел пару Механических Глаз поблизости?");
             text.AddTranslation(GameCulture.Chinese, "你在周围看到双子魔眼了吗?");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB8");
@@ -145,12 +145,12 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "那个愚蠢的 ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB9");
-            text.SetDefault(" is too afraid of using occult powers in Alchemy. And so his potions are just an useless water.");
-            text.AddTranslation(GameCulture.Russian, " слишком боится использовать оккультные силы в Алхимии. И поэтому его зелья лишь бесполезная водичка.");
+            text.SetDefault(" is too afraid of using occult powers in Alchemy. And so his potions are just some useless water.");
+            text.AddTranslation(GameCulture.Russian, " слишком сильно боится использовать оккультизм в алхимии. И поэтому его зелья лишь бесполезная водичка.");
             text.AddTranslation(GameCulture.Chinese, " 过于害怕在炼金术中使用神秘力量，所以他的药水只是一种没用的水.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB10");
-            text.SetDefault("*sneezes* Eww... I am always sneezing while these Goblins are around!");
+            text.SetDefault("*sneezes* Eww... I always sneeze while these Goblins are around!");
             text.AddTranslation(GameCulture.Russian, "*чихает* Фуу... Я всегда чихаю, когда эти Гоблины поблизости!");
             text.AddTranslation(GameCulture.Chinese, "*啊嚏* 噫... 那些哥布林在附近时我总是打喷嚏.");
             mod.AddTranslation(text);
@@ -166,17 +166,17 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB13");
             text.SetDefault("Is it Blood Moon in the sky? I love it! It is so beautiful!");
-            text.AddTranslation(GameCulture.Russian, "Это Кровавая Луна в небесах? Я люблю её! Она так красива!");
+            text.AddTranslation(GameCulture.Russian, "Это Кровавая Луна в небесах? Восхитительно! Она так красива!");
             text.AddTranslation(GameCulture.Chinese, "天上的那个是血月吗？我喜欢！它看起来好漂亮！");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB14");
-            text.SetDefault("I was born under the light of Blood Moon. I am always so excited while IT rises in the sky!");
+            text.SetDefault("I was born under the light of Blood Moon. I am always so excited when IT appears!");
             text.AddTranslation(GameCulture.Russian, "Я была рождена под светом Кровавой Луны. Я всегда так взволнована когда ОНА восходит на небе!");
             text.AddTranslation(GameCulture.Chinese, "我出生的时候正好是血月，每当它升起时我都会变得很兴奋！");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB15");
-            text.SetDefault("Yeah, I can understand why the other girls are annoyed, but that's not stopping my joy!");
-            text.AddTranslation(GameCulture.Russian, "Да, я понимаю, почему другие девушки раздражены, но это не прекращает моего веселья!");
+            text.SetDefault("Yeah, I can understand why the other girls are annoyed, but that's not stopping me!");
+            text.AddTranslation(GameCulture.Russian, "Да, я понимаю, почему другие девушки раздражены, но это меня не остановит!");
             text.AddTranslation(GameCulture.Chinese, "是的，我能理解为什么女孩们会生气，但这并不能阻止我的快乐!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB16");
@@ -420,7 +420,7 @@ namespace AlchemistNPC.NPCs
             }
 			else
 			{
-				if (npc.FindBuffIndex(119) >= 0 && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
+				if (npc.HasBuff(119) && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
 				{
 					for (int k = 0; k < 255; k++)
 					{

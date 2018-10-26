@@ -8,10 +8,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class BallisticNebularDestroyer : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Ballistic Nebular Destroyer");

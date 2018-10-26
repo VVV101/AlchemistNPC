@@ -96,8 +96,8 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Послушай, твой энтузиазм просто потрясающий, но может ты запишешь мелодию следующего босса сам? Мне не очень хочется рисковать жизнью из-за некоторых мелодий.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM7");
-            text.SetDefault("Ah, I see you were able to save the Explorer! Well done! Perhaps my next song should be about your triumph.");
-            text.AddTranslation(GameCulture.Russian, "Я вижу, ты спас Исследовательницу! Отличная работа! Может быть, моя следующая песня будет о твоём триумфе.");
+            text.SetDefault("Ah, I see you were able to save the Explorer! Well done! Perhaps my next song is going to be about your triumph.");
+            text.AddTranslation(GameCulture.Russian, "Я вижу ты спас Исследовательницу! Отличная работа! Может быть моя следующая песня будет о твоём триумфе.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM8");
             text.SetDefault("You know, ");
@@ -121,7 +121,7 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM13");
             text.SetDefault(". He claims to not be possessed, and yet he still is using skulls to fight... I'm getting mixed messages here.");
-            text.AddTranslation(GameCulture.Russian, ". Он вроде бы больше не одержим, но использует черепа для битвы... У меня смешанные чувства.");
+            text.AddTranslation(GameCulture.Russian, ". Он вроде бы больше не одержим, но все еще использует черепа для битвы... У меня смешанные чувства.");
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryM14");
             text.SetDefault("Man, my mixtape is so much better than this, but I can't sell you that due to copyrights.");
@@ -137,10 +137,10 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM17");
             text.SetDefault("Never thought I'd be selling a music box with lyrics... DM DOKURO, you're a madman and I love it!");
-            text.AddTranslation(GameCulture.Russian, "Никогда не думал, что я буду продавать музыкальные шкатулки с песнями... DM DOKURO, ты безумец и я люблю это!");
+            text.AddTranslation(GameCulture.Russian, "Никогда не думал, что я буду продавать музыкальные шкатулки с песнями... DM DOKURO, ты безумец и мне это нравится!");
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryM18");
-            text.SetDefault("A whole music based class? That sounds amazing! Too bad I don't have any gear for that huh?");
+            text.SetDefault("A whole music based class? That sounds amazing! Too bad I don't have any gear for that, huh?");
             text.AddTranslation(GameCulture.Russian, "Целый класс, основанный на музыке? Звучит потрясающе! Жаль, что у меня нет ничего подходящего для него...");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM19");
@@ -149,7 +149,7 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryM20");
             text.SetDefault("Ah, this takes me back! I remember when this song used to play in the dungeon and the underworld... good times!");
-            text.AddTranslation(GameCulture.Russian, "Ах, это возвращает меня в прошлое! Я помню, когда эта мелодия играла в Данже и в Преисподней... хорошие времена!");
+            text.AddTranslation(GameCulture.Russian, "Эх, ностальгия! Я помню, когда эта мелодия играла в Подземелье и в Преисподней... хорошие времена!");
             mod.AddTranslation(text);
 
         }

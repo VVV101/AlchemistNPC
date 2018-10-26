@@ -40,11 +40,6 @@ namespace AlchemistNPC.NPCs
 	[AutoloadBossHead]
 	class BillCipher : ModNPC
 	{
-		public override bool Autoload(ref string name)
-		{
-			return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
-		
 		public static int introduction = 0;
 		public static int counter = 0;
 		public static int counter2 = 0;
@@ -54,7 +49,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override void SetDefaults()
 		{
-			npc.boss = false;
+			npc.boss = true;
 			npc.width = 82;
 			npc.height = 70;
 			npc.damage = 800;
@@ -90,7 +85,6 @@ namespace AlchemistNPC.NPCs
 		
 		public override void AI()
 		{
-			npc.boss = true;
 			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
 			Main.dayTime = false;
 			Main.monolithType = 3;

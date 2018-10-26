@@ -9,11 +9,11 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Fortitude");
-			Description.SetDefault("You cannot be knockbacked");
+			Description.SetDefault("You cannot be knocked back");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Стойкость");
-			Description.AddTranslation(GameCulture.Russian, "Вам нельзя отбросить при атаке");
+			Description.AddTranslation(GameCulture.Russian, "Получение урона не отбрасывает вас");
             DisplayName.AddTranslation(GameCulture.Chinese, "刚毅");
             Description.AddTranslation(GameCulture.Chinese, "你无法被击退");
         }

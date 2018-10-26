@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Equippable
 	[AutoloadEquip(EquipType.Waist)]
 	public class ShieldBelt : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Shield Belt");
@@ -24,7 +20,7 @@ namespace AlchemistNPC.Items.Equippable
 			+"\nDamage reduction is weaker on Revengeance/Death Mode:"
 			+"\nDamage cannot be lower than 30");
 			DisplayName.AddTranslation(GameCulture.Russian, "Щитовой пояс");
-            Tooltip.AddTranslation(GameCulture.Russian, "Позволяет вам получать меньше урона в зависимости от заряда щита\nМаксимальное уменьшение урона равно 150\nТратит часть заряд после получения удара\nНа уровне сложности Возмездие снижение урона ослаблено:\nНе менее 30 урона может быть получено");
+            Tooltip.AddTranslation(GameCulture.Russian, "Позволяет вам получать меньше урона в зависимости от заряда щита\nМаксимальное уменьшение урона равно 150\nТратит часть заряда после получения удара\nНа уровне сложности Возмездие/Смерть снижение урона ослаблено:\nМинимальный полученный урон равен 30");
         }
 	
 		public override void SetDefaults()

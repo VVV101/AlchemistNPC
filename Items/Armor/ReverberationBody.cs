@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class ReverberationBody : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Reverberation Suit (T-04-53)");
@@ -22,7 +18,7 @@ namespace AlchemistNPC.Items.Armor
             Tooltip.SetDefault("The sleek surface is tough as if it had been cured several times."
             + "\n[c/FF0000:EGO armor piece]"
             + "\nIncreases ranged critical strike chance by 20%");
-            Tooltip.AddTranslation(GameCulture.Russian, "Гладкая поверхность всё так же прочна, как будто не была восстановлена несколько раз.\n[c/FF0000:Э.П.О.С часть брони]\nПовышает шанс критического удара в дальнем бою на 20%");
+            Tooltip.AddTranslation(GameCulture.Russian, "Гладкая поверхность тверда, как будто была усилена несколько раз.\n[c/FF0000:Часть брони Э.П.О.С.]\nПовышает шанс критического удара в дальнем бою на 20%");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "余香衬衫 (T-04-53)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'经过数次加工处理后, 这件护甲的表面变得光滑而又坚硬.'\n[c/FF0000:EGO 盔甲]\n增加20%远程暴击几率");

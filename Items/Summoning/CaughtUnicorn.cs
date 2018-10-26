@@ -33,6 +33,12 @@ namespace AlchemistNPC.Items.Summoning
             Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(10, 16));
         }
 		
+		public override void HoldItem(Player player)
+		{
+		Player.tileRangeX += 600;
+        Player.tileRangeY += 600;
+		}
+		
         public override string Texture
 		{
 			get { return "Terraria/NPC_86"; }

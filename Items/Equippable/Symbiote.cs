@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Equippable
 {
 	public class Symbiote : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Symbiote");
@@ -21,12 +17,12 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nLowers cooldown of healing potions"
 				+ "\nIncreases length of invincibility after taking hit"
 				+ "\nHas two states (Offense and Defense)"
-				+ "\nOffense state increases attack speed by 20%"
+				+ "\nOffensive state increases attack speed by 20%"
 				+ "\nActivates while you have > 50% of HP"
-				+ "\nDefense state greatly increases regeneration, defense and damage reduction"
+				+ "\nDefensive state greatly increases regeneration, defense and damage reduction"
 				+ "\nActivates while you have < 50% of HP");
-				DisplayName.AddTranslation(GameCulture.Russian, "Симбионт");
-            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает регенерацию жизней\nУменьшает откат зелий лечения\nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 10% ко всем шансам критического удара\nИмеет 2 состояния (Атакующиее и Защитное)");
+				DisplayName.AddTranslation(GameCulture.Russian, "Симбиот");
+            Tooltip.AddTranslation(GameCulture.Russian, "Усиливает регенерацию\nУменьшает откат зелий лечения\nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 10% ко всем шансам критического удара\nИмеет 2 состояния (Боевое и Защитное)\nБоевое состояние увеличивает скорость ближнего боя на 20%\nАктивируется когда здоровье >50%\nЗащитное состояние сильно усиливает регенерацию, повышает защиту и поглощение урона\nАктивируется когда здоровье <50%");
         }
 	
 		public override void SetDefaults()

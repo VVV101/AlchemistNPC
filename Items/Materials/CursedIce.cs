@@ -10,14 +10,10 @@ namespace AlchemistNPC.Items.Materials
 {
 	public class CursedIce : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Cursed Ice");
-			Tooltip.SetDefault("Cursed Flame, bound in ice.");
+			Tooltip.SetDefault("Cursed Flame, encapsulated in ice.");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(3, 8));
 			DisplayName.AddTranslation(GameCulture.Russian, "Проклятый лёд");
 			Tooltip.AddTranslation(GameCulture.Russian, "Проклятое Пламя, заключённое в лёд");

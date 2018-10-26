@@ -12,13 +12,13 @@ namespace AlchemistNPC.Items.Misc
     {
         public override bool Autoload(ref string name)
 		{
-		return (ModLoader.GetMod("CalamityMod") != null && ModLoader.GetMod("AlchemistNPCContentDisabler") == null);
+		return ModLoader.GetMod("CalamityMod") != null;
 		}
 
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Reversivity Coin Tier 5");
-			DisplayName.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Пятый");
+			DisplayName.AddTranslation(GameCulture.Russian, "Монета Реверсии Пятого Уровня");
             Tooltip.SetDefault("Can be used for buying Treasure Bags from Operator");
 			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки сумок у Оператора");
 

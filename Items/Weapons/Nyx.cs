@@ -8,20 +8,16 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Nyx : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nyx");
 			Tooltip.SetDefault("Basically, it is just a Gauss Gun"
 			+ "\nPierces through multiple enemies"
-			+ "\nHas 2 firemodes:"
+			+ "\nHas 2 modes:"
 			+ "\nSlowmode on left click (1 shot per second)"
-			+ "\nFastmode on right click (2 shot per second, damage is reduced)");
+			+ "\nFastmode on right click (2 shots per second, damage is reduced)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Никс");
-            Tooltip.AddTranslation(GameCulture.Russian, "Всего лишь пушка Гаусса.\nПробивает значительное количество противников одним выстрелом");
+            Tooltip.AddTranslation(GameCulture.Russian, "Всего лишь пушка Гаусса.\nПробивает значительное количество противников одним выстрелом\nИмеет два режима стрельбы:\nМедленный (левая кнопка мыши) - производит один выстрел.\nБыстрый (правая кнопка мыши) - производит два выстрела с пониженным уроном.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "尼克斯");
             Tooltip.AddTranslation(GameCulture.Chinese, "基本上, 它只是个高斯炮\n能穿透无限个敌人\n有两种发射方式:\n左键慢速发射 (1发/秒)\n右键快速发射 (2发/秒, 伤害降低)");

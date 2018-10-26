@@ -7,19 +7,15 @@ namespace AlchemistNPC.Items.Notes
 {
 	public class ResearchNote6 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Research Note#6");
+			DisplayName.SetDefault("Research Note #6");
 			Tooltip.SetDefault("''Once, there was existing an actual incarnation of [c/00FF00:FEAR] itself..."
 			+"\nAfter countless battles, this being was finally defeated."
 			+"\nSoul, which was persisting after host's death, was put into deep observations."
 			+"\nEssence of FEAR was extracted during these observations."
 			+"\nAnd I managed to get a few vials of it." 
-			+"\nIf you find other ingredients, then I could make an [c/00FF00:''Akumu''], very powerful scythe."
+			+"\nIf you find other ingredients, then I could make [c/00FF00:''Akumu''], a very powerful scythe."
 			+"\n[c/00FF00:Death Sickle] is needed as base for it."
 			+"\n[c/00FF00:Hate Vial] is required for unleashing full potential of FEAR essence."
 			+"\nFor stabilizing components, we need an [c/00FF00:Alchemical Bundle]."

@@ -8,10 +8,6 @@ namespace AlchemistNPC.Items.Placeable
 {
 	public class MateriaTransmutator : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Same functionality as most of crafting stations in one"

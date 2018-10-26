@@ -11,10 +11,6 @@ namespace AlchemistNPC.Items.Equippable
 {
 	public class LilithCharm : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Lilith Charm");
@@ -29,7 +25,7 @@ namespace AlchemistNPC.Items.Equippable
 			+ "\nHide visual to disable bees"
 			+ "\nDoesn't work with some very specific weapons");
 			DisplayName.AddTranslation(GameCulture.Russian, "Оберег Лилит");
-            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический урон на 15% и шанс критического удара\nУменьшает затраты маны на 25%\nУвеличивает максимальную ману на 100\nЗначительно ускоряет восстановление маны\nУвеличивает радиус сбора звёзд\nАвтоматически использует зелья маны\nВы выстреливает кучку смертоносных пчёл при использовании любого магического оружия\nПчёлы имеют шанс полечить вас после удара по противнику\nСмена видимости аксессуара выключает пчёл\nПоследнее не работает с некоторыми специфическими оружиями");
+            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический урон на 15% и шанс критического удара\nУменьшает затраты маны на 25%\nУвеличивает максимальную ману на 100\nЗначительно ускоряет восстановление маны\nУвеличивает радиус сбора звёзд\nАвтоматически использует зелья маны\nВы выстреливает кучку смертоносных пчёл при использовании любого магического оружия\nПчёлы имеют шанс полечить вас после удара по противнику\nСмена видимости аксессуара выключает пчёл\nПоследнее не работает с некоторым специфическим оружием");
         }
 	
 		public override void SetDefaults()

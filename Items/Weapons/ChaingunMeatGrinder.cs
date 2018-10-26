@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class ChaingunMeatGrinder : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Chain Gun ''Meat Grinder''");

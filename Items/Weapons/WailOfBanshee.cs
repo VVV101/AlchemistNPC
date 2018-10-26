@@ -9,19 +9,15 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class WailOfBanshee : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Scroll ''Wail Of Banshee''");
 			Tooltip.SetDefault("One-use item"
 			+"\nContains the spell ''Wail of Banshee''"
-			+"\nWhile used, all normal enemies on the screen will instantly die"
+			+"\nWhen used causes all normal enemies on the screen to instantly die"
 			+"\nExhausts player for 1 minute, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Вопль Баньши''");
-            Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Вопль Баньши''\nКогда применён, мгновенно убивает всех не-боссов на экране\nИстощает игрока на 1 минуту, не позволяя ему использовать магию");
+            Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Вопль Баньши''\nПрименение мгновенно убивает всех обычных врагов на экране\nИстощает игрока на 1 минуту, не позволяя ему использовать магию");
         }
 
 		public override void SetDefaults()

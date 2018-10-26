@@ -7,10 +7,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class ShroomiteBulletInfinite : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Enhanced Shroomite Bullet");
@@ -18,7 +14,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nSpeeds up over time"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Улучшенная Грибная Пуля");
-			Tooltip.AddTranslation(GameCulture.Russian, "Выпускает электрическое облако, стреляющее электическими лучами\nБесконечна");
+			Tooltip.AddTranslation(GameCulture.Russian, "Выпускает электрическое облако, стреляющее электическими лучами\nСо временем ускоряется\nБесконечна");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "强化型菱形弹");
             Tooltip.AddTranslation(GameCulture.Chinese, "释放出电云, 电云会向敌人发射电束\n越飞越快\n无限");

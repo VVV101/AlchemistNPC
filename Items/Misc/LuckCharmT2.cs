@@ -11,17 +11,13 @@ namespace AlchemistNPC.Items.Misc
 {
 	public class LuckCharmT2 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Charm of Absolute Luck");
-			Tooltip.SetDefault("While placed in inventory, you have better chance of getting good/best reforge"
+			Tooltip.SetDefault("While this is in your inventory, you have better chance of getting better reforges"
 			+"\nAlso affects accessories (Menacing->Lucky->Warding)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Абсолютной Удачи");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет более высокий шанс получить лучшую перековку\nРаботает и с аксессуарами (Грозный->Удачливый->Оберегающий)");
+            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеете более высокий шанс получить лучшую перековку\nРаботает и с аксессуарами (Грозный->Удачливый->Оберегающий)");
         }
 
 		public override void SetDefaults()

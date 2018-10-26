@@ -10,20 +10,16 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class TheBeak : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("The Beak (O-02-56)");
-			Tooltip.SetDefault("''Size has no meaning while it overflowed with power.''"
+			Tooltip.SetDefault("''Size has no meaning while it overflows with power.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nShoots 2 times in one use"
-			+ "\nBullets are setting enemies ablaze"
+			+ "\nBullets set enemies ablaze"
 			+ "\n25% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Клюв (O-02-56)");
-            Tooltip.AddTranslation(GameCulture.Russian, "Размер не имеет значения, пока он переполнен силой.\n[c/FF0000:Э.П.О.С. оружие]\nВыстреливает по 2 пули\nПули поджигают противника\n25% шанс не потратить патроны");
+            Tooltip.AddTranslation(GameCulture.Russian, "Размер не имеет значения, пока он переполнен силой.\n[c/FF0000:Оружие Э.П.О.С.]\nВыстреливает по 2 пули\nПули поджигают противника\n25% шанс не потратить патроны");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "小喙 (O-02-56)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'虽然这只鸟的身材娇小, 可它有着很恐怖的嘴巴.'\n[c/FF0000:EGO 武器]\n一次射出两发子弹\n子弹会点燃敌人\n25%几率不消耗弹药");

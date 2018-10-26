@@ -174,7 +174,7 @@ namespace AlchemistNPC.Items
 			{
 				return 1.2f;
 			}
-			if (player.FindBuffIndex(mod.BuffType("ThoriumCombo")) > -1)
+			if (player.HasBuff(mod.BuffType("ThoriumCombo")))
 			{
 				return 1.08f;
 			}

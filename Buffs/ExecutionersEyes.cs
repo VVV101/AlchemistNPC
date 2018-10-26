@@ -20,7 +20,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Executioner's Eyes");
-			Description.SetDefault("Multiplies your damage by 15%, increases your critical strike chance by 5%, gives 5% to crits to crit again");
+			Description.SetDefault("Increases your damage by 15%, increases your critical strike chance by 5%, every crit has a 5% chance to double its damage");
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = false;

@@ -6,10 +6,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class SunkroveraArrowInfinite : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Sunkrovera Arrow");
@@ -17,7 +13,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nReleases life stealing projectiles on enemy/wall impact"
 			+"\nInfinite");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сункроверная стрела");
-            Tooltip.AddTranslation(GameCulture.Russian, "Даже держать эти стрелы в руках... нелегко.\nВыпускает похищающие жизнь снаряды при попадании\nБесконечна");
+            Tooltip.AddTranslation(GameCulture.Russian, "Даже держать эти стрелы в руках... нелегко.\nВыпускает похищающие жизнь снаряды при попадании во врага/стену\nБесконечна");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "森克罗维拉之箭");
             Tooltip.AddTranslation(GameCulture.Chinese, "即便是带着它你也能感受到那份...压力\n击中墙壁或敌人后释放带有生命偷取的子弹\n无限");

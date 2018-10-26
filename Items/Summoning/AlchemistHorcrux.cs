@@ -35,6 +35,12 @@ namespace AlchemistNPC.Items.Summoning
 			item.makeNPC = (short)mod.NPCType("Alchemist");
 		}
 
+		public override void HoldItem(Player player)
+		{
+		Player.tileRangeX += 600;
+        Player.tileRangeY += 600;
+		}
+		
 		public override bool CanUseItem(Player player)
 		{
 			return !NPC.AnyNPCs(mod.NPCType("Alchemist"));

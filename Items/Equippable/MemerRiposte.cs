@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Equippable
 {
 	public class MemerRiposte : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Memer's Riposte");

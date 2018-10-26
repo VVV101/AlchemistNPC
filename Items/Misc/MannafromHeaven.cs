@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items.Misc
 			DisplayName.SetDefault("Manna from Heaven");
 			Tooltip.SetDefault("Makes you permanently Well Fed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Манна Небесная");
-			Tooltip.AddTranslation(GameCulture.Russian, "Делает вас сытым постоянно");
+			Tooltip.AddTranslation(GameCulture.Russian, "Делает вас постоянно сытым");
 
         }
 

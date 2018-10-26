@@ -26,7 +26,7 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "Плащ Страха");
-			Description.AddTranslation(GameCulture.Russian, "Заставляет изменить направление движения противников вблизи игрока");
+			Description.AddTranslation(GameCulture.Russian, "Заставляет обычных врагов около игрока менять направление движения");
         }
 		
 		public bool CalamityModRevengeance

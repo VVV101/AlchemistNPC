@@ -248,8 +248,6 @@ namespace AlchemistNPC
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(ItemID.LifeformAnalyzer);
 			recipe.AddRecipe();
-			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
-			{
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(null, "EmagledFragmentation", 10);
 			recipe.AddTile(TileID.LunarCraftingStation);
@@ -270,7 +268,6 @@ namespace AlchemistNPC
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(ItemID.FragmentSolar, 2);
 			recipe.AddRecipe();
-			}
 		}
 		
         //SBMW:Transtation method
@@ -291,37 +288,37 @@ namespace AlchemistNPC
             //SBMW:Russian comes from Items.ReversivityCoin
             text = CreateTranslation("ReversivityCoinTier1");
             text.SetDefault("Reversivity Coin Tier 1");
-            text.AddTranslation(GameCulture.Russian, "Монета Реверсии Тир Первый");
+            text.AddTranslation(GameCulture.Russian, "Монета Реверсии Первого Уровня");
             text.AddTranslation(GameCulture.Chinese, "个1级逆转硬币");
             AddTranslation(text);
 
             text = CreateTranslation("ReversivityCoinTier2");
             text.SetDefault("Reversivity Coin Tier 2");
-            text.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Второй");
+            text.AddTranslation(GameCulture.Russian, "Монета Реверсии Второго Уровня");
             text.AddTranslation(GameCulture.Chinese, "个2级逆转硬币");
             AddTranslation(text);
 
             text = CreateTranslation("ReversivityCoinTier3");
             text.SetDefault("Reversivity Coin Tier 3");
-            text.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Третий");
+            text.AddTranslation(GameCulture.Russian, "Монета Реверсии Третьего Уровня");
             text.AddTranslation(GameCulture.Chinese, "个3级逆转硬币");
             AddTranslation(text);
 
             text = CreateTranslation("ReversivityCoinTier4");
             text.SetDefault("Reversivity Coin Tier 4");
-            text.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Четвертый");
+            text.AddTranslation(GameCulture.Russian, "Монета Реверсии Четвертого Уровня");
             text.AddTranslation(GameCulture.Chinese, "个4级逆转硬币");
             AddTranslation(text);
 
             text = CreateTranslation("ReversivityCoinTier5");
             text.SetDefault("Reversivity Coin Tier 5");
-            text.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Пятый");
+            text.AddTranslation(GameCulture.Russian, "Монета Реверсии Пятого Уровня");
             text.AddTranslation(GameCulture.Chinese, "个5级逆转硬币");
             AddTranslation(text);
 
             text = CreateTranslation("ReversivityCoinTier6");
             text.SetDefault("Reversivity Coin Tier 6");
-            text.AddTranslation(GameCulture.Russian, "Монета реверсии Тир Шестой");
+            text.AddTranslation(GameCulture.Russian, "Монета Реверсии Шестого Уровня");
             text.AddTranslation(GameCulture.Chinese, "个6级逆转硬币");
             AddTranslation(text);
 
@@ -332,17 +329,17 @@ namespace AlchemistNPC
             AddTranslation(text);
 
             text = CreateTranslation("cultist");
-            text.SetDefault("Cultist mask/hood");
+            text.SetDefault("Cultist Mask/Hood");
             text.AddTranslation(GameCulture.Chinese, "邪教徒面具/兜帽");
             AddTranslation(text);
 
             text = CreateTranslation("tier3HardmodeBar");
-            text.SetDefault("tier 3 Hardmode Bar");
+            text.SetDefault("Tier 3 Hardmode Bar");
             text.AddTranslation(GameCulture.Chinese, "三级肉后锭(精金/钛金)");
             AddTranslation(text);
 			
 			text = CreateTranslation("hardmodeComponent");
-            text.SetDefault("Hardmode component");
+            text.SetDefault("Hardmode Component");
             AddTranslation(text);
 
             text = CreateTranslation("evilBar");
@@ -351,32 +348,32 @@ namespace AlchemistNPC
             AddTranslation(text);
 
             text = CreateTranslation("evilMushroom");
-            text.SetDefault("evil mushroom");
+            text.SetDefault("Evil Mushroom");
             text.AddTranslation(GameCulture.Chinese, "邪恶蘑菇");
             AddTranslation(text);
 
             text = CreateTranslation("evilComponent");
-            text.SetDefault("evil component");
+            text.SetDefault("Evil Component");
             text.AddTranslation(GameCulture.Chinese, "邪恶材料(暗影鳞片/组织样本)");
             AddTranslation(text);
 
             text = CreateTranslation("evilDrop");
-            text.SetDefault("evil drop");
+            text.SetDefault("Evil Drop");
             text.AddTranslation(GameCulture.Chinese, "邪恶掉落物(腐肉/椎骨)");
             AddTranslation(text);
 
             text = CreateTranslation("tier2anvil");
-            text.SetDefault("tier 2 anvil");
+            text.SetDefault("Tier 2 Anvil");
             text.AddTranslation(GameCulture.Chinese, "二级砧(秘银/山铜砧)");
             AddTranslation(text);
 
             text = CreateTranslation("tier2forge");
-            text.SetDefault("tier 2 forge");
+            text.SetDefault("Tier 2 Forge");
             text.AddTranslation(GameCulture.Chinese, "二级熔炉(精金/钛金熔炉)");
             AddTranslation(text);
 
             text = CreateTranslation("tier1anvil");
-            text.SetDefault("tier 1 anvil");
+            text.SetDefault("Tier 1 Anvil");
             text.AddTranslation(GameCulture.Chinese, "一级砧(铁/铅砧)");
             AddTranslation(text);
 
@@ -390,19 +387,19 @@ namespace AlchemistNPC
             AddTranslation(text);
 
             text = CreateTranslation("tier3Watch");
-            text.SetDefault("tier 3 Watch");
+            text.SetDefault("Tier 3 Watch");
             text.AddTranslation(GameCulture.Chinese, "三级表(金表/铂金表)");
             AddTranslation(text);
 
 
             text = CreateTranslation("enterText");
-            text.SetDefault("If you don't like additional content or drops from the mod you could install AlchemistNPC Content Disabler mod");
-            text.AddTranslation(GameCulture.Chinese, "如果你不喜欢AlchemistNPC中的附加物品或掉落物, 你可以安装 AlchemistNPC Content Disabler 取消他们");
+            text.SetDefault("If you don't like additional content or drops from the mod you could install AlchemistNPC Lite mod instead.");
+            text.AddTranslation(GameCulture.Chinese, "如果你不喜欢AlchemistNPC中的附加物品或掉落物, 你可以安装 AlchemistNPC Lite 取消他们");
             AddTranslation(text);
 
             //SBMW:Treasure Bag
 			text = CreateTranslation("Knuckles");
-            text.SetDefault("Uganda Knuckles Treasure Bag");
+            text.SetDefault("Ugandan Knuckles Treasure Bag");
             AddTranslation(text);
 			text = CreateTranslation("BillCipher");
             text.SetDefault("Bill Cipher Treasure Bag");
@@ -749,11 +746,13 @@ namespace AlchemistNPC
 
             text = CreateTranslation("barrierWeek");
             text.SetDefault("The Barrier between worlds was weakened.");
+			text.SetDefault("Барьер между мирами был ослаблен.");
             text.AddTranslation(GameCulture.Chinese, "世界间的屏障已变得脆弱不堪");
             AddTranslation(text);
 
             text = CreateTranslation("barrierStabilized");
             text.SetDefault("The Barrier between world is stabilized.");
+			text.SetDefault("Барьер между мирами стабилизировался.");
             text.AddTranslation(GameCulture.Chinese, "世界间的屏障重新归于稳定");
             AddTranslation(text);
 
@@ -764,6 +763,7 @@ namespace AlchemistNPC
 
             text = CreateTranslation("portalOpen");
             text.SetDefault("I am alive...? I cannot believe this! Thank you!");
+			text.SetDefault("Я жива...? Не верю своим глазам! Спасибо!");
             text.AddTranslation(GameCulture.Chinese, "我...我还活着?! 我简直无法相信! 谢谢你!");
             AddTranslation(text);
 

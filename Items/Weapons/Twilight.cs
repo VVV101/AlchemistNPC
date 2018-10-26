@@ -14,10 +14,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class Twilight : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Twilight (O-02-63)");
@@ -25,9 +21,9 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nprotected the Black Forest in peace, and those who could wield this could also bring peace.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nInflicts several types of damage on hit"
-			+ "\nIf enemy have less than 10000 HP, then projectile will kill it");
+			+ "\nIf the enemy has less than 10000 HP, then projectile will instantly kill it");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сумерки (O-02-63)");
-            Tooltip.AddTranslation(GameCulture.Russian, "Глаза, что не закроются никогда, чешуя, что может измерить все грехи и клюв, \nкоторый способен поглотить всё, хранят Чёрный Лес в покое. \nИ те, кто способны носить ЕГО, тоже могут нести покой.\n[c/FF0000:Э.П.О.С. оружие]\nПричиняет несколько типов урона\nЕсли цель имеет меньше 10000 жизней, то снаряд убьёт её");
+            Tooltip.AddTranslation(GameCulture.Russian, "Глаза, что не закроются никогда, чешуя, что может измерить все грехи и клюв, \nкоторый способен поглотить всё, хранят Чёрный Лес в покое. \nИ те, кто способны носить ЕГО, тоже могут нести покой.\n[c/FF0000:Оружие Э.П.О.С.]\nПричиняет несколько типов урона\nЕсли цель имеет меньше 10000 жизней, то снаряд мгновенно убьёт её");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "黄昏将至 (O-02-63)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'那永不闭合的眼睛, 那能衡量一切罪恶的天平, 那能吞噬一切的巨口'\n'这三者守护着黑森林的和平, 而那些能够同时驾驭这三者的人也能带来和平.'\n[c/FF0000:EGO 武器]\n对命中的敌人造成多种不同伤害\n伤害类型可通过右键切换\n如果敌人血量少于10000点, 武器会秒杀他们.");

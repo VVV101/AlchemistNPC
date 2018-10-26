@@ -10,13 +10,13 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Corrosion");
-			Description.SetDefault("Losing life");
+			Description.SetDefault("Your flesh is melting!");
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = false;
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Коррозия");
-			Description.AddTranslation(GameCulture.Russian, "Потеря жизней");
+			Description.AddTranslation(GameCulture.Russian, "Ваша плоть плавится!");
             DisplayName.AddTranslation(GameCulture.Chinese, "腐蚀");
             Description.AddTranslation(GameCulture.Chinese, "正在失去生命");
         }

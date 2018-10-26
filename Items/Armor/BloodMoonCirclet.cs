@@ -12,10 +12,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class BloodMoonCirclet : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Horns Circlet");
@@ -24,12 +20,12 @@ namespace AlchemistNPC.Items.Armor
             Tooltip.AddTranslation(GameCulture.Russian, "Меняет причёску и цвет волос (может быть изменено с помощью Стилиста)");
 			
 			ModTranslation text = mod.CreateTranslation("BloodMoonSetBonus");
-		    text.SetDefault("Increases all damage by 25% and adds 20% to critical strike chances"
+		    text.SetDefault("Increases all damage by 25% and adds 20% to critical strike chance"
 		    + "\n+36 defense"
 		    + "\nIncreases movement speed by 25%"
-			+ "\nYou have a chance to dodge attack"
+			+ "\nYou have a chance to dodge attacks"
 		    + "\nPlayer is under permanent effect of Mage Combination");
-			text.AddTranslation(GameCulture.Russian, "Увеличивает урон на 25% и добавляет 20% к шансу критического удара\n+36 защиты\nСкорость передвижения увеличивается на 25%\nИгрок находится под постоянным эффектом комбинации Мага\nДаёт шанс увернуться при атаке");
+			text.AddTranslation(GameCulture.Russian, "Увеличивает весь урон на 25% и добавляет 20% к шансу критического удара\n+36 защиты\nСкорость передвижения увеличена на 25%\nПостоянный эффект комбинации Мага\nДаёт шанс увернуться при атаке");
 			mod.AddTranslation(text);
         }
 		

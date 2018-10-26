@@ -2,21 +2,21 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
 {
 	public class PortalGun : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Rick's Portal Gun");
 			Tooltip.SetDefault("Copy of Rick Sanchez's Portal Gun"
 			+"\nOpens portals to the random dangerous dimensions"
 			+"\nHope this thing wouldn't cause appearence of SEAL team Ricks");
+			
+			DisplayName.AddTranslation(GameCulture.Russian, "Портальная пушка Рика");
+            Tooltip.AddTranslation(GameCulture.Russian, "Копия портальной пушки Рика Санчеза\nОткрывает порталы в различные измерения\nНадеюсь что она не сможет боевой отряд Риков.");
 		}
 
 		public override void SetDefaults()

@@ -10,11 +10,6 @@ namespace AlchemistNPC.Items.Materials
 {
 	public class SupremeEnergyCore : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
-		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Supreme Energy Core");

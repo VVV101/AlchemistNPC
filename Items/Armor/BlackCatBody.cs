@@ -11,11 +11,6 @@ namespace AlchemistNPC.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class BlackCatBody : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
-		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Black Cat's dress");

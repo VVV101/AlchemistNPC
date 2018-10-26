@@ -48,7 +48,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\n[c/00FF00:Stats are growing up through progression]"
 			+"\nBoosted stats will be shown after the first swing");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Сера Сумат'', Святой Мститель");
-            Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарный Меч] Старого Графа Эхлда\nОслабляет противников при ударе\n[c/00FF00:Показатели увеличивается по мере прохождения]");
+            Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарный Меч] Старого Графа Эхлда\nОслабляет противников при ударе\nПротивники получают на 20% больше урона\n25% шанс получить половину урона от ослабленных противников\n[c/00FF00:Показатели увеличивается по мере прохождения]");
 
 		}
 
@@ -67,11 +67,14 @@ namespace AlchemistNPC.Items.Weapons
 			item.rare = 11;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.scale = 1.5f;
 		}
 
 		public override bool CanUseItem(Player player)
 		{
+			if (!Main.hardMode)
+			{
+				item.autoReuse = false;
+			}
 			item.useTime = 15;
 			item.useAnimation = 15;
 			if (NPC.downedSlimeKing)
@@ -147,7 +150,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.buffImmune[mod.BuffType("CurseOfLight")] = false;
-			target.AddBuff(mod.BuffType("CurseOfLight"), 36000);
+			target.AddBuff(mod.BuffType("CurseOfLight"), 300);
 			if (Main.hardMode && !NPC.downedMechBoss1 && !NPC.downedMechBoss2 && !NPC.downedMechBoss3)
 			{
 			Vector2 vel1 = new Vector2(0, 0);

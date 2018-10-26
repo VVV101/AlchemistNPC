@@ -10,10 +10,6 @@ namespace AlchemistNPC.Items.Summoning
 {
 	public class NotesBook : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Notes Book");
@@ -53,6 +49,12 @@ namespace AlchemistNPC.Items.Summoning
 			item.makeNPC = (short)mod.NPCType("OtherworldlyPortal");
 		}
 
+		public override void HoldItem(Player player)
+		{
+		Player.tileRangeX += 600;
+        Player.tileRangeY += 600;
+		}
+		
 		public override bool CanUseItem(Player player)
 		{
 			return (!NPC.AnyNPCs(mod.NPCType("OtherworldlyPortal")) && !NPC.AnyNPCs(mod.NPCType("Explorer")) && Main.eclipse);

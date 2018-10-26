@@ -41,7 +41,7 @@ namespace AlchemistNPC.Projectiles.Pets
 			}
 			Player player = Main.player[projectile.owner];
 			AlchemistNPCPlayer modPlayer = (AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer");
-			if (player.dead || player.FindBuffIndex(mod.BuffType("Yui")) <= -1)
+			if (player.dead || !player.HasBuff(mod.BuffType("Yui")))
 			{
 				modPlayer.Yui = false;
 			}

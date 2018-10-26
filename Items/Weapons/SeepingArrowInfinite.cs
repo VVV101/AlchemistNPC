@@ -6,10 +6,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class SeepingArrowInfinite : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Seeping Arrow");

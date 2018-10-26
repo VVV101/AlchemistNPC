@@ -6,10 +6,6 @@ namespace AlchemistNPC.Items.Placeable
 {
 	public class Beacon : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Beacon");

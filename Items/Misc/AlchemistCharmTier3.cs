@@ -11,17 +11,14 @@ namespace AlchemistNPC.Items.Misc
 {
 	public class AlchemistCharmTier3 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Alchemist Charm Tier 3");
 			Tooltip.SetDefault("While this is in your inventory, you have a high chance not to consume potion"
-			+"\nAllows to use potions from Piggy Bank by Quick Buff");
-			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Тир 3");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа");
+			+"\nAllows to use potions from Piggy Bank by Quick Buff"
+			+"\nAlchemist, Brewer and Young Brewer are providing discounts");
+			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Третьего Уровня");
+            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидки");
         }
 
 		public override void SetDefaults()
@@ -35,6 +32,7 @@ namespace AlchemistNPC.Items.Misc
 		public override void UpdateInventory(Player player)
 		{
 		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier3 = true;
+		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Discount = true;
 		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DistantPotionsUse = true;
 		}
 		

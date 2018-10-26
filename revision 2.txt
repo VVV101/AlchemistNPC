@@ -1,0 +1,73 @@
+//BUFFS
+BastScroll.cs - slightly reworded, fixed english translation
+BigBirdLamp.cs - rewording, typos
+BuilderComb.cs - rewording
+CalamityComb.cs - added potion list to russian translation
+CloakOfFearDebuff.cs - swapped words around
+Corrosion.cs - Your flesh is melting!
+CrimsonSoda.cs - Сода Кримсона -> Алая Сода
+Electrocute.cs - High voltage is going through you (looks bad actually)
+EvilPresence.cs - A mechanical boss is coming for you..
+ExplorerComb.cs - minor fix
+ExplorersBrew.cs - same as above
+Fortitude.cs - minor EN change
+GrimReaper.cs - missing description translation
+Hate.cs - unnecessary change
+HeartAche.cs - another unnecessary change
+IlluminatiHeal.cs - didn't change anything, but it sounds iffy
+Judgement.cs - slightly reworded things
+JustitiaPale.cs - ok I may or may not forked this up
+RainbowFlaskBuff.cs - minor change
+Symbiote buffs - minor changes
+TitanSkin.cs - minor change
+Twilight.cs - to be in line with JustitiaPale
+UniversalComb.cs - minor change
+VanTankComb.cs - minor change
+WatcherCrystal.cs - typo
+//ITEMS
+/General
+All pots - some of those may sounds a lil bit stupid. Namely all sodas.
+/Armor
+BloodMoonCirclet.cs - typos
+Justitia set - typos, incorrect info
+Laetitia set - minor changes
+Paradise Lost set - minor changes
+PinkGuyHead.cs - minor EN description change
+PinkGuyLegs.cs - minor tooltip changes
+Reverberation set - I don't really like how I chaned this one
+Twilight set - minor changes, fixed incorrect info
+/Equippable
+ParadiseLostWings.cs - minor changes
+RampageComponents.cs - fixed tooltip, added translation for flavor text
+SupremeRampageComponents.cs - same as original components
+Symbiote.cs - woo, finally did it
+/Notes
+Yes.
+/Quest Fishes
+O no.
+/Weapons
+EbonyIvory.cs - minor changes
+Eyes of Judgement - minor tooltip change
+FuneralofDeadButterflies.cs - minor tooltip change
+GrinderMK4.cs - minor changes
+HolyAvenger.cs
+Justitia.cs
+Laetitia.cs
+Laoskadyn.cs
+MagicBullet.cs
+MagicWand.cs
+ParadiseLost.cs
+TerrarianW.cs
+WatcherAmulet.cs
+//NPCS
+Alchemist.cs
+Architect.cs
+Brewer.cs
+Explorer.cs - hopefully fixed all the wrong things. Keyword is "hopefully".
+Operator.cs - what.
+//TILES
+Wellcheers.cs - Торговый автомат.
+
+
+
+

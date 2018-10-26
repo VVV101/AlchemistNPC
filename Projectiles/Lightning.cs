@@ -19,7 +19,6 @@ namespace AlchemistNPC.Projectiles
 			projectile.CloneDefaults(580);
 			projectile.hostile = false;
 			projectile.friendly = true;
-			projectile.melee = true;
 			projectile.aiStyle = 88;
 			aiType = 580;
 		}

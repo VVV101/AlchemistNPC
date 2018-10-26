@@ -10,11 +10,11 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Ninja");
-			Description.SetDefault("Now you have Ninja abilities");
+			Description.SetDefault("You are a true ninja!");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Ниндзя");
-			Description.AddTranslation(GameCulture.Russian, "Теперь вы обладаете способностями Ниндзя");
+			Description.AddTranslation(GameCulture.Russian, "Вы - истинный ниндзя!");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "忍者");
             Description.AddTranslation(GameCulture.Chinese, "你现在拥有忍者的能力");

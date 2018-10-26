@@ -8,19 +8,15 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class PandoraPF398 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Pandora (PF398)");
 			Tooltip.SetDefault("'A weapon of the underworld, capable of 666 different forms'"
 			+"\nFixed Pandora with unlocked damaging potential"
-			+"\nCharged Laser Device"
-			+"\nAttacking raises Disaster Gauge"
-			+"\n500 allows to change weapon"
-			+"\nRight click unlocks 2 special attacks");
+			+"\nChargeable Laser Device"
+			+"\nAttacking fills Disaster Gauge"
+			+"\nFull gauge allows you to switch weapon's form"
+			+"\nRight click to change form");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пандора (Форма 398)");
             Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nЗаряжаемый лазер\nПри наборе полной шкалы Бедствия вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");
 

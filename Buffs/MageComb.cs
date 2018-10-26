@@ -30,7 +30,7 @@ namespace AlchemistNPC.Buffs
         }
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (player.FindBuffIndex(mod.BuffType("RangerComb")) >= 0)
+			if (player.HasBuff(mod.BuffType("RangerComb")))
 			{
             player.magicDamage += 0.25f;
 			player.magicCrit += 2;

@@ -9,10 +9,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class GrinderMK4 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Grinder MK4 (T-05-41)");
@@ -21,7 +17,7 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nIts attack goes through enemy invincibility frames"
 			+ "\nAfter certain amount of hits releases broken blades into enemies");
 			DisplayName.AddTranslation(GameCulture.Russian, "Дробильщик MK4 (T-05-41)");
-            Tooltip.AddTranslation(GameCulture.Russian, "Острые зубы этого дробильщика способны сделать чистый разрез сквозь врага.\n[c/FF0000:Э.П.О.С. оружие]\nЕго атаки проходят сквозь период неуязвимости противника\nПри нанесении определённого количество ударов выпускает отработавшие лезвия во врагов");
+            Tooltip.AddTranslation(GameCulture.Russian, "Острые зубы этого дробильщика способны сделать чистый разрез сквозь врага.\n[c/FF0000:Оружие Э.П.О.С.]\nАтаки игнорируют период неуязвимости противника\nПри нанесении определённого количество ударов выпускает отработанные лезвия во врагов");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "粉碎机MK4 (T-05-41)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'锋利的刀刃能将它的目标干净利落地锯开.'\n[c/FF0000:EGO 武器]\n攻击无视无敌帧\n在命中一定次数之后将破碎的刀片释放入敌人体内");

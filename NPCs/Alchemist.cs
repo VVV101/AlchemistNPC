@@ -98,7 +98,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "来自骷髅商人的奇异啤酒气味真的很糟糕,但法力恢复效果非常棒!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA6");
-            text.SetDefault("Hi, *cough*... That definetly wasn't a Teleporation potion.");
+            text.SetDefault("Hi, *cough*... That definitely wasn't a Teleporation potion.");
             text.AddTranslation(GameCulture.Russian, "Привет, *кашель*... Это определённо было не зелье Телепортации.");
             text.AddTranslation(GameCulture.Chinese, "嗨, *咳咳*.. 那绝对不是柠檬茶.");
             mod.AddTranslation(text);
@@ -124,7 +124,7 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA11");
             text.SetDefault("And to think, she's getting the potions and not me... but I can't argue there.");
-            text.AddTranslation(GameCulture.Russian, "И только подумать... Она выбрала зелья, а не меня. Хотя я не могу спорить по этому поводу.");
+            text.AddTranslation(GameCulture.Russian, "И только подумать... Она выбрала зелья, а не меня. Хотя тут и не поспоришь.");
             text.AddTranslation(GameCulture.Chinese, "想想看, 她正在得到那些药水而我没有...但我对此却又无法反驳.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA12");
@@ -159,17 +159,17 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA18");
             text.SetDefault("You better deal with Pirates as fast, as you can. I can't wait to talk with Captain! Haven't seen him for years!");
-            text.AddTranslation(GameCulture.Russian, "Постарайся справиться с Пиратами как можно быстрее. Не могу дождаться, чтобы поговорить с Капитаном! Я не видел его уже много лет!");
+            text.AddTranslation(GameCulture.Russian, "Постарайся справиться с Пиратами как можно быстрее. Не могу дождаться возвращения Капитана! Я не видел его уже много лет!");
             text.AddTranslation(GameCulture.Chinese, "你最好以最快的速度解决这些海盗先，我忍不住想和船长说几句话，好些年没见到过他咯!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA19");
-            text.SetDefault("I hope that you will not let them take into my house, will you?");
+            text.SetDefault("I hope that you will not let them into my house, will you?");
             text.AddTranslation(GameCulture.Russian, "Я надеюсь, ты не пустишь их в мой дом, правда?");
             text.AddTranslation(GameCulture.Chinese, "我觉得你不会让他们进我的屋子的，是吧?");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA20");
-            text.SetDefault("Perhaps there are better things for you to do, rather than talking to me, at the moment. I don't know... maybe defend us from the Blood Moon?!");
-            text.AddTranslation(GameCulture.Russian, "Может у тебя найдётся занятие получше, чем говорить со мной сейчас? Ну например... Охранять нас от Кровавой Луны?!");
+            text.SetDefault("Perhaps there are better things for you to do, rather than talking to me, at the moment. I don't know... maybe defend us?!");
+            text.AddTranslation(GameCulture.Russian, "Может у тебя найдётся занятие получше, чем говорить со мной сейчас? Ну например... Охранять нас?!");
             text.AddTranslation(GameCulture.Chinese, "也许在这个时候你有比和我说话更重要的事情要做? 有个血红色的月亮挂在天上哎!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA21");
@@ -178,7 +178,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "...我的朋友，在这个时刻最好的事情就是别来打扰我!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA22");
-            text.SetDefault("I have an explosive flask. You do NOT want to know what it taste like.");
+            text.SetDefault("I have an explosive flask. You do NOT want to know what it tastes like.");
             text.AddTranslation(GameCulture.Russian, "У меня есть взрывная колба. Ты точно НЕ хочешь узнать, какова она на вкус.");
             text.AddTranslation(GameCulture.Chinese, "我有一个爆炸烧瓶，你不会想知道它尝起来是什么味道的.");
             mod.AddTranslation(text);
@@ -623,12 +623,9 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("JungleTeleporterPotion"));
 		shop.item[nextSlot].shopCustomPrice = 50000;
 		nextSlot++;
-			if (ModLoader.GetMod("AlchemistNPCContentDisabler") == null)
-			{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeaconTeleportator"));
-			shop.item[nextSlot].shopCustomPrice = 25000;
-			nextSlot++;
-			}
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeaconTeleportator"));
+		shop.item[nextSlot].shopCustomPrice = 25000;
+		nextSlot++;
 		}
 		if (NPC.downedPlantBoss)
 		{

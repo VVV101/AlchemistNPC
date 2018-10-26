@@ -131,7 +131,6 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Соединить записки");
             text.AddTranslation(GameCulture.Chinese, "黏合笔记");
             mod.AddTranslation(text);
-
         }
 
 		public override void ResetEffects()

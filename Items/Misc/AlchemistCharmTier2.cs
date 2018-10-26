@@ -11,16 +11,12 @@ namespace AlchemistNPC.Items.Misc
 {
 	public class AlchemistCharmTier2 : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Alchemist Charm Tier 2");
 			Tooltip.SetDefault("While this is in your inventory, you have a moderate chance not to consume potion"
 			+"\nAllows to use potions from Piggy Bank by Quick Buff");
-			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Тир 2");
+			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Второго Уровня");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет средний шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа");
         }
 

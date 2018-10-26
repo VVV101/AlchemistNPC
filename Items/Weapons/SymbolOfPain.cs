@@ -9,10 +9,6 @@ namespace AlchemistNPC.Items.Weapons
 {
 	public class SymbolOfPain : ModItem
 	{
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Scroll ''Symbol of Pain''");
@@ -20,10 +16,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nContains the spell ''Symbol of Pain''"
 			+"\nWhile used, all enemies on the screen would be heavily weakened for 1 minute"
 			+"\nMakes you deal 25% more damage to affected enemies (not lowered by any caps)"
-			+"\nAlso making them deal 1/4 less damage"
+			+"\nAlso makes them deal 1/4 less damage"
 			+"\nExhausts player for 1 minute, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Символа Боли''");
-            Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Символа Боли''\nКогда применён, ослабляет всех противников на экране\nПоражённые противника получают на 25% больше урона и наносят на 1/4 меньше урона\nИстощает игрока на 1 минуту, не позволяя ему использовать магию");
+            Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Символа Боли''\nПрименение ослабляет всех противников на экране\nПоражённые противники получают на 25% больше урона и наносят на 1/4 меньше урона\nИстощает игрока на 1 минуту, не позволяя ему использовать магию");
         }
 
 		public override void SetDefaults()

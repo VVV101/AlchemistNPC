@@ -13,13 +13,13 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Evil Presence");
-			Description.SetDefault("Mechanical boss would be spawned now");
+			Description.SetDefault("A mechanical boss is coming for you..");
 			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = true;
 			canBeCleared = false;
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Присутствие Зла");
-			Description.AddTranslation(GameCulture.Russian, "Сейчас заспавнится механический босс");
+			Description.AddTranslation(GameCulture.Russian, "Сейчас появится механический босс");
             DisplayName.AddTranslation(GameCulture.Chinese, "邪恶降临");
             Description.AddTranslation(GameCulture.Chinese, "机械Boss即将到来!");
         }

@@ -12,10 +12,6 @@ namespace AlchemistNPC.Items
 {
     public class BeaconTeleportator : ModItem
     {
-		public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("AlchemistNPCContentDisabler") == null;
-		}
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Beacon Teleporter Potion");
