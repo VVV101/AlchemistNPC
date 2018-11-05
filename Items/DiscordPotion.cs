@@ -17,10 +17,9 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Allows to teleport on cursor position by hotkey"
 			+"\nDistorts player for 1 second after teleport"
 			+"\nInflicts heavy damage while you have Chaos State"
-			+"\nChaos State time is increased to 10 seconds"
-			+"\nNON-CALAMITY BUFF POTION");
+			+"\nChaos State time is increased to 10 seconds");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Раздора");
-            Tooltip.AddTranslation(GameCulture.Russian, "Позволяет телепортироваться на курсор при нажатии горячей клавиши\nНарушает гравитацию игрока на 1 секунду после использования\nНаносит значительные повреждения, если вы в Хаотическом состоянии\nДлительность дебаффа увеличена до 10 секунд\nЗелье не из Каламити мода");
+            Tooltip.AddTranslation(GameCulture.Russian, "Позволяет телепортироваться на курсор при нажатии горячей клавиши\nНарушает гравитацию игрока на 1 секунду после использования\nНаносит значительные повреждения, если вы в Хаотическом состоянии\nДлительность дебаффа увеличена до 10 секунд");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "混乱药剂");
             Tooltip.AddTranslation(GameCulture.Chinese, "允许使用快捷键传送到鼠标位置"

@@ -48,34 +48,103 @@ namespace AlchemistNPC
 		public static int ReversivityCoinTier4ID;
 		public static int ReversivityCoinTier5ID;
 		public static int ReversivityCoinTier6ID;
+		private UserInterface alchemistUserInterface;
+		internal ShopChangeUI alchemistUI;
+		private UserInterface alchemistUserInterfaceA;
+		internal ShopChangeUIA alchemistUIA;
+		private UserInterface alchemistUserInterfaceO;
+		internal ShopChangeUIO alchemistUIO;
 		
 		public override void Load()
 		{
-		Instance = this;
-		Config.Load();
+			Instance = this;
+			Config.Load();
             //SBMW:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language, first load after build mod may not work 
             string LampLightToggle = Language.GetTextValue("Lamp Light Toggle");
             string DiscordBuffTeleportation = Language.GetTextValue("Discord Buff Teleportation");
             LampLight = RegisterHotKey(LampLightToggle, "L");
             DiscordBuff = RegisterHotKey(DiscordBuffTeleportation, "Q");
-		if (!Main.dedServ)
+			if (!Main.dedServ)
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
 			}
-		ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ItemType<Items.Misc.ReversivityCoinTier1>(), 999L));
-		ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ItemType<Items.Misc.ReversivityCoinTier2>(), 999L));
-		ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ItemType<Items.Misc.ReversivityCoinTier3>(), 999L));
-		ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ItemType<Items.Misc.ReversivityCoinTier4>(), 999L));
-		ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ItemType<Items.Misc.ReversivityCoinTier5>(), 999L));
-		ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ItemType<Items.Misc.ReversivityCoinTier6>(), 999L));
-		instance = this;
+			ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ItemType<Items.Misc.ReversivityCoinTier1>(), 999L));
+			ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ItemType<Items.Misc.ReversivityCoinTier2>(), 999L));
+			ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ItemType<Items.Misc.ReversivityCoinTier3>(), 999L));
+			ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ItemType<Items.Misc.ReversivityCoinTier4>(), 999L));
+			ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ItemType<Items.Misc.ReversivityCoinTier5>(), 999L));
+			ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ItemType<Items.Misc.ReversivityCoinTier6>(), 999L));
+			instance = this;
 
             SetTranslation();
+			
+			alchemistUI = new ShopChangeUI();
+			alchemistUI.Activate();
+			alchemistUserInterface = new UserInterface();
+			alchemistUserInterface.SetState(alchemistUI);
+			
+			alchemistUIA = new ShopChangeUIA();
+			alchemistUIA.Activate();
+			alchemistUserInterfaceA = new UserInterface();
+			alchemistUserInterfaceA.SetState(alchemistUIA);
+			
+			alchemistUIO = new ShopChangeUIO();
+			alchemistUIO.Activate();
+			alchemistUserInterfaceO = new UserInterface();
+			alchemistUserInterfaceO.SetState(alchemistUIO);
 		}
 
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
 		{
 			InterfaceHelper.ModifyInterfaceLayers(layers);
+			int MouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndex != -1)
+			{
+				layers.Insert(MouseTextIndex, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Shop Selector",
+					delegate
+					{
+						if (ShopChangeUI.visible)
+						{
+							alchemistUI.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexA = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexA != -1)
+			{
+				layers.Insert(MouseTextIndexA, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Shop Selector A",
+					delegate
+					{
+						if (ShopChangeUIA.visible)
+						{
+							alchemistUIA.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexO = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexO != -1)
+			{
+				layers.Insert(MouseTextIndexO, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Shop Selector O",
+					delegate
+					{
+						if (ShopChangeUIO.visible)
+						{
+							alchemistUIO.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
 		}
 		
 		public override void Unload()
@@ -773,6 +842,24 @@ namespace AlchemistNPC
             AddTranslation(text);
 
         }
+		
+		public override void UpdateUI(GameTime gameTime)
+		{
+			if (alchemistUserInterface != null && ShopChangeUI.visible)
+			{
+				alchemistUserInterface.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceA != null && ShopChangeUIA.visible)
+			{
+				alchemistUserInterfaceA.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceO != null && ShopChangeUIO.visible)
+			{
+				alchemistUserInterfaceO.Update(gameTime);
+			}
+		}
     }
 	
 }

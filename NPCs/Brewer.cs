@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 using AlchemistNPC.NPCs;
+using AlchemistNPC.Interface;
 using AlchemistNPC;
 using Terraria.Localization;
  
@@ -18,11 +19,6 @@ namespace AlchemistNPC.NPCs
 		public static bool Shop3 = false;
 		public static bool Shop4 = false;
 		public static bool Shop5 = false;
-		public static bool S1A = false;
-		public static bool S2A = false;
-		public static bool S3A = false;
-		public static bool S4A = false;
-		public static bool S5A = false;
 		public override string Texture
 		{
 			get
@@ -75,8 +71,8 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "5-ый магазин (Wildlife/Sacred/Spirit/Cristilium/ExpSentr)");
             text.AddTranslation(GameCulture.Chinese, "第五商店 (Wildlife/圣域/魂灵/水晶之地/ExpSentr)");
             mod.AddTranslation(text);
-            text = mod.CreateTranslation("CycleShop");
-            text.SetDefault("Cycle Shop");
+            text = mod.CreateTranslation("ShopsChanger");
+            text.SetDefault("Shops Changer");
             text.AddTranslation(GameCulture.Russian, "Смена магазина");
             text.AddTranslation(GameCulture.Chinese, "切换商店");
             mod.AddTranslation(text);
@@ -371,36 +367,26 @@ namespace AlchemistNPC.NPCs
 			string ShopB3 = Language.GetTextValue("Mods.AlchemistNPC.ShopB3");
 			string ShopB4 = Language.GetTextValue("Mods.AlchemistNPC.ShopB4");
 			string ShopB5 = Language.GetTextValue("Mods.AlchemistNPC.ShopB5");
-			string CycleShop = Language.GetTextValue("Mods.AlchemistNPC.CycleShop");
+			string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopsChanger");
 			if (Shop1)
 			{
 			button = ShopB1;
-			S5A = false;
-			S1A = true;
 			}
 			if (Shop2)
 			{
 			button = ShopB2;
-			S1A = false;
-			S2A = true;
 			}
 			if (Shop3)
 			{
 			button = ShopB3;
-			S2A = false;
-			S3A = true;
 			}
 			if (Shop4)
 			{
 			button = ShopB4;
-			S3A = false;
-			S4A = true;
 			}
 			if (Shop5)
 			{
 			button = ShopB5;
-			S4A = false;
-			S5A = true;
 			}
 			if (npc.FindBuffIndex(119) >= 0 && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
 			{
@@ -408,7 +394,7 @@ namespace AlchemistNPC.NPCs
 			}
 			else
 			{
-			button2 = CycleShop;
+			button2 = ShopsChanger;
 			}
         }
  
@@ -417,6 +403,7 @@ namespace AlchemistNPC.NPCs
 			if (firstButton)
             {
                 shop = true;
+				ShopChangeUI.visible = false;
             }
 			else
 			{
@@ -431,32 +418,8 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
-			if (Shop1 && S1A)
-						{
-						Shop2 = true;
-						Shop1 = false;
-						}
-			if (Shop2 && S2A)
-						{
-						Shop3 = true;
-						Shop2 = false;
-						}
-			if (Shop3 && S3A)
-						{
-						Shop4 = true;
-						Shop3 = false;
-						}
-			if (Shop4 && S4A)
-						{
-						Shop5 = true;
-						Shop4 = false;
-						}
-			if (Shop5 && S5A)
-						{
-						Shop1 = true;
-						Shop5 = false;
-						}
-				}
+				ShopChangeUI.visible = true;
+			}
 		}
  
 		public bool SacredToolsDownedAbaddon
@@ -633,6 +596,9 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SunshinePotion"));
 		shop.item[nextSlot].shopCustomPrice = 15000;
 		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("Dopamine"));
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
 		if (NPC.downedBoss3)
 			{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BewitchingPotion"));
@@ -706,21 +672,6 @@ namespace AlchemistNPC.NPCs
 		{
 				if (NPC.downedBoss3)
 				{
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("FrostCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ExplosiveCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GorganCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("LifeLeechCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ToxicCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 2500;
-				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CreativityPotion"));
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;

@@ -14,8 +14,7 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Fortitude Potion");
-			Tooltip.SetDefault("Grants immunity to knockback"
-			+"\nNON-CALAMITY BUFF POTION");
+			Tooltip.SetDefault("Grants immunity to knockback");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Стойкости");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к отбрасыванию");
 

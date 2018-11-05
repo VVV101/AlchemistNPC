@@ -590,6 +590,10 @@ namespace AlchemistNPC.NPCs
 
 		public override void NPCLoot(NPC npc)
 		{
+			if (npc.lifeMax >= 25000 && npc.boss && Main.rand.Next(20) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PerfectionToken"));
+				}
 			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WailOfBanshee"));
@@ -1029,6 +1033,25 @@ namespace AlchemistNPC.NPCs
 					if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Etheria")))
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), 33);
+					}
+				}
+				if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+				{
+					if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("DeserteerMelee")))
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(8, 10));
+					}
+					if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("MythrilSlime")))
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(3, 5));
+					}
+					if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("Valdaris")))
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(12, 15));
+					}
+					if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("GatekeeperHead")))
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(6, 9));
 					}
 				}
 			}

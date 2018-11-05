@@ -37,6 +37,7 @@ namespace AlchemistNPC.Items.Placeable
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 25);
+			recipe.anyWood = true;
 			recipe.AddIngredient(ItemID.Book, 1);
 			recipe.AddRecipeGroup("AlchemistNPC:EvilComponent", 15);
 			recipe.AddTile(TileID.Anvils);

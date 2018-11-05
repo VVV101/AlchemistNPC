@@ -20,8 +20,7 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Potion of Darkness");
 			Tooltip.SetDefault("Fills Rage meter and causes Heart Attack"
-			+"\nInflicts Heart Ache debuff for 5 minutes"
-			+"\nNON-CALAMITY BUFF POTION");
+			+"\nInflicts Heart Ache debuff for 5 minutes");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Тьмы");
             Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nВызывает Сердечную Боль на на 5 минут\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
         }    
@@ -39,7 +38,7 @@ namespace AlchemistNPC.Items
             item.height = 30;
             item.value = Item.sellPrice(0, 1, 0, 0);
             item.rare = 10;
-            item.buffType = ModLoader.GetMod("CalamityMod").BuffType("HeartAttack");
+            item.buffType = mod.BuffType("HeartAche");
             item.buffTime = 18000;
         }
 		
@@ -63,7 +62,7 @@ namespace AlchemistNPC.Items
 		{
 		CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
 		CalamityPlayer.stress = 10000;
-		player.AddBuff(mod.BuffType("HeartAche"), 18000, true);
+		player.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"), 18000, true);
 		return true;
 		}
     }

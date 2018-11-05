@@ -16,10 +16,9 @@ namespace AlchemistNPC.Items
             DisplayName.SetDefault("Perfect Discord Potion");
 			Tooltip.SetDefault("[c/00FF00:Unique Explorer's potion]"
             + "\nAllows to teleport on cursor position by hotkey"
-            + "\nBehaves exactly like Rod of Discord"
-            + "\nNON-CALAMITY BUFF POTION");
+            + "\nBehaves exactly like Rod of Discord");
             DisplayName.AddTranslation(GameCulture.Russian, "Превосходное Зелье Раздора");
-            Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Уникальное Зелье Исследовательницы]\nПозволяет телепортироваться на курсор при нажатии горячей клавиши\nПри применении ведёт себя аналогично Жезлу Раздора\nЗелье не из Каламити мода");
+            Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Уникальное Зелье Исследовательницы]\nПозволяет телепортироваться на курсор при нажатии горячей клавиши\nПри применении ведёт себя аналогично Жезлу Раздора");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "真·混乱药剂");
             Tooltip.AddTranslation(GameCulture.Chinese, "[c/00FF00:特调探险者药剂]\n允许使用快捷键传送到鼠标位置"

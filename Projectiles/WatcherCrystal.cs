@@ -34,10 +34,9 @@ namespace AlchemistNPC.Projectiles
 	
         public override void AI()
         {
-			{
 			Player player = Main.player[projectile.owner];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
-			if (player.dead || player.HasBuff(mod.BuffType("WatcherCrystal")))
+			if (player.dead || !player.HasBuff(mod.BuffType("WatcherCrystal")))
 			{
 				modPlayer.watchercrystal = false;
 			}
@@ -76,7 +75,6 @@ namespace AlchemistNPC.Projectiles
 			}
 			if (projectile.frame >= 8)
 			{ projectile.frame = 0; }
-        }
-    }
-}
+		}
+	}
 }

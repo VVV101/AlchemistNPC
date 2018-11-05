@@ -5,6 +5,7 @@ using Terraria.GameContent.Events;
 using Terraria.ModLoader;
 using Terraria.Localization;
 using Terraria.World.Generation;
+using AlchemistNPC.Interface;
  
 namespace AlchemistNPC.NPCs
 {
@@ -17,11 +18,6 @@ namespace AlchemistNPC.NPCs
 		public static bool Shop3 = false;
 		public static bool Shop4 = false;
 		public static bool Shop5 = false;
-		public static bool S1A = false;
-		public static bool S2A = false;
-		public static bool S3A = false;
-		public static bool S4A = false;
-		public static bool S5A = false;
 		public override string Texture
 		{
 			get
@@ -74,8 +70,8 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Магазин сумок модовых Боссов #2");
             text.AddTranslation(GameCulture.Chinese, "模组宝藏袋商店#2    ");
             mod.AddTranslation(text);
-            text = mod.CreateTranslation("CycleShopO");
-            text.SetDefault("Cycle shop");
+            text = mod.CreateTranslation("ShopChanger");
+            text.SetDefault("Shop Changer");
             text.AddTranslation(GameCulture.Russian, "Сменить магазин");
             text.AddTranslation(GameCulture.Chinese, "切换商店");
             mod.AddTranslation(text);
@@ -257,11 +253,6 @@ namespace AlchemistNPC.NPCs
 		public override void ResetEffects()
 		{
 		OA = false;
-		S1A = false;
-		S2A = false;
-		S3A = false;
-		S4A = false;
-		S5A = false;
 		}
 		
 		public override void SetDefaults()
@@ -592,40 +583,30 @@ namespace AlchemistNPC.NPCs
 		string VanillaTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.VanillaTreasureBagsShop");
 		string ModdedTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop");
 		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop2");
-		string CycleShopO = Language.GetTextValue("Mods.AlchemistNPC.CycleShopO");
+		string ShopChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopChanger");
 		if (Config.TS && Main.expertMode)
 		{
 			if (Shop1)
 			{
 			button = BossDropsShop;
-			S5A = false;
-			S1A = true;
 			}
 			if (Shop2)
 			{
 			button = EGOShop;
-			S1A = false;
-			S2A = true;
 			}
 			if (Shop3)
 			{
 			button = VanillaTreasureBagsShop;
-			S2A = false;
-			S3A = true;
 			}
 			if (Shop4)
 			{
 			button = ModdedTreasureBagsShop;
-			S3A = false;
-			S4A = true;
 			}
 			if (Shop5)
 			{
 			button = ModdedTreasureBagsShop2;
-			S4A = false;
-			S5A = true;
 			}
-			button2 = CycleShopO;
+			button2 = ShopChanger;
 		}
 			if (!Config.TS || !Main.expertMode)
 			{
@@ -647,37 +628,14 @@ namespace AlchemistNPC.NPCs
 				if (Config.TS && Main.expertMode)
 				{
 					shop = true;
+					ShopChangeUIO.visible = false;
 				}
 			}
 			else
 			{
 				if (Config.TS && Main.expertMode)
 				{
-					if (Shop1 && S1A)
-					{
-						Shop2 = true;
-						Shop1 = false;
-					}
-					if (Shop2 && S2A)
-					{
-						Shop3 = true;
-						Shop2 = false;
-					}
-					if (Shop3 && S3A)
-					{
-						Shop4 = true;
-						Shop3 = false;
-					}
-					if (Shop4 && S4A)
-					{
-						Shop5 = true;
-						Shop4 = false;
-					}
-					if (Shop5 && S5A)
-					{
-						Shop1 = true;
-						Shop5 = false;
-					}
+					ShopChangeUIO.visible = true;
 				}
 				if (!Config.TS || !Main.expertMode)
 				{
@@ -903,6 +861,23 @@ namespace AlchemistNPC.NPCs
 		public bool EnigmaDownedEtheria
 		{
         get { return Laugicality.LaugicalityWorld.downedTrueEtheria; }
+        }
+		
+		public bool PinkymodDownedST
+		{
+        get { return pinkymod.Global.Pinkyworld.downedSunlightTrader; }
+        }
+		public bool PinkymodDownedMS
+		{
+        get { return pinkymod.Global.Pinkyworld.downedMythrilSlime; }
+        }
+		public bool PinkymodDownedVD
+		{
+        get { return pinkymod.Global.Pinkyworld.downedValdaris; }
+        }
+		public bool PinkymodDownedAD
+		{
+        get { return pinkymod.Global.Pinkyworld.downedAbyssmalDuo; }
         }
 		
 		public override void SetupShop(Chest shop, ref int nextSlot)
@@ -2101,6 +2076,41 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
+						if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+						{
+							if (PinkymodDownedST)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("STBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (PinkymodDownedMS)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("HOTCTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(30);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("MythrilBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(5);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+							if (PinkymodDownedVD)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("Valdabag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(25);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+							if (PinkymodDownedAD)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("GatekeeperTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+							nextSlot++;
+							}
+						}
 					}
 				}
 				if (!Config.CoinsDrop)
@@ -2212,6 +2222,36 @@ namespace AlchemistNPC.NPCs
 							{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Laugicality").ItemType("SteamTrainTreasureBag"));
 							shop.item[nextSlot].shopCustomPrice = 2000000;
+							nextSlot++;
+							}
+						}
+						if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+						{
+							if (PinkymodDownedST)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("STBag"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+							}
+							if (PinkymodDownedMS)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("HOTCTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = 750000;
+							nextSlot++;
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("MythrilBag"));
+							shop.item[nextSlot].shopCustomPrice = 1000000;
+							nextSlot++;
+							}
+							if (PinkymodDownedVD)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("Valdabag"));
+							shop.item[nextSlot].shopCustomPrice = 1500000;
+							nextSlot++;
+							}
+							if (PinkymodDownedAD)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("GatekeeperTreasureBag"));
+							shop.item[nextSlot].shopCustomPrice = 2500000;
 							nextSlot++;
 							}
 						}

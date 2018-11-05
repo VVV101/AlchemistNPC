@@ -33,6 +33,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
+using AlchemistNPC.Interface;
 using AlchemistNPC.Items;
 using AlchemistNPC.Mounts;
 
@@ -131,6 +132,12 @@ namespace AlchemistNPC
 			TerrarianBlock = false;
 			AlchemistGlobalItem.Luck = false;
 			AlchemistGlobalItem.Luck2 = false;
+			AlchemistGlobalItem.PerfectionToken = false;
+			AlchemistGlobalItem.Menacing = false;
+			AlchemistGlobalItem.Lucky = false;
+			AlchemistGlobalItem.Violent = false;
+			AlchemistGlobalItem.Warding = false;
+			AlchemistGlobalItem.Stopper = false;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
 			MeatGrinderOnUse = false;
@@ -194,6 +201,12 @@ namespace AlchemistNPC
 			if (BillIsDowned == 1)
 			{
 			player.AddBuff(mod.BuffType("DemonSlayer"), 2);
+			}
+			if (player.talkNPC == -1)
+			{
+				ShopChangeUI.visible = false;
+				ShopChangeUIA.visible = false;
+				ShopChangeUIO.visible = false;
 			}
 		}
 	

@@ -17,14 +17,14 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Unchained ''Akumu''");
-			Tooltip.SetDefault("It means ''[c/FF00FF:demon]'' in Japanese"
+			Tooltip.SetDefault("It means ''[c/FF00FF:nightmare]'' in Japanese"
 			+"\nIts slice pierces through any amount of enemies on its way"
 			+"\nLeft click launches a short travelling projectile"
 			+"\nRight click slices the air in place"
 			+"\nWhile at 35% HP or lower, Akumu generates projectile reflecting shield"
 			+"\nWhile above 35% HP, Akumu releases flying minion");
 			DisplayName.AddTranslation(GameCulture.Russian, "Освобождённая ''Акуму''");
-            Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''демон'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши\nПри здоровье ниже 35% призывает отражающий снаряды щит\nПри здоровье выше 35% создаёт летающего прислужника");
+            Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''кошмар'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши\nПри здоровье ниже 35% призывает отражающий снаряды щит\nПри здоровье выше 35% создаёт летающего прислужника");
         }
 
 		public override void SetDefaults()

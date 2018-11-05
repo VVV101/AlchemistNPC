@@ -403,7 +403,25 @@ namespace AlchemistNPC.NPCs
 				}
 			}
 	if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+		{
+			if (NPC.downedBoss3)
 			{
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("FrostCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 5000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ExplosiveCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 5000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GorganCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 5000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("LifeLeechCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 5000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ToxicCoatingItem"));
+				shop.item[nextSlot].shopCustomPrice = 2500;
+				nextSlot++;
+			}
 			if (Main.hardMode)
 				{
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GasContainer"));

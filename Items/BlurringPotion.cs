@@ -14,8 +14,7 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Blurring Potion");
-			Tooltip.SetDefault("Grants Blurring buff (activates Shadow Dodge for 10 sec after 30 sec CD)"
-			+"\nNON-CALAMITY BUFF POTION");
+			Tooltip.SetDefault("Grants Blurring buff (activates Shadow Dodge for 10 sec after 30 sec CD)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Размытия");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Размытие (включает Теневое Уклонение с 30-ти секундным откатом)");
 

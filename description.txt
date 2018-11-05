@@ -6,6 +6,20 @@ The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of th
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
+v8.0
+-Reworked multiple shops changing mechanic.
+-Added Perfection Token. Allows to reforge item to its best possible reforge. Consumes in process.
+Drops from bosses with >= 25K HP with 5% chance.
+-Added Menacing, Lucky, Violent and Warding Tokens. Can be crafted from Perfection Token.
+Can be used for getting exact reforge on accessory. Consumes in process.
+-Added Dopamine to Brewer's 2nd shop. Inflicts Happy! buff for 10 minutes.
+Available anytime.
+-Added pinkymod support for Operator.
+-Thorium Coatings were moved to Young Brewer's shop.
+-Removed NON CALAMITY BUFF POTION lines from mod's potions.
+-Now any wood can be used for making Wing of the World.
+-Fixed Potion of Darkness quickbuff overconsuming in Piggy Bank.
+-Lowered horizontal speed reduction by some sources.
 v7.6.1
 -Fixed issue when Cera Sumat, Holy Avenger and The Light of Cera Sumat were not killing some enemies properly.
 v7.6

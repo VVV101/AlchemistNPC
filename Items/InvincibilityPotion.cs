@@ -14,8 +14,7 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Invincibility Potion");
-			Tooltip.SetDefault("Increases length of invincibility after taking damage"
-			+"\nNON-CALAMITY BUFF POTION");
+			Tooltip.SetDefault("Increases length of invincibility after taking damage");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Неуязвимости");
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает период неуязвимости после получения урона");
 

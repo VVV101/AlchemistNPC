@@ -16,6 +16,12 @@ namespace AlchemistNPC.Items
 		public static bool on = false;
 		public static bool Luck = false;
 		public static bool Luck2 = false;
+		public static bool Menacing = false;
+		public static bool Lucky = false;
+		public static bool Violent = false;
+		public static bool Warding = false;
+		public static bool Stopper = false;
+		public static bool PerfectionToken = false;
 		
 		public bool CalamityModDownedSCal
 		{
@@ -41,11 +47,31 @@ namespace AlchemistNPC.Items
 				Luck = true;
 				Luck2 = true;
 			}
+			if (item.type == mod.ItemType("PerfectionToken"))
+			{
+				PerfectionToken = true;
+			}
+			if (item.type == mod.ItemType("MenacingToken"))
+			{
+				Menacing = true;
+			}
+			if (item.type == mod.ItemType("LuckyToken"))
+			{
+				Lucky = true;
+			}
+			if (item.type == mod.ItemType("ViolentToken"))
+			{
+				Violent = true;
+			}
+			if (item.type == mod.ItemType("WardingToken"))
+			{
+				Warding = true;
+			}
 		}
 		
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)
 		{
-			if (Luck == true)
+			if (Luck == true && PerfectionToken == false)
 			{
 				if (item.melee)
 				{
@@ -88,7 +114,7 @@ namespace AlchemistNPC.Items
 					return 82;
 				}
 			}
-			if (Luck2 == true)
+			if (Luck2 == true && !Menacing && !Lucky && !Violent && !Warding)
 			{
 				if (item.accessory)
 				{
@@ -102,7 +128,128 @@ namespace AlchemistNPC.Items
 					return 65;
 				}
 			}
+			if (PerfectionToken == true)
+			{
+				if (item.melee)
+				{
+					return 81;
+				}
+				if (item.ranged && !item.consumable && item.knockBack > 0)
+				{
+					return 82;
+				}
+				if (item.ranged && !item.consumable && item.knockBack <= 0)
+				{
+					return 60;
+				}
+				if (item.magic && item.knockBack > 0)
+				{
+					return 83;
+				}
+				if (item.magic && item.knockBack <= 0)
+				{
+					return 60;
+				}
+				if (item.summon)
+				{
+					return 83;
+				}
+				if (item.thrown && !item.consumable)
+				{
+					return 82;
+				}
+			}
+			if (item.accessory)
+			{
+				if (Menacing)
+				{
+					return 72;
+				}
+				if (Lucky)
+				{
+					return 68;
+				}
+				if (Violent)
+				{
+					return 80;
+				}
+				if (Warding)
+				{
+					return 65;
+				}
+			}
 		return -1;
+		}
+		
+		public override bool NewPreReforge(Item item)
+		{
+			Player player = Main.player[Main.myPlayer];
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PerfectionToken")) && !Stopper)
+			{
+				Item[] inventory = Main.player[Main.myPlayer].inventory;
+				for (int k = 0; k < inventory.Length; k++)
+				{
+					if (inventory[k].type == mod.ItemType("PerfectionToken"))
+					{
+						inventory[k].stack--;
+						Stopper = true;
+						break;
+					}
+				}
+			}
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("MenacingToken")) && !Stopper)
+			{
+				Item[] inventory = Main.player[Main.myPlayer].inventory;
+				for (int k = 0; k < inventory.Length; k++)
+				{
+					if (inventory[k].type == mod.ItemType("MenacingToken"))
+					{
+						inventory[k].stack--;
+						Stopper = true;
+						break;
+					}
+				}
+			}
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("LuckyToken")) && !Stopper)
+			{
+				Item[] inventory = Main.player[Main.myPlayer].inventory;
+				for (int k = 0; k < inventory.Length; k++)
+				{
+					if (inventory[k].type == mod.ItemType("LuckyToken"))
+					{
+						inventory[k].stack--;
+						Stopper = true;
+						break;
+					}
+				}
+			}
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("ViolentToken")) && !Stopper)
+			{
+				Item[] inventory = Main.player[Main.myPlayer].inventory;
+				for (int k = 0; k < inventory.Length; k++)
+				{
+					if (inventory[k].type == mod.ItemType("ViolentToken"))
+					{
+						inventory[k].stack--;
+						Stopper = true;
+						break;
+					}
+				}
+			}
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("WardingToken")) && !Stopper)
+			{
+				Item[] inventory = Main.player[Main.myPlayer].inventory;
+				for (int k = 0; k < inventory.Length; k++)
+				{
+					if (inventory[k].type == mod.ItemType("WardingToken"))
+					{
+						inventory[k].stack--;
+						Stopper = true;
+						break;
+					}
+				}
+			}	
+			return true;
 		}
 		
 		public override bool ConsumeItem(Item item, Player player)	
@@ -806,13 +953,13 @@ namespace AlchemistNPC.Items
 		{
 			if (player.HasBuff(mod.BuffType("Exhausted")))
 			{
-			speed *= 0.6f;
-			acceleration *= 0.6f;
+			speed *= 0.8f;
+			acceleration *= 0.8f;
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 390)
 			{
-			speed *= 0.3f;
-			acceleration *= 0.3f;
+			speed *= 0.5f;
+			acceleration *= 0.5f;
 			}
 			else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 210)
 			{

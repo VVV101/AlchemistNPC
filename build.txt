@@ -1,9 +1,9 @@
 author = Gregg/VVV101, somebody0214, RebooT
-version = 7.6.1
+version = 8.0
 displayName = AlchemistNPC
 homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v5-0.52798/
 hideCode = false
-weakReferences = SacredTools, CalamityMod, ThoriumMod, SpiritMod, Laugicality, Redemption, Bluemagic
+weakReferences = SacredTools, CalamityMod, ThoriumMod, SpiritMod, Laugicality, Redemption, Bluemagic, pinkymod
 hideResources = false
 includeSource = true
 buildIgnore = *.user, obj\*, bin\*, .vs\*, .git*, referenceImages*.png, .gitattributes, *.csproj
