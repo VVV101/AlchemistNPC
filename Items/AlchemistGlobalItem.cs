@@ -444,6 +444,13 @@ namespace AlchemistNPC.Items
             string Slybertron = Language.GetTextValue("Mods.AlchemistNPC.Slybertron");
             string SteamTrain = Language.GetTextValue("Mods.AlchemistNPC.SteamTrain");
 			
+			//pinky
+			string SunlightTrader = Language.GetTextValue("Mods.AlchemistNPC.SunlightTrader");
+            string THOFC = Language.GetTextValue("Mods.AlchemistNPC.THOFC");
+			string MythrilSlime = Language.GetTextValue("Mods.AlchemistNPC.MythrilSlime");
+            string Valdaris = Language.GetTextValue("Mods.AlchemistNPC.Valdaris");
+            string Gatekeeper = Language.GetTextValue("Mods.AlchemistNPC.Gatekeeper");
+			
 			if (item.type == mod.ItemType("KnucklesBag"))
 			{
 				TooltipLine line = new TooltipLine(mod, "Knuckles", Knuckles);
@@ -898,6 +905,39 @@ namespace AlchemistNPC.Items
 				tooltips.Insert(1,line);
 				}
 			}
+			if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+			{
+				if (item.type == (ModLoader.GetMod("pinkymod").ItemType("STBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "SunlightTrader", SunlightTrader);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("pinkymod").ItemType("HOTCTreasureBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "THOFC", THOFC);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("pinkymod").ItemType("MythrilBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "MythrilSlime", MythrilSlime);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("pinkymod").ItemType("Valdabag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Valdaris", Valdaris);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("pinkymod").ItemType("GatekeeperTreasureBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Gatekeeper", Gatekeeper);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+			}
 		}
 		
 		public override void OpenVanillaBag(string context, Player player, int arg)
@@ -909,6 +949,10 @@ namespace AlchemistNPC.Items
 			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(150) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("HeartofYui"));
+			}
+			if (Main.hardMode && context == "bossBag" && Main.rand.Next(150) == 0)
+			{
+				player.QuickSpawnItem(mod.ItemType("StatsChecker"));
 			}
 			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(200) == 0)
 			{

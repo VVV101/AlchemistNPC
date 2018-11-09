@@ -73,18 +73,28 @@ namespace AlchemistNPC.NPCs
 		{
 			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
 			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-				{
+			{
 				player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AbyssalShell")] = true;
-				}
+				npc.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AParalyzed")] = true;
+				npc.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("Paralyzed")] = true;
+			}
 			npc.buffImmune[mod.BuffType("ArmorDestruction")] = true;
-			npc.velocity *= 1.25f;
+			npc.buffImmune[mod.BuffType("Twilight")] = true;
+			npc.buffImmune[mod.BuffType("Electrocute")] = true;
+			npc.buffImmune[mod.BuffType("Patience")] = true;
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			{
+				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("SilvaStun")] = true;
+				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("ExoFreeze")] = true;
+			}
+			npc.velocity *= 1.2f;
 			npc.defense = 1;
 			int damage1 = 200;
 			int damage2 = 300;
 			int damage3 = 350;
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte)
 			{
-			damage1 = 100;
+			damage1 = mod.ProjectileType("DeadlyLaser");
 			damage2 = 150;
 			damage3 = 175;
 			}
@@ -108,28 +118,28 @@ namespace AlchemistNPC.NPCs
 					{
 					Vector2 vel = new Vector2(-1, -1);
 					vel *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel2 = new Vector2(1, 1);
 					vel2 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel3 = new Vector2(1, -1);
 					vel3 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel4 = new Vector2(-1, 1);
 					vel4 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel5 = new Vector2(0, -1);
 					vel5 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel6 = new Vector2(0, 1);
 					vel6 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel7 = new Vector2(1, 0);
 					vel7 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel8 = new Vector2(-1, 0);
 					vel8 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					}
 				}
 				else
@@ -198,28 +208,28 @@ namespace AlchemistNPC.NPCs
 					{
 					Vector2 vel = new Vector2(-1, -1);
 					vel *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel2 = new Vector2(1, 1);
 					vel2 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel3 = new Vector2(1, -1);
 					vel3 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel4 = new Vector2(-1, 1);
 					vel4 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel5 = new Vector2(0, -1);
 					vel5 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel6 = new Vector2(0, 1);
 					vel6 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel7 = new Vector2(1, 0);
 					vel7 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					Vector2 vel8 = new Vector2(-1, 0);
 					vel8 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 100, damage1, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
 					}
 				}
 				if (npc.life > 166666 && npc.life < 333333)

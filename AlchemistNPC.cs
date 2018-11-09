@@ -34,6 +34,7 @@ namespace AlchemistNPC
 		internal TeleportClass TeleportClass;
 		public static ModHotKey LampLight;
 		public static ModHotKey DiscordBuff;
+		public static ModHotKey PipBoyTP;
 		public static bool SF = false;
 		public static bool BastScroll = false;
 		public static bool Stormbreaker = false;
@@ -54,6 +55,8 @@ namespace AlchemistNPC
 		internal ShopChangeUIA alchemistUIA;
 		private UserInterface alchemistUserInterfaceO;
 		internal ShopChangeUIO alchemistUIO;
+		private UserInterface alchemistUserInterfaceP;
+		internal PipBoyTPMenu pipboyUI;
 		
 		public override void Load()
 		{
@@ -62,8 +65,10 @@ namespace AlchemistNPC
             //SBMW:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language, first load after build mod may not work 
             string LampLightToggle = Language.GetTextValue("Lamp Light Toggle");
             string DiscordBuffTeleportation = Language.GetTextValue("Discord Buff Teleportation");
+			string PipBoy = Language.GetTextValue("Pip-Boy Teleportation Menu");
             LampLight = RegisterHotKey(LampLightToggle, "L");
             DiscordBuff = RegisterHotKey(DiscordBuffTeleportation, "Q");
+			PipBoyTP = RegisterHotKey(PipBoy, "P");
 			if (!Main.dedServ)
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
@@ -92,6 +97,11 @@ namespace AlchemistNPC
 			alchemistUIO.Activate();
 			alchemistUserInterfaceO = new UserInterface();
 			alchemistUserInterfaceO.SetState(alchemistUIO);
+			
+			pipboyUI = new PipBoyTPMenu();
+			pipboyUI.Activate();
+			alchemistUserInterfaceP = new UserInterface();
+			alchemistUserInterfaceP.SetState(pipboyUI);
 		}
 
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
@@ -139,6 +149,22 @@ namespace AlchemistNPC
 						if (ShopChangeUIO.visible)
 						{
 							alchemistUIO.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexP = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexO != -1)
+			{
+				layers.Insert(MouseTextIndexP, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Pip-Boy Menu",
+					delegate
+					{
+						if (PipBoyTPMenu.visible)
+						{
+							pipboyUI.Draw(Main.spriteBatch);
 						}
 						return true;
 					},
@@ -778,7 +804,7 @@ namespace AlchemistNPC
             text.SetDefault("Overseer Treasure Bag");
             AddTranslation(text);
 			
-			//SpiritMod
+			//Enigma
             text = CreateTranslation("Sharkron");
             text.SetDefault("Dune Sharkron Treasure Bag");
             AddTranslation(text);
@@ -805,6 +831,27 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("SteamTrain");
             text.SetDefault("Steam Train Treasure Bag");
+            AddTranslation(text);
+			
+			//Pinky
+            text = CreateTranslation("SunlightTrader");
+            text.SetDefault("Sunlight Trader Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("THOFC");
+            text.SetDefault("The Heart of the Cavern Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("MythrilSlime");
+            text.SetDefault("Mythril Slime Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Valdaris");
+            text.SetDefault("Valdaris Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Gatekeeper");
+            text.SetDefault("The Gatekeeper Treasure Bag");
             AddTranslation(text);
 			
             //SBMW:Some other translation
@@ -858,6 +905,11 @@ namespace AlchemistNPC
 			if (alchemistUserInterfaceO != null && ShopChangeUIO.visible)
 			{
 				alchemistUserInterfaceO.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceP != null && PipBoyTPMenu.visible)
+			{
+				alchemistUserInterfaceP.Update(gameTime);
 			}
 		}
     }

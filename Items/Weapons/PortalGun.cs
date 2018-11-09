@@ -16,7 +16,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nHope this thing wouldn't cause appearence of SEAL team Ricks");
 			
 			DisplayName.AddTranslation(GameCulture.Russian, "Портальная пушка Рика");
-            Tooltip.AddTranslation(GameCulture.Russian, "Копия портальной пушки Рика Санчеза\nОткрывает порталы в различные измерения\nНадеюсь что она не сможет боевой отряд Риков.");
+            Tooltip.AddTranslation(GameCulture.Russian, "Копия портальной пушки Рика Санчеза\nОткрывает порталы в различные измерения\nНадеюсь что она не вызовет появление боевой отряд Риков.");
 		}
 
 		public override void SetDefaults()

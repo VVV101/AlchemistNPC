@@ -77,7 +77,7 @@ namespace AlchemistNPC.Items.Armor
 			player.meleeDamage += 0.35f;
 			player.magicDamage += 0.35f;
 			player.minionDamage += 0.35f;
-			player.magicDamage += 0.35f;
+			player.rangedDamage += 0.35f;
 			player.thrownDamage += 0.35f;
 			player.meleeCrit += 25;
 			player.magicCrit += 25;

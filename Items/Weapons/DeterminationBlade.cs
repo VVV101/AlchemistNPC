@@ -28,7 +28,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.melee = true;
-			item.damage = 175;
+			item.damage = 99;
 			item.width = 32;
 			item.height = 32;
 			item.useTime = 15;
@@ -50,7 +50,7 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override void UpdateInventory(Player player)
 		{
-			if (AlchemistNPC.DTH >= 5)
+			if (AlchemistNPC.DTH >= 10)
 			{
 			player.AddBuff(mod.BuffType("Hate"), 2);
 			}
@@ -58,11 +58,11 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool CanUseItem(Player player)
 		{
-			if (player.altFunctionUse == 2 && (AlchemistNPC.DTH < 5))
+			if (player.altFunctionUse == 2 && (AlchemistNPC.DTH < 10))
 			{
 				return false;
 			}
-			if (player.altFunctionUse == 2 && (AlchemistNPC.DTH >= 5))
+			if (player.altFunctionUse == 2 && (AlchemistNPC.DTH >= 10))
 			{
 				item.shoot = mod.ProjectileType("DTH");
 				AlchemistNPC.DTH = 0;
@@ -112,27 +112,27 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-					if (count == 3)
-					{
-					item.shoot = mod.ProjectileType("DBJ");
-					int numberProjectiles = 3 + Main.rand.Next(3);
-					for (int i = 0; i < numberProjectiles; i++)
-						{
-						Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
-						Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("DBJ"), damage, knockBack, player.whoAmI);
-						}
-					}
-					if (count == 4)
-					{
-					item.shoot = mod.ProjectileType("DBB");
-					int numberProjectiles = 2 + Main.rand.Next(2);
-					for (int i = 0; i < numberProjectiles; i++)
-						{
-						Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
-						Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("DBB"), damage, knockBack, player.whoAmI);
-						}
-					}
-					return true;
+			if (count == 3)
+			{
+				item.shoot = mod.ProjectileType("DBJ");
+				int numberProjectiles = 3 + Main.rand.Next(3);
+				for (int i = 0; i < numberProjectiles; i++)
+				{
+					Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
+					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("DBJ"), damage*2, knockBack, player.whoAmI);
+				}
+			}
+			if (count == 4)
+			{
+				item.shoot = mod.ProjectileType("DBB");
+				int numberProjectiles = 2 + Main.rand.Next(2);
+				for (int i = 0; i < numberProjectiles; i++)
+				{
+					Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
+					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("DBB"), damage*2, knockBack, player.whoAmI);
+				}
+			}
+			return true;
 		}
 		
 		public override void AddRecipes()

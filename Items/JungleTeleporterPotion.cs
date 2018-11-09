@@ -15,7 +15,7 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Jungle Teleporter Potion");
-			Tooltip.SetDefault("Teleports you to the Jungle (near leftest top or rightest top jungle point)"
+			Tooltip.SetDefault("Teleports you to the Jungle"
 			+"\nSide depends on used mouse button");
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Джунглям");
             Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в джунгли\nСторона зависит от нажатой кнопки мыши");
@@ -48,7 +48,7 @@ namespace AlchemistNPC.Items
 			{
 				if (Main.myPlayer == player.whoAmI)
 				{
-				TeleportClass.HandleTeleport(9);
+				TeleportClass.HandleTeleport(10);
 				return true;
 				}
 			}
@@ -56,7 +56,7 @@ namespace AlchemistNPC.Items
 			{
 				if (Main.myPlayer == player.whoAmI)
 				{
-				TeleportClass.HandleTeleport(10);
+				TeleportClass.HandleTeleport(9);
 				return true;
 				}
 			}
@@ -70,7 +70,7 @@ namespace AlchemistNPC.Items
 
         public override void RightClick(Player player)
         {
-            TeleportClass.HandleTeleport(9);
+            TeleportClass.HandleTeleport(10);
         }
     }
 }

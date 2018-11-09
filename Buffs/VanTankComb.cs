@@ -29,53 +29,44 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (player.HasBuff(mod.BuffType("BattleComb")))
+			if (!player.HasBuff(mod.BuffType("BattleComb")) && !player.HasBuff(mod.BuffType("TankComb")))
 			{
-				if (player.HasBuff(mod.BuffType("TankComb")))
+				player.lavaImmune = true;
+				player.fireWalk = true;
+				player.buffImmune[1] = true;
+				player.buffImmune[2] = true;
+				player.buffImmune[5] = true;
+				player.buffImmune[14] = true;
+				player.buffImmune[113] = true;
+				player.buffImmune[114] = true;
+				player.endurance += 0.1f;
+				player.statDefense += 8;
+				player.lifeRegen += 4;
+				player.lifeForce = true;
+				player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
+				if (player.thorns < 1.0)
 				{
-				}
-				else
-				{
-			player.lavaImmune = true;
-            player.fireWalk = true;
-			player.buffImmune[1] = true;
-			player.buffImmune[2] = true;
-			player.buffImmune[5] = true;
-			player.buffImmune[14] = true;
-			player.buffImmune[113] = true;
-			player.buffImmune[114] = true;
-			player.endurance += 0.1f;
-				{
-                        if ((double)player.thorns < 1.0)
-                            player.thorns = 0.3333333f;
-                }
+				player.thorns = 0.3333333f;
 				}
 			}
-			else
+			if (player.HasBuff(mod.BuffType("BattleComb")))
 			{
-				if (player.HasBuff(mod.BuffType("TankComb")))
+				player.lavaImmune = true;
+				player.fireWalk = true;
+				player.buffImmune[1] = true;
+				player.buffImmune[2] = true;
+				player.buffImmune[5] = true;
+				player.buffImmune[14] = true;
+				player.buffImmune[113] = true;
+				player.buffImmune[114] = true;
+				player.endurance += 0.1f;
+				if (player.thorns < 1.0)
 				{
+				player.thorns = 0.3333333f;
 				}
-				else
-				{
-			player.lavaImmune = true;
-            player.fireWalk = true;
-			player.buffImmune[1] = true;
-			player.buffImmune[2] = true;
-			player.buffImmune[5] = true;
-			player.buffImmune[14] = true;
-			player.buffImmune[113] = true;
-			player.buffImmune[114] = true;
-			player.endurance += 0.1f;
-			player.statDefense += 8;
-			player.lifeRegen += 4;
-			player.lifeForce = true;
-            player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
-				{
-                        if ((double)player.thorns < 1.0)
-                            player.thorns = 0.3333333f;
-                }
-				}
+			}
+			if (player.HasBuff(mod.BuffType("TankComb")))
+			{
 			}
 		}
 	}

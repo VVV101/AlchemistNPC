@@ -223,7 +223,7 @@ namespace AlchemistNPC.Items
 					for (int x = 0; x < Main.tile.GetLength(0); ++x)
 					{
 					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].type != 60) continue;
+					if (Main.tile[x, y].type != 233) continue;
 					pos = new Vector2((x) * 16, (y-5) * 16);
 					break;
 				}
@@ -244,7 +244,7 @@ namespace AlchemistNPC.Items
 				for (int x = 8400; x > 0; --x)
 				{
 					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].type != 60) continue;
+					if (Main.tile[x, y].type != 233) continue;
 					pos = new Vector2((x) * 16, (y-5) * 16);
 					break;
 				}

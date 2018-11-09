@@ -29,65 +29,65 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
+			if (!player.HasBuff(mod.BuffType("BattleComb")))
+			{
+				player.longInvince = true;
+				if (NPC.downedMechBoss2)
+				{
+					player.buffImmune[39] = true;
+					player.buffImmune[69] = true;
+				}
+				player.buffImmune[24] = true;
+				player.buffImmune[44] = true;
+				player.buffImmune[46] = true;
+				player.buffImmune[47] = true;
+				player.lavaImmune = true;
+				player.fireWalk = true;
+				player.buffImmune[1] = true;
+				player.buffImmune[2] = true;
+				player.buffImmune[5] = true;
+				player.buffImmune[14] = true;
+				player.buffImmune[113] = true;
+				player.buffImmune[114] = true;
+				player.buffImmune[mod.BuffType("LongInvincible")] = true;
+				player.buffImmune[mod.BuffType("TitanSkin")] = true;
+				player.endurance += 0.1f;
+				player.statDefense += 8;
+				player.lifeRegen += 4;
+				player.lifeForce = true;
+				player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
+				if (player.thorns < 1.0)
+				{
+				player.thorns = 0.3333333f;
+				}
+			}
 			if (player.HasBuff(mod.BuffType("BattleComb")))
 			{
-			player.longInvince = true;
-			player.lavaImmune = true;
-            player.fireWalk = true;
-			if (NPC.downedMechBoss2)
-			{
-			player.buffImmune[39] = true;
-			player.buffImmune[69] = true;
-			}
-            player.buffImmune[24] = true;
-			player.buffImmune[44] = true;
-			player.buffImmune[46] = true;
-			player.buffImmune[47] = true;
-			player.buffImmune[1] = true;
-			player.buffImmune[2] = true;
-			player.buffImmune[5] = true;
-			player.buffImmune[14] = true;
-			player.buffImmune[113] = true;
-			player.buffImmune[114] = true;
-			player.buffImmune[mod.BuffType("LongInvincible")] = true;
-			player.buffImmune[mod.BuffType("TitanSkin")] = true;
-			player.endurance += 0.1f;
+				player.longInvince = true;
+				if (NPC.downedMechBoss2)
 				{
-                        if ((double)player.thorns < 1.0)
-                            player.thorns = 0.3333333f;
-                }
-			}
-			else
-			{
-			player.longInvince = true;
-			player.lavaImmune = true;
-            player.fireWalk = true;
-            if (NPC.downedMechBoss2)
-			{
-			player.buffImmune[39] = true;
-			player.buffImmune[69] = true;
-			}
-			player.buffImmune[24] = true;
-			player.buffImmune[44] = true;
-			player.buffImmune[46] = true;
-			player.buffImmune[47] = true;
-			player.buffImmune[1] = true;
-			player.buffImmune[2] = true;
-			player.buffImmune[5] = true;
-			player.buffImmune[14] = true;
-			player.buffImmune[113] = true;
-			player.buffImmune[114] = true;
-			player.buffImmune[mod.BuffType("LongInvincible")] = true;
-			player.buffImmune[mod.BuffType("TitanSkin")] = true;
-			player.endurance += 0.1f;
-			player.statDefense += 8;
-			player.lifeRegen += 4;
-			player.lifeForce = true;
-            player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
+					player.buffImmune[39] = true;
+					player.buffImmune[69] = true;
+				}
+				player.buffImmune[24] = true;
+				player.buffImmune[44] = true;
+				player.buffImmune[46] = true;
+				player.buffImmune[47] = true;
+				player.lavaImmune = true;
+				player.fireWalk = true;
+				player.buffImmune[1] = true;
+				player.buffImmune[2] = true;
+				player.buffImmune[5] = true;
+				player.buffImmune[14] = true;
+				player.buffImmune[113] = true;
+				player.buffImmune[114] = true;
+				player.buffImmune[mod.BuffType("LongInvincible")] = true;
+				player.buffImmune[mod.BuffType("TitanSkin")] = true;
+				player.endurance += 0.1f;
+				if (player.thorns < 1.0)
 				{
-                        if ((double)player.thorns < 1.0)
-                            player.thorns = 0.3333333f;
-                }
+				player.thorns = 0.3333333f;
+				}
 			}
 		}
 	}

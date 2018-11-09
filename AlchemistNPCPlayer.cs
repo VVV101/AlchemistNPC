@@ -43,6 +43,7 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public int fc = 0;
+		public bool PB4K = false;
 		public bool PH = false;
 		public bool Discount = false;
 		public bool DistantPotionsUse = false;
@@ -122,6 +123,7 @@ namespace AlchemistNPC
 			}
 			Item.potionDelay = 3600;
 			PH = false;
+			PB4K = false;
 			Discount = false;
 			DistantPotionsUse = false;
 			CursedMirror = false;
@@ -488,6 +490,10 @@ namespace AlchemistNPC
 				lamp = 0;
 				}
 				lf = false;
+			}
+			if (AlchemistNPC.PipBoyTP.JustPressed && PB4K)
+			{
+				PipBoyTPMenu.visible = true;
 			}
 			if (DistantPotionsUse && PlayerInput.Triggers.Current.QuickBuff)
 			{
