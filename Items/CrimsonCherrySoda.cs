@@ -15,7 +15,7 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Crimson Cherry Soda");
 			Tooltip.SetDefault("Heals for 175 hp and increases life regeneration greatly for a short time.");
-			DisplayName.AddTranslation(GameCulture.Russian, "Сода Вишни Кримзона");
+			DisplayName.AddTranslation(GameCulture.Russian, "Вишневая Сода");
 			Tooltip.AddTranslation(GameCulture.Russian, "Лечит на 175 HP и значительно увеличивает регенерацию на короткое время");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "绯红樱桃苏打水");
