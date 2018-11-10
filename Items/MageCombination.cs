@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mage Combination");
-			Tooltip.SetDefault("Grants buffs, which are necesary for Mages (Magic Power, Mana Regeneration, Сlairvoyance Wrath, Rage)");
+			Tooltip.SetDefault("Grants buffs, which are necesary for Mages (Magic Power, Mana Regeneration, Сlairvoyance, Wrath, Rage)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Мага");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Магов (Магическая Сила, Регенерация Маны, Ясновидение, Гнев, Ярость)");
 
