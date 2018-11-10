@@ -16,7 +16,7 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Summoner Combination");
 			Tooltip.SetDefault("Grants buffs, which are necessary for Summoners (Summoning, Bewitched, Wrath)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Призывателя");
-			Tooltip.AddTranslation(GameCulture.Russian, "аёт баффы, необходимые для Призывателя(Призыв, Колдовство, Гнев)");
+			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, необходимые для Призывателя (Призыв, Колдовство, Гнев)");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "召唤师药剂包");
             Tooltip.AddTranslation(GameCulture.Chinese, "获得一些召唤Buff (召唤, 战斗, 迷人, 怒气)");
