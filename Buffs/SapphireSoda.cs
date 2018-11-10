@@ -17,11 +17,11 @@ namespace AlchemistNPC.Buffs
 	{
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Sapphire Soda Effect");
+			DisplayName.SetDefault("Sapphire Soda");
 			Description.SetDefault("Removes Mana Sickness debuff");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Эффект Сапфировой Соды");
+			DisplayName.AddTranslation(GameCulture.Russian, "Сапфировая Сода");
 			Description.AddTranslation(GameCulture.Russian, "Убирает дебафф Ослабление Волшебства");
             DisplayName.AddTranslation(GameCulture.Chinese, "宝蓝苏打加持");
             Description.AddTranslation(GameCulture.Chinese, "移除魔力病Debuff");
