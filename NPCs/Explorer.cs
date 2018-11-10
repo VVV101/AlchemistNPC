@@ -159,12 +159,12 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "制造 #7");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE1");
-            text.SetDefault("So, were my notes any useful for you?");
+            text.SetDefault("So, were my notes of any use to you?");
             text.AddTranslation(GameCulture.Russian, "Были ли мои записки хоть сколько-нибудь полезны для тебя?");
             text.AddTranslation(GameCulture.Chinese, "所以, 我的笔记对你来说有用吗?");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE2");
-            text.SetDefault("I have some knowledge about special materials, which can help you.");
+            text.SetDefault("I know about special materials which can help you.");
             text.AddTranslation(GameCulture.Russian, "Я знаю про особые материалы. Они могут помочь тебе.");
             text.AddTranslation(GameCulture.Chinese, "我有一些关于特殊材料方面的知识, 也许可以帮到你.");
             mod.AddTranslation(text);
@@ -174,7 +174,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "你想试试权力的感觉吗? 只需要制作一个抽取器并且获得一些灵魂精华和仇恨之瓶就行了");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE4");
-            text.SetDefault("''There's a legendary yoyo known as the Sasscade.''... I am pretty sure you heard about that before. But I know how you can attain it.");
+            text.SetDefault("''There's a legendary yoyo known as the Sasscade.''... I am pretty sure you heard about that before. But I know how you can get it.");
             text.AddTranslation(GameCulture.Russian, "''Существует Легендарное Йо-йо, известное как Сасскад.''... Я уверена, что ты слышал об этом раньше. Но я знаю, как ты можешь заполучить его.");
             text.AddTranslation(GameCulture.Chinese, "''有个传说中的悠悠球叫做Sasscade.''...我很确定你之前听到过这句话, 但是我知道, 如何得到它!");
             mod.AddTranslation(text);
@@ -189,7 +189,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "运气不错, 我带着我的次元盒, 所以我可以制作药水, 由我发明的药水");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE7");
-            text.SetDefault("Celestial's Particles are pretty interesting... You can use them for crafting some special accessories and equipment or just can make Celestial Fragments.");
+            text.SetDefault("Celestial's Particles are pretty interesting... You can use them for crafting some special accessories and equipment or simply for making Celestial Fragments.");
             text.AddTranslation(GameCulture.Russian, "Частицы Божества довольно интересны... Ты можешь использовать их для создания специальных аксессуаров и снаряжения или всего лишь для изготовления Небесных Фрагментов.");
             text.AddTranslation(GameCulture.Chinese, "始源碎片十分的有趣...你可以用他们制造一些特殊的饰品和装备或者是天界碎片");
             mod.AddTranslation(text);
@@ -205,7 +205,7 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE10");
             text.SetDefault("That was the most powerful and dangerous creature in the jungle, but you killed it. Does that mean that you are now the most dangerous creature in the jungle?");
-            text.AddTranslation(GameCulture.Russian, "Это было самое опасное и могущественное создание в джунглях, но ты убил его. Это значит что теперь ты - самое опасное существо джунглей?");
+            text.AddTranslation(GameCulture.Russian, "Это было самое опасное и могущественное создание в джунглях, но ты убил его. Значит ли это, что теперь ты - самое опасное существо джунглей?");
             text.AddTranslation(GameCulture.Chinese, "那是丛林中最为强大和危险的生物, 但是你杀了它. 这是否意味着以后你就是丛林中最强大最危险的生物了呢?");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE11");
