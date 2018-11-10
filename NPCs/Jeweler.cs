@@ -102,7 +102,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "我可以为你做钻石戒指.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryJ5");
-            text.SetDefault("No, don't think that I somehow related to Skeleton Merchant.");
+            text.SetDefault("No, I don't think that I'm somehow related to Skeleton Merchant.");
             text.AddTranslation(GameCulture.Russian, "Нет, я не думаю что хоть как-то связан со Скелетом-торговцем.");
             text.AddTranslation(GameCulture.Chinese, "不,不要认为我和骷髅商人有关系.");
             mod.AddTranslation(text);
@@ -122,7 +122,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "你有没有注意到到我和 ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryJ9");
-            text.SetDefault(" and I looks almost the same? It's because we're twin brothers.");
+            text.SetDefault(" and I look almost the same? It's because we're twin brothers.");
             text.AddTranslation(GameCulture.Russian, " и я очень похожи? Это потому что мы близнецы.");
             text.AddTranslation(GameCulture.Chinese, " 长得几乎一毛一样?这是因为我们是兄弟.");
             mod.AddTranslation(text);
