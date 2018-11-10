@@ -17,11 +17,11 @@ namespace AlchemistNPC.Buffs
 	{
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Onyx Soda Effect");
+			DisplayName.SetDefault("Onyx Soda");
 			Description.SetDefault("Increases endurance by 75%");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Эффект Ониксовой Соды");
+			DisplayName.AddTranslation(GameCulture.Russian, "Ониксовая Сода");
 			Description.AddTranslation(GameCulture.Russian, "Увеличивает вашу стойкость на 75%");
             DisplayName.AddTranslation(GameCulture.Chinese, "玛瑙苏打加持");
             Description.AddTranslation(GameCulture.Chinese, "增加75%耐力");
