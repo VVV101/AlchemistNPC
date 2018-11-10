@@ -857,18 +857,19 @@ namespace AlchemistNPC
             //SBMW:Some other translation
             text = CreateTranslation("Portal");
             text.SetDefault("An Otherworldly Portal was opened.");
+			text.AddTranslation(GameCulture.Russian, "Междумировой портал был открыт.");
             text.AddTranslation(GameCulture.Chinese, "连接另一个世界的传送门已开启");
             AddTranslation(text);
 
             text = CreateTranslation("barrierWeek");
             text.SetDefault("The Barrier between worlds was weakened.");
-			text.SetDefault("Барьер между мирами был ослаблен.");
+			text.AddTranslation(GameCulture.Russian, "Барьер между мирами был ослаблен.");
             text.AddTranslation(GameCulture.Chinese, "世界间的屏障已变得脆弱不堪");
             AddTranslation(text);
 
             text = CreateTranslation("barrierStabilized");
             text.SetDefault("The Barrier between world is stabilized.");
-			text.SetDefault("Барьер между мирами стабилизировался.");
+			text.AddTranslation(GameCulture.Russian, "Барьер между мирами стабилизировался.");
             text.AddTranslation(GameCulture.Chinese, "世界间的屏障重新归于稳定");
             AddTranslation(text);
 
@@ -879,7 +880,7 @@ namespace AlchemistNPC
 
             text = CreateTranslation("portalOpen");
             text.SetDefault("I am alive...? I cannot believe this! Thank you!");
-			text.SetDefault("Я жива...? Не верю своим глазам! Спасибо!");
+			text.AddTranslation(GameCulture.Russian, "Я жива...? Не верю своим глазам! Спасибо!");
             text.AddTranslation(GameCulture.Chinese, "我...我还活着?! 我简直无法相信! 谢谢你!");
             AddTranslation(text);
 

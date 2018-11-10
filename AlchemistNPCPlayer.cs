@@ -43,6 +43,7 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public int fc = 0;
+		public bool DeltaRune = false;
 		public bool PB4K = false;
 		public bool PH = false;
 		public bool Discount = false;
@@ -122,6 +123,7 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			DeltaRune = false;
 			PH = false;
 			PB4K = false;
 			Discount = false;

@@ -1,6 +1,7 @@
 using Terraria.Utilities;
-using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using System;
 using System.IO;
 using System.Linq;
 using Terraria;
@@ -342,7 +343,74 @@ namespace AlchemistNPC.Items
 			{
 				type = mod.ProjectileType("ChloroshardArrow");
 			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(25))
+			{
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("DBPV"), 6666, 1f, player.whoAmI);
+			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.magic && Main.rand.NextBool(30))
+			{
+				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
+				Vector2 perturbedSpeed2 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
+				Vector2 perturbedSpeed3 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
+				Vector2 perturbedSpeed4 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(20));
+				Vector2 perturbedSpeed5 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(20));
+				Vector2 perturbedSpeed6 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(30));
+				Vector2 perturbedSpeed7 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(40));
+				Vector2 perturbedSpeed8 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(40));
+				Vector2 vector = player.RotatedRelativePoint(player.MountedCenter, true);
+				speedX = perturbedSpeed.X;
+				speedY = perturbedSpeed.Y;
+				float speedX2 = perturbedSpeed2.X/4;
+				float speedY2 = perturbedSpeed2.Y/4;
+				float speedX3 = perturbedSpeed3.X/4;
+				float speedY3 = perturbedSpeed3.Y/4;
+				float speedX4 = perturbedSpeed4.X/4;
+				float speedY4 = perturbedSpeed4.Y/4;
+				float speedX5 = perturbedSpeed5.X/4;
+				float speedY5 = perturbedSpeed5.Y/4;
+				float speedX6 = perturbedSpeed6.X/4;
+				float speedY6 = perturbedSpeed6.Y/4;
+				float speedX7 = perturbedSpeed7.X/4;
+				float speedY7 = perturbedSpeed7.Y/4;
+				float speedX8 = perturbedSpeed8.X/4;
+				float speedY8 = perturbedSpeed8.Y/4;
+				Projectile.NewProjectile(vector.X, vector.Y, speedX, speedY, 297, 1000, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX2, speedY2, 297, 1000, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX3, speedY3, 297, 1000, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX4, speedY4, 297, 1000, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX5, speedY5, 297, 1000, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX6, speedY6, 297, 1000, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX7, speedY7, 297, 1000, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX8, speedY8, 297, 1000, knockBack, player.whoAmI);
+			}
 			return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
+		}
+		
+		public override bool UseItem(Item item, Player player)
+		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(33))
+			{
+				float num1 = 9f;
+				Vector2 vector2 = new Vector2(player.position.X + (float)player.width * 0.5f, player.position.Y + (float)player.height * 0.5f);
+				float f1 = (float)Main.mouseX + Main.screenPosition.X - vector2.X;
+				float f2 = (float)Main.mouseY + Main.screenPosition.Y - vector2.Y;
+				if ((double)player.gravDir == -1.0)
+					f2 = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY - vector2.Y;
+				float num4 = (float)Math.Sqrt((double)f1 * (double)f1 + (double)f2 * (double)f2);
+				float num5;
+				if (float.IsNaN(f1) && float.IsNaN(f2) || (double)f1 == 0.0 && (double)f2 == 0.0)
+				{
+					f1 = (float)player.direction;
+					f2 = 0.0f;
+					num5 = num1;
+				}
+				else
+					num5 = num1 / num4;
+				float SpeedX = f1 * num5;
+				float SpeedY = f2 * num5;
+				Projectile.NewProjectile(vector2.X, vector2.Y, SpeedX, SpeedY, mod.ProjectileType("DBPV"), 6666, 1f, player.whoAmI);
+			}
+			return base.UseItem(item, player);
 		}
 		
 		public override void PickAmmo(Item item, Player player, ref int type, ref float speed, ref int damage, ref float knockback)
@@ -993,7 +1061,7 @@ namespace AlchemistNPC.Items
 			}
 		}
 		
-		public override void HorizontalWingSpeeds(Item 	item, Player	player, ref float speed, ref float acceleration)	
+		public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)	
 		{
 			if (player.HasBuff(mod.BuffType("Exhausted")))
 			{

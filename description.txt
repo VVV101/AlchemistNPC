@@ -20,6 +20,7 @@ Can be crafted after beating Plantera.
 -Added Dopamine to Brewer's 2nd shop. Inflicts Happy! buff for 10 minutes.
 Available anytime.
 -Added pinkymod support for Operator.
+-Reworked availability of some Calamity mod Treasure Bags.
 -Thorium Coatings were moved to Young Brewer's shop.
 -Removed NON CALAMITY BUFF POTION lines from mod's potions.
 -Now any wood can be used for making Wing of the World.
