@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mutant Fish");
-			DisplayName.AddTranslation(GameCulture.Russian, "Њутировавшая рыба");
+			DisplayName.AddTranslation(GameCulture.Russian, "РњСѓС‚РёСЂРѕРІР°РІС€Р°СЏ Р С‹Р±Р°");
 		}
 
 		public override void SetDefaults()
