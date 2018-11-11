@@ -13,14 +13,14 @@ namespace AlchemistNPC.Items.Summoning
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Notes Book");
-			Tooltip.SetDefault("No matter its pages are torn, hidden information is now readeable."
-			+"\nCan open portal to the other world"
+			Tooltip.SetDefault("Doesn't matter if the pages are torn, hidden information is now accessible."
+			+"\nThis can open Otherwordly Portal"
 			+"\nCan be used only on certain conditions"
 			+"\n''If you managed to collect all Notes, then you will be able to read this information."
-			+"\nMoon Lord is not ordinary creatures. Defeating him may do some unexpected effects..."
-			+"\nLike weakening barrier between worlds. Even way between worlds may appear."
-			+"\nThis barrier becomes especially weak during the event, called ''The Dark Sun''."
-			+"\nIf I will stuck in Interdimension and you will know coordinates of the Porta......''");
+			+"\nMoon Lord is not an ordinary creature. Defeating him may have some unexpected effects..."
+			+"\nLike weakening barrier between worlds. Even a pathway between worlds may appear."
+			+"\nThis barrier becomes especially weak during the event called ''The Dark Sun''."
+			+"\nIf I will get stuck in Interdimension and you will know coordinates of the Porta......''");
 			DisplayName.AddTranslation(GameCulture.Russian, "Книга с Записками");
             Tooltip.AddTranslation(GameCulture.Russian, "Неважно, что её страницы истрёпаны...\nСкрытая информация теперь может быть прочитана.\nМожет открыть портал в Другой Мир\nМожет быть использована только в определённых условиях\n''Если ты собрал все Записи, то ты сможешь это прочесть.\nЛунный Лорд - неординарное создание. Его убийство может привести к неожиданным последствиям...\nНапример, ослабевание барьера между мирами. Может даже появиться путь для прохода через миры.\nБарьер наиболее тонок во время события, именуемого ''Чёрное Солнце''.\nЕсли я застряну в Междумирье и у тебя будут координаты Порта......''");
 
