@@ -343,9 +343,9 @@ namespace AlchemistNPC.Items
 			{
 				type = mod.ProjectileType("ChloroshardArrow");
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(25))
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(15))
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("DBPV"), 6666, 1f, player.whoAmI);
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("RedWave"), 6666, 1f, player.whoAmI);
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.magic && Main.rand.NextBool(30))
 			{
@@ -374,21 +374,21 @@ namespace AlchemistNPC.Items
 				float speedY7 = perturbedSpeed7.Y/4;
 				float speedX8 = perturbedSpeed8.X/4;
 				float speedY8 = perturbedSpeed8.Y/4;
-				Projectile.NewProjectile(vector.X, vector.Y, speedX, speedY, 297, 1000, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX2, speedY2, 297, 1000, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX3, speedY3, 297, 1000, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX4, speedY4, 297, 1000, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX5, speedY5, 297, 1000, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX6, speedY6, 297, 1000, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX7, speedY7, 297, 1000, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX8, speedY8, 297, 1000, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX, speedY, 297, 2222, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX2, speedY2, 297, 2222, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX3, speedY3, 297, 2222, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX4, speedY4, 297, 2222, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX5, speedY5, 297, 2222, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX6, speedY6, 297, 2222, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX7, speedY7, 297, 2222, knockBack, player.whoAmI);
+				Projectile.NewProjectile(vector.X, vector.Y, speedX8, speedY8, 297, 2222, knockBack, player.whoAmI);
 			}
 			return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 		
 		public override bool UseItem(Item item, Player player)
 		{
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(33))
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(60))
 			{
 				float num1 = 9f;
 				Vector2 vector2 = new Vector2(player.position.X + (float)player.width * 0.5f, player.position.Y + (float)player.height * 0.5f);
@@ -408,7 +408,7 @@ namespace AlchemistNPC.Items
 					num5 = num1 / num4;
 				float SpeedX = f1 * num5;
 				float SpeedY = f2 * num5;
-				Projectile.NewProjectile(vector2.X, vector2.Y, SpeedX, SpeedY, mod.ProjectileType("DBPV"), 6666, 1f, player.whoAmI);
+				Projectile.NewProjectile(vector2.X, vector2.Y, SpeedX, SpeedY, mod.ProjectileType("RedWave"), 6666, 1f, player.whoAmI);
 			}
 			return base.UseItem(item, player);
 		}

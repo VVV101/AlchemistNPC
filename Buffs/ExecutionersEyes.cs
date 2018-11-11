@@ -61,10 +61,10 @@ namespace AlchemistNPC.Buffs
 				}
 			}
 			player.yoraiz0rEye = 7;
-			player.meleeCrit += 10;
-            player.rangedCrit += 10;
-            player.magicCrit += 12;
-            player.thrownCrit += 10;
+			player.meleeCrit += 5;
+            player.rangedCrit += 5;
+            player.magicCrit += 5;
+            player.thrownCrit += 5;
 				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 				{
 				ThoriumBoosts(player);
