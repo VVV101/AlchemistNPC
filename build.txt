@@ -1,4 +1,4 @@
-author = Gregg/VVV101, somebody0214, RebooT
+author = Gregg/VVV101, somebody0214, RebooT, drh
 version = 8.0
 displayName = AlchemistNPC
 homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v5-0.52798/

@@ -20,7 +20,8 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Potion of Darkness");
 			Tooltip.SetDefault("Fills Rage meter and causes Heart Attack"
-			+"\nInflicts Heart Ache debuff for 5 minutes");
+			+"\nInflicts Heart Ache debuff for 5 minutes"
+			+"\nNON-CALAMITY POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Тьмы");
             Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nВызывает Сердечную Боль на на 5 минут\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
         }    

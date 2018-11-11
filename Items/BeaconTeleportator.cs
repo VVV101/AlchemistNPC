@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Teleports you to placed Beacon"
 			+"\nWill not teleport you anywhere if Beacon is not placed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Маяку");
-            Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в Маяку\nНе телепортирует никуда, если Маяк не размещён");
+            Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас к Маяку\nНе телепортирует никуда, если Маяк не размещён");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "海滩传送药剂");
             Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至海滩处 (最左边或最右边的棕榈树附近)\n方向取决于鼠标按键\n如果没有棕榈树将无法工作");

@@ -16,10 +16,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Scroll ''Cloak of Fear''");
 			Tooltip.SetDefault("One-use item"
 			+"\nContains the spell ''Cloak of Fear''"
-			+"\nMakes non-boss enemies nearby player to change their movement direction"
-			+"\nExhausts player for 30 seconds after ending of effect, making him unable to use magic");
+			+"\nMakes nearby non-boss enemies change their movement direction"
+			+"\nExhausts player for 30 seconds after effect ends, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Плащ Страха''");
-            Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Плащ Страха''\nЗаставляет изменить направление движения противников вблизи игрока\nИстощает игрока на 30 секунд после окончания действия, не позволяя ему использовать магию");
+            Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Плащ Страха''\nЗаставляет противников вблизи игрока изменять направление движения\nИстощает игрока на 30 секунд после окончания действия, не позволяя ему использовать магию");
         }
 		
 		public override void SetDefaults()

@@ -129,7 +129,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "海盗万岁! 他们给我供应金家具!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A11");
-            text.SetDefault("Ah! Finally some proper plating to have my roof done!");
+            text.SetDefault("Ah! Finally some proper plating to finish off my roof!");
             text.AddTranslation(GameCulture.Russian, "Ах! Наконец-то хорошое покрытие для моей крыши готово!");
             text.AddTranslation(GameCulture.Chinese, "啊哈! 最后进行一些适当的电镀来完成我的屋顶!");
             mod.AddTranslation(text);
@@ -180,7 +180,7 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("AS1");
             text.SetDefault("1st shop (Filler Blocks)       ");
-            text.AddTranslation(GameCulture.Russian, "1-ый магазин (Заполняющие Блоки)");
+            text.AddTranslation(GameCulture.Russian, "1-ый магазин (Обычные Блоки)");
             text.AddTranslation(GameCulture.Chinese, "第一商店 (填充方块)");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("AS2");

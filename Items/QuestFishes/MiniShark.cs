@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mini Shark");
-			DisplayName.AddTranslation(GameCulture.Russian, "Мини Акула");
+			DisplayName.AddTranslation(GameCulture.Russian, "РњРёРЅРё РђРєСѓР»Р°");
 		}
 
 		public override void SetDefaults()

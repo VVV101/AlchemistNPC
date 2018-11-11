@@ -17,11 +17,11 @@ namespace AlchemistNPC.Buffs
 	{
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Crimson Soda Effect");
-			Description.SetDefault("Increases life regeneration greatly");
+			DisplayName.SetDefault("Crimson Soda");
+			Description.SetDefault("Greatly increases life regeneration");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Эффект Алой Соды");
+			DisplayName.AddTranslation(GameCulture.Russian, "Алая Сода");
 			Description.AddTranslation(GameCulture.Russian, "Значительно увеличивает регенерацию здоровья");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "绯红苏打加持");

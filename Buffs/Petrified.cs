@@ -12,7 +12,7 @@ namespace AlchemistNPC.Buffs
 			Description.SetDefault("You are completely petrified!");
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Окаменён");
+			DisplayName.AddTranslation(GameCulture.Russian, "Окаменение");
 			Description.AddTranslation(GameCulture.Russian, "Вы окаменели");
         }
 

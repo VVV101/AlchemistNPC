@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nebula Fish");
-			DisplayName.AddTranslation(GameCulture.Russian, "’уманнаЯ рыба");
+			DisplayName.AddTranslation(GameCulture.Russian, "РўСѓРјР°РЅРЅР°СЏ Р С‹Р±Р°");
 		}
 
 		public override void SetDefaults()

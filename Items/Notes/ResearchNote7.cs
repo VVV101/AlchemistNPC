@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.Notes
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Research Note#7");
+			DisplayName.SetDefault("Research Note #7");
 			Tooltip.SetDefault("''Once, I was in quite insane world."
 			+"\nThere was one old scientist, named [c/00FF00:Rick]."
 			+"\nLuckly, I was able to saw all that without being caught..."

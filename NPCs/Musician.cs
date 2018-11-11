@@ -72,7 +72,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Гамма");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM1");
-            text.SetDefault("I would have worn headphones, but I'm not sure if Terrarians have ears or not...");
+            text.SetDefault("I would wear headphones, but I'm not sure if Terrarians even have ears...");
             text.AddTranslation(GameCulture.Russian, "Я бы носил наушники, но я не уверен, что обитатели Террарии вообще имеют уши...");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM2");
@@ -117,15 +117,15 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryM12");
             text.SetDefault("I'll be honest, I'm not sure if I trust ");
-            text.AddTranslation(GameCulture.Russian, "Я буду честен, я не уверен, что я доверяю ");
+            text.AddTranslation(GameCulture.Russian, "Буду честен, я не уверен, что я доверяю ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM13");
             text.SetDefault(". He claims to not be possessed, and yet he still is using skulls to fight... I'm getting mixed messages here.");
             text.AddTranslation(GameCulture.Russian, ". Он вроде бы больше не одержим, но все еще использует черепа для битвы... У меня смешанные чувства.");
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryM14");
-            text.SetDefault("Man, my mixtape is so much better than this, but I can't sell you that due to copyrights.");
-            text.AddTranslation(GameCulture.Russian, "Мои записи значительно лучше этих, но я не могу продать их тебе из-за авторских прав.");
+            text.SetDefault("Man, my mixtape is so much better than this, but I can't sell you that due to copyright.");
+            text.AddTranslation(GameCulture.Russian, "Чувак, мои записи значительно лучше всего этого, но я не могу продать их тебе из-за авторских прав.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM15");
             text.SetDefault("No, I don't have an ''All Star'' music box. Code it in yourself.");

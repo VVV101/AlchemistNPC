@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Solar Fish");
-			DisplayName.AddTranslation(GameCulture.Russian, "Солнечная рыба");
+			DisplayName.AddTranslation(GameCulture.Russian, "РЎРѕР»РЅРµС‡РЅР°СЏ Р С‹Р±Р°");
 		}
 
 		public override void SetDefaults()

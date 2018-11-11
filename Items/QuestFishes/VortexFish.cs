@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Vortex Fish");
-			DisplayName.AddTranslation(GameCulture.Russian, "Вихревая рыба");
+			DisplayName.AddTranslation(GameCulture.Russian, "Р’РёС…СЂРµРІР°СЏ Р С‹Р±Р°");
 		}
 
 		public override void SetDefaults()

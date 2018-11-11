@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items.Armor
 			Tooltip.SetDefault("''We'll meet again, don't know where, don't know when!"
 			+"\nOh, I know we'll meet again some sunny day!''"
 			+"\nUse with the extreme care");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Не знаю где, не знаю когда, но мы встретимся вновь!\nО, я знаю, что мы встетимся вновь в какой-нибудь солнечный день!''\nИспользовать с крайней осторожностью");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Не знаю где, не знаю когда, но мы встретимся вновь!\nО, я знаю, что мы встретимся вновь в какой-нибудь солнечный день!''\nИспользовать с крайней осторожностью");
 		}
 
 		public override void SetDefaults()

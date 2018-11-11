@@ -12,7 +12,7 @@ namespace AlchemistNPC.Items.Equippable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mechanical Wings");
-			Tooltip.SetDefault("Allows to flight"
+			Tooltip.SetDefault("Allows you to fly"
 			+ "\nShoots deadly lasers at nearby enemies ");
 			DisplayName.AddTranslation(GameCulture.Russian, "Механические Крылья");
             Tooltip.AddTranslation(GameCulture.Russian, "Позволяют летать\nСтреляют в ближайших противников лазерами");

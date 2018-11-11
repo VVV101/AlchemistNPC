@@ -20,7 +20,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Cloak Of Fear Debuff");
-			Description.SetDefault("Make non-boss enemies nearby you change their movement direction");
+			Description.SetDefault("Make nearby non-boss enemies change their movement direction");
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = false;
