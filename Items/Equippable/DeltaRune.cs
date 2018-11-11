@@ -22,7 +22,7 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nYour magic attacks have a chance to release swarm of homing magic missiles"
 				+ "\nRegenerates life rapidly while standing still");
 				DisplayName.AddTranslation(GameCulture.Russian, "Руна Дельта");
-            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический/ближний урон и шанс критического удара на 10%\nУвеличивает защиту на 10\nУвеличивает сопротивление урона на 10%\nДаёт шанс выпустить красную волну, наносящую урон при взмахе оружием ближнего боя\nДаёт шанс выпустить рой магических снарядов при магической атаке\nБыстро восстанавливает здоровье, пока стоишь на месте");
+            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический/ближний урон и шанс критического удара на 10%\nУвеличивает защиту на 10\nУвеличивает стойкость на 10%\nДаёт шанс выпустить красную волну, наносящую урон при взмахе оружием ближнего боя\nДаёт шанс выпустить рой магических снарядов при магической атаке\nБыстро восстанавливает здоровье, пока стоишь на месте");
         }
 	
 		public override void SetDefaults()
