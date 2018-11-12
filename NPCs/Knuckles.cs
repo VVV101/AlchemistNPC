@@ -100,11 +100,12 @@ namespace AlchemistNPC.NPCs
 			}
 			if (player.statDefense > 250 || player.endurance > 0.50f || player.statLifeMax2 > 1300)
 			{
-			player.dead = true;
+				damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
+				player.KillMe(damageSource, 1.0, 0, false);
 				if (player.dead)
 				{
-				npc.velocity = new Vector2(2, -10);
-				npc.velocity *= 3f;
+					npc.velocity = new Vector2(2, -10);
+					npc.velocity *= 3f;
 				}
 			damage1 = 666666;
 			damage2 = 666666;

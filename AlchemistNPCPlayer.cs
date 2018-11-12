@@ -584,39 +584,45 @@ namespace AlchemistNPC
 				if (Main.myPlayer == player.whoAmI && player.HasBuff(mod.BuffType("DiscordBuff")))
 				{
 				Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
-				player.Teleport(vector2, 1, 0);
-				NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
-					if (player.chaosState)
+					if (!Collision.SolidCollision(vector2, player.width, player.height))
 					{
-						player.statLife = player.statLife - player.statLifeMax2 / 3;
-						PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
-						if (Main.rand.Next(2) == 0)
-						damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
-						if (player.statLife <= 0)
-						player.KillMe(damageSource, 1.0, 0, false);
-						player.lifeRegenCount = 0;
-						player.lifeRegenTime = 0;
+						player.Teleport(vector2, 1, 0);
+						NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
+						if (player.chaosState)
+						{
+							player.statLife = player.statLife - player.statLifeMax2 / 3;
+							PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
+							if (Main.rand.Next(2) == 0)
+							damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
+							if (player.statLife <= 0)
+							player.KillMe(damageSource, 1.0, 0, false);
+							player.lifeRegenCount = 0;
+							player.lifeRegenTime = 0;
+						}
+						player.AddBuff(88, 600, true);
+						player.AddBuff(164, 60, true);
 					}
-				player.AddBuff(88, 600, true);
-				player.AddBuff(164, 60, true);
 				}
 				if (Main.myPlayer == player.whoAmI && player.HasBuff(mod.BuffType("TrueDiscordBuff")))
 				{
 				Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
-				player.Teleport(vector2, 1, 0);
-				NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
-					if (player.chaosState)
-					{
-						player.statLife = player.statLife - player.statLifeMax2 / 7;
-						PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
-						if (Main.rand.Next(2) == 0)
-						damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
-						if (player.statLife <= 0)
-						player.KillMe(damageSource, 1.0, 0, false);
-						player.lifeRegenCount = 0;
-						player.lifeRegenTime = 0;
+				if (!Collision.SolidCollision(vector2, player.width, player.height))
+				{
+					player.Teleport(vector2, 1, 0);
+					NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
+						if (player.chaosState)
+						{
+							player.statLife = player.statLife - player.statLifeMax2 / 7;
+							PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
+							if (Main.rand.Next(2) == 0)
+							damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
+							if (player.statLife <= 0)
+							player.KillMe(damageSource, 1.0, 0, false);
+							player.lifeRegenCount = 0;
+							player.lifeRegenTime = 0;
+						}
+					player.AddBuff(88, 360, true);
 					}
-				player.AddBuff(88, 360, true);
 				}
 			}
 		}

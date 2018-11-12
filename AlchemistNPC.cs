@@ -794,7 +794,7 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("Raynare");
             text.SetDefault("Harpy Queen, Raynare Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевый Гарпий");
+	    text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевы Гарпий");
             AddTranslation(text);
 			
 			text = CreateTranslation("Abaddon");

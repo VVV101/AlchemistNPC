@@ -3,6 +3,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using Microsoft.Xna.Framework;
 
 namespace AlchemistNPC.Items.Summoning
 {
@@ -20,7 +21,7 @@ namespace AlchemistNPC.Items.Summoning
 		{
 			item.width = 46;
             item.height = 42;
-            item.maxStack = 1;
+            item.maxStack = 30;
             item.rare = 10;
             item.useStyle = 1;
             item.useAnimation = 15;
@@ -40,7 +41,8 @@ namespace AlchemistNPC.Items.Summoning
 		
 		public override bool CanUseItem(Player player)
 		{
-			return !NPC.AnyNPCs(mod.NPCType("Musician"));
+			Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+			return (!NPC.AnyNPCs(mod.NPCType("Musician")) && !Collision.SolidCollision(vector2, player.width, player.height));
 		}
 		
 		public override void OnConsumeItem(Player player)

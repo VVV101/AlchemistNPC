@@ -3,6 +3,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using Microsoft.Xna.Framework;
 
 namespace AlchemistNPC.Items.Summoning
 {
@@ -37,6 +38,12 @@ namespace AlchemistNPC.Items.Summoning
 		{
 		Player.tileRangeX += 600;
         Player.tileRangeY += 600;
+		}
+		
+		public override bool CanUseItem(Player player)
+		{
+			Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+			return (!Collision.SolidCollision(vector2, player.width, player.height));
 		}
 		
         public override string Texture

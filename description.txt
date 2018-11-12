@@ -28,6 +28,7 @@ Available anytime.
 -Now any wood can be used for making Wing of the World.
 -Lowered horizontal speed reduction by some sources.
 -Changed way of work of Jungle Teleporter Potion.
+-Fixed issues with NPCs summoning items.
 -Fixed Potion of Darkness quickbuff overconsuming in Piggy Bank.
 -Fixed some Operator's Treasure Bags shops availability.
 -Cleaned up some of the code.

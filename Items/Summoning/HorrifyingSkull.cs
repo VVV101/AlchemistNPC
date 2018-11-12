@@ -2,6 +2,7 @@ using Terraria.Localization;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace AlchemistNPC.Items.Summoning
 {
@@ -20,7 +21,7 @@ namespace AlchemistNPC.Items.Summoning
 		{
 			item.width = 20;
 			item.height = 20;
-			item.maxStack = 20;
+			item.maxStack = 30;
 			item.value = 100;
 			item.rare = 1;
 			item.useAnimation = 30;
