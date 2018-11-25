@@ -30,7 +30,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.value = Item.sellPrice(0, 1, 0, 0);
 			item.rare = 11;
 			item.shoot = mod.ProjectileType("ShroomiteBullet");
-			item.shootSpeed = 16f; 
+			item.shootSpeed = 24f; 
 			item.ammo = AmmoID.Bullet; //
 		}	
 		

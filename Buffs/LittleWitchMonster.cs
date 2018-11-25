@@ -26,7 +26,7 @@ namespace AlchemistNPC.Buffs
 			{
 				Vector2 vel = new Vector2(0, -1);
 				vel *= 0f;
-				Projectile.NewProjectile(player.position.X-15, player.position.Y, vel.X, vel.Y, mod.ProjectileType("LittleWitchMonster"), 30, 3f, player.whoAmI);
+				Projectile.NewProjectile(player.position.X-15, player.position.Y, vel.X, vel.Y, mod.ProjectileType("LittleWitchMonster"), 24, 3f, player.whoAmI);
 				modPlayer.lwm = true;
 			}
 			else

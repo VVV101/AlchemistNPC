@@ -200,6 +200,7 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().KeepBuffs = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().WellFed = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BillIsDowned = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BBP = reader.ReadInt32();
 					break;
 				case AlchemistNPCMessageType.TeleportPlayer:
 					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);
@@ -649,7 +650,8 @@ namespace AlchemistNPC
             AddTranslation(text);
 
             text = CreateTranslation("AstrageldonSlime");
-            text.SetDefault("Astrageldon Slime Treasure Bag");
+            text.SetDefault("Astrum Aureus Treasure Bag");
+			text.AddTranslation(GameCulture.Russian, "Сумка Звёздного Заразителя");
             text.AddTranslation(GameCulture.Chinese, "大彗星史莱姆宝藏袋");
             AddTranslation(text);
 

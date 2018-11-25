@@ -29,7 +29,7 @@ namespace AlchemistNPC.Items.Misc
 		
 		public override void UpdateInventory(Player player)
 		{
-		player.silence = true;
+			player.silence = true;
 		}
 	}
 }

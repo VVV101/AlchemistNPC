@@ -1016,7 +1016,7 @@ namespace AlchemistNPC.Items
 			}
 			if (NPC.downedPlantBoss && context == "bossBag" && Main.rand.Next(150) == 0)
 			{
-				player.QuickSpawnItem(mod.ItemType("HeartofYui"));
+				player.QuickSpawnItem(mod.ItemType("HeartofYuiS"));
 			}
 			if (Main.hardMode && context == "bossBag" && Main.rand.Next(150) == 0)
 			{

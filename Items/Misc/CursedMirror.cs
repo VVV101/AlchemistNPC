@@ -29,7 +29,7 @@ namespace AlchemistNPC.Items.Misc
 		
 		public override void UpdateInventory(Player player)
 		{
-		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).CursedMirror = true;
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).CursedMirror = true;
 		}
 	}
 }

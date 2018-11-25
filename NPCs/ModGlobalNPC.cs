@@ -142,6 +142,10 @@ namespace AlchemistNPC.NPCs
 			{
 				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 				{
+					if (Config.RevPrices && CalamityModRevengeance)
+					{
+						shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*4;
+					}
 					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Discount)
 					{
 						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/4;
@@ -590,9 +594,32 @@ namespace AlchemistNPC.NPCs
 
 		public override void NPCLoot(NPC npc)
 		{
+			Player player = Main.player[Main.myPlayer];
+			if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade"))
+			{
+				if (!npc.boss && npc.type != 1 && npc.type != 535)
+				{
+				Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP++;
+				}
+				
+				if (npc.boss && npc.lifeMax <= 10000)
+				{
+				Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 25;
+				}
+				
+				if (npc.boss && npc.lifeMax > 10000)
+				{
+				Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 50;
+				}
+			}
+				
 			if (npc.lifeMax >= 25000 && npc.boss && Main.rand.Next(20) == 0)
 				{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PerfectionToken"));
+				}
+			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(200) == 0)
+				{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Devilsknife"));
 				}
 			if (npc.lifeMax >= 75000 && npc.boss && NPC.downedMoonlord && Main.rand.Next(33) == 0)
 				{

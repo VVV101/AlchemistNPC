@@ -381,9 +381,7 @@ namespace AlchemistNPC.NPCs
 			{
 				if (CalamityModRevengeance)
 				{
-					CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
-					CalamityPlayer.stress = 0;
-					CalamityPlayer.adrenaline = 0;
+					RnAReset(player);
 				}
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).CursedMirror == true)
@@ -394,6 +392,13 @@ namespace AlchemistNPC.NPCs
 			{
 				npc.reflectingProjectiles = false;
 			}
+		}
+		
+		private void RnAReset(Player player)
+		{
+			CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
+			CalamityPlayer.stress = 0;
+			CalamityPlayer.adrenaline = 0;
 		}
 		
 		public override void ModifyHitPlayer(Player player, ref int damage, ref bool crit)

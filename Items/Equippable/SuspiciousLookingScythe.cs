@@ -28,7 +28,6 @@ namespace AlchemistNPC.Items.Equippable
 			item.value = 15000000;
 			item.shoot = mod.ProjectileType("GrimReaper");
 			item.buffType = mod.BuffType("GrimReaper");	//The buff added to player after used the item
-			item.buffTime = 3600;
 			item.expert = true;
 		}
 

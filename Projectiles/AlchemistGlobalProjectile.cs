@@ -223,9 +223,9 @@ namespace AlchemistNPC.Projectiles
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{
 			Player player = Main.player[projectile.owner];
-			if (projectile.minion && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).SF == true)
+			if (projectile.minion && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).SF == true && target.immune[projectile.owner] > 2)
 			{
-				target.immune[projectile.owner] = 1;
+				target.immune[projectile.owner] = 2;
 			}
 			if ((projectile.type == 340) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Pandora == true)
 			{

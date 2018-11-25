@@ -23,6 +23,7 @@ namespace AlchemistNPC.Items.Weapons
             DisplayName.AddTranslation(GameCulture.Chinese, "凝视者护符");
             Tooltip.AddTranslation(GameCulture.Chinese, "怪不得中间有个奇形怪状的护身符.\n通过某种方式, 你唤醒了这个护身符的真实形态.\n它拥有怎样的可怕力量？没人知道.");
         }    
+		
 		public override void SetDefaults()
 		{
 			item.damage = 250;
@@ -42,8 +43,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.shoot = mod.ProjectileType("WatcherCrystal");
 			item.summon = true;
 			item.sentry = true;
-			item.buffType = mod.BuffType("WatcherCrystal");	//The buff added to player after used the item
-			item.buffTime = 3600;				//The duration of the buff, here is 60 seconds
+			item.buffType = mod.BuffType("WatcherCrystal");
 		}
 		
 		public override bool AltFunctionUse(Player player)
@@ -51,6 +51,14 @@ namespace AlchemistNPC.Items.Weapons
 			return true;
 		}
 
+		public override void UseStyle(Player player)
+		{
+			if (player.whoAmI == Main.myPlayer && player.itemTime == 0)
+			{
+				player.AddBuff(item.buffType, 3600, true);
+			}
+		}
+		
 		public override bool UseItem(Player player)
 		{
 			if (player.altFunctionUse == 2)

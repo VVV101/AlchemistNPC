@@ -19,9 +19,9 @@ namespace AlchemistNPC.Items.Equippable
 			+"\nIncreases minion damage by 15%"
 			+"\nIncreases max amount of minions by 3"
 			+"\nMinions can critically hit with 10% chance"
-			+"\nMinions ignore enemy invincibility frames");
+			+"\nMinions nearly ignore enemy invincibility frames");
 			DisplayName.AddTranslation(GameCulture.Russian, "Расцвёвший Плод Сефирот");
-            Tooltip.AddTranslation(GameCulture.Russian, "Последнее из семян Ехидны... Хранит невероятные силы внутри\nПовышает урон прислужников на 15%\nУвеличивает максимальное количество прислужников на 3\nПрислужники могут нанести критический удар с вероятностью в 10%\nПрислужники игнорируют период неуязвимости у противника");
+            Tooltip.AddTranslation(GameCulture.Russian, "Последнее из семян Ехидны... Хранит невероятные силы внутри\nПовышает урон прислужников на 15%\nУвеличивает максимальное количество прислужников на 3\nПрислужники могут нанести критический удар с вероятностью в 10%\nПрислужники почти полностью игнорируют период неуязвимости у противника");
         }
 	
 		public override void SetDefaults()

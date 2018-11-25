@@ -95,6 +95,7 @@ namespace AlchemistNPC
 		public bool LilithEmblem = false;
 		public bool trigger = true;
 		public bool watchercrystal = false;
+		public bool devilsknife = false;
 		public bool grimreaper = false;
 		public bool rainbowdust = false;
 		public bool sscope = false;
@@ -105,6 +106,7 @@ namespace AlchemistNPC
 		public int chargetime = 0;
 		public int MeatGrinderUsetime = 0;
 		
+		public int BBP = 0;
 		private const int maxLifeElixir = 2;
 		public int LifeElixir = 0;
 		private const int maxFuaran = 1;
@@ -178,6 +180,7 @@ namespace AlchemistNPC
 			Rampage = false;
 			LilithEmblem = false;
 			watchercrystal = false;
+			devilsknife = false;
 			grimreaper = false;
 			rainbowdust = false;
 			sscope = false;
@@ -238,6 +241,7 @@ namespace AlchemistNPC
 			packet.Write(KeepBuffs);
 			packet.Write(WellFed);
 			packet.Write(BillIsDowned);
+			packet.Write(BBP);
 			packet.Send(toWho, fromWho);
 		}
 	
@@ -262,6 +266,7 @@ namespace AlchemistNPC
 				{"KeepBuffs", KeepBuffs},
 				{"WellFed", WellFed},
 				{"BillIsDowned", BillIsDowned},
+				{"BBP", BBP},
 			};
 		}
 		
@@ -272,6 +277,7 @@ namespace AlchemistNPC
 			KeepBuffs = tag.GetInt("KeepBuffs");
 			WellFed = tag.GetInt("WellFed");
 			BillIsDowned = tag.GetInt("BillIsDowned");
+			BBP = tag.GetInt("BBP");
 		}
 	
 		public override void AnglerQuestReward(float quality, List<Item> rewardItems)

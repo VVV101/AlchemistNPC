@@ -8,12 +8,17 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 v8.0
 -Reworked multiple shops changing mechanic.
+-Now activated Revengeance multiplies prices for mod's potions related NPCs by 5x.
+-Added config option to disable ^.
 -Added Perfection Token. Allows to reforge item to its best possible reforge. Consumes in process.
 Drops from bosses with >= 25K HP with 5% chance.
 -Added Menacing, Lucky, Violent and Warding Tokens. Can be crafted from Perfection Token.
 Can be used for getting exact reforge on accessory. Consumes in process.
 -Added Delta Rune, post Moon Lord (post Ragnarok/DoG) accessory. Gives various stats boosts and special effects.
 Can be crafted after beating Moon Lord/Ragnarok/DoG.
+-Added Devilsknife. Summoner weapon. May drop randomly with very low chance from bosses with >= 75000 HP post Moon Lord.
+-Added Bloodthirsty Blade. Non-class weapon. Becomes stronger after defeating any enemies. Damage is capped before Hardmode and defeating Moon Lord.
+Available after beating EoW/BoC.
 -Added Pip-Boy 3000. While in inventory, shows most of the player's boosted stats.
 Available from Treasure Bags in hardmode with 1:150 chance.
 -Added Pip-Boy 4K. While in inventory, shows most of the player's boosted stats. 
@@ -22,12 +27,18 @@ Can be crafted after beating Plantera.
 -Added Dopamine to Brewer's 2nd shop. Inflicts Happy! buff for 10 minutes.
 Available anytime.
 -Added pinkymod support for Operator.
+-Nerfed Laetitia's Gift and both Sephirothic Fruits.
 -Reworked availability of some Calamity mod Treasure Bags.
+-Reworked some of the projectiles homing capabilities. May reduce lags.
 -Thorium Coatings were moved to Young Brewer's shop.
 -Removed NON CALAMITY BUFF POTION lines from mod's potions.
+-Removed timings on summoner weapons/items.
+-Now Heart of Yui drops with small pixie state as default.
 -Now any wood can be used for making Wing of the World.
 -Lowered horizontal speed reduction by some sources.
 -Changed way of work of Jungle Teleporter Potion.
+-Reworked True Uganda and Mind Burn debuffs. Now should be lagless.
+-Fixed Bill's despawn on summon while Calamity mod is not active.
 -Fixed issues with NPCs summoning items.
 -Fixed Potion of Darkness quickbuff overconsuming in Piggy Bank.
 -Fixed some Operator's Treasure Bags shops availability.
