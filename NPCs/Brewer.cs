@@ -190,6 +190,10 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, " может быть так же спокойна, как я, но потом я вспоминаю ");
             text.AddTranslation(GameCulture.Chinese, " 和我一样从容冷静, 但是后来我想到了 ");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryB19");
+            text.SetDefault("I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.");
+            text.AddTranslation(GameCulture.Russian, "Я однажды выбралась из мира Террарии чтобы узнать больше об Алхимии. В своих путешествиях я встретила ''учёного магии'' по имени Азанор. Он показал мне тайны чего-то, названного ''тауматургия''.");
+            mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()
@@ -305,6 +309,7 @@ namespace AlchemistNPC.NPCs
 				string EntryB16 = Language.GetTextValue("Mods.AlchemistNPC.EntryB16");
 				string EntryB17 = Language.GetTextValue("Mods.AlchemistNPC.EntryB17");
 				string EntryB18 = Language.GetTextValue("Mods.AlchemistNPC.EntryB18");
+				string EntryB19 = Language.GetTextValue("Mods.AlchemistNPC.EntryB19");
 				int Alchemist = NPC.FindFirstNPC(mod.NPCType("Alchemist"));
 				int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
 			if (Main.bloodMoon && partyGirl >= 0 && Alchemist >=0 && Main.rand.Next(4) == 0)
@@ -341,7 +346,7 @@ namespace AlchemistNPC.NPCs
 			{
 				return EntryB8 + Main.npc[Alchemist].GivenName + EntryB9;
 			}
-            switch (Main.rand.Next(7))
+            switch (Main.rand.Next(8))
             {
                 case 0:                                     
 				return EntryB1;
@@ -355,6 +360,8 @@ namespace AlchemistNPC.NPCs
 				return EntryB5;
                 case 5:
 				return EntryB6;
+				case 6:
+				return EntryB19;
                 default:
 				return EntryB7;
             }

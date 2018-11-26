@@ -248,6 +248,14 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("I’m honestly not sure why giant spinning skulls are the key to everything, but somehow they seem to contain the power of celestial beings within them...");
             text.AddTranslation(GameCulture.Russian, "Я на самом деле не уверена, почему гигантские вращающиеся черепа - ключ ко всему, но каким-то образом они хранят в себе мощь божественных созданий...");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryO35");
+            text.SetDefault("Yeah, I know that we are the ones capturing and farming horrifying eldritch entities. But who the hell thought It was a good idea to put loot bags inside a giant monster?!?!");
+            text.AddTranslation(GameCulture.Russian, "Да, я знаю, что мы те, кто захватывает и добывает материалы из сверхъестественных существ. Но кто чёрт возьми подумал, что будет хорошей идеей поместить сумку с ценностями внутрь гигантского чудовища?!?!");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryO36");
+            text.SetDefault("Кemember Manager, Treasure Bags are valuable but not everything comes inside them. That mutant man can help you get a boss's most elusive drops.");
+            text.AddTranslation(GameCulture.Russian, "Помни, Управляющий, хотя Сумки с Сокровищами ценны, но не всё может найтись внутри. Мутант может помочь тебе добыть редчайший лут с боссов.");
+            mod.AddTranslation(text);
         }
 
 		public override void ResetEffects()
@@ -409,6 +417,8 @@ namespace AlchemistNPC.NPCs
 		string EntryO32 = Language.GetTextValue("Mods.AlchemistNPC.EntryO32");
 		string EntryO33 = Language.GetTextValue("Mods.AlchemistNPC.EntryO33");
 		string EntryO34 = Language.GetTextValue("Mods.AlchemistNPC.EntryO34");
+		string EntryO35 = Language.GetTextValue("Mods.AlchemistNPC.EntryO35");
+		string EntryO36 = Language.GetTextValue("Mods.AlchemistNPC.EntryO36");
 		if (Main.bloodMoon)
 			{
 				switch (Main.rand.Next(3))
@@ -561,7 +571,14 @@ namespace AlchemistNPC.NPCs
 				return EntryO27;
 				}
 		}
-            switch (Main.rand.Next(5))
+		if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+		{
+			if (Main.rand.Next(10) == 0)
+				{                                                 
+				return EntryO36;
+				}
+		}
+            switch (Main.rand.Next(6))
             {
                 case 0:                                     
 				return EntryO1;
@@ -571,6 +588,8 @@ namespace AlchemistNPC.NPCs
 				return EntryO4;
 				case 3:
 				return EntryO34;
+				case 4:
+				return EntryO35;
                 default:
 				return EntryO7;
             }

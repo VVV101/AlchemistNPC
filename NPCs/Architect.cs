@@ -178,6 +178,10 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Я видел твои постройки, но я всё ещё не впечатлён.");
             text.AddTranslation(GameCulture.Chinese, "我看了你的建筑, 但是我仍然觉得不怎么样.");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("A21");
+            text.SetDefault("Have you heard 'bout that FuryForged guy? I taught him all he knows!");
+            text.AddTranslation(GameCulture.Russian, "Ты слышал об этом FuryForged? Я научил его всему, что он знает!");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("AS1");
             text.SetDefault("1st shop (Filler Blocks)       ");
             text.AddTranslation(GameCulture.Russian, "1-ый магазин (Обычные Блоки)");
@@ -316,31 +320,31 @@ namespace AlchemistNPC.NPCs
  
         public override string GetChat()
         {                                          //npc chat
-		string A1 = Language.GetTextValue("Mods.AlchemistNPC.A1");
-		string A2 = Language.GetTextValue("Mods.AlchemistNPC.A2");
-		string A3 = Language.GetTextValue("Mods.AlchemistNPC.A3");	
-		string A4 = Language.GetTextValue("Mods.AlchemistNPC.A4");	
-		string A5 = Language.GetTextValue("Mods.AlchemistNPC.A5");	
-		string A6 = Language.GetTextValue("Mods.AlchemistNPC.A6");	
-		string A7 = Language.GetTextValue("Mods.AlchemistNPC.A7");	
-		string A8 = Language.GetTextValue("Mods.AlchemistNPC.A8");	
-		string A9 = Language.GetTextValue("Mods.AlchemistNPC.A9");	
-		string A10 = Language.GetTextValue("Mods.AlchemistNPC.A10");	
-		string A11 = Language.GetTextValue("Mods.AlchemistNPC.A11");	
-		string A12 = Language.GetTextValue("Mods.AlchemistNPC.A12");	
-		string A13 = Language.GetTextValue("Mods.AlchemistNPC.A13");	
-		string A14 = Language.GetTextValue("Mods.AlchemistNPC.A14");	
-		string A15 = Language.GetTextValue("Mods.AlchemistNPC.A15");	
-		string A16 = Language.GetTextValue("Mods.AlchemistNPC.A16");	
-		string A17 = Language.GetTextValue("Mods.AlchemistNPC.A17");	
-		string A18 = Language.GetTextValue("Mods.AlchemistNPC.A18");	
-		string A19 = Language.GetTextValue("Mods.AlchemistNPC.A19");
-		string A20 = Language.GetTextValue("Mods.AlchemistNPC.A20");		
-
-		
-				 int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
-				  int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
-				  int demolitionist = NPC.FindFirstNPC(NPCID.Demolitionist);
+			string A1 = Language.GetTextValue("Mods.AlchemistNPC.A1");
+			string A2 = Language.GetTextValue("Mods.AlchemistNPC.A2");
+			string A3 = Language.GetTextValue("Mods.AlchemistNPC.A3");	
+			string A4 = Language.GetTextValue("Mods.AlchemistNPC.A4");	
+			string A5 = Language.GetTextValue("Mods.AlchemistNPC.A5");	
+			string A6 = Language.GetTextValue("Mods.AlchemistNPC.A6");	
+			string A7 = Language.GetTextValue("Mods.AlchemistNPC.A7");	
+			string A8 = Language.GetTextValue("Mods.AlchemistNPC.A8");	
+			string A9 = Language.GetTextValue("Mods.AlchemistNPC.A9");	
+			string A10 = Language.GetTextValue("Mods.AlchemistNPC.A10");	
+			string A11 = Language.GetTextValue("Mods.AlchemistNPC.A11");	
+			string A12 = Language.GetTextValue("Mods.AlchemistNPC.A12");	
+			string A13 = Language.GetTextValue("Mods.AlchemistNPC.A13");	
+			string A14 = Language.GetTextValue("Mods.AlchemistNPC.A14");	
+			string A15 = Language.GetTextValue("Mods.AlchemistNPC.A15");	
+			string A16 = Language.GetTextValue("Mods.AlchemistNPC.A16");	
+			string A17 = Language.GetTextValue("Mods.AlchemistNPC.A17");	
+			string A18 = Language.GetTextValue("Mods.AlchemistNPC.A18");	
+			string A19 = Language.GetTextValue("Mods.AlchemistNPC.A19");
+			string A20 = Language.GetTextValue("Mods.AlchemistNPC.A20");
+			string A21 = Language.GetTextValue("Mods.AlchemistNPC.A21");		
+			
+			int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
+			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
+			int demolitionist = NPC.FindFirstNPC(NPCID.Demolitionist);
 			if (Main.bloodMoon && partyGirl >= 0 && goblinTinkerer >=0 && Main.rand.Next(4) == 0)
 			{
 			return A1 + Main.npc[partyGirl].GivenName + A2 + Main.npc[goblinTinkerer].GivenName + A3;
@@ -377,7 +381,7 @@ namespace AlchemistNPC.NPCs
 			{
 			return A12 + Main.npc[demolitionist].GivenName + A13;
 			}
-            switch (Main.rand.Next(5))
+            switch (Main.rand.Next(6))
             {                
                 case 0:
 				return A14;
@@ -391,6 +395,8 @@ namespace AlchemistNPC.NPCs
 				return A18;
 				case 5:
 				return A19;
+				case 6:
+				return A21;
                 default:
 				return A20;
             }

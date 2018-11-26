@@ -33,6 +33,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
+using AlchemistNPC.NPCs;
  
 namespace AlchemistNPC.NPCs
 {
@@ -87,263 +88,265 @@ namespace AlchemistNPC.NPCs
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("SilvaStun")] = true;
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("ExoFreeze")] = true;
 			}
-			npc.velocity *= 1.2f;
-			npc.defense = 1;
-			int damage1 = 200;
-			int damage2 = 300;
-			int damage3 = 350;
-			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte)
+			if (ModGlobalNPC.ks == true)
 			{
-			damage1 = mod.ProjectileType("DeadlyLaser");
-			damage2 = 150;
-			damage3 = 175;
-			}
-			if (player.statDefense > 250 || player.endurance > 0.50f || player.statLifeMax2 > 1300)
-			{
-				player.KillMe(PlayerDeathReason.ByOther(player.Male ? 14 : 15), 1.0, 0, false);
-				if (player.dead)
+				npc.velocity *= 1.2f;
+				int damage1 = 200;
+				int damage2 = 300;
+				int damage3 = 350;
+				if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte)
 				{
-					npc.velocity = new Vector2(2, -10);
-					npc.velocity *= 3f;
+				damage1 = 100;
+				damage2 = 150;
+				damage3 = 175;
 				}
-			damage1 = 666666;
-			damage2 = 666666;
-			damage3 = 666666;
-			}
-			if (!Main.expertMode)
-			{
-				if (npc.life > 166666)
+				if (player.statDefense > 250 || player.endurance > 0.50f || player.statLifeMax2 > 1300)
 				{
-					if (Main.rand.Next(20) == 0)
+					player.KillMe(PlayerDeathReason.ByOther(player.Male ? 14 : 15), 1.0, 0, false);
+					if (player.dead)
 					{
-					Vector2 vel = new Vector2(-1, -1);
-					vel *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel2 = new Vector2(1, 1);
-					vel2 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel3 = new Vector2(1, -1);
-					vel3 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel4 = new Vector2(-1, 1);
-					vel4 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel5 = new Vector2(0, -1);
-					vel5 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel6 = new Vector2(0, 1);
-					vel6 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel7 = new Vector2(1, 0);
-					vel7 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel8 = new Vector2(-1, 0);
-					vel8 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						npc.velocity = new Vector2(2, -10);
+						npc.velocity *= 3f;
 					}
+				damage1 = 666666;
+				damage2 = 666666;
+				damage3 = 666666;
 				}
-				else
+				if (!Main.expertMode)
 				{
-				if (Main.rand.Next(25) == 0)
+					if (npc.life > 166666)
 					{
-					Vector2 vel = new Vector2(-1, -1);
-					vel *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel2 = new Vector2(1, 1);
-					vel2 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel3 = new Vector2(1, -1);
-					vel3 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel4 = new Vector2(-1, 1);
-					vel4 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel5 = new Vector2(0, -1);
-					vel5 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel6 = new Vector2(0, 1);
-					vel6 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel7 = new Vector2(1, 0);
-					vel7 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel8 = new Vector2(-1, 0);
-					vel8 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 449, damage2, 0, Main.myPlayer);
+						if (Main.rand.Next(20) == 0)
+						{
+						Vector2 vel = new Vector2(-1, -1);
+						vel *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel2 = new Vector2(1, 1);
+						vel2 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel3 = new Vector2(1, -1);
+						vel3 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel4 = new Vector2(-1, 1);
+						vel4 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel5 = new Vector2(0, -1);
+						vel5 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel6 = new Vector2(0, 1);
+						vel6 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel7 = new Vector2(1, 0);
+						vel7 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel8 = new Vector2(-1, 0);
+						vel8 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						}
 					}
-				if (Main.rand.Next(60) == 0)
+					else
 					{
-					Vector2 vel = new Vector2(-1, -1);
-					vel *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel2 = new Vector2(1, 1);
-					vel2 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel3 = new Vector2(1, -1);
-					vel3 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel4 = new Vector2(-1, 1);
-					vel4 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel5 = new Vector2(0, -1);
-					vel5 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel6 = new Vector2(0, 1);
-					vel6 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel7 = new Vector2(1, 0);
-					vel7 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel8 = new Vector2(-1, 0);
-					vel8 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 448, damage2, 0, Main.myPlayer);
-					}
-				}
-			}
-			if (Main.expertMode)
-			{
-			if (npc.life > 333333)
-				{
-				if (Main.rand.Next(20) == 0)
-					{
-					Vector2 vel = new Vector2(-1, -1);
-					vel *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel2 = new Vector2(1, 1);
-					vel2 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel3 = new Vector2(1, -1);
-					vel3 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel4 = new Vector2(-1, 1);
-					vel4 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel5 = new Vector2(0, -1);
-					vel5 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel6 = new Vector2(0, 1);
-					vel6 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel7 = new Vector2(1, 0);
-					vel7 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					Vector2 vel8 = new Vector2(-1, 0);
-					vel8 *= 8f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
-					}
-				}
-				if (npc.life > 166666 && npc.life < 333333)
-				{
 					if (Main.rand.Next(25) == 0)
-					{
-					Vector2 vel = new Vector2(-1, -1);
-					vel *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel2 = new Vector2(1, 1);
-					vel2 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel3 = new Vector2(1, -1);
-					vel3 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel4 = new Vector2(-1, 1);
-					vel4 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel5 = new Vector2(0, -1);
-					vel5 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel6 = new Vector2(0, 1);
-					vel6 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel7 = new Vector2(1, 0);
-					vel7 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 449, damage2, 0, Main.myPlayer);
-					Vector2 vel8 = new Vector2(-1, 0);
-					vel8 *= 9f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 449, damage2, 0, Main.myPlayer);
-					}
+						{
+						Vector2 vel = new Vector2(-1, -1);
+						vel *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel2 = new Vector2(1, 1);
+						vel2 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel3 = new Vector2(1, -1);
+						vel3 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel4 = new Vector2(-1, 1);
+						vel4 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel5 = new Vector2(0, -1);
+						vel5 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel6 = new Vector2(0, 1);
+						vel6 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel7 = new Vector2(1, 0);
+						vel7 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel8 = new Vector2(-1, 0);
+						vel8 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 449, damage2, 0, Main.myPlayer);
+						}
 					if (Main.rand.Next(60) == 0)
-					{
-					Vector2 vel = new Vector2(-1, -1);
-					vel *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel2 = new Vector2(1, 1);
-					vel2 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel3 = new Vector2(1, -1);
-					vel3 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel4 = new Vector2(-1, 1);
-					vel4 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel5 = new Vector2(0, -1);
-					vel5 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel6 = new Vector2(0, 1);
-					vel6 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel7 = new Vector2(1, 0);
-					vel7 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 448, damage2, 0, Main.myPlayer);
-					Vector2 vel8 = new Vector2(-1, 0);
-					vel8 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 448, damage2, 0, Main.myPlayer);
+						{
+						Vector2 vel = new Vector2(-1, -1);
+						vel *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel2 = new Vector2(1, 1);
+						vel2 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel3 = new Vector2(1, -1);
+						vel3 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel4 = new Vector2(-1, 1);
+						vel4 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel5 = new Vector2(0, -1);
+						vel5 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel6 = new Vector2(0, 1);
+						vel6 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel7 = new Vector2(1, 0);
+						vel7 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel8 = new Vector2(-1, 0);
+						vel8 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 448, damage2, 0, Main.myPlayer);
+						}
 					}
 				}
-				if (npc.life < 166666)
+				if (Main.expertMode)
 				{
+				if (npc.life > 333333)
+					{
 					if (Main.rand.Next(20) == 0)
-					{
-					Vector2 vel = new Vector2(-1, -1);
-					vel *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 449, damage3, 0, Main.myPlayer);
-					Vector2 vel2 = new Vector2(1, 1);
-					vel2 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 449, damage3, 0, Main.myPlayer);
-					Vector2 vel3 = new Vector2(1, -1);
-					vel3 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 449, damage3, 0, Main.myPlayer);
-					Vector2 vel4 = new Vector2(-1, 1);
-					vel4 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 449, damage3, 0, Main.myPlayer);
-					Vector2 vel5 = new Vector2(0, -1);
-					vel5 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 449, damage3, 0, Main.myPlayer);
-					Vector2 vel6 = new Vector2(0, 1);
-					vel6 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 449, damage3, 0, Main.myPlayer);
-					Vector2 vel7 = new Vector2(1, 0);
-					vel7 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 449, damage3, 0, Main.myPlayer);
-					Vector2 vel8 = new Vector2(-1, 0);
-					vel8 *= 12f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 449, damage3, 0, Main.myPlayer);
+						{
+						Vector2 vel = new Vector2(-1, -1);
+						vel *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel2 = new Vector2(1, 1);
+						vel2 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel3 = new Vector2(1, -1);
+						vel3 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel4 = new Vector2(-1, 1);
+						vel4 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel5 = new Vector2(0, -1);
+						vel5 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel6 = new Vector2(0, 1);
+						vel6 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel7 = new Vector2(1, 0);
+						vel7 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						Vector2 vel8 = new Vector2(-1, 0);
+						vel8 *= 8f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, mod.ProjectileType("DeadlyLaser"), damage1, 0, Main.myPlayer);
+						}
 					}
-					if (Main.rand.Next(50) == 0)
+					if (npc.life > 166666 && npc.life < 333333)
 					{
-					Vector2 vel = new Vector2(-1, -1);
-					vel *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 448, damage3, 0, Main.myPlayer);
-					Vector2 vel2 = new Vector2(1, 1);
-					vel2 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 448, damage3, 0, Main.myPlayer);
-					Vector2 vel3 = new Vector2(1, -1);
-					vel3 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 448, damage3, 0, Main.myPlayer);
-					Vector2 vel4 = new Vector2(-1, 1);
-					vel4 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 448, damage3, 0, Main.myPlayer);
-					Vector2 vel5 = new Vector2(0, -1);
-					vel5 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 448, damage3, 0, Main.myPlayer);
-					Vector2 vel6 = new Vector2(0, 1);
-					vel6 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 448, damage3, 0, Main.myPlayer);
-					Vector2 vel7 = new Vector2(1, 0);
-					vel7 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 448, damage3, 0, Main.myPlayer);
-					Vector2 vel8 = new Vector2(-1, 0);
-					vel8 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 448, damage3, 0, Main.myPlayer);
+						if (Main.rand.Next(25) == 0)
+						{
+						Vector2 vel = new Vector2(-1, -1);
+						vel *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel2 = new Vector2(1, 1);
+						vel2 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel3 = new Vector2(1, -1);
+						vel3 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel4 = new Vector2(-1, 1);
+						vel4 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel5 = new Vector2(0, -1);
+						vel5 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel6 = new Vector2(0, 1);
+						vel6 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel7 = new Vector2(1, 0);
+						vel7 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 449, damage2, 0, Main.myPlayer);
+						Vector2 vel8 = new Vector2(-1, 0);
+						vel8 *= 9f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 449, damage2, 0, Main.myPlayer);
+						}
+						if (Main.rand.Next(60) == 0)
+						{
+						Vector2 vel = new Vector2(-1, -1);
+						vel *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel2 = new Vector2(1, 1);
+						vel2 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel3 = new Vector2(1, -1);
+						vel3 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel4 = new Vector2(-1, 1);
+						vel4 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel5 = new Vector2(0, -1);
+						vel5 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel6 = new Vector2(0, 1);
+						vel6 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel7 = new Vector2(1, 0);
+						vel7 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 448, damage2, 0, Main.myPlayer);
+						Vector2 vel8 = new Vector2(-1, 0);
+						vel8 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 448, damage2, 0, Main.myPlayer);
+						}
+					}
+					if (npc.life < 166666)
+					{
+						if (Main.rand.Next(20) == 0)
+						{
+						Vector2 vel = new Vector2(-1, -1);
+						vel *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 449, damage3, 0, Main.myPlayer);
+						Vector2 vel2 = new Vector2(1, 1);
+						vel2 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 449, damage3, 0, Main.myPlayer);
+						Vector2 vel3 = new Vector2(1, -1);
+						vel3 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 449, damage3, 0, Main.myPlayer);
+						Vector2 vel4 = new Vector2(-1, 1);
+						vel4 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 449, damage3, 0, Main.myPlayer);
+						Vector2 vel5 = new Vector2(0, -1);
+						vel5 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 449, damage3, 0, Main.myPlayer);
+						Vector2 vel6 = new Vector2(0, 1);
+						vel6 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 449, damage3, 0, Main.myPlayer);
+						Vector2 vel7 = new Vector2(1, 0);
+						vel7 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 449, damage3, 0, Main.myPlayer);
+						Vector2 vel8 = new Vector2(-1, 0);
+						vel8 *= 12f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 449, damage3, 0, Main.myPlayer);
+						}
+						if (Main.rand.Next(50) == 0)
+						{
+						Vector2 vel = new Vector2(-1, -1);
+						vel *= 14f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 448, damage3, 0, Main.myPlayer);
+						Vector2 vel2 = new Vector2(1, 1);
+						vel2 *= 14f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 448, damage3, 0, Main.myPlayer);
+						Vector2 vel3 = new Vector2(1, -1);
+						vel3 *= 14f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 448, damage3, 0, Main.myPlayer);
+						Vector2 vel4 = new Vector2(-1, 1);
+						vel4 *= 14f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 448, damage3, 0, Main.myPlayer);
+						Vector2 vel5 = new Vector2(0, -1);
+						vel5 *= 14f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 448, damage3, 0, Main.myPlayer);
+						Vector2 vel6 = new Vector2(0, 1);
+						vel6 *= 14f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 448, damage3, 0, Main.myPlayer);
+						Vector2 vel7 = new Vector2(1, 0);
+						vel7 *= 14f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 448, damage3, 0, Main.myPlayer);
+						Vector2 vel8 = new Vector2(-1, 0);
+						vel8 *= 14f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 448, damage3, 0, Main.myPlayer);
+						}
 					}
 				}
 			}

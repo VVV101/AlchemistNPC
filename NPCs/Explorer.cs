@@ -218,6 +218,10 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Если ты сможешь создать Амулет Дозорного, то тогда ты сможешь покупать Флаконы Радуги у Юного Зельевара. Это очень мощное покрытие оружия, которое может помочь тебе победить очень серьёзных противников.");
             text.AddTranslation(GameCulture.Chinese, "如果你想要制作凝视者护符, 你可以从年轻药剂师那里购买瓶中彩虹, 这是一种十分强力的注入剂, 可以帮助你打败强大的敌人");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryE13");
+            text.SetDefault("I once met a man that traveled on top an alicorn. He looked truly FABulous!");
+            text.AddTranslation(GameCulture.Russian, "Я однажды встретила человека, путешествующего верхом на единороге. Он выглядел просто потрясающе!");
+            mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()
@@ -300,12 +304,13 @@ namespace AlchemistNPC.NPCs
 		string Entry10 = Language.GetTextValue("Mods.AlchemistNPC.EntryE10");
 		string Entry11 = Language.GetTextValue("Mods.AlchemistNPC.EntryE11");
 		string Entry12 = Language.GetTextValue("Mods.AlchemistNPC.EntryE12");
+		string Entry13 = Language.GetTextValue("Mods.AlchemistNPC.EntryE13");
 		int Operator = NPC.FindFirstNPC(mod.NPCType("Operator"));
 			if (Operator >= 0 && Main.rand.Next(4) == 0)
 			{
 				return Entry8 + Main.npc[Operator].GivenName + Entry9;
 			}
-            switch (Main.rand.Next(10))
+            switch (Main.rand.Next(11))
             {
                 case 0:                                     
 				return Entry1;
@@ -325,6 +330,8 @@ namespace AlchemistNPC.NPCs
 				return Entry11;
 				case 8:
 				return Entry12;
+				case 9:
+				return Entry13;
                 default:
 				return Entry10;
             }

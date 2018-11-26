@@ -151,6 +151,10 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Ah, this takes me back! I remember when this song used to play in the dungeon and the underworld... good times!");
             text.AddTranslation(GameCulture.Russian, "Эх, ностальгия! Я помню, когда эта мелодия играла в Подземелье и в Преисподней... хорошие времена!");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryM21");
+            text.SetDefault("Is there a name for the fear of being spied by a cake?");
+            text.AddTranslation(GameCulture.Russian, "Если ли имя у страха того, что за тобой шпионят с помощью торта?");
+            mod.AddTranslation(text);
 
         }
 		
@@ -282,6 +286,7 @@ namespace AlchemistNPC.NPCs
 		string EntryM18 = Language.GetTextValue("Mods.AlchemistNPC.EntryM18");
 		string EntryM19 = Language.GetTextValue("Mods.AlchemistNPC.EntryM19");
 		string EntryM20 = Language.GetTextValue("Mods.AlchemistNPC.EntryM20");
+		string EntryM21 = Language.GetTextValue("Mods.AlchemistNPC.EntryM21");
 		string Gamma = Language.GetTextValue("Mods.AlchemistNPC.Gamma");
 		int Cyborg = NPC.FindFirstNPC(NPCID.Cyborg);
 		int Mechanic = NPC.FindFirstNPC(NPCID.Mechanic);
@@ -297,7 +302,7 @@ namespace AlchemistNPC.NPCs
 			{
 				return EntryM20;
 			}
-			if (Cyborg >= 0 && Main.npc[Cyborg].GivenName == "Gamma" && Main.npc[Musician].GivenName == Gamma && Main.rand.Next(20) == 0)
+			if (Cyborg >= 0 && Main.npc[Cyborg].GivenName == "Gamma" && Main.npc[Musician].GivenName == Gamma && Main.rand.Next(15) == 0)
 			{
 				return EntryM3;
 			}
@@ -331,7 +336,7 @@ namespace AlchemistNPC.NPCs
 				return EntryM17;
 				}
 			}
-            switch (Main.rand.Next(8))
+            switch (Main.rand.Next(9))
             {
                 case 0:                                     
 				return EntryM1;
@@ -349,6 +354,8 @@ namespace AlchemistNPC.NPCs
 				return EntryM15;
 				case 7:                                     
 				return EntryM16;
+				case 8:                                     
+				return EntryM21;
                 default:
 				return EntryM1;
             }

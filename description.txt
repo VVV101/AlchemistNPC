@@ -8,6 +8,7 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 v8.0
 -Reworked multiple shops changing mechanic.
+-Multiplied most of the potions prices by 2x due to balance issues.
 -Now activated Revengeance multiplies prices for mod's potions related NPCs by 5x.
 -Added config option to disable ^.
 -Added Perfection Token. Allows to reforge item to its best possible reforge. Consumes in process.
@@ -27,6 +28,8 @@ Can be crafted after beating Plantera.
 -Added Dopamine to Brewer's 2nd shop. Inflicts Happy! buff for 10 minutes.
 Available anytime.
 -Added pinkymod support for Operator.
+-Added some new lines for NPCs.
+-Added short introduction for Ugandan Knuckles boss.
 -Nerfed Laetitia's Gift and both Sephirothic Fruits.
 -Reworked availability of some Calamity mod Treasure Bags.
 -Reworked some of the projectiles homing capabilities. May reduce lags.

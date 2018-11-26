@@ -944,12 +944,42 @@ namespace AlchemistNPC
             text.AddTranslation(GameCulture.Chinese, "我...我还活着?! 我简直无法相信! 谢谢你!");
             AddTranslation(text);
 
-            text = CreateTranslation("pale");
-            text.SetDefault("pale");
-	    text.AddTranslation(GameCulture.Russian, "бледный");
-            text.AddTranslation(GameCulture.Chinese, "失色");
+			text = CreateTranslation("pale");
+			text.SetDefault("pale");
+			text.AddTranslation(GameCulture.Russian, "бледный");
+			text.AddTranslation(GameCulture.Chinese, "失色");
+			AddTranslation(text);
+			
+			//QQ
+			text = CreateTranslation("D1");
+            text.SetDefault("To think, she's just here to collect the horrors of Terraria...what is she thinking?");
+			text.AddTranslation(GameCulture.Russian, "Просто подумай, она здесь лишь для того, чтобы собрать ужасы Террарии... О чём она думает?");
             AddTranslation(text);
-
+			
+			text = CreateTranslation("D2");
+            text.SetDefault("I still remember the day she landed. If it weren't for the help of everyone here, I swore I would never fix her up.");
+			text.AddTranslation(GameCulture.Russian, "Я всё ещё помню день, когда она прибыла. Если бы это не было полезным для всех тут, то я клянусь, что никогда бы не помогла ей.");
+            AddTranslation(text);
+			
+			text = CreateTranslation("D3");
+            text.SetDefault("You may not have fully defeated the gate, but it seems Angela has what's left of it.");
+			text.AddTranslation(GameCulture.Russian, "Ты мог победить врата не полностью, но похоже, что у Анджелы уже есть всё то, что от них осталось.");
+            AddTranslation(text);
+			
+			text = CreateTranslation("D4");
+            text.SetDefault("I can understand trying to understand a Dungeon Slime, but going out of your way to harvest the Wall of Flesh? What was Angela thinking!?");
+			text.AddTranslation(GameCulture.Russian, "Я могу понять попытки понять Слизня Данжа, но сойти с пути чтобы собрать остатки Стены Плоти? О чём Анджела думает!?");
+            AddTranslation(text);
+			
+			text = CreateTranslation("AD1");
+            text.SetDefault("Shame. Would had wanted Angela, but she's lured by ");
+			text.AddTranslation(GameCulture.Russian, "Как жаль. Хотел бы потолковать с Анджелой, но она привлечена ");
+            AddTranslation(text);
+			
+			text = CreateTranslation("AD2");
+            text.SetDefault("Man, how much gun is that AI packing?");
+			text.AddTranslation(GameCulture.Russian, "Чувак, сколько же пушек у этого ИИ с собой?");
+            AddTranslation(text);
         }
 		
 		public override void UpdateUI(GameTime gameTime)

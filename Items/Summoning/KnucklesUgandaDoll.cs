@@ -6,6 +6,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using AlchemistNPC.NPCs;
  
 namespace AlchemistNPC.Items.Summoning
 {
@@ -35,6 +36,8 @@ namespace AlchemistNPC.Items.Summoning
 		public override bool UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Knuckles"));
+			ModGlobalNPC.kc = 0;
+			ModGlobalNPC.ks = false;
 			return true;
 		}
     }

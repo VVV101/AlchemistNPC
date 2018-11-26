@@ -60,6 +60,8 @@ namespace AlchemistNPC.NPCs
 			return true;
 		}
 
+		public static int kc = 0;
+		public static bool ks = false;
 		public bool cheat = false;
 		public bool i1 = false;
 		public bool i2 = false;
@@ -135,6 +137,60 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 
+		public override void GetChat(NPC npc, ref string chat)
+		{
+			string D1 = Language.GetTextValue("Mods.AlchemistNPC.D1");
+			string D2 = Language.GetTextValue("Mods.AlchemistNPC.D2");
+			string D3 = Language.GetTextValue("Mods.AlchemistNPC.D3");
+			string D4 = Language.GetTextValue("Mods.AlchemistNPC.D4");
+			string AD1 = Language.GetTextValue("Mods.AlchemistNPC.AD1");
+			string AD2 = Language.GetTextValue("Mods.AlchemistNPC.AD2");
+			int Angela = NPC.FindFirstNPC(mod.NPCType("Operator"));
+			int Dryad = NPC.FindFirstNPC(NPCID.Dryad);
+			if (npc.type == NPCID.Dryad)
+			{
+				if (Angela >= 0 && Main.rand.NextBool(10))
+				{
+					switch (Main.rand.Next(4))
+					{
+						case 0:                                     
+						chat = D1;
+						break;
+						default:
+						chat = D2;
+						break;
+					}
+				}
+				if (Main.hardMode && Angela >= 0 && Main.rand.NextBool(10))
+				{
+					switch (Main.rand.Next(2))
+					{
+						case 0:                                     
+						chat = D3;
+						break;
+						default:
+						chat = D4;
+						break;
+					}
+				}
+			}
+			if (npc.type == NPCID.ArmsDealer)
+			{
+				if (Angela >= 0 && Main.rand.NextBool(10))
+				{
+					switch (Main.rand.Next(2))
+					{
+						case 0:                                     
+						chat = (AD1 + Main.npc[Dryad].GivenName);
+						break;
+						default:
+						chat = AD2;
+						break;
+					}
+				}
+			}
+		}
+		
 		public override void SetupShop(int type, Chest shop, ref int nextSlot)
 		{
 			Player player = Main.player[Main.myPlayer];
@@ -142,6 +198,7 @@ namespace AlchemistNPC.NPCs
 			{
 				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 				{
+					shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*2;
 					if (Config.RevPrices && CalamityModRevengeance)
 					{
 						shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*4;
@@ -1098,9 +1155,30 @@ namespace AlchemistNPC.NPCs
 			{
 				if (!start)
 				{
-					npc.position.Y = player.position.Y - 300;
+					npc.position.Y = player.position.Y - 350;
 					npc.position.X = player.position.X;
 					start = true;
+				}
+				if (ks == false)
+				{
+					kc++;
+				}
+				if (kc == 2)
+				{
+					Main.NewText("I have a question to ask from you...", 255, 255, 255);
+				}
+				if (kc < 180)
+				{
+					npc.velocity.X = 0f;
+					npc.velocity.Y = 0f;
+					npc.dontTakeDamage = true;
+				}
+				if (kc == 180)
+				{
+					Main.NewText("DEW U NO DE WEI?", 255, 0, 0);
+					ks = true;
+					npc.dontTakeDamage = false;
+					kc++;
 				}
 			}
 			if (npc.type == mod.NPCType("BillCipher"))

@@ -192,6 +192,18 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "может оставаться спокойной в такое время? Я ХОЧУ это узнать.");
             text.AddTranslation(GameCulture.Chinese, " 是怎么在这种时候保持冷静的? 我现在就想知道, 现在!");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryA25");
+            text.SetDefault("Don't let the dark one that came from the Jungle fool you with charming wisdom. Me and ");
+            text.AddTranslation(GameCulture.Russian, "Не позволяй тёмному, пришедшему из Джунглей, одурачить тебя чарующей мудростью. Я и ");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryA26");
+            text.SetDefault(" were once his apprentices. I quit when his lessons turned too dark but ");
+            text.AddTranslation(GameCulture.Russian, " однажды были его ассистентами. Я ушёл, когда его уроки стали слишком тёмными, но интерес ");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryA27");
+            text.SetDefault(" interest in occult Alchemy did nothing but grow.");
+            text.AddTranslation(GameCulture.Russian, " в оккультной алхимии только вырос.");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("BrewElixir");
             text.SetDefault("Brew Life Elixir");
             text.AddTranslation(GameCulture.Chinese, "炼制仙丹");
@@ -327,8 +339,12 @@ namespace AlchemistNPC.NPCs
 		 string EntryA22 = Language.GetTextValue("Mods.AlchemistNPC.EntryA22");
 		 string EntryA23 = Language.GetTextValue("Mods.AlchemistNPC.EntryA23");
 		 string EntryA24 = Language.GetTextValue("Mods.AlchemistNPC.EntryA24");
+		 string EntryA25 = Language.GetTextValue("Mods.AlchemistNPC.EntryA25");
+		 string EntryA26 = Language.GetTextValue("Mods.AlchemistNPC.EntryA26");
+		 string EntryA27 = Language.GetTextValue("Mods.AlchemistNPC.EntryA27");
 		 int Brewer = NPC.FindFirstNPC(mod.NPCType("Brewer"));
 		 int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
+		 int witchDoctor = NPC.FindFirstNPC(NPCID.WitchDoctor);
 			if (Main.bloodMoon && partyGirl >= 0 && Main.rand.Next(4) == 0)
 			{
 			return EntryA23 + Main.npc[partyGirl].GivenName + EntryA24;
@@ -356,6 +372,10 @@ namespace AlchemistNPC.NPCs
 			if (Main.invasionType == 4)
 			{
 				return EntryA19;
+			}
+			if (witchDoctor >= 0 && Main.rand.Next(7) == 0)
+			{
+			return EntryA25 + Main.npc[Brewer].GivenName + EntryA26 + Main.npc[Brewer].GivenName + EntryA27;
 			}
 			if (Brewer >= 0 && Main.rand.Next(5) == 0)
 			{
