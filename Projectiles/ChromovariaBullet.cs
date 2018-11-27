@@ -30,7 +30,7 @@ namespace AlchemistNPC.Projectiles
 				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
 				Vector2 vel = new Vector2(0, -1);
 				vel *= 0f;
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Explosion"), projectile.damage/2, 0, Main.myPlayer);
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Explosion"), projectile.damage/4, 0, Main.myPlayer);
 			}
 			return false;
 		}
@@ -45,7 +45,7 @@ namespace AlchemistNPC.Projectiles
 				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
 				Vector2 vel = new Vector2(0, -1);
 				vel *= 0f;
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Explosion"), projectile.damage/2, 0, Main.myPlayer);
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Explosion"), projectile.damage/4, 0, Main.myPlayer);
 			}
 		}
 	}

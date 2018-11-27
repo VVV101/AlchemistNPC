@@ -159,7 +159,7 @@ namespace AlchemistNPC
 				);
 			}
 			int MouseTextIndexP = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
-			if (MouseTextIndexO != -1)
+			if (MouseTextIndexP != -1)
 			{
 				layers.Insert(MouseTextIndexP, new LegacyGameInterfaceLayer(
 					"AlchemistNPC: Pip-Boy Menu",
@@ -183,7 +183,7 @@ namespace AlchemistNPC
 		
 		public static string ConfigFileRelativePath 
 		{
-		get { return "Mod Configs/Alchemistv75.json"; }
+		get { return "Mod Configs/Alchemistv8.json"; }
 		}
 
 		public static void ReloadConfigFromFile() 

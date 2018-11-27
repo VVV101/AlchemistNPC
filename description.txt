@@ -30,6 +30,8 @@ Available anytime.
 -Added pinkymod support for Operator.
 -Added some new lines for NPCs.
 -Added short introduction for Ugandan Knuckles boss.
+-Cera Sumat, Holy Avenger now has 1:20000 drop chance.
+-Balanced some of the mod's ammo.
 -Nerfed Laetitia's Gift and both Sephirothic Fruits.
 -Reworked availability of some Calamity mod Treasure Bags.
 -Reworked some of the projectiles homing capabilities. May reduce lags.

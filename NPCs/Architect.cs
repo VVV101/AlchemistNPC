@@ -381,7 +381,7 @@ namespace AlchemistNPC.NPCs
 			{
 			return A12 + Main.npc[demolitionist].GivenName + A13;
 			}
-            switch (Main.rand.Next(6))
+            switch (Main.rand.Next(8))
             {                
                 case 0:
 				return A14;
@@ -455,7 +455,7 @@ namespace AlchemistNPC.NPCs
 			{
 			button = AS10;
 			}
-		button2 = ShopsChanger;
+			button2 = ShopsChanger;
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop) 

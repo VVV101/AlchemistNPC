@@ -47,10 +47,10 @@ namespace AlchemistNPC.Projectiles
 		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
 			Player player = Main.player[projectile.owner]; 
-			if (Main.rand.Next(3) == 0)
+			if (Main.rand.Next(5) == 0)
 			{
-			player.statLife += 2;
-			player.HealEffect(2, true);
+			player.statLife += 1;
+			player.HealEffect(1, true);
 			}
 		}
 	}

@@ -84,13 +84,15 @@ namespace AlchemistNPC.Projectiles
 			}
 		}
 
+		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			damage /= 8;
+		}
+		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			target.immune[projectile.owner] = 1;
-			if (Main.rand.Next(4) == 0)
-			{
 			projectile.penetrate--;
-			}
 			if (projectile.penetrate <= 0)
 			{
 				projectile.Kill();

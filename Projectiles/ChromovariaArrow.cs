@@ -35,16 +35,16 @@ namespace AlchemistNPC.Projectiles
 			Main.PlaySound(SoundID.Item12, projectile.position);
 			Vector2 vel = new Vector2(-1, -1);
 			vel *= 3f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CAE"), projectile.damage/3, 0, Main.myPlayer);
 			Vector2 vel2 = new Vector2(1, 1);
 			vel2 *= 3f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("CAE"), projectile.damage/3, 0, Main.myPlayer);
 			Vector2 vel3 = new Vector2(1, -1);
 			vel3 *= 3f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("CAE"), projectile.damage/3, 0, Main.myPlayer);
 			Vector2 vel4 = new Vector2(-1, 1);
 			vel4 *= 3f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("CAE"), projectile.damage/3, 0, Main.myPlayer);
 			return false;
 		}
 		
@@ -54,16 +54,16 @@ namespace AlchemistNPC.Projectiles
 			Main.PlaySound(SoundID.Item12, projectile.position);
 			Vector2 vel = new Vector2(-1, -1);
 			vel *= 3f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("CAE"), projectile.damage/3, 0, Main.myPlayer);
 			Vector2 vel2 = new Vector2(1, 1);
 			vel2 *= 3f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel2.X, vel2.Y, mod.ProjectileType("CAE"), projectile.damage/3, 0, Main.myPlayer);
 			Vector2 vel3 = new Vector2(1, -1);
 			vel3 *= 3f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel3.X, vel3.Y, mod.ProjectileType("CAE"), projectile.damage/3, 0, Main.myPlayer);
 			Vector2 vel4 = new Vector2(-1, 1);
 			vel4 *= 3f;
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("CAE"), projectile.damage/2, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel4.X, vel4.Y, mod.ProjectileType("CAE"), projectile.damage/3, 0, Main.myPlayer);
 		}
 	}
 }

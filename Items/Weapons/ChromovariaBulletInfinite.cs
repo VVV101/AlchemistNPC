@@ -20,7 +20,7 @@ namespace AlchemistNPC.Items.Weapons
         }    
 		public override void SetDefaults()
 		{
-			item.damage = 16;
+			item.damage = 14;
 			item.ranged = true;
 			item.width = 16;
 			item.height = 16;
