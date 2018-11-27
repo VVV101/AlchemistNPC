@@ -83,6 +83,8 @@ namespace AlchemistNPC
 
             SetTranslation();
 			
+			if (!Main.dedServ)
+			{
 			alchemistUI = new ShopChangeUI();
 			alchemistUI.Activate();
 			alchemistUserInterface = new UserInterface();
@@ -102,6 +104,7 @@ namespace AlchemistNPC
 			pipboyUI.Activate();
 			alchemistUserInterfaceP = new UserInterface();
 			alchemistUserInterfaceP.SetState(pipboyUI);
+			}
 		}
 
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)

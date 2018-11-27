@@ -106,6 +106,7 @@ namespace AlchemistNPC
 		public int chargetime = 0;
 		public int MeatGrinderUsetime = 0;
 		
+		private const int maxBBP = -1;
 		public int BBP = 0;
 		private const int maxLifeElixir = 2;
 		public int LifeElixir = 0;
