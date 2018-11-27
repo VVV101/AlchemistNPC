@@ -63,15 +63,15 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(ItemID.SorcererEmblem);
 			recipe.AddIngredient(ItemID.WarriorEmblem);
 			recipe.AddIngredient(ItemID.EyeoftheGolem);
-			recipe.AddIngredient(null, "SoulEssence", 3);
-			recipe.AddIngredient(null, "ChromaticCrystal", 5);
-			recipe.AddIngredient(null, "SunkroveraCrystal", 5);
-			recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
+			recipe.AddIngredient(ItemID.ShinyStone);
+			recipe.AddIngredient(mod.ItemType("SoulEssence"), 3);
+			recipe.AddIngredient(mod.ItemType("ChromaticCrystal"), 5);
+			recipe.AddIngredient(mod.ItemType("SunkroveraCrystal"), 5);
+			recipe.AddIngredient(mod.ItemType("NyctosythiaCrystal"), 5);
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 15);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy")), 15);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 30);
 			}
 			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 			{
@@ -79,14 +79,14 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
 			}
-			recipe.AddIngredient(null, "EmagledFragmentation", 150);
+			recipe.AddIngredient(mod.ItemType("EmagledFragmentation"), 150);
 			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
-			recipe.AddTile(null, "MateriaTransmutator");
+			recipe.AddTile(mod.TileType("MateriaTransmutator"));
 			}
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
-			recipe.AddTile(null, "MateriaTransmutatorMK2");
+			recipe.AddTile(mod.TileType("MateriaTransmutatorMK2"));
 			}
 			recipe.SetResult(this);
 			recipe.AddRecipe();

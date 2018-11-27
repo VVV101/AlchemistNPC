@@ -343,52 +343,27 @@ namespace AlchemistNPC.Items
 			{
 				type = mod.ProjectileType("ChloroshardArrow");
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(15))
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(20))
 			{
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("RedWave"), 6666, 1f, player.whoAmI);
+				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("RedWave"), 1111, 1f, player.whoAmI);
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.magic && Main.rand.NextBool(30))
 			{
-				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
-				Vector2 perturbedSpeed2 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
-				Vector2 perturbedSpeed3 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
-				Vector2 perturbedSpeed4 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(20));
-				Vector2 perturbedSpeed5 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(20));
-				Vector2 perturbedSpeed6 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(30));
-				Vector2 perturbedSpeed7 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(40));
-				Vector2 perturbedSpeed8 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(40));
+				float numberProjectiles = 9;
+				float rotation = MathHelper.ToRadians(8);
 				Vector2 vector = player.RotatedRelativePoint(player.MountedCenter, true);
-				speedX = perturbedSpeed.X;
-				speedY = perturbedSpeed.Y;
-				float speedX2 = perturbedSpeed2.X/4;
-				float speedY2 = perturbedSpeed2.Y/4;
-				float speedX3 = perturbedSpeed3.X/4;
-				float speedY3 = perturbedSpeed3.Y/4;
-				float speedX4 = perturbedSpeed4.X/4;
-				float speedY4 = perturbedSpeed4.Y/4;
-				float speedX5 = perturbedSpeed5.X/4;
-				float speedY5 = perturbedSpeed5.Y/4;
-				float speedX6 = perturbedSpeed6.X/4;
-				float speedY6 = perturbedSpeed6.Y/4;
-				float speedX7 = perturbedSpeed7.X/4;
-				float speedY7 = perturbedSpeed7.Y/4;
-				float speedX8 = perturbedSpeed8.X/4;
-				float speedY8 = perturbedSpeed8.Y/4;
-				Projectile.NewProjectile(vector.X, vector.Y, speedX, speedY, 297, 2222, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX2, speedY2, 297, 2222, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX3, speedY3, 297, 2222, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX4, speedY4, 297, 2222, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX5, speedY5, 297, 2222, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX6, speedY6, 297, 2222, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX7, speedY7, 297, 2222, knockBack, player.whoAmI);
-				Projectile.NewProjectile(vector.X, vector.Y, speedX8, speedY8, 297, 2222, knockBack, player.whoAmI);
+				for (int i = 0; i < numberProjectiles; i++)
+				{
+					Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .5f;
+					Projectile.NewProjectile(vector.X, vector.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("MM"), 1337, knockBack, player.whoAmI);
+				}
 			}
 			return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 		
 		public override bool UseItem(Item item, Player player)
 		{
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(60))
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(100))
 			{
 				float num1 = 9f;
 				Vector2 vector2 = new Vector2(player.position.X + (float)player.width * 0.5f, player.position.Y + (float)player.height * 0.5f);
@@ -408,7 +383,7 @@ namespace AlchemistNPC.Items
 					num5 = num1 / num4;
 				float SpeedX = f1 * num5;
 				float SpeedY = f2 * num5;
-				Projectile.NewProjectile(vector2.X, vector2.Y, SpeedX, SpeedY, mod.ProjectileType("RedWave"), 6666, 1f, player.whoAmI);
+				Projectile.NewProjectile(vector2.X, vector2.Y, SpeedX, SpeedY, mod.ProjectileType("RedWave"), 1111, 1f, player.whoAmI);
 			}
 			return base.UseItem(item, player);
 		}

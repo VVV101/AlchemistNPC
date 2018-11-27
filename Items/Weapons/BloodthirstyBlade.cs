@@ -18,9 +18,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nKilling boss gives bigger damage boost"
 			+"\nBlue Slimes and Spiked Blue Slimes will not give the weapon boosts"
 			+"\nDoes not getting any benefits from bonus damage/critical strike chance"
-			+"\nDamage is capped until entering Hardmode (36) and beating Moon Lord (99)");
+			+"\nDamage is capped until entering Hardmode (36) and beating Moon Lord (99)"
+			+"\nReaching 36, 64 and 100 damage makes special things to happen");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кровожадный Клинок");
-            Tooltip.AddTranslation(GameCulture.Russian, "Чем больше врагов побеждено им, тем сильнее он становится\nУбийство босса даёт больший бонус к урону\nСиние и Синие шипастные слизни не дают бонуса к урону\nНе получает никаких бонусов по урону и шансу критического удара\nУрон ограничен до Хардмода (36) и победы над Лунным Лордом (99)");
+            Tooltip.AddTranslation(GameCulture.Russian, "Чем больше врагов побеждено им, тем сильнее он становится\nУбийство босса даёт больший бонус к урону\nСиние и Синие шипастные слизни не дают бонуса к урону\nНе получает никаких бонусов по урону и шансу критического удара\nУрон ограничен до Хардмода (36) и победы над Лунным Лордом (99)\nДостижение 36, 64 и 100 урона производит особые изменения с мечом");
         }
 
 		public override void SetDefaults()
@@ -43,6 +44,11 @@ namespace AlchemistNPC.Items.Weapons
 		public override void UpdateInventory(Player player)
 		{
 			item.damage = 10 + (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP/100);
+			if (item.damage >= 36)
+			{
+				item.shoot = mod.ProjectileType("SB");
+				item.shootSpeed = 12f;
+			}
 			if (!Main.hardMode)
 			{
 				if (item.damage > 36)
@@ -69,6 +75,11 @@ namespace AlchemistNPC.Items.Weapons
 		public override void HoldItem(Player player)
 		{
 			item.damage = 10 + (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP/100);
+			if (item.damage >= 36)
+			{
+				item.shoot = mod.ProjectileType("SB");
+				item.shootSpeed = 12f;
+			}
 			if (!Main.hardMode)
 			{
 				if (item.damage > 36)
@@ -90,6 +101,35 @@ namespace AlchemistNPC.Items.Weapons
 				item.useTime = 10;
 				item.useAnimation = 10;
 			}
+		}
+		
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			item.damage = 10 + (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP/100);
+			if (item.damage >= 64)
+			{
+				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
+				Vector2 perturbedSpeed2 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
+				speedX = perturbedSpeed.X;
+				speedY = perturbedSpeed.Y;
+				float speedX2 = perturbedSpeed2.X;
+				float speedY2 = perturbedSpeed2.Y;
+				Projectile.NewProjectile(position.X, position.Y+4, speedX, speedY, mod.ProjectileType("SB"), damage/2, knockBack, player.whoAmI);
+				Projectile.NewProjectile(position.X, position.Y-4, speedX2, speedY2, mod.ProjectileType("SB"), damage/2, knockBack, player.whoAmI);
+			}
+			if (item.damage > 99)
+			{
+				Vector2 perturbedSpeed3 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
+				Vector2 perturbedSpeed4 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
+				float speedX3 = perturbedSpeed3.X;
+				float speedY3 = perturbedSpeed3.Y;
+				float speedX4 = perturbedSpeed4.X;
+				float speedY4 = perturbedSpeed4.Y;
+				Projectile.NewProjectile(position.X, position.Y+5, speedX3, speedY3, mod.ProjectileType("SB"), damage/2, knockBack, player.whoAmI);
+				Projectile.NewProjectile(position.X, position.Y-5, speedX4, speedY4, mod.ProjectileType("SB"), damage/2, knockBack, player.whoAmI);
+			}
+			damage /= 2;
+			return true;
 		}
 		
 		public override void AddRecipes()

@@ -654,19 +654,56 @@ namespace AlchemistNPC.NPCs
 			Player player = Main.player[Main.myPlayer];
 			if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade"))
 			{
-				if (!npc.boss && npc.type != 1 && npc.type != 535)
+				if (!Main.hardMode && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP < 2600)
 				{
-				Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP++;
+					if (!npc.boss && npc.type != 1 && npc.type != 535)
+					{
+					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP++;
+					}
+					
+					if (npc.boss && npc.lifeMax <= 10000)
+					{
+					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 25;
+					}
+					
+					if (npc.boss && npc.lifeMax > 10000)
+					{
+					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 50;
+					}
 				}
-				
-				if (npc.boss && npc.lifeMax <= 10000)
+				if (Main.hardMode && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP < 8900)
 				{
-				Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 25;
+					if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(2))
+					{
+					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP++;
+					}
+					
+					if (npc.boss && npc.lifeMax <= 10000)
+					{
+					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 15;
+					}
+					
+					if (npc.boss && npc.lifeMax > 10000)
+					{
+					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 30;
+					}
 				}
-				
-				if (npc.boss && npc.lifeMax > 10000)
+				if (NPC.downedMoonlord)
 				{
-				Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 50;
+					if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(3))
+					{
+					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP++;
+					}
+					
+					if (npc.boss && npc.lifeMax <= 10000)
+					{
+					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 10;
+					}
+					
+					if (npc.boss && npc.lifeMax > 10000)
+					{
+					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 20;
+					}
 				}
 			}
 				

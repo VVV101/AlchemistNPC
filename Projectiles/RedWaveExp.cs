@@ -13,10 +13,8 @@ namespace AlchemistNPC.Projectiles
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Red Wave Explosion");
-			projectile.timeLeft = 150;
+			projectile.timeLeft = 40;
 			projectile.light = 0.8f;
-			ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
-			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
 			Main.projFrames[projectile.type] = 7;
 		}
 
@@ -35,7 +33,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void AI()
 		{
-			if (projectile.timeLeft < 39)
+			if (projectile.timeLeft < 40)
 			{
 				projectile.friendly = false;
 			}
