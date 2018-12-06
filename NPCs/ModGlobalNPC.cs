@@ -198,7 +198,7 @@ namespace AlchemistNPC.NPCs
 			{
 				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 				{
-					shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*2;
+					shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*(Config.PotsPriceMulti);
 					if (Config.RevPrices && CalamityModRevengeance)
 					{
 						shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*4;
@@ -652,6 +652,10 @@ namespace AlchemistNPC.NPCs
 		public override void NPCLoot(NPC npc)
 		{
 			Player player = Main.player[Main.myPlayer];
+			if (player.HeldItem.type == mod.ItemType("ChristmasW") && Main.rand.NextBool(33))
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Present);
+			}
 			if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade"))
 			{
 				if (!Main.hardMode && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP < 2600)

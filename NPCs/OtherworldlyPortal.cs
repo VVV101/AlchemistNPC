@@ -39,6 +39,9 @@ namespace AlchemistNPC.NPCs
 		
 		public override string GetChat()
 		{
+			string barrierStabilized = Language.GetTextValue("Mods.AlchemistNPC.barrierStabilized");
+			Main.NewText(barrierStabilized, 55, 55, 255);
+			npc.Transform(mod.NPCType("Explorer"));
 			return Language.GetTextValue("Mods.AlchemistNPC.portalOpen");
 		}
 		
@@ -70,8 +73,6 @@ namespace AlchemistNPC.NPCs
                 {
                     if (Main.player[index].active && Main.player[index].talkNPC == npc.whoAmI)
                     {
-						string barrierStabilized = Language.GetTextValue("Mods.AlchemistNPC.barrierStabilized");
-                        Main.NewText(barrierStabilized, 55, 55, 255);
 						npc.Transform(mod.NPCType("Explorer"));
 						return;
 					}

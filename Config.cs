@@ -22,6 +22,7 @@ namespace AlchemistNPC
 		public static bool ExplorerSpawn = true;
 		public static bool MusicianSpawn = true;
 		public static bool RevPrices = true;
+		public static int PotsPriceMulti = 2;
         static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv8.json");
         static Preferences Configuration = new Preferences(ConfigPath);
 
@@ -110,6 +111,11 @@ namespace AlchemistNPC
 				{
 				RevPrices = true;
 				}
+				Configuration.Get<int>("PotsPriceMulti", ref Config.PotsPriceMulti);
+				if(PotsPriceMulti <= 0)
+				{
+				PotsPriceMulti = 2;
+				}
 			return true;
 			}
 			else
@@ -135,6 +141,7 @@ namespace AlchemistNPC
 			Configuration.Put("ExplorerSpawn", ExplorerSpawn);
 			Configuration.Put("MusicianSpawn", MusicianSpawn);
 			Configuration.Put("RevPrices", RevPrices);
+			Configuration.Put("PotsPriceMulti", PotsPriceMulti);
             Configuration.Save(true);
         }
     }

@@ -210,11 +210,14 @@ namespace AlchemistNPC
 			{
 			player.AddBuff(mod.BuffType("DemonSlayer"), 2);
 			}
-			if (player.talkNPC == -1)
+			if (Main.netMode == 0)
 			{
-				ShopChangeUI.visible = false;
-				ShopChangeUIA.visible = false;
-				ShopChangeUIO.visible = false;
+				if (player.talkNPC == -1)
+				{
+					ShopChangeUI.visible = false;
+					ShopChangeUIA.visible = false;
+					ShopChangeUIO.visible = false;
+				}
 			}
 		}
 	

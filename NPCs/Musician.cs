@@ -572,6 +572,15 @@ namespace AlchemistNPC.NPCs
 			}
 			if (S2)
 			{
+				if (Main.hardMode)
+				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ChaosKingMusicBox"));
+					shop.item[nextSlot].shopCustomPrice = 250000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TheWorldRevolvingMusicBox"));
+					shop.item[nextSlot].shopCustomPrice = 250000;
+					nextSlot++;
+				}
 				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 				{
 					if (NPC.downedMoonlord)

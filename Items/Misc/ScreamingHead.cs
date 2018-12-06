@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items.Misc
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Screaming Head");
-			Tooltip.SetDefault("Someone's screaming head\nBreakes concentration");
+			Tooltip.SetDefault("Someone's screaming head\nBreaks concentration");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кричащая голова");
             Tooltip.AddTranslation(GameCulture.Russian, "Чья-то кричащая голова\nНарушает концентрацию");
         }

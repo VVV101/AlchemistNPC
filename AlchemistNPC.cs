@@ -83,6 +83,9 @@ namespace AlchemistNPC
 
             SetTranslation();
 			
+			AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Chaos King"), ItemType("ChaosKingMusicBox"), TileType("ChaosKingMusicBox"));
+			AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - The World Revolving"), ItemType("TheWorldRevolvingMusicBox"), TileType("TheWorldRevolvingMusicBox"));
+			
 			if (!Main.dedServ)
 			{
 			alchemistUI = new ShopChangeUI();
