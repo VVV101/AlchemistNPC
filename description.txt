@@ -31,7 +31,7 @@ Can be crafted after beating Plantera.
 Can be crafted after beating EoW/BoC. 
 -Added Dopamine to Brewer's 2nd shop. Inflicts Happy! buff for 10 minutes.
 Available anytime.
--Added 2 new music boxes. Available in Musician's 2nd shop in Hardmode.
+-Added 4 new music boxes. Available in Musician's 2nd shop in Hardmode.
 -Added pinkymod support for Operator.
 -Added some new lines for NPCs.
 -Added short introduction for Ugandan Knuckles boss.

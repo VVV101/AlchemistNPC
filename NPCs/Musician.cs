@@ -574,6 +574,12 @@ namespace AlchemistNPC.NPCs
 			{
 				if (Main.hardMode)
 				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("FieldsMusicBox"));
+					shop.item[nextSlot].shopCustomPrice = 400000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SheamMusicBox"));
+					shop.item[nextSlot].shopCustomPrice = 250000;
+					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ChaosKingMusicBox"));
 					shop.item[nextSlot].shopCustomPrice = 250000;
 					nextSlot++;
