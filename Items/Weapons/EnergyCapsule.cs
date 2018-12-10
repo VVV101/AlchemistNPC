@@ -5,13 +5,13 @@ using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
 {
-	public class ConcentratedDarkMatter : ModItem
+	public class EnergyCapsule : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Concentrated Dark Matter");
+			DisplayName.SetDefault("Energy Capsule");
 			Tooltip.SetDefault("Requred to shoot from Portal Gun");
-			DisplayName.AddTranslation(GameCulture.Russian, "Концентрированная Тёмная Материя");
+			DisplayName.AddTranslation(GameCulture.Russian, "Капсула с энергией");
             Tooltip.AddTranslation(GameCulture.Russian, "Необходима для стрельбы из Портальной Пушки");
         }
 

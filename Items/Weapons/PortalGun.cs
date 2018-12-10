@@ -13,15 +13,16 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.SetDefault("Rick's Portal Gun");
 			Tooltip.SetDefault("Copy of Rick Sanchez's Portal Gun"
 			+"\nOpens portals to the random dangerous dimensions"
+			+"\nRequires Energy Capsules as ammo"
 			+"\nHope this thing wouldn't cause appearence of SEAL team Ricks");
 			
 			DisplayName.AddTranslation(GameCulture.Russian, "Портальная пушка Рика");
-            Tooltip.AddTranslation(GameCulture.Russian, "Копия портальной пушки Рика Санчеза\nОткрывает порталы в различные измерения\nНадеюсь что она не вызовет появление боевой отряд Риков.");
+            Tooltip.AddTranslation(GameCulture.Russian, "Копия портальной пушки Рика Санчеза\nОткрывает порталы в различные измерения\nТребует Капсулы с энергией в качестве патронов\nНадеюсь что она не вызовет появление боевой отряд Риков.");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 100;
+			item.damage = 75;
 			item.ranged = true;
 			item.width = 32;
 			item.height = 32;
@@ -36,7 +37,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("PortalGunProj");
 			item.shootSpeed = 16f;
-			item.useAmmo = mod.ItemType("ConcentratedDarkMatter");
+			item.useAmmo = mod.ItemType("EnergyCapsule");
 		}
 	}
 }

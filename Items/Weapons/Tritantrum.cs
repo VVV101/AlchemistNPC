@@ -14,10 +14,10 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			DisplayName.SetDefault("Tritantrum");
 			Tooltip.SetDefault("Shoots exploding plasma balls"
-			+ "\nRequires special ammo"
+			+ "\nRequires special ammo (Plasma Round)"
 			+ "\n50% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Тритантрум");
-            Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает взрывающиеся плазменные шары\nТребует особые патроны для стрельбы\n50% шанс не потратить патроны");
+            Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает взрывающиеся плазменные шары\nТребует особые патроны для стрельбы (Плазменный заряд)\n50% шанс не потратить патроны");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "三项之怒");
             Tooltip.AddTranslation(GameCulture.Chinese, "发射会爆炸的等离子体\n需要特殊弹药\n50%的几率不消耗弹药");

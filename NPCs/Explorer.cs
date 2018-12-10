@@ -868,7 +868,7 @@ namespace AlchemistNPC.NPCs
 							}
 							if (player.inventory[j].type == mod.ItemType("PortalGun"))
 							{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ConcentratedDarkMatter"));
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EnergyCapsule"));
 							nextSlot++;
 							}
 						}

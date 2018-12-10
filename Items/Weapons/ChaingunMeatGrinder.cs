@@ -16,10 +16,10 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Forged by technologies of ancient colonizers."
 			+"\nHas 6 rotating barrels with 17mm caliber"
 			+"\nGains shooting speed over time"
-			+"\nUses special ammo"
+			+"\nUses special ammo (17mm rounds)"
 			+"\n66% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пулемёт ''Мясорубка''");
-            Tooltip.AddTranslation(GameCulture.Russian, "Изготовлен по технологии древних колонизаторов\nОружие имеет шесть вращающихся стволов калибра 17мм\nСкорость стрельбы постепенно возрастает\nИспользует специальные патроны\n66% шанс не потратить патроны");
+            Tooltip.AddTranslation(GameCulture.Russian, "Изготовлен по технологии древних колонизаторов\nОружие имеет шесть вращающихся стволов калибра 17мм\nСкорость стрельбы постепенно возрастает\nИспользует специальные патроны (17mm патрон)\n66% шанс не потратить патроны");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF262)");
         }

@@ -23,7 +23,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 700;
+			item.damage = 600;
 			item.noMelee = true;
 			item.ranged = true;
 			item.channel = true;

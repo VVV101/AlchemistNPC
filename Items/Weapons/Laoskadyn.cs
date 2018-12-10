@@ -30,7 +30,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			item.CloneDefaults(ItemID.Starfury);
 			item.melee = true;
-			item.damage = 100;
+			item.damage = 88;
 			item.width = 78;
 			item.height = 106;
 			item.useTime = 15;

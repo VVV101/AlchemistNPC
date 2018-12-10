@@ -6,6 +6,7 @@ The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of th
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
+Config file is Alchemistv8.json.
 v8.0
 -Reworked multiple shops changing mechanic.
 -Multiplied most of the potions prices by 2x due to balance issues. Configurable by PotsPriceMulti value.
@@ -36,6 +37,8 @@ Available anytime.
 -Added some new lines for NPCs.
 -Added short introduction for Ugandan Knuckles boss.
 -Cera Sumat, Holy Avenger now has 1:20000 drop chance.
+-Rick's Portal Gun now uses Energy Capsules as ammo.
+-Removed Concentrated Dark Matter due to ^.
 -Balanced some of the mod's ammo.
 -Nerfed Laetitia's Gift and both Sephirothic Fruits.
 -Reworked availability of some Calamity mod Treasure Bags.
@@ -47,6 +50,7 @@ Available anytime.
 -Now any wood can be used for making Wing of the World.
 -Lowered horizontal speed reduction by some sources.
 -Changed way of work of Jungle Teleporter Potion.
+-Changed some descriptions of items/notes.
 -Reworked True Uganda and Mind Burn debuffs. Now should be lagless.
 -Fixed issue with autopause and Otherworldly Portal.
 -Fixed Bill's despawn on summon while Calamity mod is not active.
