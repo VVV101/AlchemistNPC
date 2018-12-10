@@ -83,32 +83,32 @@ namespace AlchemistNPC
 
             SetTranslation();
 			
-			AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Chaos King"), ItemType("ChaosKingMusicBox"), TileType("ChaosKingMusicBox"));
-			AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Field of Hopes And Dreams"), ItemType("FieldsMusicBox"), TileType("FieldsMusicBox"));
-			AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Lantern"), ItemType("SheamMusicBox"), TileType("SheamMusicBox"));
-			AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - The World Revolving"), ItemType("TheWorldRevolvingMusicBox"), TileType("TheWorldRevolvingMusicBox"));
-			
 			if (!Main.dedServ)
-			{
-			alchemistUI = new ShopChangeUI();
-			alchemistUI.Activate();
-			alchemistUserInterface = new UserInterface();
-			alchemistUserInterface.SetState(alchemistUI);
-			
-			alchemistUIA = new ShopChangeUIA();
-			alchemistUIA.Activate();
-			alchemistUserInterfaceA = new UserInterface();
-			alchemistUserInterfaceA.SetState(alchemistUIA);
-			
-			alchemistUIO = new ShopChangeUIO();
-			alchemistUIO.Activate();
-			alchemistUserInterfaceO = new UserInterface();
-			alchemistUserInterfaceO.SetState(alchemistUIO);
-			
-			pipboyUI = new PipBoyTPMenu();
-			pipboyUI.Activate();
-			alchemistUserInterfaceP = new UserInterface();
-			alchemistUserInterfaceP.SetState(pipboyUI);
+			{				
+				AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Chaos King"), ItemType("ChaosKingMusicBox"), TileType("ChaosKingMusicBox"));
+				AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Field of Hopes And Dreams"), ItemType("FieldsMusicBox"), TileType("FieldsMusicBox"));
+				AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Lantern"), ItemType("SheamMusicBox"), TileType("SheamMusicBox"));
+				AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - The World Revolving"), ItemType("TheWorldRevolvingMusicBox"), TileType("TheWorldRevolvingMusicBox"));
+				
+				alchemistUI = new ShopChangeUI();
+				alchemistUI.Activate();
+				alchemistUserInterface = new UserInterface();
+				alchemistUserInterface.SetState(alchemistUI);
+				
+				alchemistUIA = new ShopChangeUIA();
+				alchemistUIA.Activate();
+				alchemistUserInterfaceA = new UserInterface();
+				alchemistUserInterfaceA.SetState(alchemistUIA);
+				
+				alchemistUIO = new ShopChangeUIO();
+				alchemistUIO.Activate();
+				alchemistUserInterfaceO = new UserInterface();
+				alchemistUserInterfaceO.SetState(alchemistUIO);
+				
+				pipboyUI = new PipBoyTPMenu();
+				pipboyUI.Activate();
+				alchemistUserInterfaceP = new UserInterface();
+				alchemistUserInterfaceP.SetState(pipboyUI);
 			}
 		}
 

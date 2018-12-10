@@ -7,6 +7,8 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv8.json.
+v8.1 Hotfix
+-Fixed some MP issues.
 v8.0
 -Reworked multiple shops changing mechanic.
 -Multiplied most of the potions prices by 2x due to balance issues. Configurable by PotsPriceMulti value.
