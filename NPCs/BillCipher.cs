@@ -490,11 +490,31 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 		
+		public virtual void ModifyHitByItem(Player player, Item item, ref int damage, ref float knockback, ref bool crit) 
+		{
+			if (npc.life > npc.lifeMax/10)
+			{
+				damage /= 10;
+			}
+			if (npc.life < npc.lifeMax/10)
+			{
+				damage /= 20;
+			}
+		}
+		
 		public override void ModifyHitByProjectile(Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int	hitDirection)	
 		{
+			if (npc.life > npc.lifeMax/10)
+			{
+				damage /= 10;
+			}
+			if (npc.life < npc.lifeMax/10)
+			{
+				damage /= 20;
+			}
 			if (projectile.type == mod.ProjectileType("QuantumDestabilizer"))
 			{
-			damage *= 5;
+				damage *= 5;
 			}
 		}
 		
@@ -522,24 +542,6 @@ namespace AlchemistNPC.NPCs
 		public override void BossLoot(ref string name, ref int potionType)
 		{
 			potionType = ItemID.SuperHealingPotion;
-		}
-		
-		public override bool StrikeNPC(ref double damage, int defense, ref float knockback, int hitDirection, ref bool crit)	
-		{
-			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
-			if (npc.life > npc.lifeMax/10)
-			{
-			damage /= 10;
-			}
-			if (npc.life < npc.lifeMax/10)
-			{
-			damage /= 20;
-			}
-			if (player.HeldItem.type == mod.ItemType("LastTantrum"))
-			{
-			damage /= 250;
-			}
-		return false;
 		}
 	}
 }

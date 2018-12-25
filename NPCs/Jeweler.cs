@@ -285,61 +285,58 @@ namespace AlchemistNPC.NPCs
 			string Combine = Language.GetTextValue("Mods.AlchemistNPC.Combine");
 			button = Language.GetTextValue("LegacyInterface.28");
 			button2 = ArenaShop;
-			for (int k = 0; k < 255; k++)
+			Player player = Main.player[Main.myPlayer];
+			if (player.active)
 			{
-				Player player = Main.player[k];
-				if (player.active)
+				for (int j = 0; j < player.inventory.Length; j++)
 				{
-					for (int j = 0; j < player.inventory.Length; j++)
+					if (player.inventory[j].type == mod.ItemType("SecretNote"))
 					{
-						if (player.inventory[j].type == mod.ItemType("SecretNote"))
-						{
-							SN = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("SecretNote2"))
-						{
-							SN2 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("SecretNote3"))
-						{
-							SN3 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("TornNote1"))
-						{
-							TN1 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("TornNote2"))
-						{
-							TN2 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("TornNote3"))
-						{
-							TN3 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("TornNote4"))
-						{
-							TN4 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("TornNote5"))
-						{
-							TN5 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("TornNote6"))
-						{
-							TN6 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("TornNote7"))
-						{
-							TN7 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("TornNote8"))
-						{
-							TN8 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("TornNote9"))
-						{
-							TN9 = true;
-						}
+						SN = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("SecretNote2"))
+					{
+						SN2 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("SecretNote3"))
+					{
+						SN3 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("TornNote1"))
+					{
+						TN1 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("TornNote2"))
+					{
+						TN2 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("TornNote3"))
+					{
+						TN3 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("TornNote4"))
+					{
+						TN4 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("TornNote5"))
+					{
+						TN5 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("TornNote6"))
+					{
+						TN6 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("TornNote7"))
+					{
+						TN7 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("TornNote8"))
+					{
+						TN8 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("TornNote9"))
+					{
+						TN9 = true;
 					}
 				}
 			}
@@ -365,9 +362,9 @@ namespace AlchemistNPC.NPCs
 		{
 			if (firstButton)
 			{
-		OH = true;
-		AS = false;
-		shop = true;
+				OH = true;
+				AS = false;
+				shop = true;
 			}
 		else
 			{

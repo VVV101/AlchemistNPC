@@ -48,6 +48,10 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Магазин Тремор мода");
             text.AddTranslation(GameCulture.Chinese, "震颤商店");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("GetCharm");
+            text.SetDefault("Get Charm");
+            text.AddTranslation(GameCulture.Russian, "Получить талисман");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("Edward");
             text.SetDefault("Edward");
             text.AddTranslation(GameCulture.Russian, "Эдвард");
@@ -439,46 +443,48 @@ namespace AlchemistNPC.NPCs
         {
 			string TremorShop = Language.GetTextValue("Mods.AlchemistNPC.TremorShop");
 			string BrewElixir = Language.GetTextValue("Mods.AlchemistNPC.BrewElixir");
+			string GetCharm = Language.GetTextValue("Mods.AlchemistNPC.GetCharm");
 			string Gregg = Language.GetTextValue("Mods.AlchemistNPC.Gregg");
             button = Language.GetTextValue("LegacyInterface.28");
-			for (int k = 0; k < 255; k++)
+			Player player = Main.player[Main.myPlayer];
+			if (player.active)
 			{
-				Player player = Main.player[k];
-				if (player.active)
+				for (int j = 0; j < player.inventory.Length; j++)
 				{
-					for (int j = 0; j < player.inventory.Length; j++)
+					if (player.inventory[j].type == mod.ItemType("LifeElixir"))
 					{
-						if (player.inventory[j].type == mod.ItemType("LifeElixir"))
-						{
-							LE = true;
-						}
-						if (player.inventory[j].type == ItemID.PhilosophersStone)
-						{
-							PS = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
-						{
-							AB = true;
-						}
+						LE = true;
+					}
+					if (player.inventory[j].type == ItemID.PhilosophersStone)
+					{
+						PS = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+					{
+						AB = true;
 					}
 				}
 			}
+			
 			if (PS && AB)
 			{
 			button2 = BrewElixir;
 			}
+			
 			if (ModLoader.GetLoadedMods().Contains("Tremor") && (!PS || !AB))
 			{
 			button2 = TremorShop;
 			}
-			for (int k = 0; k < 255; k++)
+			
+			int Alchemist = NPC.FindFirstNPC(mod.NPCType("Alchemist"));
+			if (player.name == "Gregg" && Main.npc[Alchemist].GivenName == Gregg && NPC.downedMoonlord && !Tantrum)
 			{
-				Player player = Main.player[k];
-				int Alchemist = NPC.FindFirstNPC(mod.NPCType("Alchemist"));
-				if (player.name == "Gregg" && Main.npc[Alchemist].GivenName == Gregg && NPC.downedMoonlord && !Tantrum)
-				{
 				button2 = "Secret";
-				}
+			}
+			
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Discount == false)
+			{
+				button2 = GetCharm;
 			}
         }
  
@@ -493,33 +499,35 @@ namespace AlchemistNPC.NPCs
 		else
 			{
 				Player player = Main.player[Main.myPlayer];
+				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Discount == false)
+				{
+					player.QuickSpawnItem(mod.ItemType("AlchemistCharmTier1"));
+				}
+				if (ModLoader.GetLoadedMods().Contains("Tremor") && (!PS || !AB))
+				{
 				baseShop = false;
 				tremorShop = true;
 				shop = true;
+				}
 				if (PS && AB)
 				{
-				shop = false;
-					if (PS && AB)
+					if (Main.player[Main.myPlayer].HasItem(ItemID.PhilosophersStone))
 					{
-						if (Main.player[Main.myPlayer].HasItem(ItemID.PhilosophersStone))
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
 						{
-							Item[] inventory = Main.player[Main.myPlayer].inventory;
-							for (int k = 0; k < inventory.Length; k++)
+							if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
 							{
-								if (inventory[k].type == mod.ItemType("AlchemicalBundle"))
-								{
-									inventory[k].stack--;
-								}
+								inventory[k].stack--;
 							}
 						}
-						player.QuickSpawnItem(mod.ItemType("LifeElixir"));
 					}
+					player.QuickSpawnItem(mod.ItemType("LifeElixir"));
 				}
 				if (player.name == "Gregg" && NPC.downedMoonlord)
 				{
 				Tantrum = true;
 				player.QuickSpawnItem(mod.ItemType("LastTantrum"));
-				shop = false;
 				}
 			}
 		}

@@ -32,6 +32,14 @@ namespace AlchemistNPC.Projectiles
 			return true;
 		}
 		
+		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			if (target.type == mod.NPCType("BillCipher"))
+			{
+			damage /= 400;
+			}
+		}
+		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			projectile.Kill();

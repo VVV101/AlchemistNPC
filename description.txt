@@ -7,6 +7,17 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv8.json.
+v8.2
+-Lowered prices for potions (2x multiplier by default and just +2x with Revengeance).
+-Added way for getting Alchemist Charm from Alchemist.
+-Reworked Laoskadyn's projectile for a bit.
+-Reworked Tritantrum's projectile.
+-Some of the modded music boxes are now available in Hardmode.
+-Fixed Last Tantrum exploit in Bill Cipher boss battle.
+-Fixed Target Dummy were moving while being inflicted with Electrocute debuff.
+-Fixed special crafts of NPCs (Jeweler, Alchemist, Explorer).
+-Fixed some crashes with reforging tokens.
+-Fixed Pip-Boy's crash in Cheat Sheet item browser.
 v8.1 Hotfix
 -Fixed some MP issues.
 v8.0

@@ -29,14 +29,14 @@ namespace AlchemistNPC.Items.Weapons
 			item.ranged = true;
 			item.width = 92;
 			item.height = 40;
-			item.useTime = 5;
-			item.useAnimation = 5;
+			item.useTime = 6;
+			item.useAnimation = 6;
 			item.useStyle = 5;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 8;
 			item.value = 1000000;
 			item.rare = 8;
-			item.UseSound = SoundID.Item20;
+			item.UseSound = SoundID.Item11;
 			item.autoReuse = true;
 			item.shoot = 10; //idk why but all the guns in the vanilla source have this
 			item.shootSpeed = 64f;
@@ -70,7 +70,6 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y+3+Main.rand.Next(-3,3), speedX, speedY, type, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y+Main.rand.Next(-3,3), speedX, speedY, type, damage, knockBack, player.whoAmI);
 			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y-3+Main.rand.Next(-3,3), speedX, speedY, type, damage, knockBack, player.whoAmI);
 			return false;
 		}

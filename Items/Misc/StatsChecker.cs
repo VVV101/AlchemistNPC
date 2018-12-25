@@ -62,17 +62,17 @@ namespace AlchemistNPC.Items.Misc
 			line9.overrideColor = Color.Brown;
 			line10.overrideColor = Color.Magenta;
 			line11.overrideColor = Color.Red;
-			tooltips.Insert(3,line);
-			tooltips.Insert(4,line2);
-			tooltips.Insert(5,line3);
-			tooltips.Insert(6,line4);
-			tooltips.Insert(7,line5);
-			tooltips.Insert(8,line6);
-			tooltips.Insert(9,line7);
-			tooltips.Insert(10,line8);
-			tooltips.Insert(11,line9);
-			tooltips.Insert(12,line10);
-			tooltips.Insert(13,line11);
+			tooltips.Insert(2,line);
+			tooltips.Insert(3,line2);
+			tooltips.Insert(4,line3);
+			tooltips.Insert(5,line4);
+			tooltips.Insert(6,line5);
+			tooltips.Insert(7,line6);
+			tooltips.Insert(8,line7);
+			tooltips.Insert(9,line8);
+			tooltips.Insert(10,line9);
+			tooltips.Insert(11,line10);
+			tooltips.Insert(12,line11);
 		}
 	}
 }

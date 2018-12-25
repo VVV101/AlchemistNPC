@@ -135,25 +135,51 @@ namespace AlchemistNPC.Items
 				{
 					return 81;
 				}
-				if (item.ranged && !item.consumable && item.knockBack > 0)
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 				{
-					return 82;
+					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("P90"))
+					{
+						return 57;
+					}
+				}
+				if (item.ranged && !item.consumable && item.useTime <= 3)
+				{
+					return 59;
 				}
 				if (item.ranged && !item.consumable && item.knockBack <= 0)
 				{
 					return 60;
 				}
-				if (item.magic && item.knockBack > 0)
+				if (item.ranged && !item.consumable && item.knockBack > 0)
 				{
-					return 83;
+					return 82;
+				}
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("ShadecrystalTome"))
+					{
+						return 59;
+					}
 				}
 				if (item.magic && item.knockBack <= 0)
 				{
 					return 60;
 				}
+				if (item.magic && item.useTime <= 2)
+				{
+					return 59;
+				}
+				if (item.magic && item.knockBack > 0)
+				{
+					return 83;
+				}
 				if (item.summon)
 				{
 					return 83;
+				}
+				if (item.thrown && !item.consumable && item.useTime <= 3)
+				{
+					return 59;
 				}
 				if (item.thrown && !item.consumable)
 				{

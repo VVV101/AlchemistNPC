@@ -365,7 +365,7 @@ namespace AlchemistNPC.NPCs
         {
             string Shop2 = Language.GetTextValue("Mods.AlchemistNPC.Shop2");
 			button = Language.GetTextValue("LegacyInterface.28");
-			if (NPC.downedMoonlord)
+			if (Main.hardMode)
 			{
 				button2 = Shop2;
 			}

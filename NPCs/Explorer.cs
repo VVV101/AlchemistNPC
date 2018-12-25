@@ -347,157 +347,154 @@ namespace AlchemistNPC.NPCs
 			string Create6 = Language.GetTextValue("Mods.AlchemistNPC.Create6");
 			string Create7 = Language.GetTextValue("Mods.AlchemistNPC.Create7");
             button = Language.GetTextValue("LegacyInterface.28");
-			for (int k = 0; k < 255; k++)
+			Player player = Main.player[Main.myPlayer];
+			if (player.active)
 			{
-				Player player = Main.player[k];
-				if (player.active)
+				for (int j = 0; j < player.inventory.Length; j++)
 				{
-					for (int j = 0; j < player.inventory.Length; j++)
+					if (player.inventory[j].type == 3389)
 					{
-						if (player.inventory[j].type == 3389)
-						{
-							C11 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
-						{
-							C12 = true;
-						}
-						if (player.inventory[j].type == 1326)
-						{
-							C13 = true;
-						}
-						if (player.inventory[j].type == 3366)
-						{
-							C14 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("ResearchNote1"))
-						{
-							C15 = true;
-						}
-						if (player.inventory[j].type == 495)
-						{
-							C21 = true;
-						}
-						if (player.inventory[j].type == 3541)
-						{
-							C22 = true;
-						}
-						if (player.inventory[j].type == 493)
-						{
-							C23 = true;
-						}
-						if (player.inventory[j].type == 1611)
-						{
-							C24 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("CaughtUnicorn"))
-						{
-							C25 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("ResearchNote2"))
-						{
-							C26 = true;
-						}
-						if (player.inventory[j].type == 2882)
-						{
-							C31 = true;
-						}
-						if (player.inventory[j].type == 1295)
-						{
-							C32 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
-						{
-							C33 = true;
-						}
-						if (player.inventory[j].type == 1858)
-						{
-							C34 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("ResearchNote3"))
-						{
-							C35 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
-						{
-							C41 = true;
-						}
-						if (player.inventory[j].type == 1363)
-						{
-							C42 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("HateVial"))
-						{
-							C43 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("RainbowFlask"))
-						{
-							C44 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("ResearchNote4"))
-						{
-							C45 = true;
-						}
-						if (player.inventory[j].type == 1156)
-						{
-							C51 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
-						{
-							C52 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("RainbowFlask"))
-						{
-							C53 = true;
-						}
-						if (player.inventory[j].type == 900)
-						{
-							C54 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("ResearchNote5"))
-						{
-							C55 = true;
-						}
-						if (player.inventory[j].type == 1327)
-						{
-							C61 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("HateVial"))
-						{
-							C62 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
-						{
-							C63 = true;
-						}
-						if (player.inventory[j].type == 1865)
-						{
-							C64 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("ResearchNote6"))
-						{
-							C65 = true;
-						}
-						if (player.inventory[j].type == 3384)
-						{
-							C71 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
-						{
-							C72 = true;
-						}
-						if (player.inventory[j].type == 3569)
-						{
-							C73 = true;
-						}
-						if (player.inventory[j].type == 3122)
-						{
-							C74 = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("ResearchNote7"))
-						{
-							C75 = true;
-						}
+						C11 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+					{
+						C12 = true;
+					}
+					if (player.inventory[j].type == 1326)
+					{
+						C13 = true;
+					}
+					if (player.inventory[j].type == 3366)
+					{
+						C14 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("ResearchNote1"))
+					{
+						C15 = true;
+					}
+					if (player.inventory[j].type == 495)
+					{
+						C21 = true;
+					}
+					if (player.inventory[j].type == 3541)
+					{
+						C22 = true;
+					}
+					if (player.inventory[j].type == 493)
+					{
+						C23 = true;
+					}
+					if (player.inventory[j].type == 1611)
+					{
+						C24 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("CaughtUnicorn"))
+					{
+						C25 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("ResearchNote2"))
+					{
+						C26 = true;
+					}
+					if (player.inventory[j].type == 2882)
+					{
+						C31 = true;
+					}
+					if (player.inventory[j].type == 1295)
+					{
+						C32 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+					{
+						C33 = true;
+					}
+					if (player.inventory[j].type == 1858)
+					{
+						C34 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("ResearchNote3"))
+					{
+						C35 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+					{
+						C41 = true;
+					}
+					if (player.inventory[j].type == 1363)
+					{
+						C42 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("HateVial"))
+					{
+						C43 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("RainbowFlask"))
+					{
+						C44 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("ResearchNote4"))
+					{
+						C45 = true;
+					}
+					if (player.inventory[j].type == 1156)
+					{
+						C51 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+					{
+						C52 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("RainbowFlask"))
+					{
+						C53 = true;
+					}
+					if (player.inventory[j].type == 900)
+					{
+						C54 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("ResearchNote5"))
+					{
+						C55 = true;
+					}
+					if (player.inventory[j].type == 1327)
+					{
+						C61 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("HateVial"))
+					{
+						C62 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+					{
+						C63 = true;
+					}
+					if (player.inventory[j].type == 1865)
+					{
+						C64 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("ResearchNote6"))
+					{
+						C65 = true;
+					}
+					if (player.inventory[j].type == 3384)
+					{
+						C71 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("AlchemicalBundle"))
+					{
+						C72 = true;
+					}
+					if (player.inventory[j].type == 3569)
+					{
+						C73 = true;
+					}
+					if (player.inventory[j].type == 3122)
+					{
+						C74 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("ResearchNote7"))
+					{
+						C75 = true;
 					}
 				}
 			}
@@ -844,36 +841,33 @@ namespace AlchemistNPC.NPCs
         nextSlot++;
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote7"));
         nextSlot++;
-		for (int k = 0; k < 255; k++)
+		Player player = Main.player[Main.myPlayer];
+		if (player.active)
+		{
+			for (int j = 0; j < player.inventory.Length; j++)
+			{
+				if (player.inventory[j].type == mod.ItemType("QuantumDestabilizer"))
 				{
-					Player player = Main.player[k];
-					if (player.active)
-					{
-						for (int j = 0; j < player.inventory.Length; j++)
-						{
-							if (player.inventory[j].type == mod.ItemType("QuantumDestabilizer"))
-							{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EnergyCell"));
-							nextSlot++;
-							}
-							if (player.inventory[j].type == mod.ItemType("Tritantrum"))
-							{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("PlasmaRound"));
-							nextSlot++;
-							}
-							if (player.inventory[j].type == mod.ItemType("ChaingunMeatGrinder"))
-							{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MGB"));
-							nextSlot++;
-							}
-							if (player.inventory[j].type == mod.ItemType("PortalGun"))
-							{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EnergyCapsule"));
-							nextSlot++;
-							}
-						}
-					}
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EnergyCell"));
+				nextSlot++;
 				}
+				if (player.inventory[j].type == mod.ItemType("Tritantrum"))
+				{
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("PlasmaRound"));
+				nextSlot++;
+				}
+				if (player.inventory[j].type == mod.ItemType("ChaingunMeatGrinder"))
+				{
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MGB"));
+				nextSlot++;
+				}
+				if (player.inventory[j].type == mod.ItemType("PortalGun"))
+				{
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EnergyCapsule"));
+				nextSlot++;
+				}
+			}
+		}
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RealityPiercer"));
         nextSlot++;
 		}

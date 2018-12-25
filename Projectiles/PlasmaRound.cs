@@ -26,13 +26,12 @@ namespace AlchemistNPC.Projectiles
 		{
 			projectile.penetrate--;
 			projectile.Kill();
+			Main.PlaySound(SoundID.DD2_ExplosiveTrapExplode, projectile.position);
 			for (int h = 0; h < 1; h++)
 				{
 					Vector2 vel = new Vector2(0, -1);
-					float rand = Main.rand.NextFloat() * 6.283f;
-					vel = vel.RotatedBy(rand);
 					vel *= 0f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionPlasma"), projectile.damage, 0, Main.myPlayer);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("PlasmaBurst"), projectile.damage/2, 0, Main.myPlayer);
 				}
 			return true;
 		}
@@ -40,21 +39,14 @@ namespace AlchemistNPC.Projectiles
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			projectile.Kill();
+			Main.PlaySound(SoundID.DD2_ExplosiveTrapExplode, projectile.position);
 			for (int g = 0; g < 1; g++)
 				{
 					Vector2 vel = new Vector2(0, -1);
-					float rand = Main.rand.NextFloat() * 6.283f;
-					vel = vel.RotatedBy(rand);
 					vel *= 0f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionPlasma"), projectile.damage, 0, Main.myPlayer);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("PlasmaBurst"), projectile.damage/2, 0, Main.myPlayer);
 			
 			}
-		}
-		
-		public override bool PreKill(int timeLeft)
-		{
-			projectile.type = ProjectileID.Bullet;
-			return true;
 		}
 	}
 }
