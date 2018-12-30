@@ -411,6 +411,10 @@ namespace AlchemistNPC.Items
 				float SpeedY = f2 * num5;
 				Projectile.NewProjectile(vector2.X, vector2.Y, SpeedX, SpeedY, mod.ProjectileType("RedWave"), 1111, 1f, player.whoAmI);
 			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).KeepBuffs == 1 && (item.buffTime > 0))
+			{
+				player.AddBuff(item.buffType, item.buffTime*2, true);
+			}
 			return base.UseItem(item, player);
 		}
 		

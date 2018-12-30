@@ -93,6 +93,7 @@ namespace AlchemistNPC.Projectiles
 			}
 			projectile.rotation += 0.3f * projectile.direction;
 		}
+		
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
 			projectile.penetrate--;

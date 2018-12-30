@@ -66,7 +66,11 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			Projectile.NewProjectile(position.X, position.Y+10, speedX, speedY, type, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("XtraTBeam"), damage*3, knockBack, player.whoAmI);
+			Main.PlaySound(SoundID.Item12.WithVolume(.5f), position);
+			int proj = Projectile.NewProjectile(position.X, position.Y, speedX*1.5f, speedY*1.5f, 435, damage*2, knockBack, player.whoAmI);
+			Main.projectile[proj].hostile = false;
+			Main.projectile[proj].friendly = true;
+			Main.projectile[proj].ranged = true;
 			Projectile.NewProjectile(position.X, position.Y-10, speedX, speedY, type, damage, knockBack, player.whoAmI);
 			return false;
 		}

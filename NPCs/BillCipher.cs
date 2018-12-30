@@ -490,7 +490,7 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 		
-		public virtual void ModifyHitByItem(Player player, Item item, ref int damage, ref float knockback, ref bool crit) 
+		public override void ModifyHitByItem(Player player, Item item, ref int damage, ref float knockback, ref bool crit) 
 		{
 			if (npc.life > npc.lifeMax/10)
 			{
@@ -532,10 +532,16 @@ namespace AlchemistNPC.NPCs
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GrapplingHookGunItem"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PlatinumCoin, 50);
 			}
-			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BillIsDowned < 1)
+			for (int k = 0; k < 255; k++)
 			{
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BillIsDowned++;
+				Player player = Main.player[k];
+				if (player.active)
+				{
+					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BillIsDowned < 1)
+					{
+						((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BillIsDowned++;
+					}
+				}
 			}
 		}
 		

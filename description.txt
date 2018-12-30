@@ -10,14 +10,19 @@ Config file is Alchemistv8.json.
 v8.2
 -Lowered prices for potions (2x multiplier by default and just +2x with Revengeance).
 -Added way for getting Alchemist Charm from Alchemist.
+-Now consumed Autoinjector doubles activated buffs durations. 
+-Now Bill Cipher gives permanent "Demon Slayer" buff to all players in MP.
 -Reworked Laoskadyn's projectile for a bit.
 -Reworked Tritantrum's projectile.
+-Reworked XtraT electric beam and Electrocute effect.
 -Some of the modded music boxes are now available in Hardmode.
+-New sprites for both Pip-Boy's.
 -Fixed Last Tantrum exploit in Bill Cipher boss battle.
 -Fixed Target Dummy were moving while being inflicted with Electrocute debuff.
 -Fixed special crafts of NPCs (Jeweler, Alchemist, Explorer).
 -Fixed some crashes with reforging tokens.
 -Fixed Pip-Boy's crash in Cheat Sheet item browser.
+-Fixed some MP issues with variables.
 v8.1 Hotfix
 -Fixed some MP issues.
 v8.0

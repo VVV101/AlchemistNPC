@@ -57,7 +57,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			if (target.type == mod.NPCType("BillCipher"))
 			{
-			damage /= 400;
+			damage /= 250;
 			}
 		}
 		

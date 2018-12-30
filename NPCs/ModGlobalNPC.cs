@@ -577,14 +577,14 @@ namespace AlchemistNPC.NPCs
 			{
 				if (Main.rand.Next(4) < 2)
 				{
-					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, mod.DustType("Electrocute"), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 3.5f);
-					Main.dust[dust].noGravity = true;
-					Main.dust[dust].velocity *= 1.8f;
-					Main.dust[dust].velocity.Y -= 0.5f;
-					if (Main.rand.Next(4) == 0)
+					int num2 = Main.rand.Next(5, 10);
+					for (int index1 = 0; index1 < num2; ++index1)
 					{
-						Main.dust[dust].noGravity = true;
-						Main.dust[dust].scale *= 0.6f;
+						int index2 = Dust.NewDust(npc.Center, 0, 0, 226, 0.0f, 0.0f, 100, new Color(), 0.5f);
+						Main.dust[index2].velocity *= 1.6f;
+						--Main.dust[index2].velocity.Y;
+						Main.dust[index2].position = Vector2.Lerp(Main.dust[index2].position, npc.Center, 0.5f);
+						Main.dust[index2].noGravity = true;
 					}
 				}
 			}
@@ -658,55 +658,55 @@ namespace AlchemistNPC.NPCs
 			}
 			if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade"))
 			{
-				if (!Main.hardMode && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP < 2600)
+				if (!Main.hardMode && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP < 2600)
 				{
 					if (!npc.boss && npc.type != 1 && npc.type != 535)
 					{
-					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP++;
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP++;
 					}
 					
 					if (npc.boss && npc.lifeMax <= 10000)
 					{
-					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 25;
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 25;
 					}
 					
 					if (npc.boss && npc.lifeMax > 10000)
 					{
-					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 50;
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 50;
 					}
 				}
-				if (Main.hardMode && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP < 8900)
+				if (Main.hardMode && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP < 8900)
 				{
 					if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(2))
 					{
-					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP++;
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP++;
 					}
 					
 					if (npc.boss && npc.lifeMax <= 10000)
 					{
-					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 15;
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 15;
 					}
 					
 					if (npc.boss && npc.lifeMax > 10000)
 					{
-					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 30;
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 30;
 					}
 				}
 				if (NPC.downedMoonlord)
 				{
 					if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(3))
 					{
-					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP++;
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP++;
 					}
 					
 					if (npc.boss && npc.lifeMax <= 10000)
 					{
-					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 10;
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 10;
 					}
 					
 					if (npc.boss && npc.lifeMax > 10000)
 					{
-					Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).BBP += 20;
+					((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 20;
 					}
 				}
 			}
@@ -745,7 +745,7 @@ namespace AlchemistNPC.NPCs
 			}
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
-				if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasBuff(mod.BuffType("CalamityComb")) && npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS")) && CalamityModRevengeance)
+				if (player.HasBuff(mod.BuffType("CalamityComb")) && npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS")) && CalamityModRevengeance)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModLoader.GetMod("CalamityMod").ItemType("Fabsol"));
 				}
@@ -754,15 +754,15 @@ namespace AlchemistNPC.NPCs
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HolyAvenger"), 1, false, 81);
 			}
-			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoulEssence"));
 			}
-			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).Extractor && npc.boss == true && npc.lifeMax >= 55000 && (Main.rand.Next(10) == 0))
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Extractor && npc.boss == true && npc.lifeMax >= 55000 && (Main.rand.Next(10) == 0))
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HateVial"));
 			}
-			if (npc.type == NPCID.MoonLordCore && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AlchemistNPCPlayer>(mod).PGSWear)
+			if (npc.type == NPCID.MoonLordCore && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).PGSWear)
 			{
 				if (Main.rand.Next(2) == 0)
 				{

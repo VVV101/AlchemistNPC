@@ -29,8 +29,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.damage = 666;
 			item.width = 28;
 			item.height = 28;
-			item.useTime = 4;
-			item.useAnimation = 4;
+			item.useTime = 6;
+			item.useAnimation = 6;
 			item.useStyle = 1;
 			item.value = 10000000;
 			item.rare = 11;
@@ -42,7 +42,7 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockback, ref bool crit)
 		{
-			damage *= 4;
+			damage *= 3;
 		}
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)

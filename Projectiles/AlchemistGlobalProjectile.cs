@@ -227,6 +227,11 @@ namespace AlchemistNPC.Projectiles
 			{
 				target.immune[projectile.owner] = 2;
 			}
+			if (projectile.type == 435 && !target.friendly)
+			{
+				target.immune[projectile.owner] = 1;
+				target.AddBuff(mod.BuffType("Electrocute"), 300);
+			}
 			if ((projectile.type == 340) && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Pandora == true)
 			{
 				target.immune[projectile.owner] = 1;
