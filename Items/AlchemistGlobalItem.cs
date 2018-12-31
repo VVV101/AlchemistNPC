@@ -205,7 +205,7 @@ namespace AlchemistNPC.Items
 					return 65;
 				}
 			}
-		return -1;
+		return base.ChoosePrefix(item, rand);
 		}
 		
 		public override bool NewPreReforge(Item item)

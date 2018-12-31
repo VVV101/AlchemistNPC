@@ -201,7 +201,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*(Config.PotsPriceMulti);
 					if (Config.RevPrices && CalamityModRevengeance)
 					{
-						shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*4;
+						shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
 					}
 					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Discount)
 					{
