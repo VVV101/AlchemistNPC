@@ -7,6 +7,10 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv8.json.
+v8.3
+-Fixed special drops in MP.
+-Fixed UK and Bill Cipher exploits with Marked for Death and Glacial State debuffs.
+-Fixed some more crashes with Perfection Tokens.
 v8.2
 -Lowered prices for potions (2x multiplier by default and just +2x with Revengeance).
 -Added way for getting Alchemist Charm from Alchemist.

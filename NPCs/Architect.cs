@@ -561,6 +561,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.RedBrick);
 				shop.item[nextSlot].shopCustomPrice = 2;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Wood);
+				shop.item[nextSlot].shopCustomPrice = 5;
+				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.Ebonwood);
 				shop.item[nextSlot].shopCustomPrice = 10;
 				nextSlot++;
@@ -606,6 +609,9 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].SetDefaults (ItemID.Glass);
 			shop.item[nextSlot].shopCustomPrice = 2;
 			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.MeteoriteBrick);
+			shop.item[nextSlot].shopCustomPrice = 4;
+			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.ObsidianBrick);
 			shop.item[nextSlot].shopCustomPrice = 5;
 			nextSlot++;
@@ -626,7 +632,7 @@ namespace AlchemistNPC.NPCs
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.FleshBlock);
 			shop.item[nextSlot].shopCustomPrice = 10;
-			nextSlot++;		
+			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.StoneSlab);
 			shop.item[nextSlot].shopCustomPrice = 2;
 			nextSlot++;
@@ -699,12 +705,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 25;
 				nextSlot++;
 			}
-}
+			}
 			if (Shop3)
 			{
-			shop.item[nextSlot].SetDefaults (ItemID.Wood);
-			shop.item[nextSlot].shopCustomPrice = 5;
-            nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.Candle);
 			shop.item[nextSlot].shopCustomPrice = 100;
             nextSlot++;

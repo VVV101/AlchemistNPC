@@ -131,16 +131,24 @@ namespace AlchemistNPC.Items
 			}
 			if (PerfectionToken == true)
 			{
-				if (item.melee)
-				{
-					return 81;
-				}
 				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 				{
 					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("P90"))
 					{
 						return 57;
 					}
+					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("ColdheartIcicle"))
+					{
+						return 15;
+					}
+					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("HalibutCannon"))
+					{
+						return 17;
+					}
+				}
+				if (item.melee)
+				{
+					return 81;
 				}
 				if (item.ranged && !item.consumable && item.useTime <= 3)
 				{
@@ -154,18 +162,15 @@ namespace AlchemistNPC.Items
 				{
 					return 82;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-				{
-					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("ShadecrystalTome"))
-					{
-						return 59;
-					}
-				}
 				if (item.magic && item.knockBack <= 0)
 				{
 					return 60;
 				}
 				if (item.magic && item.useTime <= 2)
+				{
+					return 59;
+				}
+				if (item.magic && item.mana <= 4)
 				{
 					return 59;
 				}
@@ -205,7 +210,7 @@ namespace AlchemistNPC.Items
 					return 65;
 				}
 			}
-		return base.ChoosePrefix(item, rand);
+		return -1;
 		}
 		
 		public override bool NewPreReforge(Item item)

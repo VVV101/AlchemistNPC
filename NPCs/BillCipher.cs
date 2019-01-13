@@ -200,7 +200,9 @@ namespace AlchemistNPC.NPCs
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("SilvaStun")] = true;
+				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("GlacialState")] = true;
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("ExoFreeze")] = true;
+				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("MarkedforDeath")] = true;
 			}
 			int damage1 = 200;
 			int damage2 = 150;
@@ -216,7 +218,7 @@ namespace AlchemistNPC.NPCs
 				if (introduction > 300)
 				{
 					npc.dontTakeDamage = false;
-					if (counter2 >= 10)
+					if (counter2 >= 15)
 					{
 						counter2 = 0;
 						Vector2 delta = player.Center - npc.Center;
@@ -232,7 +234,7 @@ namespace AlchemistNPC.NPCs
 						delta *= 4f;
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 500, 0, Main.myPlayer);
 					}
-					if (counter >= 20)
+					if (counter >= 30)
 					{
 						counter = 0;
 						Vector2 delta = player.Center - npc.Center;
@@ -286,7 +288,7 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
-				if (counter >= 15)
+				if (counter >= 30)
 				{
 					counter = 0;
 					Vector2 delta = player.Center - npc.Center;
