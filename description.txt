@@ -8,6 +8,11 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv8.json.
 v8.3
+-Reworked how exactly Shops Changer works.
+Now it opens shop immidietly after pressing certain shop button (~optimisation of time).
+-Added support for Census - Town NPC Checklist mod.
+-Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.
+-Fixed 2nd Music boxes shop of Musician (returned all Calamity music boxes back).
 -Fixed special drops in MP.
 -Fixed UK and Bill Cipher exploits with Marked for Death and Glacial State debuffs.
 -Fixed some more crashes with Perfection Tokens.

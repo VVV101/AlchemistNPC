@@ -112,6 +112,23 @@ namespace AlchemistNPC
 			}
 		}
 
+		public override void PostSetupContent()
+		{
+			Mod censusMod = ModLoader.GetMod("Census");
+			if(censusMod != null)
+			{
+				censusMod.Call("TownNPCCondition", NPCType("Alchemist"), "Defeat Eye of Cthulhu");
+				censusMod.Call("TownNPCCondition", NPCType("Brewer"), "Defeat Eye of Cthulhu");
+				censusMod.Call("TownNPCCondition", NPCType("Jeweler"), "Defeat Eye of Cthulhu");
+				censusMod.Call("TownNPCCondition", NPCType("Jeweler"), "Defeat Eater of Worlds/Brain of Cthulhu and have at least 5 NPCs alive");
+				censusMod.Call("TownNPCCondition", NPCType("Operator"), "Defeat Eater of Worlds/Brain of Cthulhu and place [c/00FF00:Wing of the World] (craftable furniture) inside free housing");
+				censusMod.Call("TownNPCCondition", NPCType("Musician"), "Defeat Skeletron");
+				censusMod.Call("TownNPCCondition", NPCType("Young Brewer"), "World state is Hardmode and both Alchemist and Operator are alive");
+				censusMod.Call("TownNPCCondition", NPCType("OtherworldlyPortal"), "Not exactly a Town NPC, one of the steps for saving the Explorer");
+				censusMod.Call("TownNPCCondition", NPCType("Explorer"), "Defeat Moon Lord and find the way to use all 9 Torn Notes for saving her");
+			}
+		}
+		
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
 		{
 			InterfaceHelper.ModifyInterfaceLayers(layers);

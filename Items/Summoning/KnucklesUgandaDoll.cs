@@ -30,6 +30,7 @@ namespace AlchemistNPC.Items.Summoning
             item.maxStack = 99;
             item.consumable = false;
 			item.scale = 0.5f;
+			item.UseSound = SoundID.Item37;
             return;
         }
 		

@@ -126,6 +126,12 @@ namespace AlchemistNPC.Interface
 			Operator.Shop3 = false;
 			Operator.Shop4 = false;
 			Operator.Shop5 = false;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUIO.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 		
 		private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
@@ -135,7 +141,12 @@ namespace AlchemistNPC.Interface
 			Operator.Shop3 = false;
 			Operator.Shop4 = false;
 			Operator.Shop5 = false;
-			
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUIO.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 		
 		private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
@@ -145,6 +156,12 @@ namespace AlchemistNPC.Interface
 			Operator.Shop3 = true;
 			Operator.Shop4 = false;
 			Operator.Shop5 = false;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUIO.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 		
 		private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
@@ -154,6 +171,12 @@ namespace AlchemistNPC.Interface
 			Operator.Shop3 = false;
 			Operator.Shop4 = true;
 			Operator.Shop5 = false;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUIO.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 		
 		private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
@@ -163,6 +186,12 @@ namespace AlchemistNPC.Interface
 			Operator.Shop3 = false;
 			Operator.Shop4 = false;
 			Operator.Shop5 = true;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUIO.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 
 		private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
