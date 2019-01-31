@@ -20,8 +20,8 @@ namespace AlchemistNPC.Items.Armor
 			+ "\n[c/FF0000:EGO armor piece]"
 			+ "\nIncreases summon damage by 5%"
 			+ "\nDefense grows stronger when certain bosses are killed"
-			+ "\nArmor's current defense will be shown in inventory");
-            Tooltip.AddTranslation(GameCulture.Russian, "Ленточка на плаще отражает мольбу дитя о счастье. Дитя, что не могло покинуть своих друзей.\n[c/FF0000:Часть брони Э.П.О.С.]\nУвеличивает урон прислужников на 5%\nЗащита увеличивается после убийства определенных боссов\nТекущая защита будет показана в инвентаре");
+			+ "\nArmor's base defense is 3");
+            Tooltip.AddTranslation(GameCulture.Russian, "Ленточка на плаще отражает мольбу дитя о счастье. Дитя, что не могло покинуть своих друзей.\n[c/FF0000:Часть брони Э.П.О.С.]\nУвеличивает урон прислужников на 5%\nЗащита увеличивается после убийства определенных боссов\nБазовая защита равна 3");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "蕾蒂希娅缎带 (O-01-67)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'外套上精美的丝带和蝴蝶结寄托着少女对幸福的向往, 一个孩子不能离开朋友.'\n[c/FF0000:EGO 盔甲]\n增加5%召唤物伤害\n击败一些Boss之后增加防御力\n盔甲的当前防御力会显示在盔甲上");
@@ -117,10 +117,11 @@ namespace AlchemistNPC.Items.Armor
 			}
 		}
 		
-		public override void UpdateInventory(Player player)
+		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-		item.defense = ad;
-		ad = 3;
+			Player player = Main.player[Main.myPlayer];
+			item.defense = ad;
+			ad = 3;
 			if (NPC.downedQueenBee)
 			{
 				ad = 4;
@@ -161,6 +162,11 @@ namespace AlchemistNPC.Items.Armor
 			{
 				ad = 22;
 			}
+			string text1 = ad + " defense";
+			TooltipLine line = new TooltipLine(mod, "text1", text1);
+			line.overrideColor = Color.White;
+			tooltips.RemoveAt(2);
+			tooltips.Insert(2,line);
 		}
 		
 		public override void AddRecipes()

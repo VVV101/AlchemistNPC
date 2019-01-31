@@ -488,10 +488,10 @@ namespace AlchemistNPC.NPCs
 		{
 			if (corrosion)
 			{
-				npc.lifeRegen -= 1000;
-				if (damage < 99)
+				npc.lifeRegen -= 500;
+				if (damage < 49)
 				{
-					damage = 100;
+					damage = 50;
 				}
 			}
 			if (justitiapale)
@@ -504,10 +504,10 @@ namespace AlchemistNPC.NPCs
 			}
 			if (electrocute)
 			{
-				npc.lifeRegen -= 1500;
-				if (damage < 149)
+				npc.lifeRegen -= 1000;
+				if (damage < 99)
 				{
-					damage = 150;
+					damage = 100;
 				}
 			}
 			if (twilight)
@@ -760,9 +760,25 @@ namespace AlchemistNPC.NPCs
 							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModLoader.GetMod("CalamityMod").ItemType("Fabsol"));
 						}
 					}
-					if (Main.rand.Next(20000) == 0)
+					if (Main.rand.Next(25000) == 0)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HolyAvenger"), 1, false, 81);
+					}
+					if (Main.rand.Next(25000) == 0)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Penetrator"), 1, false, 82);
+					}
+					if (Main.rand.Next(25000) == 0)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Hive"), 1, false, 83);
+					}
+					if (Main.rand.Next(25000) == 0)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FlaskoftheAlchemist"), 1, false, 82);
+					}
+					if (Main.rand.Next(25000) == 0)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CounterMatter"), 1, false);
 					}
 					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
 					{

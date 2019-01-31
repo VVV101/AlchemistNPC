@@ -133,6 +133,10 @@ namespace AlchemistNPC.Items
 			{
 				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 				{
+					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("CosmicImmaterializer"))
+					{
+						return -1;
+					}
 					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("P90"))
 					{
 						return 57;

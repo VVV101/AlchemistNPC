@@ -10,9 +10,21 @@ Config file is Alchemistv8.json.
 v8.3
 -Reworked how exactly Shops Changer works.
 Now it opens shop immidietly after pressing certain shop button (~optimisation of time).
+-Added Penetrator, Legendary ranged weapon. Slow rifle with varied critical strike damage. Consumes 2 hp per shot.
+Increases stats through game progression.  Drop chance is 1:25000 from any mob.
+-Added Hive, Legendary magic weapon. Shoots beehive to enemies, which is releasing bees in airtime and collide.
+Increases stats through game progression.  Drop chance is 1:25000 from any mob.
+-Added Flask of the Alchemist, Legendary thrown weapon. Throws flask of the random type.
+Increases stats through game progression.  Drop chance is 1:25000 from any mob.
+-Added Counter Matter, Legendary summon support weapon. Neglects nearby enemy projectiles depending on CD. Makes you do 1 guaranteed crit after blocking the projectile.
+Increases stats through game progression. Drop chance is 1:25000 from any mob.
+-All Legendaries drop chance is now 1:25000.
+-Laetitia's armor now always showing its defense correctly.
 -Added support for Census - Town NPC Checklist mod.
 -Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.
 -Fixed 2nd Music boxes shop of Musician (returned all Calamity music boxes back).
+-Fixed some bugs with red Bees and Wasps.
+-Fixed potions being consumed from Piggy Bank no matter if potions saving effect was working.
 -Fixed special drops in MP.
 -Fixed UK and Bill Cipher exploits with Marked for Death and Glacial State debuffs.
 -Fixed some more crashes with Perfection Tokens.

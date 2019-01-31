@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using System.Linq;
 
 namespace AlchemistNPC.Projectiles
 {
@@ -22,6 +23,86 @@ namespace AlchemistNPC.Projectiles
 		projectile.magic = true; 
 		projectile.timeLeft = 240;
 		aiType = ProjectileID.Bee;
+		}
+		
+		public override void AI()
+		{
+			Player player = Main.player[projectile.owner];
+			for (int index1 = 0; index1 < 8 + player.extraAccessorySlots; ++index1)
+			{
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (player.armor[index1].type == ModLoader.GetMod("CalamityMod").ItemType("PlagueHive"))
+					{
+						projectile.scale = 1.5f;
+					}	
+					else if (player.armor[index1].type == 3333)
+					{
+						projectile.scale = 1.5f;
+					}
+					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
+					{
+						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
+						{
+							projectile.scale = 1.5f;
+						}
+					}
+				}
+				if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (player.armor[index1].type == 3333)
+					{
+						projectile.scale = 1.5f;
+					}
+					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
+					{
+						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
+						{
+							projectile.scale = 1.5f;
+						}
+					}
+				}	
+			}
+		}
+		
+		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			Player player = Main.player[projectile.owner];
+			for (int index1 = 0; index1 < 8 + player.extraAccessorySlots; ++index1)
+			{
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (player.armor[index1].type == ModLoader.GetMod("CalamityMod").ItemType("PlagueHive"))
+					{
+						damage += damage/2;
+					}
+					else if (player.armor[index1].type == 3333)
+					{
+						damage += damage/2;
+					}
+					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
+					{
+						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
+						{
+							damage += damage/2;
+						}
+					}
+				}
+				if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (player.armor[index1].type == 3333)
+					{
+						damage += damage/2;
+					}
+					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
+					{
+						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
+						{
+							damage += damage/2;
+						}
+					}
+				}	
+			}
 		}
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)

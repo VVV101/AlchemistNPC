@@ -41,9 +41,9 @@ namespace AlchemistNPC.Projectiles
 					{
 						projectile.scale = 1.5f;
 					}
-					else if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
 					{
-						if (player.armor[index1].type == ModLoader.GetMod("Fargowiltas").ItemType("BeeEnchant"))
+						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
 						{
 							projectile.scale = 1.5f;
 						}
@@ -55,9 +55,9 @@ namespace AlchemistNPC.Projectiles
 					{
 						projectile.scale = 1.5f;
 					}
-					else if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
 					{
-						if (player.armor[index1].type == ModLoader.GetMod("Fargowiltas").ItemType("BeeEnchant"))
+						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
 						{
 							projectile.scale = 1.5f;
 						}
@@ -81,11 +81,11 @@ namespace AlchemistNPC.Projectiles
 					{
 						damage += damage/2;
 					}
-					else if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
 					{
-						if (player.armor[index1].type == ModLoader.GetMod("Fargowiltas").ItemType("BeeEnchant"))
+						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
 						{
-							projectile.scale = 1.5f;
+							damage += damage/2;
 						}
 					}
 				}
@@ -95,9 +95,9 @@ namespace AlchemistNPC.Projectiles
 					{
 						damage += damage/2;
 					}
-					else if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
 					{
-						if (player.armor[index1].type == ModLoader.GetMod("Fargowiltas").ItemType("BeeEnchant"))
+						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
 						{
 							damage += damage/2;
 						}

@@ -89,6 +89,7 @@ namespace AlchemistNPC
 		public bool MemersRiposte = false;
 		public bool ModPlayer = true;
 		public bool lf = false;
+		public bool GC = false;
 		public int lamp = 0;
 		public bool ParadiseLost = false;
 		public bool Rampage = false;
@@ -118,6 +119,11 @@ namespace AlchemistNPC
 		public int WellFed = 0;
 		private const int maxBillIsDowned = 1;
 		public int BillIsDowned = 0;
+		
+		public bool CalamityModDownedSCal
+		{
+		get { return CalamityMod.CalamityWorld.downedSCal; }
+		}
 		
 		public override void ResetEffects()
 		{
@@ -577,7 +583,56 @@ namespace AlchemistNPC
 						player.AddBuff(type2, time1, true);
 						if (player.bank.item[index1].consumable)
 						{
-						  --player.bank.item[index1].stack;
+							if (AlchemistCharmTier4 == true)
+							{
+								if (CalamityModDownedSCal)
+								{
+								}
+								else if (Main.rand.NextFloat() >= .25f)
+								{
+								}
+								else
+								{
+									--player.bank.item[index1].stack;
+								}
+							}
+							
+							else if (AlchemistCharmTier3 == true)
+							{
+								if (Main.rand.Next(2) == 0)
+								{
+								}
+								else
+								{
+									--player.bank.item[index1].stack;
+								}
+							}
+							
+							else if (AlchemistCharmTier2 == true)
+							{
+								if (Main.rand.Next(4) == 0)
+								{
+								}
+								else
+								{
+									--player.bank.item[index1].stack;
+								}
+							}
+							
+							else if (AlchemistCharmTier1 == true)
+							{
+								if (Main.rand.Next(10) == 0)
+								{
+								}
+								else
+								{
+									--player.bank.item[index1].stack;
+								}
+							}
+							else
+							{
+								--player.bank.item[index1].stack;
+							}
 						  if (player.bank.item[index1].stack <= 0)
 							player.bank.item[index1].TurnToAir();
 						}
@@ -639,6 +694,11 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
         {
+			if (player.HasBuff(mod.BuffType("GuarantCrit")) && crit)
+			{
+				damage *= 2;
+				GC = false;
+			}
 			if (player.HasBuff(mod.BuffType("ExecutionersEyes")) && crit && Main.rand.Next(20) == 0)
             {
                 damage *= 2;
@@ -651,6 +711,26 @@ namespace AlchemistNPC
 		
         public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
+			if (player.HeldItem.type == mod.ItemType("Penetrator") && crit)
+			{
+				switch (Main.rand.Next(3))
+				{
+					case 0:
+					damage += damage*2;
+					break;
+					case 1:
+					damage += damage*3;	
+					break;
+					case 2:
+					damage += damage*4;	
+					break;
+				}
+			}
+			if (player.HasBuff(mod.BuffType("GuarantCrit")) && crit)
+			{
+				damage *= 2;
+				GC = false;
+			}
 			if (player.HasBuff(mod.BuffType("ExecutionersEyes")) && crit && Main.rand.Next(20) == 0)
             {
                 damage *= 2;
