@@ -292,9 +292,12 @@ namespace AlchemistNPC.Items
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier4 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
 			{
-				if (CalamityModDownedSCal)
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 				{
-				return false;
+					if (CalamityModDownedSCal)
+					{
+					return false;
+					}
 				}
 				else if (Main.rand.NextFloat() >= .25f)
 				{
