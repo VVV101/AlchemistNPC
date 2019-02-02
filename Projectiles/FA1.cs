@@ -65,7 +65,7 @@ namespace AlchemistNPC.Projectiles
 			}
 			if (NPC.downedMoonlord)
 			{
-			target.AddBuff(mod.BuffType("Corrorion"), 180);
+			target.AddBuff(mod.BuffType("Corrosion"), 180);
 			}
 		}
 	}
