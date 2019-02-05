@@ -23,7 +23,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void AI()
 		{
-			if (Main.rand.Next(15) == 0)
+			if (Main.rand.Next(10) == 0)
 			{
 				for (int h = 0; h < 1; h++)
 				{
@@ -31,7 +31,7 @@ namespace AlchemistNPC.Projectiles
 					float rand = Main.rand.NextFloat() * 6.283f;
 					vel = vel.RotatedBy(rand);
 					vel *= 5f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/2, 0, Main.myPlayer);
+					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage, 0, Main.myPlayer);
 				}
 			}
 		}
@@ -75,13 +75,20 @@ namespace AlchemistNPC.Projectiles
 					}
 				}
 			}
-			for (int h = 0; h < 10; h++)
+			for (int h = 0; h < 12; h++)
 			{
 				Vector2 vel = new Vector2(0, -1);
 				float rand = Main.rand.NextFloat() * 6.283f;
 				vel = vel.RotatedBy(rand);
 				vel *= 5f;
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/3, 0, Main.myPlayer);
+				if (!Main.hardMode)
+					{
+						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/3, 0, Main.myPlayer);
+					}
+					if (Main.hardMode)
+					{
+						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/2, 0, Main.myPlayer);
+					}
 			}
 			return true;
 		}
@@ -125,13 +132,20 @@ namespace AlchemistNPC.Projectiles
 					}
 				}
 			}
-			for (int h = 0; h < 10; h++)
+			for (int h = 0; h < 12; h++)
 				{
 					Vector2 vel = new Vector2(0, -1);
 					float rand = Main.rand.NextFloat() * 6.283f;
 					vel = vel.RotatedBy(rand);
 					vel *= 5f;
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/3, 0, Main.myPlayer);
+					if (!Main.hardMode)
+					{
+						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/3, 0, Main.myPlayer);
+					}
+					if (Main.hardMode)
+					{
+						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/2, 0, Main.myPlayer);
+					}
 				}
 		}
 	}

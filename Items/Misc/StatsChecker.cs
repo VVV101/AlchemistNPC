@@ -38,8 +38,9 @@ namespace AlchemistNPC.Items.Misc
 			string text7 = "Movement speed boost is " + (int)((player.moveSpeed*100)-100) + "%";
 			string text8 = "Max life boost is " + (player.statLifeMax2 - player.statLifeMax);
 			string text9 = "Life regeneration is " + (player.lifeRegen);
-			string text10 = "Max amounts of minions/sentries are " + player.maxMinions + " / " + player.maxTurrets;
-			string text11 = "Melee swing time is " + (int)(player.meleeSpeed*100) + "%";
+			string text10 = "Mana usage reduction is " + (int)((player.manaCost*100)-100) + "%";
+			string text11 = "Max amounts of minions/sentries are " + player.maxMinions + " / " + player.maxTurrets;
+			string text12 = "Melee swing time is " + (int)(player.meleeSpeed*100) + "%";
 			TooltipLine line = new TooltipLine(mod, "text1", text1);
 			TooltipLine line2 = new TooltipLine(mod, "text2", text2);
 			TooltipLine line3 = new TooltipLine(mod, "text3", text3);
@@ -51,6 +52,7 @@ namespace AlchemistNPC.Items.Misc
 			TooltipLine line9 = new TooltipLine(mod, "text9", text9);
 			TooltipLine line10 = new TooltipLine(mod, "text10", text10);
 			TooltipLine line11 = new TooltipLine(mod, "text11", text11);
+			TooltipLine line12 = new TooltipLine(mod, "text12", text12);
 			line.overrideColor = Color.Red;
 			line2.overrideColor = Color.LimeGreen;
 			line3.overrideColor = Color.SkyBlue;
@@ -60,8 +62,9 @@ namespace AlchemistNPC.Items.Misc
 			line7.overrideColor = Color.Green;
 			line8.overrideColor = Color.Yellow;
 			line9.overrideColor = Color.Brown;
-			line10.overrideColor = Color.Magenta;
-			line11.overrideColor = Color.Red;
+			line10.overrideColor = Color.SkyBlue;
+			line11.overrideColor = Color.Magenta;
+			line12.overrideColor = Color.Red;
 			tooltips.Insert(2,line);
 			tooltips.Insert(3,line2);
 			tooltips.Insert(4,line3);
@@ -73,6 +76,7 @@ namespace AlchemistNPC.Items.Misc
 			tooltips.Insert(10,line9);
 			tooltips.Insert(11,line10);
 			tooltips.Insert(12,line11);
+			tooltips.Insert(13,line12);
 		}
 	}
 }

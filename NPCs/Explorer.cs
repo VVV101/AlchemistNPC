@@ -222,6 +222,10 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("I once met a man that traveled on top an alicorn. He looked truly FABulous!");
             text.AddTranslation(GameCulture.Russian, "Я однажды встретила человека, путешествующего верхом на единороге. Он выглядел просто потрясающе!");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryE14");
+            text.SetDefault("Can you bring me the Unicorn for examination? I am sure that your bug net is strong enough for that.");
+            text.AddTranslation(GameCulture.Russian, "Можешь достать мне Единорога для исследований? Я уверена, что твоя сетка для ловли достаточно крепка для этого.");
+            mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()

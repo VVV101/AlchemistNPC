@@ -550,7 +550,7 @@ namespace AlchemistNPC.NPCs
 		if (NPC.downedBoss2)
 		{
 		shop.item[nextSlot].SetDefaults (ItemID.HealingPotion);
-		shop.item[nextSlot].shopCustomPrice = 5000;
+		shop.item[nextSlot].shopCustomPrice = 2500;
 		nextSlot++;
 		}
 		if (Main.hardMode)
@@ -581,31 +581,25 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 		shop.item[nextSlot].SetDefaults (ItemID.LesserManaPotion);
-		shop.item[nextSlot].shopCustomPrice = 500;
 		nextSlot++;
 		if (NPC.downedBoss2)
 		{
 		shop.item[nextSlot].SetDefaults (ItemID.ManaPotion);
-		shop.item[nextSlot].shopCustomPrice = 1000;
 		nextSlot++;
 		}
 		if (Main.hardMode)
 		{
 		shop.item[nextSlot].SetDefaults (ItemID.GreaterManaPotion);
-		shop.item[nextSlot].shopCustomPrice = 5000;
 		nextSlot++;		
 		}
 		if (Main.hardMode && NPC.downedMechBoss1 && (NPC.downedMechBoss2 && NPC.downedMechBoss3))
 		{
 		shop.item[nextSlot].SetDefaults (ItemID.SuperManaPotion);
-		shop.item[nextSlot].shopCustomPrice = 10000;
 		nextSlot++;	
 		}
 		shop.item[nextSlot].SetDefaults (ItemID.RecallPotion);
-		shop.item[nextSlot].shopCustomPrice = 5000;
 		nextSlot++;
 		shop.item[nextSlot].SetDefaults (ItemID.WormholePotion);
-		shop.item[nextSlot].shopCustomPrice = 5000;
 		nextSlot++;
 		if (Main.hardMode)
 		{

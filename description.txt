@@ -19,7 +19,9 @@ Increases stats through game progression.  Drop chance is 1:25000 from any mob.
 -Added Counter Matter, Legendary summon support weapon. Neglects nearby enemy projectiles depending on CD. Makes you do 1 guaranteed crit after blocking the projectile.
 Increases stats through game progression. Drop chance is 1:25000 from any mob.
 -All Legendaries drop chance is now 1:25000.
+-Pip-Boy's now also showing mana usage reduction.
 -Laetitia's armor now always showing its defense correctly.
+-Lowered prices for Recall, Wormhole and all mana potions.
 -Added support for Census - Town NPC Checklist mod.
 -Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.
 -Fixed 2nd Music boxes shop of Musician (returned all Calamity music boxes back).
