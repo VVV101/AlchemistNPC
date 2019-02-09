@@ -43,6 +43,7 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public int fc = 0;
+		public bool PHD = false;
 		public bool DeltaRune = false;
 		public bool PB4K = false;
 		public bool PH = false;
@@ -133,6 +134,7 @@ namespace AlchemistNPC
 			}
 			Item.potionDelay = 3600;
 			DeltaRune = false;
+			PHD = false;
 			PH = false;
 			PB4K = false;
 			Discount = false;
@@ -231,11 +233,11 @@ namespace AlchemistNPC
 		{
 			if (player.HasBuff(mod.BuffType("Akumu")) || player.HasBuff(mod.BuffType("TrueAkumu")))
 			{
-			return false;
+				return false;
 			}
 			return true;
 		}
-	
+		
 		public override void clientClone(ModPlayer clientClone)
 		{
 			AlchemistNPCPlayer clone = clientClone as AlchemistNPCPlayer;
@@ -260,7 +262,7 @@ namespace AlchemistNPC
             string enterText = Language.GetTextValue("Mods.AlchemistNPC.enterText");
 			if (Config.StartMessage)
 			{
-            Main.NewText(enterText, 0, 255, 255);
+				Main.NewText(enterText, 0, 255, 255);
 			}
 		}
 	
@@ -389,38 +391,38 @@ namespace AlchemistNPC
 			{
 			if (Illuminati)
 				{
-				target.buffImmune[BuffID.Midas] = false;
-				target.AddBuff(BuffID.Midas, 600);
+					target.buffImmune[BuffID.Midas] = false;
+					target.AddBuff(BuffID.Midas, 600);
 				}
 			if (player.HasBuff(mod.BuffType("RainbowFlaskBuff")))
 				{
-				target.buffImmune[BuffID.BetsysCurse] = false;
-				target.buffImmune[BuffID.Ichor] = false;
-				target.buffImmune[BuffID.Daybreak] = false;
-				target.AddBuff(mod.BuffType("Corrosion"), 600);
-				target.AddBuff(BuffID.BetsysCurse, 600);
-				target.AddBuff(BuffID.Ichor, 600);
-				target.AddBuff(BuffID.Daybreak, 600);
+					target.buffImmune[BuffID.BetsysCurse] = false;
+					target.buffImmune[BuffID.Ichor] = false;
+					target.buffImmune[BuffID.Daybreak] = false;
+					target.AddBuff(mod.BuffType("Corrosion"), 600);
+					target.AddBuff(BuffID.BetsysCurse, 600);
+					target.AddBuff(BuffID.Ichor, 600);
+					target.AddBuff(BuffID.Daybreak, 600);
 				}
 			if (player.HasBuff(mod.BuffType("BigBirdLamp")))
 				{
-				target.buffImmune[BuffID.BetsysCurse] = false;
-				target.buffImmune[BuffID.Ichor] = false;
-				target.AddBuff(BuffID.Ichor, 600);
-				target.AddBuff(BuffID.BetsysCurse, 600);
+					target.buffImmune[BuffID.BetsysCurse] = false;
+					target.buffImmune[BuffID.Ichor] = false;
+					target.AddBuff(BuffID.Ichor, 600);
+					target.AddBuff(BuffID.BetsysCurse, 600);
 				}
 			if (Scroll)
 				{
 					if (target.type != mod.NPCType("Knuckles"))
 					{
-					target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
-					target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
-					target.defense = 0;
+						target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
+						target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
+						target.defense = 0;
 					}
 				}
 			if (player.HasBuff(mod.BuffType("ExplorersBrew")))
 				{
-				target.AddBuff(mod.BuffType("Electrocute"), 600);
+					target.AddBuff(mod.BuffType("Electrocute"), 600);
 				}
 			}
 		}
@@ -429,43 +431,43 @@ namespace AlchemistNPC
 		{
 			if (target.friendly == false)
 			{
-			if (Illuminati)
+				if (Illuminati)
 				{
-				target.buffImmune[BuffID.Midas] = false;
-				target.AddBuff(BuffID.Midas, 600);
+					target.buffImmune[BuffID.Midas] = false;
+					target.AddBuff(BuffID.Midas, 600);
 				}
-			if (player.HasBuff(mod.BuffType("RainbowFlaskBuff")))
+				if (player.HasBuff(mod.BuffType("RainbowFlaskBuff")))
 				{
-				target.buffImmune[BuffID.BetsysCurse] = false;
-				target.buffImmune[BuffID.Ichor] = false;
-				target.buffImmune[BuffID.Daybreak] = false;
-				target.AddBuff(mod.BuffType("Corrosion"), 600);
-				target.AddBuff(BuffID.BetsysCurse, 600);
-				target.AddBuff(BuffID.Ichor, 600);
-				target.AddBuff(BuffID.Daybreak, 600);
+					target.buffImmune[BuffID.BetsysCurse] = false;
+					target.buffImmune[BuffID.Ichor] = false;
+					target.buffImmune[BuffID.Daybreak] = false;
+					target.AddBuff(mod.BuffType("Corrosion"), 600);
+					target.AddBuff(BuffID.BetsysCurse, 600);
+					target.AddBuff(BuffID.Ichor, 600);
+					target.AddBuff(BuffID.Daybreak, 600);
 				}
-			if (player.HasBuff(mod.BuffType("BigBirdLamp")))
+				if (player.HasBuff(mod.BuffType("BigBirdLamp")))
 				{
-				target.buffImmune[BuffID.BetsysCurse] = false;
-				target.buffImmune[BuffID.Ichor] = false;
-				target.AddBuff(BuffID.Ichor, 600);
-				target.AddBuff(BuffID.BetsysCurse, 600);
+					target.buffImmune[BuffID.BetsysCurse] = false;
+					target.buffImmune[BuffID.Ichor] = false;
+					target.AddBuff(BuffID.Ichor, 600);
+					target.AddBuff(BuffID.BetsysCurse, 600);
 				}
-			if (proj.thrown && Scroll)
+				if (proj.thrown && Scroll)
 				{
-				if (target.type != mod.NPCType("Knuckles"))
+					if (target.type != mod.NPCType("Knuckles"))
 					{
-					target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
-					target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
+						target.buffImmune[mod.BuffType("ArmorDestruction")] = false;
+						target.AddBuff(mod.BuffType("ArmorDestruction"), 600);
 					}
 				}
-			if ((proj.type == ProjectileID.Electrosphere) && XtraT)
+				if ((proj.type == ProjectileID.Electrosphere) && XtraT)
 				{
-				target.AddBuff(mod.BuffType("Electrocute"), 600);
+					target.AddBuff(mod.BuffType("Electrocute"), 600);
 				}
-			if (player.HasBuff(mod.BuffType("ExplorersBrew")))
+				if (player.HasBuff(mod.BuffType("ExplorersBrew")))
 				{
-				target.AddBuff(mod.BuffType("Electrocute"), 600);
+					target.AddBuff(mod.BuffType("Electrocute"), 600);
 				}
 			}
 		}
@@ -490,6 +492,21 @@ namespace AlchemistNPC
 				return false;
 			}
 			return true;
+		}
+		
+		public override void OnRespawn(Player player)
+		{
+			if (NPC.AnyNPCs(NPCID.Nurse) && PHD)
+			{
+				int num1 = player.statLifeMax2 - player.statLife;
+				int num2 = (int)((double)num1 * 0.75);
+				if (num2 < 1)
+				{
+					num2 = 1;
+				}
+				HealingUI.visible = true;
+				Main.NewText("[c/00FF00:Nurse]: You need " + Math.Truncate((double)num2/100) + " silver coins and " + (num2-(Math.Truncate((double)num2/100)*100)) + " copper coins to pay the doctor's fee.", 0, 0, 0);
+			}
 		}
 		
 		public override void ProcessTriggers(TriggersSet triggersSet)

@@ -55,6 +55,8 @@ namespace AlchemistNPC
 		internal ShopChangeUIA alchemistUIA;
 		private UserInterface alchemistUserInterfaceO;
 		internal ShopChangeUIO alchemistUIO;
+		private UserInterface alchemistUserInterfaceH;
+		internal HealingUI alchemistUIH;
 		private UserInterface alchemistUserInterfaceP;
 		internal PipBoyTPMenu pipboyUI;
 		
@@ -104,6 +106,11 @@ namespace AlchemistNPC
 				alchemistUIO.Activate();
 				alchemistUserInterfaceO = new UserInterface();
 				alchemistUserInterfaceO.SetState(alchemistUIO);
+				
+				alchemistUIH = new HealingUI();
+				alchemistUIH.Activate();
+				alchemistUserInterfaceH = new UserInterface();
+				alchemistUserInterfaceH.SetState(alchemistUIH);
 				
 				pipboyUI = new PipBoyTPMenu();
 				pipboyUI.Activate();
@@ -174,6 +181,22 @@ namespace AlchemistNPC
 						if (ShopChangeUIO.visible)
 						{
 							alchemistUIO.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexH = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexH != -1)
+			{
+				layers.Insert(MouseTextIndexH, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Healing UI",
+					delegate
+					{
+						if (HealingUI.visible)
+						{
+							alchemistUIH.Draw(Main.spriteBatch);
 						}
 						return true;
 					},
@@ -1027,6 +1050,11 @@ namespace AlchemistNPC
 			if (alchemistUserInterfaceP != null && PipBoyTPMenu.visible)
 			{
 				alchemistUserInterfaceP.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceH != null && HealingUI.visible)
+			{
+				alchemistUserInterfaceH.Update(gameTime);
 			}
 		}
     }

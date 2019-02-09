@@ -752,6 +752,7 @@ namespace AlchemistNPC.NPCs
 					if (npc.type == NPCID.WallofFlesh)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LuckCharm"));
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PHD"));
 					}
 					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 					{

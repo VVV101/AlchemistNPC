@@ -18,6 +18,10 @@ Increases stats through game progression.  Drop chance is 1:25000 from any mob.
 Increases stats through game progression.  Drop chance is 1:25000 from any mob.
 -Added Counter Matter, Legendary summon support weapon. Neglects nearby enemy projectiles depending on CD. Makes you do 1 guaranteed crit after blocking the projectile.
 Increases stats through game progression. Drop chance is 1:25000 from any mob.
+-Added Nature Blessing Potion to Brewer's 2nd shop. Grants Dryad's Blessing Buff.
+Available anytime.
+-Added PHD Degree Diploma. Works while in inventory. Opens up healing interface after respawn. 
+Will not work if Nurse is dead. Drops from WoF.
 -All Legendaries drop chance is now 1:25000.
 -Pip-Boy's now also showing mana usage reduction.
 -Laetitia's armor now always showing its defense correctly.

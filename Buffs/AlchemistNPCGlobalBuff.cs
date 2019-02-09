@@ -10,6 +10,10 @@ namespace AlchemistNPC.Buffs
 	{
 		public override void Update(int type, Player player, ref int buffIndex)
 		{
+			if (type == 165)
+			{
+				Main.buffNoTimeDisplay[type] = false;
+			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BuffsKeep == true)
 			{
 				if (type != 71 && type != 73 && type != 74 && type != 75 && type != 76 && type != 77 && type != 78 && type != 79 && type != mod.BuffType("RainbowFlaskBuff"))

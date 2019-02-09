@@ -606,6 +606,9 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("Dopamine"));
 		shop.item[nextSlot].shopCustomPrice = 10000;
 		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("NatureBlessingPotion"));
+		shop.item[nextSlot].shopCustomPrice = 25000;
+		nextSlot++;
 		if (NPC.downedBoss3)
 			{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BewitchingPotion"));

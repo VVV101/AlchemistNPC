@@ -25,7 +25,7 @@ namespace AlchemistNPC.Items.Misc
 			item.width = 32;
 			item.height = 32;
 			item.value = 1000000;
-			item.rare = 8;
+			item.rare = 4;
 		}
 	}
 }
