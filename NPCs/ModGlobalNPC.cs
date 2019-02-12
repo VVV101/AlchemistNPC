@@ -207,9 +207,21 @@ namespace AlchemistNPC.NPCs
 							{
 								shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
 							}
-							if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Discount)
+							if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier4)
+							{
+								shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/2;
+							}
+							else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier3)
+							{
+								shop.item[nextSlot].shopCustomPrice -= (int)(shop.item[nextSlot].shopCustomPrice*0.35f);
+							}
+							else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier2)
 							{
 								shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/4;
+							}
+							else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier1)
+							{
+								shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/10;
 							}
 						}
 					}

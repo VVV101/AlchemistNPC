@@ -1,4 +1,4 @@
-This mod adds 8 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect, Musician and Explorer), who sell potions, materials and some other stuff. 
+﻿This mod adds 8 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect, Musician and Explorer), who sell potions, materials and some other stuff. 
 New combinations of potions are sold by the Young Brewer.
 The spawn condition for the Alchemist, the Jeweler & the Brewer is to kill the Eye of Ctulhu. 
 The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
@@ -22,6 +22,7 @@ Increases stats through game progression. Drop chance is 1:25000 from any mob.
 Available anytime.
 -Added PHD Degree Diploma. Works while in inventory. Opens up healing interface after respawn. 
 Will not work if Nurse is dead. Drops from WoF.
+-All Alchemist Charms are now provide different discounts. They are 10%, 25%, 35%, 50%.
 -All Legendaries drop chance is now 1:25000.
 -Pip-Boy's now also showing mana usage reduction.
 -Laetitia's armor now always showing its defense correctly.

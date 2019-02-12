@@ -47,7 +47,6 @@ namespace AlchemistNPC
 		public bool DeltaRune = false;
 		public bool PB4K = false;
 		public bool PH = false;
-		public bool Discount = false;
 		public bool DistantPotionsUse = false;
 		public bool Voodoo = false;
 		public bool CursedMirror = false;
@@ -137,7 +136,6 @@ namespace AlchemistNPC
 			PHD = false;
 			PH = false;
 			PB4K = false;
-			Discount = false;
 			DistantPotionsUse = false;
 			CursedMirror = false;
 			Voodoo = false;
