@@ -10,6 +10,7 @@ Config file is Alchemistv8.json.
 v8.3
 -Reworked how exactly Shops Changer works.
 Now it opens shop immidietly after pressing certain shop button (~optimisation of time).
+-Base PotsPriceMulti is now 1. Config file is Alchemistv83.json now.
 -Added Penetrator, Legendary ranged weapon. Slow rifle with varied critical strike damage. Consumes 2 hp per shot.
 Increases stats through game progression.  Drop chance is 1:25000 from any mob.
 -Added Hive, Legendary magic weapon. Shoots beehive to enemies, which is releasing bees in airtime and collide.
@@ -23,6 +24,8 @@ Available anytime.
 -Added PHD Degree Diploma. Works while in inventory. Opens up healing interface after respawn. 
 Will not work if Nurse is dead. Drops from WoF.
 -All Alchemist Charms are now provide different discounts. They are 10%, 25%, 35%, 50%.
+-Duke Fishron Treasure Bag is now available after beating Duke Fishron. 
+Same for Moon Lord Treasure Bag (available after beating Moon Lord).
 -All Legendaries drop chance is now 1:25000.
 -Pip-Boy's now also showing mana usage reduction.
 -Laetitia's armor now always showing its defense correctly.

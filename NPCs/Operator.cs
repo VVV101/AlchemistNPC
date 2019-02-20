@@ -1294,7 +1294,7 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 							}
 						}
-					if (NPC.downedAncientCultist && Main.expertMode)
+					if (NPC.downedGolemBoss && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.GolemBossBag);
 					shop.item[nextSlot].shopCustomPrice = new int?(5);
@@ -1308,22 +1308,19 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 					nextSlot++;
 					}
-					if (NPC.downedAncientCultist && Main.expertMode)
+					if (NPC.downedFishron && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
 					shop.item[nextSlot].shopCustomPrice = new int?(10);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-						{
-							if(CalamityModDownedGuardian)
-							{
-							shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
-							shop.item[nextSlot].shopCustomPrice = new int?(30);
-							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
-							nextSlot++;
-						}
+					if (NPC.downedMoonlord && Main.expertMode)
+					{
+						shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
+						shop.item[nextSlot].shopCustomPrice = new int?(30);
+						shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+						nextSlot++;
 					}
 				}
 				if (!Config.CoinsDrop)
@@ -1406,17 +1403,14 @@ namespace AlchemistNPC.NPCs
 					if (NPC.downedAncientCultist && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
-					shop.item[nextSlot].shopCustomPrice = 5000000;
+					shop.item[nextSlot].shopCustomPrice = 4000000;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-						{
-							if(CalamityModDownedGuardian)
-							{
-							shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
-							shop.item[nextSlot].shopCustomPrice = 6000000;
-							nextSlot++;
-						}
+					if (NPC.downedMoonlord && Main.expertMode)
+					{
+						shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
+						shop.item[nextSlot].shopCustomPrice = 6000000;
+						nextSlot++;
 					}
 				}
 			}

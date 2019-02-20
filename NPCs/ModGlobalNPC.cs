@@ -1218,6 +1218,97 @@ namespace AlchemistNPC.NPCs
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(6, 9));
 							}
 						}
+						if (ModLoader.GetLoadedMods().Contains("AAMod"))
+						{
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("MushroomMonarch")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(1, 2));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("GripOfChaosRed")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(2, 3));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("GripOfChaosBlue")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(2, 3));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Broodmother")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(6, 9));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Hydra")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(6, 9));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("SerpentHead")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier2"), Main.rand.Next(1, 2));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Djinn")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier2"), Main.rand.Next(1, 2));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Retriever")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(3, 4));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Raider")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(3, 4));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Orthus")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(3, 4));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("EmperorFishron")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(15, 20));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("DaybringerHead")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(20, 25));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("NightcrawlerHead")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(20, 25));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Yamata")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(3, 5));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("YamataA")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(3, 5));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Akuma")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(3, 5));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("AkumaA")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(3, 5));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Zero")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(4, 6));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("ZeroAwakened")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(4, 6));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Cthulhu")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), Main.rand.Next(2, 3));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("ShenDoragon")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), Main.rand.Next(10, 12));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("ShenA")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), Main.rand.Next(15, 20));
+							}
+						}
 					}
 				}
 			}

@@ -228,7 +228,7 @@ namespace AlchemistNPC
 		
 		public static string ConfigFileRelativePath 
 		{
-		get { return "Mod Configs/Alchemistv8.json"; }
+		get { return "Mod Configs/Alchemistv83.json"; }
 		}
 
 		public static void ReloadConfigFromFile() 

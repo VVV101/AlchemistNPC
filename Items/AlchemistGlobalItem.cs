@@ -131,68 +131,67 @@ namespace AlchemistNPC.Items
 			}
 			if (PerfectionToken == true)
 			{
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (item.damage > 0)
 				{
-					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("CosmicImmaterializer"))
+					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 					{
-						return -1;
+						if (item.type == ModLoader.GetMod("CalamityMod").ItemType("P90"))
+						{
+							return 57;
+						}
+						if (item.type == ModLoader.GetMod("CalamityMod").ItemType("ColdheartIcicle"))
+						{
+							return 15;
+						}
+						if (item.type == ModLoader.GetMod("CalamityMod").ItemType("HalibutCannon"))
+						{
+							return 17;
+						}
 					}
-					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("P90"))
+					if (item.melee)
 					{
-						return 57;
+						return 81;
 					}
-					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("ColdheartIcicle"))
+					if (item.ranged && !item.consumable && item.useTime <= 3)
 					{
-						return 15;
+						return 59;
 					}
-					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("HalibutCannon"))
+					if (item.ranged && !item.consumable && item.knockBack <= 0)
 					{
-						return 17;
+						return 60;
 					}
-				}
-				if (item.melee)
-				{
-					return 81;
-				}
-				if (item.ranged && !item.consumable && item.useTime <= 3)
-				{
-					return 59;
-				}
-				if (item.ranged && !item.consumable && item.knockBack <= 0)
-				{
-					return 60;
-				}
-				if (item.ranged && !item.consumable && item.knockBack > 0)
-				{
-					return 82;
-				}
-				if (item.magic && item.knockBack <= 0)
-				{
-					return 60;
-				}
-				if (item.magic && item.useTime <= 2)
-				{
-					return 59;
-				}
-				if (item.magic && item.mana <= 4)
-				{
-					return 59;
-				}
-				if (item.magic && item.knockBack > 0)
-				{
-					return 83;
-				}
-				if (item.summon)
-				{
-					return 83;
-				}
-				if (item.thrown && !item.consumable && item.useTime <= 3)
-				{
-					return 59;
-				}
-				if (item.thrown && !item.consumable)
-				{
-					return 82;
+					if (item.ranged && !item.consumable && item.knockBack > 0)
+					{
+						return 82;
+					}
+					if (item.magic && item.knockBack <= 0)
+					{
+						return 60;
+					}
+					if (item.magic && item.useTime <= 2)
+					{
+						return 59;
+					}
+					if (item.magic && item.mana <= 4)
+					{
+						return 59;
+					}
+					if (item.magic && item.knockBack > 0)
+					{
+						return 83;
+					}
+					if (item.summon)
+					{
+						return 83;
+					}
+					if (item.thrown && !item.consumable && item.useTime <= 3)
+					{
+						return 59;
+					}
+					if (item.thrown && !item.consumable)
+					{
+						return 82;
+					}
 				}
 			}
 			if (item.accessory)

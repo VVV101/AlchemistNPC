@@ -9,12 +9,7 @@ using Terraria.Localization;
 namespace AlchemistNPC.Items.Misc
 {
     public class ReversivityCoinTier5 : ModItem
-    {
-        public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("CalamityMod") != null;
-		}
-
+	{
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Reversivity Coin Tier 5");
@@ -38,8 +33,8 @@ namespace AlchemistNPC.Items.Misc
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(null, "ReversivityCoinTier6", 1);
-            recipe.AddTile((ModLoader.GetMod("CalamityMod").TileType("DraedonsForge")));
+            recipe.AddIngredient(mod, "ReversivityCoinTier6", 1);
+            recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this, 2);
             recipe.AddRecipe();
         }

@@ -10,11 +10,6 @@ namespace AlchemistNPC.Items.Misc
 {
     public class ReversivityCoinTier6 : ModItem
     {
-        public override bool Autoload(ref string name)
-		{
-		return ModLoader.GetMod("CalamityMod") != null;
-		}
-
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Reversivity Coin Tier 6");
