@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ReLogic.Utilities;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
@@ -600,10 +601,13 @@ namespace AlchemistNPC
 						{
 							if (AlchemistCharmTier4 == true)
 							{
-								if (CalamityModDownedSCal)
+								if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 								{
+									if (CalamityModDownedSCal)
+									{
+									}
 								}
-								else if (Main.rand.NextFloat() >= .25f)
+								if (Main.rand.NextFloat() >= .25f)
 								{
 								}
 								else

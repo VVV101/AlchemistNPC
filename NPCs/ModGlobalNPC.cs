@@ -202,10 +202,13 @@ namespace AlchemistNPC.NPCs
 					{
 						for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 						{
-							shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*(Config.PotsPriceMulti);
-							if (Config.RevPrices && CalamityModRevengeance)
+							shop.item[nextSlot].shopCustomPrice *= Config.PotsPriceMulti;
+							if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 							{
-								shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
+								if (Config.RevPrices && CalamityModRevengeance)
+								{
+									shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
+								}
 							}
 							if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier4)
 							{
@@ -213,7 +216,7 @@ namespace AlchemistNPC.NPCs
 							}
 							else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier3)
 							{
-								shop.item[nextSlot].shopCustomPrice -= (int)(shop.item[nextSlot].shopCustomPrice*0.35f);
+								shop.item[nextSlot].shopCustomPrice -= ((shop.item[nextSlot].shopCustomPrice/20)*7);
 							}
 							else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier2)
 							{
