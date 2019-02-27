@@ -10,7 +10,7 @@ namespace AlchemistNPC.NPCs
 	[AutoloadHead]
 	public class Alchemist : ModNPC
 	{
-		public static bool baseShop = false;
+		public static bool baseShop = true;
 		public static bool tremorShop = false;
 		public static bool PS = false;
 		public static bool AB = false;
@@ -220,8 +220,6 @@ namespace AlchemistNPC.NPCs
 		PS = false;
 		AB = false;
 		LE = false;
-		baseShop = false;
-		tremorShop = false;
 		}
 		
 		public override void SetDefaults()

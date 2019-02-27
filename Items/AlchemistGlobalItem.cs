@@ -9,6 +9,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Localization;
+using AlchemistNPC.Interface;
 
 namespace AlchemistNPC.Items
 {
@@ -34,6 +35,21 @@ namespace AlchemistNPC.Items
 			if (item.type == 2272 && NPC.AnyNPCs(mod.NPCType("Knuckles")))
 			{
 				item.damage = 1;
+			}
+			for (int j = 0; j < player.inventory.Length; j++)
+			{
+				if (player.inventory[j].type == mod.ItemType("DimensionalCasket"))
+				{
+					if (Main.keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Escape))
+					{
+						DimensionalCasketUI.k = -1;
+						DimensionalCasketUI.forcetalk = false;
+					}
+					if (DimensionalCasketUI.forcetalk == true)
+					{
+						Main.player[Main.myPlayer].talkNPC = DimensionalCasketUI.k;
+					}
+				}
 			}
 		}
 		

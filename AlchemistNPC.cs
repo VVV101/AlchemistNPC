@@ -36,6 +36,7 @@ namespace AlchemistNPC
 		public static ModHotKey DiscordBuff;
 		public static ModHotKey PipBoyTP;
 		public static bool SF = false;
+		public static bool GreaterDangersense = false;
 		public static bool BastScroll = false;
 		public static bool Stormbreaker = false;
 		public static int DTH = 0;
@@ -57,6 +58,8 @@ namespace AlchemistNPC
 		internal ShopChangeUIO alchemistUIO;
 		private UserInterface alchemistUserInterfaceH;
 		internal HealingUI alchemistUIH;
+		private UserInterface alchemistUserInterfaceDC;
+		internal DimensionalCasketUI alchemistUIDC;
 		private UserInterface alchemistUserInterfaceP;
 		internal PipBoyTPMenu pipboyUI;
 		
@@ -111,6 +114,11 @@ namespace AlchemistNPC
 				alchemistUIH.Activate();
 				alchemistUserInterfaceH = new UserInterface();
 				alchemistUserInterfaceH.SetState(alchemistUIH);
+				
+				alchemistUIDC = new DimensionalCasketUI();
+				alchemistUIDC.Activate();
+				alchemistUserInterfaceDC = new UserInterface();
+				alchemistUserInterfaceDC.SetState(alchemistUIDC);
 				
 				pipboyUI = new PipBoyTPMenu();
 				pipboyUI.Activate();
@@ -197,6 +205,22 @@ namespace AlchemistNPC
 						if (HealingUI.visible)
 						{
 							alchemistUIH.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexDC = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexDC != -1)
+			{
+				layers.Insert(MouseTextIndexDC, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Dimensional Casket UI",
+					delegate
+					{
+						if (DimensionalCasketUI.visible)
+						{
+							alchemistUIDC.Draw(Main.spriteBatch);
 						}
 						return true;
 					},
@@ -1055,6 +1079,11 @@ namespace AlchemistNPC
 			if (alchemistUserInterfaceH != null && HealingUI.visible)
 			{
 				alchemistUserInterfaceH.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceDC != null && DimensionalCasketUI.visible)
+			{
+				alchemistUserInterfaceDC.Update(gameTime);
 			}
 		}
     }

@@ -121,11 +121,7 @@ namespace AlchemistNPC.Interface
 
 		private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Brewer.Shop1 = true;
-			Brewer.Shop2 = false;
-			Brewer.Shop3 = false;
-			Brewer.Shop4 = false;
-			Brewer.Shop5 = false;
+			Brewer.Shop = 1;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUI.visible = false;
 			Main.playerInventory = true;
@@ -136,11 +132,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Brewer.Shop1 = false;
-			Brewer.Shop2 = true;
-			Brewer.Shop3 = false;
-			Brewer.Shop4 = false;
-			Brewer.Shop5 = false;
+			Brewer.Shop = 2;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUI.visible = false;
 			Main.playerInventory = true;
@@ -151,11 +143,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Brewer.Shop1 = false;
-			Brewer.Shop2 = false;
-			Brewer.Shop3 = true;
-			Brewer.Shop4 = false;
-			Brewer.Shop5 = false;
+			Brewer.Shop = 3;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUI.visible = false;
 			Main.playerInventory = true;
@@ -166,11 +154,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Brewer.Shop1 = false;
-			Brewer.Shop2 = false;
-			Brewer.Shop3 = false;
-			Brewer.Shop4 = true;
-			Brewer.Shop5 = false;
+			Brewer.Shop = 4;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUI.visible = false;
 			Main.playerInventory = true;
@@ -181,11 +165,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Brewer.Shop1 = false;
-			Brewer.Shop2 = false;
-			Brewer.Shop3 = false;
-			Brewer.Shop4 = false;
-			Brewer.Shop5 = true;
+			Brewer.Shop = 5;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUI.visible = false;
 			Main.playerInventory = true;

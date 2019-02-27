@@ -14,11 +14,7 @@ namespace AlchemistNPC.NPCs
 	[AutoloadHead]
 	public class Brewer : ModNPC
 	{
-		public static bool Shop1 = true;
-		public static bool Shop2 = false;
-		public static bool Shop3 = false;
-		public static bool Shop4 = false;
-		public static bool Shop5 = false;
+		public static int Shop = 1;
 		public override string Texture
 		{
 			get
@@ -375,23 +371,23 @@ namespace AlchemistNPC.NPCs
 			string ShopB4 = Language.GetTextValue("Mods.AlchemistNPC.ShopB4");
 			string ShopB5 = Language.GetTextValue("Mods.AlchemistNPC.ShopB5");
 			string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopsChanger");
-			if (Shop1)
+			if (Shop == 1)
 			{
 			button = ShopB1;
 			}
-			if (Shop2)
+			if (Shop == 2)
 			{
 			button = ShopB2;
 			}
-			if (Shop3)
+			if (Shop == 3)
 			{
 			button = ShopB3;
 			}
-			if (Shop4)
+			if (Shop == 4)
 			{
 			button = ShopB4;
 			}
-			if (Shop5)
+			if (Shop == 5)
 			{
 			button = ShopB5;
 			}
@@ -451,7 +447,7 @@ namespace AlchemistNPC.NPCs
  
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-		if (Shop1)
+		if (Shop == 1)
 		{
 		shop.item[nextSlot].SetDefaults (ItemID.SwiftnessPotion);
 		shop.item[nextSlot].shopCustomPrice = 5000;
@@ -583,25 +579,19 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].shopCustomPrice = 100000;
 		nextSlot++;			
 		}
-		if (Shop2)
+		if (Shop == 2)
 		{
-		if (NPC.downedBoss1)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.LesserRestorationPotion);
-		shop.item[nextSlot].shopCustomPrice = 3500;
-		nextSlot++;
-		}
 		if (NPC.downedBoss2)
 		{
-		shop.item[nextSlot].SetDefaults (ItemID.RestorationPotion);
-		shop.item[nextSlot].shopCustomPrice = 7500;
-		nextSlot++;
 		shop.item[nextSlot].SetDefaults (ItemID.StrangeBrew);
 		shop.item[nextSlot].shopCustomPrice = 10000;
 		nextSlot++;
 		}
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SunshinePotion"));
 		shop.item[nextSlot].shopCustomPrice = 15000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("GreaterDangersensePotion"));
+		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("Dopamine"));
 		shop.item[nextSlot].shopCustomPrice = 10000;
@@ -766,7 +756,7 @@ namespace AlchemistNPC.NPCs
 				}
 			}
 		}
-		if (Shop3)
+		if (Shop == 3)
 		{
 			if (ModLoader.GetLoadedMods().Contains("MorePotions"))
 			{
@@ -901,7 +891,7 @@ if (NPC.downedMoonlord)
 }	
 }			
 		}
-		if (Shop4)
+		if (Shop == 4)
 		{
 		if (ModLoader.GetLoadedMods().Contains("UnuBattleRods"))
 			{
@@ -991,7 +981,7 @@ if (NPC.downedMoonlord)
 					}						
 				}
 		}
-		if (Shop5)
+		if (Shop == 5)
 		{
 			if (ModLoader.GetLoadedMods().Contains("Wildlife"))
 				{

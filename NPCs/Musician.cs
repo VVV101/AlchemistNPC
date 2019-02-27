@@ -11,7 +11,7 @@ namespace AlchemistNPC.NPCs
 	[AutoloadHead]
 	public class Musician : ModNPC
 	{
-		public static bool S1 = false;
+		public static bool S1 = true;
 		public static bool S2 = false;
 		public override string Texture
 		{

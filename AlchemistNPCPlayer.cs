@@ -152,6 +152,7 @@ namespace AlchemistNPC
 			AlchemistGlobalItem.Violent = false;
 			AlchemistGlobalItem.Warding = false;
 			AlchemistGlobalItem.Stopper = false;
+			AlchemistNPC.GreaterDangersense = false;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
 			MeatGrinderOnUse = false;
@@ -596,7 +597,14 @@ namespace AlchemistNPC
 						int time1 = player.bank.item[index1].buffTime;
 						if (time1 == 0)
 						  time1 = 3600;
+					  if (KeepBuffs == 1)
+					  {
+						player.AddBuff(type2, time1*2, true);
+					  }
+					  if (KeepBuffs == 0)
+					  {
 						player.AddBuff(type2, time1, true);
+					  }
 						if (player.bank.item[index1].consumable)
 						{
 							if (AlchemistCharmTier4 == true)

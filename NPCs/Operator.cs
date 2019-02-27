@@ -13,11 +13,7 @@ namespace AlchemistNPC.NPCs
 	public class Operator : ModNPC
 	{
 		public static bool OA = false;
-		public static bool Shop1 = true;
-		public static bool Shop2 = false;
-		public static bool Shop3 = false;
-		public static bool Shop4 = false;
-		public static bool Shop5 = false;
+		public static int Shop = 1;
 		public override string Texture
 		{
 			get
@@ -601,27 +597,27 @@ namespace AlchemistNPC.NPCs
 		string BossDropsShop = Language.GetTextValue("Mods.AlchemistNPC.BossDropsShop");
 		string VanillaTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.VanillaTreasureBagsShop");
 		string ModdedTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop");
-		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop2");
+		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop == 2");
 		string ShopChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopChanger");
 		if (Config.TS && Main.expertMode)
 		{
-			if (Shop1)
+			if (Shop == 1)
 			{
 			button = BossDropsShop;
 			}
-			if (Shop2)
+			if (Shop == 2)
 			{
 			button = EGOShop;
 			}
-			if (Shop3)
+			if (Shop == 3)
 			{
 			button = VanillaTreasureBagsShop;
 			}
-			if (Shop4)
+			if (Shop == 4)
 			{
 			button = ModdedTreasureBagsShop;
 			}
-			if (Shop5)
+			if (Shop == 5)
 			{
 			button = ModdedTreasureBagsShop2;
 			}
@@ -640,8 +636,7 @@ namespace AlchemistNPC.NPCs
 			{
 				if (!Config.TS || !Main.expertMode)
 				{
-					Shop1 = true;
-					Shop2 = false;
+					Shop = 1;
 					shop = true;
 				}
 				if (Config.TS && Main.expertMode)
@@ -658,8 +653,7 @@ namespace AlchemistNPC.NPCs
 				}
 				if (!Config.TS || !Main.expertMode)
 				{
-					Shop2 = true;
-					Shop1 = false;
+					Shop = 2;
 					shop = true;
 				}
 			}
@@ -931,7 +925,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (Shop1)
+			if (Shop == 1)
 			{
 				shop.item[nextSlot].SetDefaults (ItemID.Lens);
 				shop.item[nextSlot].shopCustomPrice = 10000;
@@ -1149,7 +1143,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (Shop2)
+			if (Shop == 2)
 			{
 				if (NPC.downedBoss3)
 				{
@@ -1209,7 +1203,7 @@ namespace AlchemistNPC.NPCs
 				nextSlot++;
 				}
 			}
-			if (Shop3)
+			if (Shop == 3)
 			{
 				if (!NPC.downedBoss3)
 				{
@@ -1414,7 +1408,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (Shop4)
+			if (Shop == 4)
 			{
 				if (!NPC.downedBoss3)
 				{
@@ -2005,7 +1999,7 @@ namespace AlchemistNPC.NPCs
 						}
 				}
 			}
-			if (Shop5)
+			if (Shop == 5)
 			{
 				if (!NPC.downedBoss3)
 				{

@@ -196,16 +196,7 @@ namespace AlchemistNPC.Interface
 
 		private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = true;
-			Architect.Shop2 = false;
-			Architect.Shop3 = false;
-			Architect.Shop4 = false;
-			Architect.Shop5 = false;
-			Architect.Shop6 = false;
-			Architect.Shop7 = false;
-			Architect.Shop8 = false;
-			Architect.Shop9 = false;
-			Architect.Shop10 = false;
+			Architect.Shop = 1;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;
@@ -216,16 +207,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = false;
-			Architect.Shop2 = true;
-			Architect.Shop3 = false;
-			Architect.Shop4 = false;
-			Architect.Shop5 = false;
-			Architect.Shop6 = false;
-			Architect.Shop7 = false;
-			Architect.Shop8 = false;
-			Architect.Shop9 = false;
-			Architect.Shop10 = false;
+			Architect.Shop = 2;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;
@@ -237,16 +219,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = false;
-			Architect.Shop2 = false;
-			Architect.Shop3 = true;
-			Architect.Shop4 = false;
-			Architect.Shop5 = false;
-			Architect.Shop6 = false;
-			Architect.Shop7 = false;
-			Architect.Shop8 = false;
-			Architect.Shop9 = false;
-			Architect.Shop10 = false;
+			Architect.Shop = 3;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;
@@ -257,16 +230,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = false;
-			Architect.Shop2 = false;
-			Architect.Shop3 = false;
-			Architect.Shop4 = true;
-			Architect.Shop5 = false;
-			Architect.Shop6 = false;
-			Architect.Shop7 = false;
-			Architect.Shop8 = false;
-			Architect.Shop9 = false;
-			Architect.Shop10 = false;
+			Architect.Shop = 4;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;
@@ -277,16 +241,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = false;
-			Architect.Shop2 = false;
-			Architect.Shop3 = false;
-			Architect.Shop4 = false;
-			Architect.Shop5 = true;
-			Architect.Shop6 = false;
-			Architect.Shop7 = false;
-			Architect.Shop8 = false;
-			Architect.Shop9 = false;
-			Architect.Shop10 = false;
+			Architect.Shop = 5;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;
@@ -297,16 +252,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked6(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = false;
-			Architect.Shop2 = false;
-			Architect.Shop3 = false;
-			Architect.Shop4 = false;
-			Architect.Shop5 = false;
-			Architect.Shop6 = true;
-			Architect.Shop7 = false;
-			Architect.Shop8 = false;
-			Architect.Shop9 = false;
-			Architect.Shop10 = false;
+			Architect.Shop = 6;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;
@@ -317,16 +263,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked7(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = false;
-			Architect.Shop2 = false;
-			Architect.Shop3 = false;
-			Architect.Shop4 = false;
-			Architect.Shop5 = false;
-			Architect.Shop6 = false;
-			Architect.Shop7 = true;
-			Architect.Shop8 = false;
-			Architect.Shop9 = false;
-			Architect.Shop10 = false;
+			Architect.Shop = 7;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;
@@ -337,16 +274,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked8(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = false;
-			Architect.Shop2 = false;
-			Architect.Shop3 = false;
-			Architect.Shop4 = false;
-			Architect.Shop5 = false;
-			Architect.Shop6 = false;
-			Architect.Shop7 = false;
-			Architect.Shop8 = true;
-			Architect.Shop9 = false;
-			Architect.Shop10 = false;
+			Architect.Shop = 8;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;
@@ -357,16 +285,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked9(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = false;
-			Architect.Shop2 = false;
-			Architect.Shop3 = false;
-			Architect.Shop4 = false;
-			Architect.Shop5 = false;
-			Architect.Shop6 = false;
-			Architect.Shop7 = false;
-			Architect.Shop8 = false;
-			Architect.Shop9 = true;
-			Architect.Shop10 = false;
+			Architect.Shop = 9;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;
@@ -377,16 +296,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked10(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Architect.Shop1 = false;
-			Architect.Shop2 = false;
-			Architect.Shop3 = false;
-			Architect.Shop4 = false;
-			Architect.Shop5 = false;
-			Architect.Shop6 = false;
-			Architect.Shop7 = false;
-			Architect.Shop8 = false;
-			Architect.Shop9 = false;
-			Architect.Shop10 = true;
+			Architect.Shop = 10;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIA.visible = false;
 			Main.playerInventory = true;

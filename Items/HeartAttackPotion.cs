@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items
     {
 		public override bool Autoload(ref string name)
 		{
-		return ModLoader.GetMod("CalamityMod") != null;
+			return ModLoader.GetMod("CalamityMod") != null;
 		}
 		
 		public override void SetStaticDefaults()
@@ -45,14 +45,14 @@ namespace AlchemistNPC.Items
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+			get { return CalamityMod.CalamityWorld.revenge; }
         }
 		
 		public override bool CanUseItem(Player player)
 		{
-		if (CalamityModRevengeance && !player.HasBuff(mod.BuffType("HeartAche")))
+			if (CalamityModRevengeance && !player.HasBuff(mod.BuffType("HeartAche")))
 			{
-			return true;
+				return true;
 			}
 			return false;
 		}
@@ -61,10 +61,10 @@ namespace AlchemistNPC.Items
 		
 		public override bool UseItem(Player player)
 		{
-		CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
-		CalamityPlayer.stress = 10000;
-		player.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"), 18000, true);
-		return true;
+			CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
+			CalamityPlayer.stress = 10000;
+			player.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"), 18000, true);
+			return true;
 		}
     }
 }

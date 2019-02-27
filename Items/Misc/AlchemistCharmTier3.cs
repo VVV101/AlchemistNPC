@@ -39,7 +39,7 @@ namespace AlchemistNPC.Items.Misc
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "AlchemistCharmTier2");
-			recipe.AddRecipeGroup("AlchemistNPC:Tier3Bar", 15);
+			recipe.AddRecipeGroup("AlchemistNPC:Tier3Bar", 10);
 			recipe.AddRecipeGroup("AlchemistNPC:HardmodeComponent", 20);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

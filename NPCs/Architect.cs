@@ -14,16 +14,7 @@ namespace AlchemistNPC.NPCs
 	[AutoloadHead]
 	public class Architect : ModNPC
 	{
-		public static bool Shop1 = true;
-		public static bool Shop2 = false;
-		public static bool Shop3 = false;
-		public static bool Shop4 = false;
-		public static bool Shop5 = false;
-		public static bool Shop6 = false;
-		public static bool Shop7 = false;
-		public static bool Shop8 = false;
-		public static bool Shop9 = false;
-		public static bool Shop10 = false;
+		public static int Shop = 1;
 		public override string Texture
 		{
 			get
@@ -415,43 +406,43 @@ namespace AlchemistNPC.NPCs
 			string AS9 = Language.GetTextValue("Mods.AlchemistNPC.AS9");
 			string AS10 = Language.GetTextValue("Mods.AlchemistNPC.AS10");
 			string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopsChanger");
-			if (Shop1)
+			if (Shop == 1)
 			{
 			button = AS1;
 			}
-			if (Shop2)
+			if (Shop == 2)
 			{
 			button = AS2;
 			}
-			if (Shop3)
+			if (Shop == 3)
 			{
 			button = AS3;
 			}
-			if (Shop4)
+			if (Shop == 4)
 			{
 			button = AS4;
 			}
-			if (Shop5)
+			if (Shop == 5)
 			{
 			button = AS5;
 			}
-			if (Shop6)
+			if (Shop == 6)
 			{
 			button = AS6;
 			}
-			if (Shop7)
+			if (Shop == 7)
 			{
 			button = AS7;
 			}
-			if (Shop8)
+			if (Shop == 8)
 			{
 			button = AS8;
 			}
-			if (Shop9)
+			if (Shop == 9)
 			{
 			button = AS9;
 			}
-			if (Shop10)
+			if (Shop == 10)
 			{
 			button = AS10;
 			}
@@ -475,7 +466,7 @@ namespace AlchemistNPC.NPCs
 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-			if (Shop1)
+			if (Shop == 1)
 			{
 				shop.item[nextSlot].SetDefaults (ItemID.DirtBlock);
 				shop.item[nextSlot].shopCustomPrice = 1;
@@ -556,7 +547,7 @@ namespace AlchemistNPC.NPCs
 					nextSlot++;
 				}
 			}
-			if (Shop2)
+			if (Shop == 2)
 			{
 				shop.item[nextSlot].SetDefaults (ItemID.RedBrick);
 				shop.item[nextSlot].shopCustomPrice = 2;
@@ -706,7 +697,7 @@ namespace AlchemistNPC.NPCs
 				nextSlot++;
 			}
 			}
-			if (Shop3)
+			if (Shop == 3)
 			{
 			shop.item[nextSlot].SetDefaults (ItemID.Candle);
 			shop.item[nextSlot].shopCustomPrice = 100;
@@ -788,7 +779,7 @@ namespace AlchemistNPC.NPCs
             nextSlot++;	
 			}
 		}
-		if (Shop4)
+		if (Shop == 4)
 		{
 				shop.item[nextSlot].SetDefaults (ItemID.LivingLoom);
 				shop.item[nextSlot].shopCustomPrice = 20000;
@@ -860,7 +851,7 @@ namespace AlchemistNPC.NPCs
 			nextSlot++;
 			}
 		}
-		if (Shop5)
+		if (Shop == 5)
             {
 			shop.item[nextSlot].SetDefaults (ItemID.Torch);
 			shop.item[nextSlot].shopCustomPrice = 50;
@@ -914,7 +905,7 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].shopCustomPrice = 500;
 			nextSlot++;	
 			}
-		if (Shop6)
+		if (Shop == 6)
             {
 			shop.item[nextSlot].SetDefaults (105);
 			shop.item[nextSlot].shopCustomPrice = 500;
@@ -1016,7 +1007,7 @@ namespace AlchemistNPC.NPCs
 			nextSlot++;	
 			}
 			}
-		if (Shop7)
+		if (Shop == 7)
             {
 			shop.item[nextSlot].SetDefaults (341);
 			shop.item[nextSlot].shopCustomPrice = 500;
@@ -1127,7 +1118,7 @@ namespace AlchemistNPC.NPCs
 			nextSlot++;	
 			}
 			}
-		if (Shop8)
+		if (Shop == 8)
             {
 			shop.item[nextSlot].SetDefaults (136);
 			shop.item[nextSlot].shopCustomPrice = 500;
@@ -1247,7 +1238,7 @@ namespace AlchemistNPC.NPCs
 			nextSlot++;	
 			}
 			}
-		if (Shop9)
+		if (Shop == 9)
             {
 			shop.item[nextSlot].SetDefaults (106);
 			shop.item[nextSlot].shopCustomPrice = 500;
@@ -1370,7 +1361,7 @@ namespace AlchemistNPC.NPCs
 			nextSlot++;
 			}
 			}
-		if (Shop10)
+		if (Shop == 10)
             {
 			shop.item[nextSlot].SetDefaults (349);
 			shop.item[nextSlot].shopCustomPrice = 500;

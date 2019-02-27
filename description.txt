@@ -6,7 +6,7 @@ The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of th
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
-Config file is Alchemistv8.json.
+Config file is Alchemistv83.json.
 v8.3
 -Reworked how exactly Shops Changer works.
 Now it opens shop immidietly after pressing certain shop button (~optimisation of time).
@@ -21,8 +21,14 @@ Increases stats through game progression.  Drop chance is 1:25000 from any mob.
 Increases stats through game progression. Drop chance is 1:25000 from any mob.
 -Added Nature Blessing Potion to Brewer's 2nd shop. Grants Dryad's Blessing Buff.
 Available anytime.
+-Added Greater Dangersense Potion to Brewer's 2nd shop. Grants Greater Dangersense Buff. It makes enemy projectiles to light and be colored yellow.
+Available anytime.
 -Added PHD Degree Diploma. Works while in inventory. Opens up healing interface after respawn. 
 Will not work if Nurse is dead. Drops from WoF.
+-Added Broken Dimensional Casket. Required for crafting working one. 
+Drops from WoF.
+-Added Dimensional Casket. Allows to trade with NPCs at any point of map.
+Can be crafted from Broken Dimensional Casket and some other materials.
 -All Alchemist Charms are now provide different discounts. They are 10%, 25%, 35%, 50%.
 -Duke Fishron Treasure Bag is now available after beating Duke Fishron. 
 Same for Moon Lord Treasure Bag (available after beating Moon Lord).

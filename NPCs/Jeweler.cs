@@ -11,7 +11,7 @@ namespace AlchemistNPC.NPCs
 	[AutoloadHead]
 	public class Jeweler : ModNPC
 	{
-		public static bool OH = false;
+		public static bool OH = true;
 		public static bool SN = false;
 		public static bool SN2 = false;
 		public static bool SN3 = false;

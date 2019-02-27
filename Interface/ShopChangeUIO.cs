@@ -121,11 +121,7 @@ namespace AlchemistNPC.Interface
 
 		private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Operator.Shop1 = true;
-			Operator.Shop2 = false;
-			Operator.Shop3 = false;
-			Operator.Shop4 = false;
-			Operator.Shop5 = false;
+			Operator.Shop = 1;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
@@ -136,11 +132,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Operator.Shop1 = false;
-			Operator.Shop2 = true;
-			Operator.Shop3 = false;
-			Operator.Shop4 = false;
-			Operator.Shop5 = false;
+			Operator.Shop = 2;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
@@ -151,11 +143,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Operator.Shop1 = false;
-			Operator.Shop2 = false;
-			Operator.Shop3 = true;
-			Operator.Shop4 = false;
-			Operator.Shop5 = false;
+			Operator.Shop = 3;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
@@ -166,11 +154,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Operator.Shop1 = false;
-			Operator.Shop2 = false;
-			Operator.Shop3 = false;
-			Operator.Shop4 = true;
-			Operator.Shop5 = false;
+			Operator.Shop = 4;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
@@ -181,11 +165,7 @@ namespace AlchemistNPC.Interface
 		
 		private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Operator.Shop1 = false;
-			Operator.Shop2 = false;
-			Operator.Shop3 = false;
-			Operator.Shop4 = false;
-			Operator.Shop5 = true;
+			Operator.Shop = 5;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;

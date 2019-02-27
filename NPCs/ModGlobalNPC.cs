@@ -193,6 +193,20 @@ namespace AlchemistNPC.NPCs
 		
 		public override void SetupShop(int type, Chest shop, ref int nextSlot)
 		{
+			if (type == NPCID.Dryad)
+			{
+				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
+				{
+					return;
+				}
+			}
+			if (type == NPCID.Painter)
+			{
+				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
+				{
+					return;
+				}
+			}
 			for (int k = 0; k < 255; k++)
 			{
 				Player player = Main.player[k];
@@ -768,6 +782,7 @@ namespace AlchemistNPC.NPCs
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LuckCharm"));
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PHD"));
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrokenDimensionalCasket"));
 					}
 					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 					{
