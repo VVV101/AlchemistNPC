@@ -551,6 +551,26 @@ namespace AlchemistNPC.Items
             string Valdaris = Language.GetTextValue("Mods.AlchemistNPC.Valdaris");
             string Gatekeeper = Language.GetTextValue("Mods.AlchemistNPC.Gatekeeper");
 			
+			//AAMod
+			string Monarch = Language.GetTextValue("Mods.AlchemistNPC.Monarch");
+            string Grips = Language.GetTextValue("Mods.AlchemistNPC.Grips");
+			string Broodmother = Language.GetTextValue("Mods.AlchemistNPC.Broodmother");
+            string Hydra = Language.GetTextValue("Mods.AlchemistNPC.Hydra");
+			string Serpent = Language.GetTextValue("Mods.AlchemistNPC.Serpent");
+            string Djinn = Language.GetTextValue("Mods.AlchemistNPC.Djinn");
+			string Retriever = Language.GetTextValue("Mods.AlchemistNPC.Retriever");
+			string RaiderU = Language.GetTextValue("Mods.AlchemistNPC.RaiderU");
+			string Orthrus = Language.GetTextValue("Mods.AlchemistNPC.Orthrus");
+			string EFish = Language.GetTextValue("Mods.AlchemistNPC.EFish");
+			string Nightcrawler = Language.GetTextValue("Mods.AlchemistNPC.Nightcrawler");
+			string Daybringer = Language.GetTextValue("Mods.AlchemistNPC.Daybringer");
+			string Yamata = Language.GetTextValue("Mods.AlchemistNPC.Yamata");
+			string Akuma = Language.GetTextValue("Mods.AlchemistNPC.Akuma");
+			string Zero = Language.GetTextValue("Mods.AlchemistNPC.Zero");
+			string Shen = Language.GetTextValue("Mods.AlchemistNPC.Shen");
+			string ShenGrips = Language.GetTextValue("Mods.AlchemistNPC.ShenGrips");
+			
+			
 			if (item.type == mod.ItemType("KnucklesBag"))
 			{
 				TooltipLine line = new TooltipLine(mod, "Knuckles", Knuckles);
@@ -848,6 +868,111 @@ namespace AlchemistNPC.Items
 				if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("RagBag")))
 				{
 				TooltipLine line = new TooltipLine(mod, "TheRagnarok", TheRagnarok);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+			}
+			if (ModLoader.GetLoadedMods().Contains("AAMod"))
+			{
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("MonarchBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Monarch", Monarch);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("GripBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Grips", Grips);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("BroodBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Broodmother", Broodmother);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("HydraBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Hydra", Hydra);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("SerpentBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Serpent", Serpent);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("DjinnBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Djinn", Djinn);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("RetrieverBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Retriever", Retriever);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("RaiderBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "RaiderU", RaiderU);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("OrthrusBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Orthrus", Orthrus);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("EFishBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "EFish", EFish);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("DBBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Daybringer", Daybringer);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("NCBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Nightcrawler", Nightcrawler);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("YamataBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Yamata", Yamata);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("AkumaBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Akuma", Akuma);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("ZeroBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Zero", Zero);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("ShenCache")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Shen", Shen);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("AAMod").ItemType("GripSBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "ShenGrips", ShenGrips);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 				}

@@ -986,6 +986,75 @@ namespace AlchemistNPC
             text.SetDefault("The Gatekeeper Treasure Bag");
             AddTranslation(text);
 			
+			//AAMod
+            text = CreateTranslation("Monarch");
+            text.SetDefault("Mushroom Monarch Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Grips");
+            text.SetDefault("Grips of Chaos Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Broodmother");
+            text.SetDefault("Broodmother Treasure Bag");
+            AddTranslation(text);
+
+			text = CreateTranslation("Hydra");
+            text.SetDefault("Hydra Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Serpent");
+            text.SetDefault("Subzero Serpent Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Djinn");
+            text.SetDefault("Desert Djinn Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Retriever");
+            text.SetDefault("Retriever Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("RaiderU");
+            text.SetDefault("Raider Ultima Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Orthrus");
+            text.SetDefault("Orthrus X Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("EFish");
+            text.SetDefault("Emperor Fishron Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Nightcrawler");
+            text.SetDefault("Nightcrawler Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Daybringer");
+            text.SetDefault("Daybringer Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Yamata");
+            text.SetDefault("Yamata Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Akuma");
+            text.SetDefault("Akuma Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Zero");
+            text.SetDefault("Zero Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Shen");
+            text.SetDefault("Shen Doragon Treasure Cache");
+            AddTranslation(text);
+			
+			text = CreateTranslation("ShenGrips");
+            text.SetDefault("Shen Doragon Grips Treasure Bag");
+            AddTranslation(text);
+			
             //SBMW:Some other translation
             text = CreateTranslation("Portal");
             text.SetDefault("An Otherworldly Portal was opened.");
