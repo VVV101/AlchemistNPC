@@ -30,6 +30,7 @@ Drops from WoF.
 -Added Dimensional Casket. Allows to trade with NPCs at any point of map.
 Can be crafted from Broken Dimensional Casket and some other materials.
 -All Alchemist Charms are now provide different discounts. They are 10%, 25%, 35%, 50%.
+-Flasks in Young Brewer shop are in separate shop now.
 -Duke Fishron Treasure Bag is now available after beating Duke Fishron. 
 Same for Moon Lord Treasure Bag (available after beating Moon Lord).
 -All Legendaries drop chance is now 1:25000.
@@ -37,7 +38,9 @@ Same for Moon Lord Treasure Bag (available after beating Moon Lord).
 -Laetitia's armor now always showing its defense correctly.
 -Lowered prices for Recall, Wormhole and all mana potions.
 -Added support for Census - Town NPC Checklist mod.
+-Added support for Ancients Awakened.
 -Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.
+-Added some more lines to NPCs.
 -Fixed 2nd Music boxes shop of Musician (returned all Calamity music boxes back).
 -Fixed some bugs with red Bees and Wasps.
 -Fixed potions being consumed from Piggy Bank no matter if potions saving effect was working.

@@ -9,6 +9,8 @@ namespace AlchemistNPC.NPCs
 	[AutoloadHead]
 	public class YoungBrewer : ModNPC
 	{
+		public static bool Shop1 = true;
+		public static bool Shop2 = false;
 		public override string Texture
 		{
 			get
@@ -112,6 +114,10 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("Entry10");
             text.SetDefault("Certain combinations can only be brewed if certain types of magic are present in the world.");
             text.AddTranslation(GameCulture.Russian, "Некоторые комбинации могут быть изготовлены только если в мире присутсвуют особенные виды магии.");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("Entry11");
+            text.SetDefault("You might be wondering how do i put actual rainbows in a flask... Well, with the power of maaagic...... and eternal sufferings.");
+            text.AddTranslation(GameCulture.Russian, "Тебе наверное любопытно, как я поместил настоящую радугу во флакон... Ну, силами магии... и вечными страданиями.");
             mod.AddTranslation(text);
         }
 
@@ -230,8 +236,13 @@ namespace AlchemistNPC.NPCs
 		string Entry8 = Language.GetTextValue("Mods.AlchemistNPC.Entry8");
 		string Entry9 = Language.GetTextValue("Mods.AlchemistNPC.Entry9");
 		string Entry10 = Language.GetTextValue("Mods.AlchemistNPC.Entry10");
+		string Entry11 = Language.GetTextValue("Mods.AlchemistNPC.Entry11");
 		int Brewer = NPC.FindFirstNPC(mod.NPCType("Brewer"));
 			if (Brewer >= 0 && Main.rand.Next(4) == 0)
+			{
+				return Entry8 + Main.npc[Brewer].GivenName + Entry9;
+			}
+			if (NPC.downedMoonlord && Main.rand.NextBool(10))
 			{
 				return Entry8 + Main.npc[Brewer].GivenName + Entry9;
 			}
@@ -258,202 +269,231 @@ namespace AlchemistNPC.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("LegacyInterface.28");
+            button = "Combinations";
+			button2 = "Flasks";
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
         {
             if (firstButton)
             {
+				Shop1 = true;
+				Shop2 = false;
                 shop = true;
             }
+			else{
+				Shop2 = true;
+				Shop1 = false;
+				shop = true;
+			}
         }
  
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("VanTankCombination"));
-			shop.item[nextSlot].shopCustomPrice = 90000;
-            nextSlot++;
-			if (Main.hardMode)
+			if (Shop1)
 			{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TankCombination"));
-			shop.item[nextSlot].shopCustomPrice = 160000;
-            nextSlot++;
-			}
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BattleCombination"));
-			shop.item[nextSlot].shopCustomPrice = 120000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RangerCombination"));
-			shop.item[nextSlot].shopCustomPrice = 75000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MageCombination"));
-			shop.item[nextSlot].shopCustomPrice = 90000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BuilderCombination"));
-			shop.item[nextSlot].shopCustomPrice = 35000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ExplorerCombination"));
-			shop.item[nextSlot].shopCustomPrice = 80000;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SummonerCombination"));
-			shop.item[nextSlot].shopCustomPrice = 30000;
-            nextSlot++;
-			if (Main.player[Main.myPlayer].anglerQuestsFinished >= 5)
-			{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("FishingCombination"));
-			shop.item[nextSlot].shopCustomPrice = 100000;
-            nextSlot++;
-			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-			{
-				if (NPC.downedMechBossAny)
-				{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ThoriumCombination"));
-			shop.item[nextSlot].shopCustomPrice = 300000;
-            nextSlot++;
-				}
-			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-			{
-				if (NPC.downedGolemBoss)
-				{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("CalamityCombination"));
-			shop.item[nextSlot].shopCustomPrice = 350000;
-            nextSlot++;
-				}
-			}
-			if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
-			{
-				if (NPC.downedMechBossAny)
-				{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SpiritCombination"));
-			shop.item[nextSlot].shopCustomPrice = 250000;
-            nextSlot++;
-				}
-				if (Main.hardMode)
-				{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("AcidVial"));
-			shop.item[nextSlot].shopCustomPrice = 30000;
-            nextSlot++;
-				}
-			}
-			if (NPC.downedMoonlord)
-			{
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("UniversalCombination"));
-			shop.item[nextSlot].shopCustomPrice = 500000;
-			nextSlot++;
-			}
-			if (NPC.downedQueenBee)
-			{
-				shop.item[nextSlot].SetDefaults (ItemID.FlaskofPoison);
-				shop.item[nextSlot].shopCustomPrice = 10000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.FlaskofFire);
-				shop.item[nextSlot].shopCustomPrice = 10000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.FlaskofParty);
-				shop.item[nextSlot].shopCustomPrice = 10000;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("VanTankCombination"));
+				shop.item[nextSlot].shopCustomPrice = 90000;
 				nextSlot++;
 				if (Main.hardMode)
 				{
-				shop.item[nextSlot].SetDefaults (ItemID.FlaskofGold);
-				shop.item[nextSlot].shopCustomPrice = 15000;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TankCombination"));
+					shop.item[nextSlot].shopCustomPrice = 160000;
+					nextSlot++;
+				}
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BattleCombination"));
+				shop.item[nextSlot].shopCustomPrice = 120000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.FlaskofIchor);
-				shop.item[nextSlot].shopCustomPrice = 25000;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RangerCombination"));
+				shop.item[nextSlot].shopCustomPrice = 75000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.FlaskofCursedFlames);
-				shop.item[nextSlot].shopCustomPrice = 25000;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MageCombination"));
+				shop.item[nextSlot].shopCustomPrice = 90000;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BuilderCombination"));
+				shop.item[nextSlot].shopCustomPrice = 35000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ExplorerCombination"));
+				shop.item[nextSlot].shopCustomPrice = 80000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SummonerCombination"));
+				shop.item[nextSlot].shopCustomPrice = 30000;
+				nextSlot++;
+				if (Main.player[Main.myPlayer].anglerQuestsFinished >= 5)
+				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("FishingCombination"));
+					shop.item[nextSlot].shopCustomPrice = 100000;
+					nextSlot++;
+				}
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+					if (NPC.downedMechBossAny)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ThoriumCombination"));
+						shop.item[nextSlot].shopCustomPrice = 300000;
+						nextSlot++;
+					}
+				}
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (NPC.downedGolemBoss)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("CalamityCombination"));
+						shop.item[nextSlot].shopCustomPrice = 350000;
+						nextSlot++;
+					}
+				}
+				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				{
+					if (NPC.downedMechBossAny)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SpiritCombination"));
+						shop.item[nextSlot].shopCustomPrice = 250000;
+						nextSlot++;
+					}
+				}
+				if (NPC.downedMoonlord)
+				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("UniversalCombination"));
+					shop.item[nextSlot].shopCustomPrice = 500000;
+					nextSlot++;
+				}
+				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				{
+					if (NPC.downedBoss3)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("FrostCoatingItem"));
+						shop.item[nextSlot].shopCustomPrice = 5000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ExplosiveCoatingItem"));
+						shop.item[nextSlot].shopCustomPrice = 5000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GorganCoatingItem"));
+						shop.item[nextSlot].shopCustomPrice = 5000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("LifeLeechCoatingItem"));
+						shop.item[nextSlot].shopCustomPrice = 5000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ToxicCoatingItem"));
+						shop.item[nextSlot].shopCustomPrice = 2500;
+						nextSlot++;
+					}
+					if (Main.hardMode)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GasContainer"));
+						shop.item[nextSlot].shopCustomPrice = 200;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CorrosionBeaker"));
+						shop.item[nextSlot].shopCustomPrice = 250;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CombustionFlask"));
+						shop.item[nextSlot].shopCustomPrice = 250;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("NitrogenVial"));
+						shop.item[nextSlot].shopCustomPrice = 250;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("AphrodisiacVial"));
+						shop.item[nextSlot].shopCustomPrice = 250;
+						nextSlot++;
+						if (NPC.downedPlantBoss)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("PlasmaVial"));
+							shop.item[nextSlot].shopCustomPrice = 350;
+							nextSlot++;
+						}
+					}	
+				}
+			}
+			if (Shop2)
+			{
+				if (NPC.downedQueenBee)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.FlaskofPoison);
+					shop.item[nextSlot].shopCustomPrice = 10000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ItemID.FlaskofFire);
+					shop.item[nextSlot].shopCustomPrice = 10000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ItemID.FlaskofParty);
+					shop.item[nextSlot].shopCustomPrice = 10000;
+					nextSlot++;
+				}
+				if (Main.hardMode)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.FlaskofGold);
+					shop.item[nextSlot].shopCustomPrice = 15000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ItemID.FlaskofIchor);
+					shop.item[nextSlot].shopCustomPrice = 25000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ItemID.FlaskofCursedFlames);
+					shop.item[nextSlot].shopCustomPrice = 25000;
+					nextSlot++;
 				}
 				if (NPC.downedPlantBoss)
 				{
-				shop.item[nextSlot].SetDefaults (ItemID.FlaskofVenom);
-				shop.item[nextSlot].shopCustomPrice = 30000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.FlaskofNanites);
-				shop.item[nextSlot].shopCustomPrice = 30000;
-				nextSlot++;	
+					shop.item[nextSlot].SetDefaults (ItemID.FlaskofVenom);
+					shop.item[nextSlot].shopCustomPrice = 30000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ItemID.FlaskofNanites);
+					shop.item[nextSlot].shopCustomPrice = 30000;
+					nextSlot++;	
 				}
-			}
-			bool WA = false;
-			for (int k = 0; k < 255; k++)
-			{
-				Player player = Main.player[k];
-				if (player.active)
+				bool WA = false;
+				for (int k = 0; k < 255; k++)
 				{
-					for (int j = 0; j < player.inventory.Length; j++)
+					Player player = Main.player[k];
+					if (player.active)
 					{
-						if (player.inventory[j].type == mod.ItemType("WatcherAmulet"))
+						for (int j = 0; j < player.inventory.Length; j++)
 						{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RainbowFlask"));
-						shop.item[nextSlot].shopCustomPrice = 1000000;
-						nextSlot++;
-						WA = true;
-						}
-						if (player.inventory[j].type == mod.ItemType("Autoinjector") && !WA)
-						{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RainbowFlask"));
-						shop.item[nextSlot].shopCustomPrice = 1000000;
-						nextSlot++;
+							if (player.inventory[j].type == mod.ItemType("WatcherAmulet"))
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RainbowFlask"));
+							shop.item[nextSlot].shopCustomPrice = 1000000;
+							nextSlot++;
+							WA = true;
+							}
+							if (player.inventory[j].type == mod.ItemType("Autoinjector") && !WA)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RainbowFlask"));
+							shop.item[nextSlot].shopCustomPrice = 1000000;
+							nextSlot++;
+							}
 						}
 					}
 				}
-			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-			{
-			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+				if (ModLoader.GetLoadedMods().Contains("AAMod"))
 				{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBrew"));
-					shop.item[nextSlot].shopCustomPrice = 50000;
-					nextSlot++;
+					if (Main.hardMode)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("DragonfireFlask"));
+						shop.item[nextSlot].shopCustomPrice = 20000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("HydratoxinFlask"));
+						shop.item[nextSlot].shopCustomPrice = 20000;
+						nextSlot++;
+					}
+				}
+				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				{
+					if (Main.hardMode)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("AcidVial"));
+						shop.item[nextSlot].shopCustomPrice = 30000;
+						nextSlot++;
+					}
+				}
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBrew"));
+						shop.item[nextSlot].shopCustomPrice = 50000;
+						nextSlot++;
+					}
 				}
 			}
-	if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-		{
-			if (NPC.downedBoss3)
-			{
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("FrostCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ExplosiveCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GorganCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("LifeLeechCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ToxicCoatingItem"));
-				shop.item[nextSlot].shopCustomPrice = 2500;
-				nextSlot++;
-			}
-			if (Main.hardMode)
-				{
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GasContainer"));
-				shop.item[nextSlot].shopCustomPrice = 200;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CorrosionBeaker"));
-				shop.item[nextSlot].shopCustomPrice = 250;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CombustionFlask"));
-				shop.item[nextSlot].shopCustomPrice = 250;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("NitrogenVial"));
-				shop.item[nextSlot].shopCustomPrice = 250;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("AphrodisiacVial"));
-				shop.item[nextSlot].shopCustomPrice = 250;
-				nextSlot++;
-					if (NPC.downedPlantBoss)
-					{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("PlasmaVial"));
-					shop.item[nextSlot].shopCustomPrice = 350;
-					nextSlot++;
-					}
-				}	
-			}
-    }
-}
+		}
+	}
 }

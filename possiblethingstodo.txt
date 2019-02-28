@@ -1,0 +1,2 @@
+﻿1) NPC which will sell accs after bringing him schemes for them.
+2) Single and multiple use map teleporters.

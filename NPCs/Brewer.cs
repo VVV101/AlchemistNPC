@@ -703,9 +703,6 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("BloodPotion"));
 			shop.item[nextSlot].shopCustomPrice = 10000;
             nextSlot++;
-			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CombatPotion"));
-			shop.item[nextSlot].shopCustomPrice = 10000;
-            nextSlot++;
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ConflagrationPotion"));
 			shop.item[nextSlot].shopCustomPrice = 10000;
             nextSlot++;

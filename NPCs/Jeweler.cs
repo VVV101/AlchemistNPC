@@ -126,6 +126,10 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, " и я очень похожи? Это потому что мы близнецы.");
             text.AddTranslation(GameCulture.Chinese, " 长得几乎一毛一样?这是因为我们是兄弟.");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryJ10");
+            text.SetDefault("Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.");
+            text.AddTranslation(GameCulture.Russian, "Как только найдёшь достаточно изорванных записок, неси их мне и я расшифрую их для тебя. Не спрашивай зачем, просто знай, что они имеют значение для меня.");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("Combine");
             text.SetDefault("Combine notes");
             text.AddTranslation(GameCulture.Russian, "Соединить записки");
@@ -249,8 +253,9 @@ namespace AlchemistNPC.NPCs
 		 string EntryJ7 = Language.GetTextValue("Mods.AlchemistNPC.EntryJ7");
 		 string EntryJ8 = Language.GetTextValue("Mods.AlchemistNPC.EntryJ8");
 		 string EntryJ9 = Language.GetTextValue("Mods.AlchemistNPC.EntryJ9");
+		 string EntryJ10 = Language.GetTextValue("Mods.AlchemistNPC.EntryJ10");
 		 int Merchant = NPC.FindFirstNPC(NPCID.Merchant);
-			if (Merchant >= 0 && Main.rand.Next(4) == 0)
+			if (Merchant >= 0 && Main.rand.Next(5) == 0)
 			{
 				return EntryJ8 + Main.npc[Merchant].GivenName + EntryJ9;
 			}
@@ -264,7 +269,7 @@ namespace AlchemistNPC.NPCs
 				return EntryJ6;
 				}
 			} 
-            switch (Main.rand.Next(5))
+            switch (Main.rand.Next(6))
             {
                 case 0:                                     
 				return EntryJ1;
@@ -274,6 +279,8 @@ namespace AlchemistNPC.NPCs
 				return EntryJ4;
                 case 3:                                     
 				return EntryJ5;
+				case 4:                                     
+				return EntryJ10;
                 default:
 				return EntryJ7;
             }

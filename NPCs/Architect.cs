@@ -173,6 +173,10 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Have you heard 'bout that FuryForged guy? I taught him all he knows!");
             text.AddTranslation(GameCulture.Russian, "Ты слышал об этом FuryForged? Я научил его всему, что он знает!");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("A22");
+            text.SetDefault("I was once hired by a certain company to build a supermassive hi-tech, hi-security installation. Lemme tell ya its my magnum opus in terms of security and containment.");
+            text.AddTranslation(GameCulture.Russian, "Как-то раз я был нанят одной компанией, чтобы построить огромный высокотехнологичный комплекс с высочайщей степенью безопасности. Это была моя самая лучшая работа в плане сдерживания и безопасности.");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("AS1");
             text.SetDefault("1st shop (Filler Blocks)       ");
             text.AddTranslation(GameCulture.Russian, "1-ый магазин (Обычные Блоки)");
@@ -331,11 +335,13 @@ namespace AlchemistNPC.NPCs
 			string A18 = Language.GetTextValue("Mods.AlchemistNPC.A18");	
 			string A19 = Language.GetTextValue("Mods.AlchemistNPC.A19");
 			string A20 = Language.GetTextValue("Mods.AlchemistNPC.A20");
-			string A21 = Language.GetTextValue("Mods.AlchemistNPC.A21");		
+			string A21 = Language.GetTextValue("Mods.AlchemistNPC.A21");
+			string A22 = Language.GetTextValue("Mods.AlchemistNPC.A22");				
 			
 			int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
 			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
 			int demolitionist = NPC.FindFirstNPC(NPCID.Demolitionist);
+			int Operator = NPC.FindFirstNPC(mod.NPCType("Operator"));
 			if (Main.bloodMoon && partyGirl >= 0 && goblinTinkerer >=0 && Main.rand.Next(4) == 0)
 			{
 			return A1 + Main.npc[partyGirl].GivenName + A2 + Main.npc[goblinTinkerer].GivenName + A3;
@@ -371,6 +377,10 @@ namespace AlchemistNPC.NPCs
             if (demolitionist >= 0 && Main.rand.Next(5) == 0)
 			{
 			return A12 + Main.npc[demolitionist].GivenName + A13;
+			}
+			if (Operator >= 0 && Main.rand.Next(7) == 0)
+			{
+			return A21;
 			}
             switch (Main.rand.Next(8))
             {                

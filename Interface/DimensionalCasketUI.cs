@@ -196,7 +196,7 @@ namespace AlchemistNPC.Interface
 			DimensionalCasketPanel.Append(text22);
 			
 			UIText text23 = new UIText("Young Brewer");
-			text23.Left.Set(240, 0f);
+			text23.Left.Set(270, 0f);
 			text23.Top.Set(190, 0f);
 			text23.Width.Set(100, 0f);
 			text23.Height.Set(22, 0f);
@@ -516,13 +516,20 @@ namespace AlchemistNPC.Interface
 			playButton222.OnClick += new MouseEvent(PlayButtonClicked222);
 			DimensionalCasketPanel.Append(playButton222);
 			
-			UIImageButton playButton23 = new UIImageButton(buttonPlayTexture);
-			playButton23.Left.Set(210, 0f);
-			playButton23.Top.Set(190, 0f);
-			playButton23.Width.Set(22, 0f);
-			playButton23.Height.Set(22, 0f);
-			playButton23.OnClick += new MouseEvent(PlayButtonClicked23);
-			DimensionalCasketPanel.Append(playButton23);
+			UIImageButton playButton231 = new UIImageButton(buttonPlayTexture);
+			playButton231.Left.Set(210, 0f);
+			playButton231.Top.Set(190, 0f);
+			playButton231.Width.Set(22, 0f);
+			playButton231.Height.Set(22, 0f);
+			playButton231.OnClick += new MouseEvent(PlayButtonClicked231);
+			DimensionalCasketPanel.Append(playButton231);
+			UIImageButton playButton232 = new UIImageButton(buttonPlayTexture);
+			playButton232.Left.Set(240, 0f);
+			playButton232.Top.Set(190, 0f);
+			playButton232.Width.Set(22, 0f);
+			playButton232.Height.Set(22, 0f);
+			playButton232.OnClick += new MouseEvent(PlayButtonClicked232);
+			DimensionalCasketPanel.Append(playButton232);
 			
 			UIImageButton playButton241 = new UIImageButton(buttonPlayTexture);
 			playButton241.Left.Set(150, 0f);
@@ -1422,7 +1429,7 @@ namespace AlchemistNPC.Interface
 			}
 		}
 		
-		private void PlayButtonClicked23(UIMouseEvent evt, UIElement listeningElement)
+		private void PlayButtonClicked231(UIMouseEvent evt, UIElement listeningElement)
 		{
 			visible = false;
 			if (NPC.AnyNPCs(mod.NPCType("Young Brewer")))
@@ -1432,6 +1439,30 @@ namespace AlchemistNPC.Interface
 					NPC npc = Main.npc[k];
 					if (Main.npc[k].type == mod.NPCType("Young Brewer"))
 					{
+						YoungBrewer.Shop1 = true;
+						YoungBrewer.Shop2 = false;
+						Main.playerInventory = true;
+						forcetalk = true;
+						Main.player[Main.myPlayer].talkNPC = k;
+						Main.npcShop = Main.MaxShopIDs - 1;
+						Main.instance.shop[Main.npcShop].SetupShop(Main.npc[k].type);
+					}
+				}
+			}
+		}
+		
+		private void PlayButtonClicked232(UIMouseEvent evt, UIElement listeningElement)
+		{
+			visible = false;
+			if (NPC.AnyNPCs(mod.NPCType("Young Brewer")))
+			{
+				for (k = 0; k < 200; k++)
+				{
+					NPC npc = Main.npc[k];
+					if (Main.npc[k].type == mod.NPCType("Young Brewer"))
+					{
+						YoungBrewer.Shop2 = true;
+						YoungBrewer.Shop1 = false;
 						Main.playerInventory = true;
 						forcetalk = true;
 						Main.player[Main.myPlayer].talkNPC = k;
