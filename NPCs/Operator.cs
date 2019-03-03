@@ -1206,6 +1206,11 @@ namespace AlchemistNPC.NPCs
 			}
 			if (Shop == 2)
 			{
+				if (Main.hardMode)
+				{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("GlobalTeleporter"));
+					nextSlot++;
+				}
 				if (NPC.downedBoss3)
 				{
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("TheBeak"));

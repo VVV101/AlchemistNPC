@@ -822,6 +822,8 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("PerfectDiscordPotion"));
 		shop.item[nextSlot].shopCustomPrice = 330000;
         nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("GlobalTeleporterUp"));
+        nextSlot++;
 		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ChromaticCrystal"));
 		shop.item[nextSlot].shopCustomPrice = 500000;
 		nextSlot++;

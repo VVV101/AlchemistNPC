@@ -1121,6 +1121,10 @@ namespace AlchemistNPC
             text.SetDefault("Man, how much gun is that AI packing?");
 			text.AddTranslation(GameCulture.Russian, "Чувак, сколько же пушек у этого ИИ с собой?");
             AddTranslation(text);
+			
+			text = CreateTranslation("RCTT");
+            text.SetDefault("Right-click to teleport here");
+            AddTranslation(text);
         }
 		
 		public override void UpdateUI(GameTime gameTime)

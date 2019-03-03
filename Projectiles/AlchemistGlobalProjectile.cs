@@ -143,11 +143,19 @@ namespace AlchemistNPC.Projectiles
 
 		public override Color? GetAlpha(Projectile projectile, Color lightColor)
         {
-			if (AlchemistNPC.GreaterDangersense == true)
+			for (int k = 0; k < 255; k++)
 			{
-				if (projectile.hostile && !projectile.friendly)
+				Player player = Main.player[k];
+				if (player.active)
 				{
-					return Color.Yellow;
+					if (player.HasBuff(mod.BuffType("GreaterDangersense")))
+					{
+						if (projectile.hostile && !projectile.friendly)
+						{
+							Lighting.AddLight(projectile.Center, 1f, 1f, 0f);
+							return Color.Yellow;
+						}
+					}
 				}
 			}
 			return base.GetAlpha(projectile, lightColor);
@@ -156,14 +164,6 @@ namespace AlchemistNPC.Projectiles
 		public override void AI(Projectile projectile)
 		{
 			Player player = Main.player[projectile.owner];
-			
-			if (AlchemistNPC.GreaterDangersense == true)
-			{
-				if (projectile.hostile && !projectile.friendly)
-				{
-					Lighting.AddLight(projectile.Center, 1f, 1f, 0f);
-				}
-			}
 			
 			if (firstTime && !projectile.hostile && projectile.magic && (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem == true) && projectile.type != mod.ProjectileType("Bees"))
 			{

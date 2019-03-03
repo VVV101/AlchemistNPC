@@ -132,6 +132,14 @@ namespace AlchemistNPC.Items.Weapons
 			return true;
 		}
 		
+		public override void ModifyTooltips(List<TooltipLine> tooltips)
+		{
+			Player player = Main.player[Main.myPlayer];
+			string text1 = "Bloodthirsty Blade points are " + ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP;
+			TooltipLine line = new TooltipLine(mod, "text1", text1);
+			tooltips.Insert(1,line);
+		}
+		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);

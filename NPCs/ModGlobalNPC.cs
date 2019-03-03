@@ -593,6 +593,18 @@ namespace AlchemistNPC.NPCs
 				npc.color = new Color(255, 10, 10, 100);
 				Lighting.AddLight(npc.position, 1f, 1f, 1f);
 			}
+			for (int k = 0; k < 255; k++)
+			{
+				Player player = Main.player[k];
+				if (player.active && player.HasBuff(mod.BuffType("GreaterDangersense")))
+				{
+					if (npc.type == 112)
+					{
+						npc.color = new Color(255, 255, 0, 100);
+						Lighting.AddLight(npc.position, 1f, 1f, 0f);
+					}
+				}
+			}
 			if (justitiapale)
 			{
 				if (Main.rand.Next(4) < 2)
@@ -644,6 +656,7 @@ namespace AlchemistNPC.NPCs
 		{
 			string barrierWeek = Language.GetTextValue("Mods.AlchemistNPC.barrierWeek");
 			string Eclipse = Language.GetTextValue("Mods.AlchemistNPC.Eclipse");
+			
 			if (npc.type == NPCID.MoonLordCore)
 			{
 				if (!NPC.downedMoonlord)
@@ -691,65 +704,65 @@ namespace AlchemistNPC.NPCs
 				Player player = Main.player[k];
 				if (player.active)
 				{
-					if (player.HeldItem.type == mod.ItemType("ChristmasW") && Main.rand.NextBool(33))
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Present);
-					}
+					AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(AlchemistNPC.Instance);
 					if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade"))
 					{
-						if (!Main.hardMode && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP < 2600)
+						if (!Main.hardMode && modPlayer.BBP < 2600)
 						{
 							if (!npc.boss && npc.type != 1 && npc.type != 535)
 							{
-							((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP++;
+							modPlayer.BBP++;
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
-							((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 25;
+							modPlayer.BBP += 25;
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
-							((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 50;
+							modPlayer.BBP += 50;
 							}
 						}
-						if (Main.hardMode && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP < 8900)
+						if (Main.hardMode && modPlayer.BBP < 8900)
 						{
 							if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(2))
 							{
-							((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP++;
+							modPlayer.BBP++;
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
-							((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 15;
+							modPlayer.BBP += 15;
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
-							((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 30;
+							modPlayer.BBP += 30;
 							}
 						}
 						if (NPC.downedMoonlord)
 						{
 							if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(3))
 							{
-							((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP++;
+							modPlayer.BBP++;
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
-							((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 10;
+							modPlayer.BBP += 10;
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
-							((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP += 20;
+							modPlayer.BBP += 20;
 							}
 						}
 					}
-						
+					if (player.HeldItem.type == mod.ItemType("ChristmasW") && Main.rand.NextBool(33))
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Present);
+					}
 					if (npc.lifeMax >= 25000 && npc.boss && Main.rand.Next(20) == 0)
 						{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PerfectionToken"));

@@ -34,6 +34,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
+using AlchemistNPC.NPCs;
 using AlchemistNPC.Interface;
 using AlchemistNPC.Items;
 using AlchemistNPC.Mounts;
@@ -103,6 +104,8 @@ namespace AlchemistNPC
 		public bool sscope = false;
 		public bool lwm = false;
 		public bool DB = false;
+		public bool GlobalTeleporter = false;
+		public bool GlobalTeleporterUp = false;
 		public bool MeatGrinderOnUse = false;
 		public int DisasterGauge = 0;
 		public int chargetime = 0;
@@ -124,6 +127,14 @@ namespace AlchemistNPC
 		public bool CalamityModDownedSCal
 		{
 		get { return CalamityMod.CalamityWorld.downedSCal; }
+		}
+		
+		public override bool CloneNewInstances
+		{
+			get
+			{
+				return true;
+			}
 		}
 		
 		public override void ResetEffects()
@@ -152,7 +163,6 @@ namespace AlchemistNPC
 			AlchemistGlobalItem.Violent = false;
 			AlchemistGlobalItem.Warding = false;
 			AlchemistGlobalItem.Stopper = false;
-			AlchemistNPC.GreaterDangersense = false;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
 			MeatGrinderOnUse = false;
@@ -197,6 +207,8 @@ namespace AlchemistNPC
 			Yui = false;
 			YuiS = false;
 			Traps = false;
+			GlobalTeleporter = false;
+			GlobalTeleporterUp = false;
 			
 			player.statLifeMax2 += LifeElixir * 50;
 			player.statManaMax2 += Fuaran * 100;
@@ -496,7 +508,7 @@ namespace AlchemistNPC
 		
 		public override void OnRespawn(Player player)
 		{
-			if (NPC.AnyNPCs(NPCID.Nurse) && PHD)
+			if (NPC.AnyNPCs(NPCID.Nurse) && PHD && (player == Main.player[Main.myPlayer]))
 			{
 				int num1 = player.statLifeMax2 - player.statLife;
 				int num2 = (int)((double)num1 * 0.75);
@@ -511,6 +523,87 @@ namespace AlchemistNPC
 		
 		public override void ProcessTriggers(TriggersSet triggersSet)
 		{
+			if (GlobalTeleporter || GlobalTeleporterUp)
+			{
+				bool allow = true;
+				for (int v = 0; v < 200; ++v)
+				{
+					NPC npc = Main.npc[v];
+					if (npc.active && npc.boss)
+					{
+						allow = false;
+						break;
+					}
+				}
+				if (GlobalTeleporterUp && allow && Main.mapFullscreen == true && Main.mouseRight && Main.keyState.IsKeyUp(Microsoft.Xna.Framework.Input.Keys.LeftControl))
+				{
+					int mapWidth = Main.maxTilesX * 16;
+					int mapHeight = Main.maxTilesY * 16;
+					Vector2 cursorPosition = new Vector2(Main.mouseX, Main.mouseY);
+
+					cursorPosition.X -= Main.screenWidth / 2;
+					cursorPosition.Y -= Main.screenHeight / 2;
+
+					Vector2 mapPosition = Main.mapFullscreenPos;
+					Vector2 cursorWorldPosition = mapPosition;
+
+					cursorPosition /= 16;
+					cursorPosition *= 16 / Main.mapFullscreenScale;
+					cursorWorldPosition += cursorPosition;
+					cursorWorldPosition *= 16;
+
+					cursorWorldPosition.Y -= player.height;
+					if (cursorWorldPosition.X < 0) cursorWorldPosition.X = 0;
+					else if (cursorWorldPosition.X + player.width > mapWidth) cursorWorldPosition.X = mapWidth - player.width;
+					if (cursorWorldPosition.Y < 0) cursorWorldPosition.Y = 0;
+					else if (cursorWorldPosition.Y + player.height > mapHeight) cursorWorldPosition.Y = mapHeight - player.height;
+					
+					player.Teleport(cursorWorldPosition, 0, 0);
+					NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) cursorWorldPosition.X, (float) cursorWorldPosition.Y, 1, 0, 0);
+					Main.mapFullscreen = false;
+					
+					for (int index = 0; index < 120; ++index)
+					Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-10f,10f), Main.rand.NextFloat(-10f,10f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+				}
+				if (GlobalTeleporter && allow && Main.mapFullscreen == true && Main.mouseRight && Main.keyState.IsKeyUp(Microsoft.Xna.Framework.Input.Keys.LeftControl))
+				{
+					int mapWidth = Main.maxTilesX * 16;
+					int mapHeight = Main.maxTilesY * 16;
+					Vector2 cursorPosition = new Vector2(Main.mouseX, Main.mouseY);
+
+					cursorPosition.X -= Main.screenWidth / 2;
+					cursorPosition.Y -= Main.screenHeight / 2;
+
+					Vector2 mapPosition = Main.mapFullscreenPos;
+					Vector2 cursorWorldPosition = mapPosition;
+
+					cursorPosition /= 16;
+					cursorPosition *= 16 / Main.mapFullscreenScale;
+					cursorWorldPosition += cursorPosition;
+					cursorWorldPosition *= 16;
+
+					cursorWorldPosition.Y -= player.height;
+					if (cursorWorldPosition.X < 0) cursorWorldPosition.X = 0;
+					else if (cursorWorldPosition.X + player.width > mapWidth) cursorWorldPosition.X = mapWidth - player.width;
+					if (cursorWorldPosition.Y < 0) cursorWorldPosition.Y = 0;
+					else if (cursorWorldPosition.Y + player.height > mapHeight) cursorWorldPosition.Y = mapHeight - player.height;
+					
+					player.Teleport(cursorWorldPosition, 0, 0);
+					NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) cursorWorldPosition.X, (float) cursorWorldPosition.Y, 1, 0, 0);
+					Main.mapFullscreen = false;
+					Item[] inventory = player.inventory;
+					for (int k = 0; k < inventory.Length; k++)
+					{
+						if (inventory[k].type == mod.ItemType("GlobalTeleporter"))
+						{
+							inventory[k].stack--;
+							break;
+						}
+					}
+					for (int index = 0; index < 120; ++index)
+					Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-10f,10f), Main.rand.NextFloat(-10f,10f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+				}
+			}
 			if (AlchemistNPC.LampLight.JustPressed)
 			{
 				if (lamp == 0 && trigger)

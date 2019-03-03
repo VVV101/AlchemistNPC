@@ -19,10 +19,5 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Великого Чувства Опасности");
 			Description.AddTranslation(GameCulture.Russian, "Подсвечивает снаряды противника");
         }
-		
-		public override void Update(Player player, ref int buffIndex)
-		{
-			AlchemistNPC.GreaterDangersense = true;
-		}
 	}
 }

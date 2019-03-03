@@ -29,6 +29,11 @@ Will not work if Nurse is dead. Drops from WoF.
 Drops from WoF.
 -Added Dimensional Casket. Allows to trade with NPCs at any point of map.
 Can be crafted from Broken Dimensional Casket and some other materials.
+-Added World Warper and Modified World Warper.
+Allows you to teleport to any point of the map by right-clicking on full screen map.
+Not works if any boss is alive.
+Non-modified version can be bought from Operator's EGO shop. Breaks after use.
+Modified version can be bought from Explorer. Not breaks after use.
 -All Alchemist Charms are now provide different discounts. They are 10%, 25%, 35%, 50%.
 -Flasks in Young Brewer shop are in separate shop now.
 -Duke Fishron Treasure Bag is now available after beating Duke Fishron. 
