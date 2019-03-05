@@ -37,7 +37,10 @@ namespace AlchemistNPC.Items.Misc
 		
 		public override bool UseItem(Player player)
 		{
-			DimensionalCasketUI.visible = true;
+			if (Main.myPlayer == player.whoAmI)
+			{
+				DimensionalCasketUI.visible = true;
+			}
 			return true;
 		}
 		
@@ -53,7 +56,10 @@ namespace AlchemistNPC.Items.Misc
 
         public override void RightClick(Player player)
         {
-			DimensionalCasketUI.visible = true;
+			if (Main.myPlayer == player.whoAmI)
+			{
+				DimensionalCasketUI.visible = true;
+			}
 		}
 		
 		public override void AddRecipes()
