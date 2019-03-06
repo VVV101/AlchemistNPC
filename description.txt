@@ -7,6 +7,8 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv83.json.
+v8.3.1
+-Just for consistency (and for preventing confusion with beta builds).
 v8.3
 -Reworked how exactly Shops Changer works.
 Now it opens shop immidietly after pressing certain shop button (~optimisation of time).
