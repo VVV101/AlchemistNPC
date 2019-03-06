@@ -46,6 +46,7 @@ Same for Moon Lord Treasure Bag (available after beating Moon Lord).
 -Added support for Ancients Awakened.
 -Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.
 -Added some more lines to NPCs.
+-Fixed Bloodthirsty Blade was not working in MP (thanks to Grox#6739).
 -Fixed 2nd Music boxes shop of Musician (returned all Calamity music boxes back).
 -Fixed some bugs with red Bees and Wasps.
 -Fixed potions being consumed from Piggy Bank no matter if potions saving effect was working.

@@ -240,7 +240,7 @@ namespace AlchemistNPC
 				}
 			}
 		}
-	
+		
 		public override bool CanBeHitByProjectile(Projectile projectile)
 		{
 			if (player.HasBuff(mod.BuffType("Akumu")) || player.HasBuff(mod.BuffType("TrueAkumu")))
@@ -253,6 +253,7 @@ namespace AlchemistNPC
 		public override void clientClone(ModPlayer clientClone)
 		{
 			AlchemistNPCPlayer clone = clientClone as AlchemistNPCPlayer;
+			clone.BBP = BBP;
 		}
 	
 		public override void SyncPlayer(int toWho, int fromWho, bool newPlayer)
@@ -280,6 +281,14 @@ namespace AlchemistNPC
 	
 		public override void SendClientChanges(ModPlayer clientPlayer)
 		{
+			AlchemistNPCPlayer clone = clientPlayer as AlchemistNPCPlayer;
+			if (clone.BBP != BBP) {
+				var packet = mod.GetPacket();
+				packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.BBPChanged);
+				packet.Write((byte)player.whoAmI);
+				packet.Write(BBP);
+				packet.Send();
+			}
 		}
 	
 		public override TagCompound Save()

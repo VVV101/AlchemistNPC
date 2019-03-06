@@ -56,6 +56,8 @@ namespace AlchemistNPC
 		internal ShopChangeUIA alchemistUIA;
 		private UserInterface alchemistUserInterfaceO;
 		internal ShopChangeUIO alchemistUIO;
+		private UserInterface alchemistUserInterfaceM;
+		internal ShopChangeUIM alchemistUIM;
 		private UserInterface alchemistUserInterfaceH;
 		internal HealingUI alchemistUIH;
 		private UserInterface alchemistUserInterfaceDC;
@@ -109,6 +111,11 @@ namespace AlchemistNPC
 				alchemistUIO.Activate();
 				alchemistUserInterfaceO = new UserInterface();
 				alchemistUserInterfaceO.SetState(alchemistUIO);
+				
+				alchemistUIM = new ShopChangeUIM();
+				alchemistUIM.Activate();
+				alchemistUserInterfaceM = new UserInterface();
+				alchemistUserInterfaceM.SetState(alchemistUIM);
 				
 				alchemistUIH = new HealingUI();
 				alchemistUIH.Activate();
@@ -195,6 +202,22 @@ namespace AlchemistNPC
 					InterfaceScaleType.UI)
 				);
 			}
+			int MouseTextIndexM = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexM != -1)
+			{
+				layers.Insert(MouseTextIndexM, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Shop Selector M",
+					delegate
+					{
+						if (ShopChangeUIM.visible)
+						{
+							alchemistUIM.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
 			int MouseTextIndexH = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
 			if (MouseTextIndexH != -1)
 			{
@@ -266,7 +289,8 @@ namespace AlchemistNPC
 			switch (msgType)
 			{
 				case AlchemistNPCMessageType.LifeAndManaSync:
-					Player lifeFruitsPlayer = Main.player[reader.ReadByte()];
+					byte playernumber = reader.ReadByte();
+					Player lifeFruitsPlayer = Main.player[playernumber];
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().LifeElixir = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().Fuaran = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().KeepBuffs = reader.ReadInt32();
@@ -277,6 +301,19 @@ namespace AlchemistNPC
 				case AlchemistNPCMessageType.TeleportPlayer:
 					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);
 					break;
+				case AlchemistNPCMessageType.BBPChanged:
+					playernumber = reader.ReadByte();
+					AlchemistNPCPlayer alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
+					alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
+					alchemistPlayer.BBP = reader.ReadInt32();
+					if (Main.netMode == NetmodeID.Server) {
+						var packet = GetPacket();
+						packet.Write((byte)AlchemistNPCMessageType.BBPChanged);
+						packet.Write(playernumber);
+						packet.Write(alchemistPlayer.BBP);
+						packet.Send(-1, playernumber);
+					}
+					break;
 				default:
 					ErrorLogger.Log("AlchemistNPC: Unknown Message type: " + msgType);
 					break;
@@ -286,7 +323,8 @@ namespace AlchemistNPC
 		public enum AlchemistNPCMessageType : byte
 		{
 		LifeAndManaSync,
-		TeleportPlayer
+		TeleportPlayer,
+		BBPChanged
 		}
 		
 		public override void AddRecipeGroups()
@@ -1142,6 +1180,11 @@ namespace AlchemistNPC
 			if (alchemistUserInterfaceO != null && ShopChangeUIO.visible)
 			{
 				alchemistUserInterfaceO.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceM != null && ShopChangeUIM.visible)
+			{
+				alchemistUserInterfaceM.Update(gameTime);
 			}
 			
 			if (alchemistUserInterfaceP != null && PipBoyTPMenu.visible)

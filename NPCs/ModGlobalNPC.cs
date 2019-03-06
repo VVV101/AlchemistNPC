@@ -697,6 +697,16 @@ namespace AlchemistNPC.NPCs
 			return true;
 		}
 
+		public void SyncBBP(Player player)
+		{
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(AlchemistNPC.Instance);
+			ModPacket packet = mod.GetPacket();
+			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.BBPChanged);
+			packet.Write((byte)player.whoAmI);
+			packet.Write(modPlayer.BBP);
+			packet.Send();
+		}
+
 		public override void NPCLoot(NPC npc)
 		{
 			for (int k = 0; k < 255; k++)
@@ -711,51 +721,69 @@ namespace AlchemistNPC.NPCs
 						{
 							if (!npc.boss && npc.type != 1 && npc.type != 535)
 							{
-							modPlayer.BBP++;
+								modPlayer.BBP++;
+								if (Main.netMode == 2)
+								SyncBBP(player);
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
-							modPlayer.BBP += 25;
+								modPlayer.BBP += 25;
+								if (Main.netMode == 2)
+								SyncBBP(player);
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
-							modPlayer.BBP += 50;
+								modPlayer.BBP += 50;
+								if (Main.netMode == 2)
+								SyncBBP(player);
 							}
 						}
 						if (Main.hardMode && modPlayer.BBP < 8900)
 						{
 							if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(2))
 							{
-							modPlayer.BBP++;
+								modPlayer.BBP++;
+								if (Main.netMode == 2)
+								SyncBBP(player);
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
-							modPlayer.BBP += 15;
+								modPlayer.BBP += 15;
+								if (Main.netMode == 2)
+								SyncBBP(player);
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
-							modPlayer.BBP += 30;
+								modPlayer.BBP += 30;
+								if (Main.netMode == 2)
+								SyncBBP(player);
 							}
 						}
 						if (NPC.downedMoonlord)
 						{
 							if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(3))
 							{
-							modPlayer.BBP++;
+								modPlayer.BBP++;
+								if (Main.netMode == 2)
+								SyncBBP(player);
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
-							modPlayer.BBP += 10;
+								modPlayer.BBP += 10;
+								if (Main.netMode == 2)
+								SyncBBP(player);
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
-							modPlayer.BBP += 20;
+								modPlayer.BBP += 20;
+								if (Main.netMode == 2)
+								SyncBBP(player);
 							}
 						}
 					}

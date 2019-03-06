@@ -5,6 +5,7 @@ using Terraria.GameContent.Events;
 using Terraria.ModLoader;
 using Terraria.Localization;
 using Terraria.World.Generation;
+using AlchemistNPC.Interface;
  
 namespace AlchemistNPC.NPCs
 {
@@ -13,6 +14,7 @@ namespace AlchemistNPC.NPCs
 	{
 		public static bool S1 = true;
 		public static bool S2 = false;
+		public static bool S3 = false;
 		public override string Texture
 		{
 			get
@@ -42,6 +44,15 @@ namespace AlchemistNPC.NPCs
             ModTranslation text = mod.CreateTranslation("Shop2");
             text.SetDefault("2nd shop");
             text.AddTranslation(GameCulture.Russian, "2-ой магазин");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("Shop3");
+            text.SetDefault("3rd shop");
+            text.AddTranslation(GameCulture.Russian, "3-ий магазин");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("ShopChanger");
+            text.SetDefault("Shop Changer");
+            text.AddTranslation(GameCulture.Russian, "Сменить магазин");
+            text.AddTranslation(GameCulture.Chinese, "切换商店");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Beethoven");
             text.SetDefault("Beethoven");
@@ -364,26 +375,33 @@ namespace AlchemistNPC.NPCs
         public override void SetChatButtons(ref string button, ref string button2)
         {
             string Shop2 = Language.GetTextValue("Mods.AlchemistNPC.Shop2");
-			button = Language.GetTextValue("LegacyInterface.28");
-			if (Main.hardMode)
+			string Shop3 = Language.GetTextValue("Mods.AlchemistNPC.Shop3");
+			string ShopChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopChanger");
+			if (S1)
 			{
-				button2 = Shop2;
+				button = Language.GetTextValue("LegacyInterface.28");
 			}
+			if (S2)
+			{
+				button = Shop2;
+			}
+			if (S3)
+			{
+				button = Shop3;
+			}
+			button2 = ShopChanger;
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
 		{
 			if (firstButton)
 			{
-			S1 = true;
-			S2 = false;
-			shop = true;
+				shop = true;
+				ShopChangeUIM.visible = false;
 			}
 			else
 			{
-				S1 = false;
-				S2 = true;
-				shop = true;
+				ShopChangeUIM.visible = true;
 			}
 		}
 		
@@ -661,21 +679,6 @@ namespace AlchemistNPC.NPCs
 			}
 			if (S2)
 			{
-				if (Main.hardMode)
-				{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("FieldsMusicBox"));
-					shop.item[nextSlot].shopCustomPrice = 400000;
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SheamMusicBox"));
-					shop.item[nextSlot].shopCustomPrice = 250000;
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ChaosKingMusicBox"));
-					shop.item[nextSlot].shopCustomPrice = 250000;
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TheWorldRevolvingMusicBox"));
-					shop.item[nextSlot].shopCustomPrice = 250000;
-					nextSlot++;
-				}
 				if (ModLoader.GetLoadedMods().Contains("CalamityMod") && ModLoader.GetLoadedMods().Contains("CalamityModMusic"))
 				{
 					if (CalamityModMusicDownedDesertScourge)
@@ -707,7 +710,13 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SlimeGodMusicbox"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("CragMusicbox"));
+					shop.item[nextSlot].shopCustomPrice = 150000;
+					nextSlot++;
 					}
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SirenIdleMusicbox"));
+					shop.item[nextSlot].shopCustomPrice = 150000;
+					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SulphurousMusicbox"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
@@ -743,6 +752,18 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("CalamitasMusicbox"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("CalamityMusicbox"));
+					shop.item[nextSlot].shopCustomPrice = 150000;
+					nextSlot++;
+					}
+					if (CalamityModMusicDownedLeviathan)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SirenMusicbox"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("LeviathanMusicbox"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;
 					}
 					if (CalamityModMusicDownedAstrum)
 					{
@@ -766,6 +787,12 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("RavagerMusicbox"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
+					}
+					if (NPC.downedMoonlord)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("CultistMusicbox"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;
 					}
 						if (CalamityModMusicDownedGuardian)
 						{
@@ -793,6 +820,9 @@ namespace AlchemistNPC.NPCs
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("PolterghastMusicbox"));
 						shop.item[nextSlot].shopCustomPrice = 300000;
 						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SunkenSeaMusicbox"));
+						shop.item[nextSlot].shopCustomPrice = 300000;
+						nextSlot++;
 						}
 						if (CalamityModMusicDownedDOG)
 						{
@@ -803,7 +833,19 @@ namespace AlchemistNPC.NPCs
 							shop.item[nextSlot].shopCustomPrice = 500000;
 							nextSlot++;
 						}
-						if (CalamityModMusicDownedDOG)
+						if (CalamityModMusicDownedYharon)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("Yharon1Musicbox"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("Yharon2Musicbox"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("Yharon3Musicbox"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+						}
+						if (CalamityModMusicDownedSCal)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SCalGMusicbox"));
 							shop.item[nextSlot].shopCustomPrice = 500000;
@@ -819,6 +861,24 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 						}
 					}
+				}
+			}
+			if (S3)
+			{
+				if (Main.hardMode)
+				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("FieldsMusicBox"));
+					shop.item[nextSlot].shopCustomPrice = 400000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SheamMusicBox"));
+					shop.item[nextSlot].shopCustomPrice = 250000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ChaosKingMusicBox"));
+					shop.item[nextSlot].shopCustomPrice = 250000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TheWorldRevolvingMusicBox"));
+					shop.item[nextSlot].shopCustomPrice = 250000;
+					nextSlot++;
 				}
 				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 				{
