@@ -1,7 +1,7 @@
 author = Gregg/VVV101, somebody0214, RebooT, drh
-version = 8.3.1
+version = 8.3.2
 displayName = AlchemistNPC
-homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v5-0.52798/
+homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v8-0.52798/
 hideCode = false
 weakReferences = SacredTools, CalamityMod, ThoriumMod, SpiritMod, Laugicality, Redemption, Bluemagic, pinkymod, CalamityModMusic, FargowiltasSouls, AAMod
 hideResources = false

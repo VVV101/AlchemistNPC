@@ -203,7 +203,7 @@ namespace AlchemistNPC.Interface
 			DimensionalCasketPanel.Append(text23);
 			
 			UIText text24 = new UIText("Musician");
-			text24.Left.Set(210, 0f);
+			text24.Left.Set(240, 0f);
 			text24.Top.Set(220, 0f);
 			text24.Width.Set(65, 0f);
 			text24.Height.Set(22, 0f);
@@ -545,6 +545,13 @@ namespace AlchemistNPC.Interface
 			playButton242.Height.Set(22, 0f);
 			playButton242.OnClick += new MouseEvent(PlayButtonClicked242);
 			DimensionalCasketPanel.Append(playButton242);
+			UIImageButton playButton243 = new UIImageButton(buttonPlayTexture);
+			playButton243.Left.Set(210, 0f);
+			playButton243.Top.Set(220, 0f);
+			playButton243.Width.Set(22, 0f);
+			playButton243.Height.Set(22, 0f);
+			playButton243.OnClick += new MouseEvent(PlayButtonClicked243);
+			DimensionalCasketPanel.Append(playButton243);
 			
 			UIImageButton playButton25 = new UIImageButton(buttonPlayTexture);
 			playButton25.Left.Set(150, 0f);
@@ -1485,6 +1492,7 @@ namespace AlchemistNPC.Interface
 					{
 						Musician.S1 = true;
 						Musician.S2 = false;
+						Musician.S3 = false;
 						Main.playerInventory = true;
 						forcetalk = true;
 						Main.player[Main.myPlayer].talkNPC = k;
@@ -1507,6 +1515,30 @@ namespace AlchemistNPC.Interface
 					{
 						Musician.S1 = false;
 						Musician.S2 = true;
+						Musician.S3 = false;
+						Main.playerInventory = true;
+						forcetalk = true;
+						Main.player[Main.myPlayer].talkNPC = k;
+						Main.npcShop = Main.MaxShopIDs - 1;
+						Main.instance.shop[Main.npcShop].SetupShop(Main.npc[k].type);
+					}
+				}
+			}
+		}
+		
+		private void PlayButtonClicked243(UIMouseEvent evt, UIElement listeningElement)
+		{
+			visible = false;
+			if (NPC.AnyNPCs(mod.NPCType("Musician")))
+			{
+				for (k = 0; k < 200; k++)
+				{
+					NPC npc = Main.npc[k];
+					if (Main.npc[k].type == mod.NPCType("Musician"))
+					{
+						Musician.S1 = false;
+						Musician.S2 = false;
+						Musician.S3 = true;
 						Main.playerInventory = true;
 						forcetalk = true;
 						Main.player[Main.myPlayer].talkNPC = k;

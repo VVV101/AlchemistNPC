@@ -597,7 +597,7 @@ namespace AlchemistNPC.NPCs
 		string BossDropsShop = Language.GetTextValue("Mods.AlchemistNPC.BossDropsShop");
 		string VanillaTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.VanillaTreasureBagsShop");
 		string ModdedTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop");
-		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop == 2");
+		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop2");
 		string ShopChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopChanger");
 		if (Config.TS && Main.expertMode)
 		{
