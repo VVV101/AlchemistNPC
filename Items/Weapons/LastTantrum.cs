@@ -5,6 +5,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using Terraria.Utilities;
 
 namespace AlchemistNPC.Items.Weapons
 {
@@ -27,17 +28,22 @@ namespace AlchemistNPC.Items.Weapons
 			item.ranged = true;
 			item.width = 92;
 			item.height = 40;
-			item.useTime = 3;
-			item.useAnimation = 3;
+			item.useTime = 4;
+			item.useAnimation = 4;
 			item.useStyle = 5;
 			item.noMelee = true; //so the item's animation doesn't do damage
-			item.knockBack = 8;
+			item.knockBack = 6;
 			item.value = 5000000;
 			item.rare = 11;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
 			item.shoot = 10; //idk why but all the guns in the vanilla source have this
-			item.shootSpeed = 64f;
+			item.shootSpeed = 32f;
+		}
+		
+		public override int ChoosePrefix (UnifiedRandom rand)
+		{
+			return 59;
 		}
 
 		public override Vector2? HoldoutOffset()
@@ -49,7 +55,6 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			type = mod.ProjectileType("LastTantrum");
 			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y+3+Main.rand.Next(-3,3), speedX, speedY, type, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y+Main.rand.Next(-3,3), speedX, speedY, type, damage, knockBack, player.whoAmI);
 			Projectile.NewProjectile(position.X+Main.rand.Next(-10,10), position.Y-3+Main.rand.Next(-3,3), speedX, speedY, type, damage, knockBack, player.whoAmI);
 			return false;
 		}

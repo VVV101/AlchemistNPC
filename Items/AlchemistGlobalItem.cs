@@ -147,23 +147,47 @@ namespace AlchemistNPC.Items
 			}
 			if (PerfectionToken == true)
 			{
-				if (item.damage > 0)
+				if (item.type == mod.ItemType("LastTantrum"))
 				{
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					return 59;
+				}
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("P90"))
 					{
-						if (item.type == ModLoader.GetMod("CalamityMod").ItemType("P90"))
-						{
-							return 57;
-						}
-						if (item.type == ModLoader.GetMod("CalamityMod").ItemType("ColdheartIcicle"))
-						{
-							return 15;
-						}
-						if (item.type == ModLoader.GetMod("CalamityMod").ItemType("HalibutCannon"))
-						{
-							return 17;
-						}
+						return 57;
 					}
+					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("ColdheartIcicle"))
+					{
+						return 15;
+					}
+					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("HalibutCannon"))
+					{
+						return 17;
+					}
+				}
+				if (item.damage > 3 && item.useTime <= 4 && item.useAnimation <= 4 && item.maxStack == 1)
+				{
+					return mod.PrefixType("Ancient");
+				}
+				if (item.damage > 3 && item.melee && item.maxStack == 1)
+				{
+					return mod.PrefixType("Primal");
+				}
+				if (item.damage > 3 && item.magic && item.maxStack == 1)
+				{
+					return mod.PrefixType("Arcana");
+				}
+				if (item.damage > 3 && item.summon && item.maxStack == 1)
+				{
+					return mod.PrefixType("Demiurgic");
+				}
+				if (item.damage > 3 && (item.ranged || item.thrown) && item.maxStack == 1)
+				{
+					return mod.PrefixType("Immortal");
+				}
+				if (item.damage > 3)
+				{
 					if (item.melee)
 					{
 						return 81;
