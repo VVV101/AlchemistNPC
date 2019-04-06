@@ -62,6 +62,8 @@ namespace AlchemistNPC
 		internal HealingUI alchemistUIH;
 		private UserInterface alchemistUserInterfaceDC;
 		internal DimensionalCasketUI alchemistUIDC;
+		private UserInterface alchemistUserInterfaceT;
+		internal ShopChangeUIT alchemistUIT;
 		private UserInterface alchemistUserInterfaceP;
 		internal PipBoyTPMenu pipboyUI;
 		
@@ -127,6 +129,11 @@ namespace AlchemistNPC
 				alchemistUserInterfaceDC = new UserInterface();
 				alchemistUserInterfaceDC.SetState(alchemistUIDC);
 				
+				alchemistUIT = new ShopChangeUIT();
+				alchemistUIT.Activate();
+				alchemistUserInterfaceT = new UserInterface();
+				alchemistUserInterfaceT.SetState(alchemistUIT);
+				
 				pipboyUI = new PipBoyTPMenu();
 				pipboyUI.Activate();
 				alchemistUserInterfaceP = new UserInterface();
@@ -142,7 +149,8 @@ namespace AlchemistNPC
 				censusMod.Call("TownNPCCondition", NPCType("Alchemist"), "Defeat Eye of Cthulhu");
 				censusMod.Call("TownNPCCondition", NPCType("Brewer"), "Defeat Eye of Cthulhu");
 				censusMod.Call("TownNPCCondition", NPCType("Jeweler"), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType("Jeweler"), "Defeat Eater of Worlds/Brain of Cthulhu and have at least 5 NPCs alive");
+				censusMod.Call("TownNPCCondition", NPCType("Tinkerer"), "Defeat Eye of Cthulhu");
+				censusMod.Call("TownNPCCondition", NPCType("Architect"), "Defeat Eater of Worlds/Brain of Cthulhu and have at least 5 NPCs alive");
 				censusMod.Call("TownNPCCondition", NPCType("Operator"), "Defeat Eater of Worlds/Brain of Cthulhu and place [c/00FF00:Wing of the World] (craftable furniture) inside free housing");
 				censusMod.Call("TownNPCCondition", NPCType("Musician"), "Defeat Skeletron");
 				censusMod.Call("TownNPCCondition", NPCType("Young Brewer"), "World state is Hardmode and both Alchemist and Operator are alive");
@@ -244,6 +252,22 @@ namespace AlchemistNPC
 						if (DimensionalCasketUI.visible)
 						{
 							alchemistUIDC.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexT = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexT != -1)
+			{
+				layers.Insert(MouseTextIndexT, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Shop Selector T",
+					delegate
+					{
+						if (ShopChangeUIT.visible)
+						{
+							alchemistUIT.Draw(Main.spriteBatch);
 						}
 						return true;
 					},
@@ -1200,6 +1224,11 @@ namespace AlchemistNPC
 			if (alchemistUserInterfaceDC != null && DimensionalCasketUI.visible)
 			{
 				alchemistUserInterfaceDC.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceT != null && ShopChangeUIT.visible)
+			{
+				alchemistUserInterfaceT.Update(gameTime);
 			}
 		}
     }

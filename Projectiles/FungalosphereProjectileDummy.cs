@@ -27,6 +27,14 @@ namespace AlchemistNPC.Projectiles
 			DisplayName.SetDefault("Fungalosphere Projectile Dummy");
 
 		}
+		
+		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			if (target.type == mod.NPCType("BillCipher"))
+			{
+			damage /= 250;
+			}
+		}
 
 		public override void AI()
 		{
@@ -66,8 +74,6 @@ namespace AlchemistNPC.Projectiles
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			target.immune[projectile.owner] = 1;
-			target.AddBuff(mod.BuffType("Electrocute"), 300);
-			target.AddBuff(44, 300);
 		}
 	}
 }

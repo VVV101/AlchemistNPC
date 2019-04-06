@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Misc
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("PHD Degree Diploma");
+			DisplayName.SetDefault("PhD Degree Diploma");
 			Tooltip.SetDefault("Upgrades your Nurse while in your inventory"
 			+"\nOpens up healing interface after respawn"
 			+"\nWould work only if Nurse is alive");

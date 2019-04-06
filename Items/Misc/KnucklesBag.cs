@@ -31,9 +31,13 @@ namespace AlchemistNPC.Items.Misc
 		public override void OpenBossBag(Player player)
 		{
 			player.TryGettingDevArmor();
+			player.QuickSpawnItem(mod.ItemType("EdgeOfChaos"));
 			player.QuickSpawnItem(mod.ItemType("LastTantrum"));
+			player.QuickSpawnItem(mod.ItemType("BreathOfTheVoid"));
+			player.QuickSpawnItem(mod.ItemType("ChaosBomb"));
+			player.QuickSpawnItem(mod.ItemType("UgandanTotem"));
 			player.QuickSpawnItem(mod.ItemType("AutoinjectorMK2"));
-			player.QuickSpawnItem(ItemID.PlatinumCoin, 50);
+			player.QuickSpawnItem(ItemID.PlatinumCoin, 25);
 		}
 	}
 }

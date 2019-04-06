@@ -204,9 +204,9 @@ namespace AlchemistNPC.NPCs
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("ExoFreeze")] = true;
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("MarkedforDeath")] = true;
 			}
-			int damage1 = 200;
-			int damage2 = 150;
-			int damage3 = 250;
+			int damage1 = 150;
+			int damage2 = 125;
+			int damage3 = 200;
 			if (introduction < 300)
 			{
 				npc.dontTakeDamage = true;
@@ -218,7 +218,7 @@ namespace AlchemistNPC.NPCs
 				if (introduction > 300)
 				{
 					npc.dontTakeDamage = false;
-					if (counter2 >= 15)
+					if (counter2 >= 20)
 					{
 						counter2 = 0;
 						Vector2 delta = player.Center - npc.Center;
@@ -231,10 +231,10 @@ namespace AlchemistNPC.NPCs
 						{
 							delta = new Vector2(0f, 5f);
 						}
-						delta *= 4f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 500, 0, Main.myPlayer);
+						delta *= 2f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 250, 0, Main.myPlayer);
 					}
-					if (counter >= 30)
+					if (counter >= 45)
 					{
 						counter = 0;
 						Vector2 delta = player.Center - npc.Center;
@@ -247,13 +247,13 @@ namespace AlchemistNPC.NPCs
 						{
 							delta = new Vector2(0f, 5f);
 						}
-						delta *= 1.8f;
+						delta *= 1.5f;
 						Vector2 delta2 = delta.RotatedByRandom(MathHelper.ToRadians(15));
 						Vector2 delta3 = delta.RotatedByRandom(MathHelper.ToRadians(15));
-						Vector2 delta4 = delta.RotatedByRandom(MathHelper.ToRadians(35));
-						Vector2 delta5 = delta.RotatedByRandom(MathHelper.ToRadians(35));
-						Vector2 delta6 = delta.RotatedByRandom(MathHelper.ToRadians(50));
-						Vector2 delta7 = delta.RotatedByRandom(MathHelper.ToRadians(50));
+						Vector2 delta4 = delta.RotatedByRandom(MathHelper.ToRadians(20));
+						Vector2 delta5 = delta.RotatedByRandom(MathHelper.ToRadians(20));
+						Vector2 delta6 = delta.RotatedByRandom(MathHelper.ToRadians(25));
+						Vector2 delta7 = delta.RotatedByRandom(MathHelper.ToRadians(25));
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, 100, damage1, 0, Main.myPlayer);
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta2.X, delta2.Y, 100, damage1, 0, Main.myPlayer);
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta3.X, delta3.Y, 100, damage1, 0, Main.myPlayer);
@@ -301,20 +301,20 @@ namespace AlchemistNPC.NPCs
 					{
 						delta = new Vector2(0f, 5f);
 					}
-					delta *= 2f;
-					Vector2 delta2 = delta.RotatedByRandom(MathHelper.ToRadians(20));
-					Vector2 delta3 = delta.RotatedByRandom(MathHelper.ToRadians(20));
-					Vector2 delta4 = delta.RotatedByRandom(MathHelper.ToRadians(15));
-					Vector2 delta5 = delta.RotatedByRandom(MathHelper.ToRadians(15));
+					delta *= 1.5f;
+					Vector2 delta2 = delta.RotatedByRandom(MathHelper.ToRadians(30));
+					Vector2 delta3 = delta.RotatedByRandom(MathHelper.ToRadians(30));
+					Vector2 delta4 = delta.RotatedByRandom(MathHelper.ToRadians(20));
+					Vector2 delta5 = delta.RotatedByRandom(MathHelper.ToRadians(20));
 					Vector2 delta6 = delta.RotatedByRandom(MathHelper.ToRadians(10));
 					Vector2 delta7 = delta.RotatedByRandom(MathHelper.ToRadians(10));
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 500, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 250, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta2.X, delta2.Y, 100, damage2, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta3.X, delta3.Y, 100, damage2, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta4.X, delta4.Y, 100, damage2, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta5.X, delta5.Y, 100, damage2, 0, Main.myPlayer);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 500, 0, Main.myPlayer);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 500, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 250, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 250, 0, Main.myPlayer);
 				}
 				counter++;
 			}
@@ -414,6 +414,13 @@ namespace AlchemistNPC.NPCs
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Voodoo == true)
 			{
 				player.statLife--;
+				PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
+				if (Main.rand.Next(2) == 0)
+				damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
+				if (player.statLife <= 0)
+				player.KillMe(damageSource, 1.0, 0, false);
+				player.lifeRegenCount = 0;
+				player.lifeRegenTime = 0;
 			}
 		}
 		
@@ -423,6 +430,13 @@ namespace AlchemistNPC.NPCs
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Voodoo == true)
 			{
 				player.statLife--;
+				PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
+				if (Main.rand.Next(2) == 0)
+				damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
+				if (player.statLife <= 0)
+				player.KillMe(damageSource, 1.0, 0, false);
+				player.lifeRegenCount = 0;
+				player.lifeRegenTime = 0;
 			}
 		}
 		
@@ -532,7 +546,7 @@ namespace AlchemistNPC.NPCs
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WrathOfTheCelestial"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserCannon"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GrapplingHookGunItem"));
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PlatinumCoin, 50);
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PlatinumCoin, 25);
 			}
 			for (int k = 0; k < 255; k++)
 			{

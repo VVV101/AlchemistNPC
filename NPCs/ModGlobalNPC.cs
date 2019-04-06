@@ -38,11 +38,13 @@ namespace AlchemistNPC.NPCs
 {
 	public class ModGlobalNPC : GlobalNPC
 	{
+		public bool chaos = false;
 		public bool rainbowdust = false;
 		public bool electrocute = false;
 		public bool corrosion = false;
 		public bool twilight = false;
 		public bool justitiapale = false;
+		public int S = 0;
 		public bool N1 = false;
 		public bool N2 = false;
 		public bool N3 = false;
@@ -86,6 +88,10 @@ namespace AlchemistNPC.NPCs
 
 		public override void ModifyHitByItem(NPC npc, Player player, Item item, ref int damage, ref float knockback, ref bool crit)
 		{
+			if (item.type == mod.ItemType("EdgeOfChaos"))
+			{
+				S++;
+			}
 			if (npc.HasBuff(mod.BuffType("CurseOfLight")))
 			{
 				damage += damage / 5;
@@ -498,6 +504,7 @@ namespace AlchemistNPC.NPCs
 		public override void ResetEffects(NPC npc)
 		{
 			corrosion = false;
+			chaos = false;
 			rainbowdust = false;
 			electrocute = false;
 			twilight = false;
@@ -515,6 +522,14 @@ namespace AlchemistNPC.NPCs
 
 		public override void UpdateLifeRegen(NPC npc, ref int damage)
 		{
+			if (chaos)
+			{
+				npc.lifeRegen -= 3000 + S*500;
+				if (damage < 299 + S*50)
+				{
+					damage = 300 + S*50;
+				}
+			}
 			if (corrosion)
 			{
 				npc.lifeRegen -= 500;
@@ -551,6 +566,11 @@ namespace AlchemistNPC.NPCs
 
 		public override void DrawEffects(NPC npc, ref Color drawColor)
 		{
+			if (npc.HasBuff(mod.BuffType("ChaosState")))
+			{
+				npc.color = new Color(255, 0, 255, 100);
+				Lighting.AddLight(npc.position, 1f, 0f, 1f);
+			}
 			if (corrosion)
 			{
 				if (Main.rand.Next(4) < 3)
@@ -1371,6 +1391,69 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
+			if (npc.boss)
+			{
+				if (npc.type == NPCID.EyeofCthulhu)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+				}
+				if (npc.type == NPCID.BrainofCthulhu)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+				}
+				if (npc.type == NPCID.EaterofWorldsHead && !NPC.AnyNPCs(NPCID.EaterofWorldsTail))
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+				}
+				if (npc.type == NPCID.EaterofWorldsTail && !NPC.AnyNPCs(NPCID.EaterofWorldsHead))
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+				}
+				if (npc.type == NPCID.QueenBee)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+				}
+				if (npc.type == NPCID.SkeletronHead)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+				}
+				if (npc.type == NPCID.WallofFlesh)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 2);
+				}
+				if (npc.type == NPCID.SkeletronPrime)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+				}
+				if (npc.type == NPCID.Spazmatism && !NPC.AnyNPCs(NPCID.Retinazer))
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+				}
+				if (npc.type == NPCID.Retinazer && !NPC.AnyNPCs(NPCID.Spazmatism))
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+				}
+				if (npc.type == NPCID.TheDestroyer)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+				}
+				if (npc.type == NPCID.Plantera)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 1);
+				}
+				if (npc.type == NPCID.Golem)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+				}
+				if (npc.type == NPCID.DukeFishron)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+				}
+				if (npc.type == NPCID.MoonLordCore)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 3);
+				}
+			}
 		}
 		
 		public bool CalamityModRevengeance
@@ -1389,6 +1472,7 @@ namespace AlchemistNPC.NPCs
 				{
 					npc.position.Y = player.position.Y - 350;
 					npc.position.X = player.position.X;
+					npc.TargetClosest(true);
 					start = true;
 				}
 				if (ks == false)

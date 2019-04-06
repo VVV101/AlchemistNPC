@@ -1,6 +1,6 @@
 ﻿This mod adds 8 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect, Musician and Explorer), who sell potions, materials and some other stuff. 
 New combinations of potions are sold by the Young Brewer.
-The spawn condition for the Alchemist, the Jeweler & the Brewer is to kill the Eye of Ctulhu. 
+The spawn condition for the Alchemist, the Jeweler, the Tinkerer & the Brewer is to kill the Eye of Ctulhu. 
 The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
@@ -8,7 +8,14 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv83.json.
 v8.4
+-Added new town NPC, Tinkerer. Sells different accessories after unlocking.
+Available after beating Eye of Cthulhu.
+-Added Paper Tube. Used for unlocking accessories.
 -Perfection Token now applies custom prefixes instead of vanilla.
+-Added more weapons to Ugandan Knuckles droplist.
+-Fixed Omega Healing Potion availability.
+-Fixed Calamity Combination stats boosts.
+-Added Chaos and Tranquility Candles to Jeweler's shop.
 v8.3.2
 -Fixed one annoying crash related to Musician's Shop Changer.
 -Fixed some translation related errors.

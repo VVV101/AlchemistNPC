@@ -33,6 +33,14 @@ namespace AlchemistNPC.Projectiles
 			aiType = ProjectileID.LaserMachinegunLaser;
 		}
 		
+		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			if (target.type == mod.NPCType("BillCipher"))
+			{
+				damage /= 100;
+			}
+		}
+		
 		public override void AI()
 		{
 			if (projectile.timeLeft < 15)

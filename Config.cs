@@ -21,6 +21,7 @@ namespace AlchemistNPC
 		public static bool OperatorSpawn = true;
 		public static bool ExplorerSpawn = true;
 		public static bool MusicianSpawn = true;
+		public static bool TinkererSpawn = true;
 		public static bool RevPrices = true;
 		public static int PotsPriceMulti = 1;
         static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv83.json");
@@ -106,6 +107,11 @@ namespace AlchemistNPC
 				{
 				MusicianSpawn = true;
 				}
+				Configuration.Get<bool>("TinkererSpawn", ref Config.TinkererSpawn);
+				if(TinkererSpawn != true && TinkererSpawn != false)
+				{
+				TinkererSpawn = true;
+				}
 				Configuration.Get<bool>("RevPrices", ref Config.RevPrices);
 				if(RevPrices != true && RevPrices != false)
 				{
@@ -140,6 +146,7 @@ namespace AlchemistNPC
 			Configuration.Put("OperatorSpawn", OperatorSpawn);
 			Configuration.Put("ExplorerSpawn", ExplorerSpawn);
 			Configuration.Put("MusicianSpawn", MusicianSpawn);
+			Configuration.Put("TinkererSpawn", TinkererSpawn);
 			Configuration.Put("RevPrices", RevPrices);
 			Configuration.Put("PotsPriceMulti", PotsPriceMulti);
             Configuration.Save(true);

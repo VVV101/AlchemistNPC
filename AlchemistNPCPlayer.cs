@@ -99,6 +99,7 @@ namespace AlchemistNPC
 		public bool trigger = true;
 		public bool watchercrystal = false;
 		public bool devilsknife = false;
+		public bool uw = false;
 		public bool grimreaper = false;
 		public bool rainbowdust = false;
 		public bool sscope = false;
@@ -200,6 +201,7 @@ namespace AlchemistNPC
 			LilithEmblem = false;
 			watchercrystal = false;
 			devilsknife = false;
+			uw = false;
 			grimreaper = false;
 			rainbowdust = false;
 			sscope = false;
@@ -238,6 +240,7 @@ namespace AlchemistNPC
 					ShopChangeUIA.visible = false;
 					ShopChangeUIO.visible = false;
 					ShopChangeUIM.visible = false;
+					ShopChangeUIT.visible = false;
 				}
 			}
 		}

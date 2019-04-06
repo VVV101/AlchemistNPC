@@ -49,7 +49,7 @@ namespace AlchemistNPC.Items.Misc
 					player.QuickSpawnItem(mod.ItemType("MysticAmulet"));
 				}
 			}
-			player.QuickSpawnItem(ItemID.PlatinumCoin, 100);
+			player.QuickSpawnItem(ItemID.PlatinumCoin, 50);
 		}
 		
 		public bool CalamityModRevengeance
