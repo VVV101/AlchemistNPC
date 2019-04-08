@@ -106,6 +106,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
+			if (NPC.downedBoss1){return Config.TinkererSpawn;}
 			return false;
 		}
  
@@ -250,7 +251,7 @@ namespace AlchemistNPC.NPCs
 								randomAcc.Add("foundHerculesBeetle");}
 								if (!AlchemistNPCWorld.foundPygmyNecklace) {
 								randomAcc.Add("foundPygmyNecklace");}
-								if (randomAcc.Count == 0)
+								if (randomAcc.Count == 0 && NPC.downedGolemBoss)
 								{
 									AlchemistNPCWorld.foundT3 = true;
 									if (Main.netMode == NetmodeID.Server)
@@ -365,7 +366,7 @@ namespace AlchemistNPC.NPCs
 								randomAcc.Add("foundCrossNecklace");}
 								if (!AlchemistNPCWorld.foundStarCloak) {
 								randomAcc.Add("foundStarCloak");}
-								if (randomAcc.Count == 0)
+								if (randomAcc.Count == 0 && NPC.downedMechBossAny)
 								{
 									AlchemistNPCWorld.foundT2 = true;
 									if (Main.netMode == NetmodeID.Server)
@@ -614,7 +615,7 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
-				if (AlchemistNPCWorld.foundT1 || AlchemistNPCWorld.foundT2 || AlchemistNPCWorld.foundT3)
+				else if (AlchemistNPCWorld.foundT1 || AlchemistNPCWorld.foundT2 || AlchemistNPCWorld.foundT3)
 				{
 					Item[] inventory = Main.player[Main.myPlayer].inventory;
 					for (int k = 0; k < inventory.Length; k++)
@@ -629,7 +630,7 @@ namespace AlchemistNPC.NPCs
 								Main.npcChatText = "Here is some money, take it.";
 							}
 						}
-						if (TubePresent2 && AlchemistNPCWorld.foundT2)
+						else if (TubePresent2 && AlchemistNPCWorld.foundT2)
 						{
 							if (inventory[k].type == mod.ItemType("PaperTube2"))
 							{
@@ -642,7 +643,7 @@ namespace AlchemistNPC.NPCs
 								Main.npcChatText = "Here is some money, take it.";
 							}
 						}
-						if (TubePresent3 && AlchemistNPCWorld.foundT3)
+						else if (TubePresent3 && AlchemistNPCWorld.foundT3)
 						{
 							if (inventory[k].type == mod.ItemType("PaperTube3"))
 							{

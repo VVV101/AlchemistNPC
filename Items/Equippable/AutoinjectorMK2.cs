@@ -62,6 +62,10 @@ namespace AlchemistNPC.Items.Equippable
 			{
 			RedemptionBoost(player);
 			}
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			{
+			ThoriumBoosts(player);
+			}
 			if (!hideVisual)
 			{
 				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
@@ -82,7 +86,19 @@ namespace AlchemistNPC.Items.Equippable
 				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("InspirationReach"), 2, true);
 				}
 			}
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+				CalamityBoost(player);
+				}
 		}
+		
+		private void CalamityBoost(Player player)
+        {
+			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+			CalamityPlayer.throwingDamage += 0.15f;
+            CalamityPlayer.throwingCrit += 10;
+        }
+		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {

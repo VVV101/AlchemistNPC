@@ -24,7 +24,7 @@ namespace AlchemistNPC
 		public static bool TinkererSpawn = true;
 		public static bool RevPrices = true;
 		public static int PotsPriceMulti = 1;
-        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv83.json");
+        static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "Alchemistv84.json");
         static Preferences Configuration = new Preferences(ConfigPath);
 
         public static void Load()

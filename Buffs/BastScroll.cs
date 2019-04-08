@@ -26,7 +26,7 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-		AlchemistNPC.BastScroll = true;
+			AlchemistNPC.BastScroll = true;
 		}
 	}
 }

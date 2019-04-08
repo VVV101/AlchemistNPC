@@ -11,7 +11,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.damage = 22222;
-			item.ranged = true;
+			item.magic = true;
 			item.width = 38;
 			item.height = 34;
 			item.useTime = 5;
@@ -50,9 +50,7 @@ namespace AlchemistNPC.Items.Weapons
 			for (int i = 0; i < numberProjectiles1; i++)
 			{
 				Vector2 perturbedSpeed1 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
-				int p = Projectile.NewProjectile(position.X, position.Y, perturbedSpeed1.X, perturbedSpeed1.Y, mod.ProjectileType("FungalosphereProjectileDummy"), damage, knockBack, player.whoAmI);
-				Main.projectile[p].ranged = false;
-				Main.projectile[p].magic = true;
+				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed1.X, perturbedSpeed1.Y, mod.ProjectileType("VoidDummy"), damage, knockBack, player.whoAmI);
 			}
 			return true;
 		}

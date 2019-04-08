@@ -1391,7 +1391,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (npc.boss)
+			if (npc.boss && Config.TinkererSpawn)
 			{
 				if (npc.type == NPCID.EyeofCthulhu)
 				{

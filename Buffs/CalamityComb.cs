@@ -17,6 +17,12 @@ namespace AlchemistNPC.Buffs
 {
 	public class CalamityComb : ModBuff
 	{
+		
+		public override bool Autoload(ref string name, ref string texture)
+		{
+		return ModLoader.GetMod("CalamityMod") != null;
+		}
+		
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Calamity Combination");
@@ -69,12 +75,24 @@ namespace AlchemistNPC.Buffs
 				{
 				RedemptionBoost(player);
 				}
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+				CalamityBoost(player);
+				}
 		}
+		
+		private void CalamityBoost(Player player)
+        {
+			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+			CalamityPlayer.throwingDamage += 0.18f;
+            CalamityPlayer.throwingCrit += 5;
+        }
+		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.2f;
+			RedemptionPlayer.druidDamage += 0.18f;
             RedemptionPlayer.druidCrit += 5;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");

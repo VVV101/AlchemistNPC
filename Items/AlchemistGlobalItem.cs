@@ -370,6 +370,7 @@ namespace AlchemistNPC.Items
 			BluemagicPlayer.godmode = false;
         }
 		private readonly Mod Bluemagic = ModLoader.GetMod("Bluemagic");
+		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		{
@@ -388,7 +389,7 @@ namespace AlchemistNPC.Items
 		{
 			if (player.HasBuff(mod.BuffType("DemonSlayer")))
 			{
-			return Main.rand.NextFloat() >= .25f;
+				return Main.rand.NextFloat() >= .25f;
 			}
 			return true;
 		}

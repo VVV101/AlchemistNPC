@@ -915,8 +915,7 @@ namespace AlchemistNPC
 				}
 			if (ParadiseLost)
 				{
-				if (damage < 150)
-				damage = 1;
+				damage -= 150;
 				}
         }
 		
@@ -953,8 +952,7 @@ namespace AlchemistNPC
 				}
 			if (ParadiseLost)
 				{
-				if (damage < 150)
-				damage = 1;
+				damage -= 150;
 				}
         }
 		

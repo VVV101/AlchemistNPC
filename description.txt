@@ -6,13 +6,18 @@ The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of th
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
-Config file is Alchemistv83.json.
+Config file is Alchemistv84.json.
 v8.4
 -Added new town NPC, Tinkerer. Sells different accessories after unlocking.
 Available after beating Eye of Cthulhu.
 -Added Paper Tube. Used for unlocking accessories.
+-Config options are now working properly.
+-Potions are now compatible with Calamity Mod's Rogue damage type.
 -Perfection Token now applies custom prefixes instead of vanilla.
 -Added more weapons to Ugandan Knuckles droplist.
+-Now Ugandan Knuckles has 2.5K player HP limit instead of 1.3K.
+-Reworked Operator's prices.
+-Reworked Paradise Lost damage reduction.
 -Fixed Omega Healing Potion availability.
 -Fixed Calamity Combination stats boosts.
 -Added Chaos and Tranquility Candles to Jeweler's shop.

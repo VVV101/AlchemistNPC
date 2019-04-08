@@ -63,7 +63,18 @@ namespace AlchemistNPC.Buffs
 				{
 				RedemptionBoost(player);
 				}
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+				CalamityBoost(player);
+				}
 		}
+		
+		private void CalamityBoost(Player player)
+        {
+			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+            CalamityPlayer.throwingCrit += 6;
+        }
+		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {

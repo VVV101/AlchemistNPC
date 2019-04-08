@@ -8,11 +8,11 @@ using AlchemistNPC.Items.Weapons;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class FungalosphereProjectileDummy : ModProjectile
+	public class VoidDummy : ModProjectile
 	{
 		public override void SetDefaults()
 		{
-			projectile.ranged = true;
+			projectile.magic = true;
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.friendly = true;
@@ -24,8 +24,16 @@ namespace AlchemistNPC.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungalosphere Projectile Dummy");
+			DisplayName.SetDefault("Void Projectile Dummy");
 
+		}
+		
+		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+		{
+			if (target.type == mod.NPCType("BillCipher"))
+			{
+			damage /= 250;
+			}
 		}
 
 		public override void AI()
