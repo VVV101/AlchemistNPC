@@ -16,6 +16,7 @@ Available after beating Eye of Cthulhu.
 -Perfection Token now applies custom prefixes instead of vanilla.
 -Added more weapons to Ugandan Knuckles droplist.
 -Now Ugandan Knuckles has 2.5K player HP limit instead of 1.3K.
+-Zen and Zerg Potions are now available in hardmode (their initial recipes got changed).
 -Reworked Operator's prices.
 -Reworked Paradise Lost damage reduction.
 -Fixed Omega Healing Potion availability.

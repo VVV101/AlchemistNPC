@@ -210,6 +210,10 @@ namespace AlchemistNPC.NPCs
         {
             if (firstButton)
             {
+				if (!TubePresent && !TubePresent2 && !TubePresent3)
+				{
+					Main.npcChatText = "You don't have any Paper Tubes now. Go and get some now!";
+				}
 				if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundTabi && AlchemistNPCWorld.foundBlackBelt && AlchemistNPCWorld.foundRifleScope && AlchemistNPCWorld.foundPaladinShield && AlchemistNPCWorld.foundNecromanticScroll && AlchemistNPCWorld.foundSunStone && AlchemistNPCWorld.foundHerculesBeetle && AlchemistNPCWorld.foundPygmyNecklace)
 				{
 					Main.player[Main.myPlayer].QuickSpawnItem(mod.ItemType("MP7"));
@@ -251,14 +255,12 @@ namespace AlchemistNPC.NPCs
 								randomAcc.Add("foundHerculesBeetle");}
 								if (!AlchemistNPCWorld.foundPygmyNecklace) {
 								randomAcc.Add("foundPygmyNecklace");}
-								if (randomAcc.Count == 0 && NPC.downedGolemBoss)
+								if (randomAcc.Count == 0 && !NPC.downedGolemBoss)
 								{
-									AlchemistNPCWorld.foundT3 = true;
-									if (Main.netMode == NetmodeID.Server)
-										NetMessage.SendData(MessageID.WorldData);
+									Main.npcChatText = "You need to defeat Golem to unlock leftover post Plantera accessory.";
 									break;
 								}
-								if (Main.rand.NextBool(4))
+								if (Main.rand.NextBool(5))
 								{
 									Main.npcChatText = "There is nothing interesting in those blueprints, sorry.";
 									break;
@@ -284,6 +286,12 @@ namespace AlchemistNPC.NPCs
 								AlchemistNPCWorld.foundHerculesBeetle = true;}
 								if (randomAcc[acc] == "foundPygmyNecklace") {
 								AlchemistNPCWorld.foundPygmyNecklace = true;}
+								
+								if (randomAcc.Count == 1 && NPC.downedGolemBoss)
+								{
+									Main.npcChatText = "You have found all post Plantera blueprints. Congratulations! Now you may sell all leftover Paper Tubes to me. Oh, an also... If you have found all other blueprints, defeat Moon Lord and talk to me again. It would be the good surprise.";
+									AlchemistNPCWorld.foundT3 = true;
+								}
 								
 								if (Main.netMode == NetmodeID.Server)
 									NetMessage.SendData(MessageID.WorldData);
@@ -349,6 +357,10 @@ namespace AlchemistNPC.NPCs
 								randomAcc.Add("foundSumE");}
 								if (!AlchemistNPCWorld.foundTitanGlove) {
 								randomAcc.Add("foundTitanGlove");}
+								if (!AlchemistNPCWorld.foundMoonCharm) {
+								randomAcc.Add("foundMoonCharm");}
+								if (!AlchemistNPCWorld.foundFrozenTurtleShell) {
+								randomAcc.Add("foundFrozenTurtleShell");}
 								if (NPC.downedMechBossAny)
 								{
 									if (!AlchemistNPCWorld.foundMoonStone) {
@@ -366,14 +378,12 @@ namespace AlchemistNPC.NPCs
 								randomAcc.Add("foundCrossNecklace");}
 								if (!AlchemistNPCWorld.foundStarCloak) {
 								randomAcc.Add("foundStarCloak");}
-								if (randomAcc.Count == 0 && NPC.downedMechBossAny)
+								if (randomAcc.Count == 0 && !NPC.downedMechBossAny)
 								{
-									AlchemistNPCWorld.foundT2 = true;
-									if (Main.netMode == NetmodeID.Server)
-										NetMessage.SendData(MessageID.WorldData);
+									Main.npcChatText = "You need to defeat any mechanical boss to unlock 2 leftover early hardmode accessories.";
 									break;
 								}
-								if (Main.rand.NextBool(4))
+								if (Main.rand.NextBool(5))
 								{
 									Main.npcChatText = "There is nothing interesting in those blueprints, sorry.";
 									break;
@@ -391,11 +401,8 @@ namespace AlchemistNPC.NPCs
 								AlchemistNPCWorld.foundLuckyCoin = true;}
 								if (randomAcc[acc] == "foundDiscountCard") {
 								AlchemistNPCWorld.foundDiscountCard = true;}
-								if (NPC.downedMechBossAny)
-								{
-									if (randomAcc[acc] == "foundNeptuneShell") {
-									AlchemistNPCWorld.foundNeptuneShell = true;}
-								}
+								if (randomAcc[acc] == "foundNeptuneShell") {
+								AlchemistNPCWorld.foundNeptuneShell = true;}
 								if (randomAcc[acc] == "foundYoyoGlove") {
 								AlchemistNPCWorld.foundYoyoGlove = true;}
 								if (randomAcc[acc] == "foundBlindfold") {
@@ -444,6 +451,12 @@ namespace AlchemistNPC.NPCs
 								AlchemistNPCWorld.foundCrossNecklace = true;}
 								if (randomAcc[acc] == "foundStarCloak") {
 								AlchemistNPCWorld.foundStarCloak = true;}
+								
+								if (randomAcc.Count == 1 && NPC.downedMechBossAny)
+								{
+									Main.npcChatText = "You have found all early hardmode blueprints. Congratulations! Now you may sell all leftover Paper Tubes to me.";
+									AlchemistNPCWorld.foundT2 = true;
+								}
 								
 								if (Main.netMode == NetmodeID.Server)
 									NetMessage.SendData(MessageID.WorldData);
@@ -528,14 +541,7 @@ namespace AlchemistNPC.NPCs
 								randomAcc.Add("foundObsidianRose");}
 								if (!AlchemistNPCWorld.foundShackle) {
 								randomAcc.Add("foundShackle");}
-								if (randomAcc.Count == 0)
-								{
-									AlchemistNPCWorld.foundT1 = true;
-									if (Main.netMode == NetmodeID.Server)
-										NetMessage.SendData(MessageID.WorldData);
-									break;
-								}
-								if (Main.rand.NextBool(4))
+								if (Main.rand.NextBool(5))
 								{
 									Main.npcChatText = "There is nothing interesting in those blueprints, sorry.";
 									break;
@@ -607,6 +613,12 @@ namespace AlchemistNPC.NPCs
 								AlchemistNPCWorld.foundObsidianRose = true;}
 								if (randomAcc[acc] == "foundShackle") {
 								AlchemistNPCWorld.foundShackle = true;}
+								
+								if (randomAcc.Count == 1)
+								{
+									Main.npcChatText = "You have found all prehardmode blueprints. Congratulations! Now you may sell all leftover Paper Tubes to me.";
+									AlchemistNPCWorld.foundT1 = true;
+								}
 								
 								if (Main.netMode == NetmodeID.Server)
 									NetMessage.SendData(MessageID.WorldData);
