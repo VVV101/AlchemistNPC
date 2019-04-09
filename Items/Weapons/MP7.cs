@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 34;
 			item.shoot = 10;
 			item.useAmmo = AmmoID.Bullet;
-			item.UseSound = SoundID.Item41;
+			item.UseSound = SoundID.Item11;
 			item.damage = 10;
 			item.shootSpeed = 14f;
 			item.noMelee = true;
