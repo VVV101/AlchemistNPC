@@ -102,7 +102,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "要试试这药水吗?它应该会强化翅膀.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB2");
-            text.SetDefault("I don't think that was a Spelunker potion...");
+            text.SetDefault("I don't think that it was a Spelunker potion...");
             text.AddTranslation(GameCulture.Russian, "Не думаю, что это было зелье Шахтера...");
             text.AddTranslation(GameCulture.Chinese, "我不认为那是洞穴探险药水.");
             mod.AddTranslation(text);
@@ -137,7 +137,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "那个愚蠢的 ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB9");
-            text.SetDefault(" is too afraid of using occult powers in Alchemy. And so his potions are just some useless water.");
+            text.SetDefault(" is too afraid of using occult powers in Alchemy. That's why his potions are just some useless water.");
             text.AddTranslation(GameCulture.Russian, " слишком сильно боится использовать оккультизм в алхимии. И поэтому его зелья лишь бесполезная водичка.");
             text.AddTranslation(GameCulture.Chinese, " 过于害怕在炼金术中使用神秘力量，所以他的药水只是一种没用的水.");
             mod.AddTranslation(text);
@@ -152,12 +152,12 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "别让他们进入我的房子...我这儿有那么多的物资和设备.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB12");
-            text.SetDefault("Is this a Martians Invasion? Are they going to enslave us all? Or they want to destroy us all? No one knows the answer...");
+            text.SetDefault("Is this a Martians Invasion? Are they going to enslave us all? Or do they want to destroy us all? No one knows the answer...");
             text.AddTranslation(GameCulture.Russian, "Это вторжение Марсиан? Она пришли чтобы поработить нас всех? Или они хотят нас уничтожить? Никто не знает ответа...");
             text.AddTranslation(GameCulture.Chinese, "这是一场外星入侵吗？他们会奴役我们所有人吗？亦或者毁灭我们？没人知道答案...");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB13");
-            text.SetDefault("Is it Blood Moon in the sky? I love it! It is so beautiful!");
+            text.SetDefault("Is it the Blood Moon in the sky? I love it! It is so beautiful!");
             text.AddTranslation(GameCulture.Russian, "Это Кровавая Луна в небесах? Восхитительно! Она так красива!");
             text.AddTranslation(GameCulture.Chinese, "天上的那个是血月吗？我喜欢！它看起来好漂亮！");
             mod.AddTranslation(text);
@@ -167,7 +167,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "我出生的时候正好是血月，每当它升起时我都会变得很兴奋！");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB15");
-            text.SetDefault("Yeah, I can understand why the other girls are annoyed, but that's not stopping me!");
+            text.SetDefault("Yeah, I can understand why other girls are annoyed, but that won't stop me!");
             text.AddTranslation(GameCulture.Russian, "Да, я понимаю, почему другие девушки раздражены, но это меня не остановит!");
             text.AddTranslation(GameCulture.Chinese, "是的，我能理解为什么女孩们会生气，但这并不能阻止我的快乐!");
             mod.AddTranslation(text);
@@ -187,7 +187,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, " 和我一样从容冷静, 但是后来我想到了 ");
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryB19");
-            text.SetDefault("I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.");
+            text.SetDefault("I once traveled far away from Terraria to learn more about Alchemy. In my travels I've met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.");
             text.AddTranslation(GameCulture.Russian, "Я однажды выбралась из мира Террарии чтобы узнать больше об Алхимии. В своих путешествиях я встретила ''учёного магии'' по имени Азанор. Он показал мне тайны чего-то, названного ''тауматургия''.");
             mod.AddTranslation(text);
         }
