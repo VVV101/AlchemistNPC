@@ -15,7 +15,7 @@ namespace AlchemistNPC.Buffs
 			DisplayName.SetDefault("Discord");
 			Description.SetDefault("You may teleport to cursor position by using hotkey"
 			+"\nDistorts player for 1 second after teleport"
-			+"\nInflicts heavy damage while you have Chaos State"
+			+"\nDeals severe damage while trying to teleport under Chaos State debuff"
 			+"\nChaos State time is increased to 10 seconds");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
