@@ -12,7 +12,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Chaos State");
-			Description.SetDefault("Rapidly lowering enemy HP");
+			Description.SetDefault("Rapidly lowers enemy HP");
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = false;
