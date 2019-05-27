@@ -18,7 +18,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Blurring");
-			Description.SetDefault("Enemies cannot clearly see you (Shadow Dodge for 10 sec with 30 sec CD)");
+			Description.SetDefault("Enemies can barely see you (Shadow Dodge for 10 sec with 30 sec CD)");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Размытие");
