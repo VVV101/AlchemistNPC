@@ -10,8 +10,8 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Yui");
-			Description.SetDefault("Welcome back to A... Wait, that is not Alfheim! Where are we?"
-			+"\nHighlights treasures, creatures and traps");
+			Description.SetDefault("Welcome back to the A-- Wait, that is not Alfheim! Where are we?"
+			+"\nHighlights treasure, creatures and traps");
 			Main.buffNoTimeDisplay[Type] = true;
 			Main.lightPet[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Юи");
