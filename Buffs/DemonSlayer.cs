@@ -12,12 +12,12 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Demon Slayer");
-			Description.SetDefault("You become stronger after beating him"
+			Description.SetDefault("You became stronger after beating him"
 			+"\nImmune to Mana Sickness debuff"
 			+"\nMelee speed is increased by 10%"
 			+"\nArmor penetration is increased by 20"
 			+"\nAdds 25% chance not to consume ammo"
-			+"\nIncreased max amount of minions and sentries by 1"
+			+"\nIncreases max amount of minions and sentries by 1"
 			+"\nYou have a chance to release additional throwing projectiles"
 			+"\nYou are immune to some specific debuffs");
 			Main.debuff[Type] = false;
