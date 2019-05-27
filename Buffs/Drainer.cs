@@ -12,7 +12,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Drain");
-			Description.SetDefault("Removes most of defense and endurance while held");
+			Description.SetDefault("Removes most of the defense and endurance while held");
 			Main.debuff[Type] = true;
 			Main.buffNoSave[Type] = true;
 			Main.buffNoTimeDisplay[Type] = true;
