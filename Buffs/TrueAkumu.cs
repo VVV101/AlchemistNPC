@@ -12,7 +12,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("True Akumu's Shield");
-			Description.SetDefault("Reflecting any hostile projectiles");
+			Description.SetDefault("Reflects any hostile projectiles");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Защита Акуму");
