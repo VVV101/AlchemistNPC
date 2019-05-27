@@ -63,7 +63,7 @@ namespace AlchemistNPC.Interface
 			text4.OnClick += new MouseEvent(PlayButtonClicked4);
 			BrewerShopsPanel.Append(text4);
 			
-			UIText text5 = new UIText("Wildlife/Sacred/Spirit/Cristilium/ExpSentr");
+			UIText text5 = new UIText("Wildlife/Sacred/Spirit/Crystilium/ExpSentr");
 			text5.Left.Set(35, 0f);
 			text5.Top.Set(130, 0f);
 			text5.Width.Set(200, 0f);
