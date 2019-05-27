@@ -16,7 +16,7 @@ namespace AlchemistNPC.Buffs
 			Main.persistentBuff[Type] = true;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Гарантированный Крит");
-			Description.AddTranslation(GameCulture.Russian, "Ваша следующая атаку ");
+			Description.AddTranslation(GameCulture.Russian, "На вашу следующую атаку обязательно сработает крит");
         }
 		
 		public override void Update(Player player, ref int buffIndex)
