@@ -14,7 +14,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Globe 199");
-			Description.SetDefault("Destroys nearby hostile projectiles"+"\nCooldown depending on progression");
+			Description.SetDefault("Destroys nearby hostile projectiles"+"\nCooldown depends on progression");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Шар 199");
