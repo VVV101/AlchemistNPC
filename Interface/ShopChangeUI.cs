@@ -25,7 +25,7 @@ namespace AlchemistNPC.Interface
 			BrewerShopsPanel.Left.Set(575f, 0f);
 			BrewerShopsPanel.Top.Set(275f, 0f);
 			BrewerShopsPanel.Width.Set(385f, 0f);
-			BrewerShopsPanel.Height.Set(160f, 0f);
+			BrewerShopsPanel.Height.Set(190f, 0f);
 			BrewerShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
 			BrewerShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
@@ -39,7 +39,7 @@ namespace AlchemistNPC.Interface
 			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			BrewerShopsPanel.Append(text);
 			
-			UIText text2 = new UIText("Mod/Calamity/Thorium/RG");
+			UIText text2 = new UIText("Mod/Calamity");
 			text2.Left.Set(35, 0f);
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(120, 0f);
@@ -47,9 +47,17 @@ namespace AlchemistNPC.Interface
 			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			BrewerShopsPanel.Append(text2);
 			
+			UIText text21 = new UIText("Thorium/RG");
+			text21.Left.Set(35, 0f);
+			text21.Top.Set(70, 0f);
+			text21.Width.Set(100, 0f);
+			text21.Height.Set(22, 0f);
+			text21.OnClick += new MouseEvent(PlayButtonClicked2);
+			BrewerShopsPanel.Append(text21);
+			
 			UIText text3 = new UIText("MorePotions");
 			text3.Left.Set(35, 0f);
-			text3.Top.Set(70, 0f);
+			text3.Top.Set(100, 0f);
 			text3.Width.Set(70, 0f);
 			text3.Height.Set(22, 0f);
 			text3.OnClick += new MouseEvent(PlayButtonClicked3);
@@ -57,7 +65,7 @@ namespace AlchemistNPC.Interface
 			
 			UIText text4 = new UIText("UnuBattleRods/Tacklebox/Tremor");
 			text4.Left.Set(35, 0f);
-			text4.Top.Set(100, 0f);
+			text4.Top.Set(130, 0f);
 			text4.Width.Set(150, 0f);
 			text4.Height.Set(22, 0f);
 			text4.OnClick += new MouseEvent(PlayButtonClicked4);
@@ -65,7 +73,7 @@ namespace AlchemistNPC.Interface
 			
 			UIText text5 = new UIText("Wildlife/Sacred/Spirit/Cristilium/ExpSentr");
 			text5.Left.Set(35, 0f);
-			text5.Top.Set(130, 0f);
+			text5.Top.Set(160, 0f);
 			text5.Width.Set(200, 0f);
 			text5.Height.Set(22, 0f);
 			text5.OnClick += new MouseEvent(PlayButtonClicked5);
@@ -86,23 +94,30 @@ namespace AlchemistNPC.Interface
 			playButton2.Height.Set(22, 0f);
 			playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
 			BrewerShopsPanel.Append(playButton2);
+			UIImageButton playButton21 = new UIImageButton(buttonPlayTexture);
+			playButton21.Left.Set(10, 0f);
+			playButton21.Top.Set(70, 0f);
+			playButton21.Width.Set(22, 0f);
+			playButton21.Height.Set(22, 0f);
+			playButton21.OnClick += new MouseEvent(PlayButtonClicked21);
+			BrewerShopsPanel.Append(playButton21);
 			UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
 			playButton3.Left.Set(10, 0f);
-			playButton3.Top.Set(70, 0f);
+			playButton3.Top.Set(100, 0f);
 			playButton3.Width.Set(22, 0f);
 			playButton3.Height.Set(22, 0f);
 			playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
 			BrewerShopsPanel.Append(playButton3);
 			UIImageButton playButton4 = new UIImageButton(buttonPlayTexture);
 			playButton4.Left.Set(10, 0f);
-			playButton4.Top.Set(100, 0f);
+			playButton4.Top.Set(130, 0f);
 			playButton4.Width.Set(22, 0f);
 			playButton4.Height.Set(22, 0f);
 			playButton4.OnClick += new MouseEvent(PlayButtonClicked4);
 			BrewerShopsPanel.Append(playButton4);
 			UIImageButton playButton5 = new UIImageButton(buttonPlayTexture);
 			playButton5.Left.Set(10, 0f);
-			playButton5.Top.Set(130, 0f);
+			playButton5.Top.Set(160, 0f);
 			playButton5.Width.Set(22, 0f);
 			playButton5.Height.Set(22, 0f);
 			playButton5.OnClick += new MouseEvent(PlayButtonClicked5);
@@ -133,6 +148,17 @@ namespace AlchemistNPC.Interface
 		private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
 		{
 			Brewer.Shop = 2;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUI.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+		}
+		
+		private void PlayButtonClicked21(UIMouseEvent evt, UIElement listeningElement)
+		{
+			Brewer.Shop = 21;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUI.visible = false;
 			Main.playerInventory = true;

@@ -218,9 +218,6 @@ namespace AlchemistNPC.NPCs
 				{
 					Main.player[Main.myPlayer].QuickSpawnItem(mod.ItemType("MP7"));
 					AlchemistNPCWorld.foundMP7 = true;
-					
-					if (Main.netMode == NetmodeID.Server)
-						NetMessage.SendData(MessageID.WorldData);
 				}
 				else if (TubePresent3 && !AlchemistNPCWorld.foundT3)
 				{
@@ -292,9 +289,6 @@ namespace AlchemistNPC.NPCs
 									Main.npcChatText = "You have found all post Plantera blueprints. Congratulations! Now you may sell all leftover Paper Tubes to me. Oh, an also... If you have found all other blueprints, defeat Moon Lord and talk to me again. It would be the good surprise.";
 									AlchemistNPCWorld.foundT3 = true;
 								}
-								
-								if (Main.netMode == NetmodeID.Server)
-									NetMessage.SendData(MessageID.WorldData);
 								break;
 							}
 						}
@@ -457,9 +451,6 @@ namespace AlchemistNPC.NPCs
 									Main.npcChatText = "You have found all early hardmode blueprints. Congratulations! Now you may sell all leftover Paper Tubes to me.";
 									AlchemistNPCWorld.foundT2 = true;
 								}
-								
-								if (Main.netMode == NetmodeID.Server)
-									NetMessage.SendData(MessageID.WorldData);
 								break;
 							}
 						}
@@ -619,9 +610,6 @@ namespace AlchemistNPC.NPCs
 									Main.npcChatText = "You have found all prehardmode blueprints. Congratulations! Now you may sell all leftover Paper Tubes to me.";
 									AlchemistNPCWorld.foundT1 = true;
 								}
-								
-								if (Main.netMode == NetmodeID.Server)
-									NetMessage.SendData(MessageID.WorldData);
 								break;
 							}
 						}

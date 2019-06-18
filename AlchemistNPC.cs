@@ -338,6 +338,18 @@ namespace AlchemistNPC
 						packet.Send(-1, playernumber);
 					}
 					break;
+				case AlchemistNPCMessageType.Snatcher:
+					playernumber = reader.ReadByte();
+					alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
+					alchemistPlayer.SnatcherCounter = reader.ReadInt32();
+					if (Main.netMode == NetmodeID.Server) {
+						var packet = GetPacket();
+						packet.Write((byte)AlchemistNPCMessageType.Snatcher);
+						packet.Write(playernumber);
+						packet.Write(alchemistPlayer.SnatcherCounter);
+						packet.Send(-1, playernumber);
+					}
+					break;
 				default:
 					ErrorLogger.Log("AlchemistNPC: Unknown Message type: " + msgType);
 					break;
@@ -348,7 +360,8 @@ namespace AlchemistNPC
 		{
 		LifeAndManaSync,
 		TeleportPlayer,
-		BBPChanged
+		BBPChanged,
+		Snatcher
 		}
 		
 		public override void AddRecipeGroups()
@@ -477,6 +490,26 @@ namespace AlchemistNPC
 			recipe.AddIngredient(ItemID.Wire, 25);
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(ItemID.LifeformAnalyzer);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.Mushroom);
+			recipe.AddIngredient(ItemID.Daybloom);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.PurificationPowder, 5);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CorruptSeeds);
+			recipe.AddIngredient(ItemID.PurificationPowder);
+			recipe.AddIngredient(ItemID.PixieDust);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.HallowedSeeds);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CrimsonSeeds);
+			recipe.AddIngredient(ItemID.PurificationPowder);
+			recipe.AddIngredient(ItemID.PixieDust);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.HallowedSeeds);
 			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(null, "EmagledFragmentation", 10);

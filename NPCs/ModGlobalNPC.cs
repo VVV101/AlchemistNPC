@@ -199,20 +199,6 @@ namespace AlchemistNPC.NPCs
 		
 		public override void SetupShop(int type, Chest shop, ref int nextSlot)
 		{
-			if (type == NPCID.Dryad)
-			{
-				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
-				{
-					return;
-				}
-			}
-			if (type == NPCID.Painter)
-			{
-				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
-				{
-					return;
-				}
-			}
 			for (int k = 0; k < 255; k++)
 			{
 				Player player = Main.player[k];
@@ -227,7 +213,7 @@ namespace AlchemistNPC.NPCs
 							{
 								if (Config.RevPrices && CalamityModRevengeance)
 								{
-									shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
+									shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice/2;
 								}
 							}
 							if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier4)
@@ -726,6 +712,16 @@ namespace AlchemistNPC.NPCs
 			packet.Write(modPlayer.BBP);
 			packet.Send();
 		}
+		
+		public void SyncSnatcher(Player player)
+		{
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(AlchemistNPC.Instance);
+			ModPacket packet = mod.GetPacket();
+			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.Snatcher);
+			packet.Write((byte)player.whoAmI);
+			packet.Write(modPlayer.SnatcherCounter);
+			packet.Send();
+		}
 
 		public override void NPCLoot(NPC npc)
 		{
@@ -735,7 +731,13 @@ namespace AlchemistNPC.NPCs
 				if (player.active)
 				{
 					AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(AlchemistNPC.Instance);
-					if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade"))
+					if (player.HasBuff(mod.BuffType("Snatcher")) && !npc.friendly && npc.type != 14 && npc.type != 135 && !npc.SpawnedFromStatue && npc.type != 1 && npc.type != 535)
+					{
+						modPlayer.SnatcherCounter++;
+						if (Main.netMode == 2)
+						SyncSnatcher(player);
+					}
+					if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade") && !npc.SpawnedFromStatue)
 					{
 						if (!Main.hardMode && modPlayer.BBP < 2600)
 						{
@@ -852,25 +854,32 @@ namespace AlchemistNPC.NPCs
 							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModLoader.GetMod("CalamityMod").ItemType("Fabsol"));
 						}
 					}
-					if (Main.rand.Next(25000) == 0)
+					if (!npc.SpawnedFromStatue)
 					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HolyAvenger"), 1, false, 81);
-					}
-					if (Main.rand.Next(25000) == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Penetrator"), 1, false, 82);
-					}
-					if (Main.rand.Next(25000) == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Hive"), 1, false, 83);
-					}
-					if (Main.rand.Next(25000) == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FlaskoftheAlchemist"), 1, false, 82);
-					}
-					if (Main.rand.Next(25000) == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CounterMatter"), 1, false);
+						if (Main.rand.Next(25000) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HolyAvenger"), 1, false, 81);
+						}
+						if (Main.rand.Next(25000) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Penetrator"), 1, false, 82);
+						}
+						if (Main.rand.Next(25000) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Hive"), 1, false, 83);
+						}
+						if (Main.rand.Next(25000) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FlaskoftheAlchemist"), 1, false, 82);
+						}
+						if (Main.rand.Next(25000) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CounterMatter"), 1, false);
+						}
+						if (Main.rand.Next(33333) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CrackedCrown"), 1, false);
+						}
 					}
 					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
 					{

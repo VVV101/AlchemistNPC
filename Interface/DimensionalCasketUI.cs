@@ -28,7 +28,7 @@ namespace AlchemistNPC.Interface
 			DimensionalCasketPanel.SetPadding(0);
 			DimensionalCasketPanel.Left.Set(600f, 0f);
 			DimensionalCasketPanel.Top.Set(150f, 0f);
-			DimensionalCasketPanel.Width.Set(400f, 0f);
+			DimensionalCasketPanel.Width.Set(430f, 0f);
 			DimensionalCasketPanel.Height.Set(520f, 0f);
 			DimensionalCasketPanel.BackgroundColor = new Color(73, 94, 171);
 
@@ -162,7 +162,7 @@ namespace AlchemistNPC.Interface
 			DimensionalCasketPanel.Append(text18);
 			
 			UIText text19 = new UIText("Brewer");
-			text19.Left.Set(300, 0f);
+			text19.Left.Set(330, 0f);
 			text19.Top.Set(40, 0f);
 			text19.Width.Set(55, 0f);
 			text19.Height.Set(22, 0f);
@@ -372,22 +372,29 @@ namespace AlchemistNPC.Interface
 			playButton192.Height.Set(22, 0f);
 			playButton192.OnClick += new MouseEvent(PlayButtonClicked192);
 			DimensionalCasketPanel.Append(playButton192);
+			UIImageButton playButton1921 = new UIImageButton(buttonPlayTexture);
+			playButton1921.Left.Set(210, 0f);
+			playButton1921.Top.Set(40, 0f);
+			playButton1921.Width.Set(22, 0f);
+			playButton1921.Height.Set(22, 0f);
+			playButton1921.OnClick += new MouseEvent(PlayButtonClicked1921);
+			DimensionalCasketPanel.Append(playButton1921);
 			UIImageButton playButton193 = new UIImageButton(buttonPlayTexture);
-			playButton193.Left.Set(210, 0f);
+			playButton193.Left.Set(240, 0f);
 			playButton193.Top.Set(40, 0f);
 			playButton193.Width.Set(22, 0f);
 			playButton193.Height.Set(22, 0f);
 			playButton193.OnClick += new MouseEvent(PlayButtonClicked193);
 			DimensionalCasketPanel.Append(playButton193);
 			UIImageButton playButton194 = new UIImageButton(buttonPlayTexture);
-			playButton194.Left.Set(240, 0f);
+			playButton194.Left.Set(270, 0f);
 			playButton194.Top.Set(40, 0f);
 			playButton194.Width.Set(22, 0f);
 			playButton194.Height.Set(22, 0f);
 			playButton194.OnClick += new MouseEvent(PlayButtonClicked194);
 			DimensionalCasketPanel.Append(playButton194);
 			UIImageButton playButton195 = new UIImageButton(buttonPlayTexture);
-			playButton195.Left.Set(270, 0f);
+			playButton195.Left.Set(300, 0f);
 			playButton195.Top.Set(40, 0f);
 			playButton195.Width.Set(22, 0f);
 			playButton195.Height.Set(22, 0f);
@@ -1004,6 +1011,27 @@ namespace AlchemistNPC.Interface
 					if (Main.npc[k].type == mod.NPCType("Brewer"))
 					{
 						Brewer.Shop = 2;
+						Main.playerInventory = true;
+						forcetalk = true;
+						Main.player[Main.myPlayer].talkNPC = k;
+						Main.npcShop = Main.MaxShopIDs - 1;
+						Main.instance.shop[Main.npcShop].SetupShop(Main.npc[k].type);
+					}
+				}
+			}
+		}
+		
+		private void PlayButtonClicked1921(UIMouseEvent evt, UIElement listeningElement)
+		{
+			visible = false;
+			if (NPC.AnyNPCs(mod.NPCType("Brewer")))
+			{
+				for (k = 0; k < 200; k++)
+				{
+					NPC npc = Main.npc[k];
+					if (Main.npc[k].type == mod.NPCType("Brewer"))
+					{
+						Brewer.Shop = 21;
 						Main.playerInventory = true;
 						forcetalk = true;
 						Main.player[Main.myPlayer].talkNPC = k;

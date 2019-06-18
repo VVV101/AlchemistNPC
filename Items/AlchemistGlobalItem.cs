@@ -396,11 +396,11 @@ namespace AlchemistNPC.Items
 		
 		public override float UseTimeMultiplier(Item item, Player player)	
 		{
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Symbiote == true)
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Symbiote == true && item.useTime > 3)
 			{
 				return 1.2f;
 			}
-			if (player.HasBuff(mod.BuffType("ThoriumCombo")))
+			if (player.HasBuff(mod.BuffType("ThoriumCombo")) && item.useTime > 3)
 			{
 				return 1.08f;
 			}

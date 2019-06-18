@@ -45,6 +45,7 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public int fc = 0;
+		public bool HPJ = false;
 		public bool PHD = false;
 		public bool DeltaRune = false;
 		public bool PB4K = false;
@@ -101,6 +102,7 @@ namespace AlchemistNPC
 		public bool devilsknife = false;
 		public bool uw = false;
 		public bool grimreaper = false;
+		public bool snatcher = false;
 		public bool rainbowdust = false;
 		public bool sscope = false;
 		public bool lwm = false;
@@ -114,6 +116,8 @@ namespace AlchemistNPC
 		
 		private const int maxBBP = -1;
 		public int BBP = 0;
+		private const int maxSnatcherCounter = -1;
+		public int SnatcherCounter = 0;
 		private const int maxLifeElixir = 2;
 		public int LifeElixir = 0;
 		private const int maxFuaran = 1;
@@ -145,6 +149,7 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			HPJ = false;
 			DeltaRune = false;
 			PHD = false;
 			PH = false;
@@ -203,6 +208,7 @@ namespace AlchemistNPC
 			devilsknife = false;
 			uw = false;
 			grimreaper = false;
+			snatcher = false;
 			rainbowdust = false;
 			sscope = false;
 			lwm = false;
@@ -219,6 +225,10 @@ namespace AlchemistNPC
 			{
 			BuffsKeep = true;
 			player.pStone = true;
+			}
+			if (HPJ)
+			{
+				player.ZoneJungle = true;
 			}
 			if (KeepBuffs == 0)
 			{
@@ -258,6 +268,7 @@ namespace AlchemistNPC
 		{
 			AlchemistNPCPlayer clone = clientClone as AlchemistNPCPlayer;
 			clone.BBP = BBP;
+			clone.SnatcherCounter = SnatcherCounter;
 		}
 	
 		public override void SyncPlayer(int toWho, int fromWho, bool newPlayer)
@@ -271,6 +282,7 @@ namespace AlchemistNPC
 			packet.Write(WellFed);
 			packet.Write(BillIsDowned);
 			packet.Write(BBP);
+			packet.Write(SnatcherCounter);
 			packet.Send(toWho, fromWho);
 		}
 	
@@ -293,6 +305,13 @@ namespace AlchemistNPC
 				packet.Write(BBP);
 				packet.Send();
 			}
+			if (clone.SnatcherCounter != SnatcherCounter) {
+				var packet = mod.GetPacket();
+				packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.Snatcher);
+				packet.Write((byte)player.whoAmI);
+				packet.Write(SnatcherCounter);
+				packet.Send();
+			}
 		}
 	
 		public override TagCompound Save()
@@ -304,6 +323,7 @@ namespace AlchemistNPC
 				{"WellFed", WellFed},
 				{"BillIsDowned", BillIsDowned},
 				{"BBP", BBP},
+				{"SnatcherCounter", SnatcherCounter},
 			};
 		}
 		
@@ -315,6 +335,7 @@ namespace AlchemistNPC
 			WellFed = tag.GetInt("WellFed");
 			BillIsDowned = tag.GetInt("BillIsDowned");
 			BBP = tag.GetInt("BBP");
+			SnatcherCounter = tag.GetInt("SnatcherCounter");
 		}
 	
 		public override void AnglerQuestReward(float quality, List<Item> rewardItems)

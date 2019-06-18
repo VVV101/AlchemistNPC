@@ -52,8 +52,8 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (player.statLife < player.statLifeMax2/4)
 			{
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Akumu = true;
-			player.AddBuff(mod.BuffType("Akumu"), 2);
+				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Akumu = true;
+				player.AddBuff(mod.BuffType("Akumu"), 2);
 			}
 		}
 		

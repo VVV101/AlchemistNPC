@@ -1,4 +1,4 @@
-﻿This mod adds 8 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect, Musician and Explorer), who sell potions, materials and some other stuff. 
+﻿This mod adds 9 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect, Tinkerer, Musician and Explorer), who sell potions, materials and some other stuff. 
 New combinations of potions are sold by the Young Brewer.
 The spawn condition for the Alchemist, the Jeweler, the Tinkerer & the Brewer is to kill the Eye of Ctulhu. 
 The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
@@ -7,6 +7,20 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv84.json.
+v8.5
+-Added new pet. Summoned by Cracked Crown.
+Drops from any mob with 1:33333 chance.
+-Added some Holoprojectors to Operator's EGO shop.
+They work as fake biome if placed. Not allows to spawn certain biome mobs, but may be useful for trading with NPCs or summoning bosses.
+-Added new Calamity mod potions to Brewer.
+-Added souls of Fear, Power and Vision. Available in hardmode.
+-Added Godhead (works as combo of those souls). Available in hardmode.
+-Added recipes for Purification Powder and Hallowed Seeds.
+-Statue mobs no longer drop Legendary weapons and no longer boost Bloodthirsty Blade.
+-Rebalanced some prices in Operator's shops.
+-Reworked some EGO weapons.
+-Operator now sells essences after beating respective Calamity boss or after beating Plantera.
+-Symbiote no longer affects weapons with usetime 3 or lower.
 v8.4
 -Added new town NPC, Tinkerer. Sells different accessories after unlocking.
 Available after beating Eye of Cthulhu.

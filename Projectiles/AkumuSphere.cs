@@ -20,8 +20,8 @@ namespace AlchemistNPC.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(533);
-			projectile.width = 28;
-			projectile.height = 28;
+			projectile.width = 24;
+			projectile.height = 24;
 			projectile.aiStyle = 66;
 			aiType = 533;
 			projectile.tileCollide = false;

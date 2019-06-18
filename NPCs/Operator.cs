@@ -1108,17 +1108,26 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 					}
-					if (NPC.downedPlantBoss)
+					if (NPC.downedPlantBoss || CalamityModDownedCryogen)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofEleum"));
 					shop.item[nextSlot].shopCustomPrice = 25000;
 					nextSlot++; 
+					}
+					if (NPC.downedPlantBoss || CalamityModDownedAquaticScourge)
+					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofCinder"));
 					shop.item[nextSlot].shopCustomPrice = 25000;
 					nextSlot++;
+					}
+					if (NPC.downedPlantBoss || CalamityModDownedBrimstoneElemental)
+					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofChaos"));
 					shop.item[nextSlot].shopCustomPrice = 25000;
 					nextSlot++;
+					}
+					if (NPC.downedPlantBoss)
+					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Tenebris"));
 					shop.item[nextSlot].shopCustomPrice = 30000;
 					nextSlot++;
@@ -1186,7 +1195,7 @@ namespace AlchemistNPC.NPCs
 					if (CalamityModDownedPolter)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm"));
-					shop.item[nextSlot].shopCustomPrice = 500000;
+					shop.item[nextSlot].shopCustomPrice = 250000;
 					nextSlot++;
 					}
 					if (CalamityModDownedDOG && CalamityModDownedBirb)
@@ -1202,8 +1211,23 @@ namespace AlchemistNPC.NPCs
 			}
 			if (Shop == 2)
 			{
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorSnow"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorJungle"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorCorruption"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorCrimson"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
 				if (Main.hardMode)
 				{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorHallow"));
+					shop.item[nextSlot].shopCustomPrice = 330000;
+					nextSlot++;
 					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("GlobalTeleporter"));
 					nextSlot++;
 				}
@@ -1829,7 +1853,7 @@ namespace AlchemistNPC.NPCs
 								if (!CalamityModDownedProvidence)
 								{
 									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BrimstoneWaifuBag"));
-									shop.item[nextSlot].shopCustomPrice = 2000000;
+									shop.item[nextSlot].shopCustomPrice = 500000;
 									nextSlot++;
 								}
 								if (CalamityModDownedProvidence)
@@ -1861,7 +1885,7 @@ namespace AlchemistNPC.NPCs
 								if (CalamityModDownedProvidence)
 								{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
-								shop.item[nextSlot].shopCustomPrice = 30000000;
+								shop.item[nextSlot].shopCustomPrice = 5000000;
 								nextSlot++;
 								}
 							}
@@ -1875,13 +1899,13 @@ namespace AlchemistNPC.NPCs
 						if (!CalamityModDownedProvidence && CalamityModDownedAstrageldon)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
-							shop.item[nextSlot].shopCustomPrice = 4000000;
+							shop.item[nextSlot].shopCustomPrice = 3000000;
 							nextSlot++;
 						}
 						if (CalamityModDownedProvidence && CalamityModDownedAstrageldon)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
-							shop.item[nextSlot].shopCustomPrice = 15000000;
+							shop.item[nextSlot].shopCustomPrice = 5000000;
 							nextSlot++;
 						}
 						if (CalamityModDownedAstrum)
@@ -1905,31 +1929,34 @@ namespace AlchemistNPC.NPCs
 					}
 					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 					{
+						if (CalamityModDownedBirb)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
+							shop.item[nextSlot].shopCustomPrice = 5000000;
+							nextSlot++;
+						}
 						if (CalamityModDownedProvidence)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ProvidenceBag"));
-							shop.item[nextSlot].shopCustomPrice = 150000000;
+							shop.item[nextSlot].shopCustomPrice = 15000000;
 							nextSlot++;
 						}
 						if (CalamityModDownedPolter)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PolterghastBag"));
-							shop.item[nextSlot].shopCustomPrice = 150000000;
+							shop.item[nextSlot].shopCustomPrice = 15000000;
 							nextSlot++;
 						}
-						if (CalamityModDownedDOG && CalamityModDownedBirb)
+						if (CalamityModDownedDOG)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag"));
-							shop.item[nextSlot].shopCustomPrice = 300000000;
+							shop.item[nextSlot].shopCustomPrice = 30000000;
 							nextSlot++;
 						}
 						if (CalamityModDownedYharon)
 						{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
-							shop.item[nextSlot].shopCustomPrice = 200000000;
-							nextSlot++;
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharonBag"));
-							shop.item[nextSlot].shopCustomPrice = 500000000;
+							shop.item[nextSlot].shopCustomPrice = 50000000;
 							nextSlot++;
 						}
 					}

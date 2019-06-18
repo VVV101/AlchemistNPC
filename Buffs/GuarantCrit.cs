@@ -16,7 +16,7 @@ namespace AlchemistNPC.Buffs
 			Main.persistentBuff[Type] = true;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Гарантированный Крит");
-			Description.AddTranslation(GameCulture.Russian, "Ваша следующая атаку ");
+			Description.AddTranslation(GameCulture.Russian, "Ваша следующая атаку будет гарантированным критом");
         }
 		
 		public override void Update(Player player, ref int buffIndex)
@@ -55,18 +55,15 @@ namespace AlchemistNPC.Buffs
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.15f;
-            RedemptionPlayer.druidCrit += 15;
+            RedemptionPlayer.druidCrit += 100;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.15f;
-            ThoriumPlayer.symphonicCrit += 15;
-			ThoriumPlayer.radiantBoost += 0.15f;
-            ThoriumPlayer.radiantCrit += 15;
+            ThoriumPlayer.symphonicCrit += 100;
+            ThoriumPlayer.radiantCrit += 100;
         }
 		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
