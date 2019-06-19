@@ -21,8 +21,9 @@ namespace AlchemistNPC.Projectiles
 			projectile.height = 40;
 			projectile.aiStyle = 3;
 			projectile.melee = false;
-			projectile.thrown = false;
+			projectile.thrown = true;
 			aiType = 182;
+			projectile.usesLocalNPCImmunity = true;
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
@@ -36,7 +37,8 @@ namespace AlchemistNPC.Projectiles
 					vel1 = vel1.RotatedBy(rand);
 					vel1 *= 16f;
 					float ai = Main.rand.Next(100);
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel1.X, vel1.Y, 580, damage/5, .5f, player.whoAmI, vel1.ToRotation(), ai);
+					int n1 = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel1.X, vel1.Y, 580, damage/5, .5f, player.whoAmI, vel1.ToRotation(), ai);
+					Main.projectile[n1].usesLocalNPCImmunity = true;
 				}
 		}
 	}

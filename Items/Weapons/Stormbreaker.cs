@@ -96,6 +96,7 @@ namespace AlchemistNPC.Items.Weapons
 
         public override void RightClick(Player player)
         {
+			item.consumable = true;
             Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("StormbreakerThrown"), 1, false, 82);
         }
 		

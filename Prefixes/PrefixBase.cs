@@ -52,6 +52,54 @@ namespace AlchemistNPC.Prefixes
 		}
 	}
 	
+	public class ShiningPrefix : ModPrefix
+	{
+		public override float RollChance(Item item)
+		{
+			return 0f;
+		} 
+
+		// determines if it can roll at all.
+		// use this to control if a prefixes can be rolled or not
+		public override bool CanRoll(Item item)
+		{
+			return false;
+		}
+
+		// change your category this way, defaults to Custom
+		public override PrefixCategory Category { get { return PrefixCategory.AnyWeapon; } }
+		
+		public ShiningPrefix()
+		{
+		}
+
+		// Allow multiple prefix autoloading this way (permutations of the same prefix)
+		public override bool Autoload(ref string name)
+		{
+			if (base.Autoload(ref name))
+			{
+				mod.AddPrefix("Shining", new ShiningPrefix());
+			}
+			return false;
+		}
+
+		public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult,
+		ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus) {
+			damageMult += 0.25f;
+			critBonus += 15;
+		}
+		
+		public override void Apply(Item item)
+		{
+		}
+
+		public override void ModifyValue(ref float valueMult)
+		{
+			float multiplier = 1.5f;
+			valueMult *= multiplier;
+		}
+	}
+	
 	public class ArcanaPrefix : ModPrefix
 	{
 		public override float RollChance(Item item)

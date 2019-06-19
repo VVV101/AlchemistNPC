@@ -1252,13 +1252,13 @@ namespace AlchemistNPC.Items
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 390)
 			{
-			speed *= 0.5f;
-			acceleration *= 0.5f;
+			speed *= 0.75f;
+			acceleration *= 0.75f;
 			}
 			else if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 210)
 			{
-			speed *= 0.8f;
-			acceleration *= 0.8f;
+			speed *= 0.9f;
+			acceleration *= 0.9f;
 			}
 		}
 		

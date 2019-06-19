@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using Terraria.Utilities;
 
 namespace AlchemistNPC.Items.Weapons
 {
@@ -22,7 +23,6 @@ namespace AlchemistNPC.Items.Weapons
 			item.damage = 10;
 			item.shootSpeed = 14f;
 			item.noMelee = true;
-			item.value = Item.sellPrice(1, 0, 0, 0);
 			item.rare = 11;
 			item.knockBack = 3;
 			item.ranged = true;
@@ -35,6 +35,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nShoots up to 1K bullets per minute"
 			+"\n88% chance not to consume ammo");
         }
+		
+		public override int ChoosePrefix (UnifiedRandom rand)
+		{
+			return mod.PrefixType("Shining");
+		}
 
 		public override bool ConsumeAmmo(Player player)
 		{

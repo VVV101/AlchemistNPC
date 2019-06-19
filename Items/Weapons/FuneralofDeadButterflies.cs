@@ -44,10 +44,9 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Projectile.NewProjectile(position.X, position.Y-5, speedX, speedY, type, damage/2, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage/2, knockBack, player.whoAmI);
-			type = mod.ProjectileType("FDB");
-			return true;
+			Projectile.NewProjectile(position.X, position.Y-5, speedX, speedY, type, (damage/3)*2, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("FDB"), (damage/3)*2, knockBack, player.whoAmI);
+			return false;
 		}
 		
 		public override bool ConsumeAmmo(Player player)
@@ -63,13 +62,13 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool CanUseItem(Player player)
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
-					{
-					item.damage = 125;
-					}
-					else
-					{
-					item.damage = 26;
-					}
+			{
+				item.damage = 125;
+			}
+			else
+			{
+				item.damage = 26;
+			}
 			return base.CanUseItem(player);
 		}
 		

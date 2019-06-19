@@ -23,6 +23,7 @@ namespace AlchemistNPC.Projectiles
 			projectile.aiStyle = 140;
 			aiType = 707;
 			projectile.scale = 1.5f;
+			projectile.usesLocalNPCImmunity = true;
 		}
 		
 		public override void AI()
@@ -38,9 +39,12 @@ namespace AlchemistNPC.Projectiles
 			Vector2 vector82 =  -Main.player[Main.myPlayer].Center + Main.MouseWorld;
             float ai = Main.rand.Next(100);
             Vector2 vector83 = Vector2.Normalize(vector82) * 12f;
-            Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X, vector83.Y, 580, projectile.damage/2, .5f, player.whoAmI, vector82.ToRotation(), ai);
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X+10, vector83.Y+10, 580, projectile.damage/2, .5f, player.whoAmI, vector82.ToRotation(), ai);
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X-10, vector83.Y-10, 580, projectile.damage/2, .5f, player.whoAmI, vector82.ToRotation(), ai);
+            int n1 = Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X, vector83.Y, 580, projectile.damage/2, .5f, player.whoAmI, vector82.ToRotation(), ai);
+			int n2 = Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X+10, vector83.Y+10, 580, projectile.damage/2, .5f, player.whoAmI, vector82.ToRotation(), ai);
+			int n3 = Projectile.NewProjectile(player.Center.X, player.Center.Y, vector83.X-10, vector83.Y-10, 580, projectile.damage/2, .5f, player.whoAmI, vector82.ToRotation(), ai);
+			Main.projectile[n1].usesLocalNPCImmunity = true;
+			Main.projectile[n2].usesLocalNPCImmunity = true;
+			Main.projectile[n3].usesLocalNPCImmunity = true;
 			counter = 0;
 			}
 		}

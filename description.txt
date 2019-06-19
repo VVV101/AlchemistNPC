@@ -8,10 +8,14 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv84.json.
 v8.5
+-Reworked Paper Tubes mechanic for a bit. Now you need to unlock Paper Tubes manually other than giving them to Tinkerer NPC.
+This also mean that Paper Tubes now properly works in MP.
 -Added new pet. Summoned by Cracked Crown.
 Drops from any mob with 1:33333 chance.
 -Added some Holoprojectors to Operator's EGO shop.
 They work as fake biome if placed. Not allows to spawn certain biome mobs, but may be useful for trading with NPCs or summoning bosses.
+-Added Prince's Magic Wand. Final upgrade for Magic Wand. Deals even more damage, has right click function.
+Suppose to be post DoG weapon. May be considered as OP if use it without Calamity mod.
 -Added new Calamity mod potions to Brewer.
 -Added souls of Fear, Power and Vision. Available in hardmode.
 -Added Godhead (works as combo of those souls). Available in hardmode.

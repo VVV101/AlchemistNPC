@@ -179,7 +179,7 @@ namespace AlchemistNPC.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = "Give Paper Tube";
+            button = "Sell";
 			button2 = "Shop";
 			Player player = Main.player[Main.myPlayer];
 			if (player.active)
@@ -200,7 +200,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundTabi && AlchemistNPCWorld.foundBlackBelt && AlchemistNPCWorld.foundRifleScope && AlchemistNPCWorld.foundPaladinShield && AlchemistNPCWorld.foundNecromanticScroll && AlchemistNPCWorld.foundSunStone && AlchemistNPCWorld.foundHerculesBeetle && AlchemistNPCWorld.foundPygmyNecklace)
+			if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundT1 && AlchemistNPCWorld.foundT2 && AlchemistNPCWorld.foundT3)
 			{
 				button = "Reward";
 			}
@@ -212,408 +212,12 @@ namespace AlchemistNPC.NPCs
             {
 				if (!TubePresent && !TubePresent2 && !TubePresent3)
 				{
-					Main.npcChatText = "You don't have any Paper Tubes now. Go and get some now!";
+					Main.npcChatText = "You don't have any Paper Tubes for selling right now. Go and get some!";
 				}
-				if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundTabi && AlchemistNPCWorld.foundBlackBelt && AlchemistNPCWorld.foundRifleScope && AlchemistNPCWorld.foundPaladinShield && AlchemistNPCWorld.foundNecromanticScroll && AlchemistNPCWorld.foundSunStone && AlchemistNPCWorld.foundHerculesBeetle && AlchemistNPCWorld.foundPygmyNecklace)
+				if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundT1 && AlchemistNPCWorld.foundT2 && AlchemistNPCWorld.foundT3)
 				{
 					Main.player[Main.myPlayer].QuickSpawnItem(mod.ItemType("MP7"));
 					AlchemistNPCWorld.foundMP7 = true;
-				}
-				else if (TubePresent3 && !AlchemistNPCWorld.foundT3)
-				{
-					Player player = Main.player[Main.myPlayer];
-					shop = false;
-					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PaperTube3")))
-					{
-						Item[] inventory = Main.player[Main.myPlayer].inventory;
-						for (int k = 0; k < inventory.Length; k++)
-						{
-							if (inventory[k].type == mod.ItemType("PaperTube3"))
-							{
-								inventory[k].stack--;
-								var randomAcc = new List<string>();
-								
-								if (!AlchemistNPCWorld.foundTabi) {
-								randomAcc.Add("foundTabi");}
-								if (!AlchemistNPCWorld.foundBlackBelt) {
-								randomAcc.Add("foundBlackBelt");}
-								if (!AlchemistNPCWorld.foundRifleScope) {
-								randomAcc.Add("foundRifleScope");}
-								if (!AlchemistNPCWorld.foundPaladinShield) {
-								randomAcc.Add("foundPaladinShield");}
-								if (!AlchemistNPCWorld.foundNecromanticScroll) {
-								randomAcc.Add("foundNecromanticScroll");}
-								if (NPC.downedGolemBoss)
-								{
-									if (!AlchemistNPCWorld.foundSunStone) {
-									randomAcc.Add("foundSunStone");}
-								}
-								if (!AlchemistNPCWorld.foundHerculesBeetle) {
-								randomAcc.Add("foundHerculesBeetle");}
-								if (!AlchemistNPCWorld.foundPygmyNecklace) {
-								randomAcc.Add("foundPygmyNecklace");}
-								if (randomAcc.Count == 0 && !NPC.downedGolemBoss)
-								{
-									Main.npcChatText = "You need to defeat Golem to unlock leftover post Plantera accessory.";
-									break;
-								}
-								if (Main.rand.NextBool(5))
-								{
-									Main.npcChatText = "There is nothing interesting in those blueprints, sorry.";
-									break;
-								}
-							
-								int acc = Main.rand.Next(randomAcc.Count);
-								
-								Main.npcChatText = "You have found a new accessory blueprint. You can buy this accessory from now.";
-								
-								if (randomAcc[acc] == "foundTabi") {
-								AlchemistNPCWorld.foundTabi = true;}
-								if (randomAcc[acc] == "foundBlackBelt") {
-								AlchemistNPCWorld.foundBlackBelt = true;}
-								if (randomAcc[acc] == "foundRifleScope") {
-								AlchemistNPCWorld.foundRifleScope = true;}
-								if (randomAcc[acc] == "foundPaladinShield") {
-								AlchemistNPCWorld.foundPaladinShield = true;}
-								if (randomAcc[acc] == "foundNecromanticScroll") {
-								AlchemistNPCWorld.foundNecromanticScroll = true;}
-								if (randomAcc[acc] == "foundSunStone") {
-								AlchemistNPCWorld.foundSunStone = true;}
-								if (randomAcc[acc] == "foundHerculesBeetle") {
-								AlchemistNPCWorld.foundHerculesBeetle = true;}
-								if (randomAcc[acc] == "foundPygmyNecklace") {
-								AlchemistNPCWorld.foundPygmyNecklace = true;}
-								
-								if (randomAcc.Count == 1 && NPC.downedGolemBoss)
-								{
-									Main.npcChatText = "You have found all post Plantera blueprints. Congratulations! Now you may sell all leftover Paper Tubes to me. Oh, an also... If you have found all other blueprints, defeat Moon Lord and talk to me again. It would be the good surprise.";
-									AlchemistNPCWorld.foundT3 = true;
-								}
-								break;
-							}
-						}
-					}
-				}
-				else if (TubePresent2 && !AlchemistNPCWorld.foundT2)
-				{
-					Player player = Main.player[Main.myPlayer];
-					shop = false;
-					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PaperTube2")))
-					{
-						Item[] inventory = Main.player[Main.myPlayer].inventory;
-						for (int k = 0; k < inventory.Length; k++)
-						{
-							if (inventory[k].type == mod.ItemType("PaperTube2"))
-							{
-								inventory[k].stack--;
-								var randomAcc = new List<string>();
-								
-								if (!AlchemistNPCWorld.foundPStone) {
-								randomAcc.Add("foundPStone");}
-								if (!AlchemistNPCWorld.foundGoldRing) {
-								randomAcc.Add("foundGoldRing");}
-								if (!AlchemistNPCWorld.foundLuckyCoin) {
-								randomAcc.Add("foundLuckyCoin");}
-								if (!AlchemistNPCWorld.foundDiscountCard) {
-								randomAcc.Add("foundDiscountCard");}
-								if (NPC.downedMechBossAny)
-								{
-									if (!AlchemistNPCWorld.foundNeptuneShell) {
-									randomAcc.Add("foundNeptuneShell");}
-								}
-								if (!AlchemistNPCWorld.foundYoyoGlove) {
-								randomAcc.Add("foundYoyoGlove");}
-								if (!AlchemistNPCWorld.foundBlindfold) {
-								randomAcc.Add("foundBlindfold");}
-								if (!AlchemistNPCWorld.foundArmorPolish) {
-								randomAcc.Add("foundArmorPolish");}
-								if (!AlchemistNPCWorld.foundVitamins) {
-								randomAcc.Add("foundVitamins");}
-								if (!AlchemistNPCWorld.foundBezoar) {
-								randomAcc.Add("foundBezoar");}
-								if (!AlchemistNPCWorld.foundAdhesiveBandage) {
-								randomAcc.Add("foundAdhesiveBandage");}
-								if (!AlchemistNPCWorld.foundFastClock) {
-								randomAcc.Add("foundFastClock");}
-								if (!AlchemistNPCWorld.foundTrifoldMap) {
-								randomAcc.Add("foundTrifoldMap");}
-								if (!AlchemistNPCWorld.foundMegaphone) {
-								randomAcc.Add("foundMegaphone");}
-								if (!AlchemistNPCWorld.foundNazar) {
-								randomAcc.Add("foundNazar");}
-								if (!AlchemistNPCWorld.foundSorcE) {
-								randomAcc.Add("foundSorcE");}
-								if (!AlchemistNPCWorld.foundWE) {
-								randomAcc.Add("foundWE");}
-								if (!AlchemistNPCWorld.foundRE) {
-								randomAcc.Add("foundRE");}
-								if (!AlchemistNPCWorld.foundSumE) {
-								randomAcc.Add("foundSumE");}
-								if (!AlchemistNPCWorld.foundTitanGlove) {
-								randomAcc.Add("foundTitanGlove");}
-								if (!AlchemistNPCWorld.foundMoonCharm) {
-								randomAcc.Add("foundMoonCharm");}
-								if (!AlchemistNPCWorld.foundFrozenTurtleShell) {
-								randomAcc.Add("foundFrozenTurtleShell");}
-								if (NPC.downedMechBossAny)
-								{
-									if (!AlchemistNPCWorld.foundMoonStone) {
-									randomAcc.Add("foundMoonStone");}
-								}
-								if (!AlchemistNPCWorld.foundPutridScent) {
-								randomAcc.Add("foundPutridScent");}
-								if (!AlchemistNPCWorld.foundFleshKnuckles) {
-								randomAcc.Add("foundFleshKnuckles");}
-								if (!AlchemistNPCWorld.foundMagicQuiver) {
-								randomAcc.Add("foundMagicQuiver");}
-								if (!AlchemistNPCWorld.foundCobaltShield) {
-								randomAcc.Add("foundCobaltShield");}
-								if (!AlchemistNPCWorld.foundCrossNecklace) {
-								randomAcc.Add("foundCrossNecklace");}
-								if (!AlchemistNPCWorld.foundStarCloak) {
-								randomAcc.Add("foundStarCloak");}
-								if (randomAcc.Count == 0 && !NPC.downedMechBossAny)
-								{
-									Main.npcChatText = "You need to defeat any mechanical boss to unlock 2 leftover early hardmode accessories.";
-									break;
-								}
-								if (Main.rand.NextBool(5))
-								{
-									Main.npcChatText = "There is nothing interesting in those blueprints, sorry.";
-									break;
-								}
-							
-								int acc = Main.rand.Next(randomAcc.Count);
-								
-								Main.npcChatText = "You have found a new accessory blueprint. You can buy this accessory from now.";
-								
-								if (randomAcc[acc] == "foundPStone") {
-								AlchemistNPCWorld.foundPStone = true;}
-								if (randomAcc[acc] == "foundGoldRing") {
-								AlchemistNPCWorld.foundGoldRing = true;}
-								if (randomAcc[acc] == "foundLuckyCoin") {
-								AlchemistNPCWorld.foundLuckyCoin = true;}
-								if (randomAcc[acc] == "foundDiscountCard") {
-								AlchemistNPCWorld.foundDiscountCard = true;}
-								if (randomAcc[acc] == "foundNeptuneShell") {
-								AlchemistNPCWorld.foundNeptuneShell = true;}
-								if (randomAcc[acc] == "foundYoyoGlove") {
-								AlchemistNPCWorld.foundYoyoGlove = true;}
-								if (randomAcc[acc] == "foundBlindfold") {
-								AlchemistNPCWorld.foundBlindfold = true;}
-								if (randomAcc[acc] == "foundArmorPolish") {
-								AlchemistNPCWorld.foundArmorPolish = true;}
-								if (randomAcc[acc] == "foundVitamins") {
-								AlchemistNPCWorld.foundVitamins = true;}
-								if (randomAcc[acc] == "foundBezoar") {
-								AlchemistNPCWorld.foundBezoar = true;}
-								if (randomAcc[acc] == "foundAdhesiveBandage") {
-								AlchemistNPCWorld.foundAdhesiveBandage = true;}
-								if (randomAcc[acc] == "foundFastClock") {
-								AlchemistNPCWorld.foundFastClock = true;}
-								if (randomAcc[acc] == "foundTrifoldMap") {
-								AlchemistNPCWorld.foundTrifoldMap = true;}
-								if (randomAcc[acc] == "foundMegaphone") {
-								AlchemistNPCWorld.foundMegaphone = true;}
-								if (randomAcc[acc] == "foundNazar") {
-								AlchemistNPCWorld.foundNazar = true;}
-								if (randomAcc[acc] == "foundSorcE") {
-								AlchemistNPCWorld.foundSorcE = true;}
-								if (randomAcc[acc] == "foundWE") {
-								AlchemistNPCWorld.foundWE = true;}
-								if (randomAcc[acc] == "foundRE") {
-								AlchemistNPCWorld.foundRE = true;}
-								if (randomAcc[acc] == "foundSumE") {
-								AlchemistNPCWorld.foundSumE = true;}
-								if (randomAcc[acc] == "foundTitanGlove") {
-								AlchemistNPCWorld.foundTitanGlove = true;}
-								if (randomAcc[acc] == "foundMoonCharm") {
-								AlchemistNPCWorld.foundMoonCharm = true;}
-								if (randomAcc[acc] == "foundMoonStone") {
-								AlchemistNPCWorld.foundMoonStone = true;}
-								if (randomAcc[acc] == "foundFrozenTurtleShell") {
-								AlchemistNPCWorld.foundFrozenTurtleShell = true;}
-								if (randomAcc[acc] == "foundPutridScent") {
-								AlchemistNPCWorld.foundPutridScent = true;}
-								if (randomAcc[acc] == "foundFleshKnuckles") {
-								AlchemistNPCWorld.foundFleshKnuckles = true;}
-								if (randomAcc[acc] == "foundMagicQuiver") {
-								AlchemistNPCWorld.foundMagicQuiver = true;}
-								if (randomAcc[acc] == "foundCobaltShield") {
-								AlchemistNPCWorld.foundCobaltShield = true;}
-								if (randomAcc[acc] == "foundCrossNecklace") {
-								AlchemistNPCWorld.foundCrossNecklace = true;}
-								if (randomAcc[acc] == "foundStarCloak") {
-								AlchemistNPCWorld.foundStarCloak = true;}
-								
-								if (randomAcc.Count == 1 && NPC.downedMechBossAny)
-								{
-									Main.npcChatText = "You have found all early hardmode blueprints. Congratulations! Now you may sell all leftover Paper Tubes to me.";
-									AlchemistNPCWorld.foundT2 = true;
-								}
-								break;
-							}
-						}
-					}
-				}			
-                else if (TubePresent && !AlchemistNPCWorld.foundT1)
-				{
-					Player player = Main.player[Main.myPlayer];
-					shop = false;
-					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PaperTube")))
-					{
-						Item[] inventory = Main.player[Main.myPlayer].inventory;
-						for (int k = 0; k < inventory.Length; k++)
-						{
-							if (inventory[k].type == mod.ItemType("PaperTube"))
-							{
-								inventory[k].stack--;
-								var randomAcc = new List<string>();
-								
-								if (!AlchemistNPCWorld.foundAglet) {
-								randomAcc.Add("foundAglet");}
-								if (!AlchemistNPCWorld.foundClimbingClaws) {
-								randomAcc.Add("foundClimbingClaws");}
-								if (!AlchemistNPCWorld.foundShoeSpikes) {
-								randomAcc.Add("foundShoeSpikes");}
-								if (!AlchemistNPCWorld.foundAnklet) {
-								randomAcc.Add("foundAnklet");}
-								if (!AlchemistNPCWorld.foundBalloon) {
-								randomAcc.Add("foundBalloon");}
-								if (!AlchemistNPCWorld.foundHermesBoots) {
-								randomAcc.Add("foundHermesBoots");}
-								if (!AlchemistNPCWorld.foundFlippers) {
-								randomAcc.Add("foundFlippers");}
-								if (!AlchemistNPCWorld.foundFrogLeg) {
-								randomAcc.Add("foundFrogLeg");}
-								if (!AlchemistNPCWorld.foundCloud) {
-								randomAcc.Add("foundCloud");}
-								if (!AlchemistNPCWorld.foundBlizzard) {
-								randomAcc.Add("foundBlizzard");}
-								if (!AlchemistNPCWorld.foundSandstorm) {
-								randomAcc.Add("foundSandstorm");}
-								if (!AlchemistNPCWorld.foundPuffer) {
-								randomAcc.Add("foundPuffer");}
-								if (!AlchemistNPCWorld.foundTsunami) {
-								randomAcc.Add("foundTsunami");}
-								if (!AlchemistNPCWorld.foundWWB) {
-								randomAcc.Add("foundWWB");}
-								if (!AlchemistNPCWorld.foundIceSkates) {
-								randomAcc.Add("foundIceSkates");}
-								if (!AlchemistNPCWorld.foundLavaCharm) {
-								randomAcc.Add("foundLavaCharm");}
-								if (!AlchemistNPCWorld.foundHorseshoe) {
-								randomAcc.Add("foundHorseshoe");}
-								if (!AlchemistNPCWorld.foundCMagnet) {
-								randomAcc.Add("foundCMagnet");}
-								if (!AlchemistNPCWorld.foundHTFL) {
-								randomAcc.Add("foundHTFL");}
-								if (!AlchemistNPCWorld.foundAnglerEarring) {
-								randomAcc.Add("foundAnglerEarring");}
-								if (!AlchemistNPCWorld.foundTackleBox) {
-								randomAcc.Add("foundTackleBox");}
-								if (!AlchemistNPCWorld.foundJFNeck) {
-								randomAcc.Add("foundJFNeck");}
-								if (!AlchemistNPCWorld.foundFlowerBoots) {
-								randomAcc.Add("foundFlowerBoots");}
-								if (!AlchemistNPCWorld.foundString) {
-								randomAcc.Add("foundString");}
-								if (!AlchemistNPCWorld.foundGreenCW) {
-								randomAcc.Add("foundGreenCW");}
-								if (!AlchemistNPCWorld.foundFeralClaw) {
-								randomAcc.Add("foundFeralClaw");}
-								if (!AlchemistNPCWorld.foundMagmaStone) {
-								randomAcc.Add("foundMagmaStone");}
-								if (!AlchemistNPCWorld.foundSharkTooth) {
-								randomAcc.Add("foundSharkTooth");}
-								if (!AlchemistNPCWorld.foundPanicNecklace) {
-								randomAcc.Add("foundPanicNecklace");}
-								if (!AlchemistNPCWorld.foundObsidianRose) {
-								randomAcc.Add("foundObsidianRose");}
-								if (!AlchemistNPCWorld.foundShackle) {
-								randomAcc.Add("foundShackle");}
-								if (Main.rand.NextBool(5))
-								{
-									Main.npcChatText = "There is nothing interesting in those blueprints, sorry.";
-									break;
-								}
-							
-								int acc = Main.rand.Next(randomAcc.Count);
-								
-								Main.npcChatText = "You have found a new accessory blueprint. You can buy this accessory from now.";
-								
-								if (randomAcc[acc] == "foundAglet") {
-								AlchemistNPCWorld.foundAglet = true;}
-								if (randomAcc[acc] == "foundClimbingClaws") {
-								AlchemistNPCWorld.foundClimbingClaws = true;}
-								if (randomAcc[acc] == "foundShoeSpikes") {
-								AlchemistNPCWorld.foundShoeSpikes = true;}
-								if (randomAcc[acc] == "foundAnklet") {
-								AlchemistNPCWorld.foundAnklet = true;}
-								if (randomAcc[acc] == "foundBalloon") {
-								AlchemistNPCWorld.foundBalloon = true;}
-								if (randomAcc[acc] == "foundHermesBoots") {
-								AlchemistNPCWorld.foundHermesBoots = true;}
-								if (randomAcc[acc] == "foundFlippers") {
-								AlchemistNPCWorld.foundFlippers = true;}
-								if (randomAcc[acc] == "foundFrogLeg") {
-								AlchemistNPCWorld.foundFrogLeg = true;}
-								if (randomAcc[acc] == "foundCloud") {
-								AlchemistNPCWorld.foundCloud = true;}
-								if (randomAcc[acc] == "foundBlizzard") {
-								AlchemistNPCWorld.foundBlizzard = true;}
-								if (randomAcc[acc] == "foundSandstorm") {
-								AlchemistNPCWorld.foundSandstorm = true;}
-								if (randomAcc[acc] == "foundPuffer") {
-								AlchemistNPCWorld.foundPuffer = true;}
-								if (randomAcc[acc] == "foundTsunami") {
-								AlchemistNPCWorld.foundTsunami = true;}
-								if (randomAcc[acc] == "foundWWB") {
-								AlchemistNPCWorld.foundWWB = true;}
-								if (randomAcc[acc] == "foundIceSkates") {
-								AlchemistNPCWorld.foundIceSkates = true;}
-								if (randomAcc[acc] == "foundLavaCharm") {
-								AlchemistNPCWorld.foundLavaCharm = true;}
-								if (randomAcc[acc] == "foundHorseshoe") {
-								AlchemistNPCWorld.foundHorseshoe = true;}
-								if (randomAcc[acc] == "foundCMagnet") {
-								AlchemistNPCWorld.foundCMagnet = true;}
-								if (randomAcc[acc] == "foundHTFL") {
-								AlchemistNPCWorld.foundHTFL = true;}
-								if (randomAcc[acc] == "foundAnglerEarring") {
-								AlchemistNPCWorld.foundAnglerEarring = true;}
-								if (randomAcc[acc] == "foundTackleBox") {
-								AlchemistNPCWorld.foundTackleBox = true;}
-								if (randomAcc[acc] == "foundJFNeck") {
-								AlchemistNPCWorld.foundJFNeck = true;}
-								if (randomAcc[acc] == "foundFlowerBoots") {
-								AlchemistNPCWorld.foundFlowerBoots = true;}
-								if (randomAcc[acc] == "foundString") {
-								AlchemistNPCWorld.foundString = true;}
-								if (randomAcc[acc] == "foundGreenCW") {
-								AlchemistNPCWorld.foundGreenCW = true;}
-								if (randomAcc[acc] == "foundFeralClaw") {
-								AlchemistNPCWorld.foundFeralClaw = true;}
-								if (randomAcc[acc] == "foundMagmaStone") {
-								AlchemistNPCWorld.foundMagmaStone = true;}
-								if (randomAcc[acc] == "foundSharkTooth") {
-								AlchemistNPCWorld.foundSharkTooth = true;}
-								if (randomAcc[acc] == "foundPanicNecklace") {
-								AlchemistNPCWorld.foundPanicNecklace = true;}
-								if (randomAcc[acc] == "foundObsidianRose") {
-								AlchemistNPCWorld.foundObsidianRose = true;}
-								if (randomAcc[acc] == "foundShackle") {
-								AlchemistNPCWorld.foundShackle = true;}
-								
-								if (randomAcc.Count == 1)
-								{
-									Main.npcChatText = "You have found all prehardmode blueprints. Congratulations! Now you may sell all leftover Paper Tubes to me.";
-									AlchemistNPCWorld.foundT1 = true;
-								}
-								break;
-							}
-						}
-					}
 				}
 				else if (AlchemistNPCWorld.foundT1 || AlchemistNPCWorld.foundT2 || AlchemistNPCWorld.foundT3)
 				{
@@ -624,6 +228,9 @@ namespace AlchemistNPC.NPCs
 						{
 							if (inventory[k].type == mod.ItemType("PaperTube"))
 							{
+								TubePresent = false;
+								TubePresent2 = false;
+								TubePresent3 = false;
 								inventory[k].stack--;
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
@@ -634,6 +241,9 @@ namespace AlchemistNPC.NPCs
 						{
 							if (inventory[k].type == mod.ItemType("PaperTube2"))
 							{
+								TubePresent = false;
+								TubePresent2 = false;
+								TubePresent3 = false;
 								inventory[k].stack--;
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
@@ -647,6 +257,9 @@ namespace AlchemistNPC.NPCs
 						{
 							if (inventory[k].type == mod.ItemType("PaperTube3"))
 							{
+								TubePresent = false;
+								TubePresent2 = false;
+								TubePresent3 = false;
 								inventory[k].stack--;
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
