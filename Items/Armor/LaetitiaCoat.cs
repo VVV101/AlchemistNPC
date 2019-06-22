@@ -24,7 +24,7 @@ namespace AlchemistNPC.Items.Armor
 			+ "\nArmor's base defense is 5");
             Tooltip.AddTranslation(GameCulture.Russian, "Ленточка на плаще отражает мольбу дитя о счастье. Дитя, что не могло покинуть своих друзей.\n[c/FF0000:Часть брони Э.П.О.С.]\nУвеличивает урон прислужников на 20%\nЗащита увеличивается после убийства определенных боссов\nБазовая защита равна 5");
             DisplayName.AddTranslation(GameCulture.Chinese, "蕾蒂希娅外套 (O-01-67)");
-            Tooltip.AddTranslation(GameCulture.Chinese, "'外套上精美的丝带和蝴蝶结寄托着少女对幸福的向往, 一个孩子不能离开朋友.'\n[c/FF0000:EGO 盔甲]\n增加20%召唤物伤害\n击败一些Boss之后增加防御力\n盔甲的当前防御力会显示在盔甲上");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'外套上精美的丝带和蝴蝶结寄托着少女对幸福的向往, 一个孩子不能离开朋友.'\n[c/FF0000:EGO 盔甲]\n增加20%召唤物伤害\n击败特定Boss之后增加防御力\n基础防御力为5");
         }
 
 		public override void SetDefaults()

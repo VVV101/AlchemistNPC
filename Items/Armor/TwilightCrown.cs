@@ -28,7 +28,7 @@ namespace AlchemistNPC.Items.Armor
 		    text.SetDefault("Increases current melee/magic damage by 30% and adds 15% to melee/magic critical strike chance"
 		    + "\nIncludes all bonuses from Big Bird Lamp");
             text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в ближнем бою/магический на 30% и добаляет 15% к шансу критического удара\nВключает в себя бонусы от Лампы Большой Птицы");
-            text.AddTranslation(GameCulture.Chinese, "增加30%当前近战/魔法伤害并增加15%近战/魔法暴击几率\n包含大鸟灯的全部效果");
+            text.AddTranslation(GameCulture.Chinese, "增加30%当前近战/魔法伤害, 并增加15%近战/魔法暴击几率\n包含大鸟灯的全部效果");
             mod.AddTranslation(text);
 		}
 

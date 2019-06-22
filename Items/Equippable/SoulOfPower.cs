@@ -19,6 +19,8 @@ namespace AlchemistNPC.Items.Equippable
 				DisplayName.AddTranslation(GameCulture.Russian, "Душа Мощи");
             Tooltip.AddTranslation(GameCulture.Russian, "''Никто меня теперь не остановит!''\nУвеличивает урон всех типов на 15%");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 12));
+            DisplayName.AddTranslation(GameCulture.Chinese, "伟力之魂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "''我无人可挡!''\n增加15%所有伤害");
         }
 	
 		public override void SetDefaults()

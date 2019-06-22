@@ -29,6 +29,8 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Лечение иллюминатов");
 			Description.AddTranslation(GameCulture.Russian, "Лечение до 75% ХП");
+            DisplayName.AddTranslation(GameCulture.Chinese, "光照会之愈");
+            Description.AddTranslation(GameCulture.Chinese, "回复75%生命值");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

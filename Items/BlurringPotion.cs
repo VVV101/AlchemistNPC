@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Размытие (включает Теневое Уклонение с 30-ти секундным откатом)");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "模糊药水");
-            Tooltip.AddTranslation(GameCulture.Chinese, "获得模糊Buff (30秒冷却结束10秒后激活暗影躲避)\n非灾厄BUFF药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得模糊Buff (持续10秒暗影躲避,CD时间30秒)\n非灾厄BUFF药剂");
         }    
 		public override void SetDefaults()
         {

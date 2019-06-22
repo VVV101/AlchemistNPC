@@ -48,6 +48,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Mind Burn");
 			Description.AddTranslation(GameCulture.Russian, "Разум горит!");
+            DisplayName.AddTranslation(GameCulture.Chinese, "心智燃烧");
+            Description.AddTranslation(GameCulture.Chinese, "心智在燃烧!");
         }
 
         public override void Update(Player player, ref int buffIndex)

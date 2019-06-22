@@ -26,6 +26,8 @@ namespace AlchemistNPC.Items.Equippable
 			+ "\nRek thigh scrbs, an fk ther sht ahp.''");
 			DisplayName.AddTranslation(GameCulture.Russian, "Истинные Компоненты Буйства");
             Tooltip.AddTranslation(GameCulture.Russian, "Превращает мушкетные пули в смертоносные Хлорофитово-осколочные пули\nОни работают как безумная комбинация Хлорифитовых и Пыле-кристальных пуль\nДаёт эффект Снайперского прицела \n15% бонусного урона и шанса критического удара для дальнего боя\nОтключение видимости выключает эффект Снайперского Прицела\nУвеличивает пробивание брони на 40\nЭффект Экономии Патронов\nУскоряет все стрелы\nУсиливает любое оружие, стреляющее Электросферами\n''И разверзлись Небеса, спустив послание Бога, завещавшее мне:\nДй им всм п щщам, и рздлбй вс чт вдишь.''");
+            DisplayName.AddTranslation(GameCulture.Chinese, "至尊狂暴组件");
+            Tooltip.AddTranslation(GameCulture.Chinese, "把子弹转变成致命的橓裂弹\n他们看起来就像是叶绿弹和水晶尘子弹的疯狂组合\n给予狙击镜的效果 (15% 的额外远程伤害和暴击率, 允许缩放)\n隐藏可见性关闭狙击镜的效果\n增加40点护甲穿透\n弹药储备效果\n加速所有箭矢\n极大增加电击效果\n''And the Heavens have opened, and God reached down upon my life, and said upon me:\nRek thigh scrbs, an fk ther sht ahp.''");
         }
 	
 		public override void SetDefaults()

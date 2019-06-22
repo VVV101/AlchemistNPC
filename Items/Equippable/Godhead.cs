@@ -21,6 +21,8 @@ namespace AlchemistNPC.Items.Equippable
 				+"\nIn addition, increases damage by 5% more and adds 5 defense");
 				DisplayName.AddTranslation(GameCulture.Russian, "Godhead");
             Tooltip.AddTranslation(GameCulture.Russian, "''Я - страх''\n''Я вижу всё''\n''Никто меня теперь не остановит!''\nДаёт эффекты всех 3 душ\nДополнительно увеличивает урон на 5% и увеличивает защиту на 5");
+            DisplayName.AddTranslation(GameCulture.Chinese, "神性");
+            Tooltip.AddTranslation(GameCulture.Chinese, "''我就是恐惧!''\n''我无所不见!''\n''我无人可挡!''\n给予所有3种魂的效果\n此外, 增加5%伤害和5点防御");
         }
 	
 		public override void SetDefaults()

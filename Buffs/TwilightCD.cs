@@ -18,6 +18,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "Сумеречная Перезарядка");
 			Description.AddTranslation(GameCulture.Russian, "Вы пока не можете использовать специальную способность Сумерек");
+            DisplayName.AddTranslation(GameCulture.Chinese, "蕾蒂希娅冷却");
+            Description.AddTranslation(GameCulture.Chinese, "无法使用蕾蒂希娅的特殊能力");
         }
 	}
 }

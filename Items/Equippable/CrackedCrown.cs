@@ -16,6 +16,8 @@ namespace AlchemistNPC.Items.Equippable
 			Tooltip.SetDefault("Summons the soul hunting entity");
 			DisplayName.AddTranslation(GameCulture.Russian, "Треснувшая Корона");
             Tooltip.AddTranslation(GameCulture.Russian, "Призывает сущность, охотящуюся за душами");
+            DisplayName.AddTranslation(GameCulture.Chinese, "破碎王冠");
+            Tooltip.AddTranslation(GameCulture.Chinese, "召唤狩猎灵魂的实体");
         }    
 		public override void SetDefaults()
 		{

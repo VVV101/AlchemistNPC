@@ -16,6 +16,8 @@ namespace AlchemistNPC.Items.Equippable
 			+ "\nShoots deadly lasers at nearby enemies ");
 			DisplayName.AddTranslation(GameCulture.Russian, "Механические Крылья");
             Tooltip.AddTranslation(GameCulture.Russian, "Позволяют летать\nСтреляют в ближайших противников лазерами");
+            DisplayName.AddTranslation(GameCulture.Chinese, "机械翅膀");
+            Tooltip.AddTranslation(GameCulture.Chinese, "允许飞行\n发射致命激光攻击附近敌人");
         }
 
 		public override void SetDefaults()

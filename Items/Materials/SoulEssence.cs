@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Materials
 			Tooltip.AddTranslation(GameCulture.Russian, "Хранит все качества поверженного врага");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "灵魂精华");
-            Tooltip.AddTranslation(GameCulture.Chinese, "充满着来自被击败敌人的特征");
+            Tooltip.AddTranslation(GameCulture.Chinese, "充满着来自被击败敌人的特质");
         }    
 		
 		public override void SetDefaults()

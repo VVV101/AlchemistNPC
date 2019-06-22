@@ -24,6 +24,8 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Голографический Проектор ''Святой''");
 			Description.AddTranslation(GameCulture.Russian, "Изменяет текущий биом на Святой");
+            DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''神圣''");
+            Description.AddTranslation(GameCulture.Chinese, "当前地形设置:神圣");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

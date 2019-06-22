@@ -27,6 +27,8 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nAllows to inflict Midas Touch debuff by any attack");
 				DisplayName.AddTranslation(GameCulture.Russian, "Дар Иллюминатов");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт все эффекты Кольца Жадности\nУвеличивает радиус подбора предметов, если акссесуар виден\nПри получении урона все враги на экране будут парализованы\nЕсли ХП опускается ниже 10%, то включается специальная регенерация\nСпособность имеет двухминутный откат\nУдар не убьёт вас, пока не активен откат\nЛюбые атаки накладывают Касание Мидаса на противников");
+            DisplayName.AddTranslation(GameCulture.Chinese, "光照会礼物");
+            Tooltip.AddTranslation(GameCulture.Chinese, "增加物品拾取范围, 增加钱币掉落\n上述效果在饰品为可见时启用\n大部分商人都会打折\n被攻击后麻痹屏幕内所有敌人\n生命值低于10%时, 开启特殊回复\n该能力有两分钟冷却时间\n避免致死伤害\n只有在非冷却时启用\n所有攻击造成点金术效果");
         }
 	
 		public override void SetDefaults()

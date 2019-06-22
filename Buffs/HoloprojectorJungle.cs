@@ -24,6 +24,8 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Голографический Проектор ''Джунгли''");
 			Description.AddTranslation(GameCulture.Russian, "Изменяет текущий биом на Джунглевый");
+            DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''丛林''");
+            Description.AddTranslation(GameCulture.Chinese, "当前地形设置:丛林");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

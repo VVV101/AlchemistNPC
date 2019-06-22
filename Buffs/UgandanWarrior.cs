@@ -14,6 +14,8 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Воин Уганды");
 			Description.AddTranslation(GameCulture.Russian, "ЗА КОРОЛЕВУ!");
+            DisplayName.AddTranslation(GameCulture.Chinese, "乌干达战士");
+            Description.AddTranslation(GameCulture.Chinese, "为了女王!");
         }
 
 		public override void Update(Player player, ref int buffIndex)

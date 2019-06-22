@@ -18,6 +18,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Атакующий режим симбиота");
 			Description.AddTranslation(GameCulture.Russian, "Скорость атаки увеличена");
+            DisplayName.AddTranslation(GameCulture.Chinese, "共生体攻击模式");
+            Description.AddTranslation(GameCulture.Chinese, "增加攻击速度");
         }
 	}
 }

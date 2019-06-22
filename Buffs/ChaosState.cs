@@ -19,6 +19,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Хаотическое состояние");
 			Description.AddTranslation(GameCulture.Russian, "Отнимает здоровье противника");
+			DisplayName.AddTranslation(GameCulture.Chinese, "混沌状态");
+			Description.AddTranslation(GameCulture.Chinese, "迅速降低敌人生命值");
         }
 
         public override void Update(NPC npc, ref int buffIndex)

@@ -17,6 +17,8 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nCan be used for flying");
 			DisplayName.AddTranslation(GameCulture.Russian, "Мистический Амулет");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт носителю способность к Телекинезу\nПозволяет летать");
+            DisplayName.AddTranslation(GameCulture.Chinese, "神秘护符");
+            Tooltip.AddTranslation(GameCulture.Chinese, "使使用者获得心灵促动的能力\n可用来飞行");
         }    
 		public override void SetDefaults()
 		{
