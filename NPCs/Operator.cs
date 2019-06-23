@@ -1225,7 +1225,7 @@ namespace AlchemistNPC.NPCs
 				nextSlot++;
 				if (Main.hardMode)
 				{
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorHallow"));
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorHallowed"));
 					shop.item[nextSlot].shopCustomPrice = 330000;
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("GlobalTeleporter"));

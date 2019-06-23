@@ -67,21 +67,21 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (NPC.downedBoss3)
 			{
-				item.damage = 20;
+				item.damage = 21;
 			}
 			if (Main.hardMode)
 			{
-				item.damage = 26;
+				item.damage = 28;
 				item.useTime = 45;
 				item.useAnimation = 45;
 			}
 			if (NPC.downedMechBossAny)
 			{
-				item.damage = 32;
+				item.damage = 36;
 			}
 			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
-				item.damage = 36;
+				item.damage = 40;
 			}
 			if (NPC.downedPlantBoss)
 			{
@@ -89,25 +89,25 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (NPC.downedGolemBoss)
 			{
-				item.damage = 48;
+				item.damage = 56;
 			}
 			if (NPC.downedFishron)
 			{
-				item.damage = 56;
+				item.damage = 64;
 			}
 			if (NPC.downedAncientCultist)
 			{
-				item.damage = 64;
+				item.damage = 72;
 			}
 			if (NPC.downedMoonlord)
 			{
-				item.damage = 100;
+				item.damage = 111;
 			}
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
 				if (CalamityModDownedGuardian)
 				{
-					item.damage = 125;
+					item.damage = 140;
 				}
 			}
 			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))

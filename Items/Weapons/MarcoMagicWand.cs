@@ -24,7 +24,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 350;
+			item.damage = 250;
 			item.noMelee = true;
 			item.magic = true;
 			item.channel = true;                            //Channel so that you can held the weapon [Important]
@@ -52,7 +52,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (player.altFunctionUse != 2)
 			{
-				item.damage = 350;
+				item.damage = 250;
 				item.shootSpeed = 14f;
 				item.shoot = mod.ProjectileType("MagicWandM");
 				item.channel = true;
@@ -61,7 +61,7 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (player.altFunctionUse == 2)
 			{
-				item.damage = 2500;
+				item.damage = 2000;
 				item.shootSpeed = 0f;
 				item.shoot = mod.ProjectileType("DarkBomb");
 				item.channel = false;
@@ -76,7 +76,7 @@ namespace AlchemistNPC.Items.Weapons
 			if (player.altFunctionUse != 2)
 			{
 				item.UseSound = SoundID.Item13;
-				item.damage = 350;
+				item.damage = 250;
 				item.mana = 10;
 				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime++;
 				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).chargetime >= 390)
@@ -102,14 +102,14 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (player.altFunctionUse == 2)
 			{
-				damage = 2500;
+				damage = 2000;
 				Vector2 SPos = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
 				position = SPos;
 				return true;
 			}
 			if (player.altFunctionUse != 2)
 			{
-				damage = 350;
+				damage = 250;
 				return true;
 			}
 			return false;

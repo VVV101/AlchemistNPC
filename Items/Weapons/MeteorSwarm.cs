@@ -57,7 +57,7 @@ namespace AlchemistNPC.Items.Weapons
               float num4 = 23f / (float) Math.Sqrt((double) num3 * (double) num3 + (double) num2 * (double) num2);
               float SpeedX = (num3 * num4)/3;
               float SpeedY = num2 * num4;
-              int index2 = Projectile.NewProjectile(X, Y, SpeedX, SpeedY, 711, 1000, 5f, player.whoAmI, 0.0f, 0.0f);
+              int index2 = Projectile.NewProjectile(X, Y, SpeedX, SpeedY, 711, 1500, 5f, player.whoAmI, 0.0f, 0.0f);
               Main.projectile[index2].ai[1] = (float) player.position.Y;
             }
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))

@@ -16,10 +16,11 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("[c/FF0000:Instantly kills any non-boss enemies]"
-			+"\n[c/FF0000:If a part of the boss doesn't count as boss, it would be killed too]");
+			+"\n[c/FF0000:If a part of the boss doesn't count as boss, it would be killed too]"
+			+"\nDungeon Guardian requires at least 2 hits to be killed");
 			
 			DisplayName.AddTranslation(GameCulture.Russian, "Банхаммер");
-			Tooltip.AddTranslation(GameCulture.Russian, "[c/FF0000:Мгновенно убивает всё, что не является боссом.]\n[c/FF0000:Если часть босса не считается боссом - она будет уничтожена.");
+			Tooltip.AddTranslation(GameCulture.Russian, "[c/FF0000:Мгновенно убивает всё, что не является боссом.]\n[c/FF0000:Если часть босса не считается боссом - она будет уничтожена.]\nХранитель Данжа требует как минимум 2 попадания для убийства");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "班锤");
             Tooltip.AddTranslation(GameCulture.Chinese, "[c/FF0000:秒杀一切非Boss敌人]" +
@@ -46,29 +47,6 @@ namespace AlchemistNPC.Items.Weapons
 			item.scale = 1.5f;
 		}
 		
-		public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
-		{
-			if (target.boss == false)
-			{
-				damage = 999999;
-			}
-			if (target.type == 325 || target.type == 327 || target.type == 325 || target.type == 344 || target.type == 345 || target.type == 346)
-			{
-				damage = 88;
-			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-				{
-					if (target.type == mod.NPCType("CeaselessVoid"))
-					{
-						damage = 1;
-					}
-				}
-			if (target.type == NPCID.DungeonGuardian)
-			{
-				damage = 999999999;
-			}
-		}
-
 		public override void MeleeEffects(Player player, Rectangle hitbox)
 		{
 			if (Main.rand.Next(2) == 0)

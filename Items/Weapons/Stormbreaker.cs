@@ -50,7 +50,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			item.CloneDefaults(3858);
 			item.melee = true;
-			item.damage = 100;
+			item.damage = 110;
 			item.crit = 21;
 			item.width = 50;
 			item.height = 40;

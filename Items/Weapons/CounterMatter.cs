@@ -25,8 +25,8 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.mana = 100;
-			item.width = 32;
-			item.height = 32;
+			item.width = 48;
+			item.height = 48;
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.useStyle = 1;

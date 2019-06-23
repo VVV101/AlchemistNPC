@@ -26,7 +26,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 8;
+			item.damage = 9;
 			item.magic = true;
 			item.mana = 15;
 			item.rare = 11;
@@ -52,53 +52,53 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (NPC.downedSlimeKing)
 			{
-				item.damage = 9;
+				item.damage = 10;
 			}
 			if (NPC.downedBoss1)
 			{
-				item.damage = 10;
+				item.damage = 12;
 			}
 			if (NPC.downedBoss2)
 			{
-				item.damage = 11;
+				item.damage = 15;
 			}
 			if (NPC.downedQueenBee)
 			{
-				item.damage = 12;
+				item.damage = 18;
 			}
 			if (NPC.downedBoss3)
 			{
-				item.damage = 15;
+				item.damage = 21;
 			}
 			if (Main.hardMode)
 			{
-				item.damage = 25;
-				item.useTime = 50;
-				item.useAnimation = 50;
+				item.damage = 32;
+				item.useTime = 40;
+				item.useAnimation = 40;
 			}
 			if (NPC.downedMechBossAny)
 			{
-				item.damage = 30;
+				item.damage = 36;
 			}
 			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
-				item.damage = 35;
+				item.damage = 42;
 			}
 			if (NPC.downedPlantBoss)
 			{
-				item.damage = 45;
+				item.damage = 52;
 			}
 			if (NPC.downedGolemBoss)
 			{
-				item.damage = 50;
+				item.damage = 60;
 			}
 			if (NPC.downedFishron)
 			{
-				item.damage = 60;
+				item.damage = 70;
 			}
 			if (NPC.downedAncientCultist)
 			{
-				item.damage = 75;
+				item.damage = 80;
 			}
 			if (NPC.downedMoonlord)
 			{

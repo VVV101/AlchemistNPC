@@ -43,7 +43,11 @@ namespace AlchemistNPC.Buffs
 			{
 				tip += "\nIncreases your damage reduction by 10%";
 			}
-			if (modPlayer.SnatcherCounter >= 3000)
+			if (modPlayer.SnatcherCounter >= 2500)
+			{
+				tip += "\nIncreases max amount of minions/sentries by 1";
+			}
+			if (modPlayer.SnatcherCounter >= 3500)
 			{
 				tip += "\nBoosts all damage types by 8%";
 			}
@@ -53,11 +57,11 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.SnatcherCounter >= 6666)
 			{
-				tip += "\nBoosts your max life by 10%";
+				tip += "\nIncreases your armor penetration by 30";
 			}
 			if (modPlayer.SnatcherCounter >= 9999)
 			{
-				tip += "\nIncreases your armor penetration by 25";
+				tip += "\nBoosts your max life by 10%";
 			}
 		}
 		
@@ -98,7 +102,12 @@ namespace AlchemistNPC.Buffs
 			{
 				player.endurance += 0.1f;
 			}
-			if (modPlayer.SnatcherCounter >= 3000)
+			if (modPlayer.SnatcherCounter >= 2500)
+			{
+				player.maxMinions += 1;
+				player.maxTurrets += 1;
+			}
+			if (modPlayer.SnatcherCounter >= 3500)
 			{
 				player.thrownDamage += 0.08f;
 				player.meleeDamage += 0.08f;
@@ -139,11 +148,11 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.SnatcherCounter >= 6666)
 			{
-				player.statLifeMax2 += player.statLifeMax / 10;
+				player.armorPenetration += 30;
 			}
 			if (modPlayer.SnatcherCounter >= 9999)
 			{
-				player.armorPenetration += 25;
+				player.statLifeMax2 += player.statLifeMax / 10;
 			}
 		}
 		

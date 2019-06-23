@@ -10,21 +10,25 @@ Config file is Alchemistv84.json.
 v8.5
 -Reworked Paper Tubes mechanic for a bit. Now you need to unlock Paper Tubes manually other than giving them to Tinkerer NPC.
 This also mean that Paper Tubes now properly works in MP.
+-Statue mobs no longer drop Legendary weapons and no longer boost Bloodthirsty Blade.
+-PhD Degree Diploma is now a consumable item other than inventory item.
 -Added new pet. Summoned by Cracked Crown.
 Drops from any mob with 1:33333 chance.
 -Added some Holoprojectors to Operator's EGO shop.
 They work as fake biome if placed. Not allows to spawn certain biome mobs, but may be useful for trading with NPCs or summoning bosses.
 -Added Prince's Magic Wand. Final upgrade for Magic Wand. Deals even more damage, has right click function.
 Suppose to be post DoG weapon. May be considered as OP if use it without Calamity mod.
+-Added Overloaded Rick's Portal Gun. Post Providence/Ragnarok upgrade. Fires more rapidly and deals more damage.
 -Added new Calamity mod potions to Brewer.
 -Added souls of Fear, Power and Vision. Available in hardmode.
 -Added Godhead (works as combo of those souls). Available in hardmode.
 -Added recipes for Purification Powder and Hallowed Seeds.
--Statue mobs no longer drop Legendary weapons and no longer boost Bloodthirsty Blade.
+-Buffed some of the Legendaries pre Moon Lord.
 -Rebalanced some prices in Operator's shops.
 -Reworked some EGO weapons.
 -Operator now sells essences after beating respective Calamity boss or after beating Plantera.
 -Symbiote no longer affects weapons with usetime 3 or lower.
+-Some new sprites by CC#1547.
 v8.4
 -Added new town NPC, Tinkerer. Sells different accessories after unlocking.
 Available after beating Eye of Cthulhu.

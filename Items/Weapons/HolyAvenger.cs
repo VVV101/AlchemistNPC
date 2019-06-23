@@ -71,29 +71,29 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (Main.hardMode)
 			{
-				item.damage = 32;
+				item.damage = 36;
 				item.useTime = 10;
 				item.useAnimation = 10;
 			}
 			if (NPC.downedMechBossAny)
 			{
-				item.damage = 36;
+				item.damage = 40;
 			}
 			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
-				item.damage = 40;
+				item.damage = 48;
 			}
 			if (NPC.downedPlantBoss)
 			{
-				item.damage = 48;
+				item.damage = 56;
 			}
 			if (NPC.downedGolemBoss)
 			{
-				item.damage = 56;
+				item.damage = 64;
 			}
 			if (NPC.downedFishron)
 			{
-				item.damage = 64;
+				item.damage = 72;
 			}
 			if (NPC.downedAncientCultist)
 			{
@@ -127,19 +127,19 @@ namespace AlchemistNPC.Items.Weapons
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/5, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/4, 0, Main.myPlayer);
 			}
 			if (Main.hardMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3 && !NPC.downedGolemBoss)
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/4, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/3, 0, Main.myPlayer);
 			}
 			if (Main.hardMode && NPC.downedGolemBoss)
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/2, 0, Main.myPlayer);
 			}
 		}
 	}

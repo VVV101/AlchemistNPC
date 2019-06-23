@@ -23,7 +23,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void AI()
 		{
-			if (Main.rand.Next(10) == 0)
+			if (Main.rand.Next(8) == 0)
 			{
 				for (int h = 0; h < 1; h++)
 				{
@@ -83,11 +83,11 @@ namespace AlchemistNPC.Projectiles
 				vel *= 5f;
 				if (!Main.hardMode)
 					{
-						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/3, 0, Main.myPlayer);
+						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage, 0, Main.myPlayer);
 					}
 					if (Main.hardMode)
 					{
-						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/2, 0, Main.myPlayer);
+						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage, 0, Main.myPlayer);
 					}
 			}
 			return true;
@@ -140,11 +140,11 @@ namespace AlchemistNPC.Projectiles
 					vel *= 5f;
 					if (!Main.hardMode)
 					{
-						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/3, 0, Main.myPlayer);
+						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage, 0, Main.myPlayer);
 					}
 					if (Main.hardMode)
 					{
-						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage/2, 0, Main.myPlayer);
+						Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("Bees"), projectile.damage, 0, Main.myPlayer);
 					}
 				}
 		}

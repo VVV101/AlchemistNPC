@@ -104,6 +104,28 @@ namespace AlchemistNPC.NPCs
 			{
 				damage += (damage/20)*3;
 			}
+			if (item.type == mod.ItemType("BanHammer"))
+			{
+				if (npc.boss == false)
+				{
+					damage = 999999;
+				}
+				if (npc.type == 325 || npc.type == 327 || npc.type == 325 || npc.type == 344 || npc.type == 345 || npc.type == 346)
+				{
+					damage = 88;
+				}
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				{
+					if (npc.type == mod.NPCType("CeaselessVoid"))
+					{
+						damage = 1;
+					}
+				}
+				if (npc.type == NPCID.DungeonGuardian)
+				{
+					damage = 999999999;
+				}
+			}
 		}
 
 		public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)

@@ -200,7 +200,7 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE9");
             text.SetDefault(" to sell Celestial Fragments.");
-            text.AddTranslation(GameCulture.Russian, "продавала Небесные Фрагменты.");
+            text.AddTranslation(GameCulture.Russian, " продавала Небесные Фрагменты.");
             text.AddTranslation(GameCulture.Chinese, " 卖天界碎片");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE10");

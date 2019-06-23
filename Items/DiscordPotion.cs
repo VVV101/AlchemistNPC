@@ -35,7 +35,7 @@ namespace AlchemistNPC.Items
             item.useTurn = true;
             item.useAnimation = 17;
             item.useTime = 17;
-            item.maxStack = 99;                 //this is where you set the max stack of item
+            item.maxStack = 30;                 //this is where you set the max stack of item
             item.consumable = true;           //this make that the item is consumable when used
             item.width = 18;
             item.height = 28;

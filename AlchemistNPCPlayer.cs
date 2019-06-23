@@ -46,7 +46,6 @@ namespace AlchemistNPC
 		public int Shield = 0;
 		public int fc = 0;
 		public bool HPJ = false;
-		public bool PHD = false;
 		public bool DeltaRune = false;
 		public bool PB4K = false;
 		public bool PH = false;
@@ -151,7 +150,6 @@ namespace AlchemistNPC
 			Item.potionDelay = 3600;
 			HPJ = false;
 			DeltaRune = false;
-			PHD = false;
 			PH = false;
 			PB4K = false;
 			DistantPotionsUse = false;
@@ -542,7 +540,7 @@ namespace AlchemistNPC
 		
 		public override void OnRespawn(Player player)
 		{
-			if (NPC.AnyNPCs(NPCID.Nurse) && PHD && (player == Main.player[Main.myPlayer]))
+			if (NPC.AnyNPCs(NPCID.Nurse) && AlchemistNPCWorld.foundPHD && (player == Main.player[Main.myPlayer]))
 			{
 				int num1 = player.statLifeMax2 - player.statLife;
 				int num2 = (int)((double)num1 * 0.75);

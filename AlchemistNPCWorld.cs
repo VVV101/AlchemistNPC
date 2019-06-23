@@ -89,6 +89,7 @@ namespace AlchemistNPC
 		public static bool foundT1;
 		public static bool foundT2;
 		public static bool foundT3;
+		public static bool foundPHD;
 
 		public override void Initialize()
 		{
@@ -164,6 +165,7 @@ namespace AlchemistNPC
 			foundT1 = false;
 			foundT2 = false;
 			foundT3 = false;
+			foundPHD = false;
 		}
 
 		public override TagCompound Save()
@@ -241,6 +243,7 @@ namespace AlchemistNPC
 			if (foundT1) found.Add("T1");
 			if (foundT2) found.Add("T2");
 			if (foundT3) found.Add("T3");
+			if (foundPHD) found.Add("PHD");
 			
 			return new TagCompound {
 				{"found", found}
@@ -347,6 +350,10 @@ namespace AlchemistNPC
 			flags9[6] = foundT2;
 			flags9[7] = foundT3;
 			writer.Write(flags9);
+			
+			BitsByte flags10 = new BitsByte();
+			flags10[0] = foundPHD;
+			writer.Write(flags10);
 		}
 
 		public override void NetReceive(BinaryReader reader)
@@ -440,6 +447,9 @@ namespace AlchemistNPC
 			foundT1 = flags9[5];
 			foundT2 = flags9[6];
 			foundT3 = flags9[7];
+			
+			BitsByte flags10 = reader.ReadByte();
+			foundPHD = flags10[0];
 			// As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:
 			// BitsByte flags2 = reader.ReadByte();
 			// downed9thBoss = flags[0];
@@ -520,6 +530,7 @@ namespace AlchemistNPC
 			foundT1 = found.Contains("T1");
 			foundT2 = found.Contains("T2");
 			foundT3 = found.Contains("T3");
+			foundPHD = found.Contains("PHD");
 		}
 	}
 }
