@@ -31,7 +31,7 @@ namespace AlchemistNPC.Items.Equippable
             + "\n[c/FF0000:EGO 礼物]"
             + "\n等同于翅膀"
             + "\n允许奔跑"
-            + "\n拥有非常长的飞行时间和优秀的飞行速度");
+            + "\n拥有非常长的飞行时间和优秀的水平飞行速度");
         }
 
 		public override void SetDefaults()

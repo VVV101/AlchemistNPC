@@ -14,6 +14,8 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Окаменение");
 			Description.AddTranslation(GameCulture.Russian, "Вы окаменели");
+            DisplayName.AddTranslation(GameCulture.Chinese, "石化");
+            Description.AddTranslation(GameCulture.Chinese, "你完全石化了!");
         }
 
 		public override void Update(Player player, ref int buffIndex)

@@ -24,6 +24,8 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Голографический Проектор ''Искажения''");
 			Description.AddTranslation(GameCulture.Russian, "Изменяет текущий биом на Искажение");
+            DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''腐化''");
+            Description.AddTranslation(GameCulture.Chinese, "当前地形设置:腐化");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

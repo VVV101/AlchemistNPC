@@ -18,6 +18,8 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nFree ores, treasures, creatures and traps vision");
 				DisplayName.AddTranslation(GameCulture.Russian, "Душа Видения");
             Tooltip.AddTranslation(GameCulture.Russian, "''Я вижу всё''\nСвободное видение сокровищ, руд, существ и ловушек");
+            DisplayName.AddTranslation(GameCulture.Chinese, "全视之魂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "''我无所不见!''\n高亮矿物, 宝物, 生物和陷阱");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(4, 15));
         }
 	

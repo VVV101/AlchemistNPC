@@ -27,6 +27,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "Глаза Палача");
 			Description.AddTranslation(GameCulture.Russian, "Увеличивает урон на 15%, шанс критического удара на 5%, 5% шанс на нанесение критом четырёхкратного урона");
+            DisplayName.AddTranslation(GameCulture.Chinese, "行刑者之眼");
+            Description.AddTranslation(GameCulture.Chinese, "增加15%伤害,增加5%暴击率,暴击有5%概率造成双倍伤害");
         }
 		
 		public bool CalamityModRevengeance

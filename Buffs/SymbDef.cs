@@ -18,6 +18,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Защитный режим симбиота");
 			Description.AddTranslation(GameCulture.Russian, "Регенерация, сопротивление урона и защита увеличены");
+            DisplayName.AddTranslation(GameCulture.Chinese, "共生体防御模式");
+            Description.AddTranslation(GameCulture.Chinese, "增加生命回复, 防御和伤害减免");
         }
 	}
 }

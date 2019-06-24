@@ -20,6 +20,8 @@ namespace AlchemistNPC.Items.Armor
 			+"\nOh, I know we'll meet again some sunny day!''"
 			+"\nUse with the extreme care");
             Tooltip.AddTranslation(GameCulture.Russian, "''Не знаю где, не знаю когда, но мы встретимся вновь!\nО, я знаю, что мы встретимся вновь в какой-нибудь солнечный день!''\nИспользовать с крайней осторожностью");
+            DisplayName.AddTranslation(GameCulture.Chinese, "奇怪的高顶礼帽");
+            Tooltip.AddTranslation(GameCulture.Chinese, "''我们会再见的, 不知何地, 不知何时!\n哦, 那将是个大晴天!\n小心使用");
 		}
 
 		public override void SetDefaults()

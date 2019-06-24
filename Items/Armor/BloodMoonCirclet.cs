@@ -18,6 +18,8 @@ namespace AlchemistNPC.Items.Armor
 			DisplayName.AddTranslation(GameCulture.Russian, "Ободок с рожками");
 			Tooltip.SetDefault("Changes player's hairstyle and hair color (can be changed back by Stylist)");
             Tooltip.AddTranslation(GameCulture.Russian, "Меняет причёску и цвет волос (может быть изменено с помощью Стилиста)");
+			DisplayName.AddTranslation(GameCulture.Chinese, "角饰环");
+            Description.AddTranslation(GameCulture.Chinese, "改变玩家的发型和发色 (可在发型师处还原)");
 			
 			ModTranslation text = mod.CreateTranslation("BloodMoonSetBonus");
 		    text.SetDefault("Increases all damage by 25% and adds 20% to critical strike chance"
@@ -26,7 +28,9 @@ namespace AlchemistNPC.Items.Armor
 			+ "\nYou have a chance to dodge attacks"
 		    + "\nPlayer is under permanent effect of Mage Combination");
 			text.AddTranslation(GameCulture.Russian, "Увеличивает весь урон на 25% и добавляет 20% к шансу критического удара\n+36 защиты\nСкорость передвижения увеличена на 25%\nПостоянный эффект комбинации Мага\nДаёт шанс увернуться при атаке");
+			text.AddTranslation(GameCulture.Chinese, "增加25%所有伤害, 增加20%暴击率\n增加36防御\n增加25%移动速度\n有概率闪避攻击\n获得永久的魔法药剂包效果");
 			mod.AddTranslation(text);
+
         }
 		
 		public override void SetDefaults()

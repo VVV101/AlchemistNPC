@@ -19,6 +19,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Проклятие Света");
 			Description.AddTranslation(GameCulture.Russian, "Ослабляет противника");
+            DisplayName.AddTranslation(GameCulture.Chinese, "诅咒之光");
+            Description.AddTranslation(GameCulture.Chinese, "虚弱敌人");
         }
 
         public override void Update(NPC npc, ref int buffIndex)

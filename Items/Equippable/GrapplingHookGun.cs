@@ -16,6 +16,8 @@ namespace AlchemistNPC.Items.Equippable
 			Tooltip.SetDefault("Shoots insanely fast hook very far away");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пистолет с крюком-кошкой");
 			Tooltip.AddTranslation(GameCulture.Russian, "Запускает крайне быстрый крюк очень далеко");
+            DisplayName.AddTranslation(GameCulture.Chinese, "抓钩枪");
+            Tooltip.AddTranslation(GameCulture.Chinese, "速度飞快, 射程极远");
 		}
 
 		public override void SetDefaults()

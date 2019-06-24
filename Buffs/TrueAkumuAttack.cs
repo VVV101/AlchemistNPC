@@ -18,6 +18,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Акуму");
 			Description.AddTranslation(GameCulture.Russian, "Атакует ближайших противников");
+            DisplayName.AddTranslation(GameCulture.Chinese, "Akumu");
+            Description.AddTranslation(GameCulture.Chinese, "攻击附近敌人");
         }
 		
 		public bool CalamityModRevengeance

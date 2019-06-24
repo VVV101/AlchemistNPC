@@ -14,6 +14,8 @@ namespace AlchemistNPC.Buffs
 			Description.SetDefault("Allows to fly freely");
 			DisplayName.AddTranslation(GameCulture.Russian, "Мистический Амулет");
             Description.AddTranslation(GameCulture.Russian, "Позволяет свободно летать");
+            DisplayName.AddTranslation(GameCulture.Chinese, "神秘护符");
+            Description.AddTranslation(GameCulture.Chinese, "可以自由飞翔");
         }
 
 		public override void Update(Player player, ref int buffIndex)

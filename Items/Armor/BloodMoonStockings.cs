@@ -15,6 +15,7 @@ namespace AlchemistNPC.Items.Armor
 		{
 			DisplayName.SetDefault("Blood Moon stockings and boots");
 			DisplayName.AddTranslation(GameCulture.Russian, "Колготки и сапожки Кровавой Луны");
+            DisplayName.AddTranslation(GameCulture.Chinese, "血月长袜和靴子");
         }
 
 		public override void SetDefaults()

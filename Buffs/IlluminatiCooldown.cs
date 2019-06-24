@@ -27,6 +27,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "Откат Дара Иллюминатов");
 			Description.AddTranslation(GameCulture.Russian, "Эффект Дара Иллюминатов не может быть активирован");
+            DisplayName.AddTranslation(GameCulture.Chinese, "光照会礼物 冷却");
+            Description.AddTranslation(GameCulture.Chinese, "无法激活光照会礼物的效果");
         }
 	}
 }

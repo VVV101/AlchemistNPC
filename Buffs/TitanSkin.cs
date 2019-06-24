@@ -15,7 +15,7 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Кожа Титана");
 			Description.AddTranslation(GameCulture.Russian, "Иммунитет к некоторым наедоедливым дебаффам");
             DisplayName.AddTranslation(GameCulture.Chinese, "泰坦皮肤");
-            Description.AddTranslation(GameCulture.Chinese, "你免疫一些Debuff");
+            Description.AddTranslation(GameCulture.Chinese, "免疫一些烦人的Debuff");
         }
 		public override void Update(Player player, ref int buffIndex)
 		{

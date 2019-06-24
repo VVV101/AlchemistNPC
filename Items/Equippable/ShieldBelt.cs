@@ -21,6 +21,8 @@ namespace AlchemistNPC.Items.Equippable
 			+"\nDamage cannot be lower than 30");
 			DisplayName.AddTranslation(GameCulture.Russian, "Щитовой пояс");
             Tooltip.AddTranslation(GameCulture.Russian, "Позволяет вам получать меньше урона в зависимости от заряда щита\nМаксимальное уменьшение урона равно 150\nТратит часть заряда после получения удара\nНа уровне сложности Возмездие/Смерть снижение урона ослаблено:\nМинимальный полученный урон равен 30");
+            DisplayName.AddTranslation(GameCulture.Chinese, "防护盾带");
+            Tooltip.AddTranslation(GameCulture.Chinese, "根据盾代充能减免伤害\n最大减免伤害150\n被攻击时消耗盾带充能\n在复仇/死亡模式下, 减弱伤害减免\n所减免伤害不得低于30");
         }
 	
 		public override void SetDefaults()

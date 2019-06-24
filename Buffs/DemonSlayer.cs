@@ -24,6 +24,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "Убийца Демонов");
 			Description.AddTranslation(GameCulture.Russian, "Вы стали сильнее после победы над НИМ\nИммунитет к Магической Слабости\nСкорость ближнего боя увеличена на 10%\nПробивание брони увеличено на 20\n25% шанс не потратить патроны\nМаксимальное число турелей и прислужников увеличено на 1\nВы имеете шанс бросить дополнительное метательное оружие\nВы иммунны к некоторым дебаффам");
+            DisplayName.AddTranslation(GameCulture.Chinese, "恶魔杀手");
+            Description.AddTranslation(GameCulture.Chinese, "击败他之后,你变得更强了\n免疫法力病\n增加10%近战速度\n增加20点护甲穿透\n增加20%概率不消耗子弹\n+1最大召唤栏\n概率释放额外的投掷抛射物\n免疫某些特定Debuff");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

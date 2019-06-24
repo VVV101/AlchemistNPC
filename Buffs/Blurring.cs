@@ -25,7 +25,7 @@ namespace AlchemistNPC.Buffs
 			Description.AddTranslation(GameCulture.Russian, "Враги едва могут видеть вас (Теневое уклонение с 30-ти секундным откатом)");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "模糊");
-            Description.AddTranslation(GameCulture.Chinese, "敌人并看不清你 (暗影躲避有30秒CD)");
+            Description.AddTranslation(GameCulture.Chinese, "敌人并看不清你 (持续10秒暗影躲避,CD时间30秒)");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

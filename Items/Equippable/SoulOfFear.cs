@@ -19,6 +19,8 @@ namespace AlchemistNPC.Items.Equippable
 				DisplayName.AddTranslation(GameCulture.Russian, "Душа Страха");
             Tooltip.AddTranslation(GameCulture.Russian, "''Я - страх''\nБлижайшие враги ослабляются, получая целый комплек дебаффов");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 6));
+            DisplayName.AddTranslation(GameCulture.Chinese, "惊怖之魂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "''我就是恐惧!''\n虚弱附近敌人, 造成多种Debuff");
         }
 	
 		public override void SetDefaults()

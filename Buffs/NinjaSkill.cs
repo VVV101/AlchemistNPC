@@ -17,7 +17,7 @@ namespace AlchemistNPC.Buffs
 			Description.AddTranslation(GameCulture.Russian, "Вы - истинный ниндзя!");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "忍者");
-            Description.AddTranslation(GameCulture.Chinese, "你现在拥有忍者的能力");
+            Description.AddTranslation(GameCulture.Chinese, "现在你是个真正的忍者了!");
         }
 		public override void Update(Player player, ref int buffIndex)
 		{

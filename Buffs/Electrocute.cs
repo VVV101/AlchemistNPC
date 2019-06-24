@@ -21,7 +21,7 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Электрошок");
 			Description.AddTranslation(GameCulture.Russian, "Через вас проходит высокое напряжение");
             DisplayName.AddTranslation(GameCulture.Chinese, "触电");
-            Description.AddTranslation(GameCulture.Chinese, "掉血ing");
+            Description.AddTranslation(GameCulture.Chinese, "高压电流过你的身体..");
         }
 
         public override void Update(NPC npc, ref int buffIndex)

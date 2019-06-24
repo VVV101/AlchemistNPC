@@ -18,7 +18,7 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Коррозия");
 			Description.AddTranslation(GameCulture.Russian, "Ваша плоть плавится!");
             DisplayName.AddTranslation(GameCulture.Chinese, "腐蚀");
-            Description.AddTranslation(GameCulture.Chinese, "正在失去生命");
+            Description.AddTranslation(GameCulture.Chinese, "你的肉体正在融化!");
         }
 
         public override void Update(NPC npc, ref int buffIndex)

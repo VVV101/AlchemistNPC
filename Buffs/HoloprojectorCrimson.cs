@@ -24,6 +24,8 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Голографический Проектор ''Кримзон''");
 			Description.AddTranslation(GameCulture.Russian, "Изменяет текущий биом на Кримзон");
+            DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''血腥''");
+            Description.AddTranslation(GameCulture.Chinese, "当前地形设置:血腥");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

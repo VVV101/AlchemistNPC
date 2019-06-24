@@ -18,6 +18,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Сумеречное Усиление");
 			Description.AddTranslation(GameCulture.Russian, "Вы неуязвимы и наносите трёхкратный урон");
+            DisplayName.AddTranslation(GameCulture.Chinese, "蕾蒂希娅增强");
+            Description.AddTranslation(GameCulture.Chinese, "免疫伤害, 造成3倍伤害");
         }
 		
 		public override void Update(Player player, ref int buffIndex)
