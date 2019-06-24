@@ -112,12 +112,12 @@ namespace AlchemistNPC.Items.Misc
 			randomAcc.Add("foundStarCloak");}
 			if (randomAcc.Count == 0 && !NPC.downedMechBossAny)
 			{
-				Main.NewText("You need to defeat any mechanical boss to unlock 2 leftover early hardmode accessories.", 0, 0, 255);
+				Main.NewText("You need to defeat any mechanical boss to unlock 2 leftover early hardmode accessories.", 100,149,237);
 				return true;
 			}
 			if (Main.rand.NextBool(5))
 			{
-				Main.NewText("There was nothing interesting in those blueprints.", 0, 0, 255);
+				Main.NewText("There was nothing interesting in those blueprints.", 100,149,237);
 				return true;
 			}
 		

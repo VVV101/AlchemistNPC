@@ -110,7 +110,7 @@ namespace AlchemistNPC.Items.Misc
 			randomAcc.Add("foundShackle");}
 			if (Main.rand.NextBool(5))
 			{
-				Main.NewText("There was nothing interesting in those blueprints.", 0, 0, 255);
+				Main.NewText("There was nothing interesting in those blueprints.", 100,149,237);
 				return true;
 			}
 		

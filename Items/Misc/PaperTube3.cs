@@ -71,12 +71,12 @@ namespace AlchemistNPC.Items.Misc
 			randomAcc.Add("foundPygmyNecklace");}
 			if (randomAcc.Count == 0 && !NPC.downedGolemBoss)
 			{
-				Main.NewText("You need to defeat Golem to unlock leftover post Plantera accessory.", 0, 0, 255);
+				Main.NewText("You need to defeat Golem to unlock leftover post Plantera accessory.", 100,149,237);
 				return true;
 			}
 			if (Main.rand.NextBool(5))
 			{
-				Main.NewText("There was nothing interesting in those blueprints.", 0, 0, 255);
+				Main.NewText("There was nothing interesting in those blueprints.", 100,149,237);
 				return true;
 			}
 		

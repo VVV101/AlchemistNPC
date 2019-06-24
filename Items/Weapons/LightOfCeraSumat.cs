@@ -55,30 +55,30 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				if (ThoriumModDownedRagnarok)
 				{
-					item.damage = 125;
+					item.damage = 150;
 				}
 			}
 			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 			{
 				if (CalamityModDownedProvidence)
 				{
-					item.damage = 130;
+					item.damage = 150;
 				}
 				if (CalamityModDownedPolter)
 				{
-					item.damage = 150;
+					item.damage = 222;
 				}
 				if (CalamityModDownedDOG)
 				{
-					item.damage = 200;
+					item.damage = 300;
 				}
 				if (CalamityModDownedYharon)
 				{
-					item.damage = 300;
+					item.damage = 400;
 				}
 				if (CalamityModDownedSCal)
 				{
-					item.damage = 400;
+					item.damage = 500;
 				}
 			}
 			return true;

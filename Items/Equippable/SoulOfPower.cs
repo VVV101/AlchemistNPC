@@ -15,9 +15,10 @@ namespace AlchemistNPC.Items.Equippable
 		{
 			DisplayName.SetDefault("Soul Of Power");
 			Tooltip.SetDefault("''No one can stop me now!''"
-				+ "\nIncreases all damages by 15%");
+				+ "\nIncreases all damages by 15%"
+				+ "\nReduces damage reduction by 10%");
 				DisplayName.AddTranslation(GameCulture.Russian, "Душа Мощи");
-            Tooltip.AddTranslation(GameCulture.Russian, "''Никто меня теперь не остановит!''\nУвеличивает урон всех типов на 15%");
+            Tooltip.AddTranslation(GameCulture.Russian, "''Никто меня теперь не остановит!''\nУвеличивает урон всех типов на 15%\nСнижает сопротивление к урону на 10%");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 12));
         }
 	
@@ -33,6 +34,7 @@ namespace AlchemistNPC.Items.Equippable
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
+			player.endurance -= 0.1f;
 			player.thrownDamage += 0.15f;
             player.meleeDamage += 0.15f;
             player.rangedDamage += 0.15f;

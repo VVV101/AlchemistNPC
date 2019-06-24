@@ -1342,6 +1342,10 @@ namespace AlchemistNPC.NPCs
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(2, 3));
 							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("TruffleToad")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(5, 7));
+							}
 							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Broodmother")))
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier1"), Main.rand.Next(6, 9));
@@ -1381,6 +1385,14 @@ namespace AlchemistNPC.NPCs
 							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("NightcrawlerHead")))
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(20, 25));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Ashe")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(1, 3));
+							}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Haruka")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(1, 3));
 							}
 							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Yamata")))
 							{
