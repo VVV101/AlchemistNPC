@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items.Armor
 			Tooltip.SetDefault("Changes player's hairstyle and hair color (can be changed back by Stylist)");
             Tooltip.AddTranslation(GameCulture.Russian, "Меняет причёску и цвет волос (может быть изменено с помощью Стилиста)");
 			DisplayName.AddTranslation(GameCulture.Chinese, "角饰环");
-            Description.AddTranslation(GameCulture.Chinese, "改变玩家的发型和发色 (可在发型师处还原)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "改变玩家的发型和发色 (可在发型师处还原)");
 			
 			ModTranslation text = mod.CreateTranslation("BloodMoonSetBonus");
 		    text.SetDefault("Increases all damage by 25% and adds 20% to critical strike chance"

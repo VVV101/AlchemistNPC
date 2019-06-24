@@ -29,6 +29,7 @@ Suppose to be post DoG weapon. May be considered as OP if use it without Calamit
 -Reworked some EGO weapons.
 -Operator now sells essences after beating respective Calamity boss or after beating Plantera.
 -Symbiote no longer affects weapons with usetime 3 or lower.
+-Some more Chinese translation from ZHAY10086.
 -Some new sprites by CC#1547.
 v8.4
 -Added new town NPC, Tinkerer. Sells different accessories after unlocking.
