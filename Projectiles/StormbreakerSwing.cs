@@ -67,7 +67,7 @@ namespace AlchemistNPC.Projectiles
 
         public override void Kill(int timeLeft)
 		{
-			if (counter >= 30)
+			if (projectile.ai[0] >= 30)
 			{
 			    Player player = Main.player[projectile.owner];
 			    Vector2 vector82 =  -Main.player[Main.myPlayer].Center + Main.MouseWorld;
@@ -79,7 +79,7 @@ namespace AlchemistNPC.Projectiles
 			    Main.projectile[n1].usesLocalNPCImmunity = true;
 			    Main.projectile[n2].usesLocalNPCImmunity = true;
 			    Main.projectile[n3].usesLocalNPCImmunity = true;
-			    counter = 0;
+                projectile.ai[0] = 0;
 			}
 		}
 		
@@ -88,11 +88,6 @@ namespace AlchemistNPC.Projectiles
 			target.immune[projectile.owner] = 5;
 			target.AddBuff(mod.BuffType("Electrocute"), 300);
 		}
-
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-            target.immune[projectile.owner] = 4;
-        }
 
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)  //this make the projectile sprite rotate perfectaly around the player
         {
