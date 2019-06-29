@@ -10,6 +10,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		{
 			DisplayName.SetDefault("Stardust Fish");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пылезвездная Рыба");
+			DisplayName.AddTranslation(GameCulture.Chinese, "星尘鱼");
 		}
 
 		public override void SetDefaults()

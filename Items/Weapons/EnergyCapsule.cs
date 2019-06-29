@@ -13,6 +13,8 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Requred to shoot from Portal Gun");
 			DisplayName.AddTranslation(GameCulture.Russian, "Капсула с энергией");
             Tooltip.AddTranslation(GameCulture.Russian, "Необходима для стрельбы из Портальной Пушки");
+			DisplayName.AddTranslation(GameCulture.Chinese, "能量胶囊");
+			Tooltip.AddTranslation(GameCulture.Chinese, "传送枪射击所需");
         }
 
 		public override void SetDefaults()

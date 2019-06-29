@@ -18,6 +18,8 @@ namespace AlchemistNPC.Items.Misc
 			+"\nLeft click to teleport home, hotkey to open teleportation menu");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пип-Бой 4K");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, то показывает большинство параметров игрока\nЛевый клик телепортирует вас домой, горячая клавиша открывает телепортационное меню");
+			DisplayName.AddTranslation(GameCulture.Chinese, "哔哔小子 4K");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置于物品栏时, 显示玩家的绝大部分属性\n左键传送回家, 使用快捷键打开传送菜单");
         }
 
 		public override void SetDefaults()

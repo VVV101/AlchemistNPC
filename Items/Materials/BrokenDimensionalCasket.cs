@@ -15,6 +15,9 @@ Required for making working one");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сломанная Телепортирующая Шкатулка");
             Tooltip.AddTranslation(GameCulture.Russian, @"Сломанная межизмеренческая шкатулка
 Необходима для создания рабочей");
+			DisplayName.AddTranslation(GameCulture.Chinese, "破损的次元匣");
+			Tooltip.AddTranslation(GameCulture.Chinese, @"破损的次元匣
+用于制作次元匣");
         }
 
 		public override void SetDefaults()

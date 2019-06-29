@@ -12,6 +12,8 @@ namespace AlchemistNPC.Items.Placeable
 			Tooltip.SetDefault("Forces biome state to Corruption while placed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Голопроектор ''Искажения''");
             Tooltip.AddTranslation(GameCulture.Russian, "Фиксирует биом Искажения когда размещён");
+			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''腐化''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为腐化");
         }
 
 		public override void SetDefaults()

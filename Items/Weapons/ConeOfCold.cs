@@ -16,6 +16,9 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nMay slowdown or freeze normal enemies in place");
 			DisplayName.AddTranslation(GameCulture.Russian, "Конус Холода");
             Tooltip.AddTranslation(GameCulture.Russian, "Магическое заклинание, испускающие конус арктического холода\nМожет замедлить или заморозить обычных противников");
+			DisplayName.AddTranslation(GameCulture.Chinese, "冰锥术");
+			Tooltip.AddTranslation(GameCulture.Chinese, "释放极寒冰锥的魔咒"
+			+"\n概率缓慢或冻结普通敌人");
         }
 
 		public override void SetDefaults()

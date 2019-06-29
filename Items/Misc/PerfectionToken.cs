@@ -19,6 +19,8 @@ namespace AlchemistNPC.Items.Misc
 			+"\nNot compatible with Thorium Mod's Bard and Healer items");
 			DisplayName.AddTranslation(GameCulture.Russian, "Значок Совершенства");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, ваше следующая перековка будет иметь наилучший результат\nБудет потрачен в процессе\nНесовместим с предметами Барда и Лекаря из Ториума");
+			DisplayName.AddTranslation(GameCulture.Chinese, "完美徽章");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置于物品栏时, 武器/工具下一次重铸时获得最佳词缀\n在过程中将会被消耗\n不兼容瑟银的乐师和牧师物品");
         }
 
 		public override void SetDefaults()

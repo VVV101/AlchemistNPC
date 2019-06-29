@@ -20,6 +20,8 @@ namespace AlchemistNPC.Items.Misc
 			+"\nPress ESC to stop dialing");
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортирующая Шкатулка");
             Tooltip.AddTranslation(GameCulture.Russian, "Модифицированная межизмеренческая шкатулка\nПозволяет торговать с любым NPC с любого расстояния\nКлик для открытия интерфейса\nНажмите ESC для прекращения связи");
+			DisplayName.AddTranslation(GameCulture.Chinese, "次元匣");
+			Tooltip.AddTranslation(GameCulture.Chinese, "修好的次元匣\n允许无视距离与NPC交易\n点击打开UI\n按ESC键关闭");
         }
 
 		public override void SetDefaults()

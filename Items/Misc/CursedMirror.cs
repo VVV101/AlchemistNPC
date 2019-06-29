@@ -17,6 +17,8 @@ namespace AlchemistNPC.Items.Misc
 			Tooltip.SetDefault("Broken Mirror\nAll your projectiles would be reflected");
 			DisplayName.AddTranslation(GameCulture.Russian, "Проклятое Зеркало");
             Tooltip.AddTranslation(GameCulture.Russian, "Разбитое Зеркало\nВсе ваши снаряды будут отражены");
+			DisplayName.AddTranslation(GameCulture.Chinese, "被诅咒的镜子");
+			Tooltip.AddTranslation(GameCulture.Chinese, "破碎的镜子\n你的所有抛射物都会被反弹");
         }
 
 		public override void SetDefaults()

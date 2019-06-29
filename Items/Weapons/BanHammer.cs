@@ -24,7 +24,8 @@ namespace AlchemistNPC.Items.Weapons
 
             DisplayName.AddTranslation(GameCulture.Chinese, "班锤");
             Tooltip.AddTranslation(GameCulture.Chinese, "[c/FF0000:秒杀一切非Boss敌人]" +
-                "\n[c/FF0000:如果Boss的某个部分不算做Boss, 同样也会被秒杀]");
+                "\n[c/FF0000:如果Boss的某个部分不算做Boss, 同样也会被秒杀]"
+				+"\n地牢守卫者需要至少2击才能杀死");
         }
 
 		public override void SetDefaults()

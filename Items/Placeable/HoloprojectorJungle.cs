@@ -12,6 +12,8 @@ namespace AlchemistNPC.Items.Placeable
 			Tooltip.SetDefault("Forces biome state to Jungle while placed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Голопроектор ''Джунгли''");
             Tooltip.AddTranslation(GameCulture.Russian, "Фиксирует Джунглевый биом когда размещён");
+			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''丛林''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为丛林");
         }
 
 		public override void SetDefaults()

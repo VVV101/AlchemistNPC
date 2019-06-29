@@ -16,6 +16,8 @@ namespace AlchemistNPC.Items.Placeable
             Tooltip.SetDefault("Restores life of nearby friendly NPCs while placed");
             DisplayName.AddTranslation(GameCulture.Russian, "Молекулярный Репликатор");
             Tooltip.AddTranslation(GameCulture.Russian, "Восстанавливает жизни дружественных НПС когда установлен");
+			DisplayName.AddTranslation(GameCulture.Chinese, "分子复制器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置时回复附近友善NPC的生命");
         }
         public override void SetDefaults()
         {

@@ -20,7 +20,7 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "Королевская Тёмная Волшебная Палочка\nИспускает широкий луч, который способен уничтожить всё на своём пути\nЧем дольше удерживается луч, тем мощнее он становится\nЗатраты маны увеличиваются соответственно");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "魔杖");
-            Tooltip.AddTranslation(GameCulture.Chinese, "皇家魔杖\n发射一束能消灭一切的激光束");
+            Tooltip.AddTranslation(GameCulture.Chinese, "皇家魔杖\n发射一束能消灭一切的激光束\n激光持续时间越长, 威力越强\n法力消耗分别增加");
         }
 
 		public override void SetDefaults()

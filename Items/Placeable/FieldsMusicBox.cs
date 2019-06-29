@@ -10,6 +10,7 @@ namespace AlchemistNPC.Items.Placeable
 			DisplayName.SetDefault("Music Box (Deltarune OST - Field of Hopes and Dreams)");
 			Tooltip.SetDefault("By Toby Fox");
 			DisplayName.AddTranslation(GameCulture.Russian, "Музыкальная шкатулка (Deltarune OST - Field of Hopes and Dreams)");
+			DisplayName.AddTranslation(GameCulture.Chinese, "音乐盒 (Deltarune OST - Field of Hopes and Dreams)");
 		}
 
 		public override void SetDefaults()

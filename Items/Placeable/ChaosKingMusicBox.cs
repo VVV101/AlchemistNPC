@@ -10,6 +10,7 @@ namespace AlchemistNPC.Items.Placeable
 			DisplayName.SetDefault("Music Box (Deltarune OST - Chaos King)");
 			Tooltip.SetDefault("By Toby Fox");
 			DisplayName.AddTranslation(GameCulture.Russian, "Музыкальная шкатулка (Deltarune OST - Chaos King)");
+			DisplayName.AddTranslation(GameCulture.Chinese, "音乐盒 (Deltarune OST - Chaos King)");
 		}
 
 		public override void SetDefaults()

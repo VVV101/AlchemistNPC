@@ -18,6 +18,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nMETAMORPHOSIS!");
 			DisplayName.AddTranslation(GameCulture.Russian, "Дьявольский Нож");
             Tooltip.AddTranslation(GameCulture.Russian, "Призывает Дьявольский Нож для уничтожения ваших врагов\nНельзя призвать более одного\nМЕТАМОРФОЗ!");
+			DisplayName.AddTranslation(GameCulture.Chinese, "恶魔之刃");
+			Tooltip.AddTranslation(GameCulture.Chinese, "召唤恶魔之刃摧毁你的敌人"
+			+"\n最多只能召唤1体"
+			+"\nMETAMORPHOSIS!");
         }
 		
 		public override void SetDefaults()

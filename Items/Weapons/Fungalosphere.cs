@@ -36,7 +36,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\n33% chance not to consume gel");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "凝胶喷射器");
-            Tooltip.AddTranslation(GameCulture.Chinese, "消耗凝胶\n造成触电和霜燃Debuff\n33%的概率不消耗凝胶");
+            Tooltip.AddTranslation(GameCulture.Chinese, "消耗凝胶\n造成触电和霜火Debuff\n33%的概率不消耗凝胶");
         }
 
 		public override bool ConsumeAmmo(Player player)
