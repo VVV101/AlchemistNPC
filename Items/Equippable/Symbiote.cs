@@ -63,15 +63,15 @@ namespace AlchemistNPC.Items.Equippable
             player.magicCrit += 10;
             player.thrownCrit += 10;
 			player.longInvince = true;
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -112,24 +112,24 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(null, "ChromaticCrystal", 10);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 10);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 10);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 15);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy")), 15);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 50);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 5);
 			}
 			recipe.AddIngredient(null, "EmagledFragmentation", 250);
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 			recipe.AddTile(null, "MateriaTransmutator");
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddTile(null, "MateriaTransmutatorMK2");
 			}

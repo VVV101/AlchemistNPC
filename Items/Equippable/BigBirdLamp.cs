@@ -47,15 +47,15 @@ namespace AlchemistNPC.Items.Equippable
             player.rangedCrit += 5;
             player.magicCrit += 5;
             player.thrownCrit += 5;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}

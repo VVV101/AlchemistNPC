@@ -33,7 +33,6 @@ namespace AlchemistNPC
 
             if(!success)
             {
-                ErrorLogger.Log("Failed to read AlchemistNPC's config file! Recreating config...");
                 CreateConfig();
             }
         }

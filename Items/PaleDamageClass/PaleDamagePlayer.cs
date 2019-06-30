@@ -13,7 +13,8 @@ namespace AlchemistNPC.Items.PaleDamageClass
 		{
 			return player.GetModPlayer<PaleDamagePlayer>();
 		}
-		public float paleDamage = 1f;
+		public float paleDamageAdd;
+		public float paleDamageMult = 1f;
 		public float paleKnockback = 0f;
 		public int paleCrit = 0;
 
@@ -29,7 +30,8 @@ namespace AlchemistNPC.Items.PaleDamageClass
 
 		private void ResetVariables()
 		{
-			paleDamage = 1f;
+			paleDamageAdd = 0f;
+			paleDamageMult = 1f;
 			paleKnockback = 0f;
 			paleCrit = 0;
 		}

@@ -450,7 +450,7 @@ namespace AlchemistNPC.NPCs
 			return EntryO8;
 			}
 		}
-		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && NPC.downedBoss3)
+		if (ModLoader.GetMod("CalamityMod") != null && NPC.downedBoss3)
 		{
 			if (Main.rand.Next(7) == 0)
 			{
@@ -471,14 +471,14 @@ namespace AlchemistNPC.NPCs
 				return EntryO20;
 			} 
 		}
-		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && NPC.downedMoonlord)
+		if (ModLoader.GetMod("CalamityMod") != null && NPC.downedMoonlord)
 		{
 			if (Main.rand.Next(7) == 0)
 			{
 				return EntryO18;
 			} 
 		}
-		if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+		if (ModLoader.GetMod("ThoriumMod") != null)
 		{
 			if (Main.rand.Next(6) == 0)
 			{
@@ -486,7 +486,7 @@ namespace AlchemistNPC.NPCs
 				
 			} 
 		}
-		if (ModLoader.GetLoadedMods().Contains("ThoriumMod") && Main.hardMode)
+		if (ModLoader.GetMod("ThoriumMod") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(6) == 0)
 			{
@@ -507,7 +507,7 @@ namespace AlchemistNPC.NPCs
 			{                                                 
 			return EntryO21;
 			}
-		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && Main.hardMode)
+		if (ModLoader.GetMod("CalamityMod") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(5) == 0 && CalamityModDownedPlaguebringer)
 				{                                                 
@@ -538,7 +538,7 @@ namespace AlchemistNPC.NPCs
 				return EntryO33;
 				}
 		}
-		if (ModLoader.GetLoadedMods().Contains("ThoriumMod") && Main.hardMode)
+		if (ModLoader.GetMod("ThoriumMod") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(5) == 0 && ThoriumModDownedFallenBeholder)
 				{                                                 
@@ -549,14 +549,14 @@ namespace AlchemistNPC.NPCs
 				return EntryO24;
 				}
 		}
-		if (ModLoader.GetLoadedMods().Contains("SacredTools") && Main.hardMode)
+		if (ModLoader.GetMod("SacredTools") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(5) == 0 && SacredToolsDownedAbbadon)
 				{                  
 				return EntryO32;
 				}
 		}
-		if (ModLoader.GetLoadedMods().Contains("SpiritMod") && Main.hardMode)
+		if (ModLoader.GetMod("SpiritMod") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(5) == 0 && SpiritModDownedStarplateRaider)
 				{                                                 
@@ -567,7 +567,7 @@ namespace AlchemistNPC.NPCs
 				return EntryO27;
 				}
 		}
-		if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+		if (ModLoader.GetMod("Fargowiltas") != null)
 		{
 			if (Main.rand.Next(10) == 0)
 				{                                                 
@@ -1018,7 +1018,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.Vertebrae);
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Petal"));
 					shop.item[nextSlot].shopCustomPrice = 10000;
@@ -1036,7 +1036,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModDownedHiveMind)
 					{
@@ -1095,7 +1095,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.BlackLens);
 				shop.item[nextSlot].shopCustomPrice = 200000;
 				nextSlot++;
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BlightedLens"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
@@ -1108,7 +1108,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 20000;
 				nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModDownedCalamitas)
 					{
@@ -1161,14 +1161,14 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.BeetleHusk);
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
 						shop.item[nextSlot].shopCustomPrice = 30000;
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (NPC.downedAncientCultist)
 					{
@@ -1192,7 +1192,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 50000;
 				nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModDownedProvidence)
 					{
@@ -1333,7 +1333,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (DD2Event.DownedInvasionT1)
 							{
@@ -1372,7 +1372,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
 							{
@@ -1434,11 +1434,11 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 1500000;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (DD2Event.DownedInvasionT1)
 							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DarkMageBag"));
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("DarkMageBag"));
 								shop.item[nextSlot].shopCustomPrice = 2000000;
 								nextSlot++;
 							}
@@ -1461,11 +1461,11 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 2000000;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
 							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("OgreBag"));
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("OgreBag"));
 								shop.item[nextSlot].shopCustomPrice = 3000000;
 								nextSlot++;
 							}
@@ -1513,7 +1513,7 @@ namespace AlchemistNPC.NPCs
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedDesertScourge)
 							{
@@ -1544,7 +1544,7 @@ namespace AlchemistNPC.NPCs
 					}
 					if (Main.hardMode && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedSlimeGod)
 							{
@@ -1555,7 +1555,7 @@ namespace AlchemistNPC.NPCs
 							}
 						}
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedCryogen)
 							{
@@ -1579,7 +1579,7 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 							}
 						}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						if (NPC.downedPlantBoss)
 						{
@@ -1627,7 +1627,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++; 
 							}
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedProvidence)
 							{
@@ -1662,7 +1662,7 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+						if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (NPC.downedBoss3)	
 							{
@@ -1751,7 +1751,7 @@ namespace AlchemistNPC.NPCs
 								}
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+						if (ModLoader.GetMod("SacredTools") != null)
 						{
 							if (NPC.downedBoss3)	
 							{
@@ -1811,7 +1811,7 @@ namespace AlchemistNPC.NPCs
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedDesertScourge)
 							{
@@ -1838,7 +1838,7 @@ namespace AlchemistNPC.NPCs
 					}
 					if (Main.hardMode && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedSlimeGod)
 							{
@@ -1848,7 +1848,7 @@ namespace AlchemistNPC.NPCs
 							}
 						}
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedCryogen)
 							{
@@ -1878,7 +1878,7 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 							}
 						}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						if (NPC.downedPlantBoss)
 						{
@@ -1935,7 +1935,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++; 
 							}
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						if (CalamityModDownedBirb)
 						{
@@ -1968,7 +1968,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 						}
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (NPC.downedBoss3)	
 							{
@@ -2046,7 +2046,7 @@ namespace AlchemistNPC.NPCs
 								}
 							}
 						}
-					if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+					if (ModLoader.GetMod("SacredTools") != null)
 						{
 							if (NPC.downedBoss3)	
 							{
@@ -2107,7 +2107,7 @@ namespace AlchemistNPC.NPCs
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("AAMod"))
+						if (ModLoader.GetMod("AAMod") != null)
 						{
 							if (AAModDownedMonarch)
 							{
@@ -2230,7 +2230,7 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+						if (ModLoader.GetMod("SpiritMod") != null)
 						{
 							if (SpiritModDownedScarabeus)
 							{
@@ -2303,7 +2303,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+						if (ModLoader.GetMod("Laugicality") != null)
 						{
 							if (EnigmaDownedSharkron)
 							{
@@ -2355,7 +2355,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+						if (ModLoader.GetMod("pinkymod") != null)
 						{
 							if (PinkymodDownedST)
 							{
@@ -2396,7 +2396,7 @@ namespace AlchemistNPC.NPCs
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("AAMod"))
+						if (ModLoader.GetMod("AAMod") != null)
 						{
 							if (AAModDownedMonarch)
 							{
@@ -2498,7 +2498,7 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+						if (ModLoader.GetMod("SpiritMod") != null)
 						{
 							if (SpiritModDownedScarabeus)
 							{
@@ -2561,7 +2561,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+						if (ModLoader.GetMod("Laugicality") != null)
 						{
 							if (EnigmaDownedSharkron)
 							{
@@ -2606,7 +2606,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+						if (ModLoader.GetMod("pinkymod") != null)
 						{
 							if (PinkymodDownedST)
 							{

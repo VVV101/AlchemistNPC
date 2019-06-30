@@ -111,12 +111,12 @@ namespace AlchemistNPC.Items.Weapons
 			recipe.AddIngredient(null, "ChromaticCrystal", 5);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 5);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 10);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);

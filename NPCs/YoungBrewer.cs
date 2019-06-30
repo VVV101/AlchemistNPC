@@ -325,7 +325,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					if (NPC.downedMechBossAny)
 					{
@@ -334,7 +334,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (NPC.downedGolemBoss)
 					{
@@ -343,7 +343,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 					if (NPC.downedMechBossAny)
 					{
@@ -358,7 +358,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 500000;
 					nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					if (NPC.downedBoss3)
 					{
@@ -463,7 +463,7 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("AAMod"))
+				if (ModLoader.GetMod("AAMod") != null)
 				{
 					if (Main.hardMode)
 					{
@@ -475,7 +475,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 					if (Main.hardMode)
 					{
@@ -484,7 +484,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 					{

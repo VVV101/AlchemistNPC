@@ -580,7 +580,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.RichMahogany);
 				shop.item[nextSlot].shopCustomPrice = 15;
 				nextSlot++;
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				if (NPC.downedGoblins)
 				{

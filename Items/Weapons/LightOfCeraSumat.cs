@@ -44,21 +44,21 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool CanUseItem(Player player)
 		{
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModDownedGuardian)
 				{
 					item.damage = 120;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				if (ThoriumModDownedRagnarok)
 				{
 					item.damage = 150;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModDownedProvidence)
 				{

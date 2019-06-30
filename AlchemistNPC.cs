@@ -351,7 +351,7 @@ namespace AlchemistNPC
 					}
 					break;
 				default:
-					ErrorLogger.Log("AlchemistNPC: Unknown Message type: " + msgType);
+					Logger.Error("AlchemistNPC: Unknown Message type: " + msgType);
 					break;
 			}
 		}

@@ -42,15 +42,15 @@ namespace AlchemistNPC.Items.Equippable
             player.rangedDamage += 0.15f;
             player.magicDamage += 0.15f;
             player.minionDamage += 0.15f;
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}

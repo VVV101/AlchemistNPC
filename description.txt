@@ -8,6 +8,8 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv84.json.
 v8.5.1
+-Updated for tModloader 0.11.
+-Fixed some Thorium related lines.
 -Reworked swing attack for Stormbreaker.
 -Fixed energy capsules not being available if you have Overloaded Rick's Portal Gun.
 v8.5

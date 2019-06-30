@@ -45,7 +45,7 @@ namespace AlchemistNPC.Items.Placeable
 			recipe.AddIngredient(null, "WingoftheWorld");
 			recipe.AddIngredient(ItemID.ManaCrystal);
 			recipe.AddIngredient(ItemID.DD2ElderCrystalStand);
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ThoriumAnvil")));
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ArcaneArmorFabricator")));

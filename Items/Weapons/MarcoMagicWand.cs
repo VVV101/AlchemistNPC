@@ -119,7 +119,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "DarkMagicWand");
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("CosmiliteBar")), 10);
 				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 25);

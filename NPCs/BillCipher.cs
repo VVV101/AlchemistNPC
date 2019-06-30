@@ -187,7 +187,7 @@ namespace AlchemistNPC.NPCs
 					break;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AbyssalShell")] = true;
 				npc.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AParalyzed")] = true;
@@ -197,7 +197,7 @@ namespace AlchemistNPC.NPCs
 			npc.buffImmune[mod.BuffType("Twilight")] = true;
 			npc.buffImmune[mod.BuffType("Electrocute")] = true;
 			npc.buffImmune[mod.BuffType("Patience")] = true;
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("SilvaStun")] = true;
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("GlacialState")] = true;
@@ -269,7 +269,7 @@ namespace AlchemistNPC.NPCs
 			if (npc.life < npc.lifeMax/2 && npc.life > npc.lifeMax*0.15f && !player.dead && !npc.GetGlobalNPC<ModGlobalNPC>(mod).intermission2)
 			{
 				player.AddBuff((mod.BuffType("Madness")), 2);
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModRevengeance)
 					{
@@ -321,7 +321,7 @@ namespace AlchemistNPC.NPCs
 			if (npc.life < npc.lifeMax*0.15f && !player.dead)
 			{
 				player.AddBuff((mod.BuffType("Madness")), 2);
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModRevengeance)
 					{
@@ -379,7 +379,7 @@ namespace AlchemistNPC.NPCs
 				}
 				counter2++;
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModRevengeance)
 				{

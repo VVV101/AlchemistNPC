@@ -77,7 +77,7 @@ namespace AlchemistNPC.NPCs
 				Player player = Main.player[k];
 				if (player.active)
 				{
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 					{
 						player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AbyssalShell")] = true;
 						npc.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AParalyzed")] = true;
@@ -87,7 +87,7 @@ namespace AlchemistNPC.NPCs
 					npc.buffImmune[mod.BuffType("Twilight")] = true;
 					npc.buffImmune[mod.BuffType("Electrocute")] = true;
 					npc.buffImmune[mod.BuffType("Patience")] = true;
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("SilvaStun")] = true;
 						npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("GlacialState")] = true;

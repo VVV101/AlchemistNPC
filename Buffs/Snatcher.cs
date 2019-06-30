@@ -116,15 +116,15 @@ namespace AlchemistNPC.Buffs
 				player.rangedDamage += 0.08f;
 				player.magicDamage += 0.08f;
 				player.minionDamage += 0.08f;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					ThoriumDBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 					RedemptionDBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					CalamityDBoost(player);
 				}
@@ -135,15 +135,15 @@ namespace AlchemistNPC.Buffs
 				player.rangedCrit += 10;
 				player.magicCrit += 10;
 				player.thrownCrit += 10;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					ThoriumCBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 					RedemptionCBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					CalamityCBoost(player);
 				}

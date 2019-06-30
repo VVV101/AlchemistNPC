@@ -76,7 +76,7 @@ namespace AlchemistNPC.Interface
 			PipBoyTPPanel.Append(text6);
 
 			Mod mod = AlchemistNPC.Instance;
-			Texture2D buttonPlayTexture = ModLoader.GetTexture("Terraria/UI/ButtonPlay");
+			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
 			Texture2D buttonBackTexture = mod.GetTexture("Interface/ButtonBack");
 			UIImageButton playButton = new UIImageButton(buttonBackTexture);
 			playButton.Left.Set(10, 0f);
@@ -149,7 +149,7 @@ namespace AlchemistNPC.Interface
 			playButton55.OnClick += new MouseEvent(PlayButtonClicked55);
 			PipBoyTPPanel.Append(playButton55);
 			
-			Texture2D buttonDeleteTexture = ModLoader.GetTexture("Terraria/UI/ButtonDelete");
+			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
 			closeButton.Left.Set(220, 0f);
 			closeButton.Top.Set(10, 0f);

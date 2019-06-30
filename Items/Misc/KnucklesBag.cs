@@ -6,6 +6,8 @@ namespace AlchemistNPC.Items.Misc
 {
 	public class KnucklesBag : ModItem
 	{
+		public override int BossBagNPC => mod.NPCType("Knuckles");
+		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
@@ -20,7 +22,6 @@ namespace AlchemistNPC.Items.Misc
 			item.height = 24;
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("Knuckles");
 		}
 
 		public override bool CanRightClick()

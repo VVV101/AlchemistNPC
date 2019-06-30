@@ -54,21 +54,21 @@ namespace AlchemistNPC.Items.Equippable
 			player.pStone = true;
 			player.longInvince = true;
 			player.AddBuff(mod.BuffType("UniversalComb"), 2);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			player.AddBuff(mod.BuffType("CalamityComb"), 2);
 			}
-			if (ModLoader.GetLoadedMods().Contains("Redemption"))
+			if (ModLoader.GetMod("Redemption") != null)
 			{
 			RedemptionBoost(player);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			ThoriumBoosts(player);
 			}
 			if (!hideVisual)
 			{
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("SpiritBuff"), 2, true);
 				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("RunePotionBuff"), 2, true);
@@ -77,7 +77,7 @@ namespace AlchemistNPC.Items.Equippable
 				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("TurtlePotionBuff"), 2, true);
 				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("BismitePotionBuff"), 2, true);
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				player.AddBuff(mod.BuffType("ThoriumComb"), 2);
@@ -86,7 +86,7 @@ namespace AlchemistNPC.Items.Equippable
 				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("InspirationReach"), 2, true);
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}

@@ -83,15 +83,15 @@ namespace AlchemistNPC.Items.Armor
 			player.magicCrit += 25;
 			player.rangedCrit += 25;
             player.thrownCrit += 25;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -131,12 +131,12 @@ namespace AlchemistNPC.Items.Armor
 			recipe.AddIngredient(null, "ChromaticCrystal", 5);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 5);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 7);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);

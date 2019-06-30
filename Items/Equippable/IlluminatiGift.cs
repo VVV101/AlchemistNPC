@@ -81,7 +81,7 @@ namespace AlchemistNPC.Items.Equippable
 			player.discount = true;
 			if (player.statLife <= player.statLifeMax2/10 && !player.HasBuff(mod.BuffType("IlluminatiHeal")) && !player.HasBuff(mod.BuffType("IlluminatiCooldown")))
 			{
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModRevengeance)
 					{
@@ -94,7 +94,7 @@ namespace AlchemistNPC.Items.Equippable
 					player.AddBuff(mod.BuffType("IlluminatiCooldown"), 7200);
 					}
 				}
-				if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") == null)
 				{
 				player.AddBuff(mod.BuffType("IlluminatiHeal"), 3600);
 				player.AddBuff(mod.BuffType("IlluminatiCooldown"), 7200);

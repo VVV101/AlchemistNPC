@@ -47,7 +47,7 @@ namespace AlchemistNPC.Interface
 			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			TinkererShopsPanel.Append(text2);
 			
-			Texture2D buttonPlayTexture = ModLoader.GetTexture("Terraria/UI/ButtonPlay");
+			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
 			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
 			playButton.Left.Set(10, 0f);
 			playButton.Top.Set(10, 0f);
@@ -63,7 +63,7 @@ namespace AlchemistNPC.Interface
 			playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
 			TinkererShopsPanel.Append(playButton2);
 
-			Texture2D buttonDeleteTexture = ModLoader.GetTexture("Terraria/UI/ButtonDelete");
+			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
 			closeButton.Left.Set(170, 0f);
 			closeButton.Top.Set(10, 0f);

@@ -94,21 +94,21 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				item.damage = 500;
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModDownedGuardian)
 				{
 					item.damage = 600;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				if (ThoriumModDownedRagnarok)
 				{
 					item.damage = 1000;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModDownedProvidence)
 				{

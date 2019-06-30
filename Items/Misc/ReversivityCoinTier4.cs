@@ -33,7 +33,7 @@ namespace AlchemistNPC.Items.Misc
         
         public override void AddRecipes()
         {
-            if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+            if (ModLoader.GetMod("CalamityMod") != null)
 			{
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "ReversivityCoinTier5", 1);

@@ -70,23 +70,23 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(mod.ItemType("ChromaticCrystal"), 5);
 			recipe.AddIngredient(mod.ItemType("SunkroveraCrystal"), 5);
 			recipe.AddIngredient(mod.ItemType("NyctosythiaCrystal"), 5);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 15);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy")), 15);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
 			}
 			recipe.AddIngredient(mod.ItemType("EmagledFragmentation"), 150);
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 			recipe.AddTile(mod.TileType("MateriaTransmutator"));
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddTile(mod.TileType("MateriaTransmutatorMK2"));
 			}

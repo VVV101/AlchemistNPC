@@ -8,6 +8,8 @@ namespace AlchemistNPC.Items.Misc
 {
 	public class BillCipherBag : ModItem
 	{
+		public override int BossBagNPC => mod.NPCType("BillCipher");
+		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
@@ -22,7 +24,6 @@ namespace AlchemistNPC.Items.Misc
 			item.height = 24;
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("BillCipher");
 		}
 
 		public override bool CanRightClick()
@@ -42,7 +43,7 @@ namespace AlchemistNPC.Items.Misc
 			{
 				player.QuickSpawnItem(mod.ItemType("MysticAmulet"));
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModRevengeance)
 				{

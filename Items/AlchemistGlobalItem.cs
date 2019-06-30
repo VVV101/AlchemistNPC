@@ -151,7 +151,7 @@ namespace AlchemistNPC.Items
 				{
 					return 59;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (item.type == ModLoader.GetMod("CalamityMod").ItemType("P90"))
 					{
@@ -331,7 +331,7 @@ namespace AlchemistNPC.Items
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier4 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0 || item.UseSound == SoundID.Item3))
 			{
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModDownedSCal)
 					{
@@ -374,7 +374,7 @@ namespace AlchemistNPC.Items
 		
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		{
-			if (ModLoader.GetLoadedMods().Contains("Bluemagic"))
+			if (ModLoader.GetMod("Bluemagic") != null)
 			{
 				if (item.type == (ModLoader.GetMod("Bluemagic").ItemType("RainbowStar")) && NPC.AnyNPCs(mod.NPCType("BillCipher")))
 				{
@@ -698,7 +698,7 @@ namespace AlchemistNPC.Items
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("DesertScourgeBag")))
 				{
@@ -816,7 +816,7 @@ namespace AlchemistNPC.Items
 				tooltips.Insert(1,line);
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("DarkMageBag")))
 				{
@@ -897,7 +897,7 @@ namespace AlchemistNPC.Items
 				tooltips.Insert(1,line);
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("AAMod"))
+			if (ModLoader.GetMod("AAMod") != null)
 			{
 				if (item.type == (ModLoader.GetMod("AAMod").ItemType("MonarchBag")))
 				{
@@ -1002,7 +1002,7 @@ namespace AlchemistNPC.Items
 				tooltips.Insert(1,line);
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+			if (ModLoader.GetMod("SacredTools") != null)
 			{
 				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("PumpkinBag")))
 				{
@@ -1047,7 +1047,7 @@ namespace AlchemistNPC.Items
 				tooltips.Insert(1,line);
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+			if (ModLoader.GetMod("SpiritMod") != null)
 			{
 				if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("BagOScarabs")))
 				{
@@ -1110,7 +1110,7 @@ namespace AlchemistNPC.Items
 				tooltips.Insert(1,line);
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+			if (ModLoader.GetMod("Laugicality") != null)
 			{
 				if (item.type == (ModLoader.GetMod("Laugicality").ItemType("DuneSharkronTreasureBag")))
 				{
@@ -1155,7 +1155,7 @@ namespace AlchemistNPC.Items
 				tooltips.Insert(1,line);
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+			if (ModLoader.GetMod("pinkymod") != null)
 			{
 				if (item.type == (ModLoader.GetMod("pinkymod").ItemType("STBag")))
 				{

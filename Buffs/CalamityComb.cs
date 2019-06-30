@@ -67,15 +67,15 @@ namespace AlchemistNPC.Buffs
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("TitanScale")] = true;
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("FabsolVodka")] = true;
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("Omniscience")] = true;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}

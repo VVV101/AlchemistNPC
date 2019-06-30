@@ -114,7 +114,7 @@ namespace AlchemistNPC.NPCs
 				{
 					damage = 88;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (npc.type == mod.NPCType("CeaselessVoid"))
 					{
@@ -231,7 +231,7 @@ namespace AlchemistNPC.NPCs
 						for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 						{
 							shop.item[nextSlot].shopCustomPrice *= Config.PotsPriceMulti;
-							if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+							if (ModLoader.GetMod("CalamityMod") != null)
 							{
 								if (Config.RevPrices && CalamityModRevengeance)
 								{
@@ -258,7 +258,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				if (type == ModLoader.GetMod("Tremor").NPCType("Lady Moon"))
 				{
@@ -336,7 +336,7 @@ namespace AlchemistNPC.NPCs
 					npc.lifeMax = 500;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("MaterialTraderNpc"))
+			if (ModLoader.GetMod("MaterialTraderNpc") != null)
 			{
 				if (npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Jungle Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cavern Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cool Guy")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Desert Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Dungeon Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Evil Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Hell Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Holy Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Ocean Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Sky Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Winter Trader")))
 				{
@@ -702,7 +702,7 @@ namespace AlchemistNPC.NPCs
 			}
 			if (Main.expertMode && Config.CoinsDrop)
 			{
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 					if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Infernon")))
 					{
@@ -869,7 +869,7 @@ namespace AlchemistNPC.NPCs
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PHD"));
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrokenDimensionalCasket"));
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						if (player.HasBuff(mod.BuffType("CalamityComb")) && npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS")) && CalamityModRevengeance)
 						{
@@ -1066,7 +1066,7 @@ namespace AlchemistNPC.NPCs
 						{
 							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(6, 9));
 						}
-						if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DesertScourgeHead")))
 							{
@@ -1157,7 +1157,7 @@ namespace AlchemistNPC.NPCs
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), 66);
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+						if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("TheGrandThunderBirdv2")))
 							{
@@ -1204,7 +1204,7 @@ namespace AlchemistNPC.NPCs
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), 33);
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+						if (ModLoader.GetMod("SacredTools") != null)
 						{
 							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("FlamePump2")))
 							{
@@ -1235,7 +1235,7 @@ namespace AlchemistNPC.NPCs
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(6, 9));
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+						if (ModLoader.GetMod("SpiritMod") != null)
 						{
 							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Scarabeus")))
 							{
@@ -1274,7 +1274,7 @@ namespace AlchemistNPC.NPCs
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), 50);
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+						if (ModLoader.GetMod("Laugicality") != null)
 						{
 							if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("DuneSharkron")))
 							{
@@ -1309,7 +1309,7 @@ namespace AlchemistNPC.NPCs
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), 33);
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+						if (ModLoader.GetMod("pinkymod") != null)
 						{
 							if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("DeserteerMelee")))
 							{
@@ -1328,7 +1328,7 @@ namespace AlchemistNPC.NPCs
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(6, 9));
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("AAMod"))
+						if (ModLoader.GetMod("AAMod") != null)
 						{
 							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("MushroomMonarch")))
 							{

@@ -60,7 +60,7 @@ namespace AlchemistNPC.Items.Weapons
               int index2 = Projectile.NewProjectile(X, Y, SpeedX, SpeedY, 711, 1500, 5f, player.whoAmI, 0.0f, 0.0f);
               Main.projectile[index2].ai[1] = (float) player.position.Y;
             }
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModRevengeance)
 				{
@@ -71,7 +71,7 @@ namespace AlchemistNPC.Items.Weapons
 				player.AddBuff(mod.BuffType("Exhausted"), 3600); 	
 				}
 			}
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 				player.AddBuff(mod.BuffType("Exhausted"), 3600); 
 			}

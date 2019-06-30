@@ -383,7 +383,7 @@ namespace AlchemistNPC.NPCs
 			{
 				return EntryA15 + Main.npc[Brewer].GivenName + EntryA16;
 			}
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				int Alch = NPC.FindFirstNPC(ModLoader.GetMod("Tremor").NPCType("Alchemist"));
 				if (Alch >= 0 && Main.rand.Next(4) == 0)
@@ -391,14 +391,14 @@ namespace AlchemistNPC.NPCs
 				return EntryA12 + Main.npc[Alch].GivenName + EntryA13;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				if (NPC.downedBoss3 && Main.rand.Next(6) == 0)
 				{
 				return EntryA14;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
 				if (DA >= 0 && Main.rand.Next(7) == 0)
@@ -406,7 +406,7 @@ namespace AlchemistNPC.NPCs
 				return EntryA9 + Main.npc[DA].GivenName +  EntryA10;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
 				if (DA >= 0 && Brewer >=0 && Main.rand.Next(8) == 0)
@@ -414,7 +414,7 @@ namespace AlchemistNPC.NPCs
 				return EntryA11;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("Peculiarity") && Main.rand.Next(5) == 0)
+			if (ModLoader.GetMod("Peculiarity") != null && Main.rand.Next(5) == 0)
 			{
 			return EntryA8;
 			}
@@ -469,7 +469,7 @@ namespace AlchemistNPC.NPCs
 			button2 = BrewElixir;
 			}
 			
-			if (ModLoader.GetLoadedMods().Contains("Tremor") && (!PS || !AB))
+			if (ModLoader.GetMod("Tremor") != null && (!PS || !AB))
 			{
 			button2 = TremorShop;
 			}
@@ -501,7 +501,7 @@ namespace AlchemistNPC.NPCs
 				{
 					player.QuickSpawnItem(mod.ItemType("AlchemistCharmTier1"));
 				}
-				if (ModLoader.GetLoadedMods().Contains("Tremor") && (!PS || !AB))
+				if (ModLoader.GetMod("Tremor") != null && (!PS || !AB))
 				{
 				baseShop = false;
 				tremorShop = true;
@@ -567,7 +567,7 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
 		}
-		if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+		if (ModLoader.GetMod("CalamityMod") != null)
 		{
 			if(CalamityModDownedGuardian && !CalamityModDownedDOG)
 			{
@@ -609,7 +609,7 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].shopCustomPrice = 7500;
 		nextSlot++;	
 		}
-		if (ModLoader.GetLoadedMods().Contains("imkSushisMod"))
+		if (ModLoader.GetMod("imkSushisMod") != null)
 		{
 		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
 		shop.item[nextSlot].shopCustomPrice = 2500;
@@ -689,7 +689,7 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].shopCustomPrice = 1000;
 			nextSlot++;
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				if (NPC.downedBoss2)
 						{
@@ -749,7 +749,7 @@ namespace AlchemistNPC.NPCs
 		}
 		if (tremorShop)
 		{
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BasicFlask"));
 				nextSlot++;

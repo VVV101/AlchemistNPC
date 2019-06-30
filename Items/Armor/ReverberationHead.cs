@@ -62,7 +62,7 @@ namespace AlchemistNPC.Items.Armor
 			player.magicQuiver = true;
 			player.AddBuff(mod.BuffType("ShieldofSpring"), 300);
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).RevSet = true;
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}

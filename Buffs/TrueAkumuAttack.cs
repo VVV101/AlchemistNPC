@@ -29,7 +29,7 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModRevengeance)
 				{
@@ -54,7 +54,7 @@ namespace AlchemistNPC.Buffs
 					}
 				}
 			}
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 				if (player.ownedProjectileCounts[mod.ProjectileType("AkumuSphere")] == 0)
 				{

@@ -31,7 +31,7 @@ namespace AlchemistNPC.Projectiles
 			Player player = Main.player[projectile.owner];
 			for (int index1 = 0; index1 < 8 + player.extraAccessorySlots; ++index1)
 			{
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (player.armor[index1].type == ModLoader.GetMod("CalamityMod").ItemType("PlagueHive"))
 					{
@@ -41,7 +41,7 @@ namespace AlchemistNPC.Projectiles
 					{
 						projectile.scale = 1.5f;
 					}
-					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
+					else if (ModLoader.GetMod("FargowiltasSouls") == null)
 					{
 						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
 						{
@@ -49,13 +49,13 @@ namespace AlchemistNPC.Projectiles
 						}
 					}
 				}
-				if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") == null)
 				{
 					if (player.armor[index1].type == 3333)
 					{
 						projectile.scale = 1.5f;
 					}
-					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
+					else if (ModLoader.GetMod("FargowiltasSouls") == null)
 					{
 						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
 						{
@@ -71,7 +71,7 @@ namespace AlchemistNPC.Projectiles
 			Player player = Main.player[projectile.owner];
 			for (int index1 = 0; index1 < 8 + player.extraAccessorySlots; ++index1)
 			{
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (player.armor[index1].type == ModLoader.GetMod("CalamityMod").ItemType("PlagueHive"))
 					{
@@ -81,7 +81,7 @@ namespace AlchemistNPC.Projectiles
 					{
 						damage += damage/2;
 					}
-					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
+					else if (ModLoader.GetMod("FargowiltasSouls") != null)
 					{
 						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
 						{
@@ -89,13 +89,13 @@ namespace AlchemistNPC.Projectiles
 						}
 					}
 				}
-				if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") == null)
 				{
 					if (player.armor[index1].type == 3333)
 					{
 						damage += damage/2;
 					}
-					else if (ModLoader.GetLoadedMods().Contains("FargowiltasSouls"))
+					else if (ModLoader.GetMod("FargowiltasSouls") != null)
 					{
 						if (player.armor[index1].type == ModLoader.GetMod("FargowiltasSouls").ItemType("BeeEnchant"))
 						{

@@ -61,7 +61,7 @@ namespace AlchemistNPC.Items.Equippable
             player.doubleJumpSandstorm = true;
             player.doubleJumpBlizzard = true;
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}

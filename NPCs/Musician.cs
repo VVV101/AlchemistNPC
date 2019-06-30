@@ -333,14 +333,14 @@ namespace AlchemistNPC.NPCs
 			{
 				return EntryM12 + Main.npc[Clothier].GivenName + EntryM13;
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				if (Main.rand.Next(15) == 0)
 				{
 				return EntryM18;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityModMusic"))
+			if (ModLoader.GetMod("CalamityModMusic") != null)
 			{
 				if (Main.rand.Next(15) == 0)
 				{
@@ -679,7 +679,7 @@ namespace AlchemistNPC.NPCs
 			}
 			if (S2)
 			{
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod") && ModLoader.GetLoadedMods().Contains("CalamityModMusic"))
+				if (ModLoader.GetMod("CalamityMod") != null && ModLoader.GetMod("CalamityModMusic") != null)
 				{
 					if (CalamityModMusicDownedDesertScourge)
 					{
@@ -880,7 +880,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 250000;
 					nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					if (ThoriumModDownedGTBird)
 					{
