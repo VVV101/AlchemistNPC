@@ -867,7 +867,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MGB"));
 				nextSlot++;
 				}
-				if (player.inventory[j].type == mod.ItemType("PortalGun"))
+				if (player.inventory[j].type == mod.ItemType("PortalGun") || player.inventory[j].type == mod.ItemType("OverloadedPortalGun"))
 				{
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EnergyCapsule"));
 				nextSlot++;
