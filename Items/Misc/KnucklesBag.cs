@@ -10,6 +10,7 @@ namespace AlchemistNPC.Items.Misc
 		{
 			DisplayName.SetDefault("Treasure Bag");
 			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			DisplayName.AddTranslation(GameCulture.Chinese, "宝藏袋");
 		}
 
 		public override void SetDefaults()
