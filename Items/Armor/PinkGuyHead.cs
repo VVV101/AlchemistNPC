@@ -24,7 +24,7 @@ namespace AlchemistNPC.Items.Armor
 		    + "\nPlayer is under permanent effect of Tank Combination"
             + "\nNational Ugandan Treasure can now be dropped from Moon Lord");
             text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем/ближнем бою на 15% и добавляет 15% к шансу критического удара\n+56 защиты\nИгрок находится под постоянным эффектом комбинации Танка\nНациональное Сокровище Уганды может выпасть с Лунного Лорда");
-            text.AddTranslation(GameCulture.Chinese, "增加15%当前近战/远程伤害, 增加15%近战/远程暴击几率"
+            text.AddTranslation(GameCulture.Chinese, "增加15%当前近战/远程伤害, 增加15%近战/远程暴击率"
             + "\n增加 56 防御力"
             + "\n极大增加移动速度"
             + "\n给予永久坦克药剂包效果"

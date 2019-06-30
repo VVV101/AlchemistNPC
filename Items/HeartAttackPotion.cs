@@ -24,6 +24,10 @@ namespace AlchemistNPC.Items
 			+"\nNON-CALAMITY POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Тьмы");
             Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nВызывает Сердечную Боль на на 5 минут\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
+			DisplayName.AddTranslation(GameCulture.Chinese, "黑暗药剂");
+			Tooltip.AddTranslation(GameCulture.Chinese, "装填愤怒槽, 造成心脏衰竭"
+			+"\n获得5分钟的心脏衰竭效果"
+			+"\n非灾厄药剂");
         }    
 
 		public override void SetDefaults()

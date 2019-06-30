@@ -44,7 +44,7 @@ namespace AlchemistNPC.NPCs
             ModTranslation text = mod.CreateTranslation("EGOShop");
             text.SetDefault("EGO Equipment Shop        ");
             text.AddTranslation(GameCulture.Russian, "Магазин Э.П.О.С                ");
-            text.AddTranslation(GameCulture.Chinese, "EGO 商店           ");
+            text.AddTranslation(GameCulture.Chinese, "EGO 装备商店           ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("BossDropsShop");
             text.SetDefault("Boss Drops & Materials Shop");
@@ -64,7 +64,7 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("ModdedTreasureBagsShop2");
             text.SetDefault("Modded Treasure Bags Shop #2");
             text.AddTranslation(GameCulture.Russian, "Магазин сумок модовых Боссов #2");
-            text.AddTranslation(GameCulture.Chinese, "模组宝藏袋商店#2    ");
+            text.AddTranslation(GameCulture.Chinese, "模组宝藏袋商店 #2    ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("ShopChanger");
             text.SetDefault("Shop Changer");

@@ -21,6 +21,12 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nЗаряжаемый лазер\nПри наборе полной шкалы Бедствия вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF398)");
+			Tooltip.AddTranslation(GameCulture.Chinese, "'来自地狱的武器, 有666种不同的形态'"
+			+"\n修复了的潘多拉, 解锁了破坏潜力"
+			+"\n可蓄力的激光发射器"
+			+"\n攻击装填灾厄槽"
+			+"\n灾厄槽集满时能够切换武器形态"
+			+"\n右键切换形态");
         }
 
 		public override void SetDefaults()

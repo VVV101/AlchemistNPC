@@ -27,7 +27,7 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''кошмар'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши\nЕсли здоровье ниже 25% Акуму создает щит, отражающий снаряды\nНаличие щита снижает урон Акуму");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "''Akumu''");
-            Tooltip.AddTranslation(GameCulture.Chinese, "在日语里, 'Akumu'的意思是'恶魔'\n它发射出的剑气能穿透经过的所有敌人\n左键发射剑气\n右键近距离攻击\n生命值低于25%时, Akumu会生成反射抛射物的护盾\n这将会降低武器的威力, 直至生命回复到25%");
+            Tooltip.AddTranslation(GameCulture.Chinese, "在日语里, 'Akumu'的意思是'梦魇'\n它的斩击能穿透经过的所有敌人\n左键发射剑气\n右键近距离攻击\n生命值低于25%时, Akumu会生成反射抛射物的护盾\n这将会降低武器的威力, 直至生命回复到25%");
         }
 
 		public override void SetDefaults()

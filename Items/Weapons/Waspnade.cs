@@ -21,6 +21,9 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nEmpowered with Hive Pack/Plague Hive equipped");
 			DisplayName.AddTranslation(GameCulture.Russian, "Осаната");
             Tooltip.AddTranslation(GameCulture.Russian, "Выпускает дружественных ос после взрыва\nМогут быть усилены экипировкой Пчелиного Рюкзака/Чумного Улья");
+			DisplayName.AddTranslation(GameCulture.Chinese, "黄蜂雷");
+			Tooltip.AddTranslation(GameCulture.Chinese, "爆炸后释放友善的黄蜂"
+			+"\n装备蜂窝背包/瘟疫蜂巢(灾厄)时威力增强");
         }
 
 		public override void SetDefaults()

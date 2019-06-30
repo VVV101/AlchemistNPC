@@ -34,6 +34,10 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("[c/00FF00:Ultimate Tinkerer's Reward]"
 			+"\nShoots up to 1K bullets per minute"
 			+"\n88% chance not to consume ammo");
+			DisplayName.AddTranslation(GameCulture.Chinese, "MP7");
+			Tooltip.AddTranslation(GameCulture.Chinese, "[c/00FF00:终极工匠奖励]"
+			+"\n每分钟最多发射1K颗子弹"
+			+"\n88%概率不消耗弹药");
         }
 		
 		public override int ChoosePrefix (UnifiedRandom rand)

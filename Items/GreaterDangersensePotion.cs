@@ -18,6 +18,9 @@ namespace AlchemistNPC.Items
 			+"\nThis effect is global for all players");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Великого Чувства Опасности");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Великого Чувства Опасности (подсвечивает вражеские снаряды)\nЭффект действует для всех игроков");
+			DisplayName.AddTranslation(GameCulture.Chinese, "强效危险感知药剂");
+			Tooltip.AddTranslation(GameCulture.Chinese, "获得强效危险感知Buff (高亮敌人抛射物)"
+            +"\n该效果对所有玩家起效");
         }    
 		public override void SetDefaults()
         {

@@ -22,6 +22,13 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nReaching 36, 64 and 100 damage makes special things to happen");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кровожадный Клинок");
             Tooltip.AddTranslation(GameCulture.Russian, "Чем больше врагов побеждено им, тем сильнее он становится\nУбийство босса даёт больший бонус к урону\nСиние и Синие шипастные слизни не дают бонуса к урону\nНе получает никаких бонусов по урону и шансу критического удара\nУрон ограничен до Хардмода (36) и победы над Лунным Лордом (99)\nДостижение 36, 64 и 100 урона производит особые изменения с мечом");
+			DisplayName.AddTranslation(GameCulture.Chinese, "渴血刃");
+			Tooltip.AddTranslation(GameCulture.Chinese, "用它杀死敌人会使它变得更强大"
+			+"\n杀死Boss获得更大的伤害提升"
+			+"\n蓝色史莱姆和蓝色尖刺史莱姆不会给予武器提升"
+			+"\n不获得任何伤害/暴击率增益"
+			+"\n困难模式前伤害上限为36, 月球领主前为99"
+			+"\n伤害达到36, 64和100时会发生一些特殊的事情");
         }
 
 		public override void SetDefaults()

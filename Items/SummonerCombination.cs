@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, необходимые для Призывателя (Призыв, Колдовство, Гнев)");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "召唤师药剂包");
-            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些召唤Buff (召唤, 战斗, 迷人, 怒气)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些召唤Buff (召唤, 迷人, 怒气)");
         }    
 		public override void SetDefaults()
         {

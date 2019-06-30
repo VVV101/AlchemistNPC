@@ -16,7 +16,7 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.AddTranslation(GameCulture.Russian, "Баллистический Уничтожитель Туманностей");
             Tooltip.AddTranslation(GameCulture.Russian, "Стреляет веером Вихревых Ракет\n25% шанс не потратить патроны");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "星云弹道毁灭者");
+            DisplayName.AddTranslation(GameCulture.Chinese, "星云狂怒毁灭者");
             Tooltip.AddTranslation(GameCulture.Chinese, "发射出分裂的星璇弹\n25%的几率不消耗弹药");
         }
 

@@ -22,7 +22,7 @@ namespace AlchemistNPC.Buffs
             Description.AddTranslation(GameCulture.Russian, "Персонаж светится, весь урон и шанс крита повышаются на 5%, атаки разрушают броню противника.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "大鸟灯");
-            Description.AddTranslation(GameCulture.Chinese, "你会发光~~~ \n增加5%全伤害和暴击几率, 攻击摧毁敌人护甲.");
+            Description.AddTranslation(GameCulture.Chinese, "你会发光~~~ \n增加5%全伤害和暴击率, 攻击摧毁敌人护甲.");
         }
 		public override void Update(Player player, ref int buffIndex)
 		{

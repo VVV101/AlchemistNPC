@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items
 			Tooltip.AddTranslation(GameCulture.Russian, "Значительно увеличивает радиус освещения вокруг персонажа");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "阳光药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "极大的增强光照半径\n非灾厄BUFF药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "极大的增强光照半径");
         }    
 		public override void SetDefaults()
         {

@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nК сожалению, этот экземпляр всего лишь прототип, имеющий лишь одну форму\nЗапускает бритвенно-острый сюрикен, цепляющийся за противников");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF422)");
-            Tooltip.AddTranslation(GameCulture.Chinese, "'来自地狱的武器, 有666种不同的形式 (外国666代表撒旦)'\n遗憾的是, 作为原型, 只能呈现一种形式");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'来自地狱的武器, 有666种不同的形式'\n遗憾的是, 作为原型, 只能呈现一种形式\n发射锋利的手里剑, 能粘在敌人身上");
         }
 
 		public override void SetDefaults()

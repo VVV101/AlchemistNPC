@@ -41,7 +41,7 @@ namespace AlchemistNPC.Items.Armor
             + "\nChanges would be seen after first usage of weapons"
             + "\nIf hit taken deals less than 150 damage, then it will be nullified.");
             text.AddTranslation(GameCulture.Russian, "Увеличивает любой урон на 35% и добаляет 25% к шансу критического удара\nУвеличивает урон наносимый оружием Э.П.О.С.\nЕсли вы получаете меньше 150 урона, то урон будет аннулирован");
-            text.AddTranslation(GameCulture.Chinese, "增加 35% 所有伤害, 增加 25% 暴击几率"
+            text.AddTranslation(GameCulture.Chinese, "增加 35% 所有伤害, 增加 25% 暴击率"
             + "\n使用 EGO 武器造成更多伤害"
             + "\n第一次使用武器后就能看见变化"
             + "\n如果你受到的伤害小于 150 , 伤害将会无效化.");

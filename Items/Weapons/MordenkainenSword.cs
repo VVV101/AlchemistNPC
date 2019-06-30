@@ -21,6 +21,9 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nSlashes enemies from the distance");
 			DisplayName.AddTranslation(GameCulture.Russian, "Меч Морденкайнена");
             Tooltip.AddTranslation(GameCulture.Russian, "Нематериальный клинок, созданный Морденкайненом\nМожет ранить врага на значительном расстоянии");
+			DisplayName.AddTranslation(GameCulture.Chinese, "魔邓肯之剑");
+			Tooltip.AddTranslation(GameCulture.Chinese, "魔邓肯制作的无形之剑"
+			+ "\n远程斩杀敌人");
         }
 
 		public override void SetDefaults()

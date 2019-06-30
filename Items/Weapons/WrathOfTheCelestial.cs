@@ -16,6 +16,9 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nWay more powerful than it seems");
 			DisplayName.AddTranslation(GameCulture.Russian, "Гнев Целестиала");
             Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает веером взрывающихся голубых огней\nБолее могущественнен, чем кажется");
+			DisplayName.AddTranslation(GameCulture.Chinese, "天界之怒");
+			Tooltip.AddTranslation(GameCulture.Chinese, "发射一簇爆裂蓝焰"
+			+"\n比看上去更强大");
 			Item.staff[item.type] = true;
         }
 

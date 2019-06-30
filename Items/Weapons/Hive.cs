@@ -21,6 +21,13 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nBoosted stats will be shown after the first use");
 			DisplayName.AddTranslation(GameCulture.Russian, "Улей");
             Tooltip.AddTranslation(GameCulture.Russian, "''ТОЛЬКО НЕ ПЧЁЛЫ!''\n[c/00FF00:Легендарное Оружие]\nВыстреливает ульем, испускающим пчёл вокруг\nЛомается при столкновении, выпуская ещё больше пчёл\n[c/00FF00:Показатели увеличивается по мере прохождения]");
+			DisplayName.AddTranslation(GameCulture.Chinese, "蜂巢");
+			Tooltip.AddTranslation(GameCulture.Chinese, "''NOT THE BEES!''"
+			+"\n[c/00FF00:传奇武器]"
+			+"\n发射蜂巢, 在周围传播蜜蜂"
+			+"\n碰撞时破坏, 释放更多蜜蜂"
+			+"\n[c/00FF00:属性随进程成长]"
+			+"\n提升过后的属性将会在使用后显示");
 			Item.staff[item.type] = true;
         }
 

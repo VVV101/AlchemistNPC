@@ -22,6 +22,14 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nBoosted stats will be shown after the first swing");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Свет Сера Сумат''");
             Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарный Меч] Старого Графа Эхлда\nОслабляет противников при ударе\nОслабленные противники получают на 20% больше урона\n25% шанс получить половину урона от ослабленных противников\n[c/00FF00:Показатели увеличивается по мере пост Мунлордного прохождения]");
+			DisplayName.AddTranslation(GameCulture.Chinese, "''塞拉苏门之光''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "老公爵埃尔德的[c/00FF00:传奇之剑]"
+			+"\n纯近战剑"
+			+"\n造成诅咒之光Debuff"
+			+"\n来自玩家的攻击对敌人多造成20%伤害"
+			+"\n来自带有诅咒之光Debuff敌人的攻击有25%概率只造成一半伤害"
+			+"\n[c/00FF00:属性随进程成长]"
+			+"\n提升过后的属性将会在使用后显示");
 
 		}
 
