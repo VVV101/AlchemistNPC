@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using System.Linq;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Misc
 {

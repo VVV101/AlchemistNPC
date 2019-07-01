@@ -71,10 +71,20 @@ namespace AlchemistNPC
 		{
 			Instance = this;
 			Config.Load();
-            //SBMW:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language, first load after build mod may not work 
-            string LampLightToggle = Language.GetTextValue("Lamp Light Toggle");
-            string DiscordBuffTeleportation = Language.GetTextValue("Discord Buff Teleportation");
-			string PipBoy = Language.GetTextValue("Pip-Boy Teleportation Menu");
+            //ZY:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language 
+			string LampLightToggle, DiscordBuffTeleportation, PipBoy;
+            if (Language.ActiveCulture == GameCulture.Chinese)
+			{
+				LampLightToggle = "大鸟灯开关";
+				DiscordBuffTeleportation = "混乱Buff传送";
+				PipBoy = "哔哔小子传送菜单";
+			}
+			else
+			{
+				LampLightToggle = "Lamp Light Toggle";
+				DiscordBuffTeleportation = "Discord Buff Teleportation";
+				PipBoy = "Pip-Boy Teleportation Menu";
+			}
             LampLight = RegisterHotKey(LampLightToggle, "L");
             DiscordBuff = RegisterHotKey(DiscordBuffTeleportation, "Q");
 			PipBoyTP = RegisterHotKey(PipBoy, "P");
