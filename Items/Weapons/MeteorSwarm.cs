@@ -50,7 +50,6 @@ namespace AlchemistNPC.Items.Weapons
             {
               float X = player.position.X + Main.rand.Next(-1200, 1200);
               float Y = player.position.Y - Main.rand.Next(500, 800);
-              Vector2 vector2;
               float num1 = (float) (player.position.X + (double) (player.width / 2) - X);
               float num2 = (float) (player.position.Y + (double) (player.height / 2) - Y);
               float num3 = num1 + (float) Main.rand.Next(-100, 101);

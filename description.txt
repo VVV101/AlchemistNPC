@@ -7,9 +7,12 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv84.json.
-v8.5.1
+v8.6
 -Updated for tModloader 0.11.
--Fixed some Thorium related lines.
+-Reworked some weapons.
+-Fixed souls counter for Cracked Crown's pet in multiplayer.
+-Fixed some Thorium related lines of code.
+-Fix for Crucible of Cosmos functionality for Materia Transmutators.
 -Reworked swing attack for Stormbreaker.
 -Fixed energy capsules not being available if you have Overloaded Rick's Portal Gun.
 v8.5

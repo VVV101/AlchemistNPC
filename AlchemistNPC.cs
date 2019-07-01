@@ -309,7 +309,7 @@ namespace AlchemistNPC
 		
 		public override void HandlePacket(BinaryReader reader, int whoAmI)
 		{
-		AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();
+			AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();
 			switch (msgType)
 			{
 				case AlchemistNPCMessageType.LifeAndManaSync:
@@ -321,31 +321,22 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().WellFed = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BillIsDowned = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BBP = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().SnatcherCounter = reader.ReadInt32();
 					break;
 				case AlchemistNPCMessageType.TeleportPlayer:
 					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);
 					break;
-				case AlchemistNPCMessageType.BBPChanged:
+				case AlchemistNPCMessageType.SyncPlayerVariables:
 					playernumber = reader.ReadByte();
 					AlchemistNPCPlayer alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
 					alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
 					alchemistPlayer.BBP = reader.ReadInt32();
-					if (Main.netMode == NetmodeID.Server) {
-						var packet = GetPacket();
-						packet.Write((byte)AlchemistNPCMessageType.BBPChanged);
-						packet.Write(playernumber);
-						packet.Write(alchemistPlayer.BBP);
-						packet.Send(-1, playernumber);
-					}
-					break;
-				case AlchemistNPCMessageType.Snatcher:
-					playernumber = reader.ReadByte();
-					alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
 					alchemistPlayer.SnatcherCounter = reader.ReadInt32();
 					if (Main.netMode == NetmodeID.Server) {
 						var packet = GetPacket();
-						packet.Write((byte)AlchemistNPCMessageType.Snatcher);
+						packet.Write((byte)AlchemistNPCMessageType.SyncPlayerVariables);
 						packet.Write(playernumber);
+						packet.Write(alchemistPlayer.BBP);
 						packet.Write(alchemistPlayer.SnatcherCounter);
 						packet.Send(-1, playernumber);
 					}
@@ -360,8 +351,7 @@ namespace AlchemistNPC
 		{
 		LifeAndManaSync,
 		TeleportPlayer,
-		BBPChanged,
-		Snatcher
+		SyncPlayerVariables
 		}
 		
 		public override void AddRecipeGroups()

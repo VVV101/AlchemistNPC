@@ -90,10 +90,6 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				return true;
 			}
-			else
-			{
-				return false;
-			}
 			return false;
 		}
 	}

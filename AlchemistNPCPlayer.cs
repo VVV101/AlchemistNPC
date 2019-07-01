@@ -224,10 +224,6 @@ namespace AlchemistNPC
 			BuffsKeep = true;
 			player.pStone = true;
 			}
-			if (HPJ)
-			{
-				player.ZoneJungle = true;
-			}
 			if (KeepBuffs == 0)
 			{
 			BuffsKeep = false;
@@ -296,17 +292,11 @@ namespace AlchemistNPC
 		public override void SendClientChanges(ModPlayer clientPlayer)
 		{
 			AlchemistNPCPlayer clone = clientPlayer as AlchemistNPCPlayer;
-			if (clone.BBP != BBP) {
+			if (clone.BBP != BBP || clone.SnatcherCounter != SnatcherCounter) {
 				var packet = mod.GetPacket();
-				packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.BBPChanged);
+				packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.SyncPlayerVariables);
 				packet.Write((byte)player.whoAmI);
 				packet.Write(BBP);
-				packet.Send();
-			}
-			if (clone.SnatcherCounter != SnatcherCounter) {
-				var packet = mod.GetPacket();
-				packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.Snatcher);
-				packet.Write((byte)player.whoAmI);
 				packet.Write(SnatcherCounter);
 				packet.Send();
 			}

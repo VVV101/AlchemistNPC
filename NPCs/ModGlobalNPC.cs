@@ -725,22 +725,13 @@ namespace AlchemistNPC.NPCs
 			return true;
 		}
 
-		public void SyncBBP(Player player)
+		public void SyncPlayerVariables(Player player)
 		{
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(AlchemistNPC.Instance);
 			ModPacket packet = mod.GetPacket();
-			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.BBPChanged);
+			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.SyncPlayerVariables);
 			packet.Write((byte)player.whoAmI);
 			packet.Write(modPlayer.BBP);
-			packet.Send();
-		}
-		
-		public void SyncSnatcher(Player player)
-		{
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(AlchemistNPC.Instance);
-			ModPacket packet = mod.GetPacket();
-			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.Snatcher);
-			packet.Write((byte)player.whoAmI);
 			packet.Write(modPlayer.SnatcherCounter);
 			packet.Send();
 		}
@@ -757,7 +748,7 @@ namespace AlchemistNPC.NPCs
 					{
 						modPlayer.SnatcherCounter++;
 						if (Main.netMode == 2)
-						SyncSnatcher(player);
+						SyncPlayerVariables(player);
 					}
 					if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade") && !npc.SpawnedFromStatue)
 					{
@@ -767,21 +758,21 @@ namespace AlchemistNPC.NPCs
 							{
 								modPlayer.BBP++;
 								if (Main.netMode == 2)
-								SyncBBP(player);
+								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
 								modPlayer.BBP += 25;
 								if (Main.netMode == 2)
-								SyncBBP(player);
+								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
 								modPlayer.BBP += 50;
 								if (Main.netMode == 2)
-								SyncBBP(player);
+								SyncPlayerVariables(player);
 							}
 						}
 						if (Main.hardMode && modPlayer.BBP < 8900)
@@ -790,21 +781,21 @@ namespace AlchemistNPC.NPCs
 							{
 								modPlayer.BBP++;
 								if (Main.netMode == 2)
-								SyncBBP(player);
+								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
 								modPlayer.BBP += 15;
 								if (Main.netMode == 2)
-								SyncBBP(player);
+								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
 								modPlayer.BBP += 30;
 								if (Main.netMode == 2)
-								SyncBBP(player);
+								SyncPlayerVariables(player);
 							}
 						}
 						if (NPC.downedMoonlord)
@@ -813,21 +804,21 @@ namespace AlchemistNPC.NPCs
 							{
 								modPlayer.BBP++;
 								if (Main.netMode == 2)
-								SyncBBP(player);
+								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
 								modPlayer.BBP += 10;
 								if (Main.netMode == 2)
-								SyncBBP(player);
+								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
 								modPlayer.BBP += 20;
 								if (Main.netMode == 2)
-								SyncBBP(player);
+								SyncPlayerVariables(player);
 							}
 						}
 					}
