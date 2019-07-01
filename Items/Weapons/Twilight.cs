@@ -22,7 +22,7 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nprotected the Black Forest in peace, and those who could wield this could also bring peace.''"
 			+ "\n[c/FF0000:EGO weapon]"
 			+ "\nInflicts several types of damage on hit"
-			+ "\nHits every enemy on screen by 150 each second while held"
+			+ "\nHits every enemy on screen by 200 each second while held"
 			+ "\nRight click teleports you to cursor, boosting your damage by 3x and making you unvulnerable for 2 seconds");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сумерки (O-02-63)");
             Tooltip.AddTranslation(GameCulture.Russian, "Глаза, что не закроются никогда, чешуя, что может измерить все грехи и клюв, \nкоторый способен поглотить всё, хранят Чёрный Лес в покое. \nИ те, кто способны носить ЕГО, тоже могут нести покой.\n[c/FF0000:Оружие Э.П.О.С.]\nПричиняет несколько типов урона\nРанит всех противников на экране по 150 урона каждую секунду\nПравый клик телепортирует вас на позицию курсора, делает вас неуязвимым и повышает ваш урон в 3 раза на 2 секунды");
@@ -34,11 +34,11 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.melee = true;
-			item.damage = 222;
-			item.width = 44;
-			item.height = 44;
-			item.useTime = 15;
-			item.useAnimation = 15;
+			item.damage = 333;
+			item.width = 60;
+			item.height = 60;
+			item.useTime = 10;
+			item.useAnimation = 10;
 			item.useStyle = 1;
 			item.value = 10000000;
 			item.rare = 11;
@@ -58,7 +58,7 @@ namespace AlchemistNPC.Items.Weapons
 			if (counter == 60)
 			{
 				counter = 0;
-				Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("Returner"), 150, 0, player.whoAmI);
+				Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("Returner"), 200, 0, player.whoAmI);
 			}
 		}
 		
@@ -73,15 +73,15 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 				{
-					item.damage = 350;
-					item.useTime = 10;
-					item.useAnimation = 10;
+					item.damage = 444;
+					item.useTime = 8;
+					item.useAnimation = 8;
 				}
 				else
 				{
-					item.damage = 222;
-					item.useTime = 15;
-					item.useAnimation = 15;
+					item.damage = 333;
+					item.useTime = 10;
+					item.useAnimation = 10;
 				}
 			}
 			if (player.altFunctionUse == 2 && !player.HasBuff(mod.BuffType("TwilightCD")))

@@ -75,27 +75,27 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (NPC.downedMechBossAny)
 			{
-				item.damage = 75;
+				item.damage = 60;
 			}
 			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
-				item.damage = 100;
+				item.damage = 75;
 			}
 			if (NPC.downedPlantBoss)
 			{
-				item.damage = 125;
+				item.damage = 100;
 			}
 			if (NPC.downedGolemBoss)
 			{
-				item.damage = 150;
+				item.damage = 125;
 			}
 			if (NPC.downedFishron)
 			{
-				item.damage = 200;
+				item.damage = 175;
 			}
 			if (NPC.downedAncientCultist)
 			{
-				item.damage = 300;
+				item.damage = 250;
 			}
 			if (NPC.downedMoonlord)
 			{
@@ -112,26 +112,26 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				if (ThoriumModDownedRagnarok)
 				{
-					item.damage = 1000;
+					item.damage = 750;
 				}
 			}
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModDownedProvidence)
 				{
-					item.damage = 1200;
+					item.damage = 1000;
 				}
 				if (CalamityModDownedPolter)
 				{
-					item.damage = 1500;
+					item.damage = 1350;
 				}
 				if (CalamityModDownedDOG)
 				{
-					item.damage = 3500;
+					item.damage = 3000;
 				}
 				if (CalamityModDownedYharon)
 				{
-					item.damage = 6000;
+					item.damage = 5000;
 				}
 				if (CalamityModDownedSCal)
 				{

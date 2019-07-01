@@ -68,15 +68,15 @@ namespace AlchemistNPC.Buffs
 			}
 			if (NPC.downedFishron)
 			{
-				timeValue = 240;
+				timeValue = 250;
 			}
 			if (NPC.downedAncientCultist)
 			{
-				timeValue = 180;
+				timeValue = 210;
 			}
 			if (NPC.downedMoonlord)
 			{
-				timeValue = 120;
+				timeValue = 180;
 			}
 			player.AddBuff(mod.BuffType("ProjCounter"), 2);
 			if (player.ownedProjectileCounts[mod.ProjectileType("Globe199")] <= 0)

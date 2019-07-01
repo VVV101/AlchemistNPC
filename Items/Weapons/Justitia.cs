@@ -26,7 +26,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 150;
+			item.damage = 120;
 			item.width = 44;
 			item.height = 44;
 			item.useTime = 30;
@@ -67,11 +67,11 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 					{
-					item.damage = 300;
+					item.damage = 250;
 					}
 					else
 					{
-					item.damage = 150;
+					item.damage = 120;
 					}
 			return base.CanUseItem(player);
 		}
@@ -79,7 +79,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.LunarBar, 25);
+			recipe.AddIngredient(ItemID.LunarBar, 16);
 			recipe.AddIngredient(ItemID.FragmentNebula, 20);
             recipe.AddIngredient(ItemID.FragmentSolar, 20);
 			recipe.AddTile(null, "WingoftheWorld");

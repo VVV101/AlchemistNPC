@@ -59,15 +59,15 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 15;
 			if (NPC.downedSlimeKing)
 			{
-				item.damage = 16;
+				item.damage = 14;
 			}
 			if (NPC.downedBoss1)
 			{
-				item.damage = 20;
+				item.damage = 16;
 			}
 			if (NPC.downedBoss2)
 			{
-				item.damage = 22;
+				item.damage = 20;
 			}
 			if (NPC.downedQueenBee)
 			{
@@ -79,7 +79,7 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (Main.hardMode)
 			{
-				item.damage = 36;
+				item.damage = 32;
 				item.useTime = 10;
 				item.useAnimation = 10;
 			}
