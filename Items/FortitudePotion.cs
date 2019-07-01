@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к отбрасыванию");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "刚毅药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "极大地免疫击退\n非灾厄BUFF药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "免疫击退");
         }    
 		public override void SetDefaults()
         {

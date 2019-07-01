@@ -18,6 +18,11 @@ namespace AlchemistNPC.Items.Weapons
 			
 			DisplayName.AddTranslation(GameCulture.Russian, "Портальная пушка Рика");
             Tooltip.AddTranslation(GameCulture.Russian, "Копия портальной пушки Рика Санчеза\nОткрывает порталы в различные измерения\nТребует Капсулы с энергией в качестве патронов\nНадеюсь, что она не вызовет появление Рик спецназа");
+			DisplayName.AddTranslation(GameCulture.Chinese, "瑞克的传送枪");
+			Tooltip.AddTranslation(GameCulture.Chinese, "瑞克·桑切斯的传送枪的复制品"
+			+"\n打开通往随机危险维度的传送门"
+			+"\n需要能量胶囊作为弹药"
+			+"\n希望这玩意别引来瑞克海豹突击队");
 		}
 
 		public override void SetDefaults()

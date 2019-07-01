@@ -20,7 +20,7 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "Всего лишь пушка Гаусса.\nПробивает значительное количество противников одним выстрелом\nИмеет два режима стрельбы:\nМедленный (левая кнопка мыши) - производит один выстрел.\nБыстрый (правая кнопка мыши) - производит два выстрела с пониженным уроном.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "尼克斯");
-            Tooltip.AddTranslation(GameCulture.Chinese, "基本上, 它只是个高斯炮\n能穿透无限个敌人\n有两种发射方式:\n左键慢速发射 (1发/秒)\n右键快速发射 (2发/秒, 伤害降低)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "基本上, 它只是个高斯炮\n能穿透多个敌人\n有两种发射方式:\n左键慢速发射 (1发/秒)\n右键快速发射 (2发/秒, 伤害降低)");
         }
 
 		public override void SetDefaults()

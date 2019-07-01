@@ -22,6 +22,8 @@ namespace AlchemistNPC.Items.Equippable
 			+"\nMinions nearly ignore enemy invincibility frames");
 			DisplayName.AddTranslation(GameCulture.Russian, "Расцвёвший Плод Сефирот");
             Tooltip.AddTranslation(GameCulture.Russian, "Последнее из семян Ехидны... Хранит невероятные силы внутри\nПовышает урон прислужников на 15%\nУвеличивает максимальное количество прислужников на 3\nПрислужники могут нанести критический удар с вероятностью в 10%\nПрислужники почти полностью игнорируют период неуязвимости у противника");
+			DisplayName.AddTranslation(GameCulture.Chinese, "终极瑟芙罗克之果");
+			Tooltip.AddTranslation(GameCulture.Chinese, "埃凯德娜最后的种子... 拥有不可思议的力量.\n增加15%召唤伤害\n增加3个最大召唤物数量\n召唤物有10%概率暴击\n召唤物无视敌人无敌帧");
         }
 	
 		public override void SetDefaults()

@@ -25,7 +25,7 @@ namespace AlchemistNPC.Items.Armor
             ModTranslation text = mod.CreateTranslation("JustitiaSetBonus");
 		    text.SetDefault("Increases current melee damage by 30% and adds 15% to melee critical strike chance");
             text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в ближнем бою на 30% и добаляет 15% к шансу критического удара");
-            text.AddTranslation(GameCulture.Chinese, "增加当前30%的近战伤害和15%近战暴击几率");
+            text.AddTranslation(GameCulture.Chinese, "增加当前30%的近战伤害和15%近战暴击率");
             mod.AddTranslation(text);
 		}
 

@@ -12,6 +12,8 @@ namespace AlchemistNPC.Items.Placeable
 			Tooltip.SetDefault("Forces biome state to Snow while placed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Голопроектор ''Зимний''");
             Tooltip.AddTranslation(GameCulture.Russian, "Фиксирует Зимний биом когда размещён");
+			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''冰雪''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为冰雪");
         }
 
 		public override void SetDefaults()

@@ -17,6 +17,8 @@ namespace AlchemistNPC.Items.Misc
 			Tooltip.SetDefault("Your very own doll\nWill make you take part of your dealt damage");
 			DisplayName.AddTranslation(GameCulture.Russian, "Кукла Вуду");
             Tooltip.AddTranslation(GameCulture.Russian, "Ваша кукла\nЗаставляет вас получать часть урона, наносимого боссу");
+			DisplayName.AddTranslation(GameCulture.Chinese, "巫毒娃娃");
+			Tooltip.AddTranslation(GameCulture.Chinese, "你自己的娃娃\n所造成伤害的一部分会施加给自己");
         }
 
 		public override void SetDefaults()

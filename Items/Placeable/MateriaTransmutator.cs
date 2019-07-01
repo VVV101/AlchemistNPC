@@ -17,7 +17,7 @@ namespace AlchemistNPC.Items.Placeable
             Tooltip.AddTranslation(GameCulture.Russian, "Выполняет функции большей части станций крафта в одной\nВсе станции крафта включены :)\nРаботает в качестве источника Воды/Мёда/Лавы");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "物质嬗变器");
-            Tooltip.AddTranslation(GameCulture.Chinese, "非常多制造环境的集合\n包含了所有的原版制作环境 :)\n同样也属于水/蜂蜜/岩浆环境");
+            Tooltip.AddTranslation(GameCulture.Chinese, "非常多制造环境的集合\n包含了所有的原版制作环境 :)\n同样可作为水/蜂蜜/岩浆环境");
         }
 
 		public override void SetDefaults()

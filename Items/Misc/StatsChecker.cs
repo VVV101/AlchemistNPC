@@ -17,6 +17,8 @@ namespace AlchemistNPC.Items.Misc
 			Tooltip.SetDefault("Shows most of the player's stats while in your inventory");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пип-Бой 3000");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, то показывает большинство параметров игрока");
+			DisplayName.AddTranslation(GameCulture.Chinese, "哔哔小子 3000");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置于物品栏时, 显示玩家的绝大部分属性");
         }
 
 		public override void SetDefaults()

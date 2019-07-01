@@ -17,6 +17,8 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Grants Dryad's Blessing buff");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Благословления Природы");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Благословления Дриады");
+			DisplayName.AddTranslation(GameCulture.Chinese, "自然祝福药剂");
+			Tooltip.AddTranslation(GameCulture.Chinese, "获得树妖的祝福Buff");
         }    
 		public override void SetDefaults()
         {

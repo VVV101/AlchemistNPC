@@ -45,6 +45,9 @@ namespace AlchemistNPC.Items.Weapons
 			
 			DisplayName.AddTranslation(GameCulture.Russian, "Громобой");
 			Tooltip.AddTranslation(GameCulture.Russian, "Выкован для противодействия самым мощным существам во вселенной. Используй его мудро.\nПравый клик в инвентаре меняет тип урона");
+			DisplayName.AddTranslation(GameCulture.Chinese, "风暴战锤");
+			Tooltip.AddTranslation(GameCulture.Chinese, "为了与宇宙中最强大的存在战斗而打造. 请明智地使用它."
+			+"\n在物品栏中右键切换伤害类型");
         }
 
 		public override void SetDefaults()

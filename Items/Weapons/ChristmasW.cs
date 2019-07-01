@@ -23,6 +23,12 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nGives 3% chance to get Present from any enemy as drop");
 			DisplayName.AddTranslation(GameCulture.Russian, "Рождество (F-02-49)");
             Tooltip.AddTranslation(GameCulture.Russian, "''Он запечатан в крепкую кожи. Никто не знает, откуда она.\nЧто находится под ней - неизвестно, но эта таинственность лишь делает оружие сильнее.''\n[c/FF0000:Оружие Э.П.О.С.]\nВызывает падение нескольких ёлочных украшений при взмахе\nДаёт 3% шанс на получение подарка при убийстве любого противника");
+			DisplayName.AddTranslation(GameCulture.Chinese, "悲惨圣诞 (F-02-49)");
+			Tooltip.AddTranslation(GameCulture.Chinese, "''掩盖在层层厚皮下的真相绝不能被人知道."
+			+"\n对真相的刻意隐瞒只会使这把武器更加强大."
+			+"\n[c/FF0000:EGO 武器]"
+			+"\n挥舞时从天上掉落装饰球"
+			+"\n任何敌人都有3%概率掉落礼物");
         }
 
 		public override void SetDefaults()

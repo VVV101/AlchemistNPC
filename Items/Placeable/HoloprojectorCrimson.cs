@@ -12,6 +12,8 @@ namespace AlchemistNPC.Items.Placeable
 			Tooltip.SetDefault("Forces biome state to Crimson while placed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Голопроектор ''Кримзон''");
             Tooltip.AddTranslation(GameCulture.Russian, "Фиксирует биом Кримзон когда размещён");
+			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''血腥''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为血腥");
         }
 
 		public override void SetDefaults()

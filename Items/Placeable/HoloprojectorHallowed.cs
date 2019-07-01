@@ -12,6 +12,8 @@ namespace AlchemistNPC.Items.Placeable
 			Tooltip.SetDefault("Forces biome state to Hallow while placed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Голопроектор ''Святой''");
             Tooltip.AddTranslation(GameCulture.Russian, "Фиксирует Святой биом когда размещён");
+			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''神圣''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为神圣");
         }
 
 		public override void SetDefaults()

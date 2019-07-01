@@ -22,7 +22,7 @@ namespace AlchemistNPC.Items.Armor
 		    + "\n+40 defense"
 		    + "\nPrices are lower");
             text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в дальнем бою/прислужников на 20% и добаляет 20% к шансу критического удара\n+40 защиты\nЦены в магазинах ниже");
-            text.AddTranslation(GameCulture.Chinese, "增加20%当前远程/召唤伤害, 增加20%远程暴击几率\n+40防御力\n让NPC降价");
+            text.AddTranslation(GameCulture.Chinese, "增加20%当前远程/召唤伤害, 增加20%远程暴击率\n+40防御力\n让NPC降价");
             mod.AddTranslation(text);
 		}
 

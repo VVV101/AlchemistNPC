@@ -19,6 +19,10 @@ namespace AlchemistNPC.Items.Misc
 			+"\nAlchemist, Brewer and Young Brewer are providing 35% discount");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Третьего Уровня");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 35%");
+			DisplayName.AddTranslation(GameCulture.Chinese, "炼金师符咒 T-3");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置物品栏中时, 大概率不消耗药剂"
+			+"\n'快速增益'键能够使用猪猪储蓄罐中的药剂"
+			+"\n炼金师, 药剂师和年轻药剂师提供35%折扣");
         }
 
 		public override void SetDefaults()

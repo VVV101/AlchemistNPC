@@ -20,6 +20,11 @@ namespace AlchemistNPC.Items.Misc
 			+"\nMakes potions non-consumable if Supreme Calamitas is defeated");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Четвертого Уровня");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет очень большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 50%\nЗелья не будут тратиться, если побеждена Supreme Calamitas");
+			DisplayName.AddTranslation(GameCulture.Chinese, "炼金师符咒 T-4");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置物品栏中时, 极大概率不消耗药剂"
+			+"\n'快速增益'键能够使用猪猪储蓄罐中的药剂"
+			+"\n炼金师, 药剂师和年轻药剂师提供50%折扣"
+			+"如果至尊灾厄已被击败, 不消耗药剂");
         }
 
 		public override void SetDefaults()

@@ -55,7 +55,7 @@ namespace AlchemistNPC.NPCs
             ModTranslation text = mod.CreateTranslation("ArenaShop");
             text.SetDefault("Arena Shop");
             text.AddTranslation(GameCulture.Russian, "Магазин Арены");
-            text.AddTranslation(GameCulture.Chinese, "阿瑞娜商店");
+            text.AddTranslation(GameCulture.Chinese, "战斗场地商店");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Carl");
             text.SetDefault("Carl");

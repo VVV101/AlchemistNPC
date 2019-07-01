@@ -18,6 +18,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nExhausts player for 1 minute, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Вопль Баньши''");
             Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Вопль Баньши''\nПрименение мгновенно убивает всех обычных врагов на экране\nИстощает игрока на 1 минуту, не позволяя ему использовать магию");
+			DisplayName.AddTranslation(GameCulture.Chinese, "卷轴 ''女妖之嚎''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "一次性物品"
+			+"\n包含着 ''女妖之嚎''法术"
+			+"\n使用时, 即死屏幕中所有普通敌人"
+			+"\n使玩家精疲力尽1分钟, 期间无法使用魔法");
         }
 
 		public override void SetDefaults()

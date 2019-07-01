@@ -20,6 +20,8 @@ namespace AlchemistNPC.Items.Misc
 			+"\nWould work only if Nurse is alive");
 			DisplayName.AddTranslation(GameCulture.Russian, "Диплом Врача");
             Tooltip.AddTranslation(GameCulture.Russian, "Примените для постоянного улучшения Медсестры\nОткрывает интерфейс лечения после возрождения\nЭффект глобален для всех игроков этого мира\nРаботает только в том случае, если Медсестра жива");
+			DisplayName.AddTranslation(GameCulture.Chinese, "博士学位证书");
+			Tooltip.AddTranslation(GameCulture.Chinese, "使用来永久升级你的护士\n重生后打开治疗界面\n该效果作用于本世界所有玩家\n只有在护士活着时起作用");
         }
 
 		public override void SetDefaults()

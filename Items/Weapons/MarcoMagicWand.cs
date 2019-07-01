@@ -20,6 +20,12 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nRight click to launch kitten bombs");
 			DisplayName.AddTranslation(GameCulture.Russian, "Волшебная Палочка Принца");
             Tooltip.AddTranslation(GameCulture.Russian, "Волшебная Палочка Принца Мьюни\nИспускает широкий луч, который способен уничтожить всё на своём пути\nЧем дольше удерживается луч, тем мощнее он становится\nЗатраты маны увеличиваются соответственно\nПравый клик для запуска бомб-котят");
+			DisplayName.AddTranslation(GameCulture.Chinese, "王子的魔杖");
+			Tooltip.AddTranslation(GameCulture.Chinese, "喵尼尔王子的魔杖"
+			+"\n发射毁灭沿途一切事物的宽激光"
+			+"\n激光持续时间越长, 威力越强"
+			+"\n法力消耗分别增加"
+			+"\n右键发射小猫炸弹");
         }
 
 		public override void SetDefaults()

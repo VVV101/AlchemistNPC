@@ -20,6 +20,13 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nThey may restore HP, Mana, inflict debuff or deal double damage.");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Во Имя Любви и Ненависти'' (O-01-04)");
             Tooltip.AddTranslation(GameCulture.Russian, "''Волшебный жезл, излучающий любовную энергию Магической Девочки.\nПлохие люди будут очищены её святым сиянием и будут рождены вновь.\nОни сгорят. Они не захотят пробудиться.''n[c/FF0000:Оружие Э.П.О.С.]\nВыстреливает 4 типа снарядов\nОни могут восстановить ХП, Ману, наложить дебафф или нанести двойной урон");
+			DisplayName.AddTranslation(GameCulture.Chinese, "''以爱与恨之名'' (O-01-04)");
+			Tooltip.AddTranslation(GameCulture.Chinese, "''这根闪闪发光的魔法棒散发着魔法少女的爱之能量."
+			+"\n坏蛋将会被神圣的光辉净化, 然后重生."
+			+"\n他们将会被烈焰灼烧, 失去醒来的意志.''"
+			+"\n[c/FF0000:EGO 武器]"
+			+"\n发射4种不同种类的抛射物"
+			+"\n会根据伤害类型恢复生命值, 法力值, 造成Debuff或者双倍伤害.");
         }
 
 		public override void SetDefaults()

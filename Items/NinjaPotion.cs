@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает урон и шанс критического удара любым типом на 5% и даёт способности Мастера Ниндзя");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "忍者药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "增加5%的伤害和暴击几率, 并获得忍者大师的能力");
+            Tooltip.AddTranslation(GameCulture.Chinese, "增加5%的伤害和暴击率, 并获得忍者大师的能力");
         }    
 		public override void SetDefaults()
         {

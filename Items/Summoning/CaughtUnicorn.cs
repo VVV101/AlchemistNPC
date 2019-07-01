@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Summoning
             Tooltip.SetDefault("It is still hostile, better do not release him");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пойманный единорог");
 			Tooltip.AddTranslation(GameCulture.Russian, "Он всё ещё агрессивен, лучше не выпускайте его");
+			DisplayName.AddTranslation(GameCulture.Chinese, "被捕获的独角兽");
+			Tooltip.AddTranslation(GameCulture.Chinese, "仍充满敌意, 最好别释放他");
         }
 		
         public override void SetDefaults()

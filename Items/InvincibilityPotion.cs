@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает период неуязвимости после получения урона");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "无敌药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "延长受伤后的无敌时间\n非灾厄BUFF药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "延长受伤后的无敌时间");
         }    
 		public override void SetDefaults()
         {

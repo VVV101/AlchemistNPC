@@ -10,6 +10,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		{
 			DisplayName.SetDefault("Moses Fish");
 			DisplayName.AddTranslation(GameCulture.Russian, "Рыба-Моисей");
+			DisplayName.AddTranslation(GameCulture.Chinese, "摩西鱼");
 		}
 
 		public override void SetDefaults()

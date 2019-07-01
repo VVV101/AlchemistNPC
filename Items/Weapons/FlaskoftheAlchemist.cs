@@ -21,6 +21,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\n[c/00FF00:Stats are growing through progression]");
             DisplayName.AddTranslation(GameCulture.Russian, "Колба Алхимика");
             Tooltip.AddTranslation(GameCulture.Russian, "Оружие легендарного Алхимика, Грегга\n[c/00FF00:Легендарное Оружие]\nБросает колбу случайного типа\n[c/00FF00:Статы улучшаются по мере прохождения]");
+			DisplayName.AddTranslation(GameCulture.Chinese, "炼金师烧瓶");
+			Tooltip.AddTranslation(GameCulture.Chinese, "传奇炼金师格雷格的武器"
+			+"\n[c/00FF00:传奇武器]"
+			+"\n投掷随机种类的的烧瓶"
+			+"\n[c/00FF00:属性随进程成长]");
         }    
 		public override void SetDefaults()
 		{

@@ -20,6 +20,12 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\n35% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Торжественная клятва (T-01-68)");
             Tooltip.AddTranslation(GameCulture.Russian, "''Печальная атмосфера. Один отражает грусть мёртвых, а другой отражает страх живущих.''\n[c/FF0000:Оружие Э.П.О.С.]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны");
+			DisplayName.AddTranslation(GameCulture.Chinese, "圣宣 (T-01-68)");
+			Tooltip.AddTranslation(GameCulture.Chinese, "''这两把枪令人感到严肃."
+			+"\n死者之哀, 死亡之惧, 烙印其上.''"
+			+"\n[c/FF0000:EGO 武器]"
+			+"\n造成暗影烈焰和霜火"
+			+"\n35%概率不消耗弹药");
 		}
 
 		public override void SetDefaults()

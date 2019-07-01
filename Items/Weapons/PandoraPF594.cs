@@ -20,6 +20,12 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nСпециальная Атака №1 (самонаводящиеся ракеты вокруг)\nАтака опустошает шкалу Бедствия\nНажмите правую кнопку мыши для смены специальной атаки");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF594)");
+			Tooltip.AddTranslation(GameCulture.Chinese, "'来自地狱的武器, 有666种不同的形态'"
+			+"\n修复了的潘多拉, 解锁了破坏潜力"
+			+"\n特殊攻击 #1 (向各个方向发射追踪火箭)"
+			+"\n攻击装填灾厄槽"
+			+"\n灾厄槽集满时能够切换武器形态"
+			+"\n右键切换特殊攻击");
         }
 
 		public override void SetDefaults()

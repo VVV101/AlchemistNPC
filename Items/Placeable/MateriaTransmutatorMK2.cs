@@ -20,6 +20,8 @@ namespace AlchemistNPC.Items.Placeable
 			+"\nAlso works as Water/Honey/Lava source");
 			DisplayName.AddTranslation(GameCulture.Russian, "Преобразователь Материи MK2");
 			Tooltip.AddTranslation(GameCulture.Russian, "Выполняет функции большей части станций крафта в одной\nВсе станции крафта включены :)\nДобавлена функциональность Дредоновой Печи\nРаботает в качестве источника Воды/Мёда/Лавы"); 
+			DisplayName.AddTranslation(GameCulture.Chinese, "物质嬗变器 MK2");
+			Tooltip.AddTranslation(GameCulture.Chinese, "非常多制造环境的集合\n增加嘉登熔炉的功能\n包含了所有的制作环境 :)\n同样可作为水/蜂蜜/岩浆环境");
 		}
 
 		public override void SetDefaults()

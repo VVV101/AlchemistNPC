@@ -25,8 +25,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Chinese, "允许使用快捷键传送到鼠标位置"
             + "\n传送后扭曲玩家一秒钟"
             + "\n混乱状态时使用会受到巨大的伤害"
-            + "\n混乱状态延长至10秒"
-            + "\n非灾厄Buff药剂");
+            + "\n混乱状态延长至10秒");
         }    
 		public override void SetDefaults()
         {

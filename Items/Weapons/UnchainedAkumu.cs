@@ -25,6 +25,13 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nWhile above 35% HP, Akumu releases flying minion");
 			DisplayName.AddTranslation(GameCulture.Russian, "Освобождённая ''Акуму''");
             Tooltip.AddTranslation(GameCulture.Russian, "Это означает ''кошмар'' на Японском\nЕё удар пронзает любое количество врагов\nЗапускает снаряд по нажатию левой кнопки мыши\nРазрезает воздух на месте по нажатию правой кнопки мыши\nПри здоровье ниже 35% призывает отражающий снаряды щит\nПри здоровье выше 35% создаёт летающего прислужника");
+			DisplayName.AddTranslation(GameCulture.Chinese, "解封 ''Akumu''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "在日语里, 'Akumu'的意思是'噩梦'"
+			+"\n它的斩击能穿透经过的所有敌人"
+			+"\n左键发射剑气"
+			+"\n右键近距离攻击"
+			+"\n生命值低于35%时, Akumu会生成反射抛射物的护盾"
+			+"\n高于35%时, Akumu会释放飞行的奴仆");
         }
 
 		public override void SetDefaults()

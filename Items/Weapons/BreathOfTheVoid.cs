@@ -33,6 +33,8 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			DisplayName.SetDefault("Breath of the Void");
 			Tooltip.SetDefault("May briefly paralize enemy on hit");
+			DisplayName.AddTranslation(GameCulture.Chinese, "虚空之息");
+			Tooltip.AddTranslation(GameCulture.Chinese, "受攻击时概率麻痹敌人");
         }
 	}
 }

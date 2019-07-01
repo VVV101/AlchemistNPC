@@ -21,6 +21,13 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nBoosted stats will be shown after the first use");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пронзатель");
             Tooltip.AddTranslation(GameCulture.Russian, "Довольно медленная, неприятно выглядящая винтовка\n[c/00FF00:Легендарное Оружие]\nПробивает значительное количество противников одним выстрелом\nКритические попадания наносят четырёхкратный урон\nОтнимает по 2 очка здоровья за выстрел\n[c/00FF00:Показатели увеличивается по мере прохождения]");
+			DisplayName.AddTranslation(GameCulture.Chinese, "洞察者");
+			Tooltip.AddTranslation(GameCulture.Chinese, "非常缓慢, 看起来让人不愉快的步枪"
+			+"\n[c/00FF00:传奇武器]"
+			+"\n暴击伤害从3倍到5倍浮动"
+			+"\n消耗生命而不是弹药"
+			+"\n[c/00FF00:属性随进程成长]"
+			+"\n提升过后的属性将会在使用后显示");
         }
 
 		public override void SetDefaults()

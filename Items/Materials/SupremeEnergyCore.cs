@@ -16,6 +16,8 @@ namespace AlchemistNPC.Items.Materials
 			Tooltip.SetDefault("Infinite source of Energy");
 			DisplayName.AddTranslation(GameCulture.Russian, "Превосходное энергетическое ядро");
 			Tooltip.AddTranslation(GameCulture.Russian, "Бесконечный источник Энергии");
+			DisplayName.AddTranslation(GameCulture.Chinese, "至高能量核心");
+			Tooltip.AddTranslation(GameCulture.Chinese, "无限能量之源");
         }    
 		public override void SetDefaults()
 		{

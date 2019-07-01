@@ -10,6 +10,7 @@ namespace AlchemistNPC.Items.Placeable
 			DisplayName.SetDefault("Music Box (Deltarune OST - The World Revolving)");
 			Tooltip.SetDefault("By Toby Fox");
 			DisplayName.AddTranslation(GameCulture.Russian, "Музыкальная шкатулка (Deltarune OST - The World Revolving)");
+			DisplayName.AddTranslation(GameCulture.Chinese, "音乐盒 (Deltarune OST - The World Revolving)");
 		}
 
 		public override void SetDefaults()

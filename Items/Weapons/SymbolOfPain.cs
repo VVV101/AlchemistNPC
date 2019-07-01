@@ -20,6 +20,13 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nExhausts player for 1 minute, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Символа Боли''");
             Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Символа Боли''\nПрименение ослабляет всех противников на экране\nПоражённые противники получают на 25% больше урона и наносят на 1/4 меньше урона\nИстощает игрока на 1 минуту, не позволяя ему использовать магию");
+			DisplayName.AddTranslation(GameCulture.Chinese, "卷轴 ''痛苦法印''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "一次性物品"
+			+"\n包含着 ''痛苦法印''法术"
+			+"\n使用时, 屏幕内所有敌人都将被严重虚弱1分钟 (不会被任何限制降低)"
+			+"\n对虚弱敌人多造成25%伤害"
+			+"\n同样使敌人伤害降低1/4"
+			+"\n使玩家精疲力尽1分钟, 期间无法使用魔法");
         }
 
 		public override void SetDefaults()

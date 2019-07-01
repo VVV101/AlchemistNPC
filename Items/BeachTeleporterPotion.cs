@@ -21,8 +21,10 @@ namespace AlchemistNPC.Items
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Пляжу");
             Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас к крайней Пальме\nСторона зависит от нажатой кнопки мыши\nНе телепортирует никуда, если пальм не существует в мире");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "信标传送药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至信标处\n没有放置信标无法工作");
+            DisplayName.AddTranslation(GameCulture.Chinese, "海滩传送药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至海滩 (靠近最左/右边的棕榈木处)"
+			+"\n方向取决于使用的鼠标按键"
+			+"\n如果没有棕榈木, 则无法传送");
         }    
 		public override void SetDefaults()
         {

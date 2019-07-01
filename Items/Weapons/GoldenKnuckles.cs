@@ -21,6 +21,9 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nMay not look so tough, but hits hard");
 			DisplayName.AddTranslation(GameCulture.Russian, "Золотой Кастет");
             Tooltip.AddTranslation(GameCulture.Russian, "Оружие легендарного мошенника\nМожет не выглядеть так уж сурово, но бьёт действительно сильно");
+			DisplayName.AddTranslation(GameCulture.Chinese, "黄金指虎");
+			Tooltip.AddTranslation(GameCulture.Chinese, "传奇骗术师的武器"
+			+ "\n看起来不怎么牢固, 但是打人很疼");
         }
 
 		public override void SetDefaults()

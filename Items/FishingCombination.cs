@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы Ящиков, Сонара, Рыбалки, Регенерации, Шипов, Железной Кожи, Покоя и Инферно");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "钓鱼药剂包");
-            Tooltip.AddTranslation(GameCulture.Chinese, "获得你在钓鱼时所需的Buff (声呐, 钓鱼, 恢复, 镇静, 荆棘, 铁皮, 狱火, 宝匣)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得板条箱, 声呐, 钓鱼, 再生, 荆棘, 铁皮, 心如止水, 熔岩领域Buff");
         }    
 		public override void SetDefaults()
         {

@@ -17,6 +17,8 @@ namespace AlchemistNPC.Items.Misc
 			Tooltip.SetDefault("Contains blueprints of a random hardmode/post Skeletron accessory\nUse to unlock");
 			DisplayName.AddTranslation(GameCulture.Russian, "Тубус (2)");
             Tooltip.AddTranslation(GameCulture.Russian, "Хранит в себе чертёж случайного хардмодного/пост-Скелетронового аксессуара\nИспользуйте для разблокировки");
+			DisplayName.AddTranslation(GameCulture.Chinese, "纸管 (T-2)");
+			Tooltip.AddTranslation(GameCulture.Chinese, "包含一项随机困难模式/骷髅王后饰品的蓝图\n使用以解锁");
         }
 
 		public override void SetDefaults()

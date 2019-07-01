@@ -46,6 +46,7 @@ namespace AlchemistNPC.NPCs
 		{
 			DisplayName.SetDefault("Tinkerer");
 			DisplayName.AddTranslation(GameCulture.Russian, "Инженер");
+            DisplayName.AddTranslation(GameCulture.Chinese, "工匠");
             Main.npcFrameCount[npc.type] = 25;   
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
 			NPCID.Sets.DangerDetectRange[npc.type] = 500;
@@ -65,26 +66,32 @@ namespace AlchemistNPC.NPCs
             text = mod.CreateTranslation("EntryT1");
             text.SetDefault("Do you need something special? Just say if so...");
             text.AddTranslation(GameCulture.Russian, "Нужно что-то особенное? Если так, то только скажи...");
+            text.AddTranslation(GameCulture.Chinese, "需要一些特别的东西? 尽管说...");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryT2");
             text.SetDefault("Have you seen my elder sister yet? She is more Steampunker than Tinkerer...");
             text.AddTranslation(GameCulture.Russian, "Ты ещё не встречал мою старшую сестру? Она больше Паромеханик чем Инженер...");
+            text.AddTranslation(GameCulture.Chinese, "你看见过我的姐姐吗? 比起工匠, 她更像个蒸汽朋克女孩...");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryT3");
             text.SetDefault("If you seen Paper Tube somewhere, bring it to me and I will unlock it for you.");
             text.AddTranslation(GameCulture.Russian, "Если найдёшь где-нибудь тубус, неси его мне и я вскрою его для тебя.");
+            text.AddTranslation(GameCulture.Chinese, "如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryT4");
             text.SetDefault("As you will progress through the world, you may found more valueable things. Counting blueprints for creating rarer accessories.");
             text.AddTranslation(GameCulture.Russian, "По мере твоего продвижения по миру, ты можешь найти всё более ценные вещи. В том числе и чертежи для создания более редких аксессуаров.");
+            text.AddTranslation(GameCulture.Chinese, "随着进度的推进, 你可能会发现更有价值的东西. 攒些蓝图来制作更稀有的饰品.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryT5");
             text.SetDefault("You never know where you may get really rare or valueable things. So explore every possible corner with patience.");
             text.AddTranslation(GameCulture.Russian, "Никогда не знаешь, где ты можешь заполучить что-то действительно редкое или ценное. Поэтому исследуй каждый доступный угол со всем возможным терпением.");
+            text.AddTranslation(GameCulture.Chinese, "你永远不会知道在哪里可以得到真正珍贵的东西. 所以耐心探索每一个可能的角落吧.");
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryT6");
             text.SetDefault("If you wil collect every single blueprint, I will give you the special reward.");
             text.AddTranslation(GameCulture.Russian, "Если ты соберешь все до единого чертежи, я выдам тебе специальную награду.");
+            text.AddTranslation(GameCulture.Chinese, "如果你能收集每一张蓝图, 我会给你一个特别的奖励.");
             mod.AddTranslation(text);
         }
 

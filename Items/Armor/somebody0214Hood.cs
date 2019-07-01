@@ -26,7 +26,7 @@ namespace AlchemistNPC.Items.Armor
 		    + "\n+32 defense"
 		    + "\n+25% damage reduction");
             text.AddTranslation(GameCulture.Russian, "Увеличивает текущий магический урон на 30% и добаляет 20% к шансу критического удара\n+32 защиты\n25% поглощение урона");
-            text.AddTranslation(GameCulture.Chinese, "增加30%当前魔法伤害, 增加20%魔法暴击几率\n+32防御力\n增加25%伤害免疫");
+            text.AddTranslation(GameCulture.Chinese, "增加30%当前魔法伤害, 增加20%魔法暴击率\n+32防御力\n增加25%伤害免疫");
             mod.AddTranslation(text);
 		}
 		
