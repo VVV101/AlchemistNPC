@@ -76,7 +76,7 @@ namespace AlchemistNPC
             if (Language.ActiveCulture == GameCulture.Chinese)
 			{
 				LampLightToggle = "大鸟灯开关";
-				DiscordBuffTeleportation = "混乱Buff传送";
+				DiscordBuffTeleportation = "混沌Buff传送";
 				PipBoy = "哔哔小子传送菜单";
 			}
 			else
