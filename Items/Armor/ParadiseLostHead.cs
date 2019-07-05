@@ -39,7 +39,7 @@ namespace AlchemistNPC.Items.Armor
             text.SetDefault("Increases all damage by 35% and adds 25% to critical strike chance"
             + "\nIncreases damage dealt by EGO weapons"
             + "\nChanges would be seen after first usage of weapons"
-            + "\nIf hit taken deals less than 150 damage, then it will be nullified.");
+            + "\nIf hit taken deals less than 100 damage, then it will be nullified.");
             text.AddTranslation(GameCulture.Russian, "Увеличивает любой урон на 35% и добаляет 25% к шансу критического удара\nУвеличивает урон наносимый оружием Э.П.О.С.\nЕсли вы получаете меньше 150 урона, то урон будет аннулирован");
             text.AddTranslation(GameCulture.Chinese, "增加 35% 所有伤害, 增加 25% 暴击率"
             + "\n使用 EGO 武器造成更多伤害"

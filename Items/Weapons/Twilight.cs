@@ -34,11 +34,11 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.melee = true;
-			item.damage = 333;
+			item.damage = 300;
 			item.width = 60;
-			item.height = 60;
-			item.useTime = 10;
-			item.useAnimation = 10;
+			item.height = 62;
+			item.useTime = 12;
+			item.useAnimation = 12;
 			item.useStyle = 1;
 			item.value = 10000000;
 			item.rare = 11;
@@ -73,15 +73,15 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
 				{
-					item.damage = 444;
-					item.useTime = 8;
-					item.useAnimation = 8;
+					item.damage = 400;
+					item.useTime = 10;
+					item.useAnimation = 10;
 				}
 				else
 				{
-					item.damage = 333;
-					item.useTime = 10;
-					item.useAnimation = 10;
+					item.damage = 300;
+					item.useTime = 12;
+					item.useAnimation = 12;
 				}
 			}
 			if (player.altFunctionUse == 2 && !player.HasBuff(mod.BuffType("TwilightCD")))

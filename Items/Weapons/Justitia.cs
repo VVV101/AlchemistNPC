@@ -52,27 +52,20 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("JP"), damage, knockBack, player.whoAmI);
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
-				{
-				Main.projectile[p].scale = 2f;
-				}
-			else
-				{
-				Main.projectile[p].scale = 1.5f;
-				}
+			Main.projectile[p].scale = 1.5f;
             return false;
         }
 		
 		public override bool CanUseItem(Player player)
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
-					{
-					item.damage = 250;
-					}
-					else
-					{
-					item.damage = 120;
-					}
+			{
+				item.damage = 225;
+			}
+			else
+			{
+				item.damage = 120;
+			}
 			return base.CanUseItem(player);
 		}
 		
