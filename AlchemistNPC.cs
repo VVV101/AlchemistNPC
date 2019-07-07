@@ -150,6 +150,14 @@ namespace AlchemistNPC
 				alchemistUserInterfaceP.SetState(pipboyUI);
 			}
 		}
+		
+		public override void Unload() {
+			Instance = null;
+			instance = null;
+			LampLight = null;
+			DiscordBuff = null;
+			PipBoyTP = null;
+		}
 
 		public override void PostSetupContent()
 		{
@@ -300,11 +308,6 @@ namespace AlchemistNPC
 					InterfaceScaleType.UI)
 				);
 			}
-		}
-		
-		public override void Unload()
-		{
-			instance = null;
 		}
 		
 		public static string ConfigFileRelativePath 
