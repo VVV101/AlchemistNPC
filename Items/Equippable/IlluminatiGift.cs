@@ -53,8 +53,8 @@ namespace AlchemistNPC.Items.Equippable
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Illuminati = true;
 			if (!hideVisual)
 			{
-			player.goldRing = true;
-            player.coins = true;
+				player.goldRing = true;
+				player.coins = true;
 				for (int number = 0; number < 400; ++number)
 				{
 					if (Main.item[number].active && Main.item[number].noGrabDelay == 0)

@@ -43,7 +43,17 @@ namespace AlchemistNPC.Buffs
 			player.cratePotion = true;
 			player.calmed = true;
 			player.statDefense += 8;
-			player.lifeRegen += 4;
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")))
+				{
+					player.lifeRegen += 4;
+				}
+			}
+			if (ModLoader.GetMod("CalamityMod") == null)
+			{
+				player.lifeRegen += 4;
+			}
 				{
                         if ((double)player.thorns < 1.0)
                             player.thorns = 0.3333333f;

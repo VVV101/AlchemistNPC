@@ -41,9 +41,21 @@ namespace AlchemistNPC.Buffs
 				player.buffImmune[114] = true;
 				player.endurance += 0.1f;
 				player.statDefense += 8;
-				player.lifeRegen += 4;
-				player.lifeForce = true;
-				player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
+				if (ModLoader.GetMod("CalamityMod") != null)
+				{
+					if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")))
+					{
+						player.lifeRegen += 4;
+						player.lifeForce = true;
+						player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
+					}
+				}
+				if (ModLoader.GetMod("CalamityMod") == null)
+				{
+					player.lifeRegen += 4;
+					player.lifeForce = true;
+					player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
+				}
 				if (player.thorns < 1.0)
 				{
 				player.thorns = 0.3333333f;

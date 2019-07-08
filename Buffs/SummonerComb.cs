@@ -41,11 +41,30 @@ namespace AlchemistNPC.Buffs
 			}
 			else
 			{
-			player.thrownDamage += 0.1f;
-            player.meleeDamage += 0.1f;
-            player.rangedDamage += 0.1f;
-            player.magicDamage += 0.1f;
-            player.minionDamage += 0.1f;
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("HolyWrathBuff")))
+				{
+					player.thrownDamage += 0.1f;
+					player.meleeDamage += 0.1f;
+					player.rangedDamage += 0.1f;
+					player.magicDamage += 0.1f;
+					player.minionDamage += 0.1f;
+				}
+				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("HolyWrathBuff")))
+				{
+					CalamityBoost(player);
+				}
+				
+			}
+			if (ModLoader.GetMod("CalamityMod") == null)
+			{
+				player.thrownDamage += 0.1f;
+				player.meleeDamage += 0.1f;
+				player.rangedDamage += 0.1f;
+				player.magicDamage += 0.1f;
+				player.minionDamage += 0.1f;
+			}
 			++player.maxMinions;
 			++player.maxMinions;
 			player.buffImmune[13] = true;
@@ -59,10 +78,6 @@ namespace AlchemistNPC.Buffs
 				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
-				}
-				if (ModLoader.GetMod("CalamityMod") != null)
-				{
-				CalamityBoost(player);
 				}
 			}
 		}
