@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Misc
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pip-Boy4K");
+			DisplayName.SetDefault("Pip-Boy 4K");
 			Tooltip.SetDefault("Shows most of the player's stats while in your inventory"
 			+"\nLeft click to teleport home, hotkey to open teleportation menu");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пип-Бой 4K");

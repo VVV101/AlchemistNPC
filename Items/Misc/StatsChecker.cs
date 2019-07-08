@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Misc
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pip-Boy3000");
+			DisplayName.SetDefault("Pip-Boy 3000");
 			Tooltip.SetDefault("Shows most of the player's stats while in your inventory");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пип-Бой 3000");
             		Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, то показывает большинство параметров игрока");
