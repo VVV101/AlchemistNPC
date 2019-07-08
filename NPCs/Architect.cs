@@ -172,11 +172,13 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("A21");
             text.SetDefault("Have you heard 'bout that FuryForged guy? I taught him all he knows!");
             text.AddTranslation(GameCulture.Russian, "Ты слышал об этом FuryForged? Я научил его всему, что он знает!");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "你听说过一个叫FuryForged的家伙吗?他的一切东西都是我教的");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("A22");
             text.SetDefault("I was once hired by a certain company to build a supermassive hi-tech, hi-security installation. Lemme tell ya its my magnum opus in terms of security and containment.");
             text.AddTranslation(GameCulture.Russian, "Как-то раз я был нанят одной компанией, чтобы построить огромный высокотехнологичный комплекс с высочайщей степенью безопасности. Это была моя самая лучшая работа в плане сдерживания и безопасности.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "我曾经被一家公司雇用来建造一个超大规模的高科技，高安全性装置。 让我告诉你我在安全性和阻挡入侵方面我的巨大建树。");
+	    mod.AddTranslation(text);
             text = mod.CreateTranslation("AS1");
             text.SetDefault("1st shop (Filler Blocks)       ");
             text.AddTranslation(GameCulture.Russian, "1-ый магазин (Обычные Блоки)");
