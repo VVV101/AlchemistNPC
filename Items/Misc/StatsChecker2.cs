@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Misc
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Pip-Boy 4K");
+			DisplayName.SetDefault("Pip-Boy4K");
 			Tooltip.SetDefault("Shows most of the player's stats while in your inventory"
 			+"\nLeft click to teleport home, hotkey to open teleportation menu");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пип-Бой 4K");
@@ -21,62 +21,62 @@ namespace AlchemistNPC.Items.Misc
 			DisplayName.AddTranslation(GameCulture.Chinese, "哔哔小子 4K");
 			Tooltip.AddTranslation(GameCulture.Chinese, "放置于物品栏时, 显示玩家的绝大部分属性\n左键传送回家, 使用快捷键打开传送菜单");
         		
-			ModTranslation text = mod.CreateTranslation("Pip-Boy 4ktext1");
+			ModTranslation text = mod.CreateTranslation("Pip-Boy4ktext1");
             		text.SetDefault("Melee damage/critical strike chance boosts are ");
 			text.AddTranslation(GameCulture.Chinese, "近战伤害/暴击率增加");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext2");
+			text = mod.CreateTranslation("Pip-Boy4ktext2");
             		text.SetDefault("Ranged damage/critical strike chance boosts are ");
 			text.AddTranslation(GameCulture.Chinese, "远程伤害/暴击率增加");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext3");
+			text = mod.CreateTranslation("Pip-Boy4ktext3");
             		text.SetDefault("Magic damage/critical strike chance boosts are ");
 			text.AddTranslation(GameCulture.Chinese, "魔法伤害/暴击率增加");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext4");
+			text = mod.CreateTranslation("Pip-Boy4ktext4");
             		text.SetDefault("Thrown damage/critical strike chance boosts are ");
 			text.AddTranslation(GameCulture.Chinese, "投掷伤害/暴击率增加");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext5");
+			text = mod.CreateTranslation("Pip-Boy4ktext5");
             		text.SetDefault("Summoner damage boost is ");
 			text.AddTranslation(GameCulture.Chinese, "召唤伤害增加");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext6");
+			text = mod.CreateTranslation("Pip-Boy4ktext6");
             		text.SetDefault("Damage Reduction boost is ");
 			text.AddTranslation(GameCulture.Chinese, "伤害抗性增加");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext7");
+			text = mod.CreateTranslation("Pip-Boy4ktext7");
             		text.SetDefault("Movement speed boost is ");
 			text.AddTranslation(GameCulture.Chinese, "移动速度增加");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext8");
+			text = mod.CreateTranslation("Pip-Boy4ktext8");
             		text.SetDefault("Max life boost is ");
 			text.AddTranslation(GameCulture.Chinese, "最大生命增加");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext9");
+			text = mod.CreateTranslation("Pip-Boy4ktext9");
             		text.SetDefault("Life regeneration is ");
 			text.AddTranslation(GameCulture.Chinese, "生命再生速度");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext10");
+			text = mod.CreateTranslation("Pip-Boy4ktext10");
             		text.SetDefault("Mana usage reduction is ");
 			text.AddTranslation(GameCulture.Chinese, "魔法消耗减少");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext11");
+			text = mod.CreateTranslation("Pip-Boy4ktext11");
             		text.SetDefault("Max amounts of minions/sentries are ");
 			text.AddTranslation(GameCulture.Chinese, "最大召唤物/炮台数量");
             		mod.AddTranslation(text);
 			
-			text = mod.CreateTranslation("Pip-Boy 4ktext12");
+			text = mod.CreateTranslation("Pip-Boy4ktext12");
             		text.SetDefault("Melee swing time is ");
 			text.AddTranslation(GameCulture.Chinese, "近战武器挥动");
             		mod.AddTranslation(text);
@@ -121,18 +121,18 @@ namespace AlchemistNPC.Items.Misc
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			Player player = Main.player[Main.myPlayer];
-			string text1 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext1") + (int)((player.meleeDamage*100)-100) + "%" + " / " + (player.meleeCrit-4) + "%";
-			string text2 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext2") + (int)((player.rangedDamage*100)-100) + "%" + " / " + (player.rangedCrit-4) + "%";
-			string text3 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext3") + (int)((player.magicDamage*100)-100) + "%" + " / " + (player.magicCrit-4) + "%";
-			string text4 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext4") + (int)((player.thrownDamage*100)-100) + "%" + " / " + (player.thrownCrit-4) + "%";
-			string text5 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext5") + (int)((player.minionDamage*100)-100) + "%";
-			string text6 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext6") + (int)(player.endurance*100) + "%";
-			string text7 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext7") + (int)((player.moveSpeed*100)-100) + "%";
-			string text8 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext8") + (player.statLifeMax2 - player.statLifeMax);
-			string text9 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext9") + (player.lifeRegen);
-			string text10 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext10") + (int)((player.manaCost*100)-100) + "%";
-			string text11 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext11") + player.maxMinions + " / " + player.maxTurrets;
-			string text12 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy 4ktext12") + (int)(player.meleeSpeed*100) + "%";
+			string text1 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext1") + (int)((player.meleeDamage*100)-100) + "%" + " / " + (player.meleeCrit-4) + "%";
+			string text2 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext2") + (int)((player.rangedDamage*100)-100) + "%" + " / " + (player.rangedCrit-4) + "%";
+			string text3 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext3") + (int)((player.magicDamage*100)-100) + "%" + " / " + (player.magicCrit-4) + "%";
+			string text4 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext4") + (int)((player.thrownDamage*100)-100) + "%" + " / " + (player.thrownCrit-4) + "%";
+			string text5 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext5") + (int)((player.minionDamage*100)-100) + "%";
+			string text6 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext6") + (int)(player.endurance*100) + "%";
+			string text7 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext7") + (int)((player.moveSpeed*100)-100) + "%";
+			string text8 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext8") + (player.statLifeMax2 - player.statLifeMax);
+			string text9 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext9") + (player.lifeRegen);
+			string text10 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext10") + (int)((player.manaCost*100)-100) + "%";
+			string text11 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext11") + player.maxMinions + " / " + player.maxTurrets;
+			string text12 = Language.GetTextValue("Mods.AlchemistNPC.Pip-Boy4ktext12") + (int)(player.meleeSpeed*100) + "%";
 			TooltipLine line = new TooltipLine(mod, "text1", text1);
 			TooltipLine line2 = new TooltipLine(mod, "text2", text2);
 			TooltipLine line3 = new TooltipLine(mod, "text3", text3);
