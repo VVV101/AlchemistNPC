@@ -57,7 +57,7 @@ namespace AlchemistNPC.Items.Misc
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");

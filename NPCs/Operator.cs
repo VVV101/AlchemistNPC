@@ -661,87 +661,87 @@ namespace AlchemistNPC.NPCs
  
 		public bool CalamityModDownedGuardian
 		{
-		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
 		}
 		public bool CalamityModDownedPlaguebringer
 		{
-		get { return CalamityMod.CalamityWorld.downedPlaguebringer; }
+		get { return CalamityMod.World.CalamityWorld.downedPlaguebringer; }
 		}
 		public bool CalamityModDownedRavager
 		{
-		get { return CalamityMod.CalamityWorld.downedScavenger; }
+		get { return CalamityMod.World.CalamityWorld.downedScavenger; }
 		}
 		public bool CalamityModDownedBirb
 		{
-		get { return CalamityMod.CalamityWorld.downedBumble; }
+		get { return CalamityMod.World.CalamityWorld.downedBumble; }
 		}
 		public bool CalamityModDownedPolter
 		{
-		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
 		public bool CalamityModDownedDOG
 		{
-		get { return CalamityMod.CalamityWorld.downedDoG; }
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
 		}
 		public bool CalamityModDownedYharon
 		{
-		get { return CalamityMod.CalamityWorld.downedYharon; }
+		get { return CalamityMod.World.CalamityWorld.downedYharon; }
 		}
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		public bool CalamityModDownedAstrum
 		{
-		get { return CalamityMod.CalamityWorld.downedStarGod; }
+		get { return CalamityMod.World.CalamityWorld.downedStarGod; }
 		}
 		public bool CalamityModDownedSlimeGod
         {
-        get { return CalamityMod.CalamityWorld.downedSlimeGod; }
+        get { return CalamityMod.World.CalamityWorld.downedSlimeGod; }
         }
 		public bool CalamityModDownedHiveMind
         {
-        get { return CalamityMod.CalamityWorld.downedHiveMind; }
+        get { return CalamityMod.World.CalamityWorld.downedHiveMind; }
         }
         public bool CalamityModDownedPerforators
         {
-        get { return CalamityMod.CalamityWorld.downedPerforator; }
+        get { return CalamityMod.World.CalamityWorld.downedPerforator; }
         }
 		public bool CalamityModDownedCalamitas
         {
-        get { return CalamityMod.CalamityWorld.downedCalamitas; }
+        get { return CalamityMod.World.CalamityWorld.downedCalamitas; }
         }
 		public bool CalamityModDownedProvidence
         {
-        get { return CalamityMod.CalamityWorld.downedProvidence; }
+        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
         }
 		public bool CalamityModDownedCryogen
 		{
-        get { return CalamityMod.CalamityWorld.downedCryogen; }
+        get { return CalamityMod.World.CalamityWorld.downedCryogen; }
         }
 		public bool CalamityModDownedLeviathan
         {
-        get { return CalamityMod.CalamityWorld.downedLeviathan; }
+        get { return CalamityMod.World.CalamityWorld.downedLeviathan; }
         }
 		public bool CalamityModDownedAstrageldon
         {
-        get { return CalamityMod.CalamityWorld.downedAstrageldon; }
+        get { return CalamityMod.World.CalamityWorld.downedAstrageldon; }
         }
 		public bool CalamityModDownedCrabulon
         {
-        get { return CalamityMod.CalamityWorld.downedCrabulon; }
+        get { return CalamityMod.World.CalamityWorld.downedCrabulon; }
         }
 		public bool CalamityModDownedDesertScourge
         {
-        get { return CalamityMod.CalamityWorld.downedDesertScourge; }
+        get { return CalamityMod.World.CalamityWorld.downedDesertScourge; }
         }
 		public bool CalamityModDownedAquaticScourge
         {
-        get { return CalamityMod.CalamityWorld.downedAquaticScourge; }
+        get { return CalamityMod.World.CalamityWorld.downedAquaticScourge; }
         }
 		public bool CalamityModDownedBrimstoneElemental
         {
-        get { return CalamityMod.CalamityWorld.downedBrimstoneElemental; }
+        get { return CalamityMod.World.CalamityWorld.downedBrimstoneElemental; }
         }
  
 		public bool ThoriumModDownedGTBird

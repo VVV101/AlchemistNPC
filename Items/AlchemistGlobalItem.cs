@@ -27,7 +27,7 @@ namespace AlchemistNPC.Items
 		
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		
 		public override void HoldItem(Item item, Player player)

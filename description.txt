@@ -9,6 +9,7 @@ The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv84.json.
 v8.6
 -Updated for tModloader 0.11.1.
+-Fixed incompatibility with Calamity mod.
 -Reworked some weapons.
 -Nerfed Paradise Lost set bonus.
 -Fixed souls counter for Cracked Crown's pet in multiplayer.

@@ -45,7 +45,7 @@ namespace AlchemistNPC.Items.Equippable
 
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		public override void UpdateAccessory(Player player, bool hideVisual)
