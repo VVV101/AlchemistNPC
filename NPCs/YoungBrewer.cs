@@ -114,11 +114,13 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("Entry10");
             text.SetDefault("Certain combinations can only be brewed if certain types of magic are present in the world.");
             text.AddTranslation(GameCulture.Russian, "Некоторые комбинации могут быть изготовлены только если в мире присутсвуют особенные виды магии.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "某些整合药剂包只有在世界上存在某种魔法的情况下才能制作出来。");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("Entry11");
             text.SetDefault("You might be wondering how do i put actual rainbows in a flask... Well, with the power of maaagic...... and eternal sufferings.");
             text.AddTranslation(GameCulture.Russian, "Тебе наверное любопытно, как я поместил настоящую радугу во флакон... Ну, силами магии... и вечными страданиями.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "你可能想知道我怎么把真正的彩虹放在瓶子里…好吧，有了巨大大大大魔法的力量……以及永恒的痛苦。");
+	    mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()

@@ -194,7 +194,8 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("EntryB19");
             text.SetDefault("I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.");
             text.AddTranslation(GameCulture.Russian, "Я однажды выбралась из мира Террарии чтобы узнать больше об Алхимии. В своих путешествиях я встретила ''учёного магии'' по имени Азанор. Он показал мне тайны чего-то, названного ''тауматургия''.");
-            mod.AddTranslation(text);
+             text.AddTranslation(GameCulture.Chinese, "我曾经远离泰拉大陆去了解更多有关炼金术的信息。 在我的旅行中，我遇到了一位名叫Azanor的“魔法科学家”。 他向我展示了一种叫做''thaumaturgy''的魔法奥秘。");
+	    mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()

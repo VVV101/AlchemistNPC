@@ -243,15 +243,19 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("EntryO34");
             text.SetDefault("I’m honestly not sure why giant spinning skulls are the key to everything, but somehow they seem to contain the power of celestial beings within them...");
             text.AddTranslation(GameCulture.Russian, "Я на самом деле не уверена, почему гигантские вращающиеся черепа - ключ ко всему, но каким-то образом они хранят в себе мощь божественных созданий...");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "老实说，我不知道为什么巨大的旋转头骨是一切的关键，但不知何故，它们似乎包含着天人的力量…");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryO35");
             text.SetDefault("Yeah, I know that we are the ones capturing and farming horrifying eldritch entities. But who the hell thought It was a good idea to put loot bags inside a giant monster?!?!");
             text.AddTranslation(GameCulture.Russian, "Да, я знаю, что мы те, кто захватывает и добывает материалы из сверхъестественных существ. Но кто чёрт возьми подумал, что будет хорошей идеей поместить сумку с ценностями внутрь гигантского чудовища?!?!");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "是的，我知道我们是捕获和饲养恐怖的怪物的人。但谁会认为把宝藏袋放在一个巨大的怪物里面是个好主意呢？！？你看！");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryO36");
             text.SetDefault("Кemember Manager, Treasure Bags are valuable but not everything comes inside them. That mutant man can help you get a boss's most elusive drops.");
             text.AddTranslation(GameCulture.Russian, "Помни, Управляющий, хотя Сумки с Сокровищами ценны, но не всё может найтись внутри. Мутант может помочь тебе добыть редчайший лут с боссов.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "КEmember经理，宝藏袋很值钱，但不是所有东西都在里面。那个变种人能帮你得到Boss的稀有掉落物。");
+	    
+	    mod.AddTranslation(text);
         }
 
 		public override void ResetEffects()
