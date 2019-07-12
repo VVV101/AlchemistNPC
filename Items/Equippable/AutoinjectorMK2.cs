@@ -57,6 +57,7 @@ namespace AlchemistNPC.Items.Equippable
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			player.AddBuff(mod.BuffType("CalamityComb"), 2);
+			CalamityBoost(player);
 			}
 			if (ModLoader.GetMod("Redemption") != null)
 			{
@@ -70,26 +71,13 @@ namespace AlchemistNPC.Items.Equippable
 			{
 				if (ModLoader.GetMod("SpiritMod") != null)
 				{
-				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("SpiritBuff"), 2, true);
-				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("RunePotionBuff"), 2, true);
-				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("SoulPotionBuff"), 2, true);
-				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("StarPotionBuff"), 2, true);
-				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("TurtlePotionBuff"), 2, true);
-				player.AddBuff(ModLoader.GetMod("SpiritMod").BuffType("BismitePotionBuff"), 2, true);
+				player.AddBuff(mod.BuffType("SpiritComb"), 2);
 				}
 				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
-				ThoriumBoosts(player);
 				player.AddBuff(mod.BuffType("ThoriumComb"), 2);
-				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("CreativityDrop"), 2, true);
-				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("EarwormBuff"), 2, true);
-				player.AddBuff(ModLoader.GetMod("ThoriumMod").BuffType("InspirationReach"), 2, true);
 				}
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
-				{
-				CalamityBoost(player);
-				}
 		}
 		
 		private void CalamityBoost(Player player)

@@ -147,6 +147,17 @@ namespace AlchemistNPC.Buffs
 			}
 			++player.maxMinions;
 			++player.maxMinions;
+			if (ModLoader.GetMod("MorePotions") != null)
+			{
+				if (player.HasBuff(mod.BuffType("MorePotionsComb")) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("SoulbindingElixerPotionBuff")))
+				{
+					--player.maxMinions;
+				}
+				if (player.HasBuff(mod.BuffType("MorePotionsComb")) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("DiamondSkinPotionBuff")))
+				{
+					player.statDefense -= 8;
+				}
+			}
 		}
 		
 		private void CalamityBoost(Player player, int dc)

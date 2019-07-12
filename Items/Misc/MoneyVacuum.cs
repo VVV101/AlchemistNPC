@@ -13,8 +13,8 @@ namespace AlchemistNPC.Items.Misc
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Heart of the Greed");
-			Tooltip.SetDefault("While this is in your inventory, all dropped in world money go to your inventory");
+			DisplayName.SetDefault("Heart of Greed");
+			Tooltip.SetDefault("While in your inventory, all money dropped goes in your inventory");
         }
 
 		public override void SetDefaults()

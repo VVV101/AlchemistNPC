@@ -197,6 +197,10 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Если ли имя у страха того, что за тобой шпионят с помощью торта?");
             text.AddTranslation(GameCulture.Chinese, "有没有一个名字是因为害怕被蛋糕监视？");
 	    mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryM22");
+            text.SetDefault("You are hurting my ears! Turn it down!");
+            text.AddTranslation(GameCulture.Russian, "У меня уже болят уши! Сделай потише!");
+	    mod.AddTranslation(text);
 
         }
 		
@@ -329,6 +333,7 @@ namespace AlchemistNPC.NPCs
 		string EntryM19 = Language.GetTextValue("Mods.AlchemistNPC.EntryM19");
 		string EntryM20 = Language.GetTextValue("Mods.AlchemistNPC.EntryM20");
 		string EntryM21 = Language.GetTextValue("Mods.AlchemistNPC.EntryM21");
+		string EntryM22 = Language.GetTextValue("Mods.AlchemistNPC.EntryM22");
 		string Gamma = Language.GetTextValue("Mods.AlchemistNPC.Gamma");
 		int Cyborg = NPC.FindFirstNPC(NPCID.Cyborg);
 		int Mechanic = NPC.FindFirstNPC(NPCID.Mechanic);
@@ -339,6 +344,10 @@ namespace AlchemistNPC.NPCs
 			if (Main.musicVolume == 0)
 			{
 				return EntryM19;
+			}
+			if (Main.musicVolume == 100)
+			{
+				return EntryM22;
 			}
 			if (Main.bloodMoon)
 			{

@@ -60,6 +60,7 @@ namespace AlchemistNPC.Tiles
 			if (closer)
 			{
 				Player player = Main.player[Main.myPlayer];
+				if (!player.dead)
 				player.AddBuff(mod.BuffType("HoloprojectorCrimson"), 60);
 			}
 		}

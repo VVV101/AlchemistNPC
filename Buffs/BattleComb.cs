@@ -139,6 +139,13 @@ namespace AlchemistNPC.Buffs
 			player.buffImmune[115] = true;
 			player.buffImmune[117] = true;
 			}
+			if (ModLoader.GetMod("MorePotions") != null)
+			{
+				if (player.HasBuff(mod.BuffType("MorePotionsComb")) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("DiamondSkinPotionBuff")))
+				{
+					player.statDefense -= 8;
+				}
+			}
 		}
 		
 		private void CalamityBoost(Player player, int dc)

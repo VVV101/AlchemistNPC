@@ -80,6 +80,13 @@ namespace AlchemistNPC.Buffs
 				RedemptionBoost(player);
 				}
 			}
+			if (ModLoader.GetMod("MorePotions") != null)
+			{
+				if (player.HasBuff(mod.BuffType("MorePotionsComb")) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("SoulbindingElixerPotionBuff")))
+				{
+					--player.maxMinions;
+				}
+			}
 		}
 		
 		private void CalamityBoost(Player player)

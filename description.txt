@@ -7,10 +7,16 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv84.json.
-v8.6.1
+v8.7
 -Combinations now disable their certain boosts when Calamity Combination, Profaned Rage, Holy Wrath or Cadence potion buffs are active.
--Added Heart of the Greed. Makes any money dropped in the world go into player's inventory. Works if placed in inventory.
+-Added Heart of Greed. Makes any money dropped in the world go into player's inventory. Works if placed in inventory.
 Available after beating any mechanical boss.
+-Added More Potions Combination. 
+Available in hardmode.
+-Both Thorium and Spirit Combinations now take only 1 buff slot.
+-Some changes in Operator's shop.
+-Some new quotes for NPCs.
+-Holoprojectors no longer work while player is dead.
 v8.6
 -Updated for tModloader 0.11.1.
 -Fixed incompatibility with Calamity mod.

@@ -345,6 +345,15 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
+				if (ModLoader.GetMod("MorePotions") != null)
+				{
+					if (Main.hardMode)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MorePotionsCombination"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+					}
+				}
 				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 					if (NPC.downedMechBossAny)
