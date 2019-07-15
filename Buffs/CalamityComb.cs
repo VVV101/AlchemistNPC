@@ -96,7 +96,6 @@ namespace AlchemistNPC.Buffs
 		private void CalamityBoost(Player player)
         {
 			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
-			CalamityPlayer.throwingDamage += 0.14f;
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))

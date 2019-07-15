@@ -8,6 +8,9 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv84.json.
 v8.7
+-Added new mode, Anti Buff mode. During Anti Buff mode, player is immune to all buffs (not debuffs).
+Buffs without duration display are not disabled. Bosses and minibosses may drop permament boosting items. Their effects would work only if mode is on.
+Anti Buff activator can be crafted on Demon Altar.
 -Combinations now disable their certain boosts when Calamity Combination, Profaned Rage, Holy Wrath or Cadence potion buffs are active.
 -Added Heart of Greed. Makes any money dropped in the world go into player's inventory. Works if placed in inventory.
 Available after beating any mechanical boss.
