@@ -60,6 +60,7 @@ namespace AlchemistNPC.Interface
 			float fill = Shield / 150;
 			Main.spriteBatch.Draw(mod.GetTexture("Interface/ShieldBar"), new Vector2(anchorX, 64f), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
 			Main.spriteBatch.Draw(mod.GetTexture("Interface/ShieldCharge"), new Vector2(anchorX + padding, 64f + padding), new Rectangle(0, 0, (int)(fill * chargeSize), chargeHeight), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.Draw(mod.GetTexture("Interface/ShieldBarShield"), new Vector2(anchorX + padding, 64f + padding), new Rectangle(0, 0, (int)(fill * chargeSize), chargeHeight), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
 
 			return true;
 		}

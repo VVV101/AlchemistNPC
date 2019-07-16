@@ -15,8 +15,8 @@ namespace AlchemistNPC.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.width = 118;
-            projectile.height = 118;
+            projectile.width = 108;
+            projectile.height = 98;
             projectile.friendly = false;
             projectile.hostile = false;
             projectile.penetrate = -1;
@@ -79,7 +79,7 @@ namespace AlchemistNPC.Projectiles
 					vector4 *= scaleFactor;
 					if (vector4.X != projectile.velocity.X || vector4.Y != projectile.velocity.Y)
 					{
-						projectile.netUpdate = true;
+						
 					}
 					projectile.velocity = vector4;
 					float scaleFactor2 = 14f;
@@ -94,7 +94,7 @@ namespace AlchemistNPC.Projectiles
 					}
 				}
 			}
-			
+			projectile.netUpdate = true;
 			if (player.direction == 1)
 			{
 				projectile.spriteDirection = 1;
@@ -156,11 +156,6 @@ namespace AlchemistNPC.Projectiles
 					Projectile.NewProjectile(vector8.X, vector8.Y, perturbedSpeed1.X, perturbedSpeed1.Y, mod.ProjectileType("VoidDummy"), projectile.damage, projectile.knockBack, player.whoAmI);
 				}
 			}
-        }
-
-        public override void Kill(int timeLeft)
-        {
-			Player player = Main.player[projectile.owner];
         }
     }
 }
