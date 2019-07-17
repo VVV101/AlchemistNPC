@@ -22,6 +22,7 @@ Available in hardmode.
 -Some new quotes for NPCs.
 -Holoprojectors no longer work while player is dead.
 -Fixed Shield Bar and Grinder MK4 sprites.
+-Fixed Godhead and Soul of Fear breaking true melee.
 v8.6
 -Updated for tModloader 0.11.1.
 -Fixed incompatibility with Calamity mod.
