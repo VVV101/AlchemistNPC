@@ -46,14 +46,6 @@ namespace AlchemistNPC.Items
             item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
         }
 		
-		public override bool UseItem(Player player)
-		{
-			player.AddBuff((ModLoader.GetMod("ThoriumMod").BuffType("CreativityDrop")), 52000, true);
-			player.AddBuff((ModLoader.GetMod("ThoriumMod").BuffType("EarwormBuff")), 52000, true);
-			player.AddBuff((ModLoader.GetMod("ThoriumMod").BuffType("InspirationReach")), 52000, true);
-			return true;
-		}
-		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);

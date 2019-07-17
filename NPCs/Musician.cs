@@ -197,6 +197,10 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Если ли имя у страха того, что за тобой шпионят с помощью торта?");
             text.AddTranslation(GameCulture.Chinese, "有没有一个名字是因为害怕被蛋糕监视？");
 	    mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryM22");
+            text.SetDefault("You are hurting my ears! Turn it down!");
+            text.AddTranslation(GameCulture.Russian, "У меня уже болят уши! Сделай потише!");
+	    mod.AddTranslation(text);
 
         }
 		
@@ -329,6 +333,7 @@ namespace AlchemistNPC.NPCs
 		string EntryM19 = Language.GetTextValue("Mods.AlchemistNPC.EntryM19");
 		string EntryM20 = Language.GetTextValue("Mods.AlchemistNPC.EntryM20");
 		string EntryM21 = Language.GetTextValue("Mods.AlchemistNPC.EntryM21");
+		string EntryM22 = Language.GetTextValue("Mods.AlchemistNPC.EntryM22");
 		string Gamma = Language.GetTextValue("Mods.AlchemistNPC.Gamma");
 		int Cyborg = NPC.FindFirstNPC(NPCID.Cyborg);
 		int Mechanic = NPC.FindFirstNPC(NPCID.Mechanic);
@@ -339,6 +344,10 @@ namespace AlchemistNPC.NPCs
 			if (Main.musicVolume == 0)
 			{
 				return EntryM19;
+			}
+			if (Main.musicVolume == 100)
+			{
+				return EntryM22;
 			}
 			if (Main.bloodMoon)
 			{
@@ -438,87 +447,87 @@ namespace AlchemistNPC.NPCs
 		
 		public bool CalamityModMusicDownedGuardian
 		{
-		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
 		}
 		public bool CalamityModMusicDownedPlaguebringer
 		{
-		get { return CalamityMod.CalamityWorld.downedPlaguebringer; }
+		get { return CalamityMod.World.CalamityWorld.downedPlaguebringer; }
 		}
 		public bool CalamityModMusicDownedRavager
 		{
-		get { return CalamityMod.CalamityWorld.downedScavenger; }
+		get { return CalamityMod.World.CalamityWorld.downedScavenger; }
 		}
 		public bool CalamityModMusicDownedBirb
 		{
-		get { return CalamityMod.CalamityWorld.downedBumble; }
+		get { return CalamityMod.World.CalamityWorld.downedBumble; }
 		}
 		public bool CalamityModMusicDownedPolter
 		{
-		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
 		public bool CalamityModMusicDownedDOG
 		{
-		get { return CalamityMod.CalamityWorld.downedDoG; }
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
 		}
 		public bool CalamityModMusicDownedYharon
 		{
-		get { return CalamityMod.CalamityWorld.downedYharon; }
+		get { return CalamityMod.World.CalamityWorld.downedYharon; }
 		}
 		public bool CalamityModMusicDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		public bool CalamityModMusicDownedAstrum
 		{
-		get { return CalamityMod.CalamityWorld.downedStarGod; }
+		get { return CalamityMod.World.CalamityWorld.downedStarGod; }
 		}
 		public bool CalamityModMusicDownedSlimeGod
         {
-        get { return CalamityMod.CalamityWorld.downedSlimeGod; }
+        get { return CalamityMod.World.CalamityWorld.downedSlimeGod; }
         }
 		public bool CalamityModMusicDownedHiveMind
         {
-        get { return CalamityMod.CalamityWorld.downedHiveMind; }
+        get { return CalamityMod.World.CalamityWorld.downedHiveMind; }
         }
         public bool CalamityModMusicDownedPerforators
         {
-        get { return CalamityMod.CalamityWorld.downedPerforator; }
+        get { return CalamityMod.World.CalamityWorld.downedPerforator; }
         }
 		public bool CalamityModMusicDownedCalamitas
         {
-        get { return CalamityMod.CalamityWorld.downedCalamitas; }
+        get { return CalamityMod.World.CalamityWorld.downedCalamitas; }
         }
 		public bool CalamityModMusicDownedProvidence
         {
-        get { return CalamityMod.CalamityWorld.downedProvidence; }
+        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
         }
 		public bool CalamityModMusicDownedCryogen
 		{
-        get { return CalamityMod.CalamityWorld.downedCryogen; }
+        get { return CalamityMod.World.CalamityWorld.downedCryogen; }
         }
 		public bool CalamityModMusicDownedLeviathan
         {
-        get { return CalamityMod.CalamityWorld.downedLeviathan; }
+        get { return CalamityMod.World.CalamityWorld.downedLeviathan; }
         }
 		public bool CalamityModMusicDownedAstrageldon
         {
-        get { return CalamityMod.CalamityWorld.downedAstrageldon; }
+        get { return CalamityMod.World.CalamityWorld.downedAstrageldon; }
         }
 		public bool CalamityModMusicDownedCrabulon
         {
-        get { return CalamityMod.CalamityWorld.downedCrabulon; }
+        get { return CalamityMod.World.CalamityWorld.downedCrabulon; }
         }
 		public bool CalamityModMusicDownedDesertScourge
         {
-        get { return CalamityMod.CalamityWorld.downedDesertScourge; }
+        get { return CalamityMod.World.CalamityWorld.downedDesertScourge; }
         }
 		public bool CalamityModMusicDownedAquaticScourge
         {
-        get { return CalamityMod.CalamityWorld.downedAquaticScourge; }
+        get { return CalamityMod.World.CalamityWorld.downedAquaticScourge; }
         }
 		public bool CalamityModMusicDownedBrimstoneElemental
         {
-        get { return CalamityMod.CalamityWorld.downedBrimstoneElemental; }
+        get { return CalamityMod.World.CalamityWorld.downedBrimstoneElemental; }
         }
 		
 		public bool ThoriumModDownedGTBird

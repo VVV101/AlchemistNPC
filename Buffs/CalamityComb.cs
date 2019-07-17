@@ -17,7 +17,6 @@ namespace AlchemistNPC.Buffs
 {
 	public class CalamityComb : ModBuff
 	{
-		
 		public override bool Autoload(ref string name, ref string texture)
 		{
 		return ModLoader.GetMod("CalamityMod") != null;
@@ -38,30 +37,27 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.thrownDamage += 0.18f;
-            player.meleeDamage += 0.18f;
-			player.meleeSpeed += 0.1f;
-            player.rangedDamage += 0.18f;
-            player.magicDamage += 0.18f;
-            player.minionDamage += 0.18f;
-			player.meleeCrit += 5;
-            player.rangedCrit += 5;
-            player.magicCrit += 5;
-            player.thrownCrit += 5;
-			player.statDefense -= 5;
-			player.moveSpeed += 0.15f;
+			player.meleeSpeed += 0.05f;
+			player.meleeCrit += 2;
+            player.rangedCrit += 2;
+            player.magicCrit += 2;
+            player.thrownCrit += 2;
+			player.statDefense -= 10;
+			player.moveSpeed += 0.1f;
 			player.kbBuff = true;
 			player.minionKB += 5f;
-			player.lifeRegen += 4;
+			player.lifeRegen += 5;
 			player.findTreasure = true;
 			player.detectCreature = true;
 			player.dangerSense = true;
 			player.endurance += 0.1f;
 			player.lifeForce = true;
-            player.statLifeMax2 += player.statLifeMax / 10;
+            player.statLifeMax2 += player.statLifeMax / 4;
 			player.lifeMagnet = true;
 			player.calmed = true;
 			player.discount = true;
+			player.buffImmune[2] = true;
+			player.buffImmune[13] = true;
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("Cadence")] = true;
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("YharimPower")] = true;
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("TitanScale")] = true;
@@ -77,35 +73,81 @@ namespace AlchemistNPC.Buffs
 				}
 				if (ModLoader.GetMod("CalamityMod") != null)
 				{
-				CalamityBoost(player);
+					if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
+					{
+						player.thrownDamage += 0.14f;
+						player.meleeDamage += 0.14f;
+						player.rangedDamage += 0.14f;
+						player.magicDamage += 0.14f;
+						player.minionDamage += 0.14f;
+					}
+					if (player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
+					{
+						player.thrownDamage += 0.24f;
+						player.meleeDamage += 0.24f;
+						player.rangedDamage += 0.24f;
+						player.magicDamage += 0.24f;
+						player.minionDamage += 0.24f;
+					}
+					CalamityBoost(player);
 				}
 		}
 		
 		private void CalamityBoost(Player player)
         {
 			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
-			CalamityPlayer.throwingDamage += 0.18f;
-            CalamityPlayer.throwingCrit += 5;
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
+				{
+					CalamityPlayer.throwingDamage += 0.14f;
+				}
+				if (player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
+				{
+					CalamityPlayer.throwingDamage += 0.24f;
+				}
+			}
+            CalamityPlayer.throwingCrit += 2;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.18f;
-            RedemptionPlayer.druidCrit += 5;
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
+				{
+					RedemptionPlayer.druidDamage += 0.14f;
+				}
+				if (player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
+				{
+					RedemptionPlayer.druidDamage += 0.24f;
+				}
+			}
+            RedemptionPlayer.druidCrit += 2;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.18f;
-            ThoriumPlayer.symphonicCrit += 5;
-			ThoriumPlayer.radiantBoost += 0.18f;
-            ThoriumPlayer.radiantCrit += 5;
+            ThoriumPlayer.symphonicCrit += 2;
+            ThoriumPlayer.radiantCrit += 2;
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
+				{
+					ThoriumPlayer.symphonicDamage += 0.14f;
+					ThoriumPlayer.radiantBoost += 0.14f;
+				}
+				if (player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
+				{
+					ThoriumPlayer.symphonicDamage += 0.24f;
+					ThoriumPlayer.radiantBoost += 0.24f;
+				}
+			}
         }
-		
 		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

@@ -90,6 +90,7 @@ namespace AlchemistNPC
 		public static bool foundT2;
 		public static bool foundT3;
 		public static bool foundPHD;
+		public static bool foundAntiBuffMode;
 
 		public override void Initialize()
 		{
@@ -166,6 +167,7 @@ namespace AlchemistNPC
 			foundT2 = false;
 			foundT3 = false;
 			foundPHD = false;
+			foundAntiBuffMode = false;
 		}
 
 		public override TagCompound Save()
@@ -244,6 +246,7 @@ namespace AlchemistNPC
 			if (foundT2) found.Add("T2");
 			if (foundT3) found.Add("T3");
 			if (foundPHD) found.Add("PHD");
+			if (foundAntiBuffMode) found.Add("AntiBuffMode");
 			
 			return new TagCompound {
 				{"found", found}
@@ -353,6 +356,7 @@ namespace AlchemistNPC
 			
 			BitsByte flags10 = new BitsByte();
 			flags10[0] = foundPHD;
+			flags10[1] = foundAntiBuffMode;
 			writer.Write(flags10);
 		}
 
@@ -450,6 +454,7 @@ namespace AlchemistNPC
 			
 			BitsByte flags10 = reader.ReadByte();
 			foundPHD = flags10[0];
+			foundAntiBuffMode = flags10[1];
 			// As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:
 			// BitsByte flags2 = reader.ReadByte();
 			// downed9thBoss = flags[0];
@@ -531,6 +536,7 @@ namespace AlchemistNPC
 			foundT2 = found.Contains("T2");
 			foundT3 = found.Contains("T3");
 			foundPHD = found.Contains("PHD");
+			foundAntiBuffMode = found.Contains("AntiBuffMode");
 		}
 	}
 }

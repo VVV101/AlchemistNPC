@@ -1,6 +1,7 @@
 using Terraria.Utilities;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,7 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Localization;
 using AlchemistNPC.Interface;
+using AlchemistNPC;
 
 namespace AlchemistNPC.Items
 {
@@ -27,7 +29,7 @@ namespace AlchemistNPC.Items
 		
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		
 		public override void HoldItem(Item item, Player player)
@@ -396,6 +398,10 @@ namespace AlchemistNPC.Items
 		
 		public override float UseTimeMultiplier(Item item, Player player)	
 		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).GolemBooster == 1 && item.useTime > 3)
+			{
+				return 1.1f;
+			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Symbiote == true && item.useTime > 3)
 			{
 				return 1.2f;
@@ -1243,8 +1249,24 @@ namespace AlchemistNPC.Items
 			}
 		}
 		
+		public override void VerticalWingSpeeds(Item item, Player player, ref float ascentWhenFalling, ref float ascentWhenRising, ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend) 
+		{
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			if (modPlayer.BetsyBooster == 1)
+			{
+				maxCanAscendMultiplier += 1f;
+				maxAscentMultiplier += 1f;
+			}
+		}
+		
 		public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)	
 		{
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			if (modPlayer.BetsyBooster == 1)
+			{
+				speed += 0.1f;
+				acceleration += 0.1f;
+			}
 			if (player.HasBuff(mod.BuffType("Exhausted")))
 			{
 			speed *= 0.8f;

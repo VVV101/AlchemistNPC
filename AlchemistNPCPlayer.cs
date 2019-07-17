@@ -128,9 +128,56 @@ namespace AlchemistNPC
 		private const int maxBillIsDowned = 1;
 		public int BillIsDowned = 0;
 		
+		private const int maxKingSlimeBooster = 1;
+		public int KingSlimeBooster = 0;
+		private const int maxEyeOfCthulhuBooster = 1;
+		public int EyeOfCthulhuBooster = 0;
+		private const int maxEaterOfWorldsBooster = 1;
+		public int EaterOfWorldsBooster = 0;
+		private const int maxBrainOfCthulhuBooster = 1;
+		public int BrainOfCthulhuBooster = 0;
+		private const int maxQueenBeeBooster = 1;
+		public int QueenBeeBooster = 0;
+		private const int maxSkeletronBooster = 1;
+		public int SkeletronBooster = 0;
+		private const int maxWoFBooster = 1;
+		public int WoFBooster = 0;
+		private const int maxDarkMageBooster = 1;
+		public int DarkMageBooster = 0;
+		private const int maxDestroyerBooster = 1;
+		public int DestroyerBooster = 0;
+		private const int maxCustomBooster1 = 1;
+		public int CustomBooster1 = 0;
+		private const int maxPrimeBooster = 1;
+		public int PrimeBooster = 0;
+		private const int maxTwinsBooster = 1;
+		public int TwinsBooster = 0;
+		private const int maxPlanteraBooster = 1;
+		public int PlanteraBooster = 0;
+		private const int maxIceGolemBooster = 1;
+		public int IceGolemBooster = 0;
+		private const int maxPigronBooster = 1;
+		public int PigronBooster = 0;
+		private const int maxOgreBooster = 1;
+		public int OgreBooster = 0;
+		private const int maxGolemBooster = 1;
+		public int GolemBooster = 0;
+		private const int maxBetsyBooster = 1;
+		public int BetsyBooster = 0;
+		private const int maxGSummonerBooster = 1;
+		public int GSummonerBooster = 0;
+		private const int maxFishronBooster = 1;
+		public int FishronBooster = 0;
+		private const int maxMartianSaucerBooster = 1;
+		public int MartianSaucerBooster = 0;
+		private const int maxCultistBooster = 1;
+		public int CultistBooster = 0;
+		private const int maxMoonLordBooster = 1;
+		public int MoonLordBooster = 0;
+		
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		
 		public override bool CloneNewInstances
@@ -277,6 +324,30 @@ namespace AlchemistNPC
 			packet.Write(BillIsDowned);
 			packet.Write(BBP);
 			packet.Write(SnatcherCounter);
+			
+			packet.Write(KingSlimeBooster);
+			packet.Write(EyeOfCthulhuBooster);
+			packet.Write(EaterOfWorldsBooster);
+			packet.Write(BrainOfCthulhuBooster);
+			packet.Write(QueenBeeBooster);
+			packet.Write(SkeletronBooster);
+			packet.Write(WoFBooster);
+			packet.Write(DarkMageBooster);
+			packet.Write(CustomBooster1);
+			packet.Write(DestroyerBooster);
+			packet.Write(PrimeBooster);
+			packet.Write(TwinsBooster);
+			packet.Write(IceGolemBooster);
+			packet.Write(PigronBooster);
+			packet.Write(OgreBooster);
+			packet.Write(PlanteraBooster);
+			packet.Write(GolemBooster);
+			packet.Write(BetsyBooster);
+			packet.Write(GSummonerBooster);
+			packet.Write(FishronBooster);
+			packet.Write(MartianSaucerBooster);
+			packet.Write(CultistBooster);
+			packet.Write(MoonLordBooster);
 			packet.Send(toWho, fromWho);
 		}
 	
@@ -312,6 +383,30 @@ namespace AlchemistNPC
 				{"BillIsDowned", BillIsDowned},
 				{"BBP", BBP},
 				{"SnatcherCounter", SnatcherCounter},
+				
+				{"KingSlimeBooster", KingSlimeBooster},
+				{"EyeOfCthulhuBooster", EyeOfCthulhuBooster},
+				{"EaterOfWorldsBooster", EaterOfWorldsBooster},
+				{"BrainOfCthulhuBooster", BrainOfCthulhuBooster},
+				{"QueenBeeBooster", QueenBeeBooster},
+				{"SkeletronBooster", SkeletronBooster},
+				{"WoFBooster", WoFBooster},
+				{"DarkMageBooster", DarkMageBooster},
+				{"CustomBooster1", CustomBooster1},
+				{"DestroyerBooster", DestroyerBooster},
+				{"PrimeBooster", PrimeBooster},
+				{"TwinsBooster", TwinsBooster},
+				{"IceGolemBooster", IceGolemBooster},
+				{"PigronBooster", PigronBooster},
+				{"OgreBooster", OgreBooster},
+				{"PlanteraBooster", PlanteraBooster},
+				{"GolemBooster", GolemBooster},
+				{"BetsyBooster", BetsyBooster},
+				{"GSummonerBooster", GSummonerBooster},
+				{"FishronBooster", FishronBooster},
+				{"MartianSaucerBooster", MartianSaucerBooster},
+				{"CultistBooster", CultistBooster},
+				{"MoonLordBooster", MoonLordBooster},
 			};
 		}
 		
@@ -324,6 +419,30 @@ namespace AlchemistNPC
 			BillIsDowned = tag.GetInt("BillIsDowned");
 			BBP = tag.GetInt("BBP");
 			SnatcherCounter = tag.GetInt("SnatcherCounter");
+			
+			KingSlimeBooster = tag.GetInt("KingSlimeBooster");
+			EyeOfCthulhuBooster = tag.GetInt("EyeOfCthulhuBooster");
+			EaterOfWorldsBooster = tag.GetInt("EaterOfWorldsBooster");
+			BrainOfCthulhuBooster = tag.GetInt("BrainOfCthulhuBooster");
+			QueenBeeBooster = tag.GetInt("QueenBeeBooster");
+			SkeletronBooster = tag.GetInt("SkeletronBooster");
+			WoFBooster = tag.GetInt("WoFBooster");
+			DarkMageBooster = tag.GetInt("DarkMageBooster");
+			CustomBooster1 = tag.GetInt("CustomBooster1");
+			DestroyerBooster = tag.GetInt("DestroyerBooster");
+			PrimeBooster = tag.GetInt("PrimeBooster");
+			TwinsBooster = tag.GetInt("TwinsBooster");
+			IceGolemBooster = tag.GetInt("IceGolemBooster");
+			PigronBooster = tag.GetInt("PigronBooster");
+			OgreBooster = tag.GetInt("OgreBooster");
+			PlanteraBooster = tag.GetInt("PlanteraBooster");
+			GolemBooster = tag.GetInt("GolemBooster");
+			BetsyBooster = tag.GetInt("BetsyBooster");
+			GSummonerBooster = tag.GetInt("GSummonerBooster");
+			FishronBooster = tag.GetInt("FishronBooster");
+			MartianSaucerBooster = tag.GetInt("MartianSaucerBooster");
+			CultistBooster = tag.GetInt("CultistBooster");
+			MoonLordBooster = tag.GetInt("MoonLordBooster");
 		}
 	
 		public override void AnglerQuestReward(float quality, List<Item> rewardItems)
@@ -423,12 +542,22 @@ namespace AlchemistNPC
 		{	
 			if (target.friendly == false)
 			{
-			if (Illuminati)
+				if (GSummonerBooster == 1)
+				{
+					target.buffImmune[153] = false;
+					target.AddBuff(153, 300);
+				}
+				if (BetsyBooster == 1)
+				{
+					target.buffImmune[189] = false;
+					target.AddBuff(189, 300);
+				}
+				if (Illuminati)
 				{
 					target.buffImmune[BuffID.Midas] = false;
 					target.AddBuff(BuffID.Midas, 600);
 				}
-			if (player.HasBuff(mod.BuffType("RainbowFlaskBuff")))
+				if (player.HasBuff(mod.BuffType("RainbowFlaskBuff")))
 				{
 					target.buffImmune[BuffID.BetsysCurse] = false;
 					target.buffImmune[BuffID.Ichor] = false;
@@ -438,14 +567,14 @@ namespace AlchemistNPC
 					target.AddBuff(BuffID.Ichor, 600);
 					target.AddBuff(BuffID.Daybreak, 600);
 				}
-			if (player.HasBuff(mod.BuffType("BigBirdLamp")))
+				if (player.HasBuff(mod.BuffType("BigBirdLamp")))
 				{
 					target.buffImmune[BuffID.BetsysCurse] = false;
 					target.buffImmune[BuffID.Ichor] = false;
 					target.AddBuff(BuffID.Ichor, 600);
 					target.AddBuff(BuffID.BetsysCurse, 600);
 				}
-			if (Scroll)
+				if (Scroll)
 				{
 					if (target.type != mod.NPCType("Knuckles"))
 					{
@@ -454,7 +583,7 @@ namespace AlchemistNPC
 						target.defense = 0;
 					}
 				}
-			if (player.HasBuff(mod.BuffType("ExplorersBrew")))
+				if (player.HasBuff(mod.BuffType("ExplorersBrew")))
 				{
 					target.AddBuff(mod.BuffType("Electrocute"), 600);
 				}
@@ -465,6 +594,16 @@ namespace AlchemistNPC
 		{
 			if (target.friendly == false)
 			{
+				if (GSummonerBooster == 1)
+				{
+					target.buffImmune[153] = false;
+					target.AddBuff(153, 300);
+				}
+				if (BetsyBooster == 1)
+				{
+					target.buffImmune[189] = false;
+					target.AddBuff(189, 300);
+				}
 				if (Illuminati)
 				{
 					target.buffImmune[BuffID.Midas] = false;
@@ -889,6 +1028,90 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByNPC(NPC npc, ref int damage, ref bool crit) 		
         {
+			if (QueenBeeBooster == 1)
+			{
+				var hornet = new List<int>();
+				for (int k = -65; k < -56; k++)
+				{
+					hornet.Add(k);
+				}
+				for (int j = -21; j < -18; j++)
+				{
+					hornet.Add(j);
+				}
+				hornet.Add(42);
+				hornet.Add(176);
+				for (int l = 231; l < 235; l++)
+				{
+					hornet.Add(l);
+				}
+				hornet.Add(210);
+				hornet.Add(211);
+				for (int choose = 0; choose < hornet.Count; choose++)
+				{
+					if (npc.type == hornet[choose])
+					{
+						damage /= 2;
+					}
+				}
+			}
+			if (SkeletronBooster == 1)
+			{
+				var skeleton = new List<int>();
+				for (int a = -53; a < -46; a++)
+				{
+					skeleton.Add(a);
+				}
+				for (int b = 201; b < 203; b++)
+				{
+					skeleton.Add(b);
+				}
+				for (int c = 291; c < 293; c++)
+				{
+					skeleton.Add(c);
+				}
+				for (int d = 322; d < 324; d++)
+				{
+					skeleton.Add(d);
+				}
+				for (int e = 449; e < 452; e++)
+				{
+					skeleton.Add(e);
+				}
+				skeleton.Add(-15);
+				skeleton.Add(21);
+				skeleton.Add(77);
+				skeleton.Add(110);
+				skeleton.Add(481);
+				skeleton.Add(566);
+				skeleton.Add(567);
+				for (int choose1 = 0; choose1 < skeleton.Count; choose1++)
+				{
+					if (npc.type == skeleton[choose1])
+					{
+						damage /= 2;
+					}
+				}
+			}
+			if (CultistBooster == 1)
+			{
+				var pillare = new List<int>();
+				for (int a1 = 402; a1 < 429; a1++)
+				{
+					pillare.Add(a1);
+				}
+				for (int choose2 = 0; choose2 < pillare.Count; choose2++)
+				{
+					if (npc.type == pillare[choose2])
+					{
+						damage -= damage/3;
+					}
+				}
+			}
+			if (MoonLordBooster == 1)
+			{
+				damage -= damage/5;
+			}
 			if (npc.type == mod.NPCType("BillCipher"))
             {
 				player.AddBuff(mod.BuffType("MindBurn"), 1200);
@@ -930,6 +1153,37 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByProjectile(Projectile proj, ref int damage, ref bool crit) 	
         {
+			if (QueenBeeBooster == 1)
+			{
+				if (proj.type == 55)
+				{
+					damage /= 2;
+				}
+			}
+			if (CultistBooster == 1)
+			{
+				var pillarp = new List<int>();
+				pillarp.Add(537);
+				pillarp.Add(538);
+				pillarp.Add(539);
+				for (int a1 = 573; a1 < 581; a1++)
+				{
+					pillarp.Add(a1);
+				}
+				pillarp.Add(607);
+				pillarp.Add(629);
+				for (int choose = 0; choose < pillarp.Count; choose++)
+				{
+					if (proj.type == pillarp[choose])
+					{
+						damage -= damage/3;
+					}
+				}
+			}
+			if (MoonLordBooster == 1)
+			{
+				damage -= damage/5;
+			}
 			if (TerrarianBlock && !Main.dayTime)
             {
 				damage -= damage/3;

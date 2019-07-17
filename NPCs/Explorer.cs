@@ -226,6 +226,18 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Can you bring me the Unicorn for examination? I am sure that your bug net is strong enough for that.");
             text.AddTranslation(GameCulture.Russian, "Можешь достать мне Единорога для исследований? Я уверена, что твоя сетка для ловли достаточно крепка для этого.");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryE15");
+            text.SetDefault("Messing with the quantic shroud is no fun-time business, hero. Be careful when choosing what power to pick on.");
+            text.AddTranslation(GameCulture.Russian, "Дурачиться с квантовыми полями не самое весёлое занятие, герой. Поосторожнее выбирай силу, с которой будешь работать.");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryE16");
+            text.SetDefault("The time-space continuum is possibly the worst combination in this existance: both a delicate but mastercrafted estructure in a skillfully achieved but pathetically fragile balance and at the same time an absolute and undeniable force of nature that posseses total control of our everything and composes what we call ''reality and fiction'', volatile as you wouldn't believe.");
+            text.AddTranslation(GameCulture.Russian, "Простанственно-временной континуум - это возможно наихудшее сочетание из существующих: одновременно тончайшая и мастерски созданная структура в мастерски достигнутом, но невероятно хрупком балансе и в то же самое время абсолютная и непреодолимая сила природы, что обладает полным контролем над нашим ''всем'' и формирует то, что мы называем ''реальностью и вымыслом'', меняясь так, что ты и не поверишь.");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryE17");
+            text.SetDefault("Take it from someone with experience on it, friend: ''A flying giant divine cosmic worm of the heavens of who-damn-knows-what-deities is the most normal thing you'll find out there compared to what lurks in the darkness of deep space.''");
+            text.AddTranslation(GameCulture.Russian, "Выслушай это от кого-то с опытом, друг: ''Древний гигантский летающий космический червь небес чёрт-знает-какого-божества - это самое нормальное что ты найдёшь, сравнивая с тем, что скрывается во тьме глубого космоса.''");
+            mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()
@@ -292,7 +304,11 @@ namespace AlchemistNPC.NPCs
 			closeness = 15;
 			item = mod.ItemType("Nyx");
 		}
- 
+		
+		public bool CalamityModDownedDOG
+		{
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
+		}
  
         public override string GetChat()
         {                                           //npc chat
@@ -309,12 +325,23 @@ namespace AlchemistNPC.NPCs
 		string Entry11 = Language.GetTextValue("Mods.AlchemistNPC.EntryE11");
 		string Entry12 = Language.GetTextValue("Mods.AlchemistNPC.EntryE12");
 		string Entry13 = Language.GetTextValue("Mods.AlchemistNPC.EntryE13");
+		string Entry14 = Language.GetTextValue("Mods.AlchemistNPC.EntryE14");
+		string Entry15 = Language.GetTextValue("Mods.AlchemistNPC.EntryE15");
+		string Entry16 = Language.GetTextValue("Mods.AlchemistNPC.EntryE16");
+		string Entry17 = Language.GetTextValue("Mods.AlchemistNPC.EntryE17");
 		int Operator = NPC.FindFirstNPC(mod.NPCType("Operator"));
 			if (Operator >= 0 && Main.rand.Next(4) == 0)
 			{
 				return Entry8 + Main.npc[Operator].GivenName + Entry9;
 			}
-            switch (Main.rand.Next(11))
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				if (CalamityModDownedDOG && Main.rand.Next(10) == 0)
+				{
+					return Entry17;
+				}
+			}
+            switch (Main.rand.Next(14))
             {
                 case 0:                                     
 				return Entry1;
@@ -336,6 +363,12 @@ namespace AlchemistNPC.NPCs
 				return Entry12;
 				case 9:
 				return Entry13;
+				case 10:
+				return Entry14;
+				case 11:
+				return Entry15;
+				case 12:
+				return Entry16;
                 default:
 				return Entry10;
             }

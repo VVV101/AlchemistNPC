@@ -173,31 +173,31 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public bool CalamityModDownedGuardian
 		{
-		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
 		}
 		public bool CalamityModDownedBirb
 		{
-		get { return CalamityMod.CalamityWorld.downedBumble; }
+		get { return CalamityMod.World.CalamityWorld.downedBumble; }
 		}
 		public bool CalamityModDownedPolter
 		{
-		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
 		public bool CalamityModDownedDOG
 		{
-		get { return CalamityMod.CalamityWorld.downedDoG; }
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
 		}
 		public bool CalamityModDownedYharon
 		{
-		get { return CalamityMod.CalamityWorld.downedYharon; }
+		get { return CalamityMod.World.CalamityWorld.downedYharon; }
 		}
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		public bool CalamityModDownedProvidence
         {
-        get { return CalamityMod.CalamityWorld.downedProvidence; }
+        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
         }
         public bool ThoriumModDownedRagnarok
         {

@@ -13,11 +13,12 @@ namespace AlchemistNPC.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.friendly = true;
-			projectile.width = 128;
-			projectile.height = 128;
+			projectile.width = 192;
+			projectile.height = 192;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 1;
 			projectile.tileCollide = false;
+			projectile.usesLocalNPCImmunity = true;
 		}
 
 		public override void SetStaticDefaults()
@@ -42,7 +43,6 @@ namespace AlchemistNPC.Projectiles
 
 		public void SoulFear(NPC target)
 		{
-			target.immune[projectile.owner] = 1;
 			target.buffImmune[mod.BuffType("CurseOfLight")] = false;
 			target.AddBuff(mod.BuffType("CurseOfLight"), 600);
 			target.buffImmune[BuffID.Ichor] = false;

@@ -33,7 +33,7 @@ namespace AlchemistNPC.Buffs
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		public override void Update(Player player, ref int buffIndex)

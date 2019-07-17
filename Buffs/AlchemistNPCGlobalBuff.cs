@@ -14,6 +14,14 @@ namespace AlchemistNPC.Buffs
 			{
 				Main.buffNoTimeDisplay[type] = false;
 			}
+			if (AlchemistNPCWorld.foundAntiBuffMode)
+			{
+				player.AddBuff(mod.BuffType("AntiBuff"), 2);
+				if (!Main.buffNoTimeDisplay[type] && player.buffTime[buffIndex] > 2 && !Main.debuff[type] && type != 21 && type != 94)
+				{
+					player.DelBuff(buffIndex);
+				}
+			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BuffsKeep == true)
 			{
 				if (type != 71 && type != 73 && type != 74 && type != 75 && type != 76 && type != 77 && type != 78 && type != 79 && type != mod.BuffType("RainbowFlaskBuff"))

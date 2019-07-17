@@ -665,87 +665,87 @@ namespace AlchemistNPC.NPCs
  
 		public bool CalamityModDownedGuardian
 		{
-		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
 		}
 		public bool CalamityModDownedPlaguebringer
 		{
-		get { return CalamityMod.CalamityWorld.downedPlaguebringer; }
+		get { return CalamityMod.World.CalamityWorld.downedPlaguebringer; }
 		}
 		public bool CalamityModDownedRavager
 		{
-		get { return CalamityMod.CalamityWorld.downedScavenger; }
+		get { return CalamityMod.World.CalamityWorld.downedScavenger; }
 		}
 		public bool CalamityModDownedBirb
 		{
-		get { return CalamityMod.CalamityWorld.downedBumble; }
+		get { return CalamityMod.World.CalamityWorld.downedBumble; }
 		}
 		public bool CalamityModDownedPolter
 		{
-		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
 		public bool CalamityModDownedDOG
 		{
-		get { return CalamityMod.CalamityWorld.downedDoG; }
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
 		}
 		public bool CalamityModDownedYharon
 		{
-		get { return CalamityMod.CalamityWorld.downedYharon; }
+		get { return CalamityMod.World.CalamityWorld.downedYharon; }
 		}
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		public bool CalamityModDownedAstrum
 		{
-		get { return CalamityMod.CalamityWorld.downedStarGod; }
+		get { return CalamityMod.World.CalamityWorld.downedStarGod; }
 		}
 		public bool CalamityModDownedSlimeGod
         {
-        get { return CalamityMod.CalamityWorld.downedSlimeGod; }
+        get { return CalamityMod.World.CalamityWorld.downedSlimeGod; }
         }
 		public bool CalamityModDownedHiveMind
         {
-        get { return CalamityMod.CalamityWorld.downedHiveMind; }
+        get { return CalamityMod.World.CalamityWorld.downedHiveMind; }
         }
         public bool CalamityModDownedPerforators
         {
-        get { return CalamityMod.CalamityWorld.downedPerforator; }
+        get { return CalamityMod.World.CalamityWorld.downedPerforator; }
         }
 		public bool CalamityModDownedCalamitas
         {
-        get { return CalamityMod.CalamityWorld.downedCalamitas; }
+        get { return CalamityMod.World.CalamityWorld.downedCalamitas; }
         }
 		public bool CalamityModDownedProvidence
         {
-        get { return CalamityMod.CalamityWorld.downedProvidence; }
+        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
         }
 		public bool CalamityModDownedCryogen
 		{
-        get { return CalamityMod.CalamityWorld.downedCryogen; }
+        get { return CalamityMod.World.CalamityWorld.downedCryogen; }
         }
 		public bool CalamityModDownedLeviathan
         {
-        get { return CalamityMod.CalamityWorld.downedLeviathan; }
+        get { return CalamityMod.World.CalamityWorld.downedLeviathan; }
         }
 		public bool CalamityModDownedAstrageldon
         {
-        get { return CalamityMod.CalamityWorld.downedAstrageldon; }
+        get { return CalamityMod.World.CalamityWorld.downedAstrageldon; }
         }
 		public bool CalamityModDownedCrabulon
         {
-        get { return CalamityMod.CalamityWorld.downedCrabulon; }
+        get { return CalamityMod.World.CalamityWorld.downedCrabulon; }
         }
 		public bool CalamityModDownedDesertScourge
         {
-        get { return CalamityMod.CalamityWorld.downedDesertScourge; }
+        get { return CalamityMod.World.CalamityWorld.downedDesertScourge; }
         }
 		public bool CalamityModDownedAquaticScourge
         {
-        get { return CalamityMod.CalamityWorld.downedAquaticScourge; }
+        get { return CalamityMod.World.CalamityWorld.downedAquaticScourge; }
         }
 		public bool CalamityModDownedBrimstoneElemental
         {
-        get { return CalamityMod.CalamityWorld.downedBrimstoneElemental; }
+        get { return CalamityMod.World.CalamityWorld.downedBrimstoneElemental; }
         }
  
 		public bool ThoriumModDownedGTBird
@@ -1162,9 +1162,6 @@ namespace AlchemistNPC.NPCs
 				}
 				if (NPC.downedGolemBoss)
 				{
-				shop.item[nextSlot].SetDefaults (ItemID.BeetleHusk);
-				shop.item[nextSlot].shopCustomPrice = 10000;
-				nextSlot++;
 					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
@@ -1206,8 +1203,11 @@ namespace AlchemistNPC.NPCs
 					}
 					if (CalamityModDownedPolter)
 					{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BloodOrb"));
+					shop.item[nextSlot].shopCustomPrice = 50000;
+					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm"));
-					shop.item[nextSlot].shopCustomPrice = 250000;
+					shop.item[nextSlot].shopCustomPrice = 200000;
 					nextSlot++;
 					}
 					if (CalamityModDownedDOG && CalamityModDownedBirb)
@@ -1365,14 +1365,14 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ItemID.SkeletronPrimeBossBag);
-					shop.item[nextSlot].shopCustomPrice = new int?(15);
+					shop.item[nextSlot].shopCustomPrice = new int?(10);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
 					}
 					if (NPC.downedPlantBoss && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.PlanteraBossBag);
-					shop.item[nextSlot].shopCustomPrice = new int?(30);
+					shop.item[nextSlot].shopCustomPrice = new int?(25);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
 					}
@@ -1403,14 +1403,14 @@ namespace AlchemistNPC.NPCs
 					if (NPC.downedFishron && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
-					shop.item[nextSlot].shopCustomPrice = new int?(10);
+					shop.item[nextSlot].shopCustomPrice = new int?(15);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 					nextSlot++;
 					}
 					if (NPC.downedMoonlord && Main.expertMode)
 					{
 						shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
-						shop.item[nextSlot].shopCustomPrice = new int?(30);
+						shop.item[nextSlot].shopCustomPrice = new int?(25);
 						shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 						nextSlot++;
 					}
@@ -1609,34 +1609,41 @@ namespace AlchemistNPC.NPCs
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 							nextSlot++;
 						}
-						if (CalamityModDownedAstrum)
-						{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
-							shop.item[nextSlot].shopCustomPrice = new int?(30);
-							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-							nextSlot++;
-						}
 						if (CalamityModDownedPlaguebringer)
-							{
+						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PlaguebringerGoliathBag"));
 							shop.item[nextSlot].shopCustomPrice = new int?(15);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 							nextSlot++; 
-							}
+						}
 						if (CalamityModDownedRavager)
-							{
+						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("RavagerBag"));
 							shop.item[nextSlot].shopCustomPrice = new int?(15);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 							nextSlot++; 
-							}
+						}
+						if (CalamityModDownedAstrum)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(20);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+							nextSlot++;
+						}
 					}
 					if (ModLoader.GetMod("CalamityMod") != null)
 						{
+							if (CalamityModDownedBirb)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
+								shop.item[nextSlot].shopCustomPrice = new int?(10);
+								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
+								nextSlot++;
+							}
 							if (CalamityModDownedProvidence)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ProvidenceBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(25);
+								shop.item[nextSlot].shopCustomPrice = new int?(20);
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
 								nextSlot++;
 							}
@@ -1647,7 +1654,7 @@ namespace AlchemistNPC.NPCs
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;
 								nextSlot++;
 							}
-							if (CalamityModDownedDOG && CalamityModDownedBirb)
+							if (CalamityModDownedDOG)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(10);
@@ -1656,10 +1663,6 @@ namespace AlchemistNPC.NPCs
 							}
 							if (CalamityModDownedYharon)
 							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(15);
-								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;
-								nextSlot++;
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharonBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(20);
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;

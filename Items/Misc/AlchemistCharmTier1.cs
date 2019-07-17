@@ -33,7 +33,7 @@ namespace AlchemistNPC.Items.Misc
 		
 		public override void UpdateInventory(Player player)
 		{
-		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier1 = true;
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier1 = true;
 		}
 	}
 }

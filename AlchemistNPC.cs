@@ -150,6 +150,14 @@ namespace AlchemistNPC
 				alchemistUserInterfaceP.SetState(pipboyUI);
 			}
 		}
+		
+		public override void Unload() {
+			Instance = null;
+			instance = null;
+			LampLight = null;
+			DiscordBuff = null;
+			PipBoyTP = null;
+		}
 
 		public override void PostSetupContent()
 		{
@@ -302,11 +310,6 @@ namespace AlchemistNPC
 			}
 		}
 		
-		public override void Unload()
-		{
-			instance = null;
-		}
-		
 		public static string ConfigFileRelativePath 
 		{
 		get { return "Mod Configs/Alchemistv84.json"; }
@@ -332,6 +335,30 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BillIsDowned = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BBP = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().SnatcherCounter = reader.ReadInt32();
+					
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().KingSlimeBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().EyeOfCthulhuBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().EaterOfWorldsBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BrainOfCthulhuBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().QueenBeeBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().SkeletronBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().WoFBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().GSummonerBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().PigronBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().IceGolemBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().DarkMageBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().CustomBooster1 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().DestroyerBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().PrimeBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().TwinsBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().OgreBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().PlanteraBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().GolemBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BetsyBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().FishronBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().MartianSaucerBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().CultistBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().MoonLordBooster = reader.ReadInt32();
 					break;
 				case AlchemistNPCMessageType.TeleportPlayer:
 					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);

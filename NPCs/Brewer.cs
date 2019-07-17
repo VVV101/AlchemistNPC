@@ -453,36 +453,36 @@ namespace AlchemistNPC.NPCs
  
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		public bool CalamityModDownedBirb
 		{
-		get { return CalamityMod.CalamityWorld.downedBumble; }
+		get { return CalamityMod.World.CalamityWorld.downedBumble; }
 		}
 		public bool CalamityModDownedPolter
 		{
-		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
 		public bool CalamityModDownedYharon
 		{
-		get { return CalamityMod.CalamityWorld.downedYharon; }
+		get { return CalamityMod.World.CalamityWorld.downedYharon; }
 		}
 		public bool CalamityModDownedAstrum
 		{
-		get { return CalamityMod.CalamityWorld.downedStarGod; }
+		get { return CalamityMod.World.CalamityWorld.downedStarGod; }
 		}
 		public bool CalamityModDownedCalamitas
         {
-        get { return CalamityMod.CalamityWorld.downedCalamitas; }
+        get { return CalamityMod.World.CalamityWorld.downedCalamitas; }
         }
 		public bool CalamityModDownedProvidence
         {
-        get { return CalamityMod.CalamityWorld.downedProvidence; }
+        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
         }
 		public bool CalamityModDownedAstrageldon
         {
-        get { return CalamityMod.CalamityWorld.downedAstrageldon; }
+        get { return CalamityMod.World.CalamityWorld.downedAstrageldon; }
         }
  
         public override void SetupShop(Chest shop, ref int nextSlot)

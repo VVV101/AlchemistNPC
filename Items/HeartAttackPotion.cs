@@ -49,7 +49,7 @@ namespace AlchemistNPC.Items
 		
 		public bool CalamityModRevengeance
 		{
-			get { return CalamityMod.CalamityWorld.revenge; }
+			get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		public override bool CanUseItem(Player player)

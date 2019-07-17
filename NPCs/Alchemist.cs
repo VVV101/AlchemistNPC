@@ -535,15 +535,15 @@ namespace AlchemistNPC.NPCs
  
 		public bool CalamityModDownedGuardian
 		{
-		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
 		}
 		public bool CalamityModDownedPolter
 		{
-		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
 		public bool CalamityModDownedDOG
 		{
-		get { return CalamityMod.CalamityWorld.downedDoG; }
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
 		}
  
         public override void SetupShop(Chest shop, ref int nextSlot)

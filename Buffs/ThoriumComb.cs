@@ -26,7 +26,7 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Thorium Combination");
 			Description.SetDefault("Perfect sum of Thorium buffs"
-			+"\nAccuracy, Blood, Combat, Frenzy, Glowing, Holy, Dash");
+			+"\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy, Dash");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Ториума");
@@ -55,9 +55,12 @@ namespace AlchemistNPC.Buffs
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("RadiantBoost")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("HolyBonus")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("DashBuff")] = true;
+			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("CreativityDrop")] = true;
+			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("EarwormBuff")] = true;
+			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("InspirationReach")] = true;
 				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
-				ThoriumBoosts(player);
+				ThoriumBoosts(player, ref buffIndex);
 				}
 				if (ModLoader.GetMod("Redemption") != null)
 				{
@@ -83,15 +86,17 @@ namespace AlchemistNPC.Buffs
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
-		private void ThoriumBoosts(Player player)
+		private void ThoriumBoosts(Player player, ref int buffIndex)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+			Thorium.GetBuff("CreativityDrop").Update(player, ref buffIndex);
+			Thorium.GetBuff("EarwormBuff").Update(player, ref buffIndex);
+			Thorium.GetBuff("InspirationReach").Update(player, ref buffIndex);
             ThoriumPlayer.symphonicCrit += 6;
 			ThoriumPlayer.radiantBoost += 0.1f;
             ThoriumPlayer.radiantCrit += 6;
 			ThoriumPlayer.healBonus += 5;
         }
-		
 		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }
