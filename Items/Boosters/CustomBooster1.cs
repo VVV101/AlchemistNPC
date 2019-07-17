@@ -42,7 +42,7 @@ namespace AlchemistNPC.Items.Boosters
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.BuffType("BrokenBooster1"), 1);
+			recipe.AddIngredient(mod.ItemType("BrokenBooster1"), 1);
 			recipe.AddIngredient(ItemID.ObsidianSkinPotion, 30);
 			recipe.AddIngredient(ItemID.GillsPotion, 30);
 			recipe.AddRecipeGroup("AlchemistNPC:EvilBar", 8);

@@ -15,8 +15,8 @@ namespace AlchemistNPC.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.width = 108;
-            projectile.height = 98;
+            projectile.width = 118;
+            projectile.height = 118;
             projectile.friendly = false;
             projectile.hostile = false;
             projectile.penetrate = -1;

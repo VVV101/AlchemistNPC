@@ -8,6 +8,7 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Config file is Alchemistv84.json.
 v8.7
+-Updated to tModloader 0.11.2.2.
 -Added new mode, Anti Buff mode. During Anti Buff mode, player is immune to all buffs (not debuffs).
 Buffs without duration display are not disabled. Bosses and minibosses may drop permament boosting items. Their effects would work only if mode is on.
 Anti Buff activator can be crafted on Demon Altar.
