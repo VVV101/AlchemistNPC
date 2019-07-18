@@ -32,6 +32,9 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация More Potioins");
             Description.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода More Potions"
 			+"\nDroughts, Enchanced Regeneration, Courage, Soulbinding, Diamond Skin, Dusk, Dawn, Swift Hands, Speed");
+			DisplayName.AddTranslation(GameCulture.Chinese, "更多药剂整合包");
+            Description.AddTranslation(GameCulture.Chinese, "获得大多数更多药剂的效果"
+			+"\n干旱, 强化生命回复, 勇气, 灵魂绑定, 钻石皮肤, 暮光, 黎明, 快手, 速度");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

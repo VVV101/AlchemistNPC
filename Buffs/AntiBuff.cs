@@ -18,6 +18,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Анти Бафф усиления");
 			Description.AddTranslation(GameCulture.Russian, "");
+			DisplayName.AddTranslation(GameCulture.Chinese, "反buff增益");
+			Description.AddTranslation(GameCulture.Chinese, "");
         }
 		
 		public override void ModifyBuffTip (ref string tip, ref int rare)
