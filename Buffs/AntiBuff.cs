@@ -35,6 +35,10 @@ namespace AlchemistNPC.Buffs
 			{
 				tip += "\nProvides creatures, treasures and traps detection";
 			}
+			if (modPlayer.CustomBooster1 == 1)
+			{
+				tip += "\nGives Shine and Nightvision effects";
+			}
 			if (modPlayer.EaterOfWorldsBooster == 1)
 			{
 				tip += "\nIncreases melee speed by 5%, movement and mining speed by 25%";
@@ -51,9 +55,9 @@ namespace AlchemistNPC.Buffs
 			{
 				tip += "\nSkeletons contact damage is reduced, all damages/critical strike chances are increased by 10%";
 			}
-			if (modPlayer.CustomBooster1 == 1)
+			if (modPlayer.CustomBooster2 == 1)
 			{
-				tip += "\nProvides immunity to fire blocks, Obsidian Skin and Gills effects";
+				tip += "\nProvides immunity to fire blocks, Obsidian Skin, Gills and Flipper effects";
 			}
 			if (modPlayer.WoFBooster == 1)
 			{
@@ -85,7 +89,7 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.TwinsBooster == 1)
 			{
-				tip += "\nShine, Nightvision, Archery and Ammo Reservation effects, immunity to Cursed Flames and Ichor";
+				tip += "\nArchery and Ammo Reservation effects, immunity to Cursed Flames and Ichor";
 			}
 			if (modPlayer.OgreBooster == 1)
 			{
@@ -136,6 +140,11 @@ namespace AlchemistNPC.Buffs
 				player.detectCreature = true;
 				player.dangerSense = true;
 			}
+			if (modPlayer.CustomBooster1 == 1)
+			{
+				Lighting.AddLight((int)((double)player.position.X + (double)(player.width / 2)) / 16, (int)((double)player.position.Y + (double)(player.height / 2)) / 16, 0.8f, 0.95f, 1f);
+				player.nightVision = true;
+			}
 			if (modPlayer.EaterOfWorldsBooster == 1)
 			{
 				player.meleeSpeed += 0.05f;
@@ -178,8 +187,10 @@ namespace AlchemistNPC.Buffs
 					CalamityBoost(player, 0);
 				}
 			}
-			if (modPlayer.CustomBooster1 == 1)
+			if (modPlayer.CustomBooster2 == 1)
 			{
+				player.accFlipper = true;
+				player.gills = true;
 				player.lavaImmune = true;
 				player.fireWalk = true;
 				player.buffImmune[24] = true;
@@ -228,8 +239,6 @@ namespace AlchemistNPC.Buffs
 			{
 				player.archery = true;
 				player.ammoPotion = true;
-				Lighting.AddLight((int)((double)player.position.X + (double)(player.width / 2)) / 16, (int)((double)player.position.Y + (double)(player.height / 2)) / 16, 0.8f, 0.95f, 1f);
-				player.nightVision = true;
 				player.buffImmune[39] = true;
 				player.buffImmune[69] = true;
 			}

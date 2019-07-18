@@ -148,6 +148,8 @@ namespace AlchemistNPC
 		public int DestroyerBooster = 0;
 		private const int maxCustomBooster1 = 1;
 		public int CustomBooster1 = 0;
+		private const int maxCustomBooster2 = 1;
+		public int CustomBooster2 = 0;
 		private const int maxPrimeBooster = 1;
 		public int PrimeBooster = 0;
 		private const int maxTwinsBooster = 1;
@@ -190,6 +192,10 @@ namespace AlchemistNPC
 		
 		public override void ResetEffects()
 		{
+			if (AlchemistNPCWorld.foundAntiBuffMode)
+			{
+				player.AddBuff(mod.BuffType("AntiBuff"), 2);
+			}
 			if (Shield < 0)
 			{
 				Shield = 0;
@@ -334,6 +340,7 @@ namespace AlchemistNPC
 			packet.Write(WoFBooster);
 			packet.Write(DarkMageBooster);
 			packet.Write(CustomBooster1);
+			packet.Write(CustomBooster2);
 			packet.Write(DestroyerBooster);
 			packet.Write(PrimeBooster);
 			packet.Write(TwinsBooster);
@@ -393,6 +400,7 @@ namespace AlchemistNPC
 				{"WoFBooster", WoFBooster},
 				{"DarkMageBooster", DarkMageBooster},
 				{"CustomBooster1", CustomBooster1},
+				{"CustomBooster2", CustomBooster2},
 				{"DestroyerBooster", DestroyerBooster},
 				{"PrimeBooster", PrimeBooster},
 				{"TwinsBooster", TwinsBooster},
@@ -429,6 +437,7 @@ namespace AlchemistNPC
 			WoFBooster = tag.GetInt("WoFBooster");
 			DarkMageBooster = tag.GetInt("DarkMageBooster");
 			CustomBooster1 = tag.GetInt("CustomBooster1");
+			CustomBooster2 = tag.GetInt("CustomBooster2");
 			DestroyerBooster = tag.GetInt("DestroyerBooster");
 			PrimeBooster = tag.GetInt("PrimeBooster");
 			TwinsBooster = tag.GetInt("TwinsBooster");

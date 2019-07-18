@@ -348,6 +348,7 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().IceGolemBooster = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().DarkMageBooster = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().CustomBooster1 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().CustomBooster2 = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().DestroyerBooster = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().PrimeBooster = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().TwinsBooster = reader.ReadInt32();

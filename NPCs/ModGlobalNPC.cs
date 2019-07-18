@@ -710,18 +710,19 @@ namespace AlchemistNPC.NPCs
 				if (npc.type == NPCID.EyeofCthulhu)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EyeOfCthulhuBooster"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrokenBooster1"));
+				}
+				if (npc.type == NPCID.EaterofWorldsHead && !NPC.AnyNPCs(NPCID.EaterofWorldsTail))
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EaterOfWorldsBooster"));
+				}
+				if (npc.type == NPCID.EaterofWorldsTail && !NPC.AnyNPCs(NPCID.EaterofWorldsHead))
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EaterOfWorldsBooster"));
 				}
 				if (npc.type == NPCID.BrainofCthulhu)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrainOfCthulhuBooster"));
-				}
-				if (npc.type == NPCID.EaterofWorldsHead && !NPC.AnyNPCs(NPCID.EaterofWorldsTail))
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EaterOfWorldBooster"));
-				}
-				if (npc.type == NPCID.EaterofWorldsTail && !NPC.AnyNPCs(NPCID.EaterofWorldsHead))
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EaterOfWorldBooster"));
 				}
 				if (npc.type == NPCID.QueenBee)
 				{
@@ -730,7 +731,7 @@ namespace AlchemistNPC.NPCs
 				if (npc.type == NPCID.SkeletronHead)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SkeletronBooster"));
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrokenBooster1"));
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BrokenBooster2"));
 				}
 				if (npc.type == NPCID.WallofFlesh)
 				{
