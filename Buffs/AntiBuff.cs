@@ -189,6 +189,7 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.CustomBooster2 == 1)
 			{
+				player.ignoreWater = true;
 				player.accFlipper = true;
 				player.gills = true;
 				player.lavaImmune = true;
