@@ -75,6 +75,10 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Angela");
             text.AddTranslation(GameCulture.Russian, "Анжела");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("Carmen");
+            text.SetDefault("Carmen");
+            text.AddTranslation(GameCulture.Russian, "Кармен");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO1");
             text.SetDefault("How is your day, Manager? Can I help you?");
             text.AddTranslation(GameCulture.Russian, "Как ваш день, Управляющий? Могу ли я вам помочь?");
@@ -308,10 +312,13 @@ namespace AlchemistNPC.NPCs
         public override string TownNPCName()
         {
             string Angela = Language.GetTextValue("Mods.AlchemistNPC.Angela");
-			switch (WorldGen.genRand.Next(1))
+            string Carmen = Language.GetTextValue("Mods.AlchemistNPC.Carmen");
+			switch (WorldGen.genRand.Next(2))
             {
                 case 0:
                     return Angela;
+				case 1:
+                    return Carmen;
                 default:
                     return Angela;
             }
