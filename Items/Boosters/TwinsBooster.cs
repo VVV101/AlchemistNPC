@@ -12,9 +12,9 @@ namespace AlchemistNPC.Items.Boosters
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Twins booster");
-			Tooltip.SetDefault("Shine, Nightvision, Archery and Ammo Reservation effects, immunity to Cursed Flames and Ichor");
+			Tooltip.SetDefault("Archery and Ammo Reservation effects, immunity to Cursed Flames and Ichor");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Близнецов");
-			Tooltip.AddTranslation(GameCulture.Russian, "Эффекты Свечения, Ночного Зрения, Стрельбы и Экономии Боеприпасов, иммунитет к Проклятому Пламени и Ихору");
+			Tooltip.AddTranslation(GameCulture.Russian, "Эффекты Стрельбы и Экономии Боеприпасов, иммунитет к Проклятому Пламени и Ихору");
         }
 
 		public override void SetDefaults()

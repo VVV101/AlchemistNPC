@@ -12,9 +12,9 @@ namespace AlchemistNPC.Items.Boosters
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Custom Booster 1");
-			Tooltip.SetDefault("Provides immunity to fire blocks, gives Obsidian Skin and Gills effects");
+			Tooltip.SetDefault("Gives Shine and Nightvision effects");
 			DisplayName.AddTranslation(GameCulture.Russian, "Выборочный усилитель 1");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к огненным блокам, даёт эффекты Жабр и Обсидиановой Кожи");
+			Tooltip.AddTranslation(GameCulture.Russian, "Даёт эффекты Свечения и Ночного Зрения");
         }
 
 		public override void SetDefaults()
@@ -43,10 +43,9 @@ namespace AlchemistNPC.Items.Boosters
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("BrokenBooster1"), 1);
-			recipe.AddIngredient(ItemID.ObsidianSkinPotion, 30);
-			recipe.AddIngredient(ItemID.GillsPotion, 30);
-			recipe.AddRecipeGroup("AlchemistNPC:EvilBar", 8);
-			recipe.AddRecipeGroup("AlchemistNPC:EvilComponent", 15);
+			recipe.AddIngredient(ItemID.ShinePotion, 30);
+			recipe.AddIngredient(ItemID.NightOwlPotion, 30);
+			recipe.AddRecipeGroup("IronBar", 10);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
