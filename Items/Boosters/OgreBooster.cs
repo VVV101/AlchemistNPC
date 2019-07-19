@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Increases defense and damage reduction by 5/5% and provides knockback immunity");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Огра");
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает защиту и сопротивление урону на 5/5% и даёт защиту от отбрасывания");
+			DisplayName.AddTranslation(GameCulture.Chinese, "食人魔增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "提升5防御和增加5%伤害减免并免疫击退");
         }
 
 		public override void SetDefaults()

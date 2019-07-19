@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Damages and critical strike chances are boosted while you are moving, Philosopher's stone effect");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Плантеры");
 			Tooltip.AddTranslation(GameCulture.Russian, "Урон и шансы критического удара повышены, когда вы двигаетесь, эффект Философского камня");
+			DisplayName.AddTranslation(GameCulture.Chinese, "世纪之花增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "移动时增加伤害和暴击率，获得炼金石效果(减药水cd)");
         }
 
 		public override void SetDefaults()

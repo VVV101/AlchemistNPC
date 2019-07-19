@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Provides immunity to Electrified and Distorted debuffs");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Летающей Тарелки");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к Электризации и Дестабилизации");
+			DisplayName.AddTranslation(GameCulture.Chinese, "火星飞碟增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "免疫电击和重力扭曲");
         }
 
 		public override void SetDefaults()

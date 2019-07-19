@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Can be fixed if use certain materials");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сломанный усилитель (1)");
 			Tooltip.AddTranslation(GameCulture.Russian, "Может быть починен если найти необходимые материалы");
+			DisplayName.AddTranslation(GameCulture.Chinese, "破损的增益容器(1)");
+			Tooltip.AddTranslation(GameCulture.Chinese, "使用某些材料可以修复");
         }
 
 		public override void SetDefaults()

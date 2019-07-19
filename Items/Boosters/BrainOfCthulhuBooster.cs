@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Increases max amount of minions/sentries by 1, Heartreach effect");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Мозга Ктулху");
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальной количество прислужников/турелей на 1, сердца притягиваются к игроку");
+			DisplayName.AddTranslation(GameCulture.Chinese, "克苏鲁之脑增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "增加1召唤物/炮台上限，获得心之彼端效果");
         }
 
 		public override void SetDefaults()

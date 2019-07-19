@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Provides immunity to fire blocks, gives Obsidian Skin, Gills and Flipper effects");
 			DisplayName.AddTranslation(GameCulture.Russian, "Выборочный усилитель 2");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт иммунитет к огненным блокам, даёт эффекты Жабр и Обсидиановой Кожи");
+			DisplayName.AddTranslation(GameCulture.Chinese, "普通增益容器2号");
+			Tooltip.AddTranslation(GameCulture.Chinese, "给予免疫火块，黑曜石皮肤，鱼鳃，脚蹼药剂效果");
         }
 
 		public override void SetDefaults()

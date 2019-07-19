@@ -20,11 +20,17 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Хвататель, Проклятый Принц");
 			Description.AddTranslation(GameCulture.Russian, "Давай-ка заключим сделку!");
             DisplayName.AddTranslation(GameCulture.Chinese, "掠夺者, 被诅咒的王子");
-            Description.AddTranslation(GameCulture.Chinese, "嗯... 看起来你还没有灵魂啊. 真可惜. 好吧,让我们来做个交易...\n在旅途中,你会击败无数的敌人...\n你不是在为自己收集他们的灵魂,对吧?\n为什么不把它们给我呢? 每到达固定数量, 我会给你一些奖励.\n听起来不错, 是吧? 希望如此...");
+            Description.AddTranslation(GameCulture.Chinese, "我们来做个交易吧!");
 		}
 
 		public override void ModifyBuffTip (ref string tip, ref int rare)
 		{
+			string tipch;
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					tip = tipch;
+				}
+			
 			Player player = Main.player[Main.myPlayer];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
 			tip = "Uh... You don't seem to have a soul. What a shame. OK then, let's make a deal..."
@@ -33,37 +39,51 @@ namespace AlchemistNPC.Buffs
 			+"\nWhy not give them to me then? For certain amounts, I will give you some kind of rewards."
 			+"\nDoes that sound good enough? I hope so..."
 			+"\n" + modPlayer.SnatcherCounter + " souls collected.";
+			tipch = "嗯... 看起来你还没有灵魂啊. 真可惜. 好吧,让我们来做个交易..."
+			+"\n在旅途中,你会击败无数的敌人..."
+			+"\n你不是在为自己收集他们的灵魂,对吧?"
+			+"\n为什么不把它们给我呢? 每到达固定数量, 我会给你一些奖励."
+			+"\n听起来不错, 是吧? 希望如此..."
+			+"\n" + modPlayer.SnatcherCounter + "已收集的灵魂.";
 			if (modPlayer.SnatcherCounter >= 500)
 			{
 				tip += "\nIncreases your movement speed by 25%";
+				tipch += "\n增加25%移动速度";
 			}
 			if (modPlayer.SnatcherCounter >= 1000)
 			{
 				tip += "\nIncreases your defense by 10";
+				tipch += "\n提升10防御力";
 			}
 			if (modPlayer.SnatcherCounter >= 1500)
 			{
 				tip += "\nIncreases your damage reduction by 10%";
+				tipch += "\n增加10%伤害减免";
 			}
 			if (modPlayer.SnatcherCounter >= 2500)
 			{
 				tip += "\nIncreases max amount of minions/sentries by 1";
+				tipch += "\n增加1召唤物和哨兵炮台数量";
 			}
 			if (modPlayer.SnatcherCounter >= 3500)
 			{
 				tip += "\nBoosts all damage types by 8%";
+				tipch += "\n增加8%所有伤害";
 			}
 			if (modPlayer.SnatcherCounter >= 5000)
 			{
 				tip += "\nBoosts all critical strike chances by 5%";
+				tipch += "\n增加5%所有暴击率";
 			}
 			if (modPlayer.SnatcherCounter >= 6666)
 			{
 				tip += "\nIncreases your armor penetration by 30";
+				tipch += "\n提升30点护甲穿透";
 			}
 			if (modPlayer.SnatcherCounter >= 9999)
 			{
 				tip += "\nBoosts your max life by 10%";
+				tipch += "\n增加10%生命上限";
 			}
 		}
 		

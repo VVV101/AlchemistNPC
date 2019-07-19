@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Gives ability to dash, all stats up while on surface");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Рыброна");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт способность к рывку, все параметры усилены когда на поверхности");
+			DisplayName.AddTranslation(GameCulture.Chinese, "猪鲨增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "给予冲刺能力，表面上的所有统计数据增加");
         }
 
 		public override void SetDefaults()

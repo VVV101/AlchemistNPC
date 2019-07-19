@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Increases jump height and safe fall distance greatly");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Короля Слизней");
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает высоту прыжка и увеличивает расстояние безопасного падения");
+			DisplayName.AddTranslation(GameCulture.Chinese, "冰巨人增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "极大提升跳跃高度和安全坠落距离");
         }
 
 		public override void SetDefaults()

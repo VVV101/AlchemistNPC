@@ -15,7 +15,9 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Increases max amount of minions/sentries by 1, defense and DR by 10/10%");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Стены Плоти");
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальной количество прислужников/турелей на 1, защиту и сопротивление урону на 10/10%");
-        }
+			DisplayName.AddTranslation(GameCulture.Chinese, "血肉之墙增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "增加1召唤物和哨兵炮台上限，10防御力和10%伤害减免");
+		}
 
 		public override void SetDefaults()
 		{

@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("You emit aura which weakens enemies around");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Лунного Лорда");
 			Tooltip.AddTranslation(GameCulture.Russian, "Вы испускаете ослабляющую ауру вокруг себя");
+			DisplayName.AddTranslation(GameCulture.Chinese, "月球领主增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "你产生能弱化周围敌人的光环");
         }
 
 		public override void SetDefaults()
