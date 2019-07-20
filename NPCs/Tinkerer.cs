@@ -63,6 +63,18 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Peter");
             text.AddTranslation(GameCulture.Russian, "Пётр");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("TinkererButton1");
+            text.SetDefault("Sell");
+            text.AddTranslation(GameCulture.Chinese, "出售");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("TinkererButton2");
+            text.SetDefault("Shop");
+            text.AddTranslation(GameCulture.Chinese, "商店");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("TinkererButton3");
+            text.SetDefault("Reward");
+            text.AddTranslation(GameCulture.Chinese, "回馈");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryT1");
             text.SetDefault("Do you need something special? Just say if so...");
             text.AddTranslation(GameCulture.Russian, "Нужно что-то особенное? Если так, то только скажи...");
@@ -92,6 +104,15 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("If you wil collect every single blueprint, I will give you the special reward.");
             text.AddTranslation(GameCulture.Russian, "Если ты соберешь все до единого чертежи, я выдам тебе специальную награду.");
             text.AddTranslation(GameCulture.Chinese, "如果你能收集每一张蓝图, 我会给你一个特别的奖励.");
+            mod.AddTranslation(text);
+
+			text = mod.CreateTranslation("TubePresentChat1");
+            text.SetDefault("You don't have any Paper Tubes for selling right now. Go and get some!");
+            text.AddTranslation(GameCulture.Chinese, "你没有任何可以递给我的蓝图纸管. 去弄些来!");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("TubePresentChat2");
+            text.SetDefault("Here is some money, take it.");
+            text.AddTranslation(GameCulture.Chinese, "这里, 钱, 拿着");
             mod.AddTranslation(text);
         }
 
@@ -186,8 +207,8 @@ namespace AlchemistNPC.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = "Sell";
-			button2 = "Shop";
+            button = Language.GetTextValue("Mods.AlchemistNPC.TinkererButton1");
+			button2 = Language.GetTextValue("Mods.AlchemistNPC.TinkererButton2");
 			Player player = Main.player[Main.myPlayer];
 			if (player.active)
 			{
@@ -209,7 +230,7 @@ namespace AlchemistNPC.NPCs
 			}
 			if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundT1 && AlchemistNPCWorld.foundT2 && AlchemistNPCWorld.foundT3)
 			{
-				button = "Reward";
+				button = Language.GetTextValue("Mods.AlchemistNPC.TinkererButton3");
 			}
         }
  
@@ -219,7 +240,7 @@ namespace AlchemistNPC.NPCs
             {
 				if (!TubePresent && !TubePresent2 && !TubePresent3)
 				{
-					Main.npcChatText = "You don't have any Paper Tubes for selling right now. Go and get some!";
+					Main.npcChatText = Language.GetTextValue("Mods.AlchemistNPC.TubePresentChat1");
 				}
 				if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundT1 && AlchemistNPCWorld.foundT2 && AlchemistNPCWorld.foundT3)
 				{
@@ -241,7 +262,7 @@ namespace AlchemistNPC.NPCs
 								inventory[k].stack--;
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
-								Main.npcChatText = "Here is some money, take it.";
+								Main.npcChatText = Language.GetTextValue("Mods.AlchemistNPC.TubePresentChat2");
 							}
 						}
 						else if (TubePresent2 && AlchemistNPCWorld.foundT2)
@@ -257,7 +278,7 @@ namespace AlchemistNPC.NPCs
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
-								Main.npcChatText = "Here is some money, take it.";
+								Main.npcChatText = Language.GetTextValue("Mods.AlchemistNPC.TubePresentChat2");
 							}
 						}
 						else if (TubePresent3 && AlchemistNPCWorld.foundT3)
@@ -277,7 +298,7 @@ namespace AlchemistNPC.NPCs
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
 								Main.player[Main.myPlayer].QuickSpawnItem(ItemID.GoldCoin);
-								Main.npcChatText = "Here is some money, take it.";
+								Main.npcChatText = Language.GetTextValue("Mods.AlchemistNPC.TubePresentChat2");
 							}
 						}
 					}

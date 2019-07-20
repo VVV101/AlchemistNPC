@@ -21,6 +21,12 @@ namespace AlchemistNPC.Items.Misc
 			+"\nTheir effects would work only if mode is on");
 			DisplayName.AddTranslation(GameCulture.Russian, "Анти Бафф");
             Tooltip.AddTranslation(GameCulture.Russian, "Используйте для переключения Анти Бафф режима\nВы имунны ко всем баффам (не дебаффам)\nБаффы не показывающие длительности разрешены\nИз боссов и минибоссов могут выпадать предметы, дающие эффекты постоянного усиления\nЭти эффекты активны только когда режим включён");
+			DisplayName.AddTranslation(GameCulture.Chinese, "反buff模式");
+			Tooltip.AddTranslation(GameCulture.Chinese, "使用以切换反buff模式"
+			+"\n在反buff模式中，你将免疫所有buff(不仅仅是debuff)"
+			+"\n没有持续时间的buff不会被禁止"
+			+"\nBoss和一些小Boss会掉落永久增益物品"
+			+"\n这些物品的效果只会在这个模式启动时生效");
         }
 
 		public override void SetDefaults()
