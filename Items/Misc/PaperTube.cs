@@ -17,8 +17,21 @@ namespace AlchemistNPC.Items.Misc
 			Tooltip.SetDefault("Contains blueprints of a random prehardmode accessory\nUse to unlock");
 			DisplayName.AddTranslation(GameCulture.Russian, "Тубус");
             Tooltip.AddTranslation(GameCulture.Russian, "Хранит в себе чертёж случайного прехардмодного аксессуара\nИспользуйте для разблокировки");
-			DisplayName.AddTranslation(GameCulture.Chinese, "纸管");
+			DisplayName.AddTranslation(GameCulture.Chinese, "蓝图纸管");
 			Tooltip.AddTranslation(GameCulture.Chinese, "包含一项随机饰品的蓝图\n使用以解锁");
+
+			ModTranslation text = mod.CreateTranslation("PaperTubeInfo1");
+            text.SetDefault("There was nothing interesting in those blueprints.");
+            text.AddTranslation(GameCulture.Chinese, "这些蓝图没什么意思.");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("PaperTubeInfo2");
+            text.SetDefault("You have found a new accessory blueprint. You can ask Tinkerer about making it now.");
+            text.AddTranslation(GameCulture.Chinese, "你发现了一个新的饰品蓝图. 你可以现在问问工匠这东西能干什么.");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("PaperTubeInfo3");
+            text.SetDefault("You have found all prehardmode blueprints. Congratulations! Now you may sell all leftover Paper Tubes to Tinkerer.");
+            text.AddTranslation(GameCulture.Chinese, "你已经找到了所有大前期(骷髅王前)的蓝图. 恭喜! 你可以把剩下的蓝图都兜售给工匠.");
+            mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()
@@ -112,13 +125,13 @@ namespace AlchemistNPC.Items.Misc
 			randomAcc.Add("foundShackle");}
 			if (Main.rand.NextBool(5))
 			{
-				Main.NewText("There was nothing interesting in those blueprints.", 100,149,237);
+				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeInfo1"), 100,149,237);
 				return true;
 			}
 		
 			int acc = Main.rand.Next(randomAcc.Count);
 			
-			Main.NewText("You have found a new accessory blueprint. You can ask Tinkerer about making it now.", 255, 255, 255);
+			Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeInfo2"), 255, 255, 255);
 			
 			if (randomAcc[acc] == "foundAglet") {
 			AlchemistNPCWorld.foundAglet = true;}
@@ -185,7 +198,7 @@ namespace AlchemistNPC.Items.Misc
 			
 			if (randomAcc.Count == 1)
 			{
-				Main.NewText("You have found all prehardmode blueprints. Congratulations! Now you may sell all leftover Paper Tubes to Tinkerer.", 0, 255, 0);
+				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeInfo3"), 0, 255, 0);
 				AlchemistNPCWorld.foundT1 = true;
 			}
             return true;
