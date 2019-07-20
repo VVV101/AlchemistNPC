@@ -30,7 +30,10 @@ namespace AlchemistNPC.Buffs
 				{
 					tipline = tipch;
 				}
-			else tipline=tip;
+			else 
+				{
+					tipline=tip;
+				}
 			
 			Player player = Main.player[Main.myPlayer];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
