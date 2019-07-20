@@ -23,13 +23,14 @@ namespace AlchemistNPC.Buffs
             Description.AddTranslation(GameCulture.Chinese, "我们来做个交易吧!");
 		}
 
-		public override void ModifyBuffTip (ref string tip, ref int rare)
+		public override void ModifyBuffTip (ref string tipline, ref int rare)
 		{
 			string tipch;
 			if(Language.ActiveCulture == GameCulture.Chinese)
 				{
-					tip = tipch;
+					tipline = tipch;
 				}
+			else tipline=tip;
 			
 			Player player = Main.player[Main.myPlayer];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
