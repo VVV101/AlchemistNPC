@@ -25,7 +25,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Operator";
-			return Config.OperatorSpawn;
+			return AlchemistNPC.modConfiguration.OperatorSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -285,7 +285,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss2 && Config.OperatorSpawn)
+			if (NPC.downedBoss2 && AlchemistNPC.modConfiguration.OperatorSpawn)
 			{
 			return true;
 			}
@@ -610,7 +610,7 @@ namespace AlchemistNPC.NPCs
 		string ModdedTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop");
 		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop2");
 		string ShopChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopChanger");
-		if (Config.TS && Main.expertMode)
+		if (AlchemistNPC.modConfiguration.TS && Main.expertMode)
 		{
 			if (Shop == 1)
 			{
@@ -634,7 +634,7 @@ namespace AlchemistNPC.NPCs
 			}
 			button2 = ShopChanger;
 		}
-			if (!Config.TS || !Main.expertMode)
+			if (!AlchemistNPC.modConfiguration.TS || !Main.expertMode)
 			{
 			button = BossDropsShop;
 			button2 = EGOShop;
@@ -645,12 +645,12 @@ namespace AlchemistNPC.NPCs
 		{
 			if (firstButton)
 			{
-				if (!Config.TS || !Main.expertMode)
+				if (!AlchemistNPC.modConfiguration.TS || !Main.expertMode)
 				{
 					Shop = 1;
 					shop = true;
 				}
-				if (Config.TS && Main.expertMode)
+				if (AlchemistNPC.modConfiguration.TS && Main.expertMode)
 				{
 					shop = true;
 					ShopChangeUIO.visible = false;
@@ -658,11 +658,11 @@ namespace AlchemistNPC.NPCs
 			}
 			else
 			{
-				if (Config.TS && Main.expertMode)
+				if (AlchemistNPC.modConfiguration.TS && Main.expertMode)
 				{
 					ShopChangeUIO.visible = true;
 				}
-				if (!Config.TS || !Main.expertMode)
+				if (!AlchemistNPC.modConfiguration.TS || !Main.expertMode)
 				{
 					Shop = 2;
 					shop = true;
@@ -1315,7 +1315,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("InformatingNote"));
 				nextSlot++;
 				}
-				if (Config.CoinsDrop)
+				if (AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
@@ -1422,7 +1422,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
-				if (!Config.CoinsDrop)
+				if (!AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
@@ -1520,7 +1520,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("InformatingNote"));
 				nextSlot++;
 				}
-				if (Config.CoinsDrop)
+				if (AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
@@ -1821,7 +1821,7 @@ namespace AlchemistNPC.NPCs
 							}
 						}
 				}
-				if (!Config.CoinsDrop)
+				if (!AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
@@ -2117,7 +2117,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("InformatingNote"));
 				nextSlot++;
 				}
-				if (Config.CoinsDrop)
+				if (AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
@@ -2406,7 +2406,7 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
-				if (!Config.CoinsDrop)
+				if (!AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{

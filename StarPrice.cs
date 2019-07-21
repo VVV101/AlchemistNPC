@@ -12,7 +12,7 @@ namespace AlchemistNPC
             switch(item.type)
             {
                 case ItemID.FallenStar:
-                    item.value = Config.StarPrice;
+                    item.value = AlchemistNPC.modConfiguration.StarPrice;
                     break;
 				case 1267:
                     item.value = 20;

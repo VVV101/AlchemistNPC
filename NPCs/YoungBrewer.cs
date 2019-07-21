@@ -22,7 +22,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Young Brewer";
-			return Config.YoungBrewerSpawn;
+			return AlchemistNPC.modConfiguration.YoungBrewerSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -141,7 +141,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (Main.hardMode && Config.YoungBrewerSpawn)
+			if (Main.hardMode && AlchemistNPC.modConfiguration.YoungBrewerSpawn)
 			{
 				if (NPC.AnyNPCs(mod.NPCType("Brewer")))
 				{

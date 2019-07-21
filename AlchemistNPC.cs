@@ -31,6 +31,7 @@ namespace AlchemistNPC
 
 		public static Mod Instance;
 		internal static AlchemistNPC instance;
+		internal static ModConfiguration modConfiguration;
 		internal TeleportClass TeleportClass;
 		public static ModHotKey LampLight;
 		public static ModHotKey DiscordBuff;
@@ -70,7 +71,6 @@ namespace AlchemistNPC
 		public override void Load()
 		{
 			Instance = this;
-			Config.Load();
             //ZY:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language 
 			string LampLightToggle, DiscordBuffTeleportation, PipBoy;
             if (Language.ActiveCulture == GameCulture.Chinese)
@@ -157,6 +157,7 @@ namespace AlchemistNPC
 			LampLight = null;
 			DiscordBuff = null;
 			PipBoyTP = null;
+			modConfiguration = null;
 		}
 
 		public override void PostSetupContent()
@@ -309,17 +310,7 @@ namespace AlchemistNPC
 				);
 			}
 		}
-		
-		public static string ConfigFileRelativePath 
-		{
-		get { return "Mod Configs/Alchemistv84.json"; }
-		}
 
-		public static void ReloadConfigFromFile() 
-		{
-		Config.Load();
-		}
-		
 		public override void HandlePacket(BinaryReader reader, int whoAmI)
 		{
 			AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();

@@ -283,7 +283,10 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.FishronBooster == 1)
 			{
-				player.dash = 2;
+				if (player.dash != 0)
+				{
+					player.dash = 1;
+				}
 				if (player.ZoneOverworldHeight)
 				{
 					player.statDefense += 3;

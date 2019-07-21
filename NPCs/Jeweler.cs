@@ -36,7 +36,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Jeweler";
-			return Config.JewelerSpawn;
+			return AlchemistNPC.modConfiguration.JewelerSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -173,7 +173,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss1 && Config.JewelerSpawn)
+			if (NPC.downedBoss1 && AlchemistNPC.modConfiguration.JewelerSpawn)
 			{
 			return true;
 			}
