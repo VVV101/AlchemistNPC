@@ -200,6 +200,7 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("EntryM22");
             text.SetDefault("You are hurting my ears! Turn it down!");
             text.AddTranslation(GameCulture.Russian, "У меня уже болят уши! Сделай потише!");
+			text.AddTranslation(GameCulture.Chinese, "你在伤害我的耳朵! 把它给我关了! ");
 	    mod.AddTranslation(text);
 
         }
