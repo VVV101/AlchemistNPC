@@ -361,7 +361,7 @@ namespace AlchemistNPC
 		public override void OnEnterWorld(Player player)
 		{
             string enterText = Language.GetTextValue("Mods.AlchemistNPC.enterText");
-			if (Config.StartMessage)
+			if (AlchemistNPC.modConfiguration.StartMessage)
 			{
 				Main.NewText(enterText, 0, 255, 255);
 			}
@@ -1191,7 +1191,7 @@ namespace AlchemistNPC
 			}
 			if (MoonLordBooster == 1)
 			{
-				damage -= damage/5;
+				damage -= damage/10;
 			}
 			if (TerrarianBlock && !Main.dayTime)
             {

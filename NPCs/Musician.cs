@@ -26,7 +26,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Musician";
-			return Config.MusicianSpawn;
+			return AlchemistNPC.modConfiguration.MusicianSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -222,7 +222,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss3 && Config.MusicianSpawn)
+			if (NPC.downedBoss3 && AlchemistNPC.modConfiguration.MusicianSpawn)
 			{
 			return true;
 			}

@@ -97,7 +97,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Explorer";
-			return Config.ExplorerSpawn;
+			return AlchemistNPC.modConfiguration.ExplorerSpawn;
 		}
 
 		public override void SetStaticDefaults()

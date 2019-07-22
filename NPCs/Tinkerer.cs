@@ -39,7 +39,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Tinkerer";
-			return Config.TinkererSpawn;
+			return AlchemistNPC.modConfiguration.TinkererSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -134,7 +134,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss1){return Config.TinkererSpawn;}
+			if (NPC.downedBoss1){return AlchemistNPC.modConfiguration.TinkererSpawn;}
 			return false;
 		}
  

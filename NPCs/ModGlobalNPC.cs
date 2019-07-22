@@ -231,10 +231,10 @@ namespace AlchemistNPC.NPCs
 					{
 						for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 						{
-							shop.item[nextSlot].shopCustomPrice *= Config.PotsPriceMulti;
+							shop.item[nextSlot].shopCustomPrice *= AlchemistNPC.modConfiguration.PotsPriceMulti;
 							if (ModLoader.GetMod("CalamityMod") != null)
 							{
-								if (Config.RevPrices && CalamityModRevengeance)
+								if (AlchemistNPC.modConfiguration.RevPrices && CalamityModRevengeance)
 								{
 									shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice/2;
 								}
@@ -829,7 +829,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (Main.expertMode && Config.CoinsDrop)
+			if (Main.expertMode && AlchemistNPC.modConfiguration.CoinsDrop)
 			{
 				if (ModLoader.GetMod("SpiritMod") != null)
 				{
@@ -1061,47 +1061,47 @@ namespace AlchemistNPC.NPCs
 							}
 						}
 					}
-					if (npc.type == NPCID.EyeofCthulhu && Config.TornNotesDrop)
+					if (npc.type == NPCID.EyeofCthulhu && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote1"));
 					}
-					if (npc.type == NPCID.BrainofCthulhu && Config.TornNotesDrop)
+					if (npc.type == NPCID.BrainofCthulhu && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote2"));
 					}
-					if (npc.type == NPCID.EaterofWorldsHead && !NPC.AnyNPCs(NPCID.EaterofWorldsTail) && Config.TornNotesDrop)
+					if (npc.type == NPCID.EaterofWorldsHead && !NPC.AnyNPCs(NPCID.EaterofWorldsTail) && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote2"));
 					}
-					if (npc.type == NPCID.EaterofWorldsTail && !NPC.AnyNPCs(NPCID.EaterofWorldsHead) && Config.TornNotesDrop)
+					if (npc.type == NPCID.EaterofWorldsTail && !NPC.AnyNPCs(NPCID.EaterofWorldsHead) && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote2"));
 					}
-					if (npc.type == NPCID.SkeletronHead && Config.TornNotesDrop)
+					if (npc.type == NPCID.SkeletronHead && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote3"));
 					}
-					if (npc.type == NPCID.SkeletronPrime && Config.TornNotesDrop)
+					if (npc.type == NPCID.SkeletronPrime && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote4"));
 					}
-					if (npc.type == NPCID.Spazmatism && !NPC.AnyNPCs(NPCID.Retinazer) && Config.TornNotesDrop)
+					if (npc.type == NPCID.Spazmatism && !NPC.AnyNPCs(NPCID.Retinazer) && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote5"));
 					}
-					if (npc.type == NPCID.Retinazer && !NPC.AnyNPCs(NPCID.Spazmatism) && Config.TornNotesDrop)
+					if (npc.type == NPCID.Retinazer && !NPC.AnyNPCs(NPCID.Spazmatism) && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote5"));
 					}
-					if (npc.type == NPCID.TheDestroyer && Config.TornNotesDrop)
+					if (npc.type == NPCID.TheDestroyer && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote6"));
 					}
-					if (npc.type == NPCID.Plantera && Config.TornNotesDrop)
+					if (npc.type == NPCID.Plantera && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote7"));
 					}
-					if (npc.type == NPCID.Golem && Config.TornNotesDrop)
+					if (npc.type == NPCID.Golem && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote8"));
 					}
@@ -1112,11 +1112,11 @@ namespace AlchemistNPC.NPCs
 							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Fuaran"));
 						}
 					}
-					if (npc.type == NPCID.MoonLordCore && Config.TornNotesDrop)
+					if (npc.type == NPCID.MoonLordCore && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote9"));
 					}
-					if (Main.expertMode && Config.CoinsDrop)
+					if (Main.expertMode && AlchemistNPC.modConfiguration.CoinsDrop)
 					{
 						if (npc.type == NPCID.KingSlime)
 						{
@@ -1554,7 +1554,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (npc.boss && Config.TinkererSpawn)
+			if (npc.boss && AlchemistNPC.modConfiguration.TinkererSpawn)
 			{
 				if (npc.type == NPCID.EyeofCthulhu)
 				{
