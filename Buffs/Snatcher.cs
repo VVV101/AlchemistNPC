@@ -23,7 +23,7 @@ namespace AlchemistNPC.Buffs
             Description.AddTranslation(GameCulture.Chinese, "嗯... 看起来你还没有灵魂啊. 真可惜. 好吧,让我们来做个交易...\n在旅途中,你会击败无数的敌人...\n你不是在为自己收集他们的灵魂,对吧?\n为什么不把它们给我呢? 每到达固定数量, 我会给你一些奖励.\n听起来不错, 是吧? 希望如此...");
 		}
 
-		public override void ModifyBuffTip (ref string tip, ref int rare)
+		public override void ModifyBuffTip (ref string tipline, ref int rare)
 		{
 			string tip;
 			string tipch;
