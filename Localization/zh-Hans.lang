@@ -1,0 +1,49 @@
+AlchemistModconfig
+
+Common.AlchemistSpawntoggle=炼金师生成切换开关
+Common.AlchemistSpawntoggleTooltip=是, 以激活炼金师NPC生成, 否, 以取消. 默认为是
+
+Common.BrewerSpawntoggle=药剂师生成切换开关
+Common.BrewerSpawntoggleTooltip=是, 以激活药剂师NPC生成, 否, 以取消. 默认为是
+
+Common.JewelerSpawntoggle=珠宝师生成切换开关
+Common.JewelerSpawntoggleTooltip=是, 以激活珠宝师NPC生成, 否, 以取消. 默认为是
+
+Common.YoungBrewerSpawntoggle=年轻药剂师生成切换开关
+Common.YoungBrewerSpawntoggleTooltip=是, 以激活年轻药剂师NPC生成, 否, 以取消. 默认为是
+
+Common.TinkererSpawntoggle=工匠生成切换开关
+Common.TinkererSpawntoggleTooltip=是, 以激活工匠NPC生成, 否, 以取消. 默认为是
+
+Common.ArchitectSpawntoggle=建筑师生成切换开关
+Common.ArchitectSpawntoggleTooltip=是, 以激活建筑师NPC生成, 否, 以取消. 默认为是
+
+Common.OperatorSpawntoggle=操作员生成切换开关
+Common.OperatorSpawntoggleTooltip=是, 以激活操作员NPC生成, 否, 以取消. 默认为是
+
+Common.MusicianSpawntoggle=音乐家生成切换开关
+Common.MusicianSpawntoggleTooltip=是, 以激活音乐家NPC生成, 否, 以取消. 默认为是
+
+Common.ExplorerSpawntoggle=探险家生成切换开关
+Common.ExplorerSpawntoggleTooltip=是, 以激活探险家NPC生成, 否, 以取消. 默认为是
+
+Common.TreasureBagsShopstoggle=宝藏袋商店开关
+Common.TreasureBagsShopstoggleTooltip=是, 以启用操作员NPC的宝藏袋商店, 否, 以取消. 默认为是
+
+Common.TornNotesdroptoggle=破损笔记掉落开关
+Common.TornNotesdroptoggleTooltip=是, 以启用破损笔记掉落, 否, 以取消. 默认为是
+
+Common.ReversityCoinsdroptoggle=逆转硬币掉落开关
+Common.ReversityCoinsdroptoggleTooltip=是, 以启用逆转硬币掉落, 否, 以取消. 默认为是
+
+Common.AlchemistNPCLite=启动时提及AlchemistNPC简化版
+Common.AlchemistNPCLiteTooltip=是, 以推送消息. 默认为是
+
+Common.Revengeancemode=灾厄复仇模式价格调整
+Common.RevengeancemodeTooltip=是, 灾厄复仇模式下药水的价格将更高. 默认为是
+
+Common.Potionspricemultiplier=多人药水价格加倍
+Common.PotionspricemultiplierTooltip=提升价格倍率. 默认为1
+
+Common.FallenStarsPrice=落星价格
+Common.FallenStarsPriceTooltip=默认1000个价值10银
