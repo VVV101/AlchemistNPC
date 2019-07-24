@@ -66,6 +66,14 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Atreus");
             text.AddTranslation(GameCulture.Russian, "Атреус");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("YoungBrewerButton1");
+            text.SetDefault("Combinations");
+            text.AddTranslation(GameCulture.Chinese, "药剂包");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("YoungBrewerButton2");
+            text.SetDefault("Flasks");
+            text.AddTranslation(GameCulture.Chinese, "烧瓶");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry1");
             text.SetDefault("I'm trading potions which were made by my parents.");
             text.AddTranslation(GameCulture.Russian, "Я продаю зелья, сделанные моими родителями.");
@@ -271,8 +279,8 @@ namespace AlchemistNPC.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = "Combinations";
-			button2 = "Flasks";
+            button = Language.GetTextValue("Mods.AlchemistNPC.YoungBrewerButton1");
+			button2 = Language.GetTextValue("Mods.AlchemistNPC.YoungBrewerButton2");
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
