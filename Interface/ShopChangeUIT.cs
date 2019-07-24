@@ -36,7 +36,6 @@ namespace AlchemistNPC.Interface
 			text.Top.Set(10, 0f);
 			text.Width.Set(90, 0f);
 			text.Height.Set(22, 0f);
-			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			TinkererShopsPanel.Append(text);
 			
 			UIText text2 = new UIText("Combat");
@@ -44,7 +43,6 @@ namespace AlchemistNPC.Interface
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(50, 0f);
 			text2.Height.Set(22, 0f);
-			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			TinkererShopsPanel.Append(text2);
 			
 			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");

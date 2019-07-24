@@ -36,7 +36,6 @@ namespace AlchemistNPC.Interface
 			text.Top.Set(10, 0f);
 			text.Width.Set(90, 0f);
 			text.Height.Set(22, 0f);
-			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			MusicianShopsPanel.Append(text);
 			
 			UIText text2 = new UIText("Calamity Music Boxes");
@@ -44,7 +43,6 @@ namespace AlchemistNPC.Interface
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(90, 0f);
 			text2.Height.Set(22, 0f);
-			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			MusicianShopsPanel.Append(text2);
 			
 			UIText text3 = new UIText("Mod/Thorium Music Boxes");
@@ -52,7 +50,6 @@ namespace AlchemistNPC.Interface
 			text3.Top.Set(70, 0f);
 			text3.Width.Set(90, 0f);
 			text3.Height.Set(22, 0f);
-			text3.OnClick += new MouseEvent(PlayButtonClicked3);
 			MusicianShopsPanel.Append(text3);
 			
 			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");

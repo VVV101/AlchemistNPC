@@ -36,7 +36,6 @@ namespace AlchemistNPC.Interface
 			text.Top.Set(10, 0f);
 			text.Width.Set(70, 0f);
 			text.Height.Set(22, 0f);
-			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			ArchitectShopsPanel.Append(text);
 			
 			UIText text2 = new UIText("Building Blocks");
@@ -44,7 +43,6 @@ namespace AlchemistNPC.Interface
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(70, 0f);
 			text2.Height.Set(22, 0f);
-			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			ArchitectShopsPanel.Append(text2);
 			
 			UIText text3 = new UIText("Basic Furniture");
@@ -52,7 +50,6 @@ namespace AlchemistNPC.Interface
 			text3.Top.Set(70, 0f);
 			text3.Width.Set(70, 0f);
 			text3.Height.Set(22, 0f);
-			text3.OnClick += new MouseEvent(PlayButtonClicked3);
 			ArchitectShopsPanel.Append(text3);
 			
 			UIText text4 = new UIText("Advanced Furniture");
@@ -60,7 +57,6 @@ namespace AlchemistNPC.Interface
 			text4.Top.Set(100, 0f);
 			text4.Width.Set(70, 0f);
 			text4.Height.Set(22, 0f);
-			text4.OnClick += new MouseEvent(PlayButtonClicked4);
 			ArchitectShopsPanel.Append(text4);
 			
 			UIText text5 = new UIText("Torches");
@@ -68,7 +64,6 @@ namespace AlchemistNPC.Interface
 			text5.Top.Set(130, 0f);
 			text5.Width.Set(50, 0f);
 			text5.Height.Set(22, 0f);
-			text5.OnClick += new MouseEvent(PlayButtonClicked5);
 			ArchitectShopsPanel.Append(text5);
 			
 			UIText text6 = new UIText("Candles");
@@ -76,7 +71,6 @@ namespace AlchemistNPC.Interface
 			text6.Top.Set(160, 0f);
 			text6.Width.Set(50, 0f);
 			text6.Height.Set(22, 0f);
-			text6.OnClick += new MouseEvent(PlayButtonClicked6);
 			ArchitectShopsPanel.Append(text6);
 			
 			UIText text7 = new UIText("Lamps");
@@ -84,7 +78,6 @@ namespace AlchemistNPC.Interface
 			text7.Top.Set(190, 0f);
 			text7.Width.Set(50, 0f);
 			text7.Height.Set(22, 0f);
-			text7.OnClick += new MouseEvent(PlayButtonClicked7);
 			ArchitectShopsPanel.Append(text7);
 			
 			UIText text8 = new UIText("Lanterns");
@@ -92,7 +85,6 @@ namespace AlchemistNPC.Interface
 			text8.Top.Set(220, 0f);
 			text8.Width.Set(60, 0f);
 			text8.Height.Set(22, 0f);
-			text8.OnClick += new MouseEvent(PlayButtonClicked8);
 			ArchitectShopsPanel.Append(text8);
 			
 			UIText text9 = new UIText("Chandeliers");
@@ -100,7 +92,6 @@ namespace AlchemistNPC.Interface
 			text9.Top.Set(250, 0f);
 			text9.Width.Set(70, 0f);
 			text9.Height.Set(22, 0f);
-			text9.OnClick += new MouseEvent(PlayButtonClicked9);
 			ArchitectShopsPanel.Append(text9);
 			
 			UIText text10 = new UIText("Candelabras");
@@ -108,7 +99,6 @@ namespace AlchemistNPC.Interface
 			text10.Top.Set(280, 0f);
 			text10.Width.Set(70, 0f);
 			text10.Height.Set(22, 0f);
-			text10.OnClick += new MouseEvent(PlayButtonClicked10);
 			ArchitectShopsPanel.Append(text10);
 			
 			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
