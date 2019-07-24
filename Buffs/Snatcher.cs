@@ -25,6 +25,7 @@ namespace AlchemistNPC.Buffs
 
 		public override void ModifyBuffTip (ref string tipline, ref int rare)
 		{
+			string tip;
 			string tipch;
 			if(Language.ActiveCulture == GameCulture.Chinese)
 				{
@@ -32,7 +33,7 @@ namespace AlchemistNPC.Buffs
 				}
 			else 
 				{
-					tipline=tip;
+					tipline = tip;
 				}
 			
 			Player player = Main.player[Main.myPlayer];
