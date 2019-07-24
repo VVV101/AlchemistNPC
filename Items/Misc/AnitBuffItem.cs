@@ -47,7 +47,7 @@ namespace AlchemistNPC.Items.Misc
 			{
 				if (Main.netMode == 0 || Main.netMode == 1)
 				{
-					Main.NewText("Anti Buff mode is active", 255, 255, 255);
+					Main.NewText("Anti Buff mode is activated", 255, 255, 255);
 				}
 				AlchemistNPCWorld.foundAntiBuffMode = true;
 				return true;
