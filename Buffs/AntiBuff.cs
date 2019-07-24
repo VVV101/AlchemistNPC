@@ -24,9 +24,14 @@ namespace AlchemistNPC.Buffs
 		
 		public override void ModifyBuffTip (ref string tip, ref int rare)
 		{
+			string tip;
+			string tipch;
+			
 			Player player = Main.player[Main.myPlayer];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
 			tip = "Active boosts:";
+			tipch = "生效增益:";
+      
 			if (modPlayer.KingSlimeBooster == 1)
 			{
 				tip += "\nIncreases jump height and safe fall distance greatly";
@@ -123,6 +128,16 @@ namespace AlchemistNPC.Buffs
 			{
 				tip += "\nYou emit aura which weakens enemies around";
 			}
+
+			
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					tipline = tipch;
+				}
+			else 
+				{
+					tipline = tip;
+				}
 		}
 		
 		public override void Update(Player player, ref int buffIndex)

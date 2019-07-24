@@ -25,6 +25,9 @@ namespace AlchemistNPC.Buffs
 
 		public override void ModifyBuffTip (ref string tip, ref int rare)
 		{
+			string tip;
+			string tipch;
+			
 			Player player = Main.player[Main.myPlayer];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
 			tip = "Uh... You don't seem to have a soul. What a shame. OK then, let's make a deal..."
@@ -33,6 +36,22 @@ namespace AlchemistNPC.Buffs
 			+"\nWhy not give them to me then? For certain amounts, I will give you some kind of rewards."
 			+"\nDoes that sound good enough? I hope so..."
 			+"\n" + modPlayer.SnatcherCounter + " souls collected.";
+			tipch = "嗯... 看起来你还没有灵魂啊. 真可惜. 好吧,让我们来做个交易..."
+			+"\n在旅途中,你会击败无数的敌人..."
+			+"\n你不是在为自己收集他们的灵魂,对吧?"
+			+"\n为什么不把它们给我呢? 每到达固定数量, 我会给你一些奖励."
+			+"\n听起来不错, 是吧? 希望如此..."
+			+"\n" + modPlayer.SnatcherCounter + "已收集的灵魂.";
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					tipline = tipch;
+				}
+			else 
+				{
+					tipline = tip;
+				}
+        
 			if (modPlayer.SnatcherCounter >= 500)
 			{
 				tip += "\nIncreases your movement speed by 25%";
@@ -65,6 +84,15 @@ namespace AlchemistNPC.Buffs
 			{
 				tip += "\nBoosts your max life by 10%";
 			}
+			
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					tipline = tipch;
+				}
+			else 
+				{
+					tipline = tip;
+				}
 		}
 		
 		public override void Update(Player player, ref int buffIndex)
