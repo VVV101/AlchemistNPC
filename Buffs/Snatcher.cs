@@ -27,14 +27,6 @@ namespace AlchemistNPC.Buffs
 		{
 			string tip;
 			string tipch;
-			if(Language.ActiveCulture == GameCulture.Chinese)
-				{
-					tipline = tipch;
-				}
-			else 
-				{
-					tipline = tip;
-				}
 			
 			Player player = Main.player[Main.myPlayer];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
@@ -50,6 +42,16 @@ namespace AlchemistNPC.Buffs
 			+"\n为什么不把它们给我呢? 每到达固定数量, 我会给你一些奖励."
 			+"\n听起来不错, 是吧? 希望如此..."
 			+"\n" + modPlayer.SnatcherCounter + "已收集的灵魂.";
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					tipline = tipch;
+				}
+			else 
+				{
+					tipline = tip;
+				}
+			
 			if (modPlayer.SnatcherCounter >= 500)
 			{
 				tip += "\nIncreases your movement speed by 25%";
@@ -90,6 +92,15 @@ namespace AlchemistNPC.Buffs
 				tip += "\nBoosts your max life by 10%";
 				tipch += "\n增加10%生命上限";
 			}
+			
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					tipline = tipch;
+				}
+			else 
+				{
+					tipline = tip;
+				}
 		}
 		
 		public override void Update(Player player, ref int buffIndex)

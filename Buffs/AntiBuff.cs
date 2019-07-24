@@ -26,19 +26,12 @@ namespace AlchemistNPC.Buffs
 		{
 			string tip;
 			string tipch;
-			if(Language.ActiveCulture == GameCulture.Chinese)
-				{
-					tipline = tipch;
-				}
-			else 
-				{
-					tipline = tip;
-				}
 			
 			Player player = Main.player[Main.myPlayer];
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
 			tip = "Active boosts:";
 			tipch = "生效增益:";
+			
 			if (modPlayer.KingSlimeBooster == 1)
 			{
 				tip += "\nIncreases jump height and safe fall distance greatly";
@@ -160,6 +153,16 @@ namespace AlchemistNPC.Buffs
 				tip += "\nYou emit aura which weakens enemies around";
 				tipch += "\n你产生能弱化周围敌人的光环";
 			}
+
+			
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					tipline = tipch;
+				}
+			else 
+				{
+					tipline = tip;
+				}
 		}
 		
 		public override void Update(Player player, ref int buffIndex)
