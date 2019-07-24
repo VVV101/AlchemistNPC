@@ -1119,7 +1119,7 @@ namespace AlchemistNPC
 			}
 			if (MoonLordBooster == 1)
 			{
-				damage -= damage/5;
+				damage -= damage/10;
 			}
 			if (npc.type == mod.NPCType("BillCipher"))
             {
