@@ -283,7 +283,7 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.FishronBooster == 1)
 			{
-				if (player.dash != 0)
+				if (player.dash == 0)
 				{
 					player.dash = 1;
 				}

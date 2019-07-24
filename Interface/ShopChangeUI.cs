@@ -36,7 +36,6 @@ namespace AlchemistNPC.Interface
 			text.Top.Set(10, 0f);
 			text.Width.Set(60, 0f);
 			text.Height.Set(22, 0f);
-			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			BrewerShopsPanel.Append(text);
 			
 			UIText text2 = new UIText("Mod/Calamity");
@@ -44,7 +43,6 @@ namespace AlchemistNPC.Interface
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(120, 0f);
 			text2.Height.Set(22, 0f);
-			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			BrewerShopsPanel.Append(text2);
 			
 			UIText text21 = new UIText("Thorium/RG");
@@ -52,7 +50,6 @@ namespace AlchemistNPC.Interface
 			text21.Top.Set(70, 0f);
 			text21.Width.Set(100, 0f);
 			text21.Height.Set(22, 0f);
-			text21.OnClick += new MouseEvent(PlayButtonClicked2);
 			BrewerShopsPanel.Append(text21);
 			
 			UIText text3 = new UIText("MorePotions");
@@ -60,7 +57,6 @@ namespace AlchemistNPC.Interface
 			text3.Top.Set(100, 0f);
 			text3.Width.Set(70, 0f);
 			text3.Height.Set(22, 0f);
-			text3.OnClick += new MouseEvent(PlayButtonClicked3);
 			BrewerShopsPanel.Append(text3);
 			
 			UIText text4 = new UIText("UnuBattleRods/Tacklebox/Tremor");
@@ -68,7 +64,6 @@ namespace AlchemistNPC.Interface
 			text4.Top.Set(130, 0f);
 			text4.Width.Set(150, 0f);
 			text4.Height.Set(22, 0f);
-			text4.OnClick += new MouseEvent(PlayButtonClicked4);
 			BrewerShopsPanel.Append(text4);
 			
 			UIText text5 = new UIText("Wildlife/Sacred/Spirit/Cristilium/ExpSentr");
@@ -76,7 +71,6 @@ namespace AlchemistNPC.Interface
 			text5.Top.Set(160, 0f);
 			text5.Width.Set(200, 0f);
 			text5.Height.Set(22, 0f);
-			text5.OnClick += new MouseEvent(PlayButtonClicked5);
 			BrewerShopsPanel.Append(text5);
 
 			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");

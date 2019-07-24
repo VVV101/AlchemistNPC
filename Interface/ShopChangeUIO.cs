@@ -36,7 +36,6 @@ namespace AlchemistNPC.Interface
 			text.Top.Set(10, 0f);
 			text.Width.Set(90, 0f);
 			text.Height.Set(22, 0f);
-			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			OperatorShopsPanel.Append(text);
 			
 			UIText text2 = new UIText("EGO shop");
@@ -44,7 +43,6 @@ namespace AlchemistNPC.Interface
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(70, 0f);
 			text2.Height.Set(22, 0f);
-			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			OperatorShopsPanel.Append(text2);
 			
 			UIText text3 = new UIText("Vanilla Treasure Bags");
@@ -52,7 +50,6 @@ namespace AlchemistNPC.Interface
 			text3.Top.Set(70, 0f);
 			text3.Width.Set(120, 0f);
 			text3.Height.Set(22, 0f);
-			text3.OnClick += new MouseEvent(PlayButtonClicked3);
 			OperatorShopsPanel.Append(text3);
 			
 			UIText text4 = new UIText("Modded Treasure Bags #1");
@@ -60,7 +57,6 @@ namespace AlchemistNPC.Interface
 			text4.Top.Set(100, 0f);
 			text4.Width.Set(120, 0f);
 			text4.Height.Set(22, 0f);
-			text4.OnClick += new MouseEvent(PlayButtonClicked4);
 			OperatorShopsPanel.Append(text4);
 			
 			UIText text5 = new UIText("Modded Treasure Bags #2");
@@ -68,7 +64,6 @@ namespace AlchemistNPC.Interface
 			text5.Top.Set(130, 0f);
 			text5.Width.Set(120, 0f);
 			text5.Height.Set(22, 0f);
-			text5.OnClick += new MouseEvent(PlayButtonClicked5);
 			OperatorShopsPanel.Append(text5);
 			
 			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
