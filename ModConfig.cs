@@ -14,6 +14,7 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using Terraria.ModLoader.Config.UI;
 using Terraria.UI;
+using Terraria.Localization;
 
 namespace AlchemistNPC
 {
@@ -22,85 +23,85 @@ namespace AlchemistNPC
 		public override ConfigScope Mode => ConfigScope.ServerSide;
 		
 		[DefaultValue(true)]
-		[Label("Alchemist Spawn toggle")]
-		[Tooltip("True to enable Alchemist NPC spawn, false to disable. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.AlchemistSpawntoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.AlchemistSpawntoggleTooltip")]
 		public bool AlchemistSpawn;
 		
 		[DefaultValue(true)]
-		[Label("Brewer Spawn toggle")]
-		[Tooltip("True to enable Brewer NPC spawn, false to disable. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.BrewerSpawntoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.BrewerSpawntoggleTooltip")]
 		public bool BrewerSpawn;
 		
 		[DefaultValue(true)]
-		[Label("Jeweler Spawn toggle")]
-		[Tooltip("True to enable Jeweler NPC spawn, false to disable. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.JewelerSpawntoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.JewelerSpawntoggleTooltip")]
 		public bool JewelerSpawn;
 		
 		[DefaultValue(true)]
-		[Label("Young Brewer Spawn toggle")]
-		[Tooltip("True to enable Young Brewer NPC spawn, false to disable. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.YoungBrewerSpawntoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.YoungBrewerSpawntoggleTooltip")]
 		public bool YoungBrewerSpawn;
 			
 		[DefaultValue(true)]
-		[Label("Tinkerer Spawn toggle")]
-		[Tooltip("True to enable Tinkerer NPC spawn, false to disable. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.TinkererSpawntoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.TinkererSpawntoggleTooltip")]
 		public bool TinkererSpawn;
 		
 		[DefaultValue(true)]
-		[Label("Architect Spawn toggle")]
-		[Tooltip("True to enable Architect NPC spawn, false to disable. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.ArchitectSpawntoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.ArchitectSpawntoggleTooltip")]
 		public bool ArchitectSpawn;
 		
 		[DefaultValue(true)]
-		[Label("Operator Spawn toggle")]
-		[Tooltip("True to enable Operator NPC spawn, false to disable. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.OperatorSpawntoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.OperatorSpawntoggleTooltip")]
 		public bool OperatorSpawn;
 		
 		[DefaultValue(true)]
-		[Label("Musician Spawn toggle")]
-		[Tooltip("True to enable Musician NPC spawn, false to disable. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.MusicianSpawntoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.MusicianSpawntoggleTooltip")]
 		public bool MusicianSpawn;
 		
 		[DefaultValue(true)]
-		[Label("Explorer Spawn toggle")]
-		[Tooltip("True to enable Explorer NPC spawn, false to disable. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.ExplorerSpawntoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.ExplorerSpawntoggleTooltip")]
 		public bool ExplorerSpawn;
 		
 		[DefaultValue(true)]
-		[Label("Treasure Bags Shops toggle")]
-		[Tooltip("True to enable Treasure Bags Shops of Operator NPC. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.TreasureBagsShopstoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.TreasureBagsShopstoggleTooltip")]
 		public bool TS;
 		
 		[DefaultValue(true)]
-		[Label("Torn Notes drop toggle")]
-		[Tooltip("True to enable Torn Notes drop. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.TornNotesdroptoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.TornNotesdroptoggleTooltip")]
 		public bool TornNotesDrop;
 		
 		[DefaultValue(true)]
-		[Label("Reversity Coins drop toggle")]
-		[Tooltip("True to enable Reversity Coins drop. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.ReversityCoinsdroptoggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.ReversityCoinsdroptoggleTooltip")]
 		public bool CoinsDrop;
 		
 		[DefaultValue(true)]
-		[Label("Starting message referring to AlchemistNPC Lite")]
-		[Tooltip("True to enable starting message. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.AlchemistNPCLite")]
+		[Tooltip("$Mods.AlchemistNPC.Common.AlchemistNPCLiteTooltip")]
 		public bool StartMessage;
 		
 		[DefaultValue(true)]
-		[Label("Revengeance mode prices scaling")]
-		[Tooltip("True to make potions prices bigger. True by default")]
+		[Label("$Mods.AlchemistNPC.Common.Revengeancemode")]
+		[Tooltip("$Mods.AlchemistNPC.Common.RevengeancemodeTooltip")]
 		public bool RevPrices;
 		
 		[Range(1, 1000)]
 		[DefaultValue(1)]
-		[Label("Potions price multiplier")]
-		[Tooltip("Multiplies potions price by X. 1 by default")]
+		[Label("$Mods.AlchemistNPC.Common.Potionspricemultiplier")]
+		[Tooltip("$Mods.AlchemistNPC.Common.PotionspricemultiplierTooltip")]
 		public int PotsPriceMulti;
 		
 		[Range(1, 1000000)]
 		[DefaultValue(1000)]
-		[Label("Fallen Stars Price")]
-		[Tooltip("1000 is 10 silver price by default")]
+		[Label("$Mods.AlchemistNPC.Common.FallenStarsPrice")]
+		[Tooltip("$Mods.AlchemistNPC.Common.FallenStarsPriceTooltip")]
 		public int StarPrice;
 
 		public override ModConfig Clone() {
@@ -112,16 +113,30 @@ namespace AlchemistNPC
 			AlchemistNPC.modConfiguration = this;
 		}
 
-		public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message) {
+		public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string messageline) {
+			string message;
+			string messagech;
+			
 			if (whoAmI == 0) {
 				message = "Changes accepted!";
+				messagech = "设置改动成功!";
 				return true;
 			}
 			else
 			{
 				message = "You have no rights to change config.";
+				messagech = "你没有设置改动权限.";
 				return false;
 			}
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					messageline = messagech;
+				}
+			else 
+				{
+					messageline = message;
+				}
 			return false;
 		}
 	}
