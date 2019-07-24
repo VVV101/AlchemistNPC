@@ -25,7 +25,7 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Исследователя");
             Description.AddTranslation(GameCulture.Russian, "Сочетания баффов Предчувствия, Охотника, Шахтёра, Ночного Зрения, Сияния и Добычи\nТакже даёт эффекты Подводного Дыхания, Ласт и Хождения по воде");
             DisplayName.AddTranslation(GameCulture.Chinese, "探索者药剂包");
-            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿\n同时给予水肺、脚蹼和水上行走药剂效果");
+            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿\n同时给予鱼鳃、脚蹼和水上行走药剂效果");
         }
 		public override void Update(Player player, ref int buffIndex)
 		{

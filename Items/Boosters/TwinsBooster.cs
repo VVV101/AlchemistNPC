@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Archery and Ammo Reservation effects, immunity to Cursed Flames and Ichor");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Близнецов");
 			Tooltip.AddTranslation(GameCulture.Russian, "Эффекты Стрельбы и Экономии Боеприпасов, иммунитет к Проклятому Пламени и Ихору");
+			DisplayName.AddTranslation(GameCulture.Chinese, "双子魔眼增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "箭术和弹药储备药剂效果，免疫咒焰和脓血");
         }
 
 		public override void SetDefaults()

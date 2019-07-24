@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Hostile bees do less damage and your regeneration is increased by 6, immunity to poisons");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Королевы Пчёл");
 			Tooltip.AddTranslation(GameCulture.Russian, "Враждебные пчёлы наносят меньше урона и ваша регенерация увеличена на 6, иммунитет к ядам");
+			DisplayName.AddTranslation(GameCulture.Chinese, "蜂后增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "敌方蜜蜂的伤害降低并且你的生命再生速度增加6，免疫中毒");
         }
 
 		public override void SetDefaults()

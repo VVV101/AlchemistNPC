@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Provides immunity to Chilled, Frozen and Frostburn debuffs");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Ледяного Голема");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт невосприимчивость к Охлаждению, Заморозке и Морозному Ожогу");
+			DisplayName.AddTranslation(GameCulture.Chinese, "冰巨人增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "免疫寒冷，冻结和霜火");
         }
 
 		public override void SetDefaults()

@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Increases mining speed by 33% and increases max life by 25%");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Уничтожителя");
 			Tooltip.AddTranslation(GameCulture.Russian, "Cкорость копания увеличена на 33% и увеличивает максимальное здоровье на 25%");
+			DisplayName.AddTranslation(GameCulture.Chinese, "机械毁灭者增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "增加33%挖掘速度并提升25%生命上限");
         }
 
 		public override void SetDefaults()

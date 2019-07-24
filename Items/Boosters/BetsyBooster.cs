@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Your attacks inflict Daybroken, flight abilities are increased");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Бетси");
 			Tooltip.AddTranslation(GameCulture.Russian, "Ваши атаки накладывают Солнечное Пламя, улучшает способности к полёту");
+			DisplayName.AddTranslation(GameCulture.chinese, "贝特西增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "你的攻击造成破晓，飞行能力提升");
         }
 
 		public override void SetDefaults()

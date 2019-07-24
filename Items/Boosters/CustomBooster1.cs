@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Gives Shine and Nightvision effects");
 			DisplayName.AddTranslation(GameCulture.Russian, "Выборочный усилитель 1");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт эффекты Свечения и Ночного Зрения");
+			DisplayName.AddTranslation(GameCulture.Chinese, "普通增益容器1号");
+			Tooltip.AddTranslation(GameCulture.Chinese, "给予发光和夜视效果");
         }
 
 		public override void SetDefaults()

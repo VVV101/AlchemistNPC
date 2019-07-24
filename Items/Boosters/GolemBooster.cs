@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Increases attack speed by 10% and increases melee knockback");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Голема");
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает скорсть атаки на 10% и усиливает отбрасывание в ближнем бою");
+			DisplayName.AddTranslation(GameCulture.Chinese, "石巨人增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "增加10%攻击速度，提升近战击退力");
         }
 
 		public override void SetDefaults()

@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Provides Well Fed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Ледяного Голема");
 			Tooltip.AddTranslation(GameCulture.Russian, "Даёт постоянную Сытость");
+			DisplayName.AddTranslation(GameCulture.Chinese, "猪龙增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "吃得饱!");
         }
 
 		public override void SetDefaults()

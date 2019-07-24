@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Provides creatures, treasures and traps detection");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Глаза Ктулху");
 			Tooltip.AddTranslation(GameCulture.Russian, "Позволяет видеть сокровища, существ и ловушки");
+			DisplayName.AddTranslation(GameCulture.Chinese, "克苏鲁之眼增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "提供生物，宝藏和陷阱的探测能力");
         }
 
 		public override void SetDefaults()

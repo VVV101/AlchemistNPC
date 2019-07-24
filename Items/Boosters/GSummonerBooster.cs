@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Makes your attacks inflict Shadowflame and makes you immune to it");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Гоблина-Призывателя");
 			Tooltip.AddTranslation(GameCulture.Russian, "Ваши атаки усилены Теневым Пламенем, вы также иммунны к нему");
+			DisplayName.AddTranslation(GameCulture.Chinese, "哥布林召唤师增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "让你的攻击能造成暗影炎，你免疫暗影炎");
         }
 
 		public override void SetDefaults()

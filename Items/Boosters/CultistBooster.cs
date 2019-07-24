@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Boosters
 			Tooltip.SetDefault("Reduces damage taken from Pillars enemies, mobs may drop lunar fragments");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Лунатика-Культиста");
 			Tooltip.AddTranslation(GameCulture.Russian, "Уменьшен урон от существ Башен, из мобов могут выпадать фрагменты");
+			DisplayName.AddTranslation(GameCulture.Chinese, "邪教徒增益容器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "减少受到月柱敌人造成的伤害，小怪可能掉落月柱碎片");
         }
 
 		public override void SetDefaults()
