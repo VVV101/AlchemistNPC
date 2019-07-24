@@ -15,6 +15,9 @@ namespace AlchemistNPC.Items.Misc
 		{
 			DisplayName.SetDefault("Heart of Greed");
 			Tooltip.SetDefault("While in your inventory, all money dropped goes in your inventory");
+
+			DisplayName.AddTranslation(GameCulture.Chinese, "贪欲之心");
+            Tooltip.AddTranslation(GameCulture.Chinese, "在你的背包中时，所有掉落的钱币都会吸进你的背包");
         }
 
 		public override void SetDefaults()
