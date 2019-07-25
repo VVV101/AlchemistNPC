@@ -156,13 +156,13 @@ namespace AlchemistNPC.Buffs
 
 			
 			if(Language.ActiveCulture == GameCulture.Chinese)
-				{
-					tipline = tipch;
-				}
+			{
+				tipline = tipch;
+			}
 			else 
-				{
-					tipline = tip;
-				}
+			{
+				tipline = tip;
+			}
 		}
 		
 		public override void Update(Player player, ref int buffIndex)

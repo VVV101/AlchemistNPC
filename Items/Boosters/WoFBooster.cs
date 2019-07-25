@@ -11,7 +11,7 @@ namespace AlchemistNPC.Items.Boosters
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Wall of Flesh booster booster");
+			DisplayName.SetDefault("Wall of Flesh booster");
 			Tooltip.SetDefault("Increases max amount of minions/sentries by 1, defense and DR by 10/10%");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Стены Плоти");
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальной количество прислужников/турелей на 1, защиту и сопротивление урону на 10/10%");
