@@ -21,6 +21,7 @@ namespace AlchemistNPC.Tiles
 			TileObjectData.addTile(Type);
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Molecular Replicator");
+			name.AddTranslation(GameCulture.Chinese, "分子复制器");
 			AddMapEntry(new Color(190, 230, 190), name);
 			dustType = 11;
 			disableSmartCursor = true;
