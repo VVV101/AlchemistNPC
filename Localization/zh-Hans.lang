@@ -47,3 +47,12 @@ Common.PotionspricemultiplierTooltip=提升价格倍率. 默认为1
 
 Common.FallenStarsPrice=落星价格
 Common.FallenStarsPriceTooltip=默认1000个价值10银
+
+Prefix
+
+Prefix.Ancient=亘古
+Prefix.Shining=光炫
+Prefix.Arcana=幽秘
+Prefix.Demiurgic=创世
+Prefix.Immortal=不朽
+Prefix.Primal=原初

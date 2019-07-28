@@ -176,7 +176,7 @@ namespace AlchemistNPC.NPCs
             text = mod.CreateTranslation("EntryE4");
             text.SetDefault("''There's a legendary yoyo known as the Sasscade.''... I am pretty sure you heard about that before. But I know how you can get it.");
             text.AddTranslation(GameCulture.Russian, "''Существует Легендарное Йо-йо, известное как Сасскад.''... Я уверена, что ты слышал об этом раньше. Но я знаю, как ты можешь заполучить его.");
-            text.AddTranslation(GameCulture.Chinese, "''有个传说中的悠悠球叫做Sasscade.''...我很确定你之前听到过这句话, 但是我知道, 如何得到它!");
+            text.AddTranslation(GameCulture.Chinese, "''有个传说中的悠悠球叫做萨斯卡德.''...我很确定你之前听到过这句话, 但是我知道, 如何得到它!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE5");
             text.SetDefault("If you want to take part in my researches, then grab my notes and check if you can help. All results will belong to you.");

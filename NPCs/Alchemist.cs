@@ -51,6 +51,7 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("GetCharm");
             text.SetDefault("Get Charm");
             text.AddTranslation(GameCulture.Russian, "Получить талисман");
+			text.AddTranslation(GameCulture.Chinese, "获得符咒");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Edward");
             text.SetDefault("Edward");
@@ -94,7 +95,7 @@ namespace AlchemistNPC.NPCs
             text = mod.CreateTranslation("EntryA4");
             text.SetDefault("There's a legendary yoyo known as the Sasscade.");
             text.AddTranslation(GameCulture.Russian, "Существует Легендарное Йо-йо, известное как Сасскад.");
-            text.AddTranslation(GameCulture.Chinese, "有一个传说中的溜溜球被称为Sasscade.");
+            text.AddTranslation(GameCulture.Chinese, "有一个传说中的悠悠球被称为萨斯卡德.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA5");
             text.SetDefault("The Strange Brew I bought from the Skeleton Merchant smells awful, but its Mana Restoration effect is awesome!");

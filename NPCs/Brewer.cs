@@ -119,7 +119,7 @@ namespace AlchemistNPC.NPCs
             text = mod.CreateTranslation("EntryB4");
             text.SetDefault("There's a legendary yoyo known as the Sasscade.");
             text.AddTranslation(GameCulture.Russian, "Существует Легендарное Йо-йо, известное как Сасскад.");
-            text.AddTranslation(GameCulture.Chinese, "有一个传说中的溜溜球被称为Sasscadee.");
+            text.AddTranslation(GameCulture.Chinese, "有一个传说中的悠悠球球被称为萨斯卡德.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryB5");
             text.SetDefault("Aww, bread crumbs and beaver spit!");
