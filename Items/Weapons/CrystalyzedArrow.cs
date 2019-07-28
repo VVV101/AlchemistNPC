@@ -12,7 +12,7 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристальные стрелы");
 			Tooltip.AddTranslation(GameCulture.Russian, "Разрываются на осколки при попадании");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "水晶尘之箭");
+            DisplayName.AddTranslation(GameCulture.Chinese, "晶尘箭");
             Tooltip.AddTranslation(GameCulture.Chinese, "爆炸变成致命碎片.");
         }
 

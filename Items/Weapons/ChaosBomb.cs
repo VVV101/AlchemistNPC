@@ -40,7 +40,7 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.AddTranslation(GameCulture.Russian, "ХАОС! ХАОС!\nВзрывается при касании, производя случайный хаос");
 			DisplayName.AddTranslation(GameCulture.Chinese, "混沌爆弹");
 			Tooltip.AddTranslation(GameCulture.Chinese, "混·沌! 混·沌!"
-			+"\n接触时爆炸, 释放随机随机混沌");
+			+"\n接触时爆炸, 释放随机混沌");
         }
 	}
 }

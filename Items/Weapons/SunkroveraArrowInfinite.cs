@@ -15,8 +15,8 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.AddTranslation(GameCulture.Russian, "Сункроверная стрела");
             Tooltip.AddTranslation(GameCulture.Russian, "Даже держать эти стрелы в руках... нелегко.\nВыпускает похищающие жизнь снаряды при попадании во врага/стену\nБесконечна");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "森克罗维拉之箭");
-            Tooltip.AddTranslation(GameCulture.Chinese, "即便是带着它你也能感受到那份...压力\n击中墙壁或敌人后释放带有生命偷取的子弹\n无限");
+            DisplayName.AddTranslation(GameCulture.Chinese, "森克罗维拉之箭 (无限)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "即便是带着它你也能感受到那份...压力\n击中墙壁或敌人后释放可以汲取生命的子弹\n无限");
         }
 
 		public override void SetDefaults()
