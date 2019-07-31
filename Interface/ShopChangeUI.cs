@@ -8,7 +8,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
 using System;
 using Terraria.ID;
-using Terraria.Localizatiion;
+using Terraria.Localization;
 using System.Linq;
 using AlchemistNPC.NPCs;
 
