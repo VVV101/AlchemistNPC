@@ -109,6 +109,7 @@ namespace AlchemistNPC.Interface
 					Pirate = "Pirate";
 					Clothier = "Clothier";
 					Truffle = "Truffle";
+					Stylist = "Stylist";
 					PartyGirl = "Party Girl";
 					Alchemist = "Alchemist";
 					Brewer = "Brewer";
