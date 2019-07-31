@@ -43,7 +43,7 @@ namespace AlchemistNPC.Interface
 					BeachButton = "沙滩 左/右";
 					OceanButton = "海洋 左/右";
 					DungeonButton = "地牢";
-					UnderworldButton = "洞穴 左/右";
+					UnderworldButton = "地狱 左/右";
 					JungleButton = "丛林 左/右";
 					TempleButton = "神庙";
 				}

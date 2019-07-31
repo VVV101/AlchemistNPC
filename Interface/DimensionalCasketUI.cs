@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.Localization;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
 using System;
@@ -35,181 +36,266 @@ namespace AlchemistNPC.Interface
 			DimensionalCasketPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
 			DimensionalCasketPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			UIText text = new UIText("Arms Dealer");
+			string ArmsDealer; 
+			string Merchant; 
+			string Demolitionist; 
+			string Dryad; 
+			string Painter; 
+			string DyeTrader; 
+			string GoblinTinkerer; 
+			string Mechanic; 
+			string Steampunker; 
+			string Wizard;
+			string WitchDoctor;
+			string Cyborg;
+			string Pirate;
+			string Clothier;
+			string Truffle;
+			string Stylist;
+			string PartyGirl;
+			string Alchemist;
+			string Brewer;
+			string Architect;
+			string Architect1;
+			string Operator;
+			string Jeweler;
+			string YoungBrewer;
+			string Musician;
+			string Explorer;
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					ArmsDealer = "军火商";
+					Merchant = "商人";
+					Demolitionist = "爆破专家";
+					Dryad = "树妖";
+					Painter = "画家";
+					DyeTrader = "染料商";
+					GoblinTinkerer = "哥布林工匠";
+					Mechanic = "机械师/电工";
+					Steampunker = "蒸汽朋克人";
+					Wizard = "魔法师";
+					WitchDoctor = "巫医";
+					Cyborg = "电子人";
+					Pirate = "海盗";
+					Clothier = "服装商";
+					Truffle = "松露人";
+					Stylist = "美发师";
+					PartyGirl = "派对女孩";
+					Alchemist = "炼金师";
+					Brewer = "药剂师";
+					Architect = "建筑师";
+					Architect1 = "商店";
+					Operator = "操作员";
+					Jeweler = "珠宝商";
+					YoungBrewer = "年轻药剂师";
+					Musician = "音乐家";
+					Explorer = "探险家";
+				}
+			else
+				{
+					ArmsDealer = "Arms Dealer";
+					Merchant = "Merchant";
+					Demolitionist = "Demolitionist";
+					Dryad = "Dryad";
+					Painter = "Painter";
+					DyeTrader = "Dye Trader";
+					GoblinTinkerer = "Goblin Tinkerer";
+					Mechanic = "Mechanic";
+					Steampunker = "Steampunker";
+					Wizard = "Wizard";
+					WitchDoctor = "Witch Doctor";
+					Cyborg = "Cyborg";
+					Pirate = "Pirate";
+					Clothier = "Clothier";
+					Truffle = "Truffle";
+					PartyGirl = "Party Girl";
+					Alchemist = "Alchemist";
+					Brewer = "Brewer";
+					Architect = "Architect";
+					Architect1 = "Shops";
+					Operator = "Operator";
+					Jeweler = "Jeweler";
+					YoungBrewer = "Young Brewer";
+					Musician = "Musician";
+					Explorer = "Explorer";
+				}
+			
+			UIText text = new UIText(ArmsDealer);
 			text.Left.Set(35, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(60, 0f);
 			text.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text);
 			
-			UIText text2 = new UIText("Merchant");
+			UIText text2 = new UIText(Merchant);
 			text2.Left.Set(35, 0f);
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(50, 0f);
 			text2.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text2);
 			
-			UIText text3 = new UIText("Demolitionist");
+			UIText text3 = new UIText(Demolitionist);
 			text3.Left.Set(35, 0f);
 			text3.Top.Set(70, 0f);
 			text3.Width.Set(65, 0f);
 			text3.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text3);
 			
-			UIText text4 = new UIText("Dryad");
+			UIText text4 = new UIText(Dryad);
 			text4.Left.Set(35, 0f);
 			text4.Top.Set(100, 0f);
 			text4.Width.Set(50, 0f);
 			text4.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text4);
 			
-			UIText text5 = new UIText("Painter");
+			UIText text5 = new UIText(Painter);
 			text5.Left.Set(35, 0f);
 			text5.Top.Set(130, 0f);
 			text5.Width.Set(55, 0f);
 			text5.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text5);
 			
-			UIText text6 = new UIText("Dye Trader");
+			UIText text6 = new UIText(DyeTrader);
 			text6.Left.Set(35, 0f);
 			text6.Top.Set(160, 0f);
 			text6.Width.Set(60, 0f);
 			text6.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text6);
 			
-			UIText text7 = new UIText("Goblin Tinkerer");
+			UIText text7 = new UIText(GoblinTinkerer);
 			text7.Left.Set(75, 0f);
 			text7.Top.Set(190, 0f);
 			text7.Width.Set(80, 0f);
 			text7.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text7);
 			
-			UIText text8 = new UIText("Mechanic");
+			UIText text8 = new UIText(Mechanic);
 			text8.Left.Set(35, 0f);
 			text8.Top.Set(220, 0f);
 			text8.Width.Set(55, 0f);
 			text8.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text8);
 			
-			UIText text9 = new UIText("Steampunker");
+			UIText text9 = new UIText(Steampunker);
 			text9.Left.Set(35, 0f);
 			text9.Top.Set(250, 0f);
 			text9.Width.Set(60, 0f);
 			text9.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text9);
 			
-			UIText text10 = new UIText("Wizard");
+			UIText text10 = new UIText(Wizard);
 			text10.Left.Set(35, 0f);
 			text10.Top.Set(280, 0f);
 			text10.Width.Set(50, 0f);
 			text10.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text10);
 			
-			UIText text11 = new UIText("Witch Doctor");
+			UIText text11 = new UIText(WitchDoctor);
 			text11.Left.Set(35, 0f);
 			text11.Top.Set(310, 0f);
 			text11.Width.Set(60, 0f);
 			text11.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text11);
 			
-			UIText text12 = new UIText("Cyborg");
+			UIText text12 = new UIText(Cyborg);
 			text12.Left.Set(35, 0f);
 			text12.Top.Set(340, 0f);
 			text12.Width.Set(60, 0f);
 			text12.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text12);
 			
-			UIText text13 = new UIText("Pirate");
+			UIText text13 = new UIText(Pirate);
 			text13.Left.Set(35, 0f);
 			text13.Top.Set(370, 0f);
 			text13.Width.Set(55, 0f);
 			text13.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text13);
 			
-			UIText text14 = new UIText("Clothier");
+			UIText text14 = new UIText(Clothier);
 			text14.Left.Set(35, 0f);
 			text14.Top.Set(400, 0f);
 			text14.Width.Set(60, 0f);
 			text14.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text14);
 			
-			UIText text15 = new UIText("Truffle");
+			UIText text15 = new UIText(Truffle);
 			text15.Left.Set(35, 0f);
 			text15.Top.Set(430, 0f);
 			text15.Width.Set(60, 0f);
 			text15.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text15);
 			
-			UIText text16 = new UIText("Stylist");
+			UIText text16 = new UIText(Stylist);
 			text16.Left.Set(70, 0f);
 			text16.Top.Set(460, 0f);
 			text16.Width.Set(55, 0f);
 			text16.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text16);
 			
-			UIText text17 = new UIText("Party Girl");
+			UIText text17 = new UIText(PartyGirl);
 			text17.Left.Set(35, 0f);
 			text17.Top.Set(490, 0f);
 			text17.Width.Set(70, 0f);
 			text17.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text17);
 			
-			UIText text18 = new UIText("Alchemist");
+			UIText text18 = new UIText(Alchemist);
 			text18.Left.Set(180, 0f);
 			text18.Top.Set(10, 0f);
 			text18.Width.Set(70, 0f);
 			text18.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text18);
 			
-			UIText text19 = new UIText("Brewer");
+			UIText text19 = new UIText(Brewer);
 			text19.Left.Set(330, 0f);
 			text19.Top.Set(40, 0f);
 			text19.Width.Set(55, 0f);
 			text19.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text19);
 			
-			UIText text20 = new UIText("Architect");
+			UIText text20 = new UIText(Architect);
 			text20.Left.Set(300, 0f);
 			text20.Top.Set(70, 0f);
 			text20.Width.Set(65, 0f);
 			text20.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text20);
-			UIText text201 = new UIText("Shops");
+			UIText text201 = new UIText(Architect1);
 			text201.Left.Set(305, 0f);
 			text201.Top.Set(100, 0f);
 			text201.Width.Set(50, 0f);
 			text201.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text201);
 			
-			UIText text21 = new UIText("Operator");
+			UIText text21 = new UIText(Operator);
 			text21.Left.Set(300, 0f);
 			text21.Top.Set(130, 0f);
 			text21.Width.Set(60, 0f);
 			text21.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text21);
 			
-			UIText text22 = new UIText("Jeweler");
+			UIText text22 = new UIText(Jeweler);
 			text22.Left.Set(210, 0f);
 			text22.Top.Set(160, 0f);
 			text22.Width.Set(60, 0f);
 			text22.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text22);
 			
-			UIText text23 = new UIText("Young Brewer");
+			UIText text23 = new UIText(YoungBrewer);
 			text23.Left.Set(270, 0f);
 			text23.Top.Set(190, 0f);
 			text23.Width.Set(100, 0f);
 			text23.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text23);
 			
-			UIText text24 = new UIText("Musician");
+			UIText text24 = new UIText(Musician);
 			text24.Left.Set(240, 0f);
 			text24.Top.Set(220, 0f);
 			text24.Width.Set(65, 0f);
 			text24.Height.Set(22, 0f);
 			DimensionalCasketPanel.Append(text24);
 			
-			UIText text25 = new UIText("Explorer");
+			UIText text25 = new UIText(Explorer);
 			text25.Left.Set(180, 0f);
 			text25.Top.Set(250, 0f);
 			text25.Width.Set(60, 0f);
