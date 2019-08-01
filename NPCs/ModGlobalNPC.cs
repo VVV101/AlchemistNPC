@@ -1645,7 +1645,7 @@ namespace AlchemistNPC.NPCs
 				}
 				if (kc == 2)
 				{
-					Main.NewText("I have a question to ask from you...", 255, 255, 255);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.UgandanKnucklesChat1"), 255, 255, 255);
 				}
 				if (kc < 180)
 				{
@@ -1669,36 +1669,36 @@ namespace AlchemistNPC.NPCs
 					npc.position.X = player.position.X;
 					if (player.name == "Dipper" || player.name == "Mabel" || player.name == "Stanford" || player.name == "Stanlee" || player.name == "Stan")
 					{
-						Main.NewText("WHAT? You again? I was already defeated with your help! What else do you want from me?", 10, 255, 10);	
+						Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat4"), 10, 255, 10);	
 					}
 					else
 					{
-						Main.NewText("You dared summon me? This is going to be fun!", 10, 255, 10);
+						Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat5"), 10, 255, 10);
 					}
 					start = true;
 				}
 				if (npc.life <= npc.lifeMax*0.6f && !i1)
 				{
-					Main.NewText("Hey, catch this!", 10, 255, 10);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat6"), 10, 255, 10);
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("VoodooDoll"));
 					i1 = true;
 				}
 				if (npc.life <= npc.lifeMax*0.4f && !i2)
 				{
-					Main.NewText("Hey, catch this!", 10, 255, 10);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat6"), 10, 255, 10);
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ScreamingHead"));
 					i2 = true;
 				}
 				if (npc.life <= npc.lifeMax*0.2f && !i3)
 				{
-					Main.NewText("Hey, catch this!", 10, 255, 10);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat6"), 10, 255, 10);
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("CursedMirror"));
 					i3 = true;
 				}
 				if (npc.life <= (npc.lifeMax - npc.lifeMax/4) && !intermission1 && !stop1)
 				{
-					Main.NewText("Hey you! Yes, you! I am asking the one who is controlling this ''puppet''!", 30, 255, 30);
-					Main.NewText("Do you really think that you would be able to defeat me? That's hilarious!", 30, 255, 30);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat7"), 30, 255, 30);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat8"), 30, 255, 30);
 					npc.dontTakeDamage = true;
 					intermission1 = true;
 				}
@@ -1718,8 +1718,8 @@ namespace AlchemistNPC.NPCs
 				}
 				if (npc.life <= npc.lifeMax/2 && !phase2)
 				{
-					Main.NewText("Enough playing around, now you are gonna die!", 150, 100, 30);
-					Main.NewText("Madness is unleashed!", 150, 100, 30);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat9"), 150, 100, 30);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat10"), 150, 100, 30);
 					phase2 = true;
 					for (int index1 = 0; index1 < 30; ++index1)
 					{
@@ -1730,9 +1730,9 @@ namespace AlchemistNPC.NPCs
 				}
 				if (npc.life <= npc.lifeMax/4 && !intermission2 && !stop2)
 				{
-					Main.NewText("You are starting to annoy me, worm!", 210, 50, 20);
-					Main.NewText("Don't start thinking you're safe behind that screen...", 210, 50, 20);
-					Main.NewText("I will come to your dreams and will turn them into the horrible nightmare!", 210, 50, 10);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat11"), 210, 50, 20);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat12"), 210, 50, 20);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat13"), 210, 50, 10);
 					npc.dontTakeDamage = true;
 					intermission2 = true;
 				}
@@ -1752,8 +1752,8 @@ namespace AlchemistNPC.NPCs
 				}
 				if (npc.life <= npc.lifeMax*0.15f && !phase3)
 				{
-					Main.NewText("I will not get defeated again!", 255, 0, 0);
-					Main.NewText("Prepare to suffer!", 255, 0, 0);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat14"), 255, 0, 0);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat15"), 255, 0, 0);
 					phase3 = true;
 				}
 			}

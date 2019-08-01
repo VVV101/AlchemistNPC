@@ -165,8 +165,8 @@ namespace AlchemistNPC.NPCs
 			{
 				if (introduction < 1)
 				{
-				Main.NewText("What? Are you my namesake? Well, I don't want to fight you.", 10, 255, 10);
-				Main.NewText("Here, catch my present! Bye!", 10, 255, 10);
+				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat1"), 10, 255, 10);
+				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat2"), 10, 255, 10);
 				player.QuickSpawnItem(mod.ItemType("BillCipherBag"));
 				}
 				npc.boss = false;
@@ -176,7 +176,7 @@ namespace AlchemistNPC.NPCs
 			}
 			if (distance > 2500f && introduction >= 300)
 			{
-				Main.NewText("Don't think that you can hide from me, mortal!", 10, 255, 10);
+				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat3"), 10, 255, 10);
 				switch(Main.rand.Next(2))
 				{
 					case 0:

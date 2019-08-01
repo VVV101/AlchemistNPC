@@ -47,8 +47,7 @@ namespace AlchemistNPC.Items.Misc
 			{
 				if (Main.netMode == 0 || Main.netMode == 1)
 				{
-					string AntiBuffmodeactive = Language.GetTextValue("Mods.AlchemistNPC.Common.AntiBuffmodeactive");
-					Main.NewText(AntiBuffmodeactive, 255, 255, 255);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.AntiBuffmodeactive"), 255, 255, 255);
 				}
 				AlchemistNPCWorld.foundAntiBuffMode = true;
 				return true;
@@ -57,8 +56,7 @@ namespace AlchemistNPC.Items.Misc
 			{
 				if (Main.netMode == 0 || Main.netMode == 1)
 				{
-					string AntiBuffmodeisdisabled = Language.GetTextValue("Mods.AlchemistNPC.Common.AntiBuffmodeisdisabled");
-					Main.NewText(AntiBuffmodeisdisabled, 255, 255, 255);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.AntiBuffmodeisdisabled"), 255, 255, 255);
 				}
 				AlchemistNPCWorld.foundAntiBuffMode = false;
 				return true;
