@@ -48,3 +48,8 @@ Common.PotionspricemultiplierTooltip=Multiplies potions price by X. 1 by default
 Common.FallenStarsPrice=Fallen Stars Price
 Common.FallenStarsPriceTooltip=1000 is 10 silver price by default
 
+AntiBuffMode
+
+Common.AntiBuffmodeactive=Anti Buff mode is active
+Common.AntiBuffmodeisdisabled=Anti Buff mode is disabled
+

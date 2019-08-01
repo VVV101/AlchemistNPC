@@ -622,6 +622,7 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("hardmodeComponent");
             text.SetDefault("Hardmode Component");
+			text.AddTranslation(GameCulture.Chinese, "邪恶困难模式材料(咒焰/脓血)");
             AddTranslation(text);
 
             text = CreateTranslation("evilBar");
@@ -667,6 +668,7 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("LunarHamaxe");
             text.SetDefault("Lunar Hamaxe");
+			text.AddTranslation(GameCulture.Chinese, "四柱工具");
             AddTranslation(text);
 
             text = CreateTranslation("tier3Watch");
@@ -685,10 +687,12 @@ namespace AlchemistNPC
 			text = CreateTranslation("Knuckles");
             text.SetDefault("Ugandan Knuckles Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Угандского Наклза");
+		text.AddTranslation(GameCulture.Chinese, "乌干达宝藏袋");
             AddTranslation(text);
 			text = CreateTranslation("BillCipher");
             text.SetDefault("Bill Cipher Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Билла");
+		text.AddTranslation(GameCulture.Chinese, "比尔·赛弗宝藏袋");
             AddTranslation(text);
             //SBMW:Vanilla
             text = CreateTranslation("KingSlime");
@@ -766,6 +770,7 @@ namespace AlchemistNPC
 			text = CreateTranslation("Betsy");
             text.SetDefault("Betsy Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Бетси");
+		text.AddTranslation(GameCulture.Chinese, "贝特西宝藏袋");
             AddTranslation(text);
 			
             text = CreateTranslation("DukeFishron");
@@ -832,19 +837,19 @@ namespace AlchemistNPC
             text = CreateTranslation("Calamitas");
             text.SetDefault("Calamitas Doppelganger Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Двойника Каламитас");
-            text.AddTranslation(GameCulture.Chinese, "灾厄之眼宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "灾厄之影宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("AstrageldonSlime");
             text.SetDefault("Astrum Aureus Treasure Bag");
 			text.AddTranslation(GameCulture.Russian, "Сумка Звёздного Заразителя");
-            text.AddTranslation(GameCulture.Chinese, "大彗星史莱姆宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "白金之星宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("AstrumDeus");
             text.SetDefault("Astrum Deus Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Звёздного Бога");
-            text.AddTranslation(GameCulture.Chinese, "星神吞噬者宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "星神游龙宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("Leviathan");
@@ -886,24 +891,26 @@ namespace AlchemistNPC
             text = CreateTranslation("Bumblebirb");
             text.SetDefault("Bumblebirb Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Шмелептицы");
-            text.AddTranslation(GameCulture.Chinese, "癫痫鸟宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "嗡嗡蜂鸟宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("Yharon");
             text.SetDefault("Jungle Dragon, Yharon Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Дракона Джунглей, Ярона");
-            text.AddTranslation(GameCulture.Chinese, "犽戎宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "丛林龙宝藏袋");
             AddTranslation(text);
 
             //SBMW:ThoriumMod
 			text = CreateTranslation("DarkMage");
             text.SetDefault("Dark Mage Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Темного Мага");
+		text.AddTranslation(GameCulture.Chinese, "黑魔法师宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Ogre");
             text.SetDefault("Ogre Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Огра");
+		text.AddTranslation(GameCulture.Chinese, "食人魔宝藏袋");
             AddTranslation(text);
 			
             text = CreateTranslation("ThunderBird");
@@ -919,8 +926,8 @@ namespace AlchemistNPC
             AddTranslation(text);
 			
 			text = CreateTranslation("CountEcho");
-            text.SetDefault("Count Echo Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "水母皇后宝藏袋");
+            text.SetDefault("Viscount Treasure Bag");
+            text.AddTranslation(GameCulture.Chinese, "蝙蝠子爵宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("GraniteEnergyStorm");
@@ -972,32 +979,32 @@ namespace AlchemistNPC
 			 //SacredTools
             text = CreateTranslation("FlamingPumpkin");
             text.SetDefault("The Flaming Pumpkin Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Горящей Тыквы");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Горящей Тыквы");
             AddTranslation(text);
 			
 			text = CreateTranslation("Jensen");
             text.SetDefault("Jensen, the Grand Harpy Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Дженсен, Великой Гарпии");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Дженсен, Великой Гарпии");
             AddTranslation(text);
 			
 			text = CreateTranslation("Raynare");
             text.SetDefault("Harpy Queen, Raynare Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевы Гарпий");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевы Гарпий");
             AddTranslation(text);
 			
 			text = CreateTranslation("Abaddon");
             text.SetDefault("Abaddon, the Emissary of Nightmares Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Абаддона, Эмиссара Кошмаров");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Абаддона, Эмиссара Кошмаров");
             AddTranslation(text);
 			
 			text = CreateTranslation("Araghur");
             text.SetDefault("Araghur, the Flare Serpent Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Арагура, Огненного Змия");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Арагура, Огненного Змия");
             AddTranslation(text);
 			
 			text = CreateTranslation("Lunarians");
             text.SetDefault("The Lunarians Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Лунарианов");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Лунарианов");
             AddTranslation(text);
 			
 			text = CreateTranslation("Challenger");
@@ -1048,7 +1055,7 @@ namespace AlchemistNPC
 			//Enigma
             text = CreateTranslation("Sharkron");
             text.SetDefault("Dune Sharkron Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Дюнного Акулрона");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Дюнного Акулрона");
             AddTranslation(text);
 			
 			text = CreateTranslation("Hypothema");
@@ -1057,17 +1064,17 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("Ragnar");
             text.SetDefault("Ragnar Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Рагнара");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Рагнара");
             AddTranslation(text);
 			
 			text = CreateTranslation("AnDio");
             text.SetDefault("Andesia & Dioritus Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Андезии и Диоритуса");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Андезии и Диоритуса");
             AddTranslation(text);
 			
 			text = CreateTranslation("Annihilator");
             text.SetDefault("The Annihilator Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Аннигилятора");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Аннигилятора");
             AddTranslation(text);
 			
 			text = CreateTranslation("Slybertron");
@@ -1076,7 +1083,7 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("SteamTrain");
             text.SetDefault("Steam Train Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Паровоза");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Паровоза");
             AddTranslation(text);
 			
 			//Pinky
@@ -1103,70 +1110,87 @@ namespace AlchemistNPC
 			//AAMod
             text = CreateTranslation("Monarch");
             text.SetDefault("Mushroom Monarch Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "赤孢皇宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Grips");
             text.SetDefault("Grips of Chaos Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "混沌双爪宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Broodmother");
             text.SetDefault("Broodmother Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "育母炎龙宝藏袋");
             AddTranslation(text);
 
 			text = CreateTranslation("Hydra");
             text.SetDefault("Hydra Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "九头渊蛇宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Serpent");
             text.SetDefault("Subzero Serpent Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "绝零冰蛇宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Djinn");
             text.SetDefault("Desert Djinn Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "沙漠巨灵宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Retriever");
             text.SetDefault("Retriever Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "捕猎者宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("RaiderU");
             text.SetDefault("Raider Ultima Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "创世哺育之母宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Orthrus");
             text.SetDefault("Orthrus X Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "双头狗宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("EFish");
             text.SetDefault("Emperor Fishron Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "猪鲨王宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Nightcrawler");
             text.SetDefault("Nightcrawler Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "奈克劳尔宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Daybringer");
             text.SetDefault("Daybringer Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "戴布林格宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Yamata");
             text.SetDefault("Yamata Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "八歧大蛇宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Akuma");
             text.SetDefault("Akuma Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "邪鬼巨龙宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Zero");
             text.SetDefault("Zero Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "零械单元宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Shen");
             text.SetDefault("Shen Doragon Treasure Cache");
+			text.AddTranslation(GameCulture.Chinese, "上神应龙宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("ShenGrips");
             text.SetDefault("Shen Doragon Grips Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "上神双爪宝藏袋");
             AddTranslation(text);
 			
             //SBMW:Some other translation
@@ -1209,35 +1233,47 @@ namespace AlchemistNPC
 			text = CreateTranslation("D1");
             text.SetDefault("To think, she's just here to collect the horrors of Terraria...what is she thinking?");
 			text.AddTranslation(GameCulture.Russian, "Просто подумай, она здесь лишь для того, чтобы собрать ужасы Террарии... О чём она думает?");
+			text.AddTranslation(GameCulture.Chinese, "想一想, 她只是来收集泰拉世界中的恐惧...她究竟想干什么？");
             AddTranslation(text);
 			
 			text = CreateTranslation("D2");
             text.SetDefault("I still remember the day she landed. If it weren't for the help of everyone here, I swore I would never fix her up.");
 			text.AddTranslation(GameCulture.Russian, "Я всё ещё помню день, когда она прибыла. Если бы это не было полезным для всех тут, то я клянусь, что никогда бы не помогла ей.");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "我仍然记得她掉到这个世界上的那一天. 如果没有这里所有人的帮助, 我发誓永远不会把她修好. ");
+			AddTranslation(text);
 			
 			text = CreateTranslation("D3");
             text.SetDefault("You may not have fully defeated the gate, but it seems Angela has what's left of it.");
 			text.AddTranslation(GameCulture.Russian, "Ты мог победить врата не полностью, но похоже, что у Анджелы уже есть всё то, что от них осталось.");
+			text.AddTranslation(GameCulture.Chinese, "你似乎并未完全打败这个门, 不过好像Angela那有它掉落的东西");
             AddTranslation(text);
 			
 			text = CreateTranslation("D4");
             text.SetDefault("I can understand trying to understand a Dungeon Slime, but going out of your way to harvest the Wall of Flesh? What was Angela thinking!?");
 			text.AddTranslation(GameCulture.Russian, "Я могу понять попытки понять Слизня Данжа, но сойти с пути чтобы собрать остатки Стены Плоти? О чём Анджела думает!?");
+			text.AddTranslation(GameCulture.Chinese, "想要试图理解地牢史莱姆的心情我能理解, 但是试图猎杀血肉之墙? Angela在想些什么?");
             AddTranslation(text);
 			
 			text = CreateTranslation("AD1");
             text.SetDefault("Shame. Would had wanted Angela, but she's lured by ");
 			text.AddTranslation(GameCulture.Russian, "Как жаль. Хотел бы потолковать с Анджелой, но она привлечена ");
+			text.AddTranslation(GameCulture.Chinese, "可惜了. 对Angela还挺有好感的, 但是她受到了来自");
+            AddTranslation(text);
+
+			text = CreateTranslation("ADch1");
+            text.SetDefault("");
+			text.AddTranslation(GameCulture.Chinese, "的诱惑");
             AddTranslation(text);
 			
 			text = CreateTranslation("AD2");
             text.SetDefault("Man, how much gun is that AI packing?");
 			text.AddTranslation(GameCulture.Russian, "Чувак, сколько же пушек у этого ИИ с собой?");
+			text.AddTranslation(GameCulture.Chinese, "伙计, AI的包里有多少枪");
             AddTranslation(text);
 			
 			text = CreateTranslation("RCTT");
             text.SetDefault("Right-click to teleport here");
+			text.AddTranslation(GameCulture.Chinese, "右键传送至此");
             AddTranslation(text);
         }
 		

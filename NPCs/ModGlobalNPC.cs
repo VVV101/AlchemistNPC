@@ -174,6 +174,7 @@ namespace AlchemistNPC.NPCs
 			string D4 = Language.GetTextValue("Mods.AlchemistNPC.D4");
 			string AD1 = Language.GetTextValue("Mods.AlchemistNPC.AD1");
 			string AD2 = Language.GetTextValue("Mods.AlchemistNPC.AD2");
+			string ADch1 = Language.GetTextValue("Mods.AlchemistNPC.ADch1");
 			int Angela = NPC.FindFirstNPC(mod.NPCType("Operator"));
 			int Dryad = NPC.FindFirstNPC(NPCID.Dryad);
 			if (npc.type == NPCID.Dryad)
@@ -210,7 +211,7 @@ namespace AlchemistNPC.NPCs
 					switch (Main.rand.Next(2))
 					{
 						case 0:                                     
-						chat = (AD1 + Main.npc[Dryad].GivenName);
+						chat = (AD1 + Main.npc[Dryad].GivenName + ADch1);
 						break;
 						default:
 						chat = AD2;
