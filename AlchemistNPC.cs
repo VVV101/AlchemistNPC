@@ -980,26 +980,31 @@ namespace AlchemistNPC
             text = CreateTranslation("FlamingPumpkin");
             text.SetDefault("The Flaming Pumpkin Treasure Bag");
 	    	text.AddTranslation(GameCulture.Russian, "Сумка Горящей Тыквы");
+			text.AddTranslation(GameCulture.Chinese, "焚炎南瓜宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Jensen");
             text.SetDefault("Jensen, the Grand Harpy Treasure Bag");
 	    	text.AddTranslation(GameCulture.Russian, "Сумка Дженсен, Великой Гарпии");
+			text.AddTranslation(GameCulture.Chinese, "巨型鸟妖詹森宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Raynare");
             text.SetDefault("Harpy Queen, Raynare Treasure Bag");
 	    	text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевы Гарпий");
+			text.AddTranslation(GameCulture.Chinese, "鸟妖女王雷纳宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Abaddon");
             text.SetDefault("Abaddon, the Emissary of Nightmares Treasure Bag");
 	    	text.AddTranslation(GameCulture.Russian, "Сумка Абаддона, Эмиссара Кошмаров");
+			text.AddTranslation(GameCulture.Chinese, "梦魇使者亚巴顿宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Araghur");
             text.SetDefault("Araghur, the Flare Serpent Treasure Bag");
 	    	text.AddTranslation(GameCulture.Russian, "Сумка Арагура, Огненного Змия");
+			text.AddTranslation(GameCulture.Chinese, "熔火巨蟒宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Lunarians");
