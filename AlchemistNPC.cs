@@ -1010,10 +1010,12 @@ namespace AlchemistNPC
 			text = CreateTranslation("Lunarians");
             text.SetDefault("The Lunarians Treasure Bag");
 	    	text.AddTranslation(GameCulture.Russian, "Сумка Лунарианов");
+			text.AddTranslation(GameCulture.Chinese, "月军宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Challenger");
             text.SetDefault("The Challenger Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "堕落帝者宝藏袋");
             AddTranslation(text);
 			
 			//SpiritMod
