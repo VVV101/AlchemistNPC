@@ -22,7 +22,9 @@ Available in hardmode.
 -Both Thorium and Spirit Combinations now take only 1 buff slot.
 -Some changes in Operator's shop.
 -Some new quotes for NPCs.
+-Some more new sprites by CC.
 -Holoprojectors no longer work while player is dead.
+-Fixed/added some more translations.
 -Fixed Shield Bar and Grinder MK4 sprites.
 -Fixed Godhead and Soul of Fear breaking true melee.
 v8.6

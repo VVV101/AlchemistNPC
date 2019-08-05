@@ -989,6 +989,13 @@ namespace AlchemistNPC
 			}
 		}
 		
+		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath) {
+			Item item = new Item();
+			item.SetDefaults(mod.ItemType("AntiBuffItem"));
+			item.stack = 1;
+			items.Add(item);
+		}
+		
 		public override void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
         {
 			if (player.HasBuff(mod.BuffType("GuarantCrit")) && crit)
@@ -1126,7 +1133,7 @@ namespace AlchemistNPC
 			}
 			if (MoonLordBooster == 1)
 			{
-				damage -= damage/5;
+				damage -= damage/10;
 			}
 			if (npc.type == mod.NPCType("BillCipher"))
             {
