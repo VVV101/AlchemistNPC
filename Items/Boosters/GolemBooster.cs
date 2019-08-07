@@ -26,7 +26,7 @@ namespace AlchemistNPC.Items.Boosters
 			item.value = 100000;
 		}
 
-		public override bool CanUseItem(Player player)
+		public override bool UseItem(Player player)
         {
 			if (player.GetModPlayer<AlchemistNPCPlayer>().GolemBooster == 0)
 			{
