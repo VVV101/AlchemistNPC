@@ -97,6 +97,7 @@ namespace AlchemistNPC
 		public bool Rampage = false;
 		public bool LilithEmblem = false;
 		public bool trigger = true;
+		public bool turret = false;
 		public bool watchercrystal = false;
 		public bool devilsknife = false;
 		public bool uw = false;
@@ -255,6 +256,7 @@ namespace AlchemistNPC
 			ParadiseLost = false;
 			Rampage = false;
 			LilithEmblem = false;
+			turret = false;
 			watchercrystal = false;
 			devilsknife = false;
 			uw = false;

@@ -45,6 +45,9 @@ namespace AlchemistNPC.NPCs
 		public static bool C73 = false;
 		public static bool C74 = false;
 		public static bool C75 = false;
+		public static bool C81 = false;
+		public static bool C82 = false;
+		public static bool C83 = false;
 		
 		public override string Texture
 		{
@@ -92,6 +95,9 @@ namespace AlchemistNPC.NPCs
 		C73 = false;
 		C74 = false;
 		C75 = false;
+		C81 = false;
+		C82 = false;
+		C83 = false;
 		}
 		
 		public override bool Autoload(ref string name)
@@ -157,6 +163,11 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Create #7");
             text.AddTranslation(GameCulture.Russian, "Создать №7");
             text.AddTranslation(GameCulture.Chinese, "制造 #7");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("Create8");
+            text.SetDefault("Create #8");
+            text.AddTranslation(GameCulture.Russian, "Создать №8");
+            text.AddTranslation(GameCulture.Chinese, "制造 #8");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE1");
             text.SetDefault("So, were my notes of any use to you?");
@@ -388,6 +399,7 @@ namespace AlchemistNPC.NPCs
 			string Create5 = Language.GetTextValue("Mods.AlchemistNPC.Create5");
 			string Create6 = Language.GetTextValue("Mods.AlchemistNPC.Create6");
 			string Create7 = Language.GetTextValue("Mods.AlchemistNPC.Create7");
+			string Create8 = Language.GetTextValue("Mods.AlchemistNPC.Create8");
             button = Language.GetTextValue("LegacyInterface.28");
 			Player player = Main.player[Main.myPlayer];
 			if (player.active)
@@ -538,6 +550,18 @@ namespace AlchemistNPC.NPCs
 					{
 						C75 = true;
 					}
+					if (player.inventory[j].type == 3384)
+					{
+						C81 = true;
+					}
+					if (player.inventory[j].type == 3628)
+					{
+						C82 = true;
+					}
+					if (player.inventory[j].type == 3820)
+					{
+						C83 = true;
+					}
 				}
 			}
 			if (C11 && C12 && C13 && C14 && C15)
@@ -567,6 +591,10 @@ namespace AlchemistNPC.NPCs
 			if (C71 && C72 && C73 && C74 && C75)
 			{
 			button2 = Create7;
+			}
+			if (C81 && C82 && C83)
+			{
+			button2 = Create8;
 			}
         }
  
@@ -849,6 +877,34 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
+				if (C81 && C82 && C83)
+				{
+					Player player = Main.player[Main.myPlayer];
+					player.QuickSpawnItem(mod.ItemType("TurretStaff"));
+					shop = false;
+					if (Main.player[Main.myPlayer].HasItem(3384))
+					{
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
+							if (inventory[k].type == 3384 && C81)
+							{
+								inventory[k].stack--;
+								C81 = false;
+							}
+							if (inventory[k].type == 3628 && C82)
+							{
+								inventory[k].stack--;
+								C82 = false;
+							}
+							if (inventory[k].type == 3820 && C83)
+							{
+								inventory[k].stack--;
+								C83 = false;
+							}
+						}
+					}
+				}
 			}
 		}
  
@@ -884,6 +940,8 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote6"));
         nextSlot++;
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote7"));
+        nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote8"));
         nextSlot++;
 		Player player = Main.player[Main.myPlayer];
 		if (player.active)

@@ -55,8 +55,8 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.BrainOfCthulhuBooster == 1)
 			{
-				tip += "\nIncreases max amount of minions/sentries by 1, Heartreach effect";
-				tipch += "\n增加1召唤物/炮台上限，获得心之彼端效果";
+				tip += "\nIncreases max amount of minions by 1, Heartreach effect";
+				tipch += "\n增加1召唤物，获得心之彼端效果";
 			}
 			if (modPlayer.QueenBeeBooster == 1)
 			{
@@ -194,7 +194,6 @@ namespace AlchemistNPC.Buffs
 			if (modPlayer.BrainOfCthulhuBooster == 1)
 			{
 				player.maxMinions += 1;
-				player.maxTurrets += 1;
 				player.lifeMagnet = true;
 			}
 			if (modPlayer.QueenBeeBooster == 1)
