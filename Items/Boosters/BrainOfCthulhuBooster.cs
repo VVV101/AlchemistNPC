@@ -16,7 +16,7 @@ namespace AlchemistNPC.Items.Boosters
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Мозга Ктулху");
 			Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает максимальной количество прислужников на 1, сердца притягиваются к игроку");
 			DisplayName.AddTranslation(GameCulture.Chinese, "克苏鲁之脑增益容器");
-			Tooltip.AddTranslation(GameCulture.Chinese, "增加1召唤物，获得心之彼端效果");
+			Tooltip.AddTranslation(GameCulture.Chinese, "增加1召唤物上限，获得心之彼端效果");
         }
 
 		public override void SetDefaults()

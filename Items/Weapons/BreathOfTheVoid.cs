@@ -33,8 +33,8 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			DisplayName.SetDefault("Expiration");
 			Tooltip.SetDefault("Feel the Breath of the Void");
-			DisplayName.AddTranslation(GameCulture.Chinese, "虚空之息");
-			Tooltip.AddTranslation(GameCulture.Chinese, "受攻击时概率麻痹敌人");
+			DisplayName.AddTranslation(GameCulture.Chinese, "限度之息");
+			Tooltip.AddTranslation(GameCulture.Chinese, "感受虚空的气息");
         }
 	}
 }
