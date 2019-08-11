@@ -14,8 +14,8 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Турель ГЛаДОС");
 			Description.AddTranslation(GameCulture.Russian, "Турель защищает вас");
-			DisplayName.AddTranslation(GameCulture.Chinese, "GLaDOS炮塔");
-            Description.AddTranslation(GameCulture.Chinese, "GLaDOS炮塔保护着你");
+			DisplayName.AddTranslation(GameCulture.Chinese, "G姐炮塔");
+            Description.AddTranslation(GameCulture.Chinese, "G姐炮塔保护着你");
         }
 
 		public override void Update(Player player, ref int buffIndex)

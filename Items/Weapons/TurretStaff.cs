@@ -16,8 +16,8 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Summons deadly GLaDOS turret to fight for you");
 			DisplayName.AddTranslation(GameCulture.Russian, "Посох турели");
             Tooltip.AddTranslation(GameCulture.Russian, "Призывает смертоносную турель ГЛаДОС");
-			DisplayName.AddTranslation(GameCulture.Chinese, "GLaDOS炮塔召唤杖");
-            Tooltip.AddTranslation(GameCulture.Chinese, "召唤致命的GLaDOS炮塔为你而战");
+			DisplayName.AddTranslation(GameCulture.Chinese, "G姐炮塔召唤杖");
+            Tooltip.AddTranslation(GameCulture.Chinese, "召唤致命的G姐炮塔为你而战");
         
         }    
 		
