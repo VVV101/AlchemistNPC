@@ -948,18 +948,6 @@ namespace AlchemistNPC.NPCs
 		{
         get { return AAMod.AAWorld.downedDjinn; }
         }
-		public bool AAModDownedRetriever
-		{
-        get { return AAMod.AAWorld.downedRetriever; }
-        }
-		public bool AAModDownedRaider
-		{
-        get { return AAMod.AAWorld.downedRaider; }
-        }
-		public bool AAModDownedOrthrus
-		{
-        get { return AAMod.AAWorld.downedOrthrus; }
-        }
 		public bool AAModDownedEquinox
 		{
         get { return AAMod.AAWorld.downedEquinox; }
@@ -2172,27 +2160,6 @@ namespace AlchemistNPC.NPCs
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier2ID;
 								nextSlot++;
 							}
-							if (AAModDownedRetriever)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RetrieverBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(5);
-								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-								nextSlot++;
-							}
-							if (AAModDownedRaider)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RaiderBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(5);
-								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-								nextSlot++;
-							}
-							if (AAModDownedOrthrus)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("OrthusBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(5);
-								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-								nextSlot++;
-							}
 							if (AAModDownedEquinox)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("DBBag"));
@@ -2452,24 +2419,6 @@ namespace AlchemistNPC.NPCs
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("DjinnBag"));
 								shop.item[nextSlot].shopCustomPrice = 1000000;
-								nextSlot++;
-							}
-							if (AAModDownedRetriever)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RetrieverBag"));
-								shop.item[nextSlot].shopCustomPrice = 1500000;
-								nextSlot++;
-							}
-							if (AAModDownedRaider)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RaiderBag"));
-								shop.item[nextSlot].shopCustomPrice = 1500000;
-								nextSlot++;
-							}
-							if (AAModDownedOrthrus)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("OrthusBag"));
-								shop.item[nextSlot].shopCustomPrice = 1500000;
 								nextSlot++;
 							}
 							if (AAModDownedEquinox)

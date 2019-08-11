@@ -33,7 +33,6 @@ namespace AlchemistNPC.Items.Misc
 		{
 			item.width = 32;
 			item.height = 32;
-			item.value = 500000;
 			item.rare = 5;
 			item.useAnimation = 20;
             item.useTime = 20;

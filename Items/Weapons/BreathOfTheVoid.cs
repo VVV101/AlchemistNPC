@@ -31,8 +31,8 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Breath of the Void");
-			Tooltip.SetDefault("May briefly paralize enemy on hit");
+			DisplayName.SetDefault("Expiration");
+			Tooltip.SetDefault("Feel the Breath of the Void");
 			DisplayName.AddTranslation(GameCulture.Chinese, "虚空之息");
 			Tooltip.AddTranslation(GameCulture.Chinese, "受攻击时概率麻痹敌人");
         }
