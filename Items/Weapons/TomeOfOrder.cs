@@ -15,7 +15,7 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.SetDefault("Tome of Order");
 			Tooltip.SetDefault("[c/00FF00:Legendary Weapon]"
 			+"\n[c/00FF00:Stats are growing up through progression]"
-			+"\n''Only the ones who are equally good or evil may weild this''"
+			+"\n''Only the ones who are equally good and evil may weild this''"
 			+"\nShoots energy bolts which stick to enemies and tiles"
 			+"\nThey explode after some time or can be blown up manually, dealing extra damage");
 			DisplayName.AddTranslation(GameCulture.Russian, "Том Порядка");

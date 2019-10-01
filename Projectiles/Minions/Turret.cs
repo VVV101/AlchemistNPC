@@ -8,6 +8,7 @@ namespace AlchemistNPC.Projectiles.Minions
 {
     public class Turret : ModProjectile
     {
+		public int counter = 0;
         public override void SetDefaults()
         {
             projectile.width = 46;
@@ -104,6 +105,15 @@ namespace AlchemistNPC.Projectiles.Minions
             }
             if (flag18)
             {
+				if (counter == 0)
+				{
+					Main.PlaySound(2, -1, -1, mod.GetSoundSlot(SoundType.Item, "Sounds/Item/ThereYouAre"));
+				}
+				counter++;
+				if (counter == 1200)
+				{
+					counter = 0;
+				}
                 float num516 = num506;
                 float num517 = num507;
                 num506 -= projectile.Center.X;
