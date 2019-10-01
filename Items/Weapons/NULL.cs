@@ -17,6 +17,8 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("NULL");
 			DisplayName.AddTranslation(GameCulture.Russian, "Катана");
             Tooltip.AddTranslation(GameCulture.Russian, "NULL");
+			DisplayName.AddTranslation(GameCulture.Chinese, "武士刀");
+            Tooltip.AddTranslation(GameCulture.Chinese, "NULL");
         }
 
 		public override void SetDefaults()

@@ -36,6 +36,9 @@ Don't break it!!!");
 			DisplayName.AddTranslation(GameCulture.Russian, "Разрыв между измерениями");
 			Tooltip.AddTranslation(GameCulture.Russian, @"Стеклянный шар, хранящий разрыв между измерениями внутри
 Не разбей его!!!");
+			DisplayName.AddTranslation(GameCulture.Chinese, "次元裂隙");
+			Tooltip.AddTranslation(GameCulture.Chinese, @"含有次元之间裂缝的玻璃球
+别打破了!!!");
         }
 		
 		public override void AddRecipes()

@@ -20,7 +20,13 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nThey explode after some time or can be blown up manually, dealing extra damage");
 			DisplayName.AddTranslation(GameCulture.Russian, "Том Порядка");
             Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарное Оружие]\n''Лишь тот, кто в равной степени добр и зол может использовать это''\n[c/00FF00:Характеристики оружия улучшаются по мере прохождения]\nВыстреливает энергетические снаряды, способные застревать во врагах или блоках\nОни взрываются по прошествии времени или вручную, нанося дополнительный урон");
-        }
+			DisplayName.AddTranslation(GameCulture.Chinese,"秩序原典");
+			Tooltip.AddTranslation(GameCulture.Chinese,"[c/00FF00:传奇武器]"
+			+"\n[c/00FF00:属性随游戏进程增长]"
+			+"\n''只有于善恶的彼岸之人才能理解''"
+			+"\n发射可以扎在敌人或者地面的能量之矢"
+			+"\n它们会在一段时间后爆炸，或者手动引爆，造成额外伤害");
+		}
 
 		public override void SetDefaults()
 		{

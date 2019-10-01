@@ -18,6 +18,7 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "NULL перезарядка");
 			Description.AddTranslation(GameCulture.Russian, "");
+			DisplayName.AddTranslation(GameCulture.Chinese, "NULL 再启");
         }
 	}
 }
