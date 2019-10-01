@@ -3,12 +3,27 @@ New combinations of potions are sold by the Young Brewer.
 The spawn condition for the Alchemist, the Jeweler, the Tinkerer & the Brewer is to kill the Eye of Ctulhu. 
 The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
-The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
+The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
-v8.7.1
+v8.8
+-Updated to tModloader 0.11.4.
+-Fixed incompatibility with latest Calamity mod build.
+-Architect can now come when you have 3 other NPCs and no longer requires to beat EoW/BoC.
+Some goods now require some bosses defeated.
+-Removed some obsolete coding.
 -Added Research Note#8, Portal's turret.
+-Added NULL Katana. 
+Available after beating Moon Lord.
+-Added Tome of Order, new mage legendary weapon. 
+Drops from any mob with 1:25000 chance.
+-Added Quest Skip Potion from Desiccation mod to 6th Brewer's shop.
+Available after beating Skeletron and finishing 10 fishing quests.
+-Strange Top Hat not summons Bill Cipher now.
+It can be used for crafting Dimensional Rift, which is a new summon item.
+-Hive is no longer a legendary weapon and replaced with a new one.
+Now Hive drops from Plantera with 5% chance.
 -Anti Buff item no longer has selling price.
 -Fixed Golem Booster.
 -New sprites for some items.

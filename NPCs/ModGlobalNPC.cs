@@ -59,6 +59,17 @@ namespace AlchemistNPC.NPCs
 
 		public override bool PreAI(NPC npc)
 		{
+			for (int k = 0; k < 255; k++)
+			{
+				Player player = Main.player[k];
+				if (player.active)
+				{
+					if (player.HasBuff(mod.BuffType("NULL")))
+					{
+						return false;
+					}
+				}
+			}
 			npcNow = npc.whoAmI;
 			return true;
 		}
@@ -1008,7 +1019,7 @@ namespace AlchemistNPC.NPCs
 						}
 						if (Main.rand.Next(25000) == 0)
 						{
-							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Hive"), 1, false, 83);
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TomeOfOrder"), 1, false, 83);
 						}
 						if (Main.rand.Next(25000) == 0)
 						{
@@ -1104,6 +1115,13 @@ namespace AlchemistNPC.NPCs
 					if (npc.type == NPCID.Golem && AlchemistNPC.modConfiguration.TornNotesDrop)
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote8"));
+					}
+					if (npc.type == NPCID.Plantera)
+					{
+						if (Main.rand.Next(20) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Hive"), 1, false, 83);
+						}
 					}
 					if (npc.type == NPCID.Golem)
 					{

@@ -40,7 +40,7 @@ namespace AlchemistNPC.Items.Misc
 
 		public override bool UseItem(Player player)
 		{
-		CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
+		CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
 			for (int h = 0; h < 1; h++) {
 			Vector2 vel = new Vector2(0, -1);
 			vel *= 0f;

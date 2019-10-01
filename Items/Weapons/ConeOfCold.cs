@@ -31,7 +31,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.width = 30;
 			item.height = 30;
 			item.useTime = 12;
-			item.UseSound = SoundID.Item13;
+			item.UseSound = SoundID.Item20;
 			item.useStyle = 5;
 			item.shootSpeed = 12f;
 			item.knockBack = 4;

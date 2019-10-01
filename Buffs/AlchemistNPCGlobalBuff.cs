@@ -16,7 +16,7 @@ namespace AlchemistNPC.Buffs
 			}
 			if (AlchemistNPCWorld.foundAntiBuffMode)
 			{
-				if (!Main.lightPet[type] && !Main.vanityPet[type] && !Main.buffNoTimeDisplay[type] && player.buffTime[buffIndex] > 2 && !Main.debuff[type] && type != 21 && type != 94)
+				if (!Main.lightPet[type] && !Main.vanityPet[type] && !Main.buffNoTimeDisplay[type] && player.buffTime[buffIndex] > 180 && !Main.debuff[type] && type != 21 && type != 94)
 				{
 					player.DelBuff(buffIndex);
 				}
