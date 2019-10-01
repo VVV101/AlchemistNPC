@@ -37,7 +37,7 @@ namespace AlchemistNPC.Items
             item.useTurn = true;
             item.useAnimation = 17;
             item.useTime = 17;
-            item.maxStack = 99;
+            item.maxStack = 30;
             item.consumable = true;
             item.width = 20;
             item.height = 30;
@@ -65,7 +65,7 @@ namespace AlchemistNPC.Items
 		
 		public override bool UseItem(Player player)
 		{
-			CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
 			CalamityPlayer.stress = 10000;
 			player.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"), 18000, true);
 			return true;

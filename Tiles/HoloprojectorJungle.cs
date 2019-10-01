@@ -61,7 +61,7 @@ namespace AlchemistNPC.Tiles
 			{
 				Player player = Main.player[Main.myPlayer];
 				if (!player.dead)
-				player.AddBuff(mod.BuffType("HoloprojectorJungle"), 60);
+				player.AddBuff(mod.BuffType("HoloprojectorJungle"), 180);
 			}
 		}
 		

@@ -48,6 +48,7 @@ namespace AlchemistNPC.NPCs
 		public static bool C81 = false;
 		public static bool C82 = false;
 		public static bool C83 = false;
+		public static bool C84 = false;
 		
 		public override string Texture
 		{
@@ -98,6 +99,7 @@ namespace AlchemistNPC.NPCs
 		C81 = false;
 		C82 = false;
 		C83 = false;
+		C84 = false;
 		}
 		
 		public override bool Autoload(ref string name)
@@ -562,6 +564,10 @@ namespace AlchemistNPC.NPCs
 					{
 						C83 = true;
 					}
+					if (player.inventory[j].type == mod.ItemType("ResearchNote8"))
+					{
+						C84 = true;
+					}
 				}
 			}
 			if (C11 && C12 && C13 && C14 && C15)
@@ -592,7 +598,7 @@ namespace AlchemistNPC.NPCs
 			{
 			button2 = Create7;
 			}
-			if (C81 && C82 && C83)
+			if (C81 && C82 && C83 && C84)
 			{
 			button2 = Create8;
 			}
@@ -877,7 +883,7 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
-				if (C81 && C82 && C83)
+				if (C81 && C82 && C83 && C84)
 				{
 					Player player = Main.player[Main.myPlayer];
 					player.QuickSpawnItem(mod.ItemType("TurretStaff"));
@@ -901,6 +907,11 @@ namespace AlchemistNPC.NPCs
 							{
 								inventory[k].stack--;
 								C83 = false;
+							}
+							if (inventory[k].type == mod.ItemType("ResearchNote8") && C84)
+							{
+								inventory[k].stack--;
+								C84 = false;
 							}
 						}
 					}

@@ -1230,6 +1230,15 @@ if (NPC.downedMoonlord)
 					nextSlot++;
 					}
 				}
+				if (ModLoader.GetMod("Desiccation") != null)
+				{
+					if (NPC.downedBoss3 && Main.player[Main.myPlayer].anglerQuestsFinished >= 10)
+					{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Desiccation").ItemType("QuestSkipPotion"));
+						shop.item[nextSlot].value = 30000;
+						nextSlot++;
+					}
+				}
 			}
 		}
 	}

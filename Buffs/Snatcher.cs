@@ -196,7 +196,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityDBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
 			CalamityPlayer.throwingDamage += 0.08f;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
@@ -218,7 +218,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityCBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
             CalamityPlayer.throwingCrit += 5;
         }
 		

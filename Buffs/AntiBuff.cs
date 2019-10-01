@@ -363,7 +363,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityBoost(Player player, int c)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
 			if (c == 0)
 			{
 				CalamityPlayer.throwingDamage += 0.1f;
