@@ -66,6 +66,14 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Atreus");
             text.AddTranslation(GameCulture.Russian, "Атреус");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("YoungBrewerButton1");
+            text.SetDefault("Combinations");
+            text.AddTranslation(GameCulture.Chinese, "药剂包");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("YoungBrewerButton2");
+            text.SetDefault("Flasks");
+            text.AddTranslation(GameCulture.Chinese, "烧瓶");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry1");
             text.SetDefault("I'm trading potions which were made by my parents.");
             text.AddTranslation(GameCulture.Russian, "Я продаю зелья, сделанные моими родителями.");
@@ -84,7 +92,7 @@ namespace AlchemistNPC.NPCs
             text = mod.CreateTranslation("Entry4");
             text.SetDefault("There's a legendary yoyo known as the Sasscade.");
             text.AddTranslation(GameCulture.Russian, "Существует Легендарное Йо-йо, известное как Сасскад.");
-            text.AddTranslation(GameCulture.Chinese, "有一个传说中的溜溜球被称为Sasscadee.");
+            text.AddTranslation(GameCulture.Chinese, "有一个传说中的悠悠球被称为萨斯卡德.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry5");
             text.SetDefault("Strange Brew from Skeleton Merchant smells really terrible, but Mana Restoration effect is awesome.");
@@ -271,8 +279,8 @@ namespace AlchemistNPC.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = "Combinations";
-			button2 = "Flasks";
+            button = Language.GetTextValue("Mods.AlchemistNPC.YoungBrewerButton1");
+			button2 = Language.GetTextValue("Mods.AlchemistNPC.YoungBrewerButton2");
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)

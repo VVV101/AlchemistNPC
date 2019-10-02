@@ -48,3 +48,31 @@ Common.PotionspricemultiplierTooltip=Multiplies potions price by X. 1 by default
 Common.FallenStarsPrice=Fallen Stars Price
 Common.FallenStarsPriceTooltip=1000 is 10 silver price by default
 
+AntiBuffMode
+
+Common.AntiBuffmodeactive=Anti Buff mode is active
+Common.AntiBuffmodeisdisabled=Anti Buff mode is disabled
+
+Bill Cipher
+
+Common.BillCipherChat1=What? Are you my namesake? Well, I don't want to fight you.
+Common.BillCipherChat2=Here, catch my present! Bye!
+Common.BillCipherChat3=Don't think that you can hide from me, mortal!
+
+Common.BillCipherChat4=WHAT? You again? I was already defeated with your help! What else do you want from me?
+Common.BillCipherChat5=You dared summon me? This is going to be fun!
+Common.BillCipherChat6=Hey, catch this!
+Common.BillCipherChat7=Hey you! Yes, you! I am asking the one who is controlling this ''puppet''!
+Common.BillCipherChat8=Do you really think that you would be able to defeat me? That's hilarious!
+Common.BillCipherChat9=Enough playing around, now you are gonna die!
+Common.BillCipherChat10=Madness is unleashed!
+Common.BillCipherChat11=You are starting to annoy me, worm!
+Common.BillCipherChat12=Don't start thinking you're safe behind that screen...
+Common.BillCipherChat13=I will come to your dreams and will turn them into the horrible nightmare!
+Common.BillCipherChat14=I will not get defeated again!
+Common.BillCipherChat15=Prepare to suffer!
+
+Knuckles
+
+Common.UgandanKnucklesChat1=I have a question to ask from you...
+

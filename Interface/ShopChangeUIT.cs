@@ -6,6 +6,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
+using Terraria.Localization;
 using System;
 using Terraria.ID;
 using System.Linq;
@@ -31,14 +32,28 @@ namespace AlchemistNPC.Interface
 			TinkererShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
 			TinkererShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			UIText text = new UIText("Movement/Misc");
+			string TinkererShops1; 
+			string TinkererShops2;
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					TinkererShops1 = "移动/其他饰品";
+					TinkererShops2 = "战斗";
+				}
+			else
+				{
+					TinkererShops1 = "Movement/Misc";
+					TinkererShops2 = "Combat";
+				}
+			
+			UIText text = new UIText(TinkererShops1);
 			text.Left.Set(35, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(90, 0f);
 			text.Height.Set(22, 0f);
 			TinkererShopsPanel.Append(text);
 			
-			UIText text2 = new UIText("Combat");
+			UIText text2 = new UIText(TinkererShops2);
 			text2.Left.Set(35, 0f);
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(50, 0f);

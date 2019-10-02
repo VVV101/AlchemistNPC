@@ -23,7 +23,7 @@ namespace AlchemistNPC.Items.Misc
             Tooltip.AddTranslation(GameCulture.Russian, "Используйте для переключения Анти Бафф режима\nВы имунны ко всем баффам (не дебаффам)\nБаффы не показывающие длительности разрешены\nИз боссов и минибоссов могут выпадать предметы, дающие эффекты постоянного усиления\nЭти эффекты активны только когда режим включён");
 			DisplayName.AddTranslation(GameCulture.Chinese, "反buff模式");
 			Tooltip.AddTranslation(GameCulture.Chinese, "使用以切换反buff模式"
-			+"\n在反buff模式中，你将免疫所有buff(不仅仅是debuff)"
+			+"\n在反buff模式中，你将免疫所有增益buff(而不是debuff)"
 			+"\n没有持续时间的buff不会被禁止"
 			+"\nBoss和一些小Boss会掉落永久增益物品"
 			+"\n这些物品的效果只会在这个模式启动时生效");
@@ -46,7 +46,7 @@ namespace AlchemistNPC.Items.Misc
 			{
 				if (Main.netMode == 0 || Main.netMode == 1)
 				{
-					Main.NewText("Anti Buff mode is activated", 255, 255, 255);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.AntiBuffmodeactive"), 255, 255, 255);
 				}
 				AlchemistNPCWorld.foundAntiBuffMode = true;
 				return true;
@@ -55,7 +55,7 @@ namespace AlchemistNPC.Items.Misc
 			{
 				if (Main.netMode == 0 || Main.netMode == 1)
 				{
-					Main.NewText("Anti Buff mode is disabled", 255, 255, 255);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.AntiBuffmodeisdisabled"), 255, 255, 255);
 				}
 				AlchemistNPCWorld.foundAntiBuffMode = false;
 				return true;

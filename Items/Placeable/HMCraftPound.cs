@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items.Placeable
             Tooltip.AddTranslation(GameCulture.Russian, "Вы можете делать крутые штуки\nМожет быть размещён как станция крафта");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "豪华手工英镑");
-            Tooltip.AddTranslation(GameCulture.Chinese, "现在你可以做出最棒的东东了\n可代替工作台");
+            Tooltip.AddTranslation(GameCulture.Chinese, "现在你可以做出最棒的东西了\n可代替工作台");
         }
         public override void SetDefaults()
         {

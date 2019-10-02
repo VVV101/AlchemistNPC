@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 using System.Linq;
 
 namespace AlchemistNPC.Items.Equippable
@@ -13,6 +14,7 @@ namespace AlchemistNPC.Items.Equippable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Celestial Hook");
+			DisplayName.AddTranslation(GameCulture.Chinese, "天界钩");
 		}
 
 		public override void SetDefaults()

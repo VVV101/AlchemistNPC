@@ -142,7 +142,15 @@ namespace AlchemistNPC.Items.Weapons
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			Player player = Main.player[Main.myPlayer];
-			string text1 = "Bloodthirsty Blade points are " + ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP;
+			string text1;
+			if(Language.ActiveCulture == GameCulture.Chinese)
+			{
+				text1 = "渴血指数为" + ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP;
+			}
+			else
+			{
+				text1 = "Bloodthirsty Blade points are " + ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BBP;
+			}
 			TooltipLine line = new TooltipLine(mod, "text1", text1);
 			tooltips.Insert(1,line);
 		}

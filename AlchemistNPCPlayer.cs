@@ -689,7 +689,14 @@ namespace AlchemistNPC
 					num2 = 1;
 				}
 				HealingUI.visible = true;
-				Main.NewText("[c/00FF00:Nurse]: You need " + Math.Truncate((double)num2/100) + " silver coins and " + (num2-(Math.Truncate((double)num2/100)*100)) + " copper coins to pay the doctor's fee.", 0, 0, 0);
+				if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					Main.NewText("[c/00FF00:护士]: 您需要支付" + Math.Truncate((double)num2/100) + "银" + (num2-(Math.Truncate((double)num2/100)*100)) + "铜作为医疗费.", 0, 0, 0);
+				}
+				else
+				{
+					Main.NewText("[c/00FF00:Nurse]: You need " + Math.Truncate((double)num2/100) + " silver coins and " + (num2-(Math.Truncate((double)num2/100)*100)) + " copper coins to pay the doctor's fee.", 0, 0, 0);
+				}
 			}
 		}
 		

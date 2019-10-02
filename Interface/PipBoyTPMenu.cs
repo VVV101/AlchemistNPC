@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.Localization;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
 using System;
@@ -31,21 +32,46 @@ namespace AlchemistNPC.Interface
 			PipBoyTPPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
 			PipBoyTPPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			UIText text = new UIText("Beach Left/Right");
+			string BeachButton;
+			string OceanButton;
+			string DungeonButton;
+			string UnderworldButton;
+			string JungleButton;
+			string TempleButton;
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					BeachButton = "沙滩 左/右";
+					OceanButton = "海洋 左/右";
+					DungeonButton = "地牢";
+					UnderworldButton = "地狱 左/右";
+					JungleButton = "丛林 左/右";
+					TempleButton = "神庙";
+				}
+			else
+				{
+					BeachButton = "Beach Left/Right";
+					OceanButton = "Ocean Left/Right";
+					DungeonButton = "Dungeon";
+					UnderworldButton = "Underworld Left/Right";
+					JungleButton = "Jungle Left/Right";
+					TempleButton = "Temple";
+				}
+			
+			UIText text = new UIText(BeachButton);
 			text.Left.Set(60, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(60, 0f);
 			text.Height.Set(22, 0f);
 			PipBoyTPPanel.Append(text);
 			
-			UIText text2 = new UIText("Ocean Left/Right");
+			UIText text2 = new UIText(OceanButton);
 			text2.Left.Set(60, 0f);
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(120, 0f);
 			text2.Height.Set(22, 0f);
 			PipBoyTPPanel.Append(text2);
 			
-			UIText text3 = new UIText("Dungeon");
+			UIText text3 = new UIText(DungeonButton);
 			text3.Left.Set(60, 0f);
 			text3.Top.Set(70, 0f);
 			text3.Width.Set(70, 0f);
@@ -53,21 +79,21 @@ namespace AlchemistNPC.Interface
 			text3.OnClick += new MouseEvent(PlayButtonClicked3);
 			PipBoyTPPanel.Append(text3);
 			
-			UIText text4 = new UIText("Underworld Left/Right");
+			UIText text4 = new UIText(UnderworldButton);
 			text4.Left.Set(60, 0f);
 			text4.Top.Set(100, 0f);
 			text4.Width.Set(120, 0f);
 			text4.Height.Set(22, 0f);
 			PipBoyTPPanel.Append(text4);
 			
-			UIText text5 = new UIText("Jungle Left/Right");
+			UIText text5 = new UIText(JungleButton);
 			text5.Left.Set(60, 0f);
 			text5.Top.Set(130, 0f);
 			text5.Width.Set(100, 0f);
 			text5.Height.Set(22, 0f);
 			PipBoyTPPanel.Append(text5);
 			
-			UIText text6 = new UIText("Temple");
+			UIText text6 = new UIText(TempleButton);
 			text6.Left.Set(60, 0f);
 			text6.Top.Set(160, 0f);
 			text6.Width.Set(75, 0f);

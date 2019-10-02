@@ -47,3 +47,46 @@ Common.PotionspricemultiplierTooltip=提升价格倍率. 默认为1
 
 Common.FallenStarsPrice=落星价格
 Common.FallenStarsPriceTooltip=默认1000个价值10银
+
+Prefix
+
+Prefix.Ancient=亘古
+Prefix.Shining=光炫
+Prefix.Arcana=幽秘
+Prefix.Demiurgic=创世
+Prefix.Immortal=不朽
+Prefix.Primal=原初
+
+AntiBuffMode
+
+Common.AntiBuffmodeactive=反Buff模式启动
+Common.AntiBuffmodeisdisabled=反Buff模式关闭
+
+
+Bill Cipher
+
+NPCName.BillCipher=比尔·塞弗
+
+Common.BillCipherChat1=什么? 你竟然和我名字一模一样? 那好吧, 我不想和你打.
+Common.BillCipherChat2=这, 拿着我的礼物! 再见!
+Common.BillCipherChat3=别妄想躲着我, 凡人!
+
+Common.BillCipherChat4=什么? 又是你? 我已经被你打败了! 你还想要从我这得到什么?
+Common.BillCipherChat5=你胆敢召唤我? 那可有意思了!
+Common.BillCipherChat6=嘿, 拿着这个!
+Common.BillCipherChat7=嘿, 你小子! 对, 就是你! 我在问是谁拿着这个''巫毒娃娃''!
+Common.BillCipherChat8=你真的认为你能打败我吗? 那怕是要笑掉大牙!
+Common.BillCipherChat9=玩游戏的时间结束了, 现在你准备去死吧!
+Common.BillCipherChat10=疯狂尽情释放吧!
+Common.BillCipherChat11=你有点让我烦躁了, 小虫子!
+Common.BillCipherChat12=别以为你在屏幕后面很安全...
+Common.BillCipherChat13=我会潜入你的梦境，把它们变成可怕的噩梦!
+Common.BillCipherChat14=我不会再被打败了!
+Common.BillCipherChat15=觉悟吧!
+
+
+Knuckles
+
+NPCName.Knuckles=乌干达·纳克鲁斯
+
+Common.UgandanKnucklesChat1=我有个问题要问问你...
