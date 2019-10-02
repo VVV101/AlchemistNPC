@@ -495,6 +495,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.CrimstoneBlock);
 				shop.item[nextSlot].shopCustomPrice = 2;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Cobweb);
+				shop.item[nextSlot].shopCustomPrice = 30;
+				nextSlot++;
 				if (NPC.downedQueenBee)
 				{
 					shop.item[nextSlot].SetDefaults (ItemID.Hive);
@@ -728,9 +731,6 @@ namespace AlchemistNPC.NPCs
             nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.Womannquin);
 			shop.item[nextSlot].shopCustomPrice = 100;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.Cobweb);
-			shop.item[nextSlot].shopCustomPrice = 20;
             nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.WorkBench);
 			shop.item[nextSlot].shopCustomPrice = 2000;
