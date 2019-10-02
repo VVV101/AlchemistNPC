@@ -26,6 +26,7 @@ It can be used for crafting Dimensional Rift, which is a new summon item.
 Now Hive drops from Plantera with 5% chance.
 -Anti Buff item no longer has selling price.
 -Fixed Golem Booster.
+-Some more Chinese translation by tyhnoone.
 -New sprites for some items.
 v8.7
 -Updated to tModloader 0.11.3.
