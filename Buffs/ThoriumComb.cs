@@ -26,7 +26,7 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Thorium Combination");
 			Description.SetDefault("Perfect sum of Thorium buffs"
-			+"\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy, Dash");
+			+"\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Ториума");
@@ -47,14 +47,12 @@ namespace AlchemistNPC.Buffs
             player.magicCrit += 6;
             player.thrownCrit += 6;
 			player.discount = true;
-			player.dash = 1;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("CritChance")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("BloodRush")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("CombatProwess")] =true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("Frenzy")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("RadiantBoost")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("HolyBonus")] = true;
-			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("DashBuff")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("CreativityDrop")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("EarwormBuff")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("InspirationReach")] = true;
