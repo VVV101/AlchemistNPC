@@ -9,6 +9,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
 using Terraria.Localization;
@@ -95,7 +96,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
@@ -113,7 +114,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
@@ -131,7 +132,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 2;
             ThoriumPlayer.radiantCrit += 2;
 			if (ModLoader.GetMod("CalamityMod") != null)

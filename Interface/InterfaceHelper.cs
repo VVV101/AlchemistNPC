@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.UI;
 using AlchemistNPC.Interface;
 
@@ -38,7 +39,7 @@ namespace AlchemistNPC.Interface
 				return true;
 			}
 			Mod mod = AlchemistNPC.Instance;
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (modPlayer.ShieldBelt == false)
 			{
 				return true;
@@ -74,7 +75,7 @@ namespace AlchemistNPC.Interface
 				return true;
 			}
 			Mod mod = AlchemistNPC.Instance;
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (modPlayer.PH == false)
 			{
 				return true;

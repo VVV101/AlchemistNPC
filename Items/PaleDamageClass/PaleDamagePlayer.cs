@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace AlchemistNPC.Items.PaleDamageClass
 {

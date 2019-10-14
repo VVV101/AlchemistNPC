@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 
@@ -23,7 +24,7 @@ namespace AlchemistNPC.Buffs
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-            npc.GetGlobalNPC<ModGlobalNPC>(mod).corrosion = true;
+            npc.GetGlobalNPC<ModGlobalNPC>().corrosion = true;
         }
 	}
 }

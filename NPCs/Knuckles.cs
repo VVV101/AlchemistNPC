@@ -31,6 +31,7 @@ using Terraria.Utilities;
 using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 using AlchemistNPC.NPCs;
@@ -100,7 +101,7 @@ namespace AlchemistNPC.NPCs
 						int damage1 = 200;
 						int damage2 = 300;
 						int damage3 = 350;
-						if (player.GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte)
+						if (player.GetModPlayer<AlchemistNPCPlayer>().MemersRiposte)
 						{
 						damage1 = 100;
 						damage2 = 150;
@@ -412,7 +413,7 @@ namespace AlchemistNPC.NPCs
 						defense = 0;
 						return true;
 					}
-					if (player.GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte == false)
+					if (player.GetModPlayer<AlchemistNPCPlayer>().MemersRiposte == false)
 					{
 					damage = 1;
 						if (crit)
@@ -420,7 +421,7 @@ namespace AlchemistNPC.NPCs
 						damage = 2;
 						}
 					}
-					if (player.GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte)
+					if (player.GetModPlayer<AlchemistNPCPlayer>().MemersRiposte)
 					{
 					damage = 2;
 						if (crit)

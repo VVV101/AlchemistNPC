@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace AlchemistNPC.Buffs
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-			npc.GetGlobalNPC<ModGlobalNPC>(mod).electrocute = true;
+			npc.GetGlobalNPC<ModGlobalNPC>().electrocute = true;
 			if (Main.rand.Next(20) == 0 && npc.type != 488)
 			{
 			npc.velocity.X = 0.1f;

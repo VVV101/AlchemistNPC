@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Placeable

@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
 using Terraria.Localization;
 using System.Linq;
@@ -161,10 +162,6 @@ namespace AlchemistNPC.Items.Weapons
 					}
 				}
 				return false;
-			}
-			else
-			{
-				return true;
 			}
 			return true;
 		}

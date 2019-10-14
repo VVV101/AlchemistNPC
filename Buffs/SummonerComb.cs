@@ -8,6 +8,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
 using Terraria.Localization;
@@ -91,21 +92,21 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.throwingDamage += 0.1f;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
 			RedemptionPlayer.druidDamage += 0.1f;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicDamage += 0.1f;
 			ThoriumPlayer.radiantBoost += 0.1f;
         }

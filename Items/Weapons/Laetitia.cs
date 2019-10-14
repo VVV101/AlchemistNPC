@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -32,13 +33,13 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool CanUseItem(Player player)
 		{
-			if (player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet == true)
+			if (player.GetModPlayer<AlchemistNPCPlayer>().LaetitiaSet == true)
 			{
 			item.damage = 35;
 			item.useTime = 15;
 			item.useAnimation = 15;
 			}
-			if (player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet == false)
+			if (player.GetModPlayer<AlchemistNPCPlayer>().LaetitiaSet == false)
 			{
 			item.damage = 35;
 			item.useTime = 30;

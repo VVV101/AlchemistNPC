@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.Items;
 
 namespace AlchemistNPC.Prefixes

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Equippable
@@ -81,7 +82,7 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.throwingDamage += 0.1f;
             CalamityPlayer.throwingCrit += 10;
         }
@@ -89,7 +90,7 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
 			RedemptionPlayer.druidDamage += 0.1f;
             RedemptionPlayer.druidCrit += 10;
         }
@@ -97,7 +98,7 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicDamage += 0.1f;
             ThoriumPlayer.symphonicCrit += 10;
 			ThoriumPlayer.radiantBoost += 0.1f;

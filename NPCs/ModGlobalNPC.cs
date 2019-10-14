@@ -32,6 +32,7 @@ using Terraria.Utilities;
 using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 
@@ -818,7 +819,7 @@ namespace AlchemistNPC.NPCs
 					Player player = Main.player[k];
 					if (player.active)
 					{
-						AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(AlchemistNPC.Instance);
+						AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 						if (modPlayer.CultistBooster == 1)
 						{
 							if ((npc.type == 402 || npc.type == 405 || npc.type == 407 || npc.type == 409 || npc.type == 411) && Main.rand.NextBool(5))
@@ -868,7 +869,7 @@ namespace AlchemistNPC.NPCs
 
 		public void SyncPlayerVariables(Player player)
 		{
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(AlchemistNPC.Instance);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			ModPacket packet = mod.GetPacket();
 			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.SyncPlayerVariables);
 			packet.Write((byte)player.whoAmI);
@@ -884,7 +885,7 @@ namespace AlchemistNPC.NPCs
 				Player player = Main.player[k];
 				if (player.active)
 				{
-					AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(AlchemistNPC.Instance);
+					AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 					if (player.HasBuff(mod.BuffType("Snatcher")) && !npc.friendly && npc.type != 14 && npc.type != 135 && !npc.SpawnedFromStatue && npc.type != 1 && npc.type != 535)
 					{
 						modPlayer.SnatcherCounter++;

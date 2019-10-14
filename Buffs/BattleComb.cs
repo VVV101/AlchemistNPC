@@ -8,6 +8,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
 using Terraria.Localization;
@@ -150,7 +151,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityBoost(Player player, int dc)
         {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			if (dc == 0)
 			CalamityPlayer.throwingDamage += 0.1f;
 			if (dc == 1)
@@ -160,7 +161,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void RedemptionBoost(Player player, int dc)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
 			if (dc == 0 || dc == 2)
 			RedemptionPlayer.druidDamage += 0.1f;
 			if (dc == 1 || dc == 2)
@@ -170,7 +171,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void ThoriumBoosts(Player player, int dc)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
 			if (dc == 0 || dc == 2)
 			{
 				ThoriumPlayer.symphonicDamage += 0.1f;

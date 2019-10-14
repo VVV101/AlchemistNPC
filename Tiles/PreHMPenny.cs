@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.Enums;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;

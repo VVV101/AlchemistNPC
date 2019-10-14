@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -24,7 +25,7 @@ namespace AlchemistNPC.Buffs
             player.rangedCrit += 10;
             player.magicCrit += 10;
             player.thrownCrit += 10;
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.ownedProjectileCounts[mod.ProjectileType("GrimReaper")] > 0)
 			{
 				modPlayer.grimreaper = true;

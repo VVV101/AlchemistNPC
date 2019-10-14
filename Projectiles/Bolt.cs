@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using System;
 using System.Collections.Generic;
 
@@ -198,7 +199,6 @@ namespace AlchemistNPC.Projectiles
 			// These 2 could probably be moved to the ModifyNPCHit hook, but in vanilla they are present in the AI
 			projectile.ignoreWater = true; // Make sure the projectile ignores water
 			projectile.tileCollide = false; // Make sure the projectile doesn't collide with tiles anymore
-			const int aiFactor = 15; // Change this factor to change the 'lifetime' of this sticking javelin
 			projectile.localAI[0] += 1f;
 
 			// Every 30 ticks, the javelin will perform a hit effect

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Armor
@@ -62,7 +63,7 @@ namespace AlchemistNPC.Items.Armor
 			player.SporeSac();
             player.sporeSac = true;
 			}
-            player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet = true;
+            player.GetModPlayer<AlchemistNPCPlayer>().LaetitiaSet = true;
         }
 
 		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)

@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 
@@ -49,21 +50,21 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             CalamityPlayer.throwingCrit += 100;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 100;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 100;
             ThoriumPlayer.radiantCrit += 100;
         }

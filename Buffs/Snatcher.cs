@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using System.Linq;
 
@@ -29,7 +30,7 @@ namespace AlchemistNPC.Buffs
 			string tipch;
 			
 			Player player = Main.player[Main.myPlayer];
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			tip = "Uh... You don't seem to have a soul. What a shame. OK then, let's make a deal..."
 			+"\nIn your journey, you are defeating an endless amounts of enemies..."
 			+"\nBut you are not collecting their souls for yourself, right?"
@@ -105,7 +106,7 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.ownedProjectileCounts[mod.ProjectileType("Snatcher")] > 0)
 			{
 				modPlayer.snatcher = true;
@@ -196,21 +197,21 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityDBoost(Player player)
         {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.throwingDamage += 0.08f;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionDBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
 			RedemptionPlayer.druidDamage += 0.08f;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumDBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicDamage += 0.08f;
 			ThoriumPlayer.radiantBoost += 0.08f;
         }
@@ -218,19 +219,19 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityCBoost(Player player)
         {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             CalamityPlayer.throwingCrit += 5;
         }
 		
 		private void RedemptionCBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 5;
         }
 		
 		private void ThoriumCBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 5;
             ThoriumPlayer.radiantCrit += 5;
         }

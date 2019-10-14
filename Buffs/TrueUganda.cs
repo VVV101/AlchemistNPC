@@ -31,6 +31,7 @@ using Terraria.Utilities;
 using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 

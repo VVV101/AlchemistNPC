@@ -3,6 +3,7 @@ using Terraria.ID;
 using System.Linq;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace AlchemistNPC.Items.Equippable
 {

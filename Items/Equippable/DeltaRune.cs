@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Equippable

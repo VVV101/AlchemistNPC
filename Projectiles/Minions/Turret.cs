@@ -3,6 +3,7 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace AlchemistNPC.Projectiles.Minions
 {
@@ -42,7 +43,7 @@ namespace AlchemistNPC.Projectiles.Minions
         public override void AI()
         {
 			Player player = Main.player[projectile.owner];
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.dead || !player.HasBuff(mod.BuffType("Turret")))
 			{
 				modPlayer.turret = false;
@@ -56,7 +57,6 @@ namespace AlchemistNPC.Projectiles.Minions
                 projectile.localAI[1] = 1f;
                 projectile.localAI[0] = 1f;
                 projectile.ai[0] = 120f;
-                int num501 = 80;
                 Main.PlaySound(SoundID.Item11, projectile.position);
             }
             projectile.velocity.X = 0f;
@@ -105,7 +105,7 @@ namespace AlchemistNPC.Projectiles.Minions
             }
             if (flag18)
             {
-				if (counter == 0)
+				if (counter == 20)
 				{
 					Main.PlaySound(2, -1, -1, mod.GetSoundSlot(SoundType.Item, "Sounds/Item/ThereYouAre"));
 				}

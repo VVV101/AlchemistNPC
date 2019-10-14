@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
 using System;
@@ -44,7 +45,7 @@ namespace AlchemistNPC.Interface
 					BrewerShops1 = "原版";
 					BrewerShops2 = "模组/灾厄";
 					BrewerShops3 = "瑟银/简化难度(RG)";
-					BrewerShops4 = "更多药水(MorePotions)";
+					BrewerShops4 = "更多药水()";
 					BrewerShops5 = "UnuBattleRods/Tacklebox/震颤";
 					BrewerShops6 = "野生动物/圣域(亚伯顿之影)/魂灵/水晶之地/炮塔扩展";
 				}

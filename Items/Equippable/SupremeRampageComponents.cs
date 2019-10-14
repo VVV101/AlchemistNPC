@@ -6,6 +6,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace AlchemistNPC.Items.Equippable
 {
@@ -41,7 +42,7 @@ namespace AlchemistNPC.Items.Equippable
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).Rampage = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().Rampage = true;
 			if (!hideVisual)
 			{
 				player.scope = true;
@@ -51,7 +52,7 @@ namespace AlchemistNPC.Items.Equippable
 			player.ammoPotion = true;
 			player.rangedDamage += 0.15f;
 			player.rangedCrit += 15;
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).XtraT = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().XtraT = true;
 		}
 
 		

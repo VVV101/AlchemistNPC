@@ -32,6 +32,7 @@ using Terraria.Utilities;
 using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 using AlchemistNPC.NPCs;
@@ -1266,7 +1267,7 @@ namespace AlchemistNPC
 					return;
 				}
 				Mod mod = ModLoader.GetMod("AlchemistNPC");
-				AlchemistNPCPlayer modPlayer = drawPlayer.GetModPlayer<AlchemistNPCPlayer>(mod);
+				AlchemistNPCPlayer modPlayer = drawPlayer.GetModPlayer<AlchemistNPCPlayer>();
 				if (modPlayer.MysticAmuletMount && modPlayer.fc <= 10)
 				{
 					Texture2D texture = mod.GetTexture("Mounts/MysticAmulet");

@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC;
 
@@ -37,8 +38,8 @@ namespace AlchemistNPC.Items.Equippable
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).SF = true;
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).SFU = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().SF = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().SFU = true;
             player.minionDamage += 0.15f;
 			++player.maxMinions;
 			++player.maxMinions;

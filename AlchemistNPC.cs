@@ -8,6 +8,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using Terraria.UI;
 using Terraria.DataStructures;
@@ -32,7 +33,6 @@ namespace AlchemistNPC
 		public static Mod Instance;
 		internal static AlchemistNPC instance;
 		internal static ModConfiguration modConfiguration;
-		internal TeleportClass TeleportClass;
 		public static ModHotKey LampLight;
 		public static ModHotKey DiscordBuff;
 		public static ModHotKey PipBoyTP;
@@ -92,12 +92,12 @@ namespace AlchemistNPC
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
 			}
-			ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ItemType<Items.Misc.ReversivityCoinTier1>(), 999L));
-			ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ItemType<Items.Misc.ReversivityCoinTier2>(), 999L));
-			ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ItemType<Items.Misc.ReversivityCoinTier3>(), 999L));
-			ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ItemType<Items.Misc.ReversivityCoinTier4>(), 999L));
-			ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ItemType<Items.Misc.ReversivityCoinTier5>(), 999L));
-			ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ItemType<Items.Misc.ReversivityCoinTier6>(), 999L));
+			ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier1>(), 999L));
+			ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier2>(), 999L));
+			ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier3>(), 999L));
+			ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier4>(), 999L));
+			ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier5>(), 999L));
+			ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier6>(), 999L));
 			instance = this;
 
             SetTranslation();

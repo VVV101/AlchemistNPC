@@ -29,7 +29,7 @@ namespace AlchemistNPC.Projectiles.Minions
 		public override void CheckActive()
 		{
 			Player player = Main.player[projectile.owner];
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.dead || !modPlayer.LaetitiaGift)
 			{
 				modPlayer.lwm = false;

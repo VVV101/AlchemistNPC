@@ -9,6 +9,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
 using Terraria.Localization;
@@ -59,7 +60,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void MorePotionsBoosts(Player player, ref int buffIndex)
         {
-            MorePotions.MorePotionsPlayer MorePotionsPlayer = player.GetModPlayer<MorePotions.MorePotionsPlayer>(MorePotions);
+            MorePotions.MorePotionsPlayer MorePotionsPlayer = player.GetModPlayer<MorePotions.MorePotionsPlayer>();
 			MorePotions.GetBuff("CouragePotionBuff").Update(player, ref buffIndex);
 			MorePotions.GetBuff("DawnPotionBuff").Update(player, ref buffIndex);
 			MorePotions.GetBuff("DuskPotionBuff").Update(player, ref buffIndex);

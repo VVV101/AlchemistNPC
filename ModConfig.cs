@@ -11,6 +11,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.Config;
 using Terraria.ModLoader.Config.UI;
 using Terraria.UI;
@@ -114,29 +115,29 @@ namespace AlchemistNPC
 		}
 
 		public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string messageline) {
-			string message;
-			string messagech;
+			string message = "";
+			string messagech = "";
+			
+			if(Language.ActiveCulture == GameCulture.Chinese)
+			{
+				messageline = messagech;
+			}
+			else 
+			{
+				messageline = message;
+			}
 			
 			if (whoAmI == 0) {
 				message = "Changes accepted!";
 				messagech = "设置改动成功!";
 				return true;
 			}
-			else
+			if (whoAmI != 0)
 			{
 				message = "You have no rights to change config.";
 				messagech = "你没有设置改动权限.";
 				return false;
 			}
-
-			if(Language.ActiveCulture == GameCulture.Chinese)
-				{
-					messageline = messagech;
-				}
-			else 
-				{
-					messageline = message;
-				}
 			return false;
 		}
 	}

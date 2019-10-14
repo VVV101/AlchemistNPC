@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC;
 
@@ -44,7 +45,7 @@ namespace AlchemistNPC.Items.Equippable
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.AddBuff(mod.BuffType("BastScroll"), 60);
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).Scroll = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().Scroll = true;
 			player.endurance += 0.1f;
 			player.statDefense += 5;
 			player.thrownDamage += 0.15f;
@@ -69,7 +70,7 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.throwingDamage += 0.15f;
             CalamityPlayer.throwingCrit += 15;
         }

@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -65,7 +66,7 @@ namespace AlchemistNPC.Items
 		
 		public override bool UseItem(Player player)
 		{
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.stress = 10000;
 			player.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"), 18000, true);
 			return true;

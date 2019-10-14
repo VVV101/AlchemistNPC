@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -24,7 +25,7 @@ namespace AlchemistNPC.Buffs
 			player.buffTime[buffIndex] = 10;
 			player.noKnockback = true;
 			player.noFallDmg = true;
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			modPlayer.MysticAmuletMount = true;
 			modPlayer.fc++;
 			if (modPlayer.fc == 40)

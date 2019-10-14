@@ -7,6 +7,10 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
+v8.8.1
+-Updated to tModloader 0.11.5.
+-Cleaned up some code.
+-Removed Dash from Thorium Combination.
 v8.8
 -Updated to tModloader 0.11.4.
 -Fixed incompatibility with latest Calamity mod build.

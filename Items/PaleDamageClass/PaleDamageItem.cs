@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.PaleDamageClass
@@ -31,7 +32,7 @@ namespace AlchemistNPC.Items.PaleDamageClass
 		}
 
 		// As a modder, you could also opt to make these overrides also sealed. Up to the modder
-		public override void ModifyWeaponDamage(Player player, ref float add, ref float mult) {
+		public override void ModifyWeaponDamage(Player player, ref float add, ref float mult, ref float flat) {
 			add += PaleDamagePlayer.ModPlayer(player).paleDamageAdd;
 			mult *= PaleDamagePlayer.ModPlayer(player).paleDamageMult;
 		}

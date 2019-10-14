@@ -8,6 +8,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.Localization;
 using AlchemistNPC.Interface;
@@ -368,7 +369,7 @@ namespace AlchemistNPC.Items
 		
 		private void BluemagicGodmode(Player player)
         {
-			Bluemagic.BluemagicPlayer BluemagicPlayer = player.GetModPlayer<Bluemagic.BluemagicPlayer>(Bluemagic);
+			Bluemagic.BluemagicPlayer BluemagicPlayer = player.GetModPlayer<Bluemagic.BluemagicPlayer>();
 			BluemagicPlayer.godmode = false;
         }
 		private readonly Mod Bluemagic = ModLoader.GetMod("Bluemagic");
@@ -476,7 +477,7 @@ namespace AlchemistNPC.Items
 			return base.UseItem(item, player);
 		}
 		
-		public override void PickAmmo(Item item, Player player, ref int type, ref float speed, ref int damage, ref float knockback)
+		public override void PickAmmo(Item weapon, Item item, Player player, ref int type, ref float speed, ref int damage, ref float knockback)
 		{
 			if (type == ProjectileID.Bullet && player.GetModPlayer<AlchemistNPCPlayer>().Rampage)
 			{
@@ -1251,7 +1252,7 @@ namespace AlchemistNPC.Items
 		
 		public override void VerticalWingSpeeds(Item item, Player player, ref float ascentWhenFalling, ref float ascentWhenRising, ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend) 
 		{
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (modPlayer.BetsyBooster == 1)
 			{
 				maxCanAscendMultiplier += 1f;
@@ -1261,7 +1262,7 @@ namespace AlchemistNPC.Items
 		
 		public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)	
 		{
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (modPlayer.BetsyBooster == 1)
 			{
 				speed += 0.1f;

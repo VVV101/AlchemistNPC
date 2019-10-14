@@ -31,6 +31,7 @@ using Terraria.Utilities;
 using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 using AlchemistNPC.NPCs;
@@ -211,7 +212,7 @@ namespace AlchemistNPC.NPCs
 			{
 				npc.dontTakeDamage = true;
 			}
-			if (npc.life > npc.lifeMax/2 && !player.dead && !npc.GetGlobalNPC<ModGlobalNPC>(mod).intermission1)
+			if (npc.life > npc.lifeMax/2 && !player.dead && !npc.GetGlobalNPC<ModGlobalNPC>().intermission1)
 			{
 				introduction++;
 				
@@ -266,7 +267,7 @@ namespace AlchemistNPC.NPCs
 					counter2++;
 				}
 			}
-			if (npc.life < npc.lifeMax/2 && npc.life > npc.lifeMax*0.15f && !player.dead && !npc.GetGlobalNPC<ModGlobalNPC>(mod).intermission2)
+			if (npc.life < npc.lifeMax/2 && npc.life > npc.lifeMax*0.15f && !player.dead && !npc.GetGlobalNPC<ModGlobalNPC>().intermission2)
 			{
 				player.AddBuff((mod.BuffType("Madness")), 2);
 				if (ModLoader.GetMod("CalamityMod") != null)
@@ -398,7 +399,7 @@ namespace AlchemistNPC.NPCs
 		
 		private void RnAReset(Player player)
 		{
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.stress = 0;
 			CalamityPlayer.adrenaline = 0;
 		}
@@ -456,7 +457,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override void FindFrame(int frameHeight)
 		{
-			if (!npc.GetGlobalNPC<ModGlobalNPC>(mod).phase2)
+			if (!npc.GetGlobalNPC<ModGlobalNPC>().phase2)
 			{
 				npc.frameCounter++;
 				if (npc.frameCounter < 100)
@@ -480,7 +481,7 @@ namespace AlchemistNPC.NPCs
 					npc.frameCounter = 0;
 				}
 			}
-			if (npc.GetGlobalNPC<ModGlobalNPC>(mod).phase2)
+			if (npc.GetGlobalNPC<ModGlobalNPC>().phase2)
 			{
 				npc.frameCounter++;
 				if (npc.frameCounter < 100)

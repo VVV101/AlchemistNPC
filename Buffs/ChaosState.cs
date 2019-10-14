@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using System.Linq;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 
@@ -25,7 +26,7 @@ namespace AlchemistNPC.Buffs
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-			npc.GetGlobalNPC<ModGlobalNPC>(mod).chaos = true;
+			npc.GetGlobalNPC<ModGlobalNPC>().chaos = true;
         }
 	}
 }

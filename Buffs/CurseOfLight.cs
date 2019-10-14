@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using System.Linq;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 

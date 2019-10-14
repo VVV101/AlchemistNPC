@@ -9,6 +9,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
 using Terraria.Localization;
@@ -50,7 +51,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void SpiritBoosts(Player player, ref int buffIndex)
         {
-            SpiritMod.MyPlayer SpiritPlayer = player.GetModPlayer<SpiritMod.MyPlayer>(Spirit);
+            SpiritMod.MyPlayer SpiritPlayer = player.GetModPlayer<SpiritMod.MyPlayer>();
 			Spirit.GetBuff("SpiritBuff").Update(player, ref buffIndex);
 			Spirit.GetBuff("RunePotionBuff").Update(player, ref buffIndex);
 			Spirit.GetBuff("SoulPotionBuff").Update(player, ref buffIndex);

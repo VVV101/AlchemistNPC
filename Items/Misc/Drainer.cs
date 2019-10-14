@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Misc
@@ -40,7 +41,7 @@ namespace AlchemistNPC.Items.Misc
 
 		public override bool UseItem(Player player)
 		{
-		CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+		CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			for (int h = 0; h < 1; h++) {
 			Vector2 vel = new Vector2(0, -1);
 			vel *= 0f;

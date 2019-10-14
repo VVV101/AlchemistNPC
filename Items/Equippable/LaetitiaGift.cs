@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Equippable
@@ -39,7 +40,7 @@ namespace AlchemistNPC.Items.Equippable
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaGift = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().LaetitiaGift = true;
 			++player.maxMinions;
 			++player.maxMinions;
 			++player.maxMinions;

@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace AlchemistNPC.Projectiles
 
@@ -35,7 +36,7 @@ namespace AlchemistNPC.Projectiles
         public override void AI()
         {
 			Player player = Main.player[projectile.owner];
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.dead || !player.HasBuff(mod.BuffType("WatcherCrystal")))
 			{
 				modPlayer.watchercrystal = false;

@@ -2,6 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
 using Terraria.Localization;
 using AlchemistNPC;
@@ -28,7 +29,7 @@ namespace AlchemistNPC.Buffs
 			string tipch;
 			
 			Player player = Main.player[Main.myPlayer];
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			tip = "Active boosts:";
 			tipch = "生效增益:";
 			
@@ -167,7 +168,7 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (modPlayer.KingSlimeBooster == 1)
 			{
 				player.autoJump = true;
@@ -363,7 +364,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityBoost(Player player, int c)
         {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			if (c == 0)
 			{
 				CalamityPlayer.throwingDamage += 0.1f;
@@ -384,7 +385,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void RedemptionBoost(Player player, int c)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
 			if (c == 0)
 			{
 				RedemptionPlayer.druidDamage += 0.1f;
@@ -405,7 +406,7 @@ namespace AlchemistNPC.Buffs
 		
 		private void ThoriumBoosts(Player player, int c)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
 			if (c == 0)
 			{
 				ThoriumPlayer.symphonicDamage += 0.1f;
