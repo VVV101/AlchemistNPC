@@ -219,12 +219,12 @@ namespace AlchemistNPC.Items
 		{
 			Vector2 prePos = player.position;
 			Vector2 pos = prePos;
-			for (int y = Main.maxTilesY; y > 0; --y)
+			for (int y = Main.maxTilesY; y > Main.worldSurface - 150; --y)
+			{
+				for (int x = 0; x < Main.maxTilesX; ++x)
 				{
-					for (int x = 0; x < Main.maxTilesX; ++x)
-					{
 					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].type != 384) continue;
+					if (Main.tile[x, y].type != 233) continue;
 					pos = new Vector2((x) * 16, (y-2) * 16);
 					break;
 				}

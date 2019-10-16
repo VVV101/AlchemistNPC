@@ -210,7 +210,7 @@ namespace AlchemistNPC.NPCs
 	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryA27");
             text.SetDefault(" interest in occult Alchemy did nothing but grow.");
-            text.AddTranslation(GameCulture.Russian, " в оккультной алхимии только вырос.");
+            text.AddTranslation(GameCulture.Russian, " к оккультной алхимии только вырос.");
             text.AddTranslation(GameCulture.Chinese, "对神秘学炼金术的兴趣却在不断增长");
 	    mod.AddTranslation(text);
             text = mod.CreateTranslation("BrewElixir");
@@ -634,6 +634,9 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeachTeleporterPotion"));
 		shop.item[nextSlot].shopCustomPrice = 20000;
 		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("JungleTeleporterPotion"));
+		shop.item[nextSlot].shopCustomPrice = 50000;
+		nextSlot++;
 		}
 		if (NPC.downedBoss3)
 		{
@@ -647,9 +650,6 @@ namespace AlchemistNPC.NPCs
 		if (Main.hardMode)
 		{
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("UnderworldTeleportationPotion"));
-		shop.item[nextSlot].shopCustomPrice = 50000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("JungleTeleporterPotion"));
 		shop.item[nextSlot].shopCustomPrice = 50000;
 		nextSlot++;
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeaconTeleportator"));

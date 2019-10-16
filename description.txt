@@ -9,7 +9,8 @@ The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
 v8.8.1
 -Updated to tModloader 0.11.5.
--Jungle Teleporter potion now aims for Living Machogany leaves.
+-Jungle Teleporter potion now has different functions for left and right click.
+-Jungle Teleporter potion is now available after beating EoW/BoC.
 -Removed Dash from Thorium Combination.
 -Cleaned up some code.
 v8.8
