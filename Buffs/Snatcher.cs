@@ -85,8 +85,8 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.SnatcherCounter >= 6666)
 			{
-				tip += "\nIncreases your armor penetration by 30";
-				tipch += "\n提升30点护甲穿透";
+				tip += "\nIncreases your armor penetration by 20";
+				tipch += "\n提升20点护甲穿透";
 			}
 			if (modPlayer.SnatcherCounter >= 9999)
 			{
@@ -187,7 +187,7 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.SnatcherCounter >= 6666)
 			{
-				player.armorPenetration += 30;
+				player.armorPenetration += 20;
 			}
 			if (modPlayer.SnatcherCounter >= 9999)
 			{

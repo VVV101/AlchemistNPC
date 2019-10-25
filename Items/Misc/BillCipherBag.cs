@@ -42,6 +42,7 @@ namespace AlchemistNPC.Items.Misc
 			player.QuickSpawnItem(mod.ItemType("LaserCannon"));
 			player.QuickSpawnItem(mod.ItemType("GrapplingHookGunItem"));
 			player.QuickSpawnItem(mod.ItemType("IlluminatiGift"));
+			player.QuickSpawnItem(mod.ItemType("BillSoul"));
 			if (player.HasBuff(mod.BuffType("GrimReaper")) && Main.rand.Next(5) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("MysticAmulet"));
@@ -53,7 +54,7 @@ namespace AlchemistNPC.Items.Misc
 					player.QuickSpawnItem(mod.ItemType("MysticAmulet"));
 				}
 			}
-			player.QuickSpawnItem(ItemID.PlatinumCoin, 50);
+			player.QuickSpawnItem(ItemID.PlatinumCoin, 10);
 		}
 		
 		public bool CalamityModRevengeance
