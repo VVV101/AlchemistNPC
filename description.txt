@@ -8,7 +8,13 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
 v8.8.1
+You need to have latest Calamity mod version (1.4.2.105).
+It is available in Calamity mod Discord channel.
 -Updated to tModloader 0.11.5.
+-Added support for Achievement Lib mod.
+-Fishron Booster no longer gives dash, but gives additional 1% to all stats.
+-Zerg/Zen potions, Chaos/Tranquility Candles were moved to post Plantera.
+-Removed Anticheat from Ugandan Knuckles boss.
 -Jungle Teleporter potion now has different functions for left and right click.
 -Jungle Teleporter potion is now available after beating EoW/BoC.
 -Removed Dash from Thorium Combination.

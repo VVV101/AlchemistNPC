@@ -647,14 +647,11 @@ namespace AlchemistNPC.NPCs
 			nextSlot++;
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-				if (Main.hardMode)
+				if (NPC.downedPlantBoss)
 				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TranquilityCandle"));
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
-				}
-				if (NPC.downedPlantBoss)
-				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ChaosCandle"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;

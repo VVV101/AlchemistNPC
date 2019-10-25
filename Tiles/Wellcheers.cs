@@ -80,6 +80,11 @@ namespace AlchemistNPC.Tiles
 					}
 					if (counter == 10 && !Main.dayTime)
 					{
+						Mod ALIB = ModLoader.GetMod("AchievementLib");
+						if(ALIB != null)
+						{
+							ALIB.Call("UnlockGlobal", "AlchemistNPC", "The snack that smiles back");
+						}
 						if (Main.netMode == 0)
 						{
 							switch (Main.rand.Next(3))

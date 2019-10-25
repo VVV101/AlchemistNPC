@@ -107,13 +107,6 @@ namespace AlchemistNPC.NPCs
 						damage2 = 150;
 						damage3 = 175;
 						}
-						if (player.statDefense > 250 || player.endurance > 0.50f || player.statLifeMax2 > 2500)
-						{
-							player.KillMe(PlayerDeathReason.ByOther(player.Male ? 14 : 15), 1.0, 0, false);
-							damage1 = 666666;
-							damage2 = 666666;
-							damage3 = 666666;
-						}
 						if (!Main.expertMode)
 						{
 							if (npc.life > 166666)
@@ -381,6 +374,11 @@ namespace AlchemistNPC.NPCs
 		
 		public override void NPCLoot()
 		{
+			Mod ALIB = ModLoader.GetMod("AchievementLib");
+			if(ALIB != null)
+			{
+				ALIB.Call("UnlockGlobal", "AlchemistNPC", "Da wae is clear, to the queen!");
+			}
 			if (Main.expertMode)
 			{
 				npc.DropBossBags();

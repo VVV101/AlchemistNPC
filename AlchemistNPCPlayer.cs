@@ -666,10 +666,20 @@ namespace AlchemistNPC
 			if (NPC.AnyNPCs(mod.NPCType("Knuckles")))
 			{
 				damageSource = PlayerDeathReason.ByCustomReason(player.name + " DIDN NO DE WEI!");
+				Mod ALIB = ModLoader.GetMod("AchievementLib");
+				if(ALIB != null)
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "You don't know da wae!");
+				}
 			}
 			if (NPC.AnyNPCs(mod.NPCType("BillCipher")))
 			{
 				damageSource = PlayerDeathReason.ByCustomReason(player.name + " was evaporated by the new master of this world.");
+				Mod ALIB = ModLoader.GetMod("AchievementLib");
+				if(ALIB != null)
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "If you will excuse me...");
+				}
 			}
 			if (Illuminati && !player.HasBuff(mod.BuffType("IlluminatiCooldown")) && !player.HasBuff(mod.BuffType("MindBurn")) && !player.HasBuff(mod.BuffType("TrueUganda")))
 			{
@@ -1252,6 +1262,33 @@ namespace AlchemistNPC
 				player.hairFrame.Y = 5 * player.hairFrame.Height;
 				player.headFrame.Y = 5 * player.headFrame.Height;
 				player.legFrame.Y = 5 * player.legFrame.Height;
+			}
+			if (AlchemistCharmTier1)
+			{
+				Mod ALIB = ModLoader.GetMod("AchievementLib");
+				if(ALIB != null)
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Junior Alchemist");
+				}
+			}
+			if (AlchemistCharmTier4)
+			{
+				Mod ALIB = ModLoader.GetMod("AchievementLib");
+				if(ALIB != null)
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Senior Alchemist");
+				}
+			}
+			if (NPC.AnyNPCs(mod.NPCType("Explorer")))
+			{
+				if (NPC.AnyNPCs(mod.NPCType("Alchemist")) && NPC.AnyNPCs(mod.NPCType("Brewer")) && NPC.AnyNPCs(mod.NPCType("Jeweler")) && NPC.AnyNPCs(mod.NPCType("Architect")) && NPC.AnyNPCs(mod.NPCType("Tinkerer")) && NPC.AnyNPCs(mod.NPCType("Operator")) && NPC.AnyNPCs(mod.NPCType("Musician")) && NPC.AnyNPCs(mod.NPCType("Young Brewer")))
+				{
+					Mod ALIB = ModLoader.GetMod("AchievementLib");
+					if(ALIB != null)
+					{
+						ALIB.Call("UnlockGlobal", "AlchemistNPC", "The gang's all here!");
+					}
+				}
 			}
 		}
 		

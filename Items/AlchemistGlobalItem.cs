@@ -87,6 +87,54 @@ namespace AlchemistNPC.Items
 			{
 				Warding = true;
 			}
+			Mod ALIB = ModLoader.GetMod("AchievementLib");
+			if(ALIB != null)
+			{
+				if (item.type == mod.ItemType("Wellcheers"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Well, cheers!");
+				}
+				if (item.type == mod.ItemType("SpearofJustice"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Spear of Justice");
+				}
+				if (item.type == mod.ItemType("EyeOfJudgement"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "if you keep going the way you are now...");
+				}
+				if (item.type == mod.ItemType("EyeOfJudgementP"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "you're gonna have a bad time.");
+				}
+				if (item.type == mod.ItemType("MagicWand"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Don't worry, mom, I can handle it...");
+				}
+				if (item.type == mod.ItemType("DarkMagicWand"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Dip down!");
+				}
+				if (item.type == mod.ItemType("MarcoMagicWand"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Forbidden magic");
+				}
+				if (item.type == mod.ItemType("PandoraPF422"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Pandora's Box");
+				}
+				if (item.type == mod.ItemType("PortalGun"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Now you're thinking...");
+				}
+				if (item.type == mod.ItemType("TurretStaff"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "Artificial unintelligence");
+				}
+				if (item.type == mod.ItemType("Akumu"))
+				{
+					ALIB.Call("UnlockGlobal", "AlchemistNPC", "The only thing to FEAR");
+				}
+			}
 		}
 		
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)

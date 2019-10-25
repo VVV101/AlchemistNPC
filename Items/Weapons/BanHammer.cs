@@ -40,8 +40,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.hammer = 666;
-			item.value = 10000000;
-			item.rare = 11;
+			item.value = 500000;
+			item.rare = 10;
             item.knockBack = 10;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;

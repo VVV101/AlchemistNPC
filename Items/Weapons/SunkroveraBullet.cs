@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.SetDefault("Sunkrovera Bullet");
 			Tooltip.SetDefault("Its glow makes you chill."
 			+"\nReleases life stealing projectiles on enemy/wall impact");
-			DisplayName.AddTranslation(GameCulture.Russian, "Пули с кристальной пылью");
+			DisplayName.AddTranslation(GameCulture.Russian, "Кровавые пули");
             Tooltip.AddTranslation(GameCulture.Russian, "Её сияние вызывает у вас дрожь.\nВыпускает похищающие жизнь снаряды при попадании во врага/стену");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "森克罗维拉弹");

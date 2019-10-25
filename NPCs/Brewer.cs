@@ -707,7 +707,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PotionofOmniscience"));
 					shop.item[nextSlot].shopCustomPrice = 20000;
 					nextSlot++;
-					if (Main.hardMode)
+					if (NPC.downedPlantBoss)
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZergPotion"));
 						shop.item[nextSlot].shopCustomPrice = 30000;

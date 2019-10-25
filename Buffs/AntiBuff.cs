@@ -136,8 +136,8 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.FishronBooster == 1)
 			{
-				tip += "\nGives ability to dash, all stats up while on surface";
-				tipch += "\n给予冲刺能力，表面上的所有统计数据增加";
+				tip += "\nAll stats up while on surface";
+				tipch += "\n表面上的所有统计数据增加";
 			}
 			if (modPlayer.MartianSaucerBooster == 1)
 			{
@@ -323,24 +323,20 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.FishronBooster == 1)
 			{
-				if (player.dash == 0)
-				{
-					player.dash = 1;
-				}
 				if (player.ZoneOverworldHeight)
 				{
-					player.statDefense += 3;
+					player.statDefense += 4;
 					player.moveSpeed += 0.1f;
-					player.endurance += 0.03f;
-					player.meleeDamage += 0.03f;
-					player.rangedDamage += 0.03f;
-					player.magicDamage += 0.03f;
-					player.minionDamage += 0.03f;
-					player.thrownDamage += 0.03f;
-					player.meleeCrit += 3;
-					player.rangedCrit += 3;
-					player.magicCrit += 3;
-					player.thrownCrit += 3;
+					player.endurance += 0.04f;
+					player.meleeDamage += 0.04f;
+					player.rangedDamage += 0.04f;
+					player.magicDamage += 0.04f;
+					player.minionDamage += 0.04f;
+					player.thrownDamage += 0.04f;
+					player.meleeCrit += 4;
+					player.rangedCrit += 4;
+					player.magicCrit += 4;
+					player.thrownCrit += 4;
 					if (ModLoader.GetMod("ThoriumMod") != null)
 					{
 						ThoriumBoosts(player, 2);
@@ -377,8 +373,8 @@ namespace AlchemistNPC.Buffs
 			}
 			if (c == 2)
 			{
-				CalamityPlayer.throwingDamage += 0.03f;
-				CalamityPlayer.throwingCrit += 3;
+				CalamityPlayer.throwingDamage += 0.04f;
+				CalamityPlayer.throwingCrit += 4;
 			}
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
@@ -398,8 +394,8 @@ namespace AlchemistNPC.Buffs
 			}
 			if (c == 2)
 			{
-				RedemptionPlayer.druidDamage += 0.03f;
-				RedemptionPlayer.druidCrit += 3;
+				RedemptionPlayer.druidDamage += 0.04f;
+				RedemptionPlayer.druidCrit += 4;
 			}
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
@@ -423,10 +419,10 @@ namespace AlchemistNPC.Buffs
 			}
 			if (c == 1)
 			{
-				ThoriumPlayer.symphonicDamage += 0.03f;
-				ThoriumPlayer.radiantBoost += 0.03f;
-				ThoriumPlayer.symphonicCrit += 3;
-				ThoriumPlayer.radiantCrit += 3;
+				ThoriumPlayer.symphonicDamage += 0.04f;
+				ThoriumPlayer.radiantBoost += 0.04f;
+				ThoriumPlayer.symphonicCrit += 4;
+				ThoriumPlayer.radiantCrit += 4;
 			}
         }
 		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");

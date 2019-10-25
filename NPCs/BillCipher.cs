@@ -537,6 +537,11 @@ namespace AlchemistNPC.NPCs
 		
 		public override void NPCLoot()
 		{
+			Mod ALIB = ModLoader.GetMod("AchievementLib");
+			if(ALIB != null)
+			{
+				ALIB.Call("UnlockGlobal", "AlchemistNPC", "The deal is off!");
+			}
 			if (Main.expertMode)
 			{
 				npc.DropBossBags();

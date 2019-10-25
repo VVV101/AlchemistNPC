@@ -54,7 +54,7 @@ namespace AlchemistNPC.Interface
 					OceanButton = "Ocean Left/Right";
 					DungeonButton = "Dungeon";
 					UnderworldButton = "Underworld Left/Right";
-					JungleButton = "Jungle Left/Right";
+					JungleButton = "Jungle Outside/Inside";
 					TempleButton = "Temple";
 				}
 			
@@ -83,7 +83,7 @@ namespace AlchemistNPC.Interface
 			UIText text4 = new UIText(UnderworldButton);
 			text4.Left.Set(60, 0f);
 			text4.Top.Set(100, 0f);
-			text4.Width.Set(120, 0f);
+			text4.Width.Set(140, 0f);
 			text4.Height.Set(22, 0f);
 			PipBoyTPPanel.Append(text4);
 			
