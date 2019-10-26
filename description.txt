@@ -13,6 +13,7 @@ It is available in Calamity mod Discord channel.
 -Updated to tModloader 0.11.5.
 -Added support for Achievement Lib mod.
 -Now Bill Cipher drops additional item, which, while used, gives Demon Slayer buff.
+-Fixed Titan Scale potion functionality in Calamity Combination.
 -Fishron Booster no longer gives dash, but gives additional 1% to all stats.
 -Zerg/Zen potions, Chaos/Tranquility Candles were moved to post Plantera.
 -Removed Anticheat from Ugandan Knuckles boss.

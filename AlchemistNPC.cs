@@ -9,6 +9,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.Achievements;
 using Terraria.Localization;
 using Terraria.UI;
 using Terraria.DataStructures;
@@ -152,25 +153,25 @@ namespace AlchemistNPC
 			Mod ALIB = ModLoader.GetMod("AchievementLib");
 			if(ALIB != null)
 			{
-				ALIB.Call("AddAchievement", Instance, "Junior Alchemist", "Obtain Alchemist Charm tier 1", ModContent.GetTexture("AlchemistNPC/AchievementLib/JALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/JAUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Senior Alchemist", "Obtain Alchemist Charm tier 4", ModContent.GetTexture("AlchemistNPC/AchievementLib/SALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/SAUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "The gang's all here!", "Find every AlchemistNPC town NPC.", ModContent.GetTexture("AlchemistNPC/AchievementLib/ANPCLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/ANPCUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "You don't know da wae!", "Die to Ugandan Knuckles.", ModContent.GetTexture("AlchemistNPC/AchievementLib/UNDLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/UNDUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Da wae is clear, to the queen!", "Defeat Ugandan Knuckles.", ModContent.GetTexture("AlchemistNPC/AchievementLib/UNWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/UNWUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "If you will excuse me...", "Die to Bill Cipher.", ModContent.GetTexture("AlchemistNPC/AchievementLib/BCDLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/BCDUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "The deal is off!", "Defeat Bill Cipher.", ModContent.GetTexture("AlchemistNPC/AchievementLib/BCWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/BCWUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Well, cheers!", "Craft Wellcheers Vending Machine.", ModContent.GetTexture("AlchemistNPC/AchievementLib/WCCLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/WCCUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "The snack that smiles back", "Use Wellcheers Vending Machine too many times.", ModContent.GetTexture("AlchemistNPC/AchievementLib/WCULocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/WCUUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Spear of Justice", "Obtain the Spear of Justice.", ModContent.GetTexture("AlchemistNPC/AchievementLib/SJLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/SJUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "if you keep going the way you are now...", "Obtain the Eye of Judgement.", ModContent.GetTexture("AlchemistNPC/AchievementLib/EJLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/EJUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "you're gonna have a bad time.", "Upgrade the Eye of Judgement.", ModContent.GetTexture("AlchemistNPC/AchievementLib/EPJLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/EPJUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Don't worry, mom, I can handle it...", "Obtain a Magic Wand.", ModContent.GetTexture("AlchemistNPC/AchievementLib/MWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/MWUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Dip down!", "Upgrade the Magic Wand once.", ModContent.GetTexture("AlchemistNPC/AchievementLib/DMWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/DMWUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Forbidden magic", "Upgrade the Magic Wand to its maximum power.", ModContent.GetTexture("AlchemistNPC/AchievementLib/MMWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/MMWUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Pandora's Box", "Obtain a Pandora", ModContent.GetTexture("AlchemistNPC/AchievementLib/PLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Now you're thinking...", "Obtain Rick Sanchez's Portal Gun", ModContent.GetTexture("AlchemistNPC/AchievementLib/PGLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PGUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "Artificial unintelligence", "Obtain a Portal Turret", ModContent.GetTexture("AlchemistNPC/AchievementLib/PTLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PTUnlocked"));
-				ALIB.Call("AddAchievement", Instance, "The only thing to FEAR", "Obtain the incarnation of FEAR", ModContent.GetTexture("AlchemistNPC/AchievementLib/ALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/AUnlocked"));
+				ALIB.Call("AddAchievement", Instance, "Junior Alchemist", "Obtain Alchemist Charm tier 1", ModContent.GetTexture("AlchemistNPC/AchievementLib/JALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/JAUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Senior Alchemist", "Obtain Alchemist Charm tier 4", ModContent.GetTexture("AlchemistNPC/AchievementLib/SALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/SAUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "The gang's all here!", "Find every AlchemistNPC town NPC.", ModContent.GetTexture("AlchemistNPC/AchievementLib/ANPCLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/ANPCUnlocked"), AchievementCategory.Challenger);
+				ALIB.Call("AddAchievement", Instance, "You don't know da wae!", "Die to Ugandan Knuckles.", ModContent.GetTexture("AlchemistNPC/AchievementLib/UNDLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/UNDUnlocked"), AchievementCategory.Slayer);
+				ALIB.Call("AddAchievement", Instance, "Da wae is clear, to the queen!", "Defeat Ugandan Knuckles.", ModContent.GetTexture("AlchemistNPC/AchievementLib/UNWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/UNWUnlocked"), AchievementCategory.Slayer);
+				ALIB.Call("AddAchievement", Instance, "If you will excuse me...", "Die to Bill Cipher.", ModContent.GetTexture("AlchemistNPC/AchievementLib/BCDLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/BCDUnlocked"), AchievementCategory.Slayer);
+				ALIB.Call("AddAchievement", Instance, "The deal is off!", "Defeat Bill Cipher.", ModContent.GetTexture("AlchemistNPC/AchievementLib/BCWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/BCWUnlocked"), AchievementCategory.Slayer);
+				ALIB.Call("AddAchievement", Instance, "Well, cheers!", "Craft Wellcheers Vending Machine.", ModContent.GetTexture("AlchemistNPC/AchievementLib/WCCLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/WCCUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "The snack that smiles back", "Use Wellcheers Vending Machine too many times.", ModContent.GetTexture("AlchemistNPC/AchievementLib/WCULocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/WCUUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Spear of Justice", "Obtain the Spear of Justice.", ModContent.GetTexture("AlchemistNPC/AchievementLib/SJLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/SJUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "if you keep going the way you are now...", "Obtain the Eye of Judgement.", ModContent.GetTexture("AlchemistNPC/AchievementLib/EJLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/EJUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "you're gonna have a bad time.", "Upgrade the Eye of Judgement.", ModContent.GetTexture("AlchemistNPC/AchievementLib/EPJLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/EPJUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Don't worry, mom, I can handle it...", "Obtain a Magic Wand.", ModContent.GetTexture("AlchemistNPC/AchievementLib/MWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/MWUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Dip down!", "Upgrade the Magic Wand once.", ModContent.GetTexture("AlchemistNPC/AchievementLib/DMWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/DMWUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Forbidden magic", "Upgrade the Magic Wand to its maximum power.", ModContent.GetTexture("AlchemistNPC/AchievementLib/MMWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/MMWUnlocked"), AchievementCategory.Challenger);
+				ALIB.Call("AddAchievement", Instance, "Pandora's Box", "Obtain a Pandora", ModContent.GetTexture("AlchemistNPC/AchievementLib/PLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Now you're thinking...", "Obtain Rick Sanchez's Portal Gun", ModContent.GetTexture("AlchemistNPC/AchievementLib/PGLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PGUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Artificial unintelligence", "Obtain a Portal Turret", ModContent.GetTexture("AlchemistNPC/AchievementLib/PTLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PTUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "The only thing to FEAR", "Obtain the incarnation of FEAR", ModContent.GetTexture("AlchemistNPC/AchievementLib/ALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/AUnlocked"), AchievementCategory.Collector);
 			}
 		}
 		

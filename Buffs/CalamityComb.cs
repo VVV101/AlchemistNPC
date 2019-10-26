@@ -43,15 +43,14 @@ namespace AlchemistNPC.Buffs
             player.rangedCrit += 2;
             player.magicCrit += 2;
             player.thrownCrit += 2;
-			player.statDefense -= 10;
+			player.statDefense -= 15;
 			player.moveSpeed += 0.1f;
-			player.kbBuff = true;
-			player.minionKB += 5f;
+			player.minionKB += 1f;
 			player.lifeRegen += 5;
 			player.findTreasure = true;
 			player.detectCreature = true;
 			player.dangerSense = true;
-			player.endurance += 0.1f;
+			player.endurance += 0.05f;
 			player.lifeForce = true;
             player.statLifeMax2 += player.statLifeMax / 4;
 			player.lifeMagnet = true;
@@ -90,13 +89,14 @@ namespace AlchemistNPC.Buffs
 						player.magicDamage += 0.24f;
 						player.minionDamage += 0.24f;
 					}
-					CalamityBoost(player);
+					CalamityBoost(player, ref buffIndex);
 				}
 		}
 		
-		private void CalamityBoost(Player player)
+		private void CalamityBoost(Player player, ref int buffIndex)
         {
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+			Calamity.GetBuff("TitanScale").Update(player, ref buffIndex);
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Fab")))
