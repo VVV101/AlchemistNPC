@@ -68,6 +68,11 @@ namespace AlchemistNPC.Items.Armor
 		{
 			return body.type == mod.ItemType("ParadiseLostBody") && legs.type == mod.ItemType("ParadiseLostLegs");
 		}
+		
+		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
+		{
+			drawAltHair = true;
+		}
 
 		public override void UpdateArmorSet(Player player)
 		{

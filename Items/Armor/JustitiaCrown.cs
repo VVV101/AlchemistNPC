@@ -38,6 +38,11 @@ namespace AlchemistNPC.Items.Armor
 			item.rare = 12;
 			item.defense = 25;
 		}
+		
+		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
+		{
+			drawAltHair = true;
+		}
 
 		public override void UpdateEquip(Player player)
 		{

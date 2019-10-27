@@ -51,6 +51,11 @@ namespace AlchemistNPC.Items.Armor
 		{
 			return body.type == mod.ItemType("TwilightSuit") && legs.type == mod.ItemType("TwilightLeggings");
 		}
+		
+		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
+		{
+			drawAltHair = true;
+		}
 
 		public override void UpdateArmorSet(Player player)
 		{
