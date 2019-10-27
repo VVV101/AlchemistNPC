@@ -11,6 +11,7 @@ v8.8.1
 -Updated to tModloader 0.11.5.
 -Added support for Achievement Lib mod.
 -Now Bill Cipher drops additional item, which, while used, gives Demon Slayer buff.
+-Now Ravager, Astrum Aureus/Deus, Storm Weaver, Ceaseless Void and Signus drop Reversity Coins.
 -Fixed Titan Scale potion functionality in Calamity Combination.
 -Fixed hair drawing with equipped crowns from the mod.
 -Fishron Booster no longer gives dash, but gives additional 1% to all stats.

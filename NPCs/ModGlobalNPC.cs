@@ -1248,7 +1248,7 @@ namespace AlchemistNPC.NPCs
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
 							}
-							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Astrageldon")))
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumAureus")))
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
 							}
@@ -1256,13 +1256,17 @@ namespace AlchemistNPC.NPCs
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(3, 6));
 							}
-							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ScavangerBody")))
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("RavagerBody")))
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(3, 6));
 							}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumDeusHeadSpectral")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(5, 7));
+							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss")))
 							{
-								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(6, 9));
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(6, 9));
 							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss2")))
 							{
@@ -1270,11 +1274,23 @@ namespace AlchemistNPC.NPCs
 							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss3")))
 							{
-								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(6, 9));
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(6, 9));
 							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Providence")))
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier5"), Main.rand.Next(12, 15));
+							}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("CeaselessVoid")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), 1);
+							}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("StormWeaverHeadNaked")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), 1);
+							}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Signus")))
+							{
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), 1);
 							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Polterghast")))
 							{
@@ -1282,7 +1298,7 @@ namespace AlchemistNPC.NPCs
 							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS")))
 							{
-								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), Main.rand.Next(4, 6));
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier6"), Main.rand.Next(5, 7));
 							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Bumblefuck")))
 							{
