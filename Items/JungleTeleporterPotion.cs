@@ -23,7 +23,8 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в джунгли\nЛевая кнопка телепортирует к джунглевому растению\nПравая кнопка телепортирует к листьям живой махогани");
 			DisplayName.AddTranslation(GameCulture.Chinese, "丛林传送药剂");
 			Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至丛林"
-			+"\n方向取决于使用的鼠标按键");
+			+"\n左键传送至丛林植物"
+			+"\n右键传送至生命桃木树叶");
         }    
 		public override void SetDefaults()
         {
