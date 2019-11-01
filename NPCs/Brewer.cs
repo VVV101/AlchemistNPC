@@ -59,8 +59,8 @@ namespace AlchemistNPC.NPCs
 			text.AddTranslation(GameCulture.Chinese, "第二商店 (瑟银/RG)");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("ShopB3");
-            text.SetDefault("4th shop ()              ");
-            text.AddTranslation(GameCulture.Russian, "4-ый магазин ()");
+            text.SetDefault("4th shop (MorePotions)              ");
+            text.AddTranslation(GameCulture.Russian, "4-ый магазин (MorePotions)");
             text.AddTranslation(GameCulture.Chinese, "第三商店 (更多药剂)         ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("ShopB4");

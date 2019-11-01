@@ -205,11 +205,7 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.SkeletronBooster == 1)
 			{
-				player.meleeDamage += 0.1f;
-				player.rangedDamage += 0.1f;
-				player.magicDamage += 0.1f;
-				player.minionDamage += 0.1f;
-				player.thrownDamage += 0.1f;
+				player.allDamage += 0.1f;
 				player.meleeCrit += 10;
 				player.rangedCrit += 10;
 				player.magicCrit += 10;
@@ -294,11 +290,7 @@ namespace AlchemistNPC.Buffs
 				if (player.velocity.X != 0f || player.velocity.Y != 0f)
 				{
 					player.pStone = true;
-					player.meleeDamage += 0.05f;
-					player.rangedDamage += 0.05f;
-					player.magicDamage += 0.05f;
-					player.minionDamage += 0.05f;
-					player.thrownDamage += 0.05f;
+					player.allDamage += 0.05f;
 					player.meleeCrit += 5;
 					player.rangedCrit += 5;
 					player.magicCrit += 5;
@@ -328,11 +320,7 @@ namespace AlchemistNPC.Buffs
 					player.statDefense += 4;
 					player.moveSpeed += 0.1f;
 					player.endurance += 0.04f;
-					player.meleeDamage += 0.04f;
-					player.rangedDamage += 0.04f;
-					player.magicDamage += 0.04f;
-					player.minionDamage += 0.04f;
-					player.thrownDamage += 0.04f;
+					player.allDamage += 0.04f;
 					player.meleeCrit += 4;
 					player.rangedCrit += 4;
 					player.magicCrit += 4;
@@ -363,17 +351,14 @@ namespace AlchemistNPC.Buffs
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			if (c == 0)
 			{
-				CalamityPlayer.throwingDamage += 0.1f;
 				CalamityPlayer.throwingCrit += 10;
 			}
 			if (c == 1)
 			{
-				CalamityPlayer.throwingDamage += 0.05f;
 				CalamityPlayer.throwingCrit += 5;
 			}
 			if (c == 2)
 			{
-				CalamityPlayer.throwingDamage += 0.04f;
 				CalamityPlayer.throwingCrit += 4;
 			}
         }
@@ -384,17 +369,14 @@ namespace AlchemistNPC.Buffs
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
 			if (c == 0)
 			{
-				RedemptionPlayer.druidDamage += 0.1f;
 				RedemptionPlayer.druidCrit += 10;
 			}
 			if (c == 1)
 			{
-				RedemptionPlayer.druidDamage += 0.05f;
 				RedemptionPlayer.druidCrit += 5;
 			}
 			if (c == 2)
 			{
-				RedemptionPlayer.druidDamage += 0.04f;
 				RedemptionPlayer.druidCrit += 4;
 			}
         }
@@ -405,22 +387,16 @@ namespace AlchemistNPC.Buffs
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
 			if (c == 0)
 			{
-				ThoriumPlayer.symphonicDamage += 0.1f;
-				ThoriumPlayer.radiantBoost += 0.1f;
 				ThoriumPlayer.symphonicCrit += 10;
 				ThoriumPlayer.radiantCrit += 10;
 			}
 			if (c == 1)
 			{
-				ThoriumPlayer.symphonicDamage += 0.05f;
-				ThoriumPlayer.radiantBoost += 0.05f;
 				ThoriumPlayer.symphonicCrit += 5;
 				ThoriumPlayer.radiantCrit += 5;
 			}
 			if (c == 1)
 			{
-				ThoriumPlayer.symphonicDamage += 0.04f;
-				ThoriumPlayer.radiantBoost += 0.04f;
 				ThoriumPlayer.symphonicCrit += 4;
 				ThoriumPlayer.radiantCrit += 4;
 			}

@@ -23,7 +23,7 @@ namespace AlchemistNPC.Buffs
         }
 		public override void Update(Player player, ref int buffIndex)
 		{
-			Lighting.AddLight((int)((double)player.position.X + (double)(player.width / 2)) / 16, (int)((double)player.position.Y + (double)(player.height / 2)) / 16, 4f, 4f, 4f);
+			Lighting.AddLight((int)((double)player.position.X + (double)(player.width / 2)) / 16, (int)((double)player.position.Y + (double)(player.height / 2)) / 16, 3f, 3f, 3f);
 		}
 	}
 }

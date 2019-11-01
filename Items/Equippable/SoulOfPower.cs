@@ -37,46 +37,8 @@ namespace AlchemistNPC.Items.Equippable
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.endurance -= 0.1f;
-			player.thrownDamage += 0.15f;
-            player.meleeDamage += 0.15f;
-            player.rangedDamage += 0.15f;
-            player.magicDamage += 0.15f;
-            player.minionDamage += 0.15f;
-			if (ModLoader.GetMod("ThoriumMod") != null)
-				{
-				ThoriumBoosts(player);
-				}
-				if (ModLoader.GetMod("Redemption") != null)
-				{
-				RedemptionBoost(player);
-				}
-				if (ModLoader.GetMod("CalamityMod") != null)
-				{
-				CalamityBoost(player);
-				}
+			player.allDamage += 0.15f;
 		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.throwingDamage += 0.15f;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		
-		private void RedemptionBoost(Player player)
-        {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
-			RedemptionPlayer.druidDamage += 0.15f;
-        }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
-		
-		private void ThoriumBoosts(Player player)
-        {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
-            ThoriumPlayer.symphonicDamage += 0.15f;
-			ThoriumPlayer.radiantBoost += 0.15f;
-        }
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 		
 		
 		public override void AddRecipes()

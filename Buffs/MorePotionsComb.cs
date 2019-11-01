@@ -1,17 +1,10 @@
-using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.IO;
+using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
-using Terraria.ModLoader.IO;
-using Terraria.GameInput;
+using Terraria.ID;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -52,10 +45,10 @@ namespace AlchemistNPC.Buffs
 			player.buffImmune[ModLoader.GetMod("MorePotions").BuffType("SummonersDroughtPotionBuff")] = true;
 			player.buffImmune[ModLoader.GetMod("MorePotions").BuffType("SwiftHandsPotionBuff")] = true;
 			player.buffImmune[ModLoader.GetMod("MorePotions").BuffType("WarriorsDroughtPotionBuff")] = true;
-				if (ModLoader.GetMod("MorePotions") != null)
-				{
+			if (ModLoader.GetMod("MorePotions") != null)
+			{
 				MorePotionsBoosts(player, ref buffIndex);
-				}
+			}
 		}
 		
 		private void MorePotionsBoosts(Player player, ref int buffIndex)

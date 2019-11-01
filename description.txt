@@ -7,6 +7,9 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
+v8.9
+-Added new Holoprojector, Desert.
+-Cleaned up a lot of buffs code.
 v8.8.1
 -Updated to tModloader 0.11.5.
 -Added support for Achievement Lib mod.

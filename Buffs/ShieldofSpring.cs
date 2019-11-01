@@ -26,7 +26,7 @@ namespace AlchemistNPC.Buffs
         }
 		public override void Update(Player player, ref int buffIndex)
 		{
-		player.endurance += 0.15f;
+			player.endurance += 0.15f;
 			if (player.ownedProjectileCounts[mod.ProjectileType("SpringShield")] == 0)
 			{
 				for (int h = 0; h < 1; h++) {

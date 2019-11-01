@@ -1,15 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
-using Terraria.ModLoader.IO;
-using Terraria.GameInput;
+using Terraria.ID;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -30,56 +22,22 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (!player.HasBuff(mod.BuffType("BattleComb")) && !player.HasBuff(mod.BuffType("TankComb")))
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+			modPlayer.Defense8 = true;
+			modPlayer.DR10 = true;
+			modPlayer.Regeneration = true;
+			modPlayer.Lifeforce = true;
+			player.lavaImmune = true;
+			player.fireWalk = true;
+			player.buffImmune[1] = true;
+			player.buffImmune[2] = true;
+			player.buffImmune[5] = true;
+			player.buffImmune[14] = true;
+			player.buffImmune[113] = true;
+			player.buffImmune[114] = true;
+			if (player.thorns < 1.0)
 			{
-				player.lavaImmune = true;
-				player.fireWalk = true;
-				player.buffImmune[1] = true;
-				player.buffImmune[2] = true;
-				player.buffImmune[5] = true;
-				player.buffImmune[14] = true;
-				player.buffImmune[113] = true;
-				player.buffImmune[114] = true;
-				player.endurance += 0.1f;
-				player.statDefense += 8;
-				if (ModLoader.GetMod("CalamityMod") != null)
-				{
-					if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")))
-					{
-						player.lifeRegen += 4;
-						player.lifeForce = true;
-						player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
-					}
-				}
-				if (ModLoader.GetMod("CalamityMod") == null)
-				{
-					player.lifeRegen += 4;
-					player.lifeForce = true;
-					player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
-				}
-				if (player.thorns < 1.0)
-				{
 				player.thorns = 0.3333333f;
-				}
-			}
-			if (player.HasBuff(mod.BuffType("BattleComb")))
-			{
-				player.lavaImmune = true;
-				player.fireWalk = true;
-				player.buffImmune[1] = true;
-				player.buffImmune[2] = true;
-				player.buffImmune[5] = true;
-				player.buffImmune[14] = true;
-				player.buffImmune[113] = true;
-				player.buffImmune[114] = true;
-				player.endurance += 0.1f;
-				if (player.thorns < 1.0)
-				{
-				player.thorns = 0.3333333f;
-				}
-			}
-			if (player.HasBuff(mod.BuffType("TankComb")))
-			{
 			}
 		}
 	}

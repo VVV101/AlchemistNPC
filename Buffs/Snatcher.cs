@@ -148,23 +148,7 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.SnatcherCounter >= 3500)
 			{
-				player.thrownDamage += 0.08f;
-				player.meleeDamage += 0.08f;
-				player.rangedDamage += 0.08f;
-				player.magicDamage += 0.08f;
-				player.minionDamage += 0.08f;
-				if (ModLoader.GetMod("ThoriumMod") != null)
-				{
-					ThoriumDBoosts(player);
-				}
-				if (ModLoader.GetMod("Redemption") != null)
-				{
-					RedemptionDBoost(player);
-				}
-				if (ModLoader.GetMod("CalamityMod") != null)
-				{
-					CalamityDBoost(player);
-				}
+				player.allDamage += 0.08f;
 			}
 			if (modPlayer.SnatcherCounter >= 5000)
 			{
@@ -194,28 +178,6 @@ namespace AlchemistNPC.Buffs
 				player.statLifeMax2 += player.statLifeMax / 10;
 			}
 		}
-		
-		private void CalamityDBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.throwingDamage += 0.08f;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		
-		private void RedemptionDBoost(Player player)
-        {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
-			RedemptionPlayer.druidDamage += 0.08f;
-        }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
-		
-		private void ThoriumDBoosts(Player player)
-        {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
-            ThoriumPlayer.symphonicDamage += 0.08f;
-			ThoriumPlayer.radiantBoost += 0.08f;
-        }
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 		
 		private void CalamityCBoost(Player player)
         {

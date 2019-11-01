@@ -80,55 +80,43 @@ namespace AlchemistNPC.Items.Armor
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost = true;
 			player.setBonus = ParadiseLostSetBonus;
 			player.AddBuff(mod.BuffType("BigBirdLamp"), 60);
-			player.meleeDamage += 0.35f;
-			player.magicDamage += 0.35f;
-			player.minionDamage += 0.35f;
-			player.rangedDamage += 0.35f;
-			player.thrownDamage += 0.35f;
+			player.allDamage += 0.35f;
 			player.meleeCrit += 25;
 			player.magicCrit += 25;
 			player.rangedCrit += 25;
             player.thrownCrit += 25;
-				if (ModLoader.GetMod("ThoriumMod") != null)
-				{
+			if (ModLoader.GetMod("ThoriumMod") != null)
+			{
 				ThoriumBoosts(player);
-				}
-				if (ModLoader.GetMod("Redemption") != null)
-				{
+			}
+			if (ModLoader.GetMod("Redemption") != null)
+			{
 				RedemptionBoost(player);
-				}
-				if (ModLoader.GetMod("CalamityMod") != null)
-				{
+			}
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
 				CalamityBoost(player);
-				}
+			}
 		}
 		
 		private void CalamityBoost(Player player)
         {
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.throwingDamage += 0.35f;
             CalamityPlayer.throwingCrit += 25;
         }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
-			RedemptionPlayer.druidDamage += 0.35f;
             RedemptionPlayer.druidCrit += 25;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
-            ThoriumPlayer.symphonicDamage += 0.35f;
             ThoriumPlayer.symphonicCrit += 25;
-			ThoriumPlayer.radiantBoost += 0.35f;
             ThoriumPlayer.radiantCrit += 25;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 		
 		public override void AddRecipes()
 		{

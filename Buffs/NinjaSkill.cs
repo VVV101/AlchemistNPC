@@ -22,11 +22,7 @@ namespace AlchemistNPC.Buffs
         }
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.thrownDamage += 0.05f;
-            player.meleeDamage += 0.05f;
-            player.rangedDamage += 0.05f;
-            player.magicDamage += 0.05f;
-            player.minionDamage += 0.05f;
+			player.allDamage += 0.05f;
 			player.meleeCrit += 5;
             player.rangedCrit += 5;
             player.magicCrit += 5;
@@ -51,7 +47,6 @@ namespace AlchemistNPC.Buffs
 		private void CalamityBoost(Player player)
         {
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.throwingDamage += 0.05f;
             CalamityPlayer.throwingCrit += 5;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
@@ -59,7 +54,6 @@ namespace AlchemistNPC.Buffs
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
-			RedemptionPlayer.druidDamage += 0.05f;
             RedemptionPlayer.druidCrit += 5;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
@@ -67,9 +61,7 @@ namespace AlchemistNPC.Buffs
 		private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
-            ThoriumPlayer.symphonicDamage += 0.05f;
             ThoriumPlayer.symphonicCrit += 5;
-			ThoriumPlayer.radiantBoost += 0.05f;
             ThoriumPlayer.radiantCrit += 5;
         }
 		

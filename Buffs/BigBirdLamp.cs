@@ -1,11 +1,8 @@
-using System;
-using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
-using Terraria.ID;
 using Terraria.Localization;
-using AlchemistNPC;
 
 namespace AlchemistNPC.Buffs
 {
@@ -29,7 +26,7 @@ namespace AlchemistNPC.Buffs
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).trigger == true)
 			{
-			Lighting.AddLight((int)((double)player.position.X + (double)(player.width / 2)) / 16, (int)((double)player.position.Y + (double)(player.height / 2)) / 16, 4f, 4f, 4f);
+			Lighting.AddLight((int)((double)player.position.X + (double)(player.width / 2)) / 16, (int)((double)player.position.Y + (double)(player.height / 2)) / 16, 3f, 3f, 3f);
 			}
 			else
 			{

@@ -1222,6 +1222,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorSnow"));
 				shop.item[nextSlot].shopCustomPrice = 250000;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorDesert"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorJungle"));
 				shop.item[nextSlot].shopCustomPrice = 250000;
 				nextSlot++;

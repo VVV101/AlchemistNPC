@@ -111,6 +111,14 @@ namespace AlchemistNPC
 		public bool GlobalTeleporter = false;
 		public bool GlobalTeleporterUp = false;
 		public bool MeatGrinderOnUse = false;
+		
+		public bool AllDamage10 = false;
+		public bool AllCrit10 = false;
+		public bool Defense8 = false;
+		public bool DR10 = false;
+		public bool Regeneration = false;
+		public bool Lifeforce = false;
+		
 		public int DisasterGauge = 0;
 		public int chargetime = 0;
 		public int MeatGrinderUsetime = 0;
@@ -271,6 +279,13 @@ namespace AlchemistNPC
 			Traps = false;
 			GlobalTeleporter = false;
 			GlobalTeleporterUp = false;
+			
+			AllDamage10 = false;
+			AllCrit10 = false;
+			Defense8 = false;
+			DR10 = false;
+			Regeneration = false;
+			Lifeforce = false;
 			
 			player.statLifeMax2 += LifeElixir * 50;
 			player.statManaMax2 += Fuaran * 100;
@@ -1253,6 +1268,87 @@ namespace AlchemistNPC
 				{
 				damage -= 100;
 				}
+        }
+		
+		public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
+		{
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("HolyWrathBuff")) && AllDamage10) player.allDamage += 0.1f;
+				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("ProfanedRageBuff")) && AllCrit10)
+				{
+					player.meleeCrit += 10;
+					player.rangedCrit += 10;
+					player.magicCrit += 10;
+					player.thrownCrit += 10;
+					if (ModLoader.GetMod("ThoriumMod") != null)
+					{
+						ThoriumBoosts(player);
+					}
+					if (ModLoader.GetMod("Redemption") != null)
+					{
+						RedemptionBoost(player);
+					}
+					if (ModLoader.GetMod("CalamityMod") != null)
+					{
+						CalamityBoost(player);
+					}
+				}
+				if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Regeneration) player.lifeRegen += 4;
+				if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Lifeforce)
+				{
+					player.lifeForce = true;
+					player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
+				}
+			}
+			if (ModLoader.GetMod("CalamityMod") == null)
+			{
+				if (AllDamage10) player.allDamage += 0.1f;
+				if (AllCrit10)
+				{
+					player.meleeCrit += 10;
+					player.rangedCrit += 10;
+					player.magicCrit += 10;
+					player.thrownCrit += 10;
+					if (ModLoader.GetMod("ThoriumMod") != null)
+					{
+						ThoriumBoosts(player);
+					}
+					if (ModLoader.GetMod("Redemption") != null)
+					{
+						RedemptionBoost(player);
+					}
+					if (ModLoader.GetMod("CalamityMod") != null)
+					{
+						CalamityBoost(player);
+					}
+				}
+				if (Regeneration) player.lifeRegen += 4;
+				if (Lifeforce)
+				{
+					player.lifeForce = true;
+					player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
+				}
+			}
+			if (Defense8) player.statDefense += 8;
+			if (DR10) player.endurance += 0.1f;
+		}
+		
+		private void CalamityBoost(Player player)
+        {
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+			CalamityPlayer.throwingCrit += 10;
+        }
+		private void RedemptionBoost(Player player)
+        {
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
+			RedemptionPlayer.druidCrit += 10;
+        }
+		private void ThoriumBoosts(Player player)
+        {
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
+            ThoriumPlayer.symphonicCrit += 10;
+			ThoriumPlayer.radiantCrit += 10;
         }
 		
 		public override void PostUpdate()
