@@ -1,12 +1,6 @@
 using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -87,6 +81,11 @@ namespace AlchemistNPC.Buffs
 					player.statDefense -= 8;
 				}
 			}
+			if (player.thorns < 1.0)
+			{
+				player.thorns = 0.3333333f;
+			}
+			BuffLoader.Update(BuffID.ObsidianSkin, player, ref buffIndex);
 		}
 	}
 }

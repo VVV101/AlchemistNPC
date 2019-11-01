@@ -25,7 +25,7 @@ namespace AlchemistNPC.Buffs
 		public override void Update(Player player, ref int buffIndex)
 		{
 			player.findTreasure = true;
-			Lighting.AddLight((int)((double)player.position.X + (double)(player.width / 2)) / 16, (int)((double)player.position.Y + (double)(player.height / 2)) / 16, 4f, 4f, 4f);
+			Lighting.AddLight((int)((double)player.position.X + (double)(player.width / 2)) / 16, (int)((double)player.position.Y + (double)(player.height / 2)) / 16, 3f, 3f, 3f);
 			player.nightVision = true;
 			player.detectCreature = true;
 			player.pickSpeed -= 0.50f;
@@ -44,6 +44,9 @@ namespace AlchemistNPC.Buffs
 			player.buffImmune[17] = true;
 			player.buffImmune[104] = true;
 			player.buffImmune[111] = true;
+			BuffLoader.Update(BuffID.Gills, player, ref buffIndex);
+			BuffLoader.Update(BuffID.Flipper, player, ref buffIndex);
+			BuffLoader.Update(BuffID.Shine, player, ref buffIndex);
 		}
 	}
 }

@@ -43,6 +43,9 @@ namespace AlchemistNPC.Buffs
 			player.buffImmune[17] = true;
 			player.buffImmune[104] = true;
 			player.buffImmune[111] = true;
+			BuffLoader.Update(BuffID.Gills, player, ref buffIndex);
+			BuffLoader.Update(BuffID.Flipper, player, ref buffIndex);
+			BuffLoader.Update(BuffID.Shine, player, ref buffIndex);
 		}
 	}
 }

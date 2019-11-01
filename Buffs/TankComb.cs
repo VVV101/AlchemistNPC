@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
@@ -53,6 +54,7 @@ namespace AlchemistNPC.Buffs
 			{
 				player.thorns = 0.3333333f;
 			}
+			BuffLoader.Update(BuffID.ObsidianSkin, player, ref buffIndex);
 		}
 	}
 }
