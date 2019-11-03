@@ -1371,7 +1371,7 @@ namespace AlchemistNPC.NPCs
 					if (NPC.downedPlantBoss && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.PlanteraBossBag);
-					shop.item[nextSlot].shopCustomPrice = new int?(25);
+					shop.item[nextSlot].shopCustomPrice = new int?(15);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
 					}
@@ -1402,14 +1402,14 @@ namespace AlchemistNPC.NPCs
 					if (NPC.downedFishron && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
-					shop.item[nextSlot].shopCustomPrice = new int?(15);
+					shop.item[nextSlot].shopCustomPrice = new int?(10);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 					nextSlot++;
 					}
 					if (NPC.downedMoonlord && Main.expertMode)
 					{
 						shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
-						shop.item[nextSlot].shopCustomPrice = new int?(25);
+						shop.item[nextSlot].shopCustomPrice = new int?(20);
 						shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 						nextSlot++;
 					}
@@ -1597,7 +1597,7 @@ namespace AlchemistNPC.NPCs
 						if (CalamityModDownedLeviathan)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag"));
-							shop.item[nextSlot].shopCustomPrice = new int?(30);
+							shop.item[nextSlot].shopCustomPrice = new int?(25);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 							nextSlot++;
 						}
@@ -1611,7 +1611,7 @@ namespace AlchemistNPC.NPCs
 						if (CalamityModDownedPlaguebringer)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PlaguebringerGoliathBag"));
-							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 							nextSlot++; 
 						}
@@ -1625,7 +1625,7 @@ namespace AlchemistNPC.NPCs
 						if (CalamityModDownedAstrum)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
-							shop.item[nextSlot].shopCustomPrice = new int?(20);
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 							nextSlot++;
 						}

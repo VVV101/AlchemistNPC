@@ -1246,11 +1246,11 @@ namespace AlchemistNPC.NPCs
 							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Leviathan")))
 							{
-								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(12, 15));
 							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumAureus")))
 							{
-								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(6, 9));
+								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier3"), Main.rand.Next(9, 12));
 							}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath")))
 							{
