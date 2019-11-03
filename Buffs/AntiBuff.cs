@@ -137,7 +137,7 @@ namespace AlchemistNPC.Buffs
 			if (modPlayer.FishronBooster == 1)
 			{
 				tip += "\nAll stats up while on surface";
-				tipch += "\n表面上的所有统计数据增加";
+				tipch += "\n表面上的所有属性增加";
 			}
 			if (modPlayer.MartianSaucerBooster == 1)
 			{
