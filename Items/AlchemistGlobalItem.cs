@@ -496,7 +496,8 @@ namespace AlchemistNPC.Items
 		
 		public override bool UseItem(Item item, Player player)
 		{
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(100))
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+			if (modPlayer.DeltaRune && item.melee && Main.rand.NextBool(100))
 			{
 				float num1 = 9f;
 				Vector2 vector2 = new Vector2(player.position.X + (float)player.width * 0.5f, player.position.Y + (float)player.height * 0.5f);
@@ -518,9 +519,44 @@ namespace AlchemistNPC.Items
 				float SpeedY = f2 * num5;
 				Projectile.NewProjectile(vector2.X, vector2.Y, SpeedX, SpeedY, mod.ProjectileType("RedWave"), 1111, 1f, player.whoAmI);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).KeepBuffs == 1 && (item.buffTime > 0))
+			if (modPlayer.KeepBuffs == 1 && (item.buffTime > 0))
 			{
-				player.AddBuff(item.buffType, item.buffTime*2, true);
+				if (modPlayer.AlchemistCharmTier4)
+				{
+					player.AddBuff(item.buffType, item.buffTime*2 + ((item.buffTime*2)/2), true);
+				}
+				else if (modPlayer.AlchemistCharmTier3)
+				{
+					player.AddBuff(item.buffType, item.buffTime*2 + (((item.buffTime*2)/20)*7), true);
+				}
+				else if (modPlayer.AlchemistCharmTier2)
+				{
+					player.AddBuff(item.buffType, item.buffTime*2 + ((item.buffTime*2)/4), true);
+				}
+				else if (modPlayer.AlchemistCharmTier1)
+				{
+					player.AddBuff(item.buffType, item.buffTime*2 + ((item.buffTime*2)/10), true);
+				}
+				else player.AddBuff(item.buffType, item.buffTime*2, true);
+			}
+			if (modPlayer.KeepBuffs == 0 && (item.buffTime > 0))
+			{
+				if (modPlayer.AlchemistCharmTier4)
+				{
+					player.AddBuff(item.buffType, item.buffTime + (item.buffTime/2), true);
+				}
+				else if (modPlayer.AlchemistCharmTier3)
+				{
+					player.AddBuff(item.buffType, item.buffTime + ((item.buffTime/20)*7), true);
+				}
+				else if (modPlayer.AlchemistCharmTier2)
+				{
+					player.AddBuff(item.buffType, item.buffTime + (item.buffTime/4), true);
+				}
+				else if (modPlayer.AlchemistCharmTier1)
+				{
+					player.AddBuff(item.buffType, item.buffTime + (item.buffTime/10), true);
+				}
 			}
 			return base.UseItem(item, player);
 		}

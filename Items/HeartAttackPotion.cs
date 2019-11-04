@@ -22,9 +22,10 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Potion of Darkness");
 			Tooltip.SetDefault("Fills Rage meter and causes Heart Attack"
 			+"\nInflicts Heart Ache debuff for 5 minutes"
+			+"\nCannot be used if any boss is alive"
 			+"\nNON-CALAMITY POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Тьмы");
-            Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nВызывает Сердечную Боль на на 5 минут\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
+            Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nВызывает Сердечную Боль на на 5 минут\nНе может быть использовано, если жив любой босс\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
 			DisplayName.AddTranslation(GameCulture.Chinese, "黑暗药剂");
 			Tooltip.AddTranslation(GameCulture.Chinese, "装填愤怒槽, 造成心脏衰竭"
 			+"\n获得5分钟的心脏衰竭效果"
@@ -55,6 +56,14 @@ namespace AlchemistNPC.Items
 		
 		public override bool CanUseItem(Player player)
 		{
+			for (int v = 0; v < 200; ++v)
+			{
+				NPC npc = Main.npc[v];
+				if (npc.active && npc.boss)
+				{
+					return false;
+				}
+			}
 			if (CalamityModRevengeance && !player.HasBuff(mod.BuffType("HeartAche")))
 			{
 				return true;

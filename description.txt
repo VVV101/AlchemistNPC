@@ -9,6 +9,8 @@ The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
 v8.9
 -Added new Holoprojector, Desert.
+-Alchemist Charms now also add some duration to buff potions depending on tier.
+-Potion of Darkness can no longer be used if any boss is alive.
 -Cleaned up a lot of buffs code.
 v8.8.1
 -Updated to tModloader 0.11.5.
