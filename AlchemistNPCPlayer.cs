@@ -1340,10 +1340,6 @@ namespace AlchemistNPC
 					{
 						RedemptionBoost(player);
 					}
-					if (ModLoader.GetMod("CalamityMod") != null)
-					{
-						CalamityBoost(player);
-					}
 				}
 				if (Regeneration) player.lifeRegen += 4;
 				if (Lifeforce)
