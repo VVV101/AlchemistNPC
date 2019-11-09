@@ -257,8 +257,8 @@ namespace AlchemistNPC
 			if (foundFlyingCarpet) found.Add("FlyingCarpet");
 			
 			var downed = new List<string>();
-			if (downedDOGPumpking) found.Add("DOGPumpking");
-			if (downedDOGIceQueen) found.Add("DOGIceQueen");
+			if (downedDOGPumpking) downed.Add("DOGPumpking");
+			if (downedDOGIceQueen) downed.Add("DOGIceQueen");
 			
 			return new TagCompound {
 				{"found", found},
@@ -562,8 +562,9 @@ namespace AlchemistNPC
 			foundAntiBuffMode = found.Contains("AntiBuffMode");
 			foundFlyingCarpet = found.Contains("FlyingCarpet");
 			
-			downedDOGPumpking = found.Contains("DOGPumpking");
-			downedDOGIceQueen = found.Contains("DOGIceQueen");
+			var downed = tag.GetList<string>("downed");
+			downedDOGPumpking = downed.Contains("DOGPumpking");
+			downedDOGIceQueen = downed.Contains("DOGIceQueen");
 		}
 	}
 }
