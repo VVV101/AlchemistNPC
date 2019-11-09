@@ -880,6 +880,28 @@ namespace AlchemistNPC.NPCs
 
 		public override void NPCLoot(NPC npc)
 		{
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				if (CalamityModDownedDOG && npc.type == 327)
+				{
+					if (!AlchemistNPCWorld.downedDOGPumpking) {
+						AlchemistNPCWorld.downedDOGPumpking = true;
+					if (Main.netMode == NetmodeID.Server) {
+						NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
+					}
+					}
+				}
+				
+				if (CalamityModDownedDOG && npc.type == 345)
+				{
+					if (!AlchemistNPCWorld.downedDOGIceQueen) {
+						AlchemistNPCWorld.downedDOGIceQueen = true;
+					if (Main.netMode == NetmodeID.Server) {
+						NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
+						}
+					}
+				}
+			}
 			for (int k = 0; k < 255; k++)
 			{
 				Player player = Main.player[k];
@@ -1659,6 +1681,10 @@ namespace AlchemistNPC.NPCs
 		{
         get { return CalamityMod.World.CalamityWorld.revenge; }
         }
+		public bool CalamityModDownedDOG
+		{
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
+		}
 		
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		

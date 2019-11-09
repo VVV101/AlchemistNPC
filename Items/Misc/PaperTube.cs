@@ -92,6 +92,8 @@ namespace AlchemistNPC.Items.Misc
 			randomAcc.Add("foundWWB");}
 			if (!AlchemistNPCWorld.foundIceSkates) {
 			randomAcc.Add("foundIceSkates");}
+			if (!AlchemistNPCWorld.foundFlyingCarpet) {
+			randomAcc.Add("foundFlyingCarpet");}
 			if (!AlchemistNPCWorld.foundLavaCharm) {
 			randomAcc.Add("foundLavaCharm");}
 			if (!AlchemistNPCWorld.foundHorseshoe) {
@@ -164,6 +166,8 @@ namespace AlchemistNPC.Items.Misc
 			AlchemistNPCWorld.foundWWB = true;}
 			if (randomAcc[acc] == "foundIceSkates") {
 			AlchemistNPCWorld.foundIceSkates = true;}
+			if (randomAcc[acc] == "foundFlyingCarpet") {
+			AlchemistNPCWorld.foundFlyingCarpet = true;}
 			if (randomAcc[acc] == "foundLavaCharm") {
 			AlchemistNPCWorld.foundLavaCharm = true;}
 			if (randomAcc[acc] == "foundHorseshoe") {

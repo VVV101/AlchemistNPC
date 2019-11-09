@@ -11,6 +11,8 @@ v8.9
 -Added new Holoprojector, Desert.
 -Alchemist Charms now also add some duration to buff potions depending on tier.
 -Potion of Darkness can no longer be used if any boss is alive.
+-Removed Omniscience from Calamity combination, added Soaring and Bounding buffs.
+-Fixed Thorium combination.
 -Cleaned up a lot of buffs code.
 v8.8.1
 -Updated to tModloader 0.11.5.

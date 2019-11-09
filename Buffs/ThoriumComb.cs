@@ -20,7 +20,7 @@ namespace AlchemistNPC.Buffs
 		{
 			DisplayName.SetDefault("Thorium Combination");
 			Description.SetDefault("Perfect sum of Thorium buffs"
-			+"\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
+			+"\nAccuracy, Blood, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Ториума");
@@ -33,7 +33,6 @@ namespace AlchemistNPC.Buffs
 		{
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("CritChance")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("BloodRush")] = true;
-			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("CombatProwess")] =true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("Frenzy")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("RadiantBoost")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("HolyBonus")] = true;
@@ -72,7 +71,6 @@ namespace AlchemistNPC.Buffs
         {
 			Thorium.GetBuff("CritChance").Update(player, ref buffIndex);
 			Thorium.GetBuff("BloodRush").Update(player, ref buffIndex);
-			Thorium.GetBuff("CombatProwess").Update(player, ref buffIndex);
 			Thorium.GetBuff("Frenzy").Update(player, ref buffIndex);
 			Thorium.GetBuff("RadiantBoost").Update(player, ref buffIndex);
 			Thorium.GetBuff("HolyBonus").Update(player, ref buffIndex);

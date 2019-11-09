@@ -362,6 +362,12 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 50000;
 				nextSlot++;
 			}
+			if (AlchemistNPCWorld.foundFlyingCarpet)
+			{
+				shop.item[nextSlot].SetDefaults (ItemID.FlyingCarpet);
+				shop.item[nextSlot].shopCustomPrice = 150000;
+				nextSlot++;
+			}
 			if (AlchemistNPCWorld.foundTabi)
 			{
 				shop.item[nextSlot].SetDefaults (ItemID.Tabi);
