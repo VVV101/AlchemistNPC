@@ -56,10 +56,10 @@ namespace AlchemistNPC.Items
 						HandleOceanTeleportLeft(player, syncData);
 						break;
 					case 3:
-						HandlePalmTeleport(player, syncData);
+						HandleBeachTeleportRight(player, syncData);
 						break;
 					case 4:
-						HandlePalmTeleportLeft(player, syncData);
+						HandleBeachTeleportLeft(player, syncData);
 						break;
 					case 5:
 						HandleHellTeleport(player, syncData);
@@ -173,20 +173,32 @@ namespace AlchemistNPC.Items
 			else return;
 		}
 		
-		private static void HandlePalmTeleport(Player player, bool syncData = false)
+		private static void HandleBeachTeleportRight(Player player, bool syncData = false)
 		{
 			Vector2 prePos = player.position;
 			Vector2 pos = prePos;
-			for (int x = 0; x < Main.tile.GetLength(0); ++x)
-			{
-				for (int y = 0; y < Main.tile.GetLength(1); ++y)
+			int x = Main.maxTilesX - 32;
+				for (int y = 0; y < Main.maxTilesY; y += 16)
 				{
 					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].type != 323) continue;
-					pos = new Vector2((x) * 16, (y+4) * 16);
+					if (Main.tile[x, y].liquid != 255) continue;
+					if (Main.tile[x, y].liquid == 255) 
+					{
+						do
+						{
+							x -= 16;
+						} while (Main.tile[x, y].liquid == 255);
+					}
+					if (Main.tile[x, y] != null && Main.tile[x, y].liquid == 0 && Main.tile[x, y].active()) 
+							{
+								do 
+								{
+									y -= 16;
+								} while (Main.tile[x, y] != null && Main.tile[x, y].liquid == 0 && Main.tile[x, y].active());
+							}
+					pos = new Vector2((x) * 16, (y-2) * 16);
 					break;
 				}
-			}
 			if (pos != prePos)
 			{
 				RunTeleport(player, new Vector2(pos.X, pos.Y), syncData, false);
@@ -194,20 +206,32 @@ namespace AlchemistNPC.Items
 			else return;
 		}
 		
-		private static void HandlePalmTeleportLeft(Player player, bool syncData = false)
+		private static void HandleBeachTeleportLeft(Player player, bool syncData = false)
 		{
 			Vector2 prePos = player.position;
 			Vector2 pos = prePos;
-			for (int x = 8400; x > 0; --x)
-			{
-				for (int y = 0; y < Main.tile.GetLength(1); ++y)
+			int x = 16;
+				for (int y = 0; y < Main.maxTilesY; y += 16)
 				{
 					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].type != 323) continue;
-					pos = new Vector2((x) * 16, (y+4) * 16);
+					if (Main.tile[x, y].liquid != 255) continue;
+					if (Main.tile[x, y].liquid == 255) 
+					{
+						do
+						{
+							x += 16;
+						} while (Main.tile[x, y].liquid == 255);
+					}
+					if (Main.tile[x, y] != null && Main.tile[x, y].liquid == 0 && Main.tile[x, y].active()) 
+							{
+								do 
+								{
+									y -= 16;
+								} while (Main.tile[x, y] != null && Main.tile[x, y].liquid == 0 && Main.tile[x, y].active());
+							}
+					pos = new Vector2((x) * 16, (y-2) * 16);
 					break;
 				}
-			}
 			if (pos != prePos)
 			{
 				RunTeleport(player, new Vector2(pos.X, pos.Y), syncData, false);
