@@ -29,6 +29,7 @@ namespace AlchemistNPC.Items
 			DisplayName.AddTranslation(GameCulture.Chinese, "黑暗药剂");
 			Tooltip.AddTranslation(GameCulture.Chinese, "装填愤怒槽, 造成心脏衰竭"
 			+"\n获得5分钟的心脏衰竭效果"
+			+"\n如果Boss存活则无法使用"
 			+"\n非灾厄药剂");
         }    
 
