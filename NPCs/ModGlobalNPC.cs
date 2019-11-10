@@ -842,6 +842,20 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
+			for (int k = 0; k < 255; k++)
+			{
+				Player player = Main.player[k];
+				if (player.active)
+				{
+					if (npc.type == NPCID.MoonLordCore && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).PGSWear)
+					{
+						if (Main.rand.Next(2) == 0)
+						{
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
+						}
+					}
+				}
+			}
 			if (Main.expertMode && AlchemistNPC.modConfiguration.CoinsDrop)
 			{
 				if (ModLoader.GetMod("SpiritMod") != null)
@@ -863,8 +877,16 @@ namespace AlchemistNPC.NPCs
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(3, 6));
 				}
+				if (npc.type == NPCID.MoonLordCore)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(12, 15));
+				}
 			}
-			return true;
+			if (npc.type == NPCID.MoonLordCore && AlchemistNPC.modConfiguration.TornNotesDrop)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote9"));
+			}
+			return base.PreNPCLoot(npc);
 		}
 
 		public void SyncPlayerVariables(Player player)
@@ -1066,13 +1088,6 @@ namespace AlchemistNPC.NPCs
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HateVial"));
 					}
-					if (npc.type == NPCID.MoonLordCore && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).PGSWear)
-					{
-						if (Main.rand.Next(2) == 0)
-						{
-							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
-						}
-					}
 					if (npc.type == mod.NPCType("Operator"))
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("APMC"));
@@ -1154,10 +1169,6 @@ namespace AlchemistNPC.NPCs
 							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Fuaran"));
 						}
 					}
-					if (npc.type == NPCID.MoonLordCore && AlchemistNPC.modConfiguration.TornNotesDrop)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote9"));
-					}
 					if (Main.expertMode && AlchemistNPC.modConfiguration.CoinsDrop)
 					{
 						if (npc.type == NPCID.KingSlime)
@@ -1223,10 +1234,6 @@ namespace AlchemistNPC.NPCs
 						if (npc.type == NPCID.CultistBoss)
 						{
 							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(6, 9));
-						}
-						if (npc.type == NPCID.MoonLordCore)
-						{
-							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ReversivityCoinTier4"), Main.rand.Next(12, 15));
 						}
 						if (ModLoader.GetMod("CalamityMod") != null)
 						{
