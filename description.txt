@@ -11,7 +11,10 @@ v8.9
 -Added new Holoprojector, Desert.
 -Alchemist Charms now also add some duration to buff potions depending on tier.
 -Potion of Darkness can no longer be used if any boss is alive.
+-Beach Teleporter potion now always teleport you to actual left or right side beach.
+It is independant from palms now.
 -Removed Omniscience from Calamity combination, added Soaring and Bounding buffs.
+-Fixed Moon Lord wasn't dropping Torn Note, Coins or National Ugandan Treasure while Calamity mod is active.
 -Fixed Thorium combination.
 -Cleaned up a lot of buffs code.
 v8.8.1
