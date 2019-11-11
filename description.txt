@@ -13,6 +13,7 @@ v8.9
 -Potion of Darkness can no longer be used if any boss is alive.
 -Beach Teleporter potion now always teleport you to actual left or right side beach.
 It is independant from palms now.
+-Now defeating buffed Pumpking/Ice Queen is required to unlock Nightmare Fuel/Endothermic Energy in Operator's shop.
 -Removed Omniscience from Calamity combination, added Soaring and Bounding buffs.
 -Fixed Moon Lord wasn't dropping Torn Note, Coins or National Ugandan Treasure while Calamity mod is active.
 -Fixed Thorium combination.
