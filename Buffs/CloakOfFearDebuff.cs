@@ -35,7 +35,6 @@ namespace AlchemistNPC.Buffs
 		public override void Update(NPC npc, ref int buffIndex)
 		{
 			npc.confused = true;
-			npc.target = 0;
 		}
 	}
 }
