@@ -21,7 +21,7 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Thorium Combination");
 			Tooltip.SetDefault("Grants most buffs from Thorium Mod potions"
-			+"\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
+			+"\nAccuracy, Blood, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Thorium");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Thorium\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 
@@ -52,7 +52,6 @@ namespace AlchemistNPC.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("AccuracyPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("BloodPotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("CombatPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("FrenzyPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("CreativityPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("EarwormPotion")), 1);

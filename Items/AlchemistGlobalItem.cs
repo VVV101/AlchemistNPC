@@ -455,11 +455,7 @@ namespace AlchemistNPC.Items
 			{
 				return 1.2f;
 			}
-			if (player.HasBuff(mod.BuffType("ThoriumCombo")) && item.useTime > 3)
-			{
-				return 1.08f;
-			}
-			return 1f;
+			return base.UseTimeMultiplier(item, player);
 		}
 		
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

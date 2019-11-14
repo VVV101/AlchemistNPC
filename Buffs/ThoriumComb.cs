@@ -13,14 +13,14 @@ namespace AlchemistNPC.Buffs
 	{
 		public override bool Autoload(ref string name, ref string texture)
 		{
-		return ModLoader.GetMod("ThoriumMod") != null;
+			return ModLoader.GetMod("ThoriumMod") != null;
 		}
 		
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Thorium Combination");
 			Description.SetDefault("Perfect sum of Thorium buffs"
-			+"\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
+			+"\nAccuracy, Blood, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Ториума");
@@ -31,19 +31,8 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.meleeSpeed += 0.18f;
-			player.pickSpeed -= 0.1f;
-			player.moveSpeed += 0.1f;
-			player.armorPenetration += 3;
-			player.meleeDamage += 0.10f;
-			player.meleeCrit += 6;
-            player.rangedCrit += 6;
-            player.magicCrit += 6;
-            player.thrownCrit += 6;
-			player.discount = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("CritChance")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("BloodRush")] = true;
-			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("CombatProwess")] =true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("Frenzy")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("RadiantBoost")] = true;
 			player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("HolyBonus")] = true;
@@ -80,14 +69,14 @@ namespace AlchemistNPC.Buffs
 		
 		private void ThoriumBoosts(Player player, ref int buffIndex)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
+			Thorium.GetBuff("CritChance").Update(player, ref buffIndex);
+			Thorium.GetBuff("BloodRush").Update(player, ref buffIndex);
+			Thorium.GetBuff("Frenzy").Update(player, ref buffIndex);
+			Thorium.GetBuff("RadiantBoost").Update(player, ref buffIndex);
+			Thorium.GetBuff("HolyBonus").Update(player, ref buffIndex);
 			Thorium.GetBuff("CreativityDrop").Update(player, ref buffIndex);
 			Thorium.GetBuff("EarwormBuff").Update(player, ref buffIndex);
 			Thorium.GetBuff("InspirationReach").Update(player, ref buffIndex);
-            ThoriumPlayer.symphonicCrit += 6;
-			ThoriumPlayer.radiantBoost += 0.1f;
-            ThoriumPlayer.radiantCrit += 6;
-			ThoriumPlayer.healBonus += 5;
         }
 		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
