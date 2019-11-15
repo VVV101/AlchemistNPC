@@ -38,24 +38,5 @@ namespace AlchemistNPC.Tiles
 			}
 			return base.AdjTiles(type);
 		}
-		
-		public override bool PreDraw(int i, int j, int type, SpriteBatch spriteBatch)
-		{
-			if (type == mod.TileType("ImmortalityFieldProjector"))
-			{
-				for (int k = 0; k < 200; k++)
-				{
-					NPC npc = Main.npc[k];
-					{
-						if (npc.active && npc.townNPC)
-						{
-							npc.buffImmune[mod.BuffType("IField")] = false;
-							npc.AddBuff(mod.BuffType("IField"), 60);
-						}
-					}
-				}
-			}
-			return base.PreDraw(i, j, type, spriteBatch);
-		}
 	}
 }

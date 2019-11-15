@@ -44,6 +44,21 @@ namespace AlchemistNPC.Tiles
 			}
 		}
 		
+		public override void RandomUpdate(int i, int j)
+		{
+			for (int k = 0; k < 200; k++)
+			{
+				NPC npc = Main.npc[k];
+				{
+					if (npc.active && npc.townNPC)
+					{
+						npc.buffImmune[mod.BuffType("IField")] = false;
+						npc.AddBuff(mod.BuffType("IField"), 3600);
+					}
+				}
+			}
+		}
+		
 		public override void AnimateTile(ref int frame, ref int frameCounter)
 		{
 			frame = Main.tileFrame[TileID.FireflyinaBottle];

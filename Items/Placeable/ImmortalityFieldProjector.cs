@@ -14,9 +14,10 @@ namespace AlchemistNPC.Items.Placeable
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Immortality Field Projector");
-            Tooltip.SetDefault("Makes town NPCs instantly respawn after being killed in its working range");
+            Tooltip.SetDefault("Makes town NPCs instantly respawn after being killed"
+			+"\nMight need to take some time to enable the field");
             DisplayName.AddTranslation(GameCulture.Russian, "Излучатель Поля Бессмертия");
-            Tooltip.AddTranslation(GameCulture.Russian, "Мгновенно возрождает городских НПС, убитых в пределах действия устройства");
+            Tooltip.AddTranslation(GameCulture.Russian, "Мгновенно возрождает убитых городских НПС\nМожет требовать некоторого времени для активации поля");
         }
 		
         public override void SetDefaults()
