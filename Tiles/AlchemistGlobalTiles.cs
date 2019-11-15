@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
@@ -17,25 +18,44 @@ namespace AlchemistNPC.Tiles
 	{
 		public override int[] AdjTiles(int type)
 		{
-		if (type == mod.TileType("MateriaTransmutator"))
+			if (type == mod.TileType("MateriaTransmutator"))
 			{
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
 			}
-		if (type == mod.TileType("MateriaTransmutatorMK2"))
+			if (type == mod.TileType("MateriaTransmutatorMK2"))
 			{
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
 			}
-		if (type == mod.TileType("SpecCraftPoint"))
+			if (type == mod.TileType("SpecCraftPoint"))
 			{
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
 			}
 			return base.AdjTiles(type);
+		}
+		
+		public override bool PreDraw(int i, int j, int type, SpriteBatch spriteBatch)
+		{
+			if (type == mod.TileType("ImmortalityFieldProjector"))
+			{
+				for (int k = 0; k < 200; k++)
+				{
+					NPC npc = Main.npc[k];
+					{
+						if (npc.active && npc.townNPC)
+						{
+							npc.buffImmune[mod.BuffType("IField")] = false;
+							npc.AddBuff(mod.BuffType("IField"), 60);
+						}
+					}
+				}
+			}
+			return base.PreDraw(i, j, type, spriteBatch);
 		}
 	}
 }

@@ -16,7 +16,7 @@ namespace AlchemistNPC.Projectiles
 			projectile.width = 1920;
 			projectile.height = 1080;
 			projectile.penetrate = -1;
-			projectile.timeLeft = 90;
+			projectile.timeLeft = 60;
 			projectile.tileCollide = false;
 		}
 

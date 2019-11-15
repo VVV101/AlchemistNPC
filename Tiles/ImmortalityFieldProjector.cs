@@ -12,7 +12,6 @@ namespace AlchemistNPC.Tiles
 {
 	public class ImmortalityFieldProjector : ModTile
 	{
-		public static int counter = 0;
 		public override void SetDefaults()
 		{
 			Main.tileFrameImportant[Type] = true;
@@ -49,21 +48,6 @@ namespace AlchemistNPC.Tiles
 		{
 			frame = Main.tileFrame[TileID.FireflyinaBottle];
 			frameCounter = Main.tileFrameCounter[TileID.FireflyinaBottle];
-		}
-		
-		public override void PlaceInWorld(int i, int j, Item item) 	
-		{
-			counter = 0;
-		}
-		
-		public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref Color drawColor, ref int nextSpecialDrawIndex) 	
-		{
-			counter++;
-			if (counter == 30)
-			{
-			Projectile.NewProjectile(i * 16f, j * 16f, 0f, 0f, mod.ProjectileType("IField"), 0, 10f, Main.myPlayer);
-			counter = 0;
-			}
 		}
 		
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
