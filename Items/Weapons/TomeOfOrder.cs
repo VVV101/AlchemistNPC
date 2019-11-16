@@ -24,7 +24,7 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.AddTranslation(GameCulture.Chinese,"秩序原典");
 			Tooltip.AddTranslation(GameCulture.Chinese,"[c/00FF00:传奇武器]"
 			+"\n[c/00FF00:属性随游戏进程增长]"
-			+"\n''只有于善恶的彼岸之人才能理解''"
+			+"\n''只有于善恶的彼岸之人才能领悟''"
 			+"\n发射可以扎在敌人或者地面的能量之矢"
 			+"\n它们会在一段时间后爆炸，或者手动引爆，造成额外伤害");
 		}

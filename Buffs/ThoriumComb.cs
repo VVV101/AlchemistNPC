@@ -26,7 +26,7 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Ториума");
 			Description.AddTranslation(GameCulture.Russian, "Идеальное сочетание баффов Ториум мода");
             DisplayName.AddTranslation(GameCulture.Chinese, "瑟银药剂包");
-            Description.AddTranslation(GameCulture.Chinese, "完美结合了瑟银药剂的Buff：\n精准药剂、嗜血药剂、战斗药剂、狂怒药剂、光辉药剂、圣洁药剂以及动能药剂");
+            Description.AddTranslation(GameCulture.Chinese, "完美结合了瑟银药剂的Buff：\n精准药剂、嗜血药剂、狂热药剂、狂怒药剂、光辉药剂、圣洁药剂以及动能药剂");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

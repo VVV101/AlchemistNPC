@@ -27,6 +27,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nНе может быть использовано, если жив любой босс\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
 			DisplayName.AddTranslation(GameCulture.Chinese, "黑暗药剂");
 			Tooltip.AddTranslation(GameCulture.Chinese, "装填愤怒槽, 造成心脏衰竭"
+			+"\n如果Boss存活则无法使用"
 			+"\n非灾厄药剂");
         }    
 

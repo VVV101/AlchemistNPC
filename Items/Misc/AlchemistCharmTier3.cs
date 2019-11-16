@@ -24,7 +24,8 @@ namespace AlchemistNPC.Items.Misc
 			DisplayName.AddTranslation(GameCulture.Chinese, "炼金师符咒 T-3");
 			Tooltip.AddTranslation(GameCulture.Chinese, "放置物品栏中时, 大概率不消耗药剂"
 			+"\n'快速增益'键能够使用猪猪储蓄罐中的药剂"
-			+"\n炼金师, 药剂师和年轻药剂师提供35%折扣");
+			+"\n炼金师, 药剂师和年轻药剂师提供35%折扣"
+			+"\nBuff持续时间增加35%");
         }
 
 		public override void SetDefaults()
