@@ -13,7 +13,8 @@ v8.9
 IFp makes town NPCs to instantly respawn after being killed.
 FEAR emitter restricts non-boss enemies from going through its field.
 -Alchemist Charms now also add some duration to buff potions depending on tier.
--Potion of Darkness can no longer be used if any boss is alive.
+-Potion of Darkness can no longer be used if any boss is alive. Removed Heart Ache debuff.
+-Added Swiftness potion to both Tank Combinations and Universal Combination.
 -Beach Teleporter potion now always teleport you to actual left or right side beach.
 It is independant from palms now.
 -Now defeating buffed Pumpking/Ice Queen is required to unlock Nightmare Fuel/Endothermic Energy in Operator's shop.
