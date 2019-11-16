@@ -47,29 +47,9 @@ namespace AlchemistNPC.Buffs
 				Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("CloakOfFear"), 0, 0, player.whoAmI);
 				}
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
-			{
-				if (CalamityModRevengeance)
-				{
-					if (player.buffTime[buffIndex] == 1) 
-					{ 
-					player.AddBuff(mod.BuffType("Exhausted"), 900); 
-					}
-				}
-				else
-				{
-					if (player.buffTime[buffIndex] == 1) 
-					{ 
-					player.AddBuff(mod.BuffType("Exhausted"), 1800); 
-					}
-				}
-			}
-			if (ModLoader.GetMod("CalamityMod") == null)
-			{
-				if (player.buffTime[buffIndex] == 1) 
-				{ 
+			if (player.buffTime[buffIndex] == 1) 
+			{ 
 				player.AddBuff(mod.BuffType("Exhausted"), 1800); 
-				}
 			}
 		}
 	}

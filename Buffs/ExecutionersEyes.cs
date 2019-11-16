@@ -32,29 +32,9 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (ModLoader.GetMod("CalamityMod") != null)
-			{
-				if (CalamityModRevengeance)
-				{
-					if (player.buffTime[buffIndex] == 1) 
-					{ 
-					player.AddBuff(mod.BuffType("Exhausted"), 1800); 
-					}
-				}
-				else
-				{
-					if (player.buffTime[buffIndex] == 1) 
-					{ 
-					player.AddBuff(mod.BuffType("Exhausted"), 3600); 
-					}
-				}
-			}
-			if (ModLoader.GetMod("CalamityMod") == null)
-			{
-				if (player.buffTime[buffIndex] == 1) 
-				{ 
+			if (player.buffTime[buffIndex] == 1) 
+			{ 
 				player.AddBuff(mod.BuffType("Exhausted"), 3600); 
-				}
 			}
 			player.yoraiz0rEye = 7;
 			player.meleeCrit += 5;

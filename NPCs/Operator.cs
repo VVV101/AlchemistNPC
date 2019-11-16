@@ -1017,6 +1017,7 @@ namespace AlchemistNPC.NPCs
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.Vertebrae);
 				shop.item[nextSlot].shopCustomPrice = 10000;
+				nextSlot++;
 				}
 				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
