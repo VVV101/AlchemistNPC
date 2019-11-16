@@ -118,6 +118,7 @@ namespace AlchemistNPC
 		public bool DR10 = false;
 		public bool Regeneration = false;
 		public bool Lifeforce = false;
+		public bool MS = false;
 		
 		public int DisasterGauge = 0;
 		public int chargetime = 0;
@@ -286,6 +287,7 @@ namespace AlchemistNPC
 			DR10 = false;
 			Regeneration = false;
 			Lifeforce = false;
+			MS = false;
 			
 			player.statLifeMax2 += LifeElixir * 50;
 			player.statManaMax2 += Fuaran * 100;
@@ -837,6 +839,22 @@ namespace AlchemistNPC
 					  return;
 					if (player.bank.item[index1].stack > 0 && player.bank.item[index1].type > 0 && (player.bank.item[index1].buffType > 0 && !player.bank.item[index1].summon) && player.bank.item[index1].buffType != 90)
 					{
+						if (ModLoader.GetMod("CalamityMod") != null)
+						{
+							if (player.bank.item[index1].buffType == ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"))
+							{
+								for (int v = 0; v < 200; ++v)
+								{
+									NPC npc = Main.npc[v];
+									if (npc.active && npc.boss)
+									{
+										return;
+									}
+								}
+								CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+								CalamityPlayer.stress = 10000;
+							}
+						}
 					  int type2 = player.bank.item[index1].buffType;
 					  bool flag = true;
 					  for (int index2 = 0; index2 < 22; ++index2)
@@ -1348,6 +1366,7 @@ namespace AlchemistNPC
 					player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
 				}
 			}
+			if (MS) player.moveSpeed += 0.25f;
 			if (Defense8) player.statDefense += 8;
 			if (DR10) player.endurance += 0.1f;
 		}

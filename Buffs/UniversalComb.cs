@@ -33,6 +33,7 @@ namespace AlchemistNPC.Buffs
 			modPlayer.DR10 = true;
 			modPlayer.Regeneration = true;
 			modPlayer.Lifeforce = true;
+			modPlayer.MS = true;
 			player.magicDamage += 0.25f;
             player.magicCrit += 2;
 			player.statManaMax2 += 20;
@@ -64,6 +65,7 @@ namespace AlchemistNPC.Buffs
 			player.buffImmune[mod.BuffType("SummonerComb")] = true;
 			player.buffImmune[1] = true;
 			player.buffImmune[2] = true;
+			player.buffImmune[3] = true;
 			player.buffImmune[5] = true;
 			player.buffImmune[6] = true;
 			player.buffImmune[7] = true;
