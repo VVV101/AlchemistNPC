@@ -21,14 +21,12 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Potion of Darkness");
 			Tooltip.SetDefault("Fills Rage meter and causes Heart Attack"
-			+"\nInflicts Heart Ache debuff for 5 minutes"
 			+"\nCannot be used if any boss is alive"
 			+"\nNON-CALAMITY POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Тьмы");
-            Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nВызывает Сердечную Боль на на 5 минут\nНе может быть использовано, если жив любой босс\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
+            Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nНе может быть использовано, если жив любой босс\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
 			DisplayName.AddTranslation(GameCulture.Chinese, "黑暗药剂");
 			Tooltip.AddTranslation(GameCulture.Chinese, "装填愤怒槽, 造成心脏衰竭"
-			+"\n获得5分钟的心脏衰竭效果"
 			+"\n如果Boss存活则无法使用"
 			+"\n非灾厄药剂");
         }    
@@ -46,7 +44,7 @@ namespace AlchemistNPC.Items
             item.height = 30;
             item.value = Item.sellPrice(0, 1, 0, 0);
             item.rare = 10;
-            item.buffType = mod.BuffType("HeartAche");
+            item.buffType = ModLoader.GetMod("CalamityMod").BuffType("HeartAttack");
             item.buffTime = 18000;
         }
 		
@@ -65,7 +63,7 @@ namespace AlchemistNPC.Items
 					return false;
 				}
 			}
-			if (CalamityModRevengeance && !player.HasBuff(mod.BuffType("HeartAche")))
+			if (CalamityModRevengeance)
 			{
 				return true;
 			}
@@ -78,7 +76,6 @@ namespace AlchemistNPC.Items
 		{
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.stress = 10000;
-			player.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"), 18000, true);
 			return true;
 		}
     }

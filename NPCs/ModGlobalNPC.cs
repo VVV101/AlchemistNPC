@@ -99,6 +99,19 @@ namespace AlchemistNPC.NPCs
 			}
 		}
 
+		public override bool CheckDead(NPC npc)
+		{
+			if (npc.townNPC && npc.HasBuff(mod.BuffType("IField")))
+			{
+				int respawn = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, npc.type);
+				Main.npc[respawn].buffImmune[mod.BuffType("IField")] = false;
+				Main.npc[respawn].AddBuff(mod.BuffType("IField"), 3600);
+				return true;
+				
+			}
+			return base.CheckDead(npc);
+		}
+
 		public override void ModifyHitByItem(NPC npc, Player player, Item item, ref int damage, ref float knockback, ref bool crit)
 		{
 			if (item.type == mod.ItemType("EdgeOfChaos"))

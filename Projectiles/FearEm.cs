@@ -9,28 +9,25 @@ using AlchemistNPC.Items.Weapons;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class CloakOfFear : ModProjectile
+	public class FearEm : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cloak of Fear");
-			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
+			DisplayName.SetDefault("Fear emitter effect");
 		}
 
 		public override void SetDefaults()
 		{
-			projectile.width = 96;
-			projectile.height = 96;
+			projectile.width = 256;
+			projectile.height = 256;
 			projectile.penetrate = -1;
-			projectile.timeLeft = 9999;
+			projectile.timeLeft = 90;
 			projectile.tileCollide = false;
 			projectile.hostile = false;
 			projectile.friendly = false;
 		}
 		public override void AI()
 		{
-			Player player = Main.player[projectile.owner];
-			projectile.Center = player.Center;
 			projectile.ai[0]++;
 			for (int i = 0; i < 200; i++)
             {
