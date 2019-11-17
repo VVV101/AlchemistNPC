@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Jungle Teleporter Potion");
 			Tooltip.SetDefault("Teleports you to the Jungle"
 			+"\nLeft click teleports to jungle plant"
-			+"\nRight click teleports to living machogany leaves");
+			+"\nRight click teleports to living mahogany leaves");
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Джунглям");
             Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в джунгли\nЛевая кнопка телепортирует к джунглевому растению\nПравая кнопка телепортирует к листьям живой махогани");
 			DisplayName.AddTranslation(GameCulture.Chinese, "丛林传送药剂");
