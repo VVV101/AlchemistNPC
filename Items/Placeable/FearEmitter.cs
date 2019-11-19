@@ -17,6 +17,8 @@ namespace AlchemistNPC.Items.Placeable
             Tooltip.SetDefault("Restricts non-boss enemies from going through certain region");
             DisplayName.AddTranslation(GameCulture.Russian, "Излучатель страха");
             Tooltip.AddTranslation(GameCulture.Russian, "Не позволяет враждебным НПС - не-боссам пересечь зону страха");
+            DisplayName.AddTranslation(GameCulture.Russian, "恐惧发射源");
+			DisplayName.AddTranslation(GameCulture.Chinese, "限制非boss敌人经过这片区域");
         }
         public override void SetDefaults()
         {

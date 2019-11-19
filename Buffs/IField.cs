@@ -24,6 +24,8 @@ namespace AlchemistNPC.Buffs
 			Description.SetDefault("If NPC dies under this, he/she will be resurrected");
 			DisplayName.AddTranslation(GameCulture.Russian, "Поле Бессмертия");
 			Description.AddTranslation(GameCulture.Russian, "Если НПС погибнет под действием баффа, он будет мгновенно возрождён");
+			DisplayName.AddTranslation(GameCulture.Chinese, "稳恒场源");
+            Description.AddTranslation(GameCulture.Chinese, "处于这个环境下的npc死亡, 会重生");
         }
 		
 		public override void Update(NPC npc, ref int buffIndex)

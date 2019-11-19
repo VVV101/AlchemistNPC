@@ -20,7 +20,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Сочетание баффов Быстроты, Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов и Регенерации");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "坦克药剂包 (原版)");
-            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 再生)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些坦克Buff (敏捷, 耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 再生)");
         }    
 		public override void SetDefaults()
         {

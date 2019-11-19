@@ -18,6 +18,8 @@ namespace AlchemistNPC.Items.Placeable
 			+"\nMight need to take some time to enable the field");
             DisplayName.AddTranslation(GameCulture.Russian, "Излучатель Поля Бессмертия");
             Tooltip.AddTranslation(GameCulture.Russian, "Мгновенно возрождает убитых городских НПС\nМожет требовать некоторого времени для активации поля");
+            DisplayName.AddTranslation(GameCulture.Chinese, "稳恒场源投影仪");
+			Tooltip.AddTranslation(GameCulture.Chinese, "城镇NPC死亡时立即重生\n启用场地可能需要一些时间");
         }
 		
         public override void SetDefaults()
