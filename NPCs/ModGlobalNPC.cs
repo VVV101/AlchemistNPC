@@ -937,6 +937,18 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
+			if ((npc.type == 239 || npc.type == 240) && Main.rand.NextBool(10))
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SpiderFangarang"));
+			}
+			if ((npc.type == 236 || npc.type == 237) && Main.rand.NextBool(20))
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FangBallista"));
+			}
+			if ((npc.type == 164 || npc.type == 165) && Main.rand.NextBool(20))
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SwordofArachna"));
+			}
 			for (int k = 0; k < 255; k++)
 			{
 				Player player = Main.player[k];

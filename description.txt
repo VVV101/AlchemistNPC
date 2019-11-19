@@ -12,6 +12,10 @@ v8.9
 -Added Immortality Field projector and FEAR emitter.
 IFp makes town NPCs to instantly respawn after being killed.
 FEAR emitter restricts non-boss enemies from going through its field.
+-Added 3 new prehardmode weapons. All drops from spider type enemies.
+Sword of Arachna drops from Wall Creeper with 5%. Infests enemies with spiders.
+Fang Ballista drops from Jungle Creepers with 5%. shoots impaling arrow which may immobilize normal enemy.
+Spider Fangarang drops from Bloody Crawlers with 10%. Can stack up to 3. Poisons enemies on hit.
 -Alchemist Charms now also add some duration to buff potions depending on tier.
 -Potion of Darkness can no longer be used if any boss is alive. Removed Heart Ache debuff.
 -Added Swiftness potion to both Tank Combinations and Universal Combination.
@@ -22,6 +26,7 @@ It is independant from palms now.
 -Fixed Moon Lord wasn't dropping Torn Note, Coins or National Ugandan Treasure while Calamity mod is active.
 -Fixed Thorium combination.
 -Cleaned up a lot of buffs code.
+-Added/fixed some more chinese localization.
 v8.8.1
 -Updated to tModloader 0.11.5.
 -Added support for Achievement Lib mod.
