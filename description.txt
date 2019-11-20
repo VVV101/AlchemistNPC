@@ -14,7 +14,7 @@ IFp makes town NPCs to instantly respawn after being killed.
 FEAR emitter restricts non-boss enemies from going through its field.
 -Added 3 new prehardmode weapons. All drops from spider type enemies.
 Sword of Arachna drops from Wall Creeper with 5%. Infests enemies with spiders.
-Fang Ballista drops from Jungle Creepers with 5%. shoots impaling arrow which may immobilize normal enemy.
+Fang Ballista drops from Jungle Creepers with 5%. Shoots impaling arrow which may immobilize normal enemy.
 Spider Fangarang drops from Bloody Crawlers with 10%. Can stack up to 3. Poisons enemies on hit.
 -Alchemist Charms now also add some duration to buff potions depending on tier.
 -Potion of Darkness can no longer be used if any boss is alive. Removed Heart Ache debuff.
@@ -23,6 +23,7 @@ Spider Fangarang drops from Bloody Crawlers with 10%. Can stack up to 3. Poisons
 It is independant from palms now.
 -Now defeating buffed Pumpking/Ice Queen is required to unlock Nightmare Fuel/Endothermic Energy in Operator's shop.
 -Removed Omniscience from Calamity combination, added Soaring and Bounding buffs.
+-Fixed/nerfed Penetrator's crit damage.
 -Fixed Moon Lord wasn't dropping Torn Note, Coins or National Ugandan Treasure while Calamity mod is active.
 -Fixed Thorium combination.
 -Cleaned up a lot of buffs code.

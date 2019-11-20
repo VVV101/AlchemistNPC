@@ -1088,13 +1088,13 @@ namespace AlchemistNPC
 				switch (Main.rand.Next(3))
 				{
 					case 0:
-					damage += damage*2;
+					damage += damage/2;
 					break;
 					case 1:
-					damage += damage*3;	
+					damage += damage;	
 					break;
 					case 2:
-					damage += damage*4;	
+					damage += (damage/2)*3;	
 					break;
 				}
 			}
