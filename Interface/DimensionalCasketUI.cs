@@ -30,7 +30,7 @@ namespace AlchemistNPC.Interface
 			DimensionalCasketPanel.SetPadding(0);
 			DimensionalCasketPanel.Left.Set(600f, 0f);
 			DimensionalCasketPanel.Top.Set(150f, 0f);
-			DimensionalCasketPanel.Width.Set(430f, 0f);
+			DimensionalCasketPanel.Width.Set(440f, 0f);
 			DimensionalCasketPanel.Height.Set(520f, 0f);
 			DimensionalCasketPanel.BackgroundColor = new Color(73, 94, 171);
 
@@ -270,7 +270,7 @@ namespace AlchemistNPC.Interface
 			DimensionalCasketPanel.Append(text201);
 			
 			UIText text21 = new UIText(Operator);
-			text21.Left.Set(300, 0f);
+			text21.Left.Set(330, 0f);
 			text21.Top.Set(130, 0f);
 			text21.Width.Set(60, 0f);
 			text21.Height.Set(22, 0f);
@@ -572,29 +572,36 @@ namespace AlchemistNPC.Interface
 			playButton212.Top.Set(130, 0f);
 			playButton212.Width.Set(22, 0f);
 			playButton212.Height.Set(22, 0f);
-			playButton212.OnClick += new MouseEvent(PlayButtonClicked212);
+			playButton212.OnClick += new MouseEvent(PlayButtonClicked216);
 			DimensionalCasketPanel.Append(playButton212);
 			UIImageButton playButton213 = new UIImageButton(buttonPlayTexture);
 			playButton213.Left.Set(210, 0f);
 			playButton213.Top.Set(130, 0f);
 			playButton213.Width.Set(22, 0f);
 			playButton213.Height.Set(22, 0f);
-			playButton213.OnClick += new MouseEvent(PlayButtonClicked213);
+			playButton213.OnClick += new MouseEvent(PlayButtonClicked212);
 			DimensionalCasketPanel.Append(playButton213);
 			UIImageButton playButton214 = new UIImageButton(buttonPlayTexture);
 			playButton214.Left.Set(240, 0f);
 			playButton214.Top.Set(130, 0f);
 			playButton214.Width.Set(22, 0f);
 			playButton214.Height.Set(22, 0f);
-			playButton214.OnClick += new MouseEvent(PlayButtonClicked214);
+			playButton214.OnClick += new MouseEvent(PlayButtonClicked213);
 			DimensionalCasketPanel.Append(playButton214);
 			UIImageButton playButton215 = new UIImageButton(buttonPlayTexture);
 			playButton215.Left.Set(270, 0f);
 			playButton215.Top.Set(130, 0f);
 			playButton215.Width.Set(22, 0f);
 			playButton215.Height.Set(22, 0f);
-			playButton215.OnClick += new MouseEvent(PlayButtonClicked215);
+			playButton215.OnClick += new MouseEvent(PlayButtonClicked214);
 			DimensionalCasketPanel.Append(playButton215);
+			UIImageButton playButton216 = new UIImageButton(buttonPlayTexture);
+			playButton216.Left.Set(300, 0f);
+			playButton216.Top.Set(130, 0f);
+			playButton216.Width.Set(22, 0f);
+			playButton216.Height.Set(22, 0f);
+			playButton216.OnClick += new MouseEvent(PlayButtonClicked215);
+			DimensionalCasketPanel.Append(playButton216);
 			
 			UIImageButton playButton221 = new UIImageButton(buttonPlayTexture);
 			playButton221.Left.Set(150, 0f);
@@ -1498,6 +1505,27 @@ namespace AlchemistNPC.Interface
 					if (Main.npc[k].type == mod.NPCType("Operator"))
 					{
 						Operator.Shop = 5;
+						Main.playerInventory = true;
+						forcetalk = true;
+						Main.player[Main.myPlayer].talkNPC = k;
+						Main.npcShop = Main.MaxShopIDs - 1;
+						Main.instance.shop[Main.npcShop].SetupShop(Main.npc[k].type);
+					}
+				}
+			}
+		}
+		
+		private void PlayButtonClicked216(UIMouseEvent evt, UIElement listeningElement)
+		{
+			visible = false;
+			if (NPC.AnyNPCs(mod.NPCType("Operator")))
+			{
+				for (k = 0; k < 200; k++)
+				{
+					NPC npc = Main.npc[k];
+					if (Main.npc[k].type == mod.NPCType("Operator"))
+					{
+						Operator.Shop = 11;
 						Main.playerInventory = true;
 						forcetalk = true;
 						Main.player[Main.myPlayer].talkNPC = k;
