@@ -24,18 +24,21 @@ namespace AlchemistNPC.Buffs
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-			if (ModLoader.GetMod("CalamityMod") != null)
+			if (!npc.boss)
 			{
-				if (npc.type != 222 && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerShade")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlagueBeeLargeG")))
-				{	
-				npc.velocity *= 0.95f;
+				if (ModLoader.GetMod("CalamityMod") != null)
+				{
+					if (npc.type != 222 && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerShade")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlagueBeeLargeG")))
+					{	
+					npc.velocity *= 0.95f;
+					}
 				}
-			}
-			if (ModLoader.GetMod("CalamityMod") == null)
-			{
-				if (npc.type != 222)
-				{	
-				npc.velocity *= 0.95f;
+				if (ModLoader.GetMod("CalamityMod") == null)
+				{
+					if (npc.type != 222)
+					{	
+					npc.velocity *= 0.95f;
+					}
 				}
 			}
         }
