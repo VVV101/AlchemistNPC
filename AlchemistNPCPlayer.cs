@@ -851,8 +851,7 @@ namespace AlchemistNPC
 										return;
 									}
 								}
-								CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-								CalamityPlayer.stress = 10000;
+								CalamityRage(player);
 							}
 						}
 					  int type2 = player.bank.item[index1].buffType;
@@ -1056,6 +1055,12 @@ namespace AlchemistNPC
 				}
 			}
 		}
+		
+		private void CalamityRage(Player player)
+        {
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+			CalamityPlayer.stress = 10000;
+        }
 		
 		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath) {
 			Item item = new Item();
