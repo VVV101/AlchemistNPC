@@ -20,9 +20,10 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Bananarang);
-			item.damage = 45;
+			item.damage = 48;
 			item.melee = false;
 			item.thrown = true;
+			item.maxStack = 1;
 			item.rare = 2;
 			item.value = 3333;
 			item.useTime = 15;
