@@ -111,7 +111,7 @@ namespace AlchemistNPC.Projectiles
 			rot = projectile.rotation;
 			IsStickingToTarget = true; // we are sticking to a target
 			TargetWhoAmI = target.whoAmI; // Set the target whoAmI
-			if (!target.boss) target.velocity = projectile.velocity;
+			if (!target.boss && !target.noTileCollide) target.velocity = projectile.velocity;
 			projectile.velocity =
 				(target.Center - projectile.Center) *
 				0.75f; // Change velocity based on delta center of targets (difference between entity centers)
@@ -192,12 +192,12 @@ namespace AlchemistNPC.Projectiles
 
 			// Every 30 ticks, the javelin will perform a hit effect
 			int projTargetIndex = (int)TargetWhoAmI;
-			if (!Main.npc[projTargetIndex].boss && projectile.localAI[0] >= 30f && projectile.velocity.Y != 0f)
+			if (!Main.npc[projTargetIndex].boss && !Main.npc[projTargetIndex].noTileCollide && projectile.localAI[0] >= 30f && projectile.velocity.Y != 0f)
 			{
 				Main.npc[projTargetIndex].velocity.X *= 0.9f;
 				Main.npc[projTargetIndex].velocity.Y += 2f;
 			}
-			if (!Main.npc[projTargetIndex].boss && projectile.localAI[0] >= 30f && projectile.velocity.Y == 0f)
+			if (!Main.npc[projTargetIndex].boss && !Main.npc[projTargetIndex].noTileCollide && projectile.localAI[0] >= 30f && projectile.velocity.Y == 0f)
 			{
 				Main.npc[projTargetIndex].velocity.X *= 0.5f;
 				Main.npc[projTargetIndex].velocity.Y = 0f;
