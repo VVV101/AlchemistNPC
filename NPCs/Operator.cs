@@ -1044,6 +1044,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.SoulofNight);
 				shop.item[nextSlot].shopCustomPrice = 15000;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.SoulofFlight);
+				shop.item[nextSlot].shopCustomPrice = 25000;
+				nextSlot++;
 				}
 				if (NPC.downedMechBoss3)
 				{
