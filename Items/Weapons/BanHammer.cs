@@ -51,7 +51,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (target.boss == false)
 			{
-				if (target.type != 134 || target.type != 135 || target.type != 136 || target.type != 325 || target.type != 327 || target.type != 325 || target.type != 344 || target.type != 345 || target.type != 346 ||  target.type != 477)
+				if (target.type != 134 && target.type != 135 && target.type != 136 && target.type != 325 && target.type != 327 && target.type != 325 && target.type != 344 && target.type != 345 && target.type != 346 &&  target.type != 477)
 				{
 					target.buffImmune[mod.BuffType("Banned")] = false;
 					target.AddBuff(mod.BuffType("Banned"), 60);
