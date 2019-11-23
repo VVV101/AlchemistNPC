@@ -310,7 +310,7 @@ namespace AlchemistNPC.Items
 		public override bool NewPreReforge(Item item)
 		{
 			Player player = Main.player[Main.myPlayer];
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PerfectionToken")) && !Stopper)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PerfectionToken")) && !Stopper && item.damage > 3)
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -414,27 +414,8 @@ namespace AlchemistNPC.Items
 			}
 			return true;
 		}
-		
-		private void BluemagicGodmode(Player player)
-        {
-			Bluemagic.BluemagicPlayer BluemagicPlayer = player.GetModPlayer<Bluemagic.BluemagicPlayer>();
-			BluemagicPlayer.godmode = false;
-        }
-		private readonly Mod Bluemagic = ModLoader.GetMod("Bluemagic");
+
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		
-		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
-		{
-			if (ModLoader.GetMod("Bluemagic") != null)
-			{
-				if (item.type == (ModLoader.GetMod("Bluemagic").ItemType("RainbowStar")) && NPC.AnyNPCs(mod.NPCType("BillCipher")))
-				{
-				BluemagicGodmode(player);
-				player.endurance -= 1f;
-				player.statDefense -= 1337;
-				}
-			}
-		}
 		
 		public override bool ConsumeAmmo(Item item, Player player)
 		{
