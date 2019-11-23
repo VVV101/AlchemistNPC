@@ -40,6 +40,7 @@ namespace AlchemistNPC.NPCs
 {
 	public class ModGlobalNPC : GlobalNPC
 	{
+		public bool banned = false;
 		public bool chaos = false;
 		public bool rainbowdust = false;
 		public bool electrocute = false;
@@ -129,28 +130,6 @@ namespace AlchemistNPC.NPCs
 			if (player.HasBuff(mod.BuffType("ExecutionersEyes")))
 			{
 				damage += (damage/20)*3;
-			}
-			if (item.type == mod.ItemType("BanHammer"))
-			{
-				if (npc.boss == false)
-				{
-					damage = 999999;
-				}
-				if (npc.type == 325 || npc.type == 327 || npc.type == 325 || npc.type == 344 || npc.type == 345 || npc.type == 346)
-				{
-					damage = 88;
-				}
-				if (ModLoader.GetMod("CalamityMod") != null)
-				{
-					if (npc.type == mod.NPCType("CeaselessVoid"))
-					{
-						damage = 1;
-					}
-				}
-				if (npc.type == NPCID.DungeonGuardian)
-				{
-					damage = 999999999;
-				}
 			}
 		}
 
@@ -538,6 +517,7 @@ namespace AlchemistNPC.NPCs
 
 		public override void ResetEffects(NPC npc)
 		{
+			banned = false;
 			corrosion = false;
 			chaos = false;
 			rainbowdust = false;
@@ -563,6 +543,14 @@ namespace AlchemistNPC.NPCs
 				if (damage < 299 + S*50)
 				{
 					damage = 300 + S*50;
+				}
+			}
+			if (banned)
+			{
+				npc.lifeRegen -= 999999;
+				if (damage < 9999)
+				{
+					damage = 9999;
 				}
 			}
 			if (corrosion)
