@@ -16,6 +16,8 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nNormal enemies would be impaled and immobilized");
 			DisplayName.AddTranslation(GameCulture.Russian, "Большой лук Чёрной Вдовы");
             Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает 3 прибивающих противников паучий клыка\nМожет обездвижить обычных противников");
+			DisplayName.AddTranslation(GameCulture.Chinese, "黑寡妇巨弓");
+            Tooltip.AddTranslation(GameCulture.Chinese, "发射3发高伤害蜘蛛毒牙\n正常敌人会被刺穿并被束缚");
         }
 
 		public override void SetDefaults()

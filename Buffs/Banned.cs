@@ -18,6 +18,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Забанен");
 			Description.AddTranslation(GameCulture.Russian, "был забанен");
+			DisplayName.AddTranslation(GameCulture.Chinese, "禁制");
+			Description.AddTranslation(GameCulture.Chinese, "受到禁制");
         }
 
         public override void Update(NPC npc, ref int buffIndex)

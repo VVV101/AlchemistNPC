@@ -20,6 +20,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Заражён");
 			Description.AddTranslation(GameCulture.Russian, "Замедлен, пауки готовы к выходу");
+			DisplayName.AddTranslation(GameCulture.Chinese, "蛛群滋生");
+			Description.AddTranslation(GameCulture.Chinese, "减速，蜘蛛种群暴涨");
         }
 
         public override void Update(NPC npc, ref int buffIndex)

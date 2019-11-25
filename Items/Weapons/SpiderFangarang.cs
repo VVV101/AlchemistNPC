@@ -16,8 +16,8 @@ namespace AlchemistNPC.Items.Weapons
             DisplayName.AddTranslation(GameCulture.Russian, "Паучий Клыкоранг");
             Tooltip.AddTranslation(GameCulture.Russian, "Бросает отравляющий бумеранг\nМожет складываться до 3");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "腐蚀烧瓶");
-            Tooltip.AddTranslation(GameCulture.Chinese, "被炼金师加强过的剧毒药水");
+            DisplayName.AddTranslation(GameCulture.Chinese, "蛛牙回旋镖");
+            Tooltip.AddTranslation(GameCulture.Chinese, "投掷涂毒回旋镖\n可以堆叠3个");
         }    
 		public override void SetDefaults()
 		{

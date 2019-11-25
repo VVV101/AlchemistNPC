@@ -20,6 +20,8 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Infects enemies on first hit, releases spiders on second");
 			DisplayName.AddTranslation(GameCulture.Russian, "Проклятие Арахны");
             Tooltip.AddTranslation(GameCulture.Russian, "Заражает противников при первом ударе, выпускает пауков при втором");
+			DisplayName.AddTranslation(GameCulture.Chinese, "蛛王的咒缚");
+            Tooltip.AddTranslation(GameCulture.Chinese, "第一次击中感染敌人, 第二次释放蜘蛛");
 		}
 
 		public override void SetDefaults()
