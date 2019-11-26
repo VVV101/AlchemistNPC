@@ -62,19 +62,12 @@ namespace AlchemistNPC.Items.Equippable
             player.doubleJumpSandstorm = true;
             player.doubleJumpBlizzard = true;
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
-				{
-				CalamityBoost(player);
-				}
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
+			{
+				Calamity.Call("AddRogueCrit", player, 15);
+			}
 		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.throwingDamage += 0.15f;
-            CalamityPlayer.throwingCrit += 15;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		public override void AddRecipes()
 		{

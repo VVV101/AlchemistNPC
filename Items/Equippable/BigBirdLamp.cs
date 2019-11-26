@@ -39,11 +39,7 @@ namespace AlchemistNPC.Items.Equippable
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.AddBuff(mod.BuffType("BigBirdLamp"), 60);
-			player.thrownDamage += 0.05f;
-            player.meleeDamage += 0.05f;
-            player.rangedDamage += 0.05f;
-            player.magicDamage += 0.05f;
-            player.minionDamage += 0.05f;
+			player.allDamage += 0.05f;
 			player.meleeCrit += 5;
             player.rangedCrit += 5;
             player.magicCrit += 5;
@@ -56,19 +52,12 @@ namespace AlchemistNPC.Items.Equippable
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetMod("CalamityMod") != null)
+				Mod Calamity = ModLoader.GetMod("CalamityMod");
+				if(Calamity != null)
 				{
-				CalamityBoost(player);
+					Calamity.Call("AddRogueCrit", player, 5);
 				}
 		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.throwingDamage += 0.05f;
-            CalamityPlayer.throwingCrit += 5;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {

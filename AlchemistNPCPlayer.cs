@@ -1334,9 +1334,10 @@ namespace AlchemistNPC
 					{
 						RedemptionBoost(player);
 					}
-					if (ModLoader.GetMod("CalamityMod") != null)
+					Mod Calamity = ModLoader.GetMod("CalamityMod");
+					if(Calamity != null)
 					{
-						CalamityBoost(player);
+						Calamity.Call("AddRogueCrit", player, 10);
 					}
 				}
 				if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Regeneration) player.lifeRegen += 4;
@@ -1376,11 +1377,6 @@ namespace AlchemistNPC
 			if (DR10) player.endurance += 0.1f;
 		}
 		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.throwingCrit += 10;
-        }
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();

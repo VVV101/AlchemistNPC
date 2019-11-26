@@ -54,7 +54,11 @@ namespace AlchemistNPC.Items.Equippable
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			player.AddBuff(mod.BuffType("CalamityComb"), 2);
-			CalamityBoost(player);
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
+			{
+				Calamity.Call("AddRogueCrit", player, 10);
+			}
 			}
 			if (ModLoader.GetMod("Redemption") != null)
 			{
@@ -77,11 +81,6 @@ namespace AlchemistNPC.Items.Equippable
 			}
 		}
 		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-            CalamityPlayer.throwingCrit += 10;
-        }
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();

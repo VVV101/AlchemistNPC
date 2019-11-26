@@ -80,18 +80,12 @@ namespace AlchemistNPC.Items.Armor
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetMod("CalamityMod") != null)
+				Mod Calamity = ModLoader.GetMod("CalamityMod");
+				if(Calamity != null)
 				{
-				CalamityBoost(player);
+					Calamity.Call("AddRogueCrit", player, 20);
 				}
 		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-            CalamityPlayer.throwingCrit += 20;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {

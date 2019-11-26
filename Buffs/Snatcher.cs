@@ -164,9 +164,10 @@ namespace AlchemistNPC.Buffs
 				{
 					RedemptionCBoost(player);
 				}
-				if (ModLoader.GetMod("CalamityMod") != null)
+				Mod Calamity = ModLoader.GetMod("CalamityMod");
+				if(Calamity != null)
 				{
-					CalamityCBoost(player);
+					Calamity.Call("AddRogueCrit", player, 5);
 				}
 			}
 			if (modPlayer.SnatcherCounter >= 6666)
@@ -178,12 +179,6 @@ namespace AlchemistNPC.Buffs
 				player.statLifeMax2 += player.statLifeMax / 10;
 			}
 		}
-		
-		private void CalamityCBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-            CalamityPlayer.throwingCrit += 5;
-        }
 		
 		private void RedemptionCBoost(Player player)
         {
