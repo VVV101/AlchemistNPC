@@ -15,6 +15,8 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.SetDefault("Throws venomous boomerang");
             DisplayName.AddTranslation(GameCulture.Russian, "Клык Реклюзы");
             Tooltip.AddTranslation(GameCulture.Russian, "Бросает ядовитый бумеранг");
+			DisplayName.AddTranslation(GameCulture.Chinese, "黑隐士牙旋刃");
+            Tooltip.AddTranslation(GameCulture.Chinese, "投掷剧毒回旋刃");
         }   
 		
 		public override void SetDefaults()

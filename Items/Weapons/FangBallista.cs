@@ -16,6 +16,8 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nNormal enemies would be impaled and immobilized");
 			DisplayName.AddTranslation(GameCulture.Russian, "Клыковая баллиста");
             Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает прибивающий противников паучий клык\nМожет обездвижить обычных противников");
+			DisplayName.AddTranslation(GameCulture.Chinese, "蛛牙弩");
+            Tooltip.AddTranslation(GameCulture.Chinese, "射出高伤害蜘蛛牙\n正常敌人会被刺穿并被束缚");
         }
 
 		public override void SetDefaults()
