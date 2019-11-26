@@ -7,6 +7,9 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
+v8.9.1
+-Mod browser error.
+-Added some more chinese localization.
 v8.9
 -Added new Holoprojector, Desert.
 -Added Immortality Field projector and FEAR emitter.
