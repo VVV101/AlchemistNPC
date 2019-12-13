@@ -46,6 +46,8 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public int fc = 0;
+		public bool MasterYoyoBag = false;
+		public bool TimeTwist = false;
 		public bool HPJ = false;
 		public bool DeltaRune = false;
 		public bool PB4K = false;
@@ -212,6 +214,8 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			MasterYoyoBag = false;
+			TimeTwist = false;
 			HPJ = false;
 			DeltaRune = false;
 			PH = false;

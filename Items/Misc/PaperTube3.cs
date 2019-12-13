@@ -68,70 +68,70 @@ namespace AlchemistNPC.Items.Misc
 		
 		public override bool UseItem(Player player)
         {
-			if (AlchemistNPCWorld.foundT3)
+			if (Main.myPlayer == player.whoAmI)
 			{
-				return false;
-			}
-			var randomAcc = new List<string>();
-								
-			if (!AlchemistNPCWorld.foundTabi) {
-			randomAcc.Add("foundTabi");}
-			if (!AlchemistNPCWorld.foundBlackBelt) {
-			randomAcc.Add("foundBlackBelt");}
-			if (!AlchemistNPCWorld.foundRifleScope) {
-			randomAcc.Add("foundRifleScope");}
-			if (!AlchemistNPCWorld.foundPaladinShield) {
-			randomAcc.Add("foundPaladinShield");}
-			if (!AlchemistNPCWorld.foundNecromanticScroll) {
-			randomAcc.Add("foundNecromanticScroll");}
-			if (NPC.downedGolemBoss)
-			{
-				if (!AlchemistNPCWorld.foundSunStone) {
-				randomAcc.Add("foundSunStone");}
-			}
-			if (!AlchemistNPCWorld.foundHerculesBeetle) {
-			randomAcc.Add("foundHerculesBeetle");}
-			if (!AlchemistNPCWorld.foundPygmyNecklace) {
-			randomAcc.Add("foundPygmyNecklace");}
-			if (randomAcc.Count == 0 && !NPC.downedGolemBoss)
-			{
-				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info1"), 100,149,237);
+				var randomAcc = new List<string>();
+									
+				if (!AlchemistNPCWorld.foundTabi) {
+				randomAcc.Add("foundTabi");}
+				if (!AlchemistNPCWorld.foundBlackBelt) {
+				randomAcc.Add("foundBlackBelt");}
+				if (!AlchemistNPCWorld.foundRifleScope) {
+				randomAcc.Add("foundRifleScope");}
+				if (!AlchemistNPCWorld.foundPaladinShield) {
+				randomAcc.Add("foundPaladinShield");}
+				if (!AlchemistNPCWorld.foundNecromanticScroll) {
+				randomAcc.Add("foundNecromanticScroll");}
+				if (NPC.downedGolemBoss)
+				{
+					if (!AlchemistNPCWorld.foundSunStone) {
+					randomAcc.Add("foundSunStone");}
+				}
+				if (!AlchemistNPCWorld.foundHerculesBeetle) {
+				randomAcc.Add("foundHerculesBeetle");}
+				if (!AlchemistNPCWorld.foundPygmyNecklace) {
+				randomAcc.Add("foundPygmyNecklace");}
+				if (randomAcc.Count == 0 && !NPC.downedGolemBoss)
+				{
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info1"), 100,149,237);
+					return true;
+				}
+				if (Main.rand.NextBool(5))
+				{
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info2"), 100,149,237);
+					return true;
+				}
+			
+				int acc = Main.rand.Next(randomAcc.Count);
+				
+				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info3"), 255, 255, 255);
+				
+				if (randomAcc[acc] == "foundTabi") {
+				AlchemistNPCWorld.foundTabi = true;}
+				if (randomAcc[acc] == "foundBlackBelt") {
+				AlchemistNPCWorld.foundBlackBelt = true;}
+				if (randomAcc[acc] == "foundRifleScope") {
+				AlchemistNPCWorld.foundRifleScope = true;}
+				if (randomAcc[acc] == "foundPaladinShield") {
+				AlchemistNPCWorld.foundPaladinShield = true;}
+				if (randomAcc[acc] == "foundNecromanticScroll") {
+				AlchemistNPCWorld.foundNecromanticScroll = true;}
+				if (randomAcc[acc] == "foundSunStone") {
+				AlchemistNPCWorld.foundSunStone = true;}
+				if (randomAcc[acc] == "foundHerculesBeetle") {
+				AlchemistNPCWorld.foundHerculesBeetle = true;}
+				if (randomAcc[acc] == "foundPygmyNecklace") {
+				AlchemistNPCWorld.foundPygmyNecklace = true;}
+				
+				if (randomAcc.Count == 1 && NPC.downedGolemBoss)
+				{
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info4"), 0, 255, 0);
+					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info5"), 0, 255, 0);
+					AlchemistNPCWorld.foundT3 = true;
+				}
 				return true;
 			}
-			if (Main.rand.NextBool(5))
-			{
-				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info2"), 100,149,237);
-				return true;
-			}
-		
-			int acc = Main.rand.Next(randomAcc.Count);
-			
-			Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info3"), 255, 255, 255);
-			
-			if (randomAcc[acc] == "foundTabi") {
-			AlchemistNPCWorld.foundTabi = true;}
-			if (randomAcc[acc] == "foundBlackBelt") {
-			AlchemistNPCWorld.foundBlackBelt = true;}
-			if (randomAcc[acc] == "foundRifleScope") {
-			AlchemistNPCWorld.foundRifleScope = true;}
-			if (randomAcc[acc] == "foundPaladinShield") {
-			AlchemistNPCWorld.foundPaladinShield = true;}
-			if (randomAcc[acc] == "foundNecromanticScroll") {
-			AlchemistNPCWorld.foundNecromanticScroll = true;}
-			if (randomAcc[acc] == "foundSunStone") {
-			AlchemistNPCWorld.foundSunStone = true;}
-			if (randomAcc[acc] == "foundHerculesBeetle") {
-			AlchemistNPCWorld.foundHerculesBeetle = true;}
-			if (randomAcc[acc] == "foundPygmyNecklace") {
-			AlchemistNPCWorld.foundPygmyNecklace = true;}
-			
-			if (randomAcc.Count == 1 && NPC.downedGolemBoss)
-			{
-				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info4"), 0, 255, 0);
-				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.PaperTubeT3Info5"), 0, 255, 0);
-				AlchemistNPCWorld.foundT3 = true;
-			}
-			return true;
+			return false;
 		}
 	}
 }

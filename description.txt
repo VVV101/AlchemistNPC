@@ -7,6 +7,18 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
+v9.0
+-Reworked accessories tokens availability.
+Now they cannot be crafted from Perfection Token.
+Now can be bought from Tinkerer in hardmode.
+-Now Lifeform Analizer also creates laser pointer to rare creature (ticks each second).
+Can be toggled by Mod Configuration.
+-Added Master Yoyo Bag. Combines effects of Fire Gauntlet and Yoyo Bag, but gives bigger range bonus.
+Can be crafted on Mythril Anvil.
+-Added Braclet of Time Twist. Drops from any treasure bag with 1:150 chance.
+-Added Recall/Wormhole Potion price config options.
+-Added more materials to Operator's materials shops.
+-Fixed Paper Tube multiplayer desync issue.
 v8.9.1
 -Mod browser error.
 -Added some more chinese localization.
