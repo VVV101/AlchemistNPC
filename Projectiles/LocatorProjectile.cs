@@ -28,7 +28,7 @@ namespace AlchemistNPC.Projectiles
 			if (projectile.localAI[0] > 8f)
 			{
 				int i = 0;
-				if (Main.rand.NextBool(2))
+				if (Main.rand.NextBool(4))
 				{
 					Vector2 projectilePosition = projectile.position;
 					projectilePosition -= projectile.velocity * ((float)i * 0.25f);

@@ -19,6 +19,7 @@ Can be crafted on Mythril Anvil.
 -Added Recall/Wormhole Potion price config options.
 -Added more materials to Operator's materials shops.
 -Fixed Paper Tube multiplayer desync issue.
+-New awesome mod's icon by Alemeow#7389.
 v8.9.1
 -Mod browser error.
 -Added some more chinese localization.
