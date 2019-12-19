@@ -376,6 +376,7 @@ namespace AlchemistNPC
 			BitsByte flags11 = new BitsByte();
 			flags11[0] = downedDOGPumpking;
 			flags11[1] = downedDOGIceQueen;
+			writer.Write(flags11);
 		}
 
 		public override void NetReceive(BinaryReader reader)
