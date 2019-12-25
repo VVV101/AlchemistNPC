@@ -14,7 +14,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Electrocute");
-			Description.SetDefault("High voltage is going through you..");
+			Description.SetDefault("High voltage is flowing through you");
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = false;
