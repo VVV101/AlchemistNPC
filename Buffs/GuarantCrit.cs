@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 
@@ -16,7 +17,10 @@ namespace AlchemistNPC.Buffs
 			Main.persistentBuff[Type] = true;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Гарантированный Крит");
-			Description.AddTranslation(GameCulture.Russian, "На вашу следующую атаку обязательно сработает крит");
+			Description.AddTranslation(GameCulture.Russian, "Ваша следующая атаку будет гарантированным критом");
+      DisplayName.AddTranslation(GameCulture.Chinese, "暴击预定");
+      Description.AddTranslation(GameCulture.Chinese, "下一次攻击必定暴击");
+
         }
 		
 		public override void Update(Player player, ref int buffIndex)
@@ -31,15 +35,15 @@ namespace AlchemistNPC.Buffs
 				player.DelBuff(buffIndex);
 				buffIndex--;
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-			if (ModLoader.GetLoadedMods().Contains("Redemption"))
+			if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -47,26 +51,23 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             CalamityPlayer.throwingCrit += 100;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.15f;
-            RedemptionPlayer.druidCrit += 15;
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
+            RedemptionPlayer.druidCrit += 100;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.15f;
-            ThoriumPlayer.symphonicCrit += 15;
-			ThoriumPlayer.radiantBoost += 0.15f;
-            ThoriumPlayer.radiantCrit += 15;
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
+            ThoriumPlayer.symphonicCrit += 100;
+            ThoriumPlayer.radiantCrit += 100;
         }
 		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}

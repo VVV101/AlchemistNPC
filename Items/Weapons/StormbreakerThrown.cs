@@ -30,6 +30,7 @@ using Terraria.Utilities;
 using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 
@@ -45,6 +46,9 @@ namespace AlchemistNPC.Items.Weapons
 			
 			DisplayName.AddTranslation(GameCulture.Russian, "Громобой");
 			Tooltip.AddTranslation(GameCulture.Russian, "Выкован для противодействия самым мощным существам во вселенной. Используй его мудро.\nПравый клик в инвентаре меняет тип урона");
+			DisplayName.AddTranslation(GameCulture.Chinese, "风暴战锤");
+			Tooltip.AddTranslation(GameCulture.Chinese, "为了与宇宙中最强大的存在战斗而打造. 请明智地使用它."
+			+"\n在物品栏中右键切换伤害类型");
         }
 
 		public override void SetDefaults()
@@ -52,7 +56,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.CloneDefaults(3858);
 			item.melee = false;
 			item.thrown = true;
-			item.damage = 100;
+			item.damage = 110;
 			item.crit = 21;
 			item.width = 50;
 			item.height = 40;
@@ -98,6 +102,7 @@ namespace AlchemistNPC.Items.Weapons
 
         public override void RightClick(Player player)
         {
+			item.consumable = true;
             Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("Stormbreaker"), 1, false, 81);
         }
 		

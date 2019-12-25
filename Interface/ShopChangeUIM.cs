@@ -4,8 +4,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
+using Terraria.Localization;
 using System;
 using Terraria.ID;
 using System.Linq;
@@ -31,31 +33,45 @@ namespace AlchemistNPC.Interface
 			MusicianShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
 			MusicianShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			UIText text = new UIText("Vanilla Music Boxes");
+			string MusicianShops1; 
+			string MusicianShops2; 
+			string MusicianShops3; 
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					MusicianShops1 = "原版八音盒";
+					MusicianShops2 = "灾厄八音盒";
+					MusicianShops3 = "模组/瑟银八音盒";
+				}
+			else
+				{
+					MusicianShops1 = "Vanilla Music Boxes";
+					MusicianShops2 = "Calamity Music Boxes";
+					MusicianShops3 = "Mod/Thorium Music Boxes";
+				}
+			
+			UIText text = new UIText(MusicianShops1);
 			text.Left.Set(35, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(90, 0f);
 			text.Height.Set(22, 0f);
-			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			MusicianShopsPanel.Append(text);
 			
-			UIText text2 = new UIText("Calamity Music Boxes");
+			UIText text2 = new UIText(MusicianShops2);
 			text2.Left.Set(35, 0f);
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(90, 0f);
 			text2.Height.Set(22, 0f);
-			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			MusicianShopsPanel.Append(text2);
 			
-			UIText text3 = new UIText("Mod/Thorium Music Boxes");
+			UIText text3 = new UIText(MusicianShops3);
 			text3.Left.Set(35, 0f);
 			text3.Top.Set(70, 0f);
 			text3.Width.Set(90, 0f);
 			text3.Height.Set(22, 0f);
-			text3.OnClick += new MouseEvent(PlayButtonClicked3);
 			MusicianShopsPanel.Append(text3);
 			
-			Texture2D buttonPlayTexture = ModLoader.GetTexture("Terraria/UI/ButtonPlay");
+			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
 			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
 			playButton.Left.Set(10, 0f);
 			playButton.Top.Set(10, 0f);
@@ -78,7 +94,7 @@ namespace AlchemistNPC.Interface
 			playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
 			MusicianShopsPanel.Append(playButton3);
 
-			Texture2D buttonDeleteTexture = ModLoader.GetTexture("Terraria/UI/ButtonDelete");
+			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
 			closeButton.Left.Set(230, 0f);
 			closeButton.Top.Set(10, 0f);

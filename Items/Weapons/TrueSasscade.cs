@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -54,6 +55,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nGives effects of Yo-yo Bag while placed in inventory or being held");
 			DisplayName.AddTranslation(GameCulture.Russian, "Истинный Сасскад");
             Tooltip.AddTranslation(GameCulture.Russian, "Легендарное Йо-йо\nСтреляет Арканумами Туманности в ближайших противников\nДаёт эффекты сумки Йо-Йо если находится в инвентаре или в руках");
+			DisplayName.AddTranslation(GameCulture.Chinese, "真·萨斯卡德");
+			Tooltip.AddTranslation(GameCulture.Chinese, "传说中的悠悠球"
+			+"\n向附近的敌人发射跟踪的星云奥秘"
+			+"\n握持或放在物品栏里时, 提供悠悠球袋的效果");
         }
 		
 		public override void AddRecipes()
@@ -64,12 +69,12 @@ namespace AlchemistNPC.Items.Weapons
 			recipe.AddIngredient(null, "ChromaticCrystal", 3);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 3);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 3);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 15);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 10);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);

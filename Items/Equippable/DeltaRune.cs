@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Equippable
@@ -23,6 +24,8 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nRegenerates life rapidly while standing still");
 				DisplayName.AddTranslation(GameCulture.Russian, "Руна Дельта");
             Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический/ближний урон и шанс критического удара на 10%\nУвеличивает защиту на 10\nУвеличивает стойкость на 10%\nДаёт шанс выпустить красную волну, наносящую урон при взмахе оружием ближнего боя\nДаёт шанс выпустить рой магических снарядов при магической атаке\nБыстро восстанавливает здоровье, пока стоишь на месте");
+            DisplayName.AddTranslation(GameCulture.Chinese, "三角符文");
+            Tooltip.AddTranslation(GameCulture.Chinese, "增加10%近战/魔法伤害和暴击率\n增加10%伤害减免\n近战攻击概率释放红色破坏波\n魔法攻击概率释放追踪魔法飞弹\n站立不动时快速恢复生命");
         }
 	
 		public override void SetDefaults()
@@ -68,23 +71,23 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(mod.ItemType("ChromaticCrystal"), 5);
 			recipe.AddIngredient(mod.ItemType("SunkroveraCrystal"), 5);
 			recipe.AddIngredient(mod.ItemType("NyctosythiaCrystal"), 5);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 15);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy")), 15);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
 			}
 			recipe.AddIngredient(mod.ItemType("EmagledFragmentation"), 150);
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 			recipe.AddTile(mod.TileType("MateriaTransmutator"));
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddTile(mod.TileType("MateriaTransmutatorMK2"));
 			}

@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -13,6 +14,8 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Requred to shoot from ''Meat Grinder''");
 			DisplayName.AddTranslation(GameCulture.Russian, "17mm патрон");
             Tooltip.AddTranslation(GameCulture.Russian, "Необходим для стрельбы из ''Мясорубки''");
+			DisplayName.AddTranslation(GameCulture.Chinese, "17mm 子弹");
+			Tooltip.AddTranslation(GameCulture.Chinese, "''绞肉机'' 射击所需");
         }
 
 		public override void SetDefaults()

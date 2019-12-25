@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Notes
@@ -20,7 +21,7 @@ namespace AlchemistNPC.Items.Notes
 			DisplayName.AddTranslation(GameCulture.Russian, "Запись исследования №2");
             Tooltip.AddTranslation(GameCulture.Russian, "''Я нашла информацию о Королевской Волшебной Палочке в одном древнем манускрипте.\nТам сказано, что не важно, как именно Палочка была разрушена. Её всё равно можно воссоздать.\nОсновой послужит [c/00FF00:Радужный Жезл].\n[c/00FF00:Последняя Призма] подойдёт в качестве Магического Фокуса...\n[c/00FF00:Крылья Ангела] тоже необходимы.\n[c/00FF00:Пыль Бабочки] может быть полезна для обхода проверки пользователя.\nИ ещё тебе придётся поймать [c/00FF00:Единорога] как источник питания.''");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "研究笔记#2");
+            DisplayName.AddTranslation(GameCulture.Chinese, "研究笔记 #2");
             Tooltip.AddTranslation(GameCulture.Chinese, "''在一个古老的手稿中, 我找到了一些关于 [c/00FF00:皇家魔杖] 的信息." +
                 "\n上面说道... 无论用何种方式摧毁魔杖, 它都能再生出来." +
                 "\n魔杖的基础是 [c/00FF00:彩虹魔杖] ." +

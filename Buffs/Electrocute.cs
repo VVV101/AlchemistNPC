@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 using System.Collections.Generic;
@@ -21,12 +22,12 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Электрошок");
 			Description.AddTranslation(GameCulture.Russian, "Через вас проходит высокое напряжение");
             DisplayName.AddTranslation(GameCulture.Chinese, "触电");
-            Description.AddTranslation(GameCulture.Chinese, "掉血ing");
+            Description.AddTranslation(GameCulture.Chinese, "高压电流过你的身体..");
         }
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-			npc.GetGlobalNPC<ModGlobalNPC>(mod).electrocute = true;
+			npc.GetGlobalNPC<ModGlobalNPC>().electrocute = true;
 			if (Main.rand.Next(20) == 0 && npc.type != 488)
 			{
 			npc.velocity.X = 0.1f;

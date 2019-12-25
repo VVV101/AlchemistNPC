@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.Enums;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;
@@ -71,17 +72,17 @@ namespace AlchemistNPC.Tiles
 			TileID.AlchemyTable,
 			TileID.LunarCraftingStation
 			};
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
                 Array.Resize(ref adjTiles, adjTiles.Length + 3);
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil");
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator");
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("SoulForge");
 				}
-			if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+			if (ModLoader.GetMod("FargowiltasSouls") != null)
 				{
 				Array.Resize(ref adjTiles, adjTiles.Length + 1);
-                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("Fargowiltas").TileType("CrucibleCosmosSheet");
+                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("FargowiltasSouls").TileType("CrucibleCosmosSheet");
 				}
 			dustType = mod.DustType("JustitiaPale");
 			animationFrameHeight = 74;

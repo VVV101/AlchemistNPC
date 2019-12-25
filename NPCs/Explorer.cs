@@ -2,6 +2,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.NPCs
@@ -45,6 +46,10 @@ namespace AlchemistNPC.NPCs
 		public static bool C73 = false;
 		public static bool C74 = false;
 		public static bool C75 = false;
+		public static bool C81 = false;
+		public static bool C82 = false;
+		public static bool C83 = false;
+		public static bool C84 = false;
 		
 		public override string Texture
 		{
@@ -92,12 +97,16 @@ namespace AlchemistNPC.NPCs
 		C73 = false;
 		C74 = false;
 		C75 = false;
+		C81 = false;
+		C82 = false;
+		C83 = false;
+		C84 = false;
 		}
 		
 		public override bool Autoload(ref string name)
 		{
 			name = "Explorer";
-			return Config.ExplorerSpawn;
+			return AlchemistNPC.modConfiguration.ExplorerSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -158,6 +167,11 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Создать №7");
             text.AddTranslation(GameCulture.Chinese, "制造 #7");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("Create8");
+            text.SetDefault("Create #8");
+            text.AddTranslation(GameCulture.Russian, "Создать №8");
+            text.AddTranslation(GameCulture.Chinese, "制造 #8");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE1");
             text.SetDefault("So, were my notes of any use to you?");
             text.AddTranslation(GameCulture.Russian, "Были ли мои записки хоть сколько-нибудь полезны для тебя?");
@@ -176,7 +190,7 @@ namespace AlchemistNPC.NPCs
             text = mod.CreateTranslation("EntryE4");
             text.SetDefault("''There's a legendary yoyo known as the Sasscade.''... I am pretty sure you heard about that before. But I know how you can get it.");
             text.AddTranslation(GameCulture.Russian, "''Существует Легендарное Йо-йо, известное как Сасскад.''... Я уверена, что ты слышал об этом раньше. Но я знаю, как ты можешь заполучить его.");
-            text.AddTranslation(GameCulture.Chinese, "''有个传说中的悠悠球叫做Sasscade.''...我很确定你之前听到过这句话, 但是我知道, 如何得到它!");
+            text.AddTranslation(GameCulture.Chinese, "''有个传说中的悠悠球叫做萨斯卡德.''...我很确定你之前听到过这句话, 但是我知道, 如何得到它!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE5");
             text.SetDefault("If you want to take part in my researches, then grab my notes and check if you can help. All results will belong to you.");
@@ -200,7 +214,7 @@ namespace AlchemistNPC.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE9");
             text.SetDefault(" to sell Celestial Fragments.");
-            text.AddTranslation(GameCulture.Russian, "продавала Небесные Фрагменты.");
+            text.AddTranslation(GameCulture.Russian, " продавала Небесные Фрагменты.");
             text.AddTranslation(GameCulture.Chinese, " 卖天界碎片");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryE10");
@@ -221,11 +235,28 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("EntryE13");
             text.SetDefault("I once met a man that traveled on top an alicorn. He looked truly FABulous!");
             text.AddTranslation(GameCulture.Russian, "Я однажды встретила человека, путешествующего верхом на единороге. Он выглядел просто потрясающе!");
+			text.AddTranslation(GameCulture.Chinese, "我曾经遇到过一个骑在天角兽上旅行的人. 他看起来真是太神了! ");
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryE14");
             text.SetDefault("Can you bring me the Unicorn for examination? I am sure that your bug net is strong enough for that.");
             text.AddTranslation(GameCulture.Russian, "Можешь достать мне Единорога для исследований? Я уверена, что твоя сетка для ловли достаточно крепка для этого.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "你能给我弄一个独角兽来做试验吗. 我相信你的捕虫网足够强力! ");
+			mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryE15");
+            text.SetDefault("Messing with the quantic shroud is no fun-time business, hero. Be careful when choosing what power to pick on.");
+            text.AddTranslation(GameCulture.Russian, "Дурачиться с квантовыми полями не самое весёлое занятие, герой. Поосторожнее выбирай силу, с которой будешь работать.");
+            text.AddTranslation(GameCulture.Chinese, "把大量套装弄乱可不是一件有趣的事, 英雄. 在选择能力的时候一定要小心. ");
+			mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryE16");
+            text.SetDefault("The time-space continuum is possibly the worst combination in this existance: both a delicate but mastercrafted estructure in a skillfully achieved but pathetically fragile balance and at the same time an absolute and undeniable force of nature that posseses total control of our everything and composes what we call ''reality and fiction'', volatile as you wouldn't believe.");
+            text.AddTranslation(GameCulture.Russian, "Простанственно-временной континуум - это возможно наихудшее сочетание из существующих: одновременно тончайшая и мастерски созданная структура в мастерски достигнутом, но невероятно хрупком балансе и в то же самое время абсолютная и непреодолимая сила природы, что обладает полным контролем над нашим ''всем'' и формирует то, что мы называем ''реальностью и вымыслом'', меняясь так, что ты и не поверишь.");
+            text.AddTranslation(GameCulture.Chinese, "时空连续体可能会成为最糟糕的结合体在这种存在形式下: 这两者都是一个微妙而精细的结构, 处于一种巧妙而脆弱的平衡, 同时是一种绝对不可否认控制我们一切，并构成了我们所说的 “现实和虚拟”的自然力量, 你不会相信是不稳定的.");
+			mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryE17");
+            text.SetDefault("Take it from someone with experience on it, friend: ''A flying giant divine cosmic worm of the heavens of who-damn-knows-what-deities is the most normal thing you'll find out there compared to what lurks in the darkness of deep space.''");
+            text.AddTranslation(GameCulture.Russian, "Выслушай это от кого-то с опытом, друг: ''Древний гигантский летающий космический червь небес чёрт-знает-какого-божества - это самое нормальное что ты найдёшь, сравнивая с тем, что скрывается во тьме глубого космоса.''");
+            text.AddTranslation(GameCulture.Chinese, "朋友, 从有经验的人那分享来的一句话: “相比于深空里潜伏着的各种你会发现的东西, 一个会飞的谁他妈直到它是不是神的宇宙巨型蠕虫简直再正常不过了”");
+			mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()
@@ -292,7 +323,11 @@ namespace AlchemistNPC.NPCs
 			closeness = 15;
 			item = mod.ItemType("Nyx");
 		}
- 
+		
+		public bool CalamityModDownedDOG
+		{
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
+		}
  
         public override string GetChat()
         {                                           //npc chat
@@ -309,12 +344,23 @@ namespace AlchemistNPC.NPCs
 		string Entry11 = Language.GetTextValue("Mods.AlchemistNPC.EntryE11");
 		string Entry12 = Language.GetTextValue("Mods.AlchemistNPC.EntryE12");
 		string Entry13 = Language.GetTextValue("Mods.AlchemistNPC.EntryE13");
+		string Entry14 = Language.GetTextValue("Mods.AlchemistNPC.EntryE14");
+		string Entry15 = Language.GetTextValue("Mods.AlchemistNPC.EntryE15");
+		string Entry16 = Language.GetTextValue("Mods.AlchemistNPC.EntryE16");
+		string Entry17 = Language.GetTextValue("Mods.AlchemistNPC.EntryE17");
 		int Operator = NPC.FindFirstNPC(mod.NPCType("Operator"));
 			if (Operator >= 0 && Main.rand.Next(4) == 0)
 			{
 				return Entry8 + Main.npc[Operator].GivenName + Entry9;
 			}
-            switch (Main.rand.Next(11))
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				if (CalamityModDownedDOG && Main.rand.Next(10) == 0)
+				{
+					return Entry17;
+				}
+			}
+            switch (Main.rand.Next(14))
             {
                 case 0:                                     
 				return Entry1;
@@ -336,6 +382,12 @@ namespace AlchemistNPC.NPCs
 				return Entry12;
 				case 9:
 				return Entry13;
+				case 10:
+				return Entry14;
+				case 11:
+				return Entry15;
+				case 12:
+				return Entry16;
                 default:
 				return Entry10;
             }
@@ -350,6 +402,7 @@ namespace AlchemistNPC.NPCs
 			string Create5 = Language.GetTextValue("Mods.AlchemistNPC.Create5");
 			string Create6 = Language.GetTextValue("Mods.AlchemistNPC.Create6");
 			string Create7 = Language.GetTextValue("Mods.AlchemistNPC.Create7");
+			string Create8 = Language.GetTextValue("Mods.AlchemistNPC.Create8");
             button = Language.GetTextValue("LegacyInterface.28");
 			Player player = Main.player[Main.myPlayer];
 			if (player.active)
@@ -500,6 +553,22 @@ namespace AlchemistNPC.NPCs
 					{
 						C75 = true;
 					}
+					if (player.inventory[j].type == 3384)
+					{
+						C81 = true;
+					}
+					if (player.inventory[j].type == 3628)
+					{
+						C82 = true;
+					}
+					if (player.inventory[j].type == 3820)
+					{
+						C83 = true;
+					}
+					if (player.inventory[j].type == mod.ItemType("ResearchNote8"))
+					{
+						C84 = true;
+					}
 				}
 			}
 			if (C11 && C12 && C13 && C14 && C15)
@@ -529,6 +598,10 @@ namespace AlchemistNPC.NPCs
 			if (C71 && C72 && C73 && C74 && C75)
 			{
 			button2 = Create7;
+			}
+			if (C81 && C82 && C83 && C84)
+			{
+			button2 = Create8;
 			}
         }
  
@@ -811,6 +884,39 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
+				if (C81 && C82 && C83 && C84)
+				{
+					Player player = Main.player[Main.myPlayer];
+					player.QuickSpawnItem(mod.ItemType("TurretStaff"));
+					shop = false;
+					if (Main.player[Main.myPlayer].HasItem(3384))
+					{
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
+							if (inventory[k].type == 3384 && C81)
+							{
+								inventory[k].stack--;
+								C81 = false;
+							}
+							if (inventory[k].type == 3628 && C82)
+							{
+								inventory[k].stack--;
+								C82 = false;
+							}
+							if (inventory[k].type == 3820 && C83)
+							{
+								inventory[k].stack--;
+								C83 = false;
+							}
+							if (inventory[k].type == mod.ItemType("ResearchNote8") && C84)
+							{
+								inventory[k].stack--;
+								C84 = false;
+							}
+						}
+					}
+				}
 			}
 		}
  
@@ -847,6 +953,8 @@ namespace AlchemistNPC.NPCs
         nextSlot++;
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote7"));
         nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ResearchNote8"));
+        nextSlot++;
 		Player player = Main.player[Main.myPlayer];
 		if (player.active)
 		{
@@ -867,7 +975,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MGB"));
 				nextSlot++;
 				}
-				if (player.inventory[j].type == mod.ItemType("PortalGun"))
+				if (player.inventory[j].type == mod.ItemType("PortalGun") || player.inventory[j].type == mod.ItemType("OverloadedPortalGun"))
 				{
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("EnergyCapsule"));
 				nextSlot++;

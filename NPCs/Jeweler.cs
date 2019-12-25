@@ -4,6 +4,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.NPCs
@@ -36,7 +37,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Jeweler";
-			return Config.JewelerSpawn;
+			return AlchemistNPC.modConfiguration.JewelerSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -55,7 +56,7 @@ namespace AlchemistNPC.NPCs
             ModTranslation text = mod.CreateTranslation("ArenaShop");
             text.SetDefault("Arena Shop");
             text.AddTranslation(GameCulture.Russian, "Магазин Арены");
-            text.AddTranslation(GameCulture.Chinese, "阿瑞娜商店");
+            text.AddTranslation(GameCulture.Chinese, "战斗场地商店");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Carl");
             text.SetDefault("Carl");
@@ -129,6 +130,7 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("EntryJ10");
             text.SetDefault("Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.");
             text.AddTranslation(GameCulture.Russian, "Как только найдёшь достаточно изорванных записок, неси их мне и я расшифрую их для тебя. Не спрашивай зачем, просто знай, что они имеют значение для меня.");
+	    text.AddTranslation(GameCulture.Chinese, "如果你发现了那些破碎的笔记，请把它们给我，我会帮你把它们破译出来。别问我为什么，你只需要知道他们对我有价值。");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Combine");
             text.SetDefault("Combine notes");
@@ -172,7 +174,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss1 && Config.JewelerSpawn)
+			if (NPC.downedBoss1 && AlchemistNPC.modConfiguration.JewelerSpawn)
 			{
 			return true;
 			}
@@ -259,7 +261,7 @@ namespace AlchemistNPC.NPCs
 			{
 				return EntryJ8 + Main.npc[Merchant].GivenName + EntryJ9;
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				switch (Main.rand.Next(2))
 				{
@@ -502,7 +504,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.FossilOre);
 				shop.item[nextSlot].shopCustomPrice = 5000;
 				nextSlot++;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Opal"));
 					shop.item[nextSlot].shopCustomPrice = 5000;
@@ -544,7 +546,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HorrifyingSkull"));
 				shop.item[nextSlot].shopCustomPrice = 250000;
 				nextSlot++;
-				if (ModLoader.GetLoadedMods().Contains("Tremor"))
+				if (ModLoader.GetMod("Tremor") != null)
 				{
 					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Rupicide"));
 					shop.item[nextSlot].shopCustomPrice = 5000;
@@ -568,7 +570,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 						}
 							}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GraniteEnergyCore"));
 						shop.item[nextSlot].shopCustomPrice = 10000;
@@ -577,7 +579,7 @@ namespace AlchemistNPC.NPCs
 						shop.item[nextSlot].shopCustomPrice = 10000;
 						nextSlot++;	
 						}
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("GraniteChunk"));
 						shop.item[nextSlot].shopCustomPrice = 10000;
@@ -613,7 +615,7 @@ namespace AlchemistNPC.NPCs
 			nextSlot++;
 			if (NPC.downedBoss2)
 			{
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Mistletoe"));
 				shop.item[nextSlot].shopCustomPrice = 50000;
@@ -643,16 +645,13 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].SetDefaults (ItemID.PeaceCandle);
 			shop.item[nextSlot].shopCustomPrice = 50000;
 			nextSlot++;
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-				if (Main.hardMode)
+				if (NPC.downedPlantBoss)
 				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TranquilityCandle"));
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
-				}
-				if (NPC.downedPlantBoss)
-				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ChaosCandle"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;

@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.QuestFishes
@@ -10,6 +11,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		{
 			DisplayName.SetDefault("Nebula Fish");
 			DisplayName.AddTranslation(GameCulture.Russian, "Туманная Рыба");
+			DisplayName.AddTranslation(GameCulture.Chinese, "星云鱼");
 		}
 
 		public override void SetDefaults()

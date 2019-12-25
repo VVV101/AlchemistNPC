@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.QuestFishes
@@ -10,6 +11,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		{
 			DisplayName.SetDefault("Mini Shark");
 			DisplayName.AddTranslation(GameCulture.Russian, "Мини Акула");
+			DisplayName.AddTranslation(GameCulture.Chinese, "迷你鲨");
 		}
 
 		public override void SetDefaults()

@@ -1,12 +1,110 @@
-﻿This mod adds 8 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect, Musician and Explorer), who sell potions, materials and some other stuff. 
+﻿This mod adds 9 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect, Tinkerer, Musician and Explorer), who sell potions, materials and some other stuff. 
 New combinations of potions are sold by the Young Brewer.
 The spawn condition for the Alchemist, the Jeweler, the Tinkerer & the Brewer is to kill the Eye of Ctulhu. 
 The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
 The spawn condition for the Operator is to kill EoW/BoC and to have a Wing of the World inside a free housing.
-The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
+The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
-Config file is Alchemistv84.json.
+Full Mod Config support.
+v8.9
+-Added new Holoprojector, Desert.
+-Alchemist Charms now also add some duration to buff potions depending on tier.
+-Potion of Darkness can no longer be used if any boss is alive.
+-Removed Omniscience from Calamity combination, added Soaring and Bounding buffs.
+-Fixed Thorium combination.
+-Cleaned up a lot of buffs code.
+v8.8.1
+-Updated to tModloader 0.11.5.
+-Added support for Achievement Lib mod.
+-Now Bill Cipher drops additional item, which, while used, gives Demon Slayer buff.
+-Now Ravager, Astrum Aureus/Deus, Storm Weaver, Ceaseless Void and Signus drop Reversity Coins.
+-Fixed Titan Scale potion functionality in Calamity Combination.
+-Fixed hair drawing with equipped crowns from the mod.
+-Fishron Booster no longer gives dash, but gives additional 1% to all stats.
+-Zerg/Zen potions, Chaos/Tranquility Candles were moved to post Plantera.
+-Removed Anticheat from Ugandan Knuckles boss.
+-Jungle Teleporter potion now has different functions for left and right click.
+-Jungle Teleporter potion is now available after beating EoW/BoC.
+-Removed Dash from Thorium Combination.
+-Cleaned up some code.
+v8.8
+-Updated to tModloader 0.11.4.
+-Fixed incompatibility with latest Calamity mod build.
+-Architect can now come when you have 3 other NPCs and no longer requires to beat EoW/BoC.
+Some goods now require some bosses defeated.
+-Removed some obsolete coding.
+-Added Research Note#8, Portal's turret.
+-Added NULL Katana. 
+Available after beating Moon Lord.
+-Added Tome of Order, new mage legendary weapon. 
+Drops from any mob with 1:25000 chance.
+-Added Quest Skip Potion from Desiccation mod to 6th Brewer's shop.
+Available after beating Skeletron and finishing 10 fishing quests.
+-Strange Top Hat not summons Bill Cipher now.
+It can be used for crafting Dimensional Rift, which is a new summon item.
+-Hive is no longer a legendary weapon and replaced with a new one.
+Now Hive drops from Plantera with 5% chance.
+-Anti Buff item no longer has selling price.
+-Fixed Golem Booster.
+-Some more Chinese translation by tyhnoone.
+-New sprites for some items.
+v8.7
+-Updated to tModloader 0.11.3.
+-Added new mode, Anti Buff mode. During Anti Buff mode, player is immune to all buffs (not debuffs).
+Buffs without duration display are not disabled. Bosses and minibosses may drop permament boosting items. Their effects would work only if mode is on.
+Anti Buff activator can be crafted on Demon Altar.
+-Added Mod Config support. Now you may change config options ingame.
+-Removed clickability on texts of Shop Changer UIs.
+-Combinations now disable their certain boosts when Calamity Combination, Profaned Rage, Holy Wrath or Cadence potion buffs are active.
+-Added Heart of Greed. Makes any money dropped in the world go into player's inventory. Works if placed in inventory.
+Available after beating any mechanical boss.
+-Added More Potions Combination. 
+Available in hardmode.
+-Both Thorium and Spirit Combinations now take only 1 buff slot.
+-Some changes in Operator's shop.
+-Some new quotes for NPCs.
+-Some more new sprites by CC.
+-Holoprojectors no longer work while player is dead.
+-Fixed/added some more translations.
+-Fixed Shield Bar and Grinder MK4 sprites.
+-Fixed Godhead and Soul of Fear breaking true melee.
+v8.6
+-Updated for tModloader 0.11.1.
+-Fixed incompatibility with Calamity mod.
+-Reworked some weapons.
+-Nerfed Paradise Lost set bonus.
+-Fixed souls counter for Cracked Crown's pet in multiplayer.
+-Fixed some Thorium related lines of code.
+-Fix for Crucible of Cosmos functionality for Materia Transmutators.
+-Reworked swing attack for Stormbreaker.
+-Fixed energy capsules not being available if you have Overloaded Rick's Portal Gun.
+-Some more Chinese translation by ZHAY10086.
+-New sprites for some items/NPCs/buffs by CC#1547.
+v8.5
+-Reworked Paper Tubes mechanic for a bit. Now you need to unlock Paper Tubes manually other than giving them to Tinkerer NPC.
+This also mean that Paper Tubes now properly works in MP.
+-Statue mobs no longer drop Legendary weapons and no longer boost Bloodthirsty Blade.
+-PhD Degree Diploma is now a consumable other than inventory item.
+-Added new pet. Summoned by Cracked Crown.
+Drops from any mob with 1:33333 chance.
+-Added some Holoprojectors to Operator's EGO shop.
+They work as fake biome if placed. Not allows to spawn certain biome mobs, but may be useful for trading with NPCs or summoning bosses.
+-Added Prince's Magic Wand. Final upgrade for Magic Wand. Deals even more damage, has right click function.
+Suppose to be post DoG weapon. May be considered as OP if use it without Calamity mod.
+-Added Overloaded Rick's Portal Gun. Post Providence/Ragnarok upgrade. Fires more rapidly and deals more damage.
+-Added new Calamity mod potions to Brewer.
+-Added souls of Fear, Power and Vision. Available in hardmode.
+-Added Godhead (works as combo of those souls). Available in hardmode.
+-Added recipes for Purification Powder and Hallowed Seeds.
+-Added more support for Ancients Awakened.
+-Buffed some of the Legendaries pre Moon Lord.
+-Rebalanced some prices in Operator's shops.
+-Reworked some EGO weapons.
+-Operator now sells essences after beating respective Calamity boss or after beating Plantera.
+-Symbiote no longer affects weapons with usetime 3 or lower.
+-Some more Chinese translation from ZHAY10086.
+-Some new sprites by CC#1547.
 v8.4
 -Added new town NPC, Tinkerer. Sells different accessories after unlocking.
 Available after beating Eye of Cthulhu.

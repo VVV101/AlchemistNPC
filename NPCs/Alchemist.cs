@@ -2,6 +2,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Utilities;
 using Terraria.Localization;
  
@@ -27,7 +28,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Alchemist";
-			return Config.AlchemistSpawn;
+			return AlchemistNPC.modConfiguration.AlchemistSpawn;
 		}
 		
 		public override void SetStaticDefaults()
@@ -51,6 +52,7 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("GetCharm");
             text.SetDefault("Get Charm");
             text.AddTranslation(GameCulture.Russian, "Получить талисман");
+			text.AddTranslation(GameCulture.Chinese, "获得符咒");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Edward");
             text.SetDefault("Edward");
@@ -94,7 +96,7 @@ namespace AlchemistNPC.NPCs
             text = mod.CreateTranslation("EntryA4");
             text.SetDefault("There's a legendary yoyo known as the Sasscade.");
             text.AddTranslation(GameCulture.Russian, "Существует Легендарное Йо-йо, известное как Сасскад.");
-            text.AddTranslation(GameCulture.Chinese, "有一个传说中的溜溜球被称为Sasscade.");
+            text.AddTranslation(GameCulture.Chinese, "有一个传说中的悠悠球被称为萨斯卡德.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryA5");
             text.SetDefault("The Strange Brew I bought from the Skeleton Merchant smells awful, but its Mana Restoration effect is awesome!");
@@ -199,15 +201,18 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("EntryA25");
             text.SetDefault("Don't let the dark one that came from the Jungle fool you with charming wisdom. Me and ");
             text.AddTranslation(GameCulture.Russian, "Не позволяй тёмному, пришедшему из Джунглей, одурачить тебя чарующей мудростью. Я и ");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "不要让来自丛林的黑暗法师用魅惑的智慧欺骗你。我和");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryA26");
             text.SetDefault(" were once his apprentices. I quit when his lessons turned too dark but ");
             text.AddTranslation(GameCulture.Russian, " однажды были его ассистентами. Я ушёл, когда его уроки стали слишком тёмными, но интерес ");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "曾经是他的学徒。当他的课程变得过于黑暗时我退出了，但是");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryA27");
             text.SetDefault(" interest in occult Alchemy did nothing but grow.");
-            text.AddTranslation(GameCulture.Russian, " в оккультной алхимии только вырос.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Russian, " к оккультной алхимии только вырос.");
+            text.AddTranslation(GameCulture.Chinese, "对神秘学炼金术的兴趣却在不断增长");
+	    mod.AddTranslation(text);
             text = mod.CreateTranslation("BrewElixir");
             text.SetDefault("Brew Life Elixir");
             text.AddTranslation(GameCulture.Chinese, "炼制仙丹");
@@ -240,7 +245,7 @@ namespace AlchemistNPC.NPCs
 		
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss1 && Config.AlchemistSpawn)
+			if (NPC.downedBoss1 && AlchemistNPC.modConfiguration.AlchemistSpawn)
 			{
 			return true;
 			}
@@ -383,7 +388,7 @@ namespace AlchemistNPC.NPCs
 			{
 				return EntryA15 + Main.npc[Brewer].GivenName + EntryA16;
 			}
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				int Alch = NPC.FindFirstNPC(ModLoader.GetMod("Tremor").NPCType("Alchemist"));
 				if (Alch >= 0 && Main.rand.Next(4) == 0)
@@ -391,14 +396,14 @@ namespace AlchemistNPC.NPCs
 				return EntryA12 + Main.npc[Alch].GivenName + EntryA13;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				if (NPC.downedBoss3 && Main.rand.Next(6) == 0)
 				{
 				return EntryA14;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
 				if (DA >= 0 && Main.rand.Next(7) == 0)
@@ -406,7 +411,7 @@ namespace AlchemistNPC.NPCs
 				return EntryA9 + Main.npc[DA].GivenName +  EntryA10;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
 				if (DA >= 0 && Brewer >=0 && Main.rand.Next(8) == 0)
@@ -414,7 +419,7 @@ namespace AlchemistNPC.NPCs
 				return EntryA11;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("Peculiarity") && Main.rand.Next(5) == 0)
+			if (ModLoader.GetMod("Peculiarity") != null && Main.rand.Next(5) == 0)
 			{
 			return EntryA8;
 			}
@@ -469,7 +474,7 @@ namespace AlchemistNPC.NPCs
 			button2 = BrewElixir;
 			}
 			
-			if (ModLoader.GetLoadedMods().Contains("Tremor") && (!PS || !AB))
+			if (ModLoader.GetMod("Tremor") != null && (!PS || !AB))
 			{
 			button2 = TremorShop;
 			}
@@ -501,7 +506,7 @@ namespace AlchemistNPC.NPCs
 				{
 					player.QuickSpawnItem(mod.ItemType("AlchemistCharmTier1"));
 				}
-				if (ModLoader.GetLoadedMods().Contains("Tremor") && (!PS || !AB))
+				if (ModLoader.GetMod("Tremor") != null && (!PS || !AB))
 				{
 				baseShop = false;
 				tremorShop = true;
@@ -532,15 +537,15 @@ namespace AlchemistNPC.NPCs
  
 		public bool CalamityModDownedGuardian
 		{
-		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
 		}
 		public bool CalamityModDownedPolter
 		{
-		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
 		public bool CalamityModDownedDOG
 		{
-		get { return CalamityMod.CalamityWorld.downedDoG; }
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
 		}
  
         public override void SetupShop(Chest shop, ref int nextSlot)
@@ -567,7 +572,7 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
 		}
-		if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+		if (ModLoader.GetMod("CalamityMod") != null)
 		{
 			if(CalamityModDownedGuardian && !CalamityModDownedDOG)
 			{
@@ -609,7 +614,7 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].shopCustomPrice = 7500;
 		nextSlot++;	
 		}
-		if (ModLoader.GetLoadedMods().Contains("imkSushisMod"))
+		if (ModLoader.GetMod("imkSushisMod") != null)
 		{
 		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
 		shop.item[nextSlot].shopCustomPrice = 2500;
@@ -629,6 +634,9 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeachTeleporterPotion"));
 		shop.item[nextSlot].shopCustomPrice = 20000;
 		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("JungleTeleporterPotion"));
+		shop.item[nextSlot].shopCustomPrice = 50000;
+		nextSlot++;
 		}
 		if (NPC.downedBoss3)
 		{
@@ -642,9 +650,6 @@ namespace AlchemistNPC.NPCs
 		if (Main.hardMode)
 		{
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("UnderworldTeleportationPotion"));
-		shop.item[nextSlot].shopCustomPrice = 50000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("JungleTeleporterPotion"));
 		shop.item[nextSlot].shopCustomPrice = 50000;
 		nextSlot++;
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BeaconTeleportator"));
@@ -689,7 +694,7 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].shopCustomPrice = 1000;
 			nextSlot++;
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				if (NPC.downedBoss2)
 						{
@@ -749,7 +754,7 @@ namespace AlchemistNPC.NPCs
 		}
 		if (tremorShop)
 		{
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BasicFlask"));
 				nextSlot++;

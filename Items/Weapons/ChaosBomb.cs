@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -38,6 +39,9 @@ namespace AlchemistNPC.Items.Weapons
 			
 			DisplayName.AddTranslation(GameCulture.Russian, "Хаотическая Бомба");
 			Tooltip.AddTranslation(GameCulture.Russian, "ХАОС! ХАОС!\nВзрывается при касании, производя случайный хаос");
+			DisplayName.AddTranslation(GameCulture.Chinese, "混沌爆弹");
+			Tooltip.AddTranslation(GameCulture.Chinese, "混·沌! 混·沌!"
+			+"\n接触时爆炸, 释放随机混沌");
         }
 	}
 }

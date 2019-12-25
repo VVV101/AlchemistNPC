@@ -1,4 +1,5 @@
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Placeable
@@ -10,6 +11,7 @@ namespace AlchemistNPC.Items.Placeable
 			DisplayName.SetDefault("Music Box (Deltarune OST - Lantern)");
 			Tooltip.SetDefault("By Toby Fox");
 			DisplayName.AddTranslation(GameCulture.Russian, "Музыкальная шкатулка (Deltarune OST - Lantern)");
+			DisplayName.AddTranslation(GameCulture.Chinese, "音乐盒 (Deltarune OST - Lantern)");
 		}
 
 		public override void SetDefaults()

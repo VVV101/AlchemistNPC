@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -21,9 +22,14 @@ namespace AlchemistNPC.Items
 			DisplayName.SetDefault("Potion of Darkness");
 			Tooltip.SetDefault("Fills Rage meter and causes Heart Attack"
 			+"\nInflicts Heart Ache debuff for 5 minutes"
+			+"\nCannot be used if any boss is alive"
 			+"\nNON-CALAMITY POTION");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Тьмы");
-            Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nВызывает Сердечную Боль на на 5 минут\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
+            Tooltip.AddTranslation(GameCulture.Russian, "Заполняет счётчик Ярости и вызывает Сердечный Приступ\nВызывает Сердечную Боль на на 5 минут\nНе может быть использовано, если жив любой босс\nЗЕЛЬЕ НЕ ИЗ КАЛАМИТИ МОДА");
+			DisplayName.AddTranslation(GameCulture.Chinese, "黑暗药剂");
+			Tooltip.AddTranslation(GameCulture.Chinese, "装填愤怒槽, 造成心脏衰竭"
+			+"\n获得5分钟的心脏衰竭效果"
+			+"\n非灾厄药剂");
         }    
 
 		public override void SetDefaults()
@@ -33,7 +39,7 @@ namespace AlchemistNPC.Items
             item.useTurn = true;
             item.useAnimation = 17;
             item.useTime = 17;
-            item.maxStack = 99;
+            item.maxStack = 30;
             item.consumable = true;
             item.width = 20;
             item.height = 30;
@@ -45,11 +51,19 @@ namespace AlchemistNPC.Items
 		
 		public bool CalamityModRevengeance
 		{
-			get { return CalamityMod.CalamityWorld.revenge; }
+			get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		public override bool CanUseItem(Player player)
 		{
+			for (int v = 0; v < 200; ++v)
+			{
+				NPC npc = Main.npc[v];
+				if (npc.active && npc.boss)
+				{
+					return false;
+				}
+			}
 			if (CalamityModRevengeance && !player.HasBuff(mod.BuffType("HeartAche")))
 			{
 				return true;
@@ -61,7 +75,7 @@ namespace AlchemistNPC.Items
 		
 		public override bool UseItem(Player player)
 		{
-			CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.stress = 10000;
 			player.AddBuff(ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"), 18000, true);
 			return true;

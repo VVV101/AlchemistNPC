@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 
@@ -18,6 +19,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Символ Боли");
 			Description.AddTranslation(GameCulture.Russian, "Ослабляет противников");
+            DisplayName.AddTranslation(GameCulture.Chinese, "痛苦法印");
+            Description.AddTranslation(GameCulture.Chinese, "虚弱敌人");
         }
 	}
 }

@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Placeable
@@ -15,7 +16,7 @@ namespace AlchemistNPC.Items.Placeable
             Tooltip.AddTranslation(GameCulture.Russian, "Необходимо для создания Э.П.О.С экипировки\nСчитается за стол, стул и источник света");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "世界之翼");
-            Tooltip.AddTranslation(GameCulture.Chinese, "用来制作EGO装备.");
+            Tooltip.AddTranslation(GameCulture.Chinese, "用来制作EGO装备\n可视为桌子, 椅子和光源");
         }
 
 		public override void SetDefaults()

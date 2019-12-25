@@ -4,6 +4,8 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Terraria.Localization;
 using Terraria.ObjectData;
 
 namespace AlchemistNPC.Tiles
@@ -21,6 +23,7 @@ namespace AlchemistNPC.Tiles
 			TileObjectData.addTile(Type);
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Molecular Replicator");
+			name.AddTranslation(GameCulture.Chinese, "分子复制器");
 			AddMapEntry(new Color(190, 230, 190), name);
 			dustType = 11;
 			disableSmartCursor = true;
@@ -66,7 +69,7 @@ namespace AlchemistNPC.Tiles
 		
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 48, mod.ItemType<Items.Placeable.MolecularReplicator>());
+			Item.NewItem(i * 16, j * 16, 32, 48, ItemType<Items.Placeable.MolecularReplicator>());
 		}
 	}
 }

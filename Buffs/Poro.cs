@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -15,7 +16,7 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Поро");
             Description.AddTranslation(GameCulture.Russian, "Это существо было запечатано в амулете.\nДостойное тех, кто может освободить его.");
             DisplayName.AddTranslation(GameCulture.Chinese, "魄罗");
-            Description.AddTranslation(GameCulture.Chinese, "这个生物被封印在这个护身符里\n这是那些能够释放出它的人应得的");
+            Description.AddTranslation(GameCulture.Chinese, "这个生物被封印在这个护身符里\n只有高尚之人才能释放它, 恢复其原有的荣光.");
         }
 
 		public override void Update(Player player, ref int buffIndex)

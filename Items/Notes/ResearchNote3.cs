@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Notes
@@ -23,7 +24,7 @@ namespace AlchemistNPC.Items.Notes
 			DisplayName.AddTranslation(GameCulture.Russian, "Запись исследования №3");
             Tooltip.AddTranslation(GameCulture.Russian, "'В моих межизмеренческих странствиях я однажды встретила учёного, которого звали [c/00FF00:Стэнфорд].\nОн попросил помощи в создании оружия, способного повредить даже богоподобному созданию.\nУ нас ушло полгода на создание [c/00FF00:Прототипа №618] или [c/00FF00:'Квантового Дестабилизатора'].\nВ качестве основы подойдёт любой [c/00FF00:Заряжаемый Бластер].\nЛинза из [c/00FF00:Теплового Луча] будет здесь в самый раз.\nНекоторые части должны быть изготовлены из Люминита и Небесных Фрагментов...\nКак обычно, здесь необходим [c/00FF00:Алхимический набор].\nКак особо точное оружие, прототип №618 также требует наличие [c/00FF00:Снайперского Прицела].\nНо главной проблемой является Источник Питания. Энергия не берётся из ничего...\nНу, за некоторую сумму я могу изготовить для него особые [c/00FF00:Энергоячейки].'");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "研究笔记#3");
+            DisplayName.AddTranslation(GameCulture.Chinese, "研究笔记 #3");
             Tooltip.AddTranslation(GameCulture.Chinese, "'在次元旅行中我遇见过一个科学家, 名字叫做 [c/00FF00:斯坦福] ." +
                 "\n他想让我帮他制作武器, 一种甚至可以伤害到神灵的武器." +
                 "\n我们花了大半年来制作 [c/00FF00:蓝图 #618] 亦称 [c/00FF00:'量子干扰器']..." +

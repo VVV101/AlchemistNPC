@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Notes
@@ -24,7 +25,7 @@ namespace AlchemistNPC.Items.Notes
 			DisplayName.AddTranslation(GameCulture.Russian, "Запись исследования №5");
             Tooltip.AddTranslation(GameCulture.Russian, "'Достаточно давно, я встретила одного полудемона, которого звали Данте.\nОн могущественный охотник на демонов и использует... интересные приспособления в битвах.\nВ особенности, я была заинтригована одним из оружий дальнего боя, Пандорой.\nСогласно легенде, она имеет 666 различных форм, при этом являясь техническим устройством.\nПосле некоторых исследований, я была уверена, что смогу изготовить копию.\nК сожалению, сделанный мной прототип оказался способен лишь к 1 трансформации, PF422.\nЭто Отчаяние, острый Сюрикен, который, будучи направленным на цель, изрежет её до смерти.\nЯ использовала металл с [c/00FF00:Пушки Пираньи] в качестве основы.\n[c/00FF00:Флакон Радуги] использовался для обработки корпуса.\nНекоторые части были изготовлены с помощью содержимого [c/00FF00:Алхимического Набора].\nА последний ингредиент - [c/00FF00:Лунный Камень].'");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "研究笔记#5");
+            DisplayName.AddTranslation(GameCulture.Chinese, "研究笔记 #5");
             Tooltip.AddTranslation(GameCulture.Chinese, "'很久以前, 我见过一个半恶魔, 叫 [c/00FF00:但丁]."
             + "\n他是一个强大的恶魔猎人. 在战斗中他使用一些... 十分有趣的物品."
             + "\n尤其是, 我对他的一个远程武器十分好奇, 它叫 [c/00FF00:潘多拉]."

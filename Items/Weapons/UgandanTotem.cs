@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -18,6 +19,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nMax minions slots multiply summon's damage");
 			DisplayName.AddTranslation(GameCulture.Russian, "Тотем Уганды");
             Tooltip.AddTranslation(GameCulture.Russian, "Призывает Воина Уганды для уничтожения ваших врагов\nНельзя призвать более одного\nМаксимальное количество прислужников увеличивает урон");
+			DisplayName.AddTranslation(GameCulture.Chinese, "乌干达图腾");
+			Tooltip.AddTranslation(GameCulture.Chinese, "召唤乌干达战士保护你"
+			+"\n最多召唤1个"
+			+"\n召唤物伤害与最大召唤栏数量成正比");
         }
 		
 		public override void SetDefaults()

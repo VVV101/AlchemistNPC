@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.GameContent.Achievements;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Misc
@@ -15,6 +16,8 @@ namespace AlchemistNPC.Items.Misc
 			Tooltip.SetDefault("Makes you permanently Well Fed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Манна Небесная");
 			Tooltip.AddTranslation(GameCulture.Russian, "Делает вас постоянно сытым");
+			DisplayName.AddTranslation(GameCulture.Chinese, "天赐食粮");
+			Tooltip.AddTranslation(GameCulture.Chinese, "使你获得永久的'吃饱喝足'效果");
 
         }
 

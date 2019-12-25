@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC;
 
@@ -29,7 +30,7 @@ namespace AlchemistNPC.Items.Equippable
             Tooltip.AddTranslation(GameCulture.Russian, "''Сильные должны охотиться на слабых - таков закон природы! И моё слово - закон!''\nДаёт все эффекты Снаряжения Мастера Ниндзя\nПозволяет прыгать выше\nПозволяет прыгать 3 раза\nДополнительные прыжки можно отключить с помощью изменения видимости аксессуара\nУменьшает получаемый урон на 10%\nПовышает урон и шанс критической атаки оружия ближнего/метательного боя на 15%\nБлижние и метательные атаки разрушают броню противника (может не работать с некоторым оружием)\nЭффект разрушения брони распространяется на все игроков\nМетательные атаки проходят сквозь блоки");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "巴斯特卷轴");
-            Tooltip.AddTranslation(GameCulture.Chinese, "'强者猎杀弱者——那就是自然规律! 而我遵循规律!'\n给予忍者大师的效果\n让你跳的更高\n允许三段跳\n隐藏饰品可关闭三段跳\n增加10%伤害免疫\n增加15%近战/投掷伤害和暴击\n攻击完全穿透敌人的护甲\n穿甲效果在多人适用于所有玩家\n投掷物可穿越方块");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'强者猎杀弱者——那就是自然规律! 而我遵循规律!'\n给予忍者大师的效果\n让你跳的更高\n允许三段跳\n隐藏饰品可关闭三段跳\n增加10%伤害减免\n增加15%近战/投掷伤害和暴击\n攻击摧毁敌人护甲 (可能不适用于某些武器)\n穿甲效果在多人适用于所有玩家\n投掷物可穿越方块");
         }
 	
 		public override void SetDefaults()
@@ -44,7 +45,7 @@ namespace AlchemistNPC.Items.Equippable
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.AddBuff(mod.BuffType("BastScroll"), 60);
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).Scroll = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().Scroll = true;
 			player.endurance += 0.1f;
 			player.statDefense += 5;
 			player.thrownDamage += 0.15f;
@@ -61,7 +62,7 @@ namespace AlchemistNPC.Items.Equippable
             player.doubleJumpSandstorm = true;
             player.doubleJumpBlizzard = true;
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -69,7 +70,7 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.throwingDamage += 0.15f;
             CalamityPlayer.throwingCrit += 15;
         }

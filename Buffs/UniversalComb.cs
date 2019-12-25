@@ -1,14 +1,9 @@
 using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
 using Terraria.Localization;
@@ -31,22 +26,20 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.thrownDamage += 0.1f;
-            player.meleeDamage += 0.1f;
-            player.rangedDamage += 0.1f;
-            player.magicDamage += 0.35f;
-            player.minionDamage += 0.1f;
-			player.meleeCrit += 10;
-            player.rangedCrit += 10;
-            player.magicCrit += 12;
-            player.thrownCrit += 10;
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+			modPlayer.AllDamage10 = true;
+			modPlayer.AllCrit10 = true;
+			modPlayer.Defense8 = true;
+			modPlayer.DR10 = true;
+			modPlayer.Regeneration = true;
+			modPlayer.Lifeforce = true;
+			player.magicDamage += 0.25f;
+            player.magicCrit += 2;
 			player.statManaMax2 += 20;
             player.manaCost -= 0.02f;
 			player.manaRegenBuff = true;
-			player.statDefense += 8;
 			player.archery = true;
 			player.ammoPotion = true;
-			player.lifeRegen += 4;
 			player.lavaImmune = true;
             player.fireWalk = true;
             player.buffImmune[24] = true;
@@ -69,59 +62,30 @@ namespace AlchemistNPC.Buffs
 			player.buffImmune[mod.BuffType("RangerComb")] = true;
 			player.buffImmune[mod.BuffType("MageComb")] = true;
 			player.buffImmune[mod.BuffType("SummonerComb")] = true;
-			player.buffImmune[mod.BuffType("LongInvincible")] = true;
-			player.buffImmune[mod.BuffType("TitanSkin")] = true;
 			player.buffImmune[1] = true;
 			player.buffImmune[2] = true;
 			player.buffImmune[5] = true;
 			player.buffImmune[6] = true;
 			player.buffImmune[7] = true;
-			player.buffImmune[13] = true;
 			player.buffImmune[14] = true;
-			player.endurance += 0.1f;
-			player.lifeForce = true;
-            player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
 			++player.maxMinions;
 			++player.maxMinions;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("MorePotions") != null)
+			{
+				if (player.HasBuff(mod.BuffType("MorePotionsComb")) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("SoulbindingElixerPotionBuff")))
 				{
-				ThoriumBoosts(player);
+					--player.maxMinions;
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (player.HasBuff(mod.BuffType("MorePotionsComb")) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("DiamondSkinPotionBuff")))
 				{
-				RedemptionBoost(player);
+					player.statDefense -= 8;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-				{
-				CalamityBoost(player);
-				}
+			}
+			if (player.thorns < 1.0)
+			{
+				player.thorns = 0.3333333f;
+			}
+			BuffLoader.Update(BuffID.ObsidianSkin, player, ref buffIndex);
 		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
-			CalamityPlayer.throwingDamage += 0.1f;
-            CalamityPlayer.throwingCrit += 10;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		
-		private void RedemptionBoost(Player player)
-        {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.1f;
-            RedemptionPlayer.druidCrit += 10;
-        }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
-		
-		private void ThoriumBoosts(Player player)
-        {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.1f;
-            ThoriumPlayer.symphonicCrit += 10;
-			ThoriumPlayer.radiantBoost += 0.1f;
-            ThoriumPlayer.radiantCrit += 10;
-        }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC;
 
@@ -16,9 +17,14 @@ namespace AlchemistNPC.Items.Misc
 			DisplayName.SetDefault("Alchemist Charm Tier 3");
 			Tooltip.SetDefault("While this is in your inventory, you have a high chance not to consume potion"
 			+"\nAllows to use potions from Piggy Bank by Quick Buff"
-			+"\nAlchemist, Brewer and Young Brewer are providing 35% discount");
+			+"\nAlchemist, Brewer and Young Brewer are providing 35% discount"
+			+"\nBuffs duration is 35% longer");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Третьего Уровня");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 35%");
+            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 35%\nДлительность баффов увеличена на 35%");
+			DisplayName.AddTranslation(GameCulture.Chinese, "炼金师符咒 T-3");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置物品栏中时, 大概率不消耗药剂"
+			+"\n'快速增益'键能够使用猪猪储蓄罐中的药剂"
+			+"\n炼金师, 药剂师和年轻药剂师提供35%折扣");
         }
 
 		public override void SetDefaults()

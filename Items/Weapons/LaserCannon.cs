@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -17,6 +18,9 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nDoes not require ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Лазерная Пушка");
             Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает самонаводящиеся взрывающиеся энергетические шары\nНе требует патронов");
+			DisplayName.AddTranslation(GameCulture.Chinese, "激光炮");
+			Tooltip.AddTranslation(GameCulture.Chinese, "发射追踪的爆炸能量球"
+			+"\n不消耗弹药");
         }
 
 		public override void SetDefaults()

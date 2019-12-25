@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Misc
@@ -22,6 +23,8 @@ namespace AlchemistNPC.Items.Misc
 			+"\nPerfect for filling Rage Meter");
 			DisplayName.AddTranslation(GameCulture.Russian, "Поглотитель");
             Tooltip.AddTranslation(GameCulture.Russian, "Поглощает 1/4 ХП при применении, пополняет 1/4 Счетчика Ярости\nИдеален для заполнения шкалы Ярости");
+			DisplayName.AddTranslation(GameCulture.Chinese, "吸收器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "使用时吸收1/4生命值, 填装1/4怒气值\n非常适合用来填满怒气条");
         }    
 		public override void SetDefaults()
 		{
@@ -38,7 +41,7 @@ namespace AlchemistNPC.Items.Misc
 
 		public override bool UseItem(Player player)
 		{
-		CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
+		CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			for (int h = 0; h < 1; h++) {
 			Vector2 vel = new Vector2(0, -1);
 			vel *= 0f;

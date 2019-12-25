@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Terraria.Localization;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
 using System;
@@ -35,7 +37,17 @@ namespace AlchemistNPC.Interface
 			Texture2D Yes = mod.GetTexture("Interface/Yes");
 			Texture2D No = mod.GetTexture("Interface/No");
 
-			UIText text = new UIText("Would you pay the doctor's fee?");
+			string UItext;
+			if(Language.ActiveCulture == GameCulture.Chinese)
+			{
+				UItext = "你要付医疗费吗?";
+			}
+			else
+			{
+				UItext = "Would you pay the doctor's fee?";
+			}
+			
+			UIText text = new UIText(UItext);
 			text.Left.Set(10, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(60, 0f);
@@ -107,12 +119,26 @@ namespace AlchemistNPC.Interface
 					Main.PlaySound(SoundID.Item4, -1, -1);
 					Main.player[Main.myPlayer].HealEffect(Main.player[Main.myPlayer].statLifeMax2 - Main.player[Main.myPlayer].statLife, true);
 					Main.player[Main.myPlayer].statLife = Main.player[Main.myPlayer].statLifeMax2;
-					Main.NewText("[c/00FF00:Nurse]: Done. Have a good day!", 0, 0, 0);
+					if(Language.ActiveCulture == GameCulture.Chinese)
+					{
+						Main.NewText("[c/00FF00:护士]: 好了. 祝您今天愉快!", 0, 0, 0);
+					}
+					else
+					{
+						Main.NewText("[c/00FF00:Nurse]: Done. Have a good day!", 0, 0, 0);
+					}
 				}
 				else
 				{
 					Main.PlaySound(SoundID.Item16, -1, -1);
-					Main.NewText("[c/00FF00:Nurse]: You cannot afford to pay the fee!", 0, 0, 0);
+					if(Language.ActiveCulture == GameCulture.Chinese)
+					{
+						Main.NewText("[c/00FF00:护士]: 你付不起医疗费!", 0, 0, 0);
+					}
+					else
+					{
+						Main.NewText("[c/00FF00:Nurse]: You cannot afford to pay the fee!", 0, 0, 0);
+					}
 				}
 			}
 			HealingUI.visible = false;

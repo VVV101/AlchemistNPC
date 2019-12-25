@@ -2,6 +2,7 @@ using Terraria.Localization;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Microsoft.Xna.Framework;
 
 namespace AlchemistNPC.Items.Summoning
@@ -15,6 +16,8 @@ namespace AlchemistNPC.Items.Summoning
 			+"\nUse with the extreme care");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пугающий Череп");
             Tooltip.AddTranslation(GameCulture.Russian, "Призывает могущественного противника\nИспользовать с крайней осторожностью");
+			DisplayName.AddTranslation(GameCulture.Chinese, "可怖头骨");
+			Tooltip.AddTranslation(GameCulture.Chinese, "召唤最强大的敌人\n使用时极端注意");
 		}
 
 		public override void SetDefaults()

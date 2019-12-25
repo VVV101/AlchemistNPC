@@ -3,6 +3,7 @@ using Terraria;
 using System.Linq;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -22,7 +23,12 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "'Оружие преисподней, имеющее 666 различных форм'\nВерсия с разблокированным потенциалом\nБазовая форма 422: Запускает бритвенно-острый сюрикен, цепляющийся за противников\nПри наборе полной шкалы Бедствия вы можете сменить форму Пандоры\nНажмите правую кнопку мыши для смены формы");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉");
-            Tooltip.AddTranslation(GameCulture.Chinese, "'来自地狱的武器, 有666种不同的形式 (外国666代表撒旦)'\n遗憾的是, 作为原型, 只能呈现一种形式");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'来自地狱的武器, 有666种不同的形态'"
+			+"\n修复了的潘多拉, 解锁了破坏潜力"
+			+"\n基础形态 422: 发射锋利的手里剑, 能粘在敌人身上"
+			+"\n攻击装填灾厄槽"
+			+"\n灾厄槽集满时能够切换武器形态"
+			+"\n右键切换形态");
         }
 
 		public override void SetDefaults()
@@ -87,12 +93,12 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "PandoraPF422");
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 10);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 10);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);

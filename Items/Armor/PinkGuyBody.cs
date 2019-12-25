@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Armor
@@ -15,7 +16,7 @@ namespace AlchemistNPC.Items.Armor
             Tooltip.AddTranslation(GameCulture.Russian, "Скован из темнейших материалов. Лишь лучшие из лучших могут носить его.");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "Pink Guy的衣服");
-            Tooltip.AddTranslation(GameCulture.Chinese, "用最黑暗的材料锻造而出, 只有最棒最牛的人可以穿上它.\n温馨提示：想简单了解Pink Guy, 可以去B站搜索“粉红人的精♂彩时刻”");
+            Tooltip.AddTranslation(GameCulture.Chinese, "用最黑暗的材料锻造而出, 只有最棒最牛的人可以穿上它.\n温馨提示：想简单了解Pink Guy, 可以去B站搜索'Pink Guy'");
         }
 
 		public override void SetDefaults()

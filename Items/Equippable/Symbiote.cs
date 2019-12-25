@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Equippable
@@ -23,6 +24,8 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nActivates while you have < 50% of HP");
 				DisplayName.AddTranslation(GameCulture.Russian, "Симбиот");
             Tooltip.AddTranslation(GameCulture.Russian, "Усиливает регенерацию\nУменьшает откат зелий лечения\nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 10% ко всем шансам критического удара\nИмеет 2 состояния (Боевое и Защитное)\nБоевое состояние увеличивает скорость ближнего боя на 20%\nАктивируется когда здоровье >50%\nЗащитное состояние сильно усиливает регенерацию, повышает защиту и поглощение урона\nАктивируется когда здоровье <50%");
+			DisplayName.AddTranslation(GameCulture.Chinese, "共生体");
+			Tooltip.AddTranslation(GameCulture.Chinese, "增加10%所有伤害和暴击率\n减少生命药水冷却时间\n增加受伤无敌帧\n拥有两种模式 (攻击/防御)\n攻击模式下增加20%攻击速度\n生命值高于50%时激活\n防御模式下极大增加生命回复, 防御和伤害减免\n生命值低于50%时激活");
         }
 	
 		public override void SetDefaults()
@@ -53,25 +56,21 @@ namespace AlchemistNPC.Items.Equippable
 			player.endurance += 0.15f;
 			player.AddBuff(mod.BuffType("SymbDef"), 2, true);
 			}
-			player.thrownDamage += 0.1f;
-            player.meleeDamage += 0.1f;
-            player.rangedDamage += 0.1f;
-            player.magicDamage += 0.1f;
-            player.minionDamage += 0.1f;
+			player.allDamage += 0.1f;
 			player.meleeCrit += 10;
             player.rangedCrit += 10;
             player.magicCrit += 10;
             player.thrownCrit += 10;
 			player.longInvince = true;
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -79,30 +78,22 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
-			CalamityPlayer.throwingDamage += 0.1f;
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             CalamityPlayer.throwingCrit += 10;
         }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.1f;
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 10;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.1f;
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 10;
-			ThoriumPlayer.radiantBoost += 0.1f;
             ThoriumPlayer.radiantCrit += 10;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 		
 		
 	public override void AddRecipes()
@@ -112,24 +103,24 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(null, "ChromaticCrystal", 10);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 10);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 10);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 15);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy")), 15);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 50);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 5);
 			}
 			recipe.AddIngredient(null, "EmagledFragmentation", 250);
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 			recipe.AddTile(null, "MateriaTransmutator");
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddTile(null, "MateriaTransmutatorMK2");
 			}

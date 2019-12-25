@@ -4,8 +4,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
+using Terraria.Localization;
 using System;
 using Terraria.ID;
 using System.Linq;
@@ -31,23 +33,35 @@ namespace AlchemistNPC.Interface
 			TinkererShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
 			TinkererShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			UIText text = new UIText("Movement/Misc");
+			string TinkererShops1; 
+			string TinkererShops2;
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					TinkererShops1 = "移动/其他饰品";
+					TinkererShops2 = "战斗";
+				}
+			else
+				{
+					TinkererShops1 = "Movement/Misc";
+					TinkererShops2 = "Combat";
+				}
+			
+			UIText text = new UIText(TinkererShops1);
 			text.Left.Set(35, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(90, 0f);
 			text.Height.Set(22, 0f);
-			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			TinkererShopsPanel.Append(text);
 			
-			UIText text2 = new UIText("Combat");
+			UIText text2 = new UIText(TinkererShops2);
 			text2.Left.Set(35, 0f);
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(50, 0f);
 			text2.Height.Set(22, 0f);
-			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			TinkererShopsPanel.Append(text2);
 			
-			Texture2D buttonPlayTexture = ModLoader.GetTexture("Terraria/UI/ButtonPlay");
+			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
 			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
 			playButton.Left.Set(10, 0f);
 			playButton.Top.Set(10, 0f);
@@ -63,7 +77,7 @@ namespace AlchemistNPC.Interface
 			playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
 			TinkererShopsPanel.Append(playButton2);
 
-			Texture2D buttonDeleteTexture = ModLoader.GetTexture("Terraria/UI/ButtonDelete");
+			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
 			closeButton.Left.Set(170, 0f);
 			closeButton.Top.Set(10, 0f);

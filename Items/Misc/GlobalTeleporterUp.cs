@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC;
 
@@ -34,6 +35,16 @@ In the name of the one buried in destiny,
 I shall make an oath to the light,
 that we will show those who
 stand in front of us - the power of love!''");
+			DisplayName.AddTranslation(GameCulture.Chinese, "改良世界传送装置");
+			Tooltip.AddTranslation(GameCulture.Chinese, @"将你传送到地图的任意位置
+在全屏地图界面点击右键传送
+Boss存活时无法使用
+使用后不会破坏
+''噢, 蔚蓝的正义, 深红的爱,
+为了被命运吞没的人而战
+我向光明宣誓
+邪恶的坏蛋不能阻挡我们
+爱之力量守护我们!''");
         }
 
 		public override void SetDefaults()

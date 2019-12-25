@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using System.Linq;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 
@@ -19,18 +20,20 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Проклятие Света");
 			Description.AddTranslation(GameCulture.Russian, "Ослабляет противника");
+            DisplayName.AddTranslation(GameCulture.Chinese, "诅咒之光");
+            Description.AddTranslation(GameCulture.Chinese, "虚弱敌人");
         }
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (npc.type != 222 && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerShade")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlagueBeeLargeG")))
 				{	
 				npc.velocity *= 0.99f;
 				}
 			}
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 				if (npc.type != 222)
 				{	

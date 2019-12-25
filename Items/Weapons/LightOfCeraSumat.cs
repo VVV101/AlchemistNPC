@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using Terraria.Utilities;
 
@@ -22,6 +23,14 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nBoosted stats will be shown after the first swing");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Свет Сера Сумат''");
             Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарный Меч] Старого Графа Эхлда\nОслабляет противников при ударе\nОслабленные противники получают на 20% больше урона\n25% шанс получить половину урона от ослабленных противников\n[c/00FF00:Показатели увеличивается по мере пост Мунлордного прохождения]");
+			DisplayName.AddTranslation(GameCulture.Chinese, "''塞拉苏门之光''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "老公爵埃尔德的[c/00FF00:传奇之剑]"
+			+"\n纯近战剑"
+			+"\n造成诅咒之光Debuff"
+			+"\n来自玩家的攻击对敌人多造成20%伤害"
+			+"\n来自带有诅咒之光Debuff敌人的攻击有25%概率只造成一半伤害"
+			+"\n[c/00FF00:属性随进程成长]"
+			+"\n提升过后的属性将会在使用后显示");
 
 		}
 
@@ -44,41 +53,41 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool CanUseItem(Player player)
 		{
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModDownedGuardian)
 				{
 					item.damage = 120;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				if (ThoriumModDownedRagnarok)
 				{
-					item.damage = 125;
+					item.damage = 150;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModDownedProvidence)
 				{
-					item.damage = 130;
+					item.damage = 150;
 				}
 				if (CalamityModDownedPolter)
 				{
-					item.damage = 150;
+					item.damage = 222;
 				}
 				if (CalamityModDownedDOG)
 				{
-					item.damage = 200;
+					item.damage = 300;
 				}
 				if (CalamityModDownedYharon)
 				{
-					item.damage = 300;
+					item.damage = 400;
 				}
 				if (CalamityModDownedSCal)
 				{
-					item.damage = 400;
+					item.damage = 500;
 				}
 			}
 			return true;
@@ -118,31 +127,31 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public bool CalamityModDownedGuardian
 		{
-		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
 		}
 		public bool CalamityModDownedBirb
 		{
-		get { return CalamityMod.CalamityWorld.downedBumble; }
+		get { return CalamityMod.World.CalamityWorld.downedBumble; }
 		}
 		public bool CalamityModDownedPolter
 		{
-		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
 		public bool CalamityModDownedDOG
 		{
-		get { return CalamityMod.CalamityWorld.downedDoG; }
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
 		}
 		public bool CalamityModDownedYharon
 		{
-		get { return CalamityMod.CalamityWorld.downedYharon; }
+		get { return CalamityMod.World.CalamityWorld.downedYharon; }
 		}
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		public bool CalamityModDownedProvidence
         {
-        get { return CalamityMod.CalamityWorld.downedProvidence; }
+        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
         }
         public bool ThoriumModDownedRagnarok
         {

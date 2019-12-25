@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -22,6 +23,13 @@ namespace AlchemistNPC.Items
 			+"\nExhausts player for 1 minute after ending of effect, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Глаза Палача''");
             Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Глаза Палача''\nКогда применён, повышает урон игрока на 15%, увеличивает шанс крита на 5%\nТакже позволяет вашим критам критовать с 5% шансом, нанося вдвое больше урона\nИстощает игрока на 1 минуту после окончания действия, не позволяя ему использовать магию");
+			DisplayName.AddTranslation(GameCulture.Chinese, "卷轴 ''行刑者之眼''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "一次性物品"
+			+"\n包含着 ''行刑者之眼''法术"
+			+"\n使用时, 1分钟内伤害增加15%"
+			+"\n同样增加5%暴击率"
+			+"\n暴击有5%概率再次暴击, 造成4倍伤害"
+			+"\n使玩家精疲力尽1分钟, 期间无法使用魔法");
         }
 		
 		public override void SetDefaults()

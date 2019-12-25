@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -17,6 +18,8 @@ namespace AlchemistNPC.Items
 			Tooltip.SetDefault("Makes you Happy");
 			DisplayName.AddTranslation(GameCulture.Russian, "Допамин");
             Tooltip.AddTranslation(GameCulture.Russian, "Делает вас счастливым");
+			DisplayName.AddTranslation(GameCulture.Chinese, "多巴胺");
+			Tooltip.AddTranslation(GameCulture.Chinese, "让你愉快");
         }    
 		public override void SetDefaults()
         {

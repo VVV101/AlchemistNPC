@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -14,7 +15,7 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.AddTranslation(GameCulture.Russian, "Кристальные стрелы");
 			Tooltip.AddTranslation(GameCulture.Russian, "Разрываются на осколки при попадании\nБесконечна");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "水晶尘之箭");
+            DisplayName.AddTranslation(GameCulture.Chinese, "晶尘箭 (无限)");
             Tooltip.AddTranslation(GameCulture.Chinese, "爆炸变成致命碎片\n无限");
         }
 

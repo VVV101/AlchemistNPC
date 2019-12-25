@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -17,6 +18,8 @@ namespace AlchemistNPC.Items
             Tooltip.SetDefault("Empoweres all traps");
             DisplayName.AddTranslation(GameCulture.Russian, "Зелье мастера ловушек");
             Tooltip.AddTranslation(GameCulture.Russian, "Усиливает все ловушки");
+			DisplayName.AddTranslation(GameCulture.Chinese, "布陷人药剂");
+			Tooltip.AddTranslation(GameCulture.Chinese, "增强所有陷阱");
         }    
 		public override void SetDefaults()
         {

@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Terraria.Localization;
 using System.Linq;
 
 namespace AlchemistNPC.Items.Equippable
@@ -13,6 +15,7 @@ namespace AlchemistNPC.Items.Equippable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Celestial Hook");
+			DisplayName.AddTranslation(GameCulture.Chinese, "天界钩");
 		}
 
 		public override void SetDefaults()
@@ -30,12 +33,12 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(null, "ChromaticCrystal", 5);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 5);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 10);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);

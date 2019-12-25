@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -14,11 +15,13 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Воин Уганды");
 			Description.AddTranslation(GameCulture.Russian, "ЗА КОРОЛЕВУ!");
+            DisplayName.AddTranslation(GameCulture.Chinese, "乌干达战士");
+            Description.AddTranslation(GameCulture.Chinese, "为了女王!");
         }
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.ownedProjectileCounts[mod.ProjectileType("UgandanWarrior")] > 0)
 			{
 				modPlayer.uw = true;

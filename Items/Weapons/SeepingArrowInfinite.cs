@@ -1,5 +1,6 @@
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -13,8 +14,8 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.AddTranslation(GameCulture.Russian, "Проникающая стрела");
 			Tooltip.AddTranslation(GameCulture.Russian, "Необычное использование Проклятого Материала\nБесконечна");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "炽焚箭");
-            Tooltip.AddTranslation(GameCulture.Chinese, "被诅咒材料的独特用法");
+            DisplayName.AddTranslation(GameCulture.Chinese, "炽焚箭 (无限)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "被诅咒材料的独特用法\n无限");
         }
 
 		public override void SetDefaults()

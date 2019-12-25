@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -19,7 +20,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Идеальное сочетание Комбинаций Танка, Мага, Стрелка и Призывателя в одном баффе");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "万能药剂包");
-            Tooltip.AddTranslation(GameCulture.Chinese, "完美结合了以下药剂包的buff：\n坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包.");
+            Tooltip.AddTranslation(GameCulture.Chinese, "完美结合了以下药剂包的Buff：\n坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包.");
         }    
 		public override void SetDefaults()
         {

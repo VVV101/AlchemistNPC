@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -25,8 +26,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Chinese, "允许使用快捷键传送到鼠标位置"
             + "\n传送后扭曲玩家一秒钟"
             + "\n混乱状态时使用会受到巨大的伤害"
-            + "\n混乱状态延长至10秒"
-            + "\n非灾厄Buff药剂");
+            + "\n混乱状态延长至10秒");
         }    
 		public override void SetDefaults()
         {
@@ -35,7 +35,7 @@ namespace AlchemistNPC.Items
             item.useTurn = true;
             item.useAnimation = 17;
             item.useTime = 17;
-            item.maxStack = 99;                 //this is where you set the max stack of item
+            item.maxStack = 30;                 //this is where you set the max stack of item
             item.consumable = true;           //this make that the item is consumable when used
             item.width = 18;
             item.height = 28;

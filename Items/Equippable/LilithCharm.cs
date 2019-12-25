@@ -5,6 +5,7 @@ using System.Linq;
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Equippable
@@ -26,6 +27,8 @@ namespace AlchemistNPC.Items.Equippable
 			+ "\nDoesn't work with some very specific weapons");
 			DisplayName.AddTranslation(GameCulture.Russian, "Оберег Лилит");
             Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает магический урон на 15% и шанс критического удара\nУменьшает затраты маны на 25%\nУвеличивает максимальную ману на 100\nЗначительно ускоряет восстановление маны\nУвеличивает радиус сбора звёзд\nАвтоматически использует зелья маны\nВы выстреливает кучку смертоносных пчёл при использовании любого магического оружия\nПчёлы имеют шанс полечить вас после удара по противнику\nСмена видимости аксессуара выключает пчёл\nПоследнее не работает с некоторым специфическим оружием");
+            DisplayName.AddTranslation(GameCulture.Chinese, "莉莉丝魔咒");
+            Tooltip.AddTranslation(GameCulture.Chinese, "增加15%魔法伤害和10%暴击率\n减少25%法力消耗\n增加100法力最大值\n极大增加法力回复\n增加法力星拾取范围\n自动使用魔力药水\n使用魔法武器时, 发射一群致命蜜蜂\n蜜蜂攻击敌人后小概率治愈玩家\n关闭饰品可见度来关闭蜜蜂\n不适用于某些武器");
         }
 	
 		public override void SetDefaults()
@@ -66,23 +69,23 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(null, "ChromaticCrystal", 4);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 4);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 4);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 10);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy")), 10);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 30);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
 			}
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 			recipe.AddTile(null, "MateriaTransmutator");
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddTile(null, "MateriaTransmutatorMK2");
 			}

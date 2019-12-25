@@ -9,6 +9,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
 using Terraria.Localization;
@@ -27,6 +28,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "Дебафф Плаща Страха");
 			Description.AddTranslation(GameCulture.Russian, "Заставляет обычных врагов около игрока менять направление движения");
+            DisplayName.AddTranslation(GameCulture.Chinese, "恐惧之袍Debuff");
+            Description.AddTranslation(GameCulture.Chinese, "使附近的非Boss敌人改变移动方向");
         }
 		
 		public override void Update(NPC npc, ref int buffIndex)

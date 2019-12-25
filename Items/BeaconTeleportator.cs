@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC.Tiles;
  
@@ -20,8 +21,8 @@ namespace AlchemistNPC.Items
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Маяку");
             Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас к Маяку\nНе телепортирует никуда, если Маяк не размещён");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "海滩传送药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至海滩处 (最左边或最右边的棕榈树附近)\n方向取决于鼠标按键\n如果没有棕榈树将无法工作");
+            DisplayName.AddTranslation(GameCulture.Chinese, "信标传送药剂");
+            Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至信标处\n没有放置信标无法工作");
         }    
 		public override void SetDefaults()
         {

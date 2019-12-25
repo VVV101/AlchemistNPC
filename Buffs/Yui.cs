@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -26,8 +27,8 @@ namespace AlchemistNPC.Buffs
 			player.nightVision = true;
 			player.detectCreature = true;
 			player.dangerSense = true;
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).Yui = true;
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).YuiS = false;
+			player.GetModPlayer<AlchemistNPCPlayer>().Yui = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().YuiS = false;
 			player.buffTime[buffIndex] = 18000;
 			bool petProjectileNotSpawned = player.ownedProjectileCounts[mod.ProjectileType("Yui")] <= 0;
 			if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)

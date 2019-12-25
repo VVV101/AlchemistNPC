@@ -1,16 +1,10 @@
-using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.IO;
+using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
-using Terraria.GameInput;
+using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -27,16 +21,18 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "Глаза Палача");
 			Description.AddTranslation(GameCulture.Russian, "Увеличивает урон на 15%, шанс критического удара на 5%, 5% шанс на нанесение критом четырёхкратного урона");
+            DisplayName.AddTranslation(GameCulture.Chinese, "行刑者之眼");
+            Description.AddTranslation(GameCulture.Chinese, "增加15%伤害,增加5%暴击率,暴击有5%概率造成4倍伤害");
         }
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModRevengeance)
 				{
@@ -53,7 +49,7 @@ namespace AlchemistNPC.Buffs
 					}
 				}
 			}
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 				if (player.buffTime[buffIndex] == 1) 
 				{ 
@@ -65,15 +61,15 @@ namespace AlchemistNPC.Buffs
             player.rangedCrit += 5;
             player.magicCrit += 5;
             player.thrownCrit += 5;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -81,21 +77,21 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             CalamityPlayer.throwingCrit += 5;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 5;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 5;
             ThoriumPlayer.radiantCrit += 5;
         }

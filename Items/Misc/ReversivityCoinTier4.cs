@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Misc
@@ -18,7 +19,7 @@ namespace AlchemistNPC.Items.Misc
             Tooltip.SetDefault("Can be used for buying Treasure Bags from Operator");
 			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки сумок у Оператора");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "4级逆转硬币");
+            DisplayName.AddTranslation(GameCulture.Chinese, "逆转硬币 T-4");
             Tooltip.AddTranslation(GameCulture.Chinese, "可以用来在操作员处购买宝藏袋");
         }
 
@@ -33,7 +34,7 @@ namespace AlchemistNPC.Items.Misc
         
         public override void AddRecipes()
         {
-            if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+            if (ModLoader.GetMod("CalamityMod") != null)
 			{
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(null, "ReversivityCoinTier5", 1);

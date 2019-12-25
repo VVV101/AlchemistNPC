@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 
@@ -17,6 +18,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Истощение");
 			Description.AddTranslation(GameCulture.Russian, "Вы не можете использовать магию сейчас, снижена скорость горизонтального полёта, понижена скорость ближнего боя");
+            DisplayName.AddTranslation(GameCulture.Chinese, "精疲力尽");
+            Description.AddTranslation(GameCulture.Chinese, "无法使用魔法,降低水平飞行速度,减少近战攻击速度");
         }
 
         public override void Update(Player player, ref int buffIndex)

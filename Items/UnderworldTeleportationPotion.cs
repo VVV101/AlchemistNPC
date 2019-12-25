@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC.Tiles;
  
@@ -22,7 +23,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в Ад к крайней Обсидиановой башне\nСторона зависит от нажатой клавиши мыши\nБудет полезно выпить зелье Обсидиановой кожи до того, как пить это");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "地狱传送药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至最靠近地狱两端的黑曜石塔楼\n方向取决于鼠标按键\n我建议你这么做之前先来一瓶82年的黑曜石皮肤药剂 XD");
+            Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至最靠近地狱两端的黑曜石塔楼\n方向取决于鼠标按键\n我建议你这么做之前先来一瓶黑曜石皮肤药剂");
         }    
 		public override void SetDefaults()
         {

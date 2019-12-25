@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
 using Terraria.Localization;
 using AlchemistNPC.NPCs;
@@ -26,7 +27,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Architect";
-			return Config.ArchitectSpawn;
+			return AlchemistNPC.modConfiguration.ArchitectSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -172,11 +173,13 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("A21");
             text.SetDefault("Have you heard 'bout that FuryForged guy? I taught him all he knows!");
             text.AddTranslation(GameCulture.Russian, "Ты слышал об этом FuryForged? Я научил его всему, что он знает!");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "你听说过一个叫FuryForged的家伙吗?他的一切东西都是我教的");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("A22");
             text.SetDefault("I was once hired by a certain company to build a supermassive hi-tech, high-security installation. Lemme tell ya its my magnum opus in terms of Security and Containment.");
             text.AddTranslation(GameCulture.Russian, "Как-то раз я был нанят одной компанией, чтобы построить огромный высокотехнологичный комплекс с высочайщей степенью безопасности. Это была моя самая лучшая работа в плане сдерживания и безопасности.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "我曾经被一家公司雇用来建造一个超大规模的高科技，高安全性装置。 让我告诉你我在安全性和阻挡入侵方面我的巨大建树。");
+	    mod.AddTranslation(text);
             text = mod.CreateTranslation("AS1");
             text.SetDefault("1st shop (Filler Blocks)       ");
             text.AddTranslation(GameCulture.Russian, "1-ый магазин (Обычные Блоки)");
@@ -252,7 +255,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
-            if (numTownNPCs >= 5 && NPC.downedBoss2 && Config.ArchitectSpawn)
+            if (numTownNPCs >= 3 && AlchemistNPC.modConfiguration.ArchitectSpawn)
                 {
                  return true;
                 }
@@ -493,6 +496,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.CrimstoneBlock);
 				shop.item[nextSlot].shopCustomPrice = 2;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Cobweb);
+				shop.item[nextSlot].shopCustomPrice = 30;
+				nextSlot++;
 				if (NPC.downedQueenBee)
 				{
 					shop.item[nextSlot].SetDefaults (ItemID.Hive);
@@ -517,12 +523,15 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.MudBlock);
 				shop.item[nextSlot].shopCustomPrice = 1;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.DesertFossil);
-				shop.item[nextSlot].shopCustomPrice = 1000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.Obsidian);
-				shop.item[nextSlot].shopCustomPrice = 2500;
-				nextSlot++;
+				if (NPC.downedBoss2)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.DesertFossil);
+					shop.item[nextSlot].shopCustomPrice = 1000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ItemID.Obsidian);
+					shop.item[nextSlot].shopCustomPrice = 2500;
+					nextSlot++;
+				}
 				shop.item[nextSlot].SetDefaults (ItemID.AshBlock);
 				shop.item[nextSlot].shopCustomPrice = 1;
 				nextSlot++;
@@ -580,7 +589,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.RichMahogany);
 				shop.item[nextSlot].shopCustomPrice = 15;
 				nextSlot++;
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				if (NPC.downedGoblins)
 				{
@@ -723,9 +732,6 @@ namespace AlchemistNPC.NPCs
             nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.Womannquin);
 			shop.item[nextSlot].shopCustomPrice = 100;
-            nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.Cobweb);
-			shop.item[nextSlot].shopCustomPrice = 20;
             nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.WorkBench);
 			shop.item[nextSlot].shopCustomPrice = 2000;

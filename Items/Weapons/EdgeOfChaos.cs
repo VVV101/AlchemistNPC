@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using Terraria.Utilities;
 
@@ -17,6 +18,9 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nInflicts Chaos State debuff on hit");
 			DisplayName.AddTranslation(GameCulture.Russian, "Грань Хаоса");
             Tooltip.AddTranslation(GameCulture.Russian, "Взмах этого меча может разорвать реальность надвое\nНакладывает Хаотическое Состояние на цель");
+			DisplayName.AddTranslation(GameCulture.Chinese, "混沌边缘");
+			Tooltip.AddTranslation(GameCulture.Chinese, "剑刃足以撕裂现实"
+			+"\n攻击造成混沌状态Debuff");
 
 		}
 

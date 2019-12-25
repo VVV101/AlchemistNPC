@@ -2,6 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
 using Terraria.Localization;
 
@@ -19,6 +20,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Шар 199");
 			Description.AddTranslation(GameCulture.Russian, "Уничтожает любые вражеские снаряды\nВремя перезарядки зависит от прогресса");
+            DisplayName.AddTranslation(GameCulture.Chinese, "球体 199");
+            Description.AddTranslation(GameCulture.Chinese, "摧毁附近的敌方抛射物\n冷却时间由游戏进程而定");
         }
 		
 		public override void Update(Player player, ref int buffIndex)
@@ -66,15 +69,15 @@ namespace AlchemistNPC.Buffs
 			}
 			if (NPC.downedFishron)
 			{
-				timeValue = 240;
+				timeValue = 250;
 			}
 			if (NPC.downedAncientCultist)
 			{
-				timeValue = 180;
+				timeValue = 210;
 			}
 			if (NPC.downedMoonlord)
 			{
-				timeValue = 120;
+				timeValue = 180;
 			}
 			player.AddBuff(mod.BuffType("ProjCounter"), 2);
 			if (player.ownedProjectileCounts[mod.ProjectileType("Globe199")] <= 0)

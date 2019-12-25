@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using Terraria.Utilities;
 
@@ -21,6 +22,14 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nBoosted stats will be shown after the first swing");
 			DisplayName.AddTranslation(GameCulture.Russian, "''Сера Сумат'', Святой Мститель");
             Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарный Меч] Старого Графа Эхлда\nОслабляет противников при ударе\nПротивники получают на 20% больше урона\n25% шанс получить половину урона от ослабленных противников\n[c/00FF00:Показатели увеличивается по мере прохождения]");
+			DisplayName.AddTranslation(GameCulture.Chinese, "''塞拉苏门'', 神圣复仇者");
+			Tooltip.AddTranslation(GameCulture.Chinese, "老公爵埃尔德的[c/00FF00:传奇之剑]"
+			+"\n纯近战剑"
+			+"\n造成诅咒之光Debuff"
+			+"\n来自玩家的攻击对敌人多造成20%伤害"
+			+"\n来自带有诅咒之光Debuff敌人的攻击有25%概率只造成一半伤害"
+			+"\n[c/00FF00:属性随进程成长]"
+			+"\n提升过后的属性将会在使用后显示");
 
 		}
 
@@ -51,15 +60,15 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 15;
 			if (NPC.downedSlimeKing)
 			{
-				item.damage = 16;
+				item.damage = 14;
 			}
 			if (NPC.downedBoss1)
 			{
-				item.damage = 20;
+				item.damage = 16;
 			}
 			if (NPC.downedBoss2)
 			{
-				item.damage = 22;
+				item.damage = 20;
 			}
 			if (NPC.downedQueenBee)
 			{
@@ -77,23 +86,23 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (NPC.downedMechBossAny)
 			{
-				item.damage = 36;
+				item.damage = 40;
 			}
 			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
-				item.damage = 40;
+				item.damage = 48;
 			}
 			if (NPC.downedPlantBoss)
 			{
-				item.damage = 48;
+				item.damage = 56;
 			}
 			if (NPC.downedGolemBoss)
 			{
-				item.damage = 56;
+				item.damage = 64;
 			}
 			if (NPC.downedFishron)
 			{
-				item.damage = 64;
+				item.damage = 72;
 			}
 			if (NPC.downedAncientCultist)
 			{
@@ -127,19 +136,19 @@ namespace AlchemistNPC.Items.Weapons
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/5, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/4, 0, Main.myPlayer);
 			}
 			if (Main.hardMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3 && !NPC.downedGolemBoss)
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/4, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/3, 0, Main.myPlayer);
 			}
 			if (Main.hardMode && NPC.downedGolemBoss)
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/3, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/2, 0, Main.myPlayer);
 			}
 		}
 	}

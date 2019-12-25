@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -15,7 +16,7 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "Создаёт взрыв, наносящий значительные повреждения и накладывает мощный дебафф");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "炫彩弹");
-            Tooltip.AddTranslation(GameCulture.Chinese, "造成巨大的伤害性爆炸并给予破日Debuff");
+            Tooltip.AddTranslation(GameCulture.Chinese, "造成巨大的伤害性爆炸并给予破晓Debuff");
         }    
 		public override void SetDefaults()
 		{

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -20,13 +21,19 @@ namespace AlchemistNPC.Items.Weapons
 			+"\n[c/00FF00:Stats are growing through progression]");
 			DisplayName.AddTranslation(GameCulture.Russian, "Противодействующая Материя");
             Tooltip.AddTranslation(GameCulture.Russian, "Шар 199\n[c/00FF00:Легендарное Оружие]\nУничтожает снаряды противника поблизости\nПосле блокирования снаряда ваша следуящая атака гарантированно будет критом\n[c/00FF00:Статы улучшаются по мере прохождения]");
+			DisplayName.AddTranslation(GameCulture.Chinese, "复位物质");
+			Tooltip.AddTranslation(GameCulture.Chinese, "球体 199"
+			+"\n[c/00FF00:传奇武器]"
+			+"\n摧毁附近的敌人抛射物"
+			+"\n阻挡抛射物后, 下一次攻击100%暴击"
+			+"\n[c/00FF00:属性随进程成长]");
         }
 		
 		public override void SetDefaults()
 		{
 			item.mana = 100;
-			item.width = 32;
-			item.height = 32;
+			item.width = 48;
+			item.height = 48;
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.useStyle = 1;

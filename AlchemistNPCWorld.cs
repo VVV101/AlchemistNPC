@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.World.Generation;
 using Microsoft.Xna.Framework;
 using Terraria.GameContent.Generation;
@@ -89,6 +90,11 @@ namespace AlchemistNPC
 		public static bool foundT1;
 		public static bool foundT2;
 		public static bool foundT3;
+		public static bool foundPHD;
+		public static bool foundAntiBuffMode;
+		public static bool foundFlyingCarpet;
+		public static bool downedDOGPumpking;
+		public static bool downedDOGIceQueen;
 
 		public override void Initialize()
 		{
@@ -164,6 +170,11 @@ namespace AlchemistNPC
 			foundT1 = false;
 			foundT2 = false;
 			foundT3 = false;
+			foundPHD = false;
+			foundAntiBuffMode = false;
+			foundFlyingCarpet = false;
+			downedDOGIceQueen = false;
+			downedDOGPumpking = false;
 		}
 
 		public override TagCompound Save()
@@ -241,9 +252,17 @@ namespace AlchemistNPC
 			if (foundT1) found.Add("T1");
 			if (foundT2) found.Add("T2");
 			if (foundT3) found.Add("T3");
+			if (foundPHD) found.Add("PHD");
+			if (foundAntiBuffMode) found.Add("AntiBuffMode");
+			if (foundFlyingCarpet) found.Add("FlyingCarpet");
+			
+			var downed = new List<string>();
+			if (downedDOGPumpking) downed.Add("DOGPumpking");
+			if (downedDOGIceQueen) downed.Add("DOGIceQueen");
 			
 			return new TagCompound {
-				{"found", found}
+				{"found", found},
+				{"downed", downed}
 			};
 		}
 		
@@ -347,6 +366,16 @@ namespace AlchemistNPC
 			flags9[6] = foundT2;
 			flags9[7] = foundT3;
 			writer.Write(flags9);
+			
+			BitsByte flags10 = new BitsByte();
+			flags10[0] = foundPHD;
+			flags10[1] = foundAntiBuffMode;
+			flags10[2] = foundFlyingCarpet;
+			writer.Write(flags10);
+			
+			BitsByte flags11 = new BitsByte();
+			flags11[0] = downedDOGPumpking;
+			flags11[1] = downedDOGIceQueen;
 		}
 
 		public override void NetReceive(BinaryReader reader)
@@ -440,6 +469,15 @@ namespace AlchemistNPC
 			foundT1 = flags9[5];
 			foundT2 = flags9[6];
 			foundT3 = flags9[7];
+			
+			BitsByte flags10 = reader.ReadByte();
+			foundPHD = flags10[0];
+			foundAntiBuffMode = flags10[1];
+			foundFlyingCarpet = flags10[2];
+			
+			BitsByte flags11 = reader.ReadByte();
+			downedDOGPumpking = flags11[0];
+			downedDOGIceQueen = flags11[1];
 			// As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:
 			// BitsByte flags2 = reader.ReadByte();
 			// downed9thBoss = flags[0];
@@ -520,6 +558,13 @@ namespace AlchemistNPC
 			foundT1 = found.Contains("T1");
 			foundT2 = found.Contains("T2");
 			foundT3 = found.Contains("T3");
+			foundPHD = found.Contains("PHD");
+			foundAntiBuffMode = found.Contains("AntiBuffMode");
+			foundFlyingCarpet = found.Contains("FlyingCarpet");
+			
+			var downed = tag.GetList<string>("downed");
+			downedDOGPumpking = downed.Contains("DOGPumpking");
+			downedDOGIceQueen = downed.Contains("DOGIceQueen");
 		}
 	}
 }

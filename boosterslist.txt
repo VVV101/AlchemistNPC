@@ -1,0 +1,26 @@
+King Slime: Increases jump height and safe fall distance greatly
+Eye of Cthulhu: 2 boosters
+1) Provides creatures, treasures and traps detection
+2) Gives Shine and Nightvision effects
+Eater of Worlds: Increases melee speed by 5%, movement and mining speed by 25%
+Brain of Cthulhu: Increases max amount of minions/sentries by 1, Heartreach effect
+Queen Bee: Hostile bees do less damage and your regeneration is increased by 6, immunity to poisons
+Skeletron: 2 boosters
+1) Skeletons contact damage is reduced, all damages/critical strike chances are increased by 10%
+2) Provides immunity to fire blocks, Obsidian Skin, Gills and Flipper effects
+Dark Mage (Old One's Army tier 1 boss): Increases magic damage by 25%, max mana by 50 and mana regeneration greatly
+Wall of Flesh: Increases max amount of minions/sentries by 1, defense and DR by 10/10%
+Pigron: Provides Well Fed
+Ice Golem: Provides immunity to Chilled, Frozen and Frostburn debuffs
+Goblin Summoner: Makes your attacks inflict Shadowflame and makes you immune to it
+Twins: Archery and Ammo Reservation effects, immunity to Cursed Flames and Ichor
+The Destroyer: Increases mining speed by 33% and increases max life by 25%
+Skeletron Prime: Increases armor penetration and melee speed by 15/15%, gives 200% thorns effect
+Ogre (Old One's Army tier 2 boss): Increases defense and damage reduction by 5/5% and provides knockback immunity
+Plantera: Damages and critical strike chances are boosted while you are moving, Philosopher's stone effect
+Golem: Increases attack speed by 10% and increases melee knockback
+Betsy (Old One's Army tier 3 boss): Your attacks inflict Daybroken, flight abilities are increased
+Duke Fishron: Gives ability to dash, all stats up while on surface
+Martian Saucer: Provides immunity to Electrified and Distorted debuffs
+Lunatic Cultist: Reduces damage taken from Pillars enemies, mobs may drop lunar fragments
+Moon Lord: You emit aura which weakens enemies around

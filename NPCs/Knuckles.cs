@@ -31,6 +31,7 @@ using Terraria.Utilities;
 using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 using AlchemistNPC.NPCs;
@@ -77,7 +78,7 @@ namespace AlchemistNPC.NPCs
 				Player player = Main.player[k];
 				if (player.active)
 				{
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 					{
 						player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AbyssalShell")] = true;
 						npc.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AParalyzed")] = true;
@@ -87,7 +88,7 @@ namespace AlchemistNPC.NPCs
 					npc.buffImmune[mod.BuffType("Twilight")] = true;
 					npc.buffImmune[mod.BuffType("Electrocute")] = true;
 					npc.buffImmune[mod.BuffType("Patience")] = true;
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("SilvaStun")] = true;
 						npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("GlacialState")] = true;
@@ -100,18 +101,11 @@ namespace AlchemistNPC.NPCs
 						int damage1 = 200;
 						int damage2 = 300;
 						int damage3 = 350;
-						if (player.GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte)
+						if (player.GetModPlayer<AlchemistNPCPlayer>().MemersRiposte)
 						{
 						damage1 = 100;
 						damage2 = 150;
 						damage3 = 175;
-						}
-						if (player.statDefense > 250 || player.endurance > 0.50f || player.statLifeMax2 > 2500)
-						{
-							player.KillMe(PlayerDeathReason.ByOther(player.Male ? 14 : 15), 1.0, 0, false);
-							damage1 = 666666;
-							damage2 = 666666;
-							damage3 = 666666;
 						}
 						if (!Main.expertMode)
 						{
@@ -380,6 +374,11 @@ namespace AlchemistNPC.NPCs
 		
 		public override void NPCLoot()
 		{
+			Mod ALIB = ModLoader.GetMod("AchievementLib");
+			if(ALIB != null)
+			{
+				ALIB.Call("UnlockGlobal", "AlchemistNPC", "Da wae is clear, to the queen!");
+			}
 			if (Main.expertMode)
 			{
 				npc.DropBossBags();
@@ -412,7 +411,7 @@ namespace AlchemistNPC.NPCs
 						defense = 0;
 						return true;
 					}
-					if (player.GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte == false)
+					if (player.GetModPlayer<AlchemistNPCPlayer>().MemersRiposte == false)
 					{
 					damage = 1;
 						if (crit)
@@ -420,7 +419,7 @@ namespace AlchemistNPC.NPCs
 						damage = 2;
 						}
 					}
-					if (player.GetModPlayer<AlchemistNPCPlayer>(mod).MemersRiposte)
+					if (player.GetModPlayer<AlchemistNPCPlayer>().MemersRiposte)
 					{
 					damage = 2;
 						if (crit)

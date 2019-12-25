@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
@@ -15,6 +16,8 @@ namespace AlchemistNPC.Items.Summoning
 			Tooltip.SetDefault("The piece of Musician's soul is inside it.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Крестраж Музыканта");
 			Tooltip.AddTranslation(GameCulture.Russian, "Часть души Музыканта находится внутри");
+			DisplayName.AddTranslation(GameCulture.Chinese, "音乐家魂器");
+			Tooltip.AddTranslation(GameCulture.Chinese, "里面有音乐家的一片灵魂.");
         }
 
 		public override void SetDefaults()

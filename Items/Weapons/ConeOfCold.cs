@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
 using Terraria.Localization;
 using System.Linq;
@@ -16,6 +17,9 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nMay slowdown or freeze normal enemies in place");
 			DisplayName.AddTranslation(GameCulture.Russian, "Конус Холода");
             Tooltip.AddTranslation(GameCulture.Russian, "Магическое заклинание, испускающие конус арктического холода\nМожет замедлить или заморозить обычных противников");
+			DisplayName.AddTranslation(GameCulture.Chinese, "冰锥术");
+			Tooltip.AddTranslation(GameCulture.Chinese, "释放极寒冰锥的魔咒"
+			+"\n概率缓慢或冻结普通敌人");
         }
 
 		public override void SetDefaults()
@@ -28,7 +32,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.width = 30;
 			item.height = 30;
 			item.useTime = 12;
-			item.UseSound = SoundID.Item13;
+			item.UseSound = SoundID.Item20;
 			item.useStyle = 5;
 			item.shootSpeed = 12f;
 			item.knockBack = 4;

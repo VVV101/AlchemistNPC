@@ -2,7 +2,9 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
+using Terraria.Utilities;
 
 namespace AlchemistNPC.Items.Weapons
 {
@@ -22,7 +24,6 @@ namespace AlchemistNPC.Items.Weapons
 			item.damage = 10;
 			item.shootSpeed = 14f;
 			item.noMelee = true;
-			item.value = Item.sellPrice(1, 0, 0, 0);
 			item.rare = 11;
 			item.knockBack = 3;
 			item.ranged = true;
@@ -34,7 +35,16 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("[c/00FF00:Ultimate Tinkerer's Reward]"
 			+"\nShoots up to 1K bullets per minute"
 			+"\n88% chance not to consume ammo");
+			DisplayName.AddTranslation(GameCulture.Chinese, "MP7");
+			Tooltip.AddTranslation(GameCulture.Chinese, "[c/00FF00:终极工匠奖励]"
+			+"\n每分钟最多发射1K颗子弹"
+			+"\n88%概率不消耗弹药");
         }
+		
+		public override int ChoosePrefix (UnifiedRandom rand)
+		{
+			return mod.PrefixType("Shining");
+		}
 
 		public override bool ConsumeAmmo(Player player)
 		{

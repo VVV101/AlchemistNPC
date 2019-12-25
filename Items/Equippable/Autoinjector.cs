@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Equippable
@@ -24,7 +25,7 @@ namespace AlchemistNPC.Items.Equippable
             Tooltip.AddTranslation(GameCulture.Russian, "Усиливает регенерацию \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт эффект Комбинации Универсала\nМожет быть использован для получения постоянных эффектов:\nБаффы не будут исчезать после смерти\nБаффы будут действовать вдвое дольше\nТакже даст постоянный эффект Философского камня");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "自动注射器");
-            Tooltip.AddTranslation(GameCulture.Chinese, "提供生命回复, 降低治疗药水的冷却时间, 延长收到伤害后的无敌时间\n增加10%全伤害和8%全伤害的暴击几率\n同时永久给予万能药剂包buff（包含坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包）");
+            Tooltip.AddTranslation(GameCulture.Chinese, "提供生命回复, 降低治疗药水的冷却时间, 延长收到伤害后的无敌时间\n增加10%全伤害和8%全伤害的暴击率\n给予万能药剂包buff（包含坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包）\n使用后永久赋予玩家以下效果:\n死亡后Buff不消失\nBuff持续时间x2\n永久获得炼金石的效果");
         }
 	
 		public override void SetDefaults()
@@ -42,11 +43,7 @@ namespace AlchemistNPC.Items.Equippable
 		
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.thrownDamage += 0.1f;
-            player.meleeDamage += 0.1f;
-            player.rangedDamage += 0.1f;
-            player.magicDamage += 0.1f;
-            player.minionDamage += 0.1f;
+			player.allDamage += 0.1f;
 			player.meleeCrit += 8;
             player.rangedCrit += 8;
             player.magicCrit += 8;
@@ -54,15 +51,15 @@ namespace AlchemistNPC.Items.Equippable
 			player.pStone = true;
 			player.longInvince = true;
 			player.AddBuff(mod.BuffType("UniversalComb"), 2);
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -70,30 +67,20 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
-			CalamityPlayer.throwingDamage += 0.1f;
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             CalamityPlayer.throwingCrit += 8;
         }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.1f;
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 8;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
-		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.1f;
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 8;
-			ThoriumPlayer.radiantBoost += 0.1f;
             ThoriumPlayer.radiantCrit += 8;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 
 		public override bool CanUseItem(Player player)
 		{

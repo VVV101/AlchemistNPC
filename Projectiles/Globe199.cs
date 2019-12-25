@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using System;
 using AlchemistNPC.Buffs;
 
@@ -18,8 +19,8 @@ namespace AlchemistNPC.Projectiles
 
 		public override void SetDefaults()
 		{
-			projectile.width = 32;
-			projectile.height = 32;
+			projectile.width = 48;
+			projectile.height = 48;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 3600;
 			projectile.tileCollide = false;
@@ -32,7 +33,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			Player player = Main.player[projectile.owner];
 			projectile.Center = player.Center;
-			projectile.position.Y = player.Center.Y-100;
+			projectile.position.Y = player.Center.Y-116;
 			if (ProjCounter.counter == 0)
 			{
 				for (int i = 0; i < 25; i++)

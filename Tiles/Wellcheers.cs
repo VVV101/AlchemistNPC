@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.Enums;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
 
@@ -48,7 +49,7 @@ namespace AlchemistNPC.Tiles
 			}
 		}
 		
-		public override void RightClick(int i, int j)
+		public override bool NewRightClick(int i, int j)
 		{
 			for (int k = 0; k < 255; k++)
 			{
@@ -79,6 +80,11 @@ namespace AlchemistNPC.Tiles
 					}
 					if (counter == 10 && !Main.dayTime)
 					{
+						Mod ALIB = ModLoader.GetMod("AchievementLib");
+						if(ALIB != null)
+						{
+							ALIB.Call("UnlockGlobal", "AlchemistNPC", "The snack that smiles back");
+						}
 						if (Main.netMode == 0)
 						{
 							switch (Main.rand.Next(3))
@@ -106,6 +112,7 @@ namespace AlchemistNPC.Tiles
 					}
 				}
 			}
+			return true;
 		}
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)

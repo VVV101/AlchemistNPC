@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -19,7 +20,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Включает в себя следующие баффы: Выносливость, Жизненные Силы, Железную Кожу\nОбсидиановую Кожу, Шипы, Регенерацию, Кожу Титана и Неуязвимость");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "坦克药剂包 (模组)");
-            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 抵抗, 泰坦皮肤, 无敌)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 再生, 泰坦皮肤, 无敌)");
         }    
 		public override void SetDefaults()
         {

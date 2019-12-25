@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -19,7 +20,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт баффы, важные для Магов (Магическая Сила, Регенерация Маны, Ясновидение, Гнев, Ярость)");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "魔法药剂包");
-            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些魔法buff(魔能, 法力再生, 暴怒, 怒气)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些魔法buff(魔能, 法力再生, 智慧, 暴怒, 怒气)");
         }    
 		public override void SetDefaults()
         {

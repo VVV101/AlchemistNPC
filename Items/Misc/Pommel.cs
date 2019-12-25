@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Misc
@@ -16,6 +17,8 @@ namespace AlchemistNPC.Items.Misc
 			DisplayName.AddTranslation(GameCulture.Russian, "Навершие");
             Tooltip.SetDefault("Contains the Light of Purity");
 			Tooltip.AddTranslation(GameCulture.Russian, "Хранит Свет Чистоты");
+			DisplayName.AddTranslation(GameCulture.Chinese, "球饰");
+			Tooltip.AddTranslation(GameCulture.Chinese, "包含着纯净之光");
         }
         public override void SetDefaults()
 		{

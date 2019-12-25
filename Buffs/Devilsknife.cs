@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -14,11 +15,13 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Кинжал Дьявола");
 			Description.AddTranslation(GameCulture.Russian, "МЕТАМОРФОЗА!");
+            DisplayName.AddTranslation(GameCulture.Chinese, "邪匕");
+            Description.AddTranslation(GameCulture.Chinese, "蜕变!");
         }
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.ownedProjectileCounts[mod.ProjectileType("Devilsknife")] > 0)
 			{
 				modPlayer.devilsknife = true;

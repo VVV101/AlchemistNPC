@@ -2,6 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
 using Terraria.Localization;
 
@@ -19,6 +20,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Лазерная батарея");
 			Description.AddTranslation(GameCulture.Russian, "Готова к стрельбе");
+            DisplayName.AddTranslation(GameCulture.Chinese, "激光电池");
+            Description.AddTranslation(GameCulture.Chinese, "准备开火");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

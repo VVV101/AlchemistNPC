@@ -2,6 +2,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.NPCs
@@ -22,7 +23,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Young Brewer";
-			return Config.YoungBrewerSpawn;
+			return AlchemistNPC.modConfiguration.YoungBrewerSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -66,6 +67,14 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Atreus");
             text.AddTranslation(GameCulture.Russian, "Атреус");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("YoungBrewerButton1");
+            text.SetDefault("Combinations");
+            text.AddTranslation(GameCulture.Chinese, "药剂包");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("YoungBrewerButton2");
+            text.SetDefault("Flasks");
+            text.AddTranslation(GameCulture.Chinese, "烧瓶");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry1");
             text.SetDefault("I'm trading potions which were made by my parents.");
             text.AddTranslation(GameCulture.Russian, "Я продаю зелья, сделанные моими родителями.");
@@ -84,7 +93,7 @@ namespace AlchemistNPC.NPCs
             text = mod.CreateTranslation("Entry4");
             text.SetDefault("There's a legendary yoyo known as the Sasscade.");
             text.AddTranslation(GameCulture.Russian, "Существует Легендарное Йо-йо, известное как Сасскад.");
-            text.AddTranslation(GameCulture.Chinese, "有一个传说中的溜溜球被称为Sasscadee.");
+            text.AddTranslation(GameCulture.Chinese, "有一个传说中的悠悠球被称为萨斯卡德.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry5");
             text.SetDefault("Strange Brew from Skeleton Merchant smells really terrible, but Mana Restoration effect is awesome.");
@@ -114,11 +123,13 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("Entry10");
             text.SetDefault("Certain combinations can only be brewed if certain types of magic are present in the world.");
             text.AddTranslation(GameCulture.Russian, "Некоторые комбинации могут быть изготовлены только если в мире присутсвуют особенные виды магии.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "某些整合药剂包只有在世界上存在某种魔法的情况下才能制作出来。");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("Entry11");
             text.SetDefault("You might be wondering how do i put actual rainbows in a flask... Well, with the power of maaagic...... and eternal sufferings.");
             text.AddTranslation(GameCulture.Russian, "Тебе наверное любопытно, как я поместил настоящую радугу во флакон... Ну, силами магии... и вечными страданиями.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "你可能想知道我怎么把真正的彩虹放在瓶子里…好吧，有了巨大大大大魔法的力量……以及永恒的痛苦。");
+	    mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()
@@ -139,7 +150,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (Main.hardMode && Config.YoungBrewerSpawn)
+			if (Main.hardMode && AlchemistNPC.modConfiguration.YoungBrewerSpawn)
 			{
 				if (NPC.AnyNPCs(mod.NPCType("Brewer")))
 				{
@@ -269,8 +280,8 @@ namespace AlchemistNPC.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = "Combinations";
-			button2 = "Flasks";
+            button = Language.GetTextValue("Mods.AlchemistNPC.YoungBrewerButton1");
+			button2 = Language.GetTextValue("Mods.AlchemistNPC.YoungBrewerButton2");
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
@@ -325,7 +336,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					if (NPC.downedMechBossAny)
 					{
@@ -334,7 +345,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (NPC.downedGolemBoss)
 					{
@@ -343,7 +354,16 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("MorePotions") != null)
+				{
+					if (Main.hardMode)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MorePotionsCombination"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+					}
+				}
+				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 					if (NPC.downedMechBossAny)
 					{
@@ -358,7 +378,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 500000;
 					nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					if (NPC.downedBoss3)
 					{
@@ -371,8 +391,8 @@ namespace AlchemistNPC.NPCs
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GorganCoatingItem"));
 						shop.item[nextSlot].shopCustomPrice = 5000;
 						nextSlot++;
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("LifeLeechCoatingItem"));
-						shop.item[nextSlot].shopCustomPrice = 5000;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("SporeCoatingItem"));
+						shop.item[nextSlot].shopCustomPrice = 2500;
 						nextSlot++;
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ToxicCoatingItem"));
 						shop.item[nextSlot].shopCustomPrice = 2500;
@@ -463,7 +483,7 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("AAMod"))
+				if (ModLoader.GetMod("AAMod") != null)
 				{
 					if (Main.hardMode)
 					{
@@ -475,7 +495,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 					if (Main.hardMode)
 					{
@@ -484,7 +504,7 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 					{

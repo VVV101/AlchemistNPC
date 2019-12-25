@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -20,7 +21,7 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "Выстреливает взрывающиеся плазменные шары\nТребует особые патроны для стрельбы (Плазменный заряд)\n50% шанс не потратить патроны");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "三项之怒");
-            Tooltip.AddTranslation(GameCulture.Chinese, "发射会爆炸的等离子体\n需要特殊弹药\n50%的几率不消耗弹药");
+            Tooltip.AddTranslation(GameCulture.Chinese, "发射会爆炸的等离子体\n需要特殊弹药 (等离子体)\n50%的几率不消耗弹药");
         }
 
 		public override void SetDefaults()

@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC;
 
@@ -22,6 +23,8 @@ namespace AlchemistNPC.Items.Equippable
 			+"\nMinions nearly ignore enemy invincibility frames");
 			DisplayName.AddTranslation(GameCulture.Russian, "Расцвёвший Плод Сефирот");
             Tooltip.AddTranslation(GameCulture.Russian, "Последнее из семян Ехидны... Хранит невероятные силы внутри\nПовышает урон прислужников на 15%\nУвеличивает максимальное количество прислужников на 3\nПрислужники могут нанести критический удар с вероятностью в 10%\nПрислужники почти полностью игнорируют период неуязвимости у противника");
+			DisplayName.AddTranslation(GameCulture.Chinese, "终极瑟芙罗克之果");
+			Tooltip.AddTranslation(GameCulture.Chinese, "埃凯德娜最后的种子... 拥有不可思议的力量.\n增加15%召唤伤害\n增加3个最大召唤物数量\n召唤物有10%概率暴击\n召唤物无视敌人无敌帧");
         }
 	
 		public override void SetDefaults()
@@ -35,8 +38,8 @@ namespace AlchemistNPC.Items.Equippable
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).SF = true;
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).SFU = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().SF = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().SFU = true;
             player.minionDamage += 0.15f;
 			++player.maxMinions;
 			++player.maxMinions;
@@ -50,23 +53,23 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(null, "ChromaticCrystal", 3);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 3);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 3);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 10);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy")), 10);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 20);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
 			}
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 			recipe.AddTile(null, "MateriaTransmutator");
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddTile(null, "MateriaTransmutatorMK2");
 			}

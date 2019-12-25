@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -89,10 +90,6 @@ namespace AlchemistNPC.Items.Weapons
 			if (player.ownedProjectileCounts[mod.ProjectileType("WatcherCrystal")] < player.maxTurrets)
 			{
 				return true;
-			}
-			else
-			{
-				return false;
 			}
 			return false;
 		}

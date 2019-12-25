@@ -4,6 +4,7 @@ using System.IO;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.Localization;
 
@@ -26,7 +27,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 150;
+			item.damage = 120;
 			item.width = 44;
 			item.height = 44;
 			item.useTime = 30;
@@ -52,34 +53,27 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             int p = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("JP"), damage, knockBack, player.whoAmI);
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
-				{
-				Main.projectile[p].scale = 2f;
-				}
-			else
-				{
-				Main.projectile[p].scale = 1.5f;
-				}
+			Main.projectile[p].scale = 1.5f;
             return false;
         }
 		
 		public override bool CanUseItem(Player player)
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
-					{
-					item.damage = 300;
-					}
-					else
-					{
-					item.damage = 150;
-					}
+			{
+				item.damage = 225;
+			}
+			else
+			{
+				item.damage = 120;
+			}
 			return base.CanUseItem(player);
 		}
 		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.LunarBar, 25);
+			recipe.AddIngredient(ItemID.LunarBar, 16);
 			recipe.AddIngredient(ItemID.FragmentNebula, 20);
             recipe.AddIngredient(ItemID.FragmentSolar, 20);
 			recipe.AddTile(null, "WingoftheWorld");

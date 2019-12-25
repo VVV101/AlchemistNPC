@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -21,7 +22,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт все возможные виды зрения, значительно увеличивает скорость копания.\nЗначительно увеличивает радиус света вокруг игрока и ваши атаки могут поразить врага Электрошоком\nТакже даёт эффекты зельев Подводного Дыхания, Ласт и Хождения по воде");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "探险者陈酿");
-            Tooltip.AddTranslation(GameCulture.Chinese, "[c/00FF00:特调探险者药剂]\n获得所有感知效果, 极大增加召唤速度, 极大增加玩家周围的光照效果, 并且你的攻击会电疗敌人\n同时给予水肺、脚蹼和水上行走药剂效果");
+            Tooltip.AddTranslation(GameCulture.Chinese, "[c/00FF00:特调探险者药剂]\n获得所有感知效果, 极大增加玩家周围的光照效果, 并且你的攻击会电疗敌人\n同时给予鱼鳃、脚蹼和水上行走药剂效果");
         }    
 
 		public override void SetDefaults()

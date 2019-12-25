@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Armor
@@ -18,6 +19,8 @@ namespace AlchemistNPC.Items.Armor
 			DisplayName.AddTranslation(GameCulture.Russian, "Ободок с рожками");
 			Tooltip.SetDefault("Changes player's hairstyle and hair color (can be changed back by Stylist)");
             Tooltip.AddTranslation(GameCulture.Russian, "Меняет причёску и цвет волос (может быть изменено с помощью Стилиста)");
+			DisplayName.AddTranslation(GameCulture.Chinese, "角饰环");
+            Tooltip.AddTranslation(GameCulture.Chinese, "改变玩家的发型和发色 (可在发型师处还原)");
 			
 			ModTranslation text = mod.CreateTranslation("BloodMoonSetBonus");
 		    text.SetDefault("Increases all damage by 25% and adds 20% to critical strike chance"
@@ -26,7 +29,9 @@ namespace AlchemistNPC.Items.Armor
 			+ "\nYou have a chance to dodge attacks"
 		    + "\nPlayer is under permanent effect of Mage Combination");
 			text.AddTranslation(GameCulture.Russian, "Увеличивает весь урон на 25% и добавляет 20% к шансу критического удара\n+36 защиты\nСкорость передвижения увеличена на 25%\nПостоянный эффект комбинации Мага\nДаёт шанс увернуться при атаке");
+			text.AddTranslation(GameCulture.Chinese, "增加25%所有伤害, 增加20%暴击率\n增加36防御\n增加25%移动速度\n有概率闪避攻击\n获得永久的魔法药剂包效果");
 			mod.AddTranslation(text);
+
         }
 		
 		public override void SetDefaults()
@@ -62,24 +67,20 @@ namespace AlchemistNPC.Items.Armor
 			player.moveSpeed += 0.25f;
 			player.AddBuff(mod.BuffType("MageComb"), 2);
 			player.blackBelt = true;
-			player.meleeDamage += 0.25f;
-			player.magicDamage += 0.25f;
-			player.minionDamage += 0.25f;
-			player.magicDamage += 0.25f;
-			player.thrownDamage += 0.25f;
+			player.allDamage += 0.25f;
 			player.meleeCrit += 20;
 			player.magicCrit += 20;
 			player.rangedCrit += 20;
             player.thrownCrit += 20;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -87,26 +88,22 @@ namespace AlchemistNPC.Items.Armor
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
-			CalamityPlayer.throwingDamage += 0.25f;
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             CalamityPlayer.throwingCrit += 20;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.25f;
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 20;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.25f;
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 20;
-			ThoriumPlayer.radiantBoost += 0.25f;
             ThoriumPlayer.radiantCrit += 20;
         }
 		

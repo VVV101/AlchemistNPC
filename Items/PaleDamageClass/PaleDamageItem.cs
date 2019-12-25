@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.PaleDamageClass
@@ -30,11 +31,10 @@ namespace AlchemistNPC.Items.PaleDamageClass
 			item.summon = false;
 		}
 
-		// As a modder, you could also opt to make the Get overrides also sealed. Up to the modder
-		public override void GetWeaponDamage(Player player, ref int damage)
-		{
-			// Multiplies the damage by our custom damage multiplier
-			damage = (int)(damage * PaleDamagePlayer.ModPlayer(player).paleDamage + 5E-06f);
+		// As a modder, you could also opt to make these overrides also sealed. Up to the modder
+		public override void ModifyWeaponDamage(Player player, ref float add, ref float mult, ref float flat) {
+			add += PaleDamagePlayer.ModPlayer(player).paleDamageAdd;
+			mult *= PaleDamagePlayer.ModPlayer(player).paleDamageMult;
 		}
 
 		public override void GetWeaponKnockback(Player player, ref float knockback)

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using System;
 
 namespace AlchemistNPC.Projectiles
@@ -17,6 +18,8 @@ namespace AlchemistNPC.Projectiles
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(261);
+			projectile.width = 40;
+			projectile.height = 62;
 			projectile.magic = false;
 			projectile.thrown = true;
 			projectile.aiStyle = 14;

@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC;
 
@@ -13,6 +14,13 @@ namespace AlchemistNPC.Buffs
 			if (type == 165)
 			{
 				Main.buffNoTimeDisplay[type] = false;
+			}
+			if (AlchemistNPCWorld.foundAntiBuffMode)
+			{
+				if (!Main.lightPet[type] && !Main.vanityPet[type] && !Main.buffNoTimeDisplay[type] && player.buffTime[buffIndex] > 180 && !Main.debuff[type] && type != 21 && type != 94)
+				{
+					player.DelBuff(buffIndex);
+				}
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BuffsKeep == true)
 			{

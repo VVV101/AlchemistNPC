@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Equippable
@@ -27,6 +28,8 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nAllows to inflict Midas Touch debuff by any attack");
 				DisplayName.AddTranslation(GameCulture.Russian, "Дар Иллюминатов");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт все эффекты Кольца Жадности\nУвеличивает радиус подбора предметов, если акссесуар виден\nПри получении урона все враги на экране будут парализованы\nЕсли ХП опускается ниже 10%, то включается специальная регенерация\nСпособность имеет двухминутный откат\nУдар не убьёт вас, пока не активен откат\nЛюбые атаки накладывают Касание Мидаса на противников");
+            DisplayName.AddTranslation(GameCulture.Chinese, "光照会礼物");
+            Tooltip.AddTranslation(GameCulture.Chinese, "增加物品拾取范围, 增加钱币掉落\n上述效果在饰品为可见时启用\n大部分商人都会打折\n被攻击后麻痹屏幕内所有敌人\n生命值低于10%时, 开启特殊回复\n该能力有两分钟冷却时间\n避免致死伤害\n只有在非冷却时启用\n所有攻击造成点金术效果");
         }
 	
 		public override void SetDefaults()
@@ -43,7 +46,7 @@ namespace AlchemistNPC.Items.Equippable
 
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		public override void UpdateAccessory(Player player, bool hideVisual)
@@ -51,8 +54,8 @@ namespace AlchemistNPC.Items.Equippable
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Illuminati = true;
 			if (!hideVisual)
 			{
-			player.goldRing = true;
-            player.coins = true;
+				player.goldRing = true;
+				player.coins = true;
 				for (int number = 0; number < 400; ++number)
 				{
 					if (Main.item[number].active && Main.item[number].noGrabDelay == 0)
@@ -79,7 +82,7 @@ namespace AlchemistNPC.Items.Equippable
 			player.discount = true;
 			if (player.statLife <= player.statLifeMax2/10 && !player.HasBuff(mod.BuffType("IlluminatiHeal")) && !player.HasBuff(mod.BuffType("IlluminatiCooldown")))
 			{
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModRevengeance)
 					{
@@ -92,7 +95,7 @@ namespace AlchemistNPC.Items.Equippable
 					player.AddBuff(mod.BuffType("IlluminatiCooldown"), 7200);
 					}
 				}
-				if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") == null)
 				{
 				player.AddBuff(mod.BuffType("IlluminatiHeal"), 3600);
 				player.AddBuff(mod.BuffType("IlluminatiCooldown"), 7200);

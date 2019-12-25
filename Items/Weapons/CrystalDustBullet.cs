@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -14,7 +15,7 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.AddTranslation(GameCulture.Russian, "Пули с кристальной пылью");
             Tooltip.AddTranslation(GameCulture.Russian, "Разрываются на ещё более смертоносные осколки при попадании");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "水晶尘子弹");
+            DisplayName.AddTranslation(GameCulture.Chinese, "晶尘弹");
             Tooltip.AddTranslation(GameCulture.Chinese, "爆炸变成致命碎片");
         }    
 		public override void SetDefaults()

@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -20,10 +21,9 @@ namespace AlchemistNPC.Items
             DisplayName.AddTranslation(GameCulture.Russian, "Превосходное Зелье Раздора");
             Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Уникальное Зелье Исследовательницы]\nПозволяет телепортироваться на курсор при нажатии горячей клавиши\nПри применении ведёт себя аналогично Жезлу Раздора");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "真·混乱药剂");
+            DisplayName.AddTranslation(GameCulture.Chinese, "完美裂位药剂");
             Tooltip.AddTranslation(GameCulture.Chinese, "[c/00FF00:特调探险者药剂]\n允许使用快捷键传送到鼠标位置"
-            + "\n效果等同于混乱法杖"
-            + "\n非灾厄Buff药剂");
+            + "\n效果等同于裂位法杖");
         }    
 		public override void SetDefaults()
         {

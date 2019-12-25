@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -21,7 +22,12 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.AddTranslation(GameCulture.Russian, "Пулемёт ''Мясорубка''");
             Tooltip.AddTranslation(GameCulture.Russian, "Изготовлен по технологии древних колонизаторов\nОружие имеет шесть вращающихся стволов калибра 17мм\nСкорость стрельбы постепенно возрастает\nИспользует специальные патроны (17mm патрон)\n66% шанс не потратить патроны");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "潘多拉 (PF262)");
+            DisplayName.AddTranslation(GameCulture.Chinese, "机关炮 ''绞肉机''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "用古代殖民者的科技打造."
+			+"\n拥有6个17mm口径的旋转枪管"
+			+"\n随时间增加射速"
+			+"\n使用特殊子弹 (17mm 子弹)"
+			+"\n66%概率不消耗弹药");
         }
 
 		public override void SetDefaults()

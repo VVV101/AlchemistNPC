@@ -31,6 +31,7 @@ using Terraria.Utilities;
 using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 
@@ -48,6 +49,8 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Mind Burn");
 			Description.AddTranslation(GameCulture.Russian, "Разум горит!");
+            DisplayName.AddTranslation(GameCulture.Chinese, "心智燃烧");
+            Description.AddTranslation(GameCulture.Chinese, "心智在燃烧!");
         }
 
         public override void Update(Player player, ref int buffIndex)

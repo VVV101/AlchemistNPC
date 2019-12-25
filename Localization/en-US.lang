@@ -1,0 +1,78 @@
+AlchemistModconfig
+
+Common.AlchemistSpawntoggle=Alchemist Spawn toggle
+Common.AlchemistSpawntoggleTooltip=True to enable Alchemist NPC spawn, false to disable. True by default
+
+Common.BrewerSpawntoggle=Brewer Spawn toggle
+Common.BrewerSpawntoggleTooltip=True to enable Brewer NPC spawn, false to disable. True by default
+
+Common.JewelerSpawntoggle=Jeweler Spawn toggle
+Common.JewelerSpawntoggleTooltip=True to enable Jeweler NPC spawn, false to disable. True by default
+
+Common.YoungBrewerSpawntoggle=Young Brewer Spawn toggle
+Common.YoungBrewerSpawntoggleTooltip=True to enable Young Brewer NPC spawn, false to disable. True by default
+
+Common.TinkererSpawntoggle=Tinkerer Spawn toggle
+Common.TinkererSpawntoggleTooltip=True to enable Tinkerer NPC spawn, false to disable. True by default
+
+Common.ArchitectSpawntoggle=Architect Spawn toggle
+Common.ArchitectSpawntoggleTooltip=True to enable Architect NPC spawn, false to disable. True by default
+
+Common.OperatorSpawntoggle=Operator Spawn toggle
+Common.OperatorSpawntoggleTooltip=True to enable Operator NPC spawn, false to disable. True by default
+
+Common.MusicianSpawntoggle=Musician Spawn toggle
+Common.MusicianSpawntoggleTooltip=True to enable Musician NPC spawn, false to disable. True by default
+
+Common.ExplorerSpawntoggle=Explorer Spawn toggle
+Common.ExplorerSpawntoggleTooltip=True to enable Explorer NPC spawn, false to disable. True by default
+
+Common.TreasureBagsShopstoggle=Treasure Bags Shops toggle
+Common.TreasureBagsShopstoggleTooltip=True to enable Treasure Bags Shops of Operator NPC. True by default
+
+Common.TornNotesdroptoggle=Torn Notes drop toggle
+Common.TornNotesdroptoggleTooltip=True to enable Torn Notes drop. True by default
+
+Common.ReversityCoinsdroptoggle=Reversity Coins drop toggle
+Common.ReversityCoinsdroptoggleTooltip=True to enable Reversity Coins drop. True by default
+
+Common.AlchemistNPCLite=Starting message referring to AlchemistNPC Lite
+Common.AlchemistNPCLiteTooltip=True to enable starting message. True by default
+
+Common.Revengeancemode=Revengeance mode prices scaling
+Common.RevengeancemodeTooltip=True to make potions prices bigger. True by default
+
+Common.Potionspricemultiplier=Potions price multiplier
+Common.PotionspricemultiplierTooltip=Multiplies potions price by X. 1 by default
+
+Common.FallenStarsPrice=Fallen Stars Price
+Common.FallenStarsPriceTooltip=1000 is 10 silver price by default
+
+AntiBuffMode
+
+Common.AntiBuffmodeactive=Anti Buff mode is active
+Common.AntiBuffmodeisdisabled=Anti Buff mode is disabled
+
+Bill Cipher
+
+Common.BillCipherChat1=What? Are you my namesake? Well, I don't want to fight you.
+Common.BillCipherChat2=Here, catch my present! Bye!
+Common.BillCipherChat3=Don't think that you can hide from me, mortal!
+
+Common.BillCipherChat4=WHAT? You again? I was already defeated with your help! What else do you want from me?
+Common.BillCipherChat5=You dared summon me? This is going to be fun!
+Common.BillCipherChat6=Hey, catch this!
+Common.BillCipherChat7=Hey you! Yes, you! I am asking the one who is controlling this ''puppet''!
+Common.BillCipherChat8=Do you really think that you would be able to defeat me? That's hilarious!
+Common.BillCipherChat9=Enough playing around, now you are gonna die!
+Common.BillCipherChat10=Madness is unleashed!
+Common.BillCipherChat11=You are starting to annoy me, worm!
+Common.BillCipherChat12=Don't start thinking you're safe behind that screen...
+Common.BillCipherChat13=I will come to your dreams and will turn them into the horrible nightmare!
+Common.BillCipherChat14=I will not get defeated again!
+Common.BillCipherChat15=Prepare to suffer!
+
+Knuckles
+
+Common.UgandanKnucklesChat1=I have a question to ask from you...
+

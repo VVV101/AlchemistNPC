@@ -1,15 +1,20 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Misc
 {
 	public class KnucklesBag : ModItem
 	{
+		public override int BossBagNPC => mod.NPCType("Knuckles");
+		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
 			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			DisplayName.AddTranslation(GameCulture.Chinese, "宝藏袋");
 		}
 
 		public override void SetDefaults()
@@ -20,7 +25,6 @@ namespace AlchemistNPC.Items.Misc
 			item.height = 24;
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("Knuckles");
 		}
 
 		public override bool CanRightClick()

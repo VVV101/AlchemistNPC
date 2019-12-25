@@ -4,8 +4,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
+using Terraria.Localization;
 using System;
 using Terraria.ID;
 using System.Linq;
@@ -31,87 +33,114 @@ namespace AlchemistNPC.Interface
 			ArchitectShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
 			ArchitectShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			UIText text = new UIText("Filler Blocks");
+			string ArchitectShops1; 
+			string ArchitectShops2;
+			string ArchitectShops3; 
+			string ArchitectShops4; 
+			string ArchitectShops5; 
+			string ArchitectShops6; 
+			string ArchitectShops7; 
+			string ArchitectShops8; 
+			string ArchitectShops9; 
+			string ArchitectShops10;
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					ArchitectShops1 = "填充块";
+					ArchitectShops2 = "建筑块";
+					ArchitectShops3 = "基础家具";
+					ArchitectShops4 = "进阶家具";
+					ArchitectShops5 = "火把";
+					ArchitectShops6 = "蜡烛";
+					ArchitectShops7 = "灯具";
+					ArchitectShops8 = "灯笼";
+					ArchitectShops9 = "吊灯";
+					ArchitectShops10 = "烛台";
+				}
+			else
+				{
+					ArchitectShops1 = "Filler Blocks";
+					ArchitectShops2 = "Building Blocks";
+					ArchitectShops3 = "Basic Furniture";
+					ArchitectShops4 = "Advanced Furniture";
+					ArchitectShops5 = "Torches";
+					ArchitectShops6 = "Candles";
+					ArchitectShops7 = "Lamps";
+					ArchitectShops8 = "Lanterns";
+					ArchitectShops9 = "Chandeliers";
+					ArchitectShops10 = "Candelabras";
+				}
+			UIText text = new UIText(ArchitectShops1);
 			text.Left.Set(35, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(70, 0f);
 			text.Height.Set(22, 0f);
-			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			ArchitectShopsPanel.Append(text);
 			
-			UIText text2 = new UIText("Building Blocks");
+			UIText text2 = new UIText(ArchitectShops2);
 			text2.Left.Set(35, 0f);
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(70, 0f);
 			text2.Height.Set(22, 0f);
-			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			ArchitectShopsPanel.Append(text2);
 			
-			UIText text3 = new UIText("Basic Furniture");
+			UIText text3 = new UIText(ArchitectShops3);
 			text3.Left.Set(35, 0f);
 			text3.Top.Set(70, 0f);
 			text3.Width.Set(70, 0f);
 			text3.Height.Set(22, 0f);
-			text3.OnClick += new MouseEvent(PlayButtonClicked3);
 			ArchitectShopsPanel.Append(text3);
 			
-			UIText text4 = new UIText("Advanced Furniture");
+			UIText text4 = new UIText(ArchitectShops4);
 			text4.Left.Set(35, 0f);
 			text4.Top.Set(100, 0f);
 			text4.Width.Set(70, 0f);
 			text4.Height.Set(22, 0f);
-			text4.OnClick += new MouseEvent(PlayButtonClicked4);
 			ArchitectShopsPanel.Append(text4);
 			
-			UIText text5 = new UIText("Torches");
+			UIText text5 = new UIText(ArchitectShops5);
 			text5.Left.Set(35, 0f);
 			text5.Top.Set(130, 0f);
 			text5.Width.Set(50, 0f);
 			text5.Height.Set(22, 0f);
-			text5.OnClick += new MouseEvent(PlayButtonClicked5);
 			ArchitectShopsPanel.Append(text5);
 			
-			UIText text6 = new UIText("Candles");
+			UIText text6 = new UIText(ArchitectShops6);
 			text6.Left.Set(35, 0f);
 			text6.Top.Set(160, 0f);
 			text6.Width.Set(50, 0f);
 			text6.Height.Set(22, 0f);
-			text6.OnClick += new MouseEvent(PlayButtonClicked6);
 			ArchitectShopsPanel.Append(text6);
 			
-			UIText text7 = new UIText("Lamps");
+			UIText text7 = new UIText(ArchitectShops7);
 			text7.Left.Set(35, 0f);
 			text7.Top.Set(190, 0f);
 			text7.Width.Set(50, 0f);
 			text7.Height.Set(22, 0f);
-			text7.OnClick += new MouseEvent(PlayButtonClicked7);
 			ArchitectShopsPanel.Append(text7);
 			
-			UIText text8 = new UIText("Lanterns");
+			UIText text8 = new UIText(ArchitectShops8);
 			text8.Left.Set(35, 0f);
 			text8.Top.Set(220, 0f);
 			text8.Width.Set(60, 0f);
 			text8.Height.Set(22, 0f);
-			text8.OnClick += new MouseEvent(PlayButtonClicked8);
 			ArchitectShopsPanel.Append(text8);
 			
-			UIText text9 = new UIText("Chandeliers");
+			UIText text9 = new UIText(ArchitectShops9);
 			text9.Left.Set(35, 0f);
 			text9.Top.Set(250, 0f);
 			text9.Width.Set(70, 0f);
 			text9.Height.Set(22, 0f);
-			text9.OnClick += new MouseEvent(PlayButtonClicked9);
 			ArchitectShopsPanel.Append(text9);
 			
-			UIText text10 = new UIText("Candelabras");
+			UIText text10 = new UIText(ArchitectShops10);
 			text10.Left.Set(35, 0f);
 			text10.Top.Set(280, 0f);
 			text10.Width.Set(70, 0f);
 			text10.Height.Set(22, 0f);
-			text10.OnClick += new MouseEvent(PlayButtonClicked10);
 			ArchitectShopsPanel.Append(text10);
 			
-			Texture2D buttonPlayTexture = ModLoader.GetTexture("Terraria/UI/ButtonPlay");
+			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
 			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
 			playButton.Left.Set(10, 0f);
 			playButton.Top.Set(10, 0f);
@@ -183,7 +212,7 @@ namespace AlchemistNPC.Interface
 			playButton10.OnClick += new MouseEvent(PlayButtonClicked10);
 			ArchitectShopsPanel.Append(playButton10);
 
-			Texture2D buttonDeleteTexture = ModLoader.GetTexture("Terraria/UI/ButtonDelete");
+			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
 			closeButton.Left.Set(200, 0f);
 			closeButton.Top.Set(10, 0f);

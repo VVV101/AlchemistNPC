@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.UI;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Equippable
@@ -20,7 +21,7 @@ namespace AlchemistNPC.Items.Equippable
 				DisplayName.AddTranslation(GameCulture.Russian, "Ответ Мемеру");
             Tooltip.AddTranslation(GameCulture.Russian, "Отражает 500% урона обратно всем противникам на экране\nУвеличивает весь урон на 15%\nУменьшает ваш шанс критического удара вдвое, но крит может нанести 4-х кратный урон\nОслабляет любые враждебные мемы");
             DisplayName.AddTranslation(GameCulture.Chinese, "Memer的反击");
-            Tooltip.AddTranslation(GameCulture.Chinese, "反弹500%的伤害\n增加15%全伤害\n暴击几率减半, 但是暴击能造成4倍伤害");
+            Tooltip.AddTranslation(GameCulture.Chinese, "反弹500%的伤害\n增加15%全伤害\n暴击率减半, 但是暴击能造成4倍伤害\n削弱敌对meme");
         }
 	
 		public override void SetDefaults()
@@ -49,11 +50,11 @@ namespace AlchemistNPC.Items.Equippable
 			player.magicCrit -= 5;
 			player.rangedCrit -= 5;
 			player.thrownCrit -= 5;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
@@ -68,17 +69,17 @@ namespace AlchemistNPC.Items.Equippable
 			player.magicCrit += 10;
 			player.rangedCrit += 10;
 			player.thrownCrit += 10;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
 			}
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).MemersRiposte = true;
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -86,7 +87,7 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.throwingDamage += 0.15f;
             CalamityPlayer.throwingCrit /= 2;
         }
@@ -94,7 +95,7 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
 			RedemptionPlayer.druidDamage += 0.15f;
 				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)
 				{
@@ -111,7 +112,7 @@ namespace AlchemistNPC.Items.Equippable
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicDamage += 0.15f;
 			ThoriumPlayer.radiantBoost += 0.15f;
 				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)

@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Misc
@@ -18,7 +19,7 @@ namespace AlchemistNPC.Items.Misc
             Tooltip.SetDefault("Can be used for buying Treasure Bags from Operator");
 			Tooltip.AddTranslation(GameCulture.Russian, "Может быть использована для покупки сумок у Оператора");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "3级逆转硬币");
+            DisplayName.AddTranslation(GameCulture.Chinese, "逆转硬币 T-3");
             Tooltip.AddTranslation(GameCulture.Chinese, "可以用来在操作员处购买宝藏袋");
         }
         public override void SetDefaults()

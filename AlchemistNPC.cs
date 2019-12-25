@@ -8,6 +8,8 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Terraria.Achievements;
 using Terraria.Localization;
 using Terraria.UI;
 using Terraria.DataStructures;
@@ -31,7 +33,7 @@ namespace AlchemistNPC
 
 		public static Mod Instance;
 		internal static AlchemistNPC instance;
-		internal TeleportClass TeleportClass;
+		internal static ModConfiguration modConfiguration;
 		public static ModHotKey LampLight;
 		public static ModHotKey DiscordBuff;
 		public static ModHotKey PipBoyTP;
@@ -70,11 +72,20 @@ namespace AlchemistNPC
 		public override void Load()
 		{
 			Instance = this;
-			Config.Load();
-            //SBMW:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language, first load after build mod may not work 
-            string LampLightToggle = Language.GetTextValue("Lamp Light Toggle");
-            string DiscordBuffTeleportation = Language.GetTextValue("Discord Buff Teleportation");
-			string PipBoy = Language.GetTextValue("Pip-Boy Teleportation Menu");
+            //ZY:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language 
+			string LampLightToggle, DiscordBuffTeleportation, PipBoy;
+            if (Language.ActiveCulture == GameCulture.Chinese)
+			{
+				LampLightToggle = "大鸟灯开关";
+				DiscordBuffTeleportation = "混沌Buff传送";
+				PipBoy = "哔哔小子传送菜单";
+			}
+			else
+			{
+				LampLightToggle = "Lamp Light Toggle";
+				DiscordBuffTeleportation = "Discord Buff Teleportation";
+				PipBoy = "Pip-Boy Teleportation Menu";
+			}
             LampLight = RegisterHotKey(LampLightToggle, "L");
             DiscordBuff = RegisterHotKey(DiscordBuffTeleportation, "Q");
 			PipBoyTP = RegisterHotKey(PipBoy, "P");
@@ -82,18 +93,18 @@ namespace AlchemistNPC
 			{
 				AddEquipTexture(null, EquipType.Legs, "somebody0214Robe_Legs", "AlchemistNPC/Items/Armor/somebody0214Robe_Legs");
 			}
-			ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ItemType<Items.Misc.ReversivityCoinTier1>(), 999L));
-			ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ItemType<Items.Misc.ReversivityCoinTier2>(), 999L));
-			ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ItemType<Items.Misc.ReversivityCoinTier3>(), 999L));
-			ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ItemType<Items.Misc.ReversivityCoinTier4>(), 999L));
-			ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ItemType<Items.Misc.ReversivityCoinTier5>(), 999L));
-			ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ItemType<Items.Misc.ReversivityCoinTier6>(), 999L));
+			ReversivityCoinTier1ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier1Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier1>(), 999L));
+			ReversivityCoinTier2ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier2Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier2>(), 999L));
+			ReversivityCoinTier3ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier3Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier3>(), 999L));
+			ReversivityCoinTier4ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier4Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier4>(), 999L));
+			ReversivityCoinTier5ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier5Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier5>(), 999L));
+			ReversivityCoinTier6ID = CustomCurrencyManager.RegisterCurrency(new ReversivityCoinTier6Data(ModContent.ItemType<Items.Misc.ReversivityCoinTier6>(), 999L));
 			instance = this;
 
             SetTranslation();
 			
 			if (!Main.dedServ)
-			{				
+			{			
 				AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Chaos King"), ItemType("ChaosKingMusicBox"), TileType("ChaosKingMusicBox"));
 				AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Field of Hopes And Dreams"), ItemType("FieldsMusicBox"), TileType("FieldsMusicBox"));
 				AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Lantern"), ItemType("SheamMusicBox"), TileType("SheamMusicBox"));
@@ -139,6 +150,38 @@ namespace AlchemistNPC
 				alchemistUserInterfaceP = new UserInterface();
 				alchemistUserInterfaceP.SetState(pipboyUI);
 			}
+			Mod ALIB = ModLoader.GetMod("AchievementLib");
+			if(ALIB != null)
+			{
+				ALIB.Call("AddAchievement", Instance, "Junior Alchemist", "Obtain Alchemist Charm tier 1", ModContent.GetTexture("AlchemistNPC/AchievementLib/JALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/JAUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Senior Alchemist", "Obtain Alchemist Charm tier 4", ModContent.GetTexture("AlchemistNPC/AchievementLib/SALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/SAUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "The gang's all here!", "Find every AlchemistNPC town NPC.", ModContent.GetTexture("AlchemistNPC/AchievementLib/ANPCLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/ANPCUnlocked"), AchievementCategory.Challenger);
+				ALIB.Call("AddAchievement", Instance, "You don't know da wae!", "Die to Ugandan Knuckles.", ModContent.GetTexture("AlchemistNPC/AchievementLib/UNDLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/UNDUnlocked"), AchievementCategory.Slayer);
+				ALIB.Call("AddAchievement", Instance, "Da wae is clear, to the queen!", "Defeat Ugandan Knuckles.", ModContent.GetTexture("AlchemistNPC/AchievementLib/UNWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/UNWUnlocked"), AchievementCategory.Slayer);
+				ALIB.Call("AddAchievement", Instance, "If you will excuse me...", "Die to Bill Cipher.", ModContent.GetTexture("AlchemistNPC/AchievementLib/BCDLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/BCDUnlocked"), AchievementCategory.Slayer);
+				ALIB.Call("AddAchievement", Instance, "The deal is off!", "Defeat Bill Cipher.", ModContent.GetTexture("AlchemistNPC/AchievementLib/BCWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/BCWUnlocked"), AchievementCategory.Slayer);
+				ALIB.Call("AddAchievement", Instance, "Well, cheers!", "Craft Wellcheers Vending Machine.", ModContent.GetTexture("AlchemistNPC/AchievementLib/WCCLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/WCCUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "The snack that smiles back", "Use Wellcheers Vending Machine too many times.", ModContent.GetTexture("AlchemistNPC/AchievementLib/WCULocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/WCUUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Spear of Justice", "Obtain the Spear of Justice.", ModContent.GetTexture("AlchemistNPC/AchievementLib/SJLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/SJUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "if you keep going the way you are now...", "Obtain the Eye of Judgement.", ModContent.GetTexture("AlchemistNPC/AchievementLib/EJLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/EJUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "you're gonna have a bad time.", "Upgrade the Eye of Judgement.", ModContent.GetTexture("AlchemistNPC/AchievementLib/EPJLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/EPJUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Don't worry, mom, I can handle it...", "Obtain a Magic Wand.", ModContent.GetTexture("AlchemistNPC/AchievementLib/MWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/MWUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Dip down!", "Upgrade the Magic Wand once.", ModContent.GetTexture("AlchemistNPC/AchievementLib/DMWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/DMWUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Forbidden magic", "Upgrade the Magic Wand to its maximum power.", ModContent.GetTexture("AlchemistNPC/AchievementLib/MMWLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/MMWUnlocked"), AchievementCategory.Challenger);
+				ALIB.Call("AddAchievement", Instance, "Pandora's Box", "Obtain a Pandora", ModContent.GetTexture("AlchemistNPC/AchievementLib/PLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Now you're thinking...", "Obtain Rick Sanchez's Portal Gun", ModContent.GetTexture("AlchemistNPC/AchievementLib/PGLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PGUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "Artificial unintelligence", "Obtain a Portal Turret", ModContent.GetTexture("AlchemistNPC/AchievementLib/PTLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PTUnlocked"), AchievementCategory.Collector);
+				ALIB.Call("AddAchievement", Instance, "The only thing to FEAR", "Obtain the incarnation of FEAR", ModContent.GetTexture("AlchemistNPC/AchievementLib/ALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/AUnlocked"), AchievementCategory.Collector);
+			}
+		}
+		
+		public override void Unload() {
+			Instance = null;
+			instance = null;
+			LampLight = null;
+			DiscordBuff = null;
+			PipBoyTP = null;
+			modConfiguration = null;
 		}
 
 		public override void PostSetupContent()
@@ -150,7 +193,7 @@ namespace AlchemistNPC
 				censusMod.Call("TownNPCCondition", NPCType("Brewer"), "Defeat Eye of Cthulhu");
 				censusMod.Call("TownNPCCondition", NPCType("Jeweler"), "Defeat Eye of Cthulhu");
 				censusMod.Call("TownNPCCondition", NPCType("Tinkerer"), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType("Architect"), "Defeat Eater of Worlds/Brain of Cthulhu and have at least 5 NPCs alive");
+				censusMod.Call("TownNPCCondition", NPCType("Architect"), "Have any 3 other NPC present");
 				censusMod.Call("TownNPCCondition", NPCType("Operator"), "Defeat Eater of Worlds/Brain of Cthulhu and place [c/00FF00:Wing of the World] (craftable furniture) inside free housing");
 				censusMod.Call("TownNPCCondition", NPCType("Musician"), "Defeat Skeletron");
 				censusMod.Call("TownNPCCondition", NPCType("Young Brewer"), "World state is Hardmode and both Alchemist and Operator are alive");
@@ -291,25 +334,10 @@ namespace AlchemistNPC
 				);
 			}
 		}
-		
-		public override void Unload()
-		{
-			instance = null;
-		}
-		
-		public static string ConfigFileRelativePath 
-		{
-		get { return "Mod Configs/Alchemistv84.json"; }
-		}
 
-		public static void ReloadConfigFromFile() 
-		{
-		Config.Load();
-		}
-		
 		public override void HandlePacket(BinaryReader reader, int whoAmI)
 		{
-		AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();
+			AlchemistNPCMessageType msgType = (AlchemistNPCMessageType)reader.ReadByte();
 			switch (msgType)
 			{
 				case AlchemistNPCMessageType.LifeAndManaSync:
@@ -321,25 +349,53 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().WellFed = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BillIsDowned = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BBP = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().SnatcherCounter = reader.ReadInt32();
+					
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().KingSlimeBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().EyeOfCthulhuBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().EaterOfWorldsBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BrainOfCthulhuBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().QueenBeeBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().SkeletronBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().WoFBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().GSummonerBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().PigronBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().IceGolemBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().DarkMageBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().CustomBooster1 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().CustomBooster2 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().DestroyerBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().PrimeBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().TwinsBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().OgreBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().PlanteraBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().GolemBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BetsyBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().FishronBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().MartianSaucerBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().CultistBooster = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().MoonLordBooster = reader.ReadInt32();
 					break;
 				case AlchemistNPCMessageType.TeleportPlayer:
 					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);
 					break;
-				case AlchemistNPCMessageType.BBPChanged:
+				case AlchemistNPCMessageType.SyncPlayerVariables:
 					playernumber = reader.ReadByte();
 					AlchemistNPCPlayer alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
 					alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
 					alchemistPlayer.BBP = reader.ReadInt32();
+					alchemistPlayer.SnatcherCounter = reader.ReadInt32();
 					if (Main.netMode == NetmodeID.Server) {
 						var packet = GetPacket();
-						packet.Write((byte)AlchemistNPCMessageType.BBPChanged);
+						packet.Write((byte)AlchemistNPCMessageType.SyncPlayerVariables);
 						packet.Write(playernumber);
 						packet.Write(alchemistPlayer.BBP);
+						packet.Write(alchemistPlayer.SnatcherCounter);
 						packet.Send(-1, playernumber);
 					}
 					break;
 				default:
-					ErrorLogger.Log("AlchemistNPC: Unknown Message type: " + msgType);
+					Logger.Error("AlchemistNPC: Unknown Message type: " + msgType);
 					break;
 			}
 		}
@@ -348,7 +404,7 @@ namespace AlchemistNPC
 		{
 		LifeAndManaSync,
 		TeleportPlayer,
-		BBPChanged
+		SyncPlayerVariables
 		}
 		
 		public override void AddRecipeGroups()
@@ -479,6 +535,26 @@ namespace AlchemistNPC
 			recipe.SetResult(ItemID.LifeformAnalyzer);
 			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.Mushroom);
+			recipe.AddIngredient(ItemID.Daybloom);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.PurificationPowder, 5);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CorruptSeeds);
+			recipe.AddIngredient(ItemID.PurificationPowder);
+			recipe.AddIngredient(ItemID.PixieDust);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.HallowedSeeds);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CrimsonSeeds);
+			recipe.AddIngredient(ItemID.PurificationPowder);
+			recipe.AddIngredient(ItemID.PixieDust);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.HallowedSeeds);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
 			recipe.AddIngredient(null, "EmagledFragmentation", 10);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(ItemID.FragmentStardust, 2);
@@ -570,6 +646,7 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("hardmodeComponent");
             text.SetDefault("Hardmode Component");
+			text.AddTranslation(GameCulture.Chinese, "邪恶困难模式材料(咒焰/脓血)");
             AddTranslation(text);
 
             text = CreateTranslation("evilBar");
@@ -615,6 +692,7 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("LunarHamaxe");
             text.SetDefault("Lunar Hamaxe");
+			text.AddTranslation(GameCulture.Chinese, "四柱工具");
             AddTranslation(text);
 
             text = CreateTranslation("tier3Watch");
@@ -633,10 +711,12 @@ namespace AlchemistNPC
 			text = CreateTranslation("Knuckles");
             text.SetDefault("Ugandan Knuckles Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Угандского Наклза");
+		text.AddTranslation(GameCulture.Chinese, "乌干达宝藏袋");
             AddTranslation(text);
 			text = CreateTranslation("BillCipher");
             text.SetDefault("Bill Cipher Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Билла");
+		text.AddTranslation(GameCulture.Chinese, "比尔·赛弗宝藏袋");
             AddTranslation(text);
             //SBMW:Vanilla
             text = CreateTranslation("KingSlime");
@@ -714,6 +794,7 @@ namespace AlchemistNPC
 			text = CreateTranslation("Betsy");
             text.SetDefault("Betsy Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Бетси");
+		text.AddTranslation(GameCulture.Chinese, "贝特西宝藏袋");
             AddTranslation(text);
 			
             text = CreateTranslation("DukeFishron");
@@ -780,19 +861,19 @@ namespace AlchemistNPC
             text = CreateTranslation("Calamitas");
             text.SetDefault("Calamitas Doppelganger Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Двойника Каламитас");
-            text.AddTranslation(GameCulture.Chinese, "灾厄之眼宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "灾厄之影宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("AstrageldonSlime");
             text.SetDefault("Astrum Aureus Treasure Bag");
 			text.AddTranslation(GameCulture.Russian, "Сумка Звёздного Заразителя");
-            text.AddTranslation(GameCulture.Chinese, "大彗星史莱姆宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "白金之星宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("AstrumDeus");
             text.SetDefault("Astrum Deus Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Звёздного Бога");
-            text.AddTranslation(GameCulture.Chinese, "星神吞噬者宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "星神游龙宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("Leviathan");
@@ -834,24 +915,26 @@ namespace AlchemistNPC
             text = CreateTranslation("Bumblebirb");
             text.SetDefault("Bumblebirb Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Шмелептицы");
-            text.AddTranslation(GameCulture.Chinese, "癫痫鸟宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "嗡嗡蜂鸟宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("Yharon");
             text.SetDefault("Jungle Dragon, Yharon Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Дракона Джунглей, Ярона");
-            text.AddTranslation(GameCulture.Chinese, "犽戎宝藏袋");
+            text.AddTranslation(GameCulture.Chinese, "丛林龙宝藏袋");
             AddTranslation(text);
 
             //SBMW:ThoriumMod
 			text = CreateTranslation("DarkMage");
             text.SetDefault("Dark Mage Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Темного Мага");
+		text.AddTranslation(GameCulture.Chinese, "黑魔法师宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Ogre");
             text.SetDefault("Ogre Treasure Bag");
 	    text.AddTranslation(GameCulture.Russian, "Сумка Огра");
+		text.AddTranslation(GameCulture.Chinese, "食人魔宝藏袋");
             AddTranslation(text);
 			
             text = CreateTranslation("ThunderBird");
@@ -867,8 +950,8 @@ namespace AlchemistNPC
             AddTranslation(text);
 			
 			text = CreateTranslation("CountEcho");
-            text.SetDefault("Count Echo Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "水母皇后宝藏袋");
+            text.SetDefault("Viscount Treasure Bag");
+            text.AddTranslation(GameCulture.Chinese, "蝙蝠子爵宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("GraniteEnergyStorm");
@@ -920,36 +1003,43 @@ namespace AlchemistNPC
 			 //SacredTools
             text = CreateTranslation("FlamingPumpkin");
             text.SetDefault("The Flaming Pumpkin Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Горящей Тыквы");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Горящей Тыквы");
+			text.AddTranslation(GameCulture.Chinese, "焚炎南瓜宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Jensen");
             text.SetDefault("Jensen, the Grand Harpy Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Дженсен, Великой Гарпии");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Дженсен, Великой Гарпии");
+			text.AddTranslation(GameCulture.Chinese, "巨型鸟妖詹森宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Raynare");
             text.SetDefault("Harpy Queen, Raynare Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевы Гарпий");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевы Гарпий");
+			text.AddTranslation(GameCulture.Chinese, "鸟妖女王雷纳宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Abaddon");
             text.SetDefault("Abaddon, the Emissary of Nightmares Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Абаддона, Эмиссара Кошмаров");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Абаддона, Эмиссара Кошмаров");
+			text.AddTranslation(GameCulture.Chinese, "梦魇使者亚巴顿宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Araghur");
             text.SetDefault("Araghur, the Flare Serpent Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Арагура, Огненного Змия");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Арагура, Огненного Змия");
+			text.AddTranslation(GameCulture.Chinese, "熔火巨蟒宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Lunarians");
             text.SetDefault("The Lunarians Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Лунарианов");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Лунарианов");
+			text.AddTranslation(GameCulture.Chinese, "月军宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Challenger");
             text.SetDefault("The Challenger Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "堕落帝者宝藏袋");
             AddTranslation(text);
 			
 			//SpiritMod
@@ -996,7 +1086,7 @@ namespace AlchemistNPC
 			//Enigma
             text = CreateTranslation("Sharkron");
             text.SetDefault("Dune Sharkron Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Дюнного Акулрона");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Дюнного Акулрона");
             AddTranslation(text);
 			
 			text = CreateTranslation("Hypothema");
@@ -1005,17 +1095,17 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("Ragnar");
             text.SetDefault("Ragnar Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Рагнара");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Рагнара");
             AddTranslation(text);
 			
 			text = CreateTranslation("AnDio");
             text.SetDefault("Andesia & Dioritus Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Андезии и Диоритуса");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Андезии и Диоритуса");
             AddTranslation(text);
 			
 			text = CreateTranslation("Annihilator");
             text.SetDefault("The Annihilator Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Аннигилятора");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Аннигилятора");
             AddTranslation(text);
 			
 			text = CreateTranslation("Slybertron");
@@ -1024,7 +1114,7 @@ namespace AlchemistNPC
 			
 			text = CreateTranslation("SteamTrain");
             text.SetDefault("Steam Train Treasure Bag");
-	    text.AddTranslation(GameCulture.Russian, "Сумка Паровоза");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Паровоза");
             AddTranslation(text);
 			
 			//Pinky
@@ -1051,70 +1141,87 @@ namespace AlchemistNPC
 			//AAMod
             text = CreateTranslation("Monarch");
             text.SetDefault("Mushroom Monarch Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "赤孢皇宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Grips");
             text.SetDefault("Grips of Chaos Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "混沌双爪宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Broodmother");
             text.SetDefault("Broodmother Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "育母炎龙宝藏袋");
             AddTranslation(text);
 
 			text = CreateTranslation("Hydra");
             text.SetDefault("Hydra Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "九头渊蛇宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Serpent");
             text.SetDefault("Subzero Serpent Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "绝零冰蛇宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Djinn");
             text.SetDefault("Desert Djinn Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "沙漠巨灵宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Retriever");
             text.SetDefault("Retriever Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "捕猎者宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("RaiderU");
             text.SetDefault("Raider Ultima Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "创世哺育之母宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Orthrus");
             text.SetDefault("Orthrus X Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "双头狗宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("EFish");
             text.SetDefault("Emperor Fishron Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "猪鲨王宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Nightcrawler");
             text.SetDefault("Nightcrawler Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "奈克劳尔宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Daybringer");
             text.SetDefault("Daybringer Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "戴布林格宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Yamata");
             text.SetDefault("Yamata Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "八歧大蛇宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Akuma");
             text.SetDefault("Akuma Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "邪鬼巨龙宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Zero");
             text.SetDefault("Zero Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "零械单元宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Shen");
             text.SetDefault("Shen Doragon Treasure Cache");
+			text.AddTranslation(GameCulture.Chinese, "上神应龙宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("ShenGrips");
             text.SetDefault("Shen Doragon Grips Treasure Bag");
+			text.AddTranslation(GameCulture.Chinese, "上神双爪宝藏袋");
             AddTranslation(text);
 			
             //SBMW:Some other translation
@@ -1157,35 +1264,47 @@ namespace AlchemistNPC
 			text = CreateTranslation("D1");
             text.SetDefault("To think, she's just here to collect the horrors of Terraria...what is she thinking?");
 			text.AddTranslation(GameCulture.Russian, "Просто подумай, она здесь лишь для того, чтобы собрать ужасы Террарии... О чём она думает?");
+			text.AddTranslation(GameCulture.Chinese, "想一想, 她只是来收集泰拉世界中的恐惧...她究竟想干什么？");
             AddTranslation(text);
 			
 			text = CreateTranslation("D2");
             text.SetDefault("I still remember the day she landed. If it weren't for the help of everyone here, I swore I would never fix her up.");
 			text.AddTranslation(GameCulture.Russian, "Я всё ещё помню день, когда она прибыла. Если бы это не было полезным для всех тут, то я клянусь, что никогда бы не помогла ей.");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "我仍然记得她掉到这个世界上的那一天. 如果没有这里所有人的帮助, 我发誓永远不会把她修好. ");
+			AddTranslation(text);
 			
 			text = CreateTranslation("D3");
             text.SetDefault("You may not have fully defeated the gate, but it seems Angela has what's left of it.");
 			text.AddTranslation(GameCulture.Russian, "Ты мог победить врата не полностью, но похоже, что у Анджелы уже есть всё то, что от них осталось.");
+			text.AddTranslation(GameCulture.Chinese, "你似乎并未完全打败这个门, 不过好像Angela那有它掉落的东西");
             AddTranslation(text);
 			
 			text = CreateTranslation("D4");
             text.SetDefault("I can understand trying to understand a Dungeon Slime, but going out of your way to harvest the Wall of Flesh? What was Angela thinking!?");
 			text.AddTranslation(GameCulture.Russian, "Я могу понять попытки понять Слизня Данжа, но сойти с пути чтобы собрать остатки Стены Плоти? О чём Анджела думает!?");
+			text.AddTranslation(GameCulture.Chinese, "想要试图理解地牢史莱姆的心情我能理解, 但是试图猎杀血肉之墙? Angela在想些什么?");
             AddTranslation(text);
 			
 			text = CreateTranslation("AD1");
             text.SetDefault("Shame. Would had wanted Angela, but she's lured by ");
 			text.AddTranslation(GameCulture.Russian, "Как жаль. Хотел бы потолковать с Анджелой, но она привлечена ");
+			text.AddTranslation(GameCulture.Chinese, "可惜了. 对Angela还挺有好感的, 但是她受到了来自");
+            AddTranslation(text);
+
+			text = CreateTranslation("ADch1");
+            text.SetDefault("");
+			text.AddTranslation(GameCulture.Chinese, "的诱惑");
             AddTranslation(text);
 			
 			text = CreateTranslation("AD2");
             text.SetDefault("Man, how much gun is that AI packing?");
 			text.AddTranslation(GameCulture.Russian, "Чувак, сколько же пушек у этого ИИ с собой?");
+			text.AddTranslation(GameCulture.Chinese, "伙计, AI的包里有多少枪");
             AddTranslation(text);
 			
 			text = CreateTranslation("RCTT");
             text.SetDefault("Right-click to teleport here");
+			text.AddTranslation(GameCulture.Chinese, "右键传送至此");
             AddTranslation(text);
         }
 		

@@ -5,6 +5,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.Localization;
 using Terraria.World.Generation;
@@ -22,6 +23,10 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nEmpowered with Hive Pack/Plague Hive equipped");
 			DisplayName.AddTranslation(GameCulture.Russian, "Осаната из Вечной Лавы");
             Tooltip.AddTranslation(GameCulture.Russian, "Выпускает дружественных ос после взрыва\nОсы накладывают Ихор и поджигают противников\nМогут быть усилены экипировкой Пчелиного Рюкзака/Чумного Улья");
+			DisplayName.AddTranslation(GameCulture.Chinese, "神圣熔岩黄蜂雷");
+			Tooltip.AddTranslation(GameCulture.Chinese, "爆炸后释放友善黄蜂"
+			+"\n黄蜂造成着火和脓液Debuff"
+			+"\n装备蜂窝背包/瘟疫蜂巢(灾厄)时威力增强");
         }
 
 		public override void SetDefaults()

@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.QuestFishes
@@ -10,6 +11,7 @@ namespace AlchemistNPC.Items.QuestFishes
 		{
 			DisplayName.SetDefault("Mutant Fish");
 			DisplayName.AddTranslation(GameCulture.Russian, "Мутировавшая Рыба");
+			DisplayName.AddTranslation(GameCulture.Chinese, "变种鱼");
 		}
 
 		public override void SetDefaults()

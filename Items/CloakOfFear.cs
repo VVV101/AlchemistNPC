@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -20,6 +21,11 @@ namespace AlchemistNPC.Items
 			+"\nExhausts player for 30 seconds after effect ends, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Плащ Страха''");
             Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Плащ Страха''\nЗаставляет противников вблизи игрока изменять направление движения\nИстощает игрока на 30 секунд после окончания действия, не позволяя ему использовать магию");
+			DisplayName.AddTranslation(GameCulture.Chinese, "卷轴 ''恐惧之袍''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "一次性物品"
+			+"\n包含着 ''恐惧之袍''法术"
+			+"\n使附近的非Boss敌人改变移动方向"
+			+"\n使玩家精疲力尽1分钟, 期间无法使用魔法");
         }
 		
 		public override void SetDefaults()

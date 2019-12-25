@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
@@ -21,7 +22,7 @@ namespace AlchemistNPC.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.ownedProjectileCounts[mod.ProjectileType("LittleWitchMonster")] < 1)
 			{
 				Vector2 vel = new Vector2(0, -1);

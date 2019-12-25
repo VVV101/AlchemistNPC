@@ -5,6 +5,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.Localization;
 using Terraria.World.Generation;
@@ -21,12 +22,15 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\nSlashes enemies from the distance");
 			DisplayName.AddTranslation(GameCulture.Russian, "Меч Морденкайнена");
             Tooltip.AddTranslation(GameCulture.Russian, "Нематериальный клинок, созданный Морденкайненом\nМожет ранить врага на значительном расстоянии");
+			DisplayName.AddTranslation(GameCulture.Chinese, "魔邓肯之剑");
+			Tooltip.AddTranslation(GameCulture.Chinese, "魔邓肯制作的无形之剑"
+			+ "\n远程斩杀敌人");
         }
 
 		public override void SetDefaults()
 		{
 			item.melee = true;
-			item.damage = 36;
+			item.damage = 56;
 			item.width = 32;
 			item.height = 32;
 			item.useTime = 30;

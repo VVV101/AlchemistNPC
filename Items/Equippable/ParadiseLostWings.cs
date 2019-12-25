@@ -3,6 +3,7 @@ using Terraria.ID;
 using System.Linq;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace AlchemistNPC.Items.Equippable
 {
@@ -31,7 +32,7 @@ namespace AlchemistNPC.Items.Equippable
             + "\n[c/FF0000:EGO 礼物]"
             + "\n等同于翅膀"
             + "\n允许奔跑"
-            + "\n拥有非常长的飞行时间和优秀的飞行速度");
+            + "\n拥有非常长的飞行时间和优秀的水平飞行速度");
         }
 
 		public override void SetDefaults()
@@ -75,12 +76,12 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(null, "ChromaticCrystal", 3);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 3);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 3);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 5);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 10);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);

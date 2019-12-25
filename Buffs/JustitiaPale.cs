@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 
@@ -18,12 +19,12 @@ namespace AlchemistNPC.Buffs
 			DisplayName.AddTranslation(GameCulture.Russian, "Бледность Юстиции");
 			Description.AddTranslation(GameCulture.Russian, "Жизненные силы иссякают..");
             DisplayName.AddTranslation(GameCulture.Chinese, "无力的审判鸟");
-            Description.AddTranslation(GameCulture.Chinese, "失去生命...");
+            Description.AddTranslation(GameCulture.Chinese, "生命从你的身体中流失...");
         }
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-            npc.GetGlobalNPC<ModGlobalNPC>(mod).justitiapale = true;
+            npc.GetGlobalNPC<ModGlobalNPC>().justitiapale = true;
         }
 	}
 }

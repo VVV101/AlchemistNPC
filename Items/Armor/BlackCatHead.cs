@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Armor
@@ -24,9 +25,9 @@ namespace AlchemistNPC.Items.Armor
 		    + "\nPlayer is under permanent effect of Battle Combination"
             + "\nGrants the abilities of a Master Ninja");
 			text.AddTranslation(GameCulture.Russian, "Увеличивает текущий урон в ближнем бою на 25% и добавляет 15% к шансу критического удара\n+48 защиты\nИгрок находится под постоянным эффектом комбинации Битвы\nДаёт способности Мастера Ниндзя");
-			text.AddTranslation(GameCulture.Chinese, "增加25%当前近战伤害, 增加15%近战暴击几率"
+			text.AddTranslation(GameCulture.Chinese, "增加25%当前近战伤害, 增加15%近战暴击率"
             + "\n增加 48 防御力"
-            + "\n极大增加移动速度"
+            + "\n增加33%移动速度"
             + "\n给予永久坦战药剂包效果"
             + "\n并获得忍者大师的能力");
 			mod.AddTranslation(text);

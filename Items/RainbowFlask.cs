@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -20,7 +21,8 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Ваши оружия разрушают броню вашего противника и накладывают дебаффы, наносящие значительный урон противнику\nУбирает невосприимчивость противника к Ихору, Проклятию Бетси и Дневному Ожогу");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "瓶中彩虹");
-            Tooltip.AddTranslation(GameCulture.Chinese, "使你的武器造成破甲并且给予许多强力的Debuff.");
+            Tooltip.AddTranslation(GameCulture.Chinese, "使你的武器造成破甲并且给予许多高伤的Debuff."
+            +"\n移除敌人对脓液, 贝特西的诅咒以及破晓的免疫");
         }    
 		public override void SetDefaults()
         {

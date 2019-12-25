@@ -4,6 +4,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -20,6 +21,12 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\n35% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Торжественная клятва (T-01-68)");
             Tooltip.AddTranslation(GameCulture.Russian, "''Печальная атмосфера. Один отражает грусть мёртвых, а другой отражает страх живущих.''\n[c/FF0000:Оружие Э.П.О.С.]\nНакладывает Теневое Пламя и Морозный Ожог\n35% шанс не потратить патроны");
+			DisplayName.AddTranslation(GameCulture.Chinese, "圣宣 (T-01-68)");
+			Tooltip.AddTranslation(GameCulture.Chinese, "''这两把枪令人感到严肃."
+			+"\n死者之哀, 死亡之惧, 烙印其上.''"
+			+"\n[c/FF0000:EGO 武器]"
+			+"\n造成暗影烈焰和霜火"
+			+"\n35%概率不消耗弹药");
 		}
 
 		public override void SetDefaults()
@@ -44,10 +51,9 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Projectile.NewProjectile(position.X, position.Y-5, speedX, speedY, type, damage/2, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage/2, knockBack, player.whoAmI);
-			type = mod.ProjectileType("FDB");
-			return true;
+			Projectile.NewProjectile(position.X, position.Y-5, speedX, speedY, type, (damage/3)*2, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("FDB"), (damage/3)*2, knockBack, player.whoAmI);
+			return false;
 		}
 		
 		public override bool ConsumeAmmo(Player player)
@@ -63,13 +69,13 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool CanUseItem(Player player)
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
-					{
-					item.damage = 125;
-					}
-					else
-					{
-					item.damage = 26;
-					}
+			{
+				item.damage = 125;
+			}
+			else
+			{
+				item.damage = 26;
+			}
 			return base.CanUseItem(player);
 		}
 		

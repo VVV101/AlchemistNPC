@@ -4,8 +4,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
+using Terraria.Localization;
 using System;
 using Terraria.ID;
 using System.Linq;
@@ -31,47 +33,65 @@ namespace AlchemistNPC.Interface
 			OperatorShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
 			OperatorShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			UIText text = new UIText("Materials/Boss Drops");
+			string OperatorShops1; 
+			string OperatorShops2; 
+			string OperatorShops3; 
+			string OperatorShops4; 
+			string OperatorShops5;
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+				{
+					OperatorShops1 = "材料/Boss掉落物品";
+					OperatorShops2 = "EGO商店";
+					OperatorShops3 = "原版宝藏袋";
+					OperatorShops4 = "模组宝藏袋#1";
+					OperatorShops5 = "模组宝藏袋#2";
+				}
+			else
+				{
+					OperatorShops1 = "Materials/Boss Drops";
+					OperatorShops2 = "EGO shop";
+					OperatorShops3 = "Vanilla Treasure Bags";
+					OperatorShops4 = "Modded Treasure Bags #1";
+					OperatorShops5 = "Modded Treasure Bags #2";
+				}
+			
+			UIText text = new UIText(OperatorShops1);
 			text.Left.Set(35, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(90, 0f);
 			text.Height.Set(22, 0f);
-			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			OperatorShopsPanel.Append(text);
 			
-			UIText text2 = new UIText("EGO shop");
+			UIText text2 = new UIText(OperatorShops2);
 			text2.Left.Set(35, 0f);
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(70, 0f);
 			text2.Height.Set(22, 0f);
-			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			OperatorShopsPanel.Append(text2);
 			
-			UIText text3 = new UIText("Vanilla Treasure Bags");
+			UIText text3 = new UIText(OperatorShops3);
 			text3.Left.Set(35, 0f);
 			text3.Top.Set(70, 0f);
 			text3.Width.Set(120, 0f);
 			text3.Height.Set(22, 0f);
-			text3.OnClick += new MouseEvent(PlayButtonClicked3);
 			OperatorShopsPanel.Append(text3);
 			
-			UIText text4 = new UIText("Modded Treasure Bags #1");
+			UIText text4 = new UIText(OperatorShops4);
 			text4.Left.Set(35, 0f);
 			text4.Top.Set(100, 0f);
 			text4.Width.Set(120, 0f);
 			text4.Height.Set(22, 0f);
-			text4.OnClick += new MouseEvent(PlayButtonClicked4);
 			OperatorShopsPanel.Append(text4);
 			
-			UIText text5 = new UIText("Modded Treasure Bags #2");
+			UIText text5 = new UIText(OperatorShops5);
 			text5.Left.Set(35, 0f);
 			text5.Top.Set(130, 0f);
 			text5.Width.Set(120, 0f);
 			text5.Height.Set(22, 0f);
-			text5.OnClick += new MouseEvent(PlayButtonClicked5);
 			OperatorShopsPanel.Append(text5);
 			
-			Texture2D buttonPlayTexture = ModLoader.GetTexture("Terraria/UI/ButtonPlay");
+			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
 			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
 			playButton.Left.Set(10, 0f);
 			playButton.Top.Set(10, 0f);
@@ -108,7 +128,7 @@ namespace AlchemistNPC.Interface
 			playButton5.OnClick += new MouseEvent(PlayButtonClicked5);
 			OperatorShopsPanel.Append(playButton5);
 
-			Texture2D buttonDeleteTexture = ModLoader.GetTexture("Terraria/UI/ButtonDelete");
+			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
 			closeButton.Left.Set(230, 0f);
 			closeButton.Top.Set(10, 0f);

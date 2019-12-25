@@ -3,15 +3,20 @@ using Microsoft.Xna.Framework;
 using System.Linq;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Misc
 {
 	public class BillCipherBag : ModItem
 	{
+		public override int BossBagNPC => mod.NPCType("BillCipher");
+		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Treasure Bag");
 			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			DisplayName.AddTranslation(GameCulture.Chinese, "宝藏袋");
 		}
 
 		public override void SetDefaults()
@@ -22,7 +27,6 @@ namespace AlchemistNPC.Items.Misc
 			item.height = 24;
 			item.rare = 9;
 			item.expert = true;
-			bossBagNPC = mod.NPCType("BillCipher");
 		}
 
 		public override bool CanRightClick()
@@ -38,23 +42,24 @@ namespace AlchemistNPC.Items.Misc
 			player.QuickSpawnItem(mod.ItemType("LaserCannon"));
 			player.QuickSpawnItem(mod.ItemType("GrapplingHookGunItem"));
 			player.QuickSpawnItem(mod.ItemType("IlluminatiGift"));
+			player.QuickSpawnItem(mod.ItemType("BillSoul"));
 			if (player.HasBuff(mod.BuffType("GrimReaper")) && Main.rand.Next(5) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("MysticAmulet"));
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModRevengeance)
 				{
 					player.QuickSpawnItem(mod.ItemType("MysticAmulet"));
 				}
 			}
-			player.QuickSpawnItem(ItemID.PlatinumCoin, 50);
+			player.QuickSpawnItem(ItemID.PlatinumCoin, 10);
 		}
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");

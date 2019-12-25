@@ -5,6 +5,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.Localization;
 using Terraria.World.Generation;
@@ -21,11 +22,13 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("Releases damaging bubbles on enemy hits");
 			DisplayName.AddTranslation(GameCulture.Russian, "Сушёная Вобла");
             Tooltip.AddTranslation(GameCulture.Russian, "Выпускает ранящие пузыри при ударе по противнику");
+			DisplayName.AddTranslation(GameCulture.Chinese, "鱼干");
+			Tooltip.AddTranslation(GameCulture.Chinese, "攻击时释放伤害泡泡");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 33;
+			item.damage = 28;
 			item.melee = true;
 			item.crit = 10;
 			item.width = 52;

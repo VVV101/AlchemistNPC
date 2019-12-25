@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace AlchemistNPC.Projectiles.Minions
 {
@@ -42,7 +43,7 @@ namespace AlchemistNPC.Projectiles.Minions
 		{
 			projectile.tileCollide = false;
 			Player player = Main.player[projectile.owner];
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.dead || !player.HasBuff(mod.BuffType("Devilsknife")))
 			{
 				modPlayer.devilsknife = false;

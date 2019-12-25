@@ -2,6 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
 using Terraria.Localization;
 
@@ -17,8 +18,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Защита Акуму");
 			Description.AddTranslation(GameCulture.Russian, "Отражает любые снаряды противника");
-            DisplayName.AddTranslation(GameCulture.Chinese, "仇恨");
-            Description.AddTranslation(GameCulture.Chinese, "准备好释放你的仇恨吧!");
+            DisplayName.AddTranslation(GameCulture.Chinese, "Akumu之盾");
+            Description.AddTranslation(GameCulture.Chinese, "反射所有敌对抛射物");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

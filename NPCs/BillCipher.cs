@@ -31,6 +31,7 @@ using Terraria.Utilities;
 using Terraria.World.Generation;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using AlchemistNPC;
 using AlchemistNPC.NPCs;
@@ -165,8 +166,8 @@ namespace AlchemistNPC.NPCs
 			{
 				if (introduction < 1)
 				{
-				Main.NewText("What? Are you my namesake? Well, I don't want to fight you.", 10, 255, 10);
-				Main.NewText("Here, catch my present! Bye!", 10, 255, 10);
+				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat1"), 10, 255, 10);
+				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat2"), 10, 255, 10);
 				player.QuickSpawnItem(mod.ItemType("BillCipherBag"));
 				}
 				npc.boss = false;
@@ -176,7 +177,7 @@ namespace AlchemistNPC.NPCs
 			}
 			if (distance > 2500f && introduction >= 300)
 			{
-				Main.NewText("Don't think that you can hide from me, mortal!", 10, 255, 10);
+				Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.BillCipherChat3"), 10, 255, 10);
 				switch(Main.rand.Next(2))
 				{
 					case 0:
@@ -187,7 +188,7 @@ namespace AlchemistNPC.NPCs
 					break;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				player.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AbyssalShell")] = true;
 				npc.buffImmune[ModLoader.GetMod("ThoriumMod").BuffType("AParalyzed")] = true;
@@ -197,7 +198,7 @@ namespace AlchemistNPC.NPCs
 			npc.buffImmune[mod.BuffType("Twilight")] = true;
 			npc.buffImmune[mod.BuffType("Electrocute")] = true;
 			npc.buffImmune[mod.BuffType("Patience")] = true;
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("SilvaStun")] = true;
 				npc.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("GlacialState")] = true;
@@ -211,7 +212,7 @@ namespace AlchemistNPC.NPCs
 			{
 				npc.dontTakeDamage = true;
 			}
-			if (npc.life > npc.lifeMax/2 && !player.dead && !npc.GetGlobalNPC<ModGlobalNPC>(mod).intermission1)
+			if (npc.life > npc.lifeMax/2 && !player.dead && !npc.GetGlobalNPC<ModGlobalNPC>().intermission1)
 			{
 				introduction++;
 				
@@ -266,10 +267,10 @@ namespace AlchemistNPC.NPCs
 					counter2++;
 				}
 			}
-			if (npc.life < npc.lifeMax/2 && npc.life > npc.lifeMax*0.15f && !player.dead && !npc.GetGlobalNPC<ModGlobalNPC>(mod).intermission2)
+			if (npc.life < npc.lifeMax/2 && npc.life > npc.lifeMax*0.15f && !player.dead && !npc.GetGlobalNPC<ModGlobalNPC>().intermission2)
 			{
 				player.AddBuff((mod.BuffType("Madness")), 2);
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModRevengeance)
 					{
@@ -321,7 +322,7 @@ namespace AlchemistNPC.NPCs
 			if (npc.life < npc.lifeMax*0.15f && !player.dead)
 			{
 				player.AddBuff((mod.BuffType("Madness")), 2);
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModRevengeance)
 					{
@@ -379,7 +380,7 @@ namespace AlchemistNPC.NPCs
 				}
 				counter2++;
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModRevengeance)
 				{
@@ -398,7 +399,7 @@ namespace AlchemistNPC.NPCs
 		
 		private void RnAReset(Player player)
 		{
-			CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			CalamityPlayer.stress = 0;
 			CalamityPlayer.adrenaline = 0;
 		}
@@ -442,7 +443,7 @@ namespace AlchemistNPC.NPCs
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
@@ -456,7 +457,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override void FindFrame(int frameHeight)
 		{
-			if (!npc.GetGlobalNPC<ModGlobalNPC>(mod).phase2)
+			if (!npc.GetGlobalNPC<ModGlobalNPC>().phase2)
 			{
 				npc.frameCounter++;
 				if (npc.frameCounter < 100)
@@ -480,7 +481,7 @@ namespace AlchemistNPC.NPCs
 					npc.frameCounter = 0;
 				}
 			}
-			if (npc.GetGlobalNPC<ModGlobalNPC>(mod).phase2)
+			if (npc.GetGlobalNPC<ModGlobalNPC>().phase2)
 			{
 				npc.frameCounter++;
 				if (npc.frameCounter < 100)
@@ -536,6 +537,11 @@ namespace AlchemistNPC.NPCs
 		
 		public override void NPCLoot()
 		{
+			Mod ALIB = ModLoader.GetMod("AchievementLib");
+			if(ALIB != null)
+			{
+				ALIB.Call("UnlockGlobal", "AlchemistNPC", "The deal is off!");
+			}
 			if (Main.expertMode)
 			{
 				npc.DropBossBags();
@@ -546,18 +552,8 @@ namespace AlchemistNPC.NPCs
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("WrathOfTheCelestial"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LaserCannon"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GrapplingHookGunItem"));
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BillSoul"));
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.PlatinumCoin, 25);
-			}
-			for (int k = 0; k < 255; k++)
-			{
-				Player player = Main.player[k];
-				if (player.active)
-				{
-					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BillIsDowned < 1)
-					{
-						((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BillIsDowned++;
-					}
-				}
 			}
 		}
 		

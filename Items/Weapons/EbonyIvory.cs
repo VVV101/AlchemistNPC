@@ -4,6 +4,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -19,6 +20,11 @@ namespace AlchemistNPC.Items.Weapons
 			+ "\n66% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Чёрный и Белый");
             Tooltip.AddTranslation(GameCulture.Russian, "''Парные пистолеты Демона-Охотника''\nМогут нанести очень редкий критический удар, наносящий 66666 урона\n66% шанс не потратить патроны"); 
+			DisplayName.AddTranslation(GameCulture.Chinese, "黑檀木&白象牙");
+			Tooltip.AddTranslation(GameCulture.Chinese, "''一位恶魔猎人的双枪''"
+			+"\n极小概率暴击造成66666点伤害"
+			+"\n发射定制的恶魔子弹, 撞击时爆炸"
+			+"\n66%概率不消耗弹药");
 		}
 
 		public override void SetDefaults()

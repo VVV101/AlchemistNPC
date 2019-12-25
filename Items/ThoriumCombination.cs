@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
  
 namespace AlchemistNPC.Items
@@ -20,13 +21,13 @@ namespace AlchemistNPC.Items
 		{
 			DisplayName.SetDefault("Thorium Combination");
 			Tooltip.SetDefault("Grants most buffs from Thorium Mod potions"
-			+"\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy, Dash");
+			+"\nAccuracy, Blood, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Thorium");
-            Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Thorium\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy, Dash");
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Thorium\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "瑟银捆绑包");
             Tooltip.AddTranslation(GameCulture.Chinese, "获得瑟银的大部分药水Buff" +
-                "\n嗜血, 精准, 对决, 狂怒, 创造力, 耳虫, 灵感爆发, 光辉, 圣洁, 短跑");
+                "\n嗜血, 精准, 对决, 狂怒, 创造力, 耳虫, 灵感爆发, 光辉, 圣洁");
 		}    
 
 		public override void SetDefaults()
@@ -46,27 +47,17 @@ namespace AlchemistNPC.Items
             item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
         }
 		
-		public override bool UseItem(Player player)
-		{
-			player.AddBuff((ModLoader.GetMod("ThoriumMod").BuffType("CreativityDrop")), 52000, true);
-			player.AddBuff((ModLoader.GetMod("ThoriumMod").BuffType("EarwormBuff")), 52000, true);
-			player.AddBuff((ModLoader.GetMod("ThoriumMod").BuffType("InspirationReach")), 52000, true);
-			return true;
-		}
-		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("AccuracyPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("BloodPotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("CombatPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("FrenzyPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("CreativityPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("EarwormPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InspirationReachPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("GlowingPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("HolyPotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DashPotion")), 1);
 			recipe.AddTile(TileID.AlchemyTable);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

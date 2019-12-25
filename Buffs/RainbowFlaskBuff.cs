@@ -1,5 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
 
@@ -21,12 +22,12 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.GetModPlayer<AlchemistNPCPlayer>(mod).rainbowdust = true;
+			player.GetModPlayer<AlchemistNPCPlayer>().rainbowdust = true;
 		}
 
 		public override void Update(NPC npc, ref int buffIndex)
 		{
-			npc.GetGlobalNPC<ModGlobalNPC>(mod).rainbowdust = true;
+			npc.GetGlobalNPC<ModGlobalNPC>().rainbowdust = true;
 		}
 	}
 }

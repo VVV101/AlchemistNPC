@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC;
 
@@ -22,7 +23,7 @@ namespace AlchemistNPC.Items.Weapons
             Tooltip.AddTranslation(GameCulture.Russian, "Хранит в себе Решимость семи душ\nАтаки заряжают Ненависть\nПосле определённого количества ударов вы можете её выпустить, нажав правую кнопку мыши");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "决绝之剑");
-            Tooltip.AddTranslation(GameCulture.Chinese, "七魂之决绝蕴于此剑\n攻击增加仇恨\n在击中多次后可以右键释放它.");
+            Tooltip.AddTranslation(GameCulture.Chinese, "七魂之决绝蕴于此剑\n攻击增加仇恨\n攻击达到一定次数后, 右键释放仇恨.");
         }
 
 		public override void SetDefaults()

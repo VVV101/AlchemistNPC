@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.UI;
 using AlchemistNPC.Interface;
 
@@ -38,7 +39,7 @@ namespace AlchemistNPC.Interface
 				return true;
 			}
 			Mod mod = AlchemistNPC.Instance;
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (modPlayer.ShieldBelt == false)
 			{
 				return true;
@@ -60,6 +61,7 @@ namespace AlchemistNPC.Interface
 			float fill = Shield / 150;
 			Main.spriteBatch.Draw(mod.GetTexture("Interface/ShieldBar"), new Vector2(anchorX, 64f), null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
 			Main.spriteBatch.Draw(mod.GetTexture("Interface/ShieldCharge"), new Vector2(anchorX + padding, 64f + padding), new Rectangle(0, 0, (int)(fill * chargeSize), chargeHeight), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.Draw(mod.GetTexture("Interface/ShieldBarShield"), new Vector2(anchorX + padding, 64f + padding), new Rectangle(0, 0, (int)(fill * chargeSize), chargeHeight), Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
 
 			return true;
 		}
@@ -73,7 +75,7 @@ namespace AlchemistNPC.Interface
 				return true;
 			}
 			Mod mod = AlchemistNPC.Instance;
-			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>(mod);
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (modPlayer.PH == false)
 			{
 				return true;

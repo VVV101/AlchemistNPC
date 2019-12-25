@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -23,36 +24,18 @@ namespace AlchemistNPC.Items.Weapons
 			item.value = 10000000;
 			item.rare = 11;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("Void");
+			item.shoot = mod.ProjectileType("BreathOfTheVoid");
 			item.shootSpeed = 9f;
+			item.channel = true;
+			item.noUseGraphic = true;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Breath of the Void");
-			Tooltip.SetDefault("May briefly paralize enemy on hit");
+			DisplayName.SetDefault("Expiration");
+			Tooltip.SetDefault("Feel the Breath of the Void");
+			DisplayName.AddTranslation(GameCulture.Chinese, "限度之息");
+			Tooltip.AddTranslation(GameCulture.Chinese, "感受虚空的气息");
         }
-		
-		public override Vector2? HoldoutOffset()
-		{
-			return new Vector2(-5, 0);
-		}
-		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
-			int numberProjectiles = 3;
-			for (int i = 0; i < numberProjectiles; i++)
-			{
-				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
-				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("Void"), damage, knockBack, player.whoAmI);
-			}
-			int numberProjectiles1 = 6;
-			for (int i = 0; i < numberProjectiles1; i++)
-			{
-				Vector2 perturbedSpeed1 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
-				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed1.X, perturbedSpeed1.Y, mod.ProjectileType("VoidDummy"), damage, knockBack, player.whoAmI);
-			}
-			return true;
-		}
 	}
 }

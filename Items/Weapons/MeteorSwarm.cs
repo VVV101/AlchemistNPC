@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -21,6 +22,11 @@ namespace AlchemistNPC.Items.Weapons
 			+"\nExhausts player for 1 minute, making him unable to use magic");
 			DisplayName.AddTranslation(GameCulture.Russian, "Свиток ''Метеоритного Роя''");
             Tooltip.AddTranslation(GameCulture.Russian, "Одноразовый предмет\nЭтот свиток содержит заклинание ''Метеоритный Рой''\nИспользование вызывает короткий метеоритный дождь возле позиции игрока\nИстощает игрока на 1 минуту, не позволяя ему использовать магию");
+			DisplayName.AddTranslation(GameCulture.Chinese, "卷轴 '''流星雨'");
+			Tooltip.AddTranslation(GameCulture.Chinese, "一次性物品"
+			+"\n包含着 ''流星雨''法术"
+			+"\n使用时, 在玩家光标周围落下流星雨"
+			+"\n使玩家精疲力尽1分钟, 期间无法使用魔法");
         }
 
 		public override void SetDefaults()
@@ -41,7 +47,7 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		public override bool UseItem(Player player)
@@ -50,17 +56,16 @@ namespace AlchemistNPC.Items.Weapons
             {
               float X = player.position.X + Main.rand.Next(-1200, 1200);
               float Y = player.position.Y - Main.rand.Next(500, 800);
-              Vector2 vector2;
               float num1 = (float) (player.position.X + (double) (player.width / 2) - X);
               float num2 = (float) (player.position.Y + (double) (player.height / 2) - Y);
               float num3 = num1 + (float) Main.rand.Next(-100, 101);
               float num4 = 23f / (float) Math.Sqrt((double) num3 * (double) num3 + (double) num2 * (double) num2);
               float SpeedX = (num3 * num4)/3;
               float SpeedY = num2 * num4;
-              int index2 = Projectile.NewProjectile(X, Y, SpeedX, SpeedY, 711, 1000, 5f, player.whoAmI, 0.0f, 0.0f);
+              int index2 = Projectile.NewProjectile(X, Y, SpeedX, SpeedY, 711, 1500, 5f, player.whoAmI, 0.0f, 0.0f);
               Main.projectile[index2].ai[1] = (float) player.position.Y;
             }
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModRevengeance)
 				{
@@ -71,7 +76,7 @@ namespace AlchemistNPC.Items.Weapons
 				player.AddBuff(mod.BuffType("Exhausted"), 3600); 	
 				}
 			}
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 				player.AddBuff(mod.BuffType("Exhausted"), 3600); 
 			}

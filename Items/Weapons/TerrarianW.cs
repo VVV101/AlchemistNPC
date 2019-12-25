@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Weapons
@@ -14,6 +15,8 @@ namespace AlchemistNPC.Items.Weapons
 			Tooltip.SetDefault("''Angela's actions have rewritten the very understandment of souls''\n[c/FF0000:EGO weapon]\nLeft click to shoot burst of lasers\nRight click to shoot burst of bullets\n33% chance not to consume ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Terrarian-W (V-05-516)");
             Tooltip.AddTranslation(GameCulture.Russian, "''Действия Анджелы переписали само понимание душ''\n[c/FF0000:Оружие Э.П.О.С.]\nЛевая кнопка мыши выстреливает очередью из лазеров\nПравая кнопка мыши выстреливает очередью из пуль\n33% шанс не потратить патроны");
+			DisplayName.AddTranslation(GameCulture.Chinese, "Terrarian-W (V-05-516)");
+			Tooltip.AddTranslation(GameCulture.Chinese, "''Angela的行为改写了对灵魂本身的理解''\n[c/FF0000:EGO 武器]\n左键发射爆裂激光\n右键发射爆裂弹\n33%概率不消耗弹药");
 		}
 
 		public override void SetDefaults()

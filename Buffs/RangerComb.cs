@@ -8,6 +8,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
 using Terraria.Localization;
@@ -29,60 +30,15 @@ namespace AlchemistNPC.Buffs
         }
 		public override void Update(Player player, ref int buffIndex)
 		{
-            player.thrownDamage += 0.1f;
-            player.meleeDamage += 0.1f;
-            player.rangedDamage += 0.1f;
-            player.magicDamage += 0.1f;
-            player.minionDamage += 0.1f;
-			player.meleeCrit += 10;
-            player.rangedCrit += 10;
-            player.magicCrit += 10;
-            player.thrownCrit += 10;
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+			modPlayer.AllDamage10 = true;
+			modPlayer.AllCrit10 = true;
 			player.ammoPotion = true;
 			player.archery = true;
 			player.buffImmune[16] = true;
 			player.buffImmune[112] = true;
 			player.buffImmune[115] = true;
 			player.buffImmune[117] = true;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-				{
-				ThoriumBoosts(player);
-				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
-				{
-				RedemptionBoost(player);
-				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-				{
-				CalamityBoost(player);
-				}
 		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
-			CalamityPlayer.throwingDamage += 0.1f;
-            CalamityPlayer.throwingCrit += 10;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		
-		private void RedemptionBoost(Player player)
-        {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.1f;
-            RedemptionPlayer.druidCrit += 10;
-        }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
-		
-		private void ThoriumBoosts(Player player)
-        {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.1f;
-            ThoriumPlayer.symphonicCrit += 10;
-			ThoriumPlayer.radiantBoost += 0.1f;
-            ThoriumPlayer.radiantCrit += 10;
-        }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

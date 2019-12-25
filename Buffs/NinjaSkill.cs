@@ -1,6 +1,7 @@
 using Terraria;
 using System.Linq;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
@@ -17,15 +18,11 @@ namespace AlchemistNPC.Buffs
 			Description.AddTranslation(GameCulture.Russian, "Вы - истинный ниндзя!");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "忍者");
-            Description.AddTranslation(GameCulture.Chinese, "你现在拥有忍者的能力");
+            Description.AddTranslation(GameCulture.Chinese, "现在你是个真正的忍者了!");
         }
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.thrownDamage += 0.05f;
-            player.meleeDamage += 0.05f;
-            player.rangedDamage += 0.05f;
-            player.magicDamage += 0.05f;
-            player.minionDamage += 0.05f;
+			player.allDamage += 0.05f;
 			player.meleeCrit += 5;
             player.rangedCrit += 5;
             player.magicCrit += 5;
@@ -33,15 +30,15 @@ namespace AlchemistNPC.Buffs
 			player.dash = 1;
 			player.blackBelt = true;
             player.spikedBoots = 2;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				ThoriumBoosts(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
+				if (ModLoader.GetMod("Redemption") != null)
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				CalamityBoost(player);
 				}
@@ -49,26 +46,22 @@ namespace AlchemistNPC.Buffs
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
-			CalamityPlayer.throwingDamage += 0.05f;
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             CalamityPlayer.throwingCrit += 5;
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.05f;
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 5;
         }
 		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.05f;
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 5;
-			ThoriumPlayer.radiantBoost += 0.05f;
             ThoriumPlayer.radiantCrit += 5;
         }
 		

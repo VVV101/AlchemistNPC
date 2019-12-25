@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Armor
@@ -24,7 +25,7 @@ namespace AlchemistNPC.Items.Armor
             Tooltip.AddTranslation(GameCulture.Russian, "Ленточка на плаще отражает мольбу дитя о счастье. Дитя, что не могло покинуть своих друзей.\n[c/FF0000:Часть брони Э.П.О.С.]\nУвеличивает урон прислужников на 5%\nЗащита увеличивается после убийства определенных боссов\nБазовая защита равна 3");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "蕾蒂希娅缎带 (O-01-67)");
-            Tooltip.AddTranslation(GameCulture.Chinese, "'外套上精美的丝带和蝴蝶结寄托着少女对幸福的向往, 一个孩子不能离开朋友.'\n[c/FF0000:EGO 盔甲]\n增加5%召唤物伤害\n击败一些Boss之后增加防御力\n盔甲的当前防御力会显示在盔甲上");
+            Tooltip.AddTranslation(GameCulture.Chinese, "'外套上精美的丝带和蝴蝶结寄托着少女对幸福的向往, 一个孩子不能离开朋友.'\n[c/FF0000:EGO 盔甲]\n增加5%召唤物伤害\n击败特定Boss之后增加防御力\n基础防御为3");
 
             ModTranslation text = mod.CreateTranslation("LaetitiaSetBonus");
 		    text.SetDefault("Allows to summon Little Witch Monster from the Gift"
@@ -62,7 +63,7 @@ namespace AlchemistNPC.Items.Armor
 			player.SporeSac();
             player.sporeSac = true;
 			}
-            player.GetModPlayer<AlchemistNPCPlayer>(mod).LaetitiaSet = true;
+            player.GetModPlayer<AlchemistNPCPlayer>().LaetitiaSet = true;
         }
 
 		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)

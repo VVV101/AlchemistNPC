@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.Enums;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;
@@ -28,6 +29,7 @@ namespace AlchemistNPC.Tiles
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Materia Transmutator MK2");
 			name.AddTranslation(GameCulture.Russian, "Преобразователь Материи MK2");
+			name.AddTranslation(GameCulture.Chinese, "物质嬗变器MK2");
 			AddMapEntry(new Color(200, 200, 200), name);
 			disableSmartCursor = true;
 			adjTiles = new int[]
@@ -71,19 +73,19 @@ namespace AlchemistNPC.Tiles
 			TileID.AlchemyTable,
 			TileID.LunarCraftingStation
 			};
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
                 Array.Resize(ref adjTiles, adjTiles.Length + 3);
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil");
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator");
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("SoulForge");
 				}
-			if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+			if (ModLoader.GetMod("FargowiltasSouls") != null)
 				{
 				Array.Resize(ref adjTiles, adjTiles.Length + 1);
-                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("Fargowiltas").TileType("CrucibleCosmosSheet");
+                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("FargowiltasSouls").TileType("CrucibleCosmosSheet");
 				}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 				{
 				Array.Resize(ref adjTiles, adjTiles.Length + 1);
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("CalamityMod").TileType("DraedonsForge");

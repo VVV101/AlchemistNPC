@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using AlchemistNPC.Items.PaleDamageClass;
 
@@ -39,9 +40,9 @@ namespace AlchemistNPC.Items.Armor
             text.SetDefault("Increases all damage by 35% and adds 25% to critical strike chance"
             + "\nIncreases damage dealt by EGO weapons"
             + "\nChanges would be seen after first usage of weapons"
-            + "\nIf hit taken deals less than 150 damage, then it will be nullified.");
+            + "\nIf hit taken deals less than 100 damage, then it will be nullified.");
             text.AddTranslation(GameCulture.Russian, "Увеличивает любой урон на 35% и добаляет 25% к шансу критического удара\nУвеличивает урон наносимый оружием Э.П.О.С.\nЕсли вы получаете меньше 150 урона, то урон будет аннулирован");
-            text.AddTranslation(GameCulture.Chinese, "增加 35% 所有伤害, 增加 25% 暴击几率"
+            text.AddTranslation(GameCulture.Chinese, "增加 35% 所有伤害, 增加 25% 暴击率"
             + "\n使用 EGO 武器造成更多伤害"
             + "\n第一次使用武器后就能看见变化"
             + "\n如果你受到的伤害小于 150 , 伤害将会无效化.");
@@ -67,6 +68,11 @@ namespace AlchemistNPC.Items.Armor
 		{
 			return body.type == mod.ItemType("ParadiseLostBody") && legs.type == mod.ItemType("ParadiseLostLegs");
 		}
+		
+		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
+		{
+			drawAltHair = true;
+		}
 
 		public override void UpdateArmorSet(Player player)
 		{
@@ -74,55 +80,43 @@ namespace AlchemistNPC.Items.Armor
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost = true;
 			player.setBonus = ParadiseLostSetBonus;
 			player.AddBuff(mod.BuffType("BigBirdLamp"), 60);
-			player.meleeDamage += 0.35f;
-			player.magicDamage += 0.35f;
-			player.minionDamage += 0.35f;
-			player.rangedDamage += 0.35f;
-			player.thrownDamage += 0.35f;
+			player.allDamage += 0.35f;
 			player.meleeCrit += 25;
 			player.magicCrit += 25;
 			player.rangedCrit += 25;
             player.thrownCrit += 25;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-				{
+			if (ModLoader.GetMod("ThoriumMod") != null)
+			{
 				ThoriumBoosts(player);
-				}
-				if (ModLoader.GetLoadedMods().Contains("Redemption"))
-				{
+			}
+			if (ModLoader.GetMod("Redemption") != null)
+			{
 				RedemptionBoost(player);
-				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-				{
+			}
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
 				CalamityBoost(player);
-				}
+			}
 		}
 		
 		private void CalamityBoost(Player player)
         {
-			CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Items.CalamityCustomThrowingDamage.CalamityCustomThrowingDamagePlayer>(Calamity);
-			CalamityPlayer.throwingDamage += 0.35f;
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             CalamityPlayer.throwingCrit += 25;
         }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>(Redemption);
-			RedemptionPlayer.druidDamage += 0.35f;
+			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 25;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>(Thorium);
-            ThoriumPlayer.symphonicDamage += 0.35f;
+            ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 25;
-			ThoriumPlayer.radiantBoost += 0.35f;
             ThoriumPlayer.radiantCrit += 25;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 		
 		public override void AddRecipes()
 		{
@@ -131,12 +125,12 @@ namespace AlchemistNPC.Items.Armor
 			recipe.AddIngredient(null, "ChromaticCrystal", 5);
 			recipe.AddIngredient(null, "SunkroveraCrystal", 5);
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 7);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);

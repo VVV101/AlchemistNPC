@@ -9,6 +9,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
 using Terraria.Localization;
@@ -27,11 +28,13 @@ namespace AlchemistNPC.Buffs
 			longerExpertDebuff = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "Плащ Страха");
 			Description.AddTranslation(GameCulture.Russian, "Заставляет обычных врагов около игрока менять направление движения");
+            DisplayName.AddTranslation(GameCulture.Chinese, "恐惧之袍");
+            Description.AddTranslation(GameCulture.Chinese, "使附近的非Boss敌人改变移动方向");
         }
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.CalamityWorld.revenge; }
+        get { return CalamityMod.World.CalamityWorld.revenge; }
         }
 		
 		public override void Update(Player player, ref int buffIndex)
@@ -44,7 +47,7 @@ namespace AlchemistNPC.Buffs
 				Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("CloakOfFear"), 0, 0, player.whoAmI);
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModRevengeance)
 				{
@@ -61,7 +64,7 @@ namespace AlchemistNPC.Buffs
 					}
 				}
 			}
-			if (!ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 				if (player.buffTime[buffIndex] == 1) 
 				{ 

@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.Events;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using Terraria.World.Generation;
 using AlchemistNPC.Interface;
@@ -25,7 +26,7 @@ namespace AlchemistNPC.NPCs
 		public override bool Autoload(ref string name)
 		{
 			name = "Operator";
-			return Config.OperatorSpawn;
+			return AlchemistNPC.modConfiguration.OperatorSpawn;
 		}
 
 		public override void SetStaticDefaults()
@@ -44,7 +45,7 @@ namespace AlchemistNPC.NPCs
             ModTranslation text = mod.CreateTranslation("EGOShop");
             text.SetDefault("EGO Equipment Shop        ");
             text.AddTranslation(GameCulture.Russian, "Магазин Э.П.О.С                ");
-            text.AddTranslation(GameCulture.Chinese, "EGO 商店           ");
+            text.AddTranslation(GameCulture.Chinese, "EGO 装备商店           ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("BossDropsShop");
             text.SetDefault("Boss Drops & Materials Shop");
@@ -64,7 +65,7 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("ModdedTreasureBagsShop2");
             text.SetDefault("Modded Treasure Bags Shop #2");
             text.AddTranslation(GameCulture.Russian, "Магазин сумок модовых Боссов #2");
-            text.AddTranslation(GameCulture.Chinese, "模组宝藏袋商店#2    ");
+            text.AddTranslation(GameCulture.Chinese, "模组宝藏袋商店 #2    ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("ShopChanger");
             text.SetDefault("Shop Changer");
@@ -74,6 +75,10 @@ namespace AlchemistNPC.NPCs
             text = mod.CreateTranslation("Angela");
             text.SetDefault("Angela");
             text.AddTranslation(GameCulture.Russian, "Анжела");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("Carmen");
+            text.SetDefault("Carmen");
+            text.AddTranslation(GameCulture.Russian, "Кармен");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryO1");
             text.SetDefault("How is your day, Manager? Can I help you?");
@@ -243,15 +248,19 @@ namespace AlchemistNPC.NPCs
 			text = mod.CreateTranslation("EntryO34");
             text.SetDefault("I’m honestly not sure why giant spinning skulls are the key to everything, but somehow they seem to contain the power of celestial beings within them...");
             text.AddTranslation(GameCulture.Russian, "Я на самом деле не уверена, почему гигантские вращающиеся черепа - ключ ко всему, но каким-то образом они хранят в себе мощь божественных созданий...");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "老实说，我不知道为什么巨大的旋转头骨是一切的关键，但不知何故，它们似乎包含着天人的力量…");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryO35");
             text.SetDefault("Yeah, I know that we are the ones capturing and farming horrifying eldritch entities. But who the hell thought It was a good idea to put loot bags inside a giant monster?!?!");
             text.AddTranslation(GameCulture.Russian, "Да, я знаю, что мы те, кто захватывает и добывает материалы из сверхъестественных существ. Но кто чёрт возьми подумал, что будет хорошей идеей поместить сумку с ценностями внутрь гигантского чудовища?!?!");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "是的，我知道我们是捕获和饲养恐怖的怪物的人。但谁会认为把宝藏袋放在一个巨大的怪物里面是个好主意呢？！？你看！");
+	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryO36");
             text.SetDefault("Кemember Manager, Treasure Bags are valuable but not everything comes inside them. That mutant man can help you get a boss's most elusive drops.");
             text.AddTranslation(GameCulture.Russian, "Помни, Управляющий, хотя Сумки с Сокровищами ценны, но не всё может найтись внутри. Мутант может помочь тебе добыть редчайший лут с боссов.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "КEmember经理，宝藏袋很值钱，但不是所有东西都在里面。那个变种人能帮你得到Boss的稀有掉落物。");
+	    
+	    mod.AddTranslation(text);
         }
 
 		public override void ResetEffects()
@@ -277,7 +286,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss2 && Config.OperatorSpawn)
+			if (NPC.downedBoss2 && AlchemistNPC.modConfiguration.OperatorSpawn)
 			{
 			return true;
 			}
@@ -304,10 +313,13 @@ namespace AlchemistNPC.NPCs
         public override string TownNPCName()
         {
             string Angela = Language.GetTextValue("Mods.AlchemistNPC.Angela");
-			switch (WorldGen.genRand.Next(1))
+            string Carmen = Language.GetTextValue("Mods.AlchemistNPC.Carmen");
+			switch (WorldGen.genRand.Next(2))
             {
                 case 0:
                     return Angela;
+				case 1:
+                    return Carmen;
                 default:
                     return Angela;
             }
@@ -450,7 +462,7 @@ namespace AlchemistNPC.NPCs
 			return EntryO8;
 			}
 		}
-		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && NPC.downedBoss3)
+		if (ModLoader.GetMod("CalamityMod") != null && NPC.downedBoss3)
 		{
 			if (Main.rand.Next(7) == 0)
 			{
@@ -471,14 +483,14 @@ namespace AlchemistNPC.NPCs
 				return EntryO20;
 			} 
 		}
-		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && NPC.downedMoonlord)
+		if (ModLoader.GetMod("CalamityMod") != null && NPC.downedMoonlord)
 		{
 			if (Main.rand.Next(7) == 0)
 			{
 				return EntryO18;
 			} 
 		}
-		if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+		if (ModLoader.GetMod("ThoriumMod") != null)
 		{
 			if (Main.rand.Next(6) == 0)
 			{
@@ -486,7 +498,7 @@ namespace AlchemistNPC.NPCs
 				
 			} 
 		}
-		if (ModLoader.GetLoadedMods().Contains("ThoriumMod") && Main.hardMode)
+		if (ModLoader.GetMod("ThoriumMod") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(6) == 0)
 			{
@@ -507,7 +519,7 @@ namespace AlchemistNPC.NPCs
 			{                                                 
 			return EntryO21;
 			}
-		if (ModLoader.GetLoadedMods().Contains("CalamityMod") && Main.hardMode)
+		if (ModLoader.GetMod("CalamityMod") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(5) == 0 && CalamityModDownedPlaguebringer)
 				{                                                 
@@ -538,7 +550,7 @@ namespace AlchemistNPC.NPCs
 				return EntryO33;
 				}
 		}
-		if (ModLoader.GetLoadedMods().Contains("ThoriumMod") && Main.hardMode)
+		if (ModLoader.GetMod("ThoriumMod") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(5) == 0 && ThoriumModDownedFallenBeholder)
 				{                                                 
@@ -549,14 +561,14 @@ namespace AlchemistNPC.NPCs
 				return EntryO24;
 				}
 		}
-		if (ModLoader.GetLoadedMods().Contains("SacredTools") && Main.hardMode)
+		if (ModLoader.GetMod("SacredTools") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(5) == 0 && SacredToolsDownedAbbadon)
 				{                  
 				return EntryO32;
 				}
 		}
-		if (ModLoader.GetLoadedMods().Contains("SpiritMod") && Main.hardMode)
+		if (ModLoader.GetMod("SpiritMod") != null && Main.hardMode)
 		{
 			if (Main.rand.Next(5) == 0 && SpiritModDownedStarplateRaider)
 				{                                                 
@@ -567,7 +579,7 @@ namespace AlchemistNPC.NPCs
 				return EntryO27;
 				}
 		}
-		if (ModLoader.GetLoadedMods().Contains("Fargowiltas"))
+		if (ModLoader.GetMod("Fargowiltas") != null)
 		{
 			if (Main.rand.Next(10) == 0)
 				{                                                 
@@ -599,7 +611,7 @@ namespace AlchemistNPC.NPCs
 		string ModdedTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop");
 		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop2");
 		string ShopChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopChanger");
-		if (Config.TS && Main.expertMode)
+		if (AlchemistNPC.modConfiguration.TS && Main.expertMode)
 		{
 			if (Shop == 1)
 			{
@@ -623,7 +635,7 @@ namespace AlchemistNPC.NPCs
 			}
 			button2 = ShopChanger;
 		}
-			if (!Config.TS || !Main.expertMode)
+			if (!AlchemistNPC.modConfiguration.TS || !Main.expertMode)
 			{
 			button = BossDropsShop;
 			button2 = EGOShop;
@@ -634,12 +646,12 @@ namespace AlchemistNPC.NPCs
 		{
 			if (firstButton)
 			{
-				if (!Config.TS || !Main.expertMode)
+				if (!AlchemistNPC.modConfiguration.TS || !Main.expertMode)
 				{
 					Shop = 1;
 					shop = true;
 				}
-				if (Config.TS && Main.expertMode)
+				if (AlchemistNPC.modConfiguration.TS && Main.expertMode)
 				{
 					shop = true;
 					ShopChangeUIO.visible = false;
@@ -647,11 +659,11 @@ namespace AlchemistNPC.NPCs
 			}
 			else
 			{
-				if (Config.TS && Main.expertMode)
+				if (AlchemistNPC.modConfiguration.TS && Main.expertMode)
 				{
 					ShopChangeUIO.visible = true;
 				}
-				if (!Config.TS || !Main.expertMode)
+				if (!AlchemistNPC.modConfiguration.TS || !Main.expertMode)
 				{
 					Shop = 2;
 					shop = true;
@@ -661,87 +673,87 @@ namespace AlchemistNPC.NPCs
  
 		public bool CalamityModDownedGuardian
 		{
-		get { return CalamityMod.CalamityWorld.downedGuardians; }
+		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
 		}
 		public bool CalamityModDownedPlaguebringer
 		{
-		get { return CalamityMod.CalamityWorld.downedPlaguebringer; }
+		get { return CalamityMod.World.CalamityWorld.downedPlaguebringer; }
 		}
 		public bool CalamityModDownedRavager
 		{
-		get { return CalamityMod.CalamityWorld.downedScavenger; }
+		get { return CalamityMod.World.CalamityWorld.downedScavenger; }
 		}
 		public bool CalamityModDownedBirb
 		{
-		get { return CalamityMod.CalamityWorld.downedBumble; }
+		get { return CalamityMod.World.CalamityWorld.downedBumble; }
 		}
 		public bool CalamityModDownedPolter
 		{
-		get { return CalamityMod.CalamityWorld.downedPolterghast; }
+		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
 		public bool CalamityModDownedDOG
 		{
-		get { return CalamityMod.CalamityWorld.downedDoG; }
+		get { return CalamityMod.World.CalamityWorld.downedDoG; }
 		}
 		public bool CalamityModDownedYharon
 		{
-		get { return CalamityMod.CalamityWorld.downedYharon; }
+		get { return CalamityMod.World.CalamityWorld.downedYharon; }
 		}
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		public bool CalamityModDownedAstrum
 		{
-		get { return CalamityMod.CalamityWorld.downedStarGod; }
+		get { return CalamityMod.World.CalamityWorld.downedStarGod; }
 		}
 		public bool CalamityModDownedSlimeGod
         {
-        get { return CalamityMod.CalamityWorld.downedSlimeGod; }
+        get { return CalamityMod.World.CalamityWorld.downedSlimeGod; }
         }
 		public bool CalamityModDownedHiveMind
         {
-        get { return CalamityMod.CalamityWorld.downedHiveMind; }
+        get { return CalamityMod.World.CalamityWorld.downedHiveMind; }
         }
         public bool CalamityModDownedPerforators
         {
-        get { return CalamityMod.CalamityWorld.downedPerforator; }
+        get { return CalamityMod.World.CalamityWorld.downedPerforator; }
         }
 		public bool CalamityModDownedCalamitas
         {
-        get { return CalamityMod.CalamityWorld.downedCalamitas; }
+        get { return CalamityMod.World.CalamityWorld.downedCalamitas; }
         }
 		public bool CalamityModDownedProvidence
         {
-        get { return CalamityMod.CalamityWorld.downedProvidence; }
+        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
         }
 		public bool CalamityModDownedCryogen
 		{
-        get { return CalamityMod.CalamityWorld.downedCryogen; }
+        get { return CalamityMod.World.CalamityWorld.downedCryogen; }
         }
 		public bool CalamityModDownedLeviathan
         {
-        get { return CalamityMod.CalamityWorld.downedLeviathan; }
+        get { return CalamityMod.World.CalamityWorld.downedLeviathan; }
         }
 		public bool CalamityModDownedAstrageldon
         {
-        get { return CalamityMod.CalamityWorld.downedAstrageldon; }
+        get { return CalamityMod.World.CalamityWorld.downedAstrageldon; }
         }
 		public bool CalamityModDownedCrabulon
         {
-        get { return CalamityMod.CalamityWorld.downedCrabulon; }
+        get { return CalamityMod.World.CalamityWorld.downedCrabulon; }
         }
 		public bool CalamityModDownedDesertScourge
         {
-        get { return CalamityMod.CalamityWorld.downedDesertScourge; }
+        get { return CalamityMod.World.CalamityWorld.downedDesertScourge; }
         }
 		public bool CalamityModDownedAquaticScourge
         {
-        get { return CalamityMod.CalamityWorld.downedAquaticScourge; }
+        get { return CalamityMod.World.CalamityWorld.downedAquaticScourge; }
         }
 		public bool CalamityModDownedBrimstoneElemental
         {
-        get { return CalamityMod.CalamityWorld.downedBrimstoneElemental; }
+        get { return CalamityMod.World.CalamityWorld.downedBrimstoneElemental; }
         }
  
 		public bool ThoriumModDownedGTBird
@@ -917,6 +929,10 @@ namespace AlchemistNPC.NPCs
 		{
         get { return AAMod.AAWorld.downedGrips; }
         }
+		public bool AAModDownedTruffleToad
+		{
+        get { return AAMod.AAWorld.downedToad; }
+        }
 		public bool AAModDownedBrood
 		{
         get { return AAMod.AAWorld.downedBrood; }
@@ -933,21 +949,13 @@ namespace AlchemistNPC.NPCs
 		{
         get { return AAMod.AAWorld.downedDjinn; }
         }
-		public bool AAModDownedRetriever
-		{
-        get { return AAMod.AAWorld.downedRetriever; }
-        }
-		public bool AAModDownedRaider
-		{
-        get { return AAMod.AAWorld.downedRaider; }
-        }
-		public bool AAModDownedOrthrus
-		{
-        get { return AAMod.AAWorld.downedOrthrus; }
-        }
 		public bool AAModDownedEquinox
 		{
         get { return AAMod.AAWorld.downedEquinox; }
+        }
+		public bool AAModDownedSisters
+		{
+        get { return AAMod.AAWorld.downedSisters; }
         }
 		public bool AAModDownedYamata
 		{
@@ -1010,7 +1018,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.Vertebrae);
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Petal"));
 					shop.item[nextSlot].shopCustomPrice = 10000;
@@ -1028,7 +1036,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModDownedHiveMind)
 					{
@@ -1087,7 +1095,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.BlackLens);
 				shop.item[nextSlot].shopCustomPrice = 200000;
 				nextSlot++;
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BlightedLens"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
@@ -1100,7 +1108,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 20000;
 				nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModDownedCalamitas)
 					{
@@ -1108,17 +1116,26 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 					}
-					if (NPC.downedPlantBoss)
+					if (NPC.downedPlantBoss || CalamityModDownedCryogen)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofEleum"));
 					shop.item[nextSlot].shopCustomPrice = 25000;
 					nextSlot++; 
+					}
+					if (NPC.downedPlantBoss || CalamityModDownedAquaticScourge)
+					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofCinder"));
 					shop.item[nextSlot].shopCustomPrice = 25000;
 					nextSlot++;
+					}
+					if (NPC.downedPlantBoss || CalamityModDownedBrimstoneElemental)
+					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofChaos"));
 					shop.item[nextSlot].shopCustomPrice = 25000;
 					nextSlot++;
+					}
+					if (NPC.downedPlantBoss)
+					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Tenebris"));
 					shop.item[nextSlot].shopCustomPrice = 30000;
 					nextSlot++;
@@ -1141,17 +1158,14 @@ namespace AlchemistNPC.NPCs
 				}
 				if (NPC.downedGolemBoss)
 				{
-				shop.item[nextSlot].SetDefaults (ItemID.BeetleHusk);
-				shop.item[nextSlot].shopCustomPrice = 10000;
-				nextSlot++;
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
 						shop.item[nextSlot].shopCustomPrice = 30000;
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (NPC.downedAncientCultist)
 					{
@@ -1175,7 +1189,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].shopCustomPrice = 50000;
 				nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModDownedProvidence)
 					{
@@ -1185,25 +1199,49 @@ namespace AlchemistNPC.NPCs
 					}
 					if (CalamityModDownedPolter)
 					{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BloodOrb"));
+					shop.item[nextSlot].shopCustomPrice = 50000;
+					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm"));
-					shop.item[nextSlot].shopCustomPrice = 500000;
+					shop.item[nextSlot].shopCustomPrice = 200000;
 					nextSlot++;
 					}
-					if (CalamityModDownedDOG && CalamityModDownedBirb)
+					if (CalamityModDownedDOG && AlchemistNPCWorld.downedDOGPumpking)
 					{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel"));
-					shop.item[nextSlot].shopCustomPrice = 150000;
-					nextSlot++;				
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy"));
-					shop.item[nextSlot].shopCustomPrice = 150000;
-					nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;			
+					}					
+					if (CalamityModDownedDOG && AlchemistNPCWorld.downedDOGIceQueen)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;
 					}
 				}
 			}
 			if (Shop == 2)
 			{
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorSnow"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorDesert"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorJungle"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorCorruption"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorCrimson"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
 				if (Main.hardMode)
 				{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorHallowed"));
+					shop.item[nextSlot].shopCustomPrice = 330000;
+					nextSlot++;
 					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("GlobalTeleporter"));
 					nextSlot++;
 				}
@@ -1272,7 +1310,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("InformatingNote"));
 				nextSlot++;
 				}
-				if (Config.CoinsDrop)
+				if (AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
@@ -1301,7 +1339,7 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (DD2Event.DownedInvasionT1)
 							{
@@ -1329,18 +1367,18 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ItemID.SkeletronPrimeBossBag);
-					shop.item[nextSlot].shopCustomPrice = new int?(15);
+					shop.item[nextSlot].shopCustomPrice = new int?(10);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
 					}
 					if (NPC.downedPlantBoss && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.PlanteraBossBag);
-					shop.item[nextSlot].shopCustomPrice = new int?(30);
+					shop.item[nextSlot].shopCustomPrice = new int?(15);
 					shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
 							{
@@ -1374,12 +1412,12 @@ namespace AlchemistNPC.NPCs
 					if (NPC.downedMoonlord && Main.expertMode)
 					{
 						shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
-						shop.item[nextSlot].shopCustomPrice = new int?(30);
+						shop.item[nextSlot].shopCustomPrice = new int?(20);
 						shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 						nextSlot++;
 					}
 				}
-				if (!Config.CoinsDrop)
+				if (!AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
@@ -1402,11 +1440,11 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 1500000;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (DD2Event.DownedInvasionT1)
 							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DarkMageBag"));
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("DarkMageBag"));
 								shop.item[nextSlot].shopCustomPrice = 2000000;
 								nextSlot++;
 							}
@@ -1429,11 +1467,11 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 2000000;
 					nextSlot++;
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
 							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("OgreBag"));
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("OgreBag"));
 								shop.item[nextSlot].shopCustomPrice = 3000000;
 								nextSlot++;
 							}
@@ -1477,11 +1515,11 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("InformatingNote"));
 				nextSlot++;
 				}
-				if (Config.CoinsDrop)
+				if (AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedDesertScourge)
 							{
@@ -1512,7 +1550,7 @@ namespace AlchemistNPC.NPCs
 					}
 					if (Main.hardMode && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedSlimeGod)
 							{
@@ -1523,7 +1561,7 @@ namespace AlchemistNPC.NPCs
 							}
 						}
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedCryogen)
 							{
@@ -1547,7 +1585,7 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 							}
 						}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						if (NPC.downedPlantBoss)
 						{
@@ -1562,7 +1600,7 @@ namespace AlchemistNPC.NPCs
 						if (CalamityModDownedLeviathan)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag"));
-							shop.item[nextSlot].shopCustomPrice = new int?(30);
+							shop.item[nextSlot].shopCustomPrice = new int?(25);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 							nextSlot++;
 						}
@@ -1573,34 +1611,41 @@ namespace AlchemistNPC.NPCs
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
 							nextSlot++;
 						}
-						if (CalamityModDownedAstrum)
-						{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
-							shop.item[nextSlot].shopCustomPrice = new int?(30);
-							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-							nextSlot++;
-						}
 						if (CalamityModDownedPlaguebringer)
-							{
+						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PlaguebringerGoliathBag"));
-							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 							nextSlot++; 
-							}
+						}
 						if (CalamityModDownedRavager)
-							{
+						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("RavagerBag"));
 							shop.item[nextSlot].shopCustomPrice = new int?(15);
 							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
 							nextSlot++; 
-							}
-					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						}
+						if (CalamityModDownedAstrum)
 						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+							nextSlot++;
+						}
+					}
+					if (ModLoader.GetMod("CalamityMod") != null)
+						{
+							if (CalamityModDownedBirb)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
+								shop.item[nextSlot].shopCustomPrice = new int?(10);
+								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
+								nextSlot++;
+							}
 							if (CalamityModDownedProvidence)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ProvidenceBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(25);
+								shop.item[nextSlot].shopCustomPrice = new int?(20);
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
 								nextSlot++;
 							}
@@ -1611,7 +1656,7 @@ namespace AlchemistNPC.NPCs
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;
 								nextSlot++;
 							}
-							if (CalamityModDownedDOG && CalamityModDownedBirb)
+							if (CalamityModDownedDOG)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(10);
@@ -1620,17 +1665,13 @@ namespace AlchemistNPC.NPCs
 							}
 							if (CalamityModDownedYharon)
 							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(15);
-								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;
-								nextSlot++;
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharonBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(20);
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;
 								nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+						if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (NPC.downedBoss3)	
 							{
@@ -1719,7 +1760,7 @@ namespace AlchemistNPC.NPCs
 								}
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+						if (ModLoader.GetMod("SacredTools") != null)
 						{
 							if (NPC.downedBoss3)	
 							{
@@ -1775,11 +1816,11 @@ namespace AlchemistNPC.NPCs
 							}
 						}
 				}
-				if (!Config.CoinsDrop)
+				if (!AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedDesertScourge)
 							{
@@ -1806,7 +1847,7 @@ namespace AlchemistNPC.NPCs
 					}
 					if (Main.hardMode && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+						if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedSlimeGod)
 							{
@@ -1816,7 +1857,7 @@ namespace AlchemistNPC.NPCs
 							}
 						}
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 						{
 							if (CalamityModDownedCryogen)
 							{
@@ -1829,7 +1870,7 @@ namespace AlchemistNPC.NPCs
 								if (!CalamityModDownedProvidence)
 								{
 									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BrimstoneWaifuBag"));
-									shop.item[nextSlot].shopCustomPrice = 2000000;
+									shop.item[nextSlot].shopCustomPrice = 500000;
 									nextSlot++;
 								}
 								if (CalamityModDownedProvidence)
@@ -1846,7 +1887,7 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 							}
 						}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						if (NPC.downedPlantBoss)
 						{
@@ -1861,7 +1902,7 @@ namespace AlchemistNPC.NPCs
 								if (CalamityModDownedProvidence)
 								{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
-								shop.item[nextSlot].shopCustomPrice = 30000000;
+								shop.item[nextSlot].shopCustomPrice = 5000000;
 								nextSlot++;
 								}
 							}
@@ -1875,13 +1916,13 @@ namespace AlchemistNPC.NPCs
 						if (!CalamityModDownedProvidence && CalamityModDownedAstrageldon)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
-							shop.item[nextSlot].shopCustomPrice = 4000000;
+							shop.item[nextSlot].shopCustomPrice = 3000000;
 							nextSlot++;
 						}
 						if (CalamityModDownedProvidence && CalamityModDownedAstrageldon)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
-							shop.item[nextSlot].shopCustomPrice = 15000000;
+							shop.item[nextSlot].shopCustomPrice = 5000000;
 							nextSlot++;
 						}
 						if (CalamityModDownedAstrum)
@@ -1903,37 +1944,40 @@ namespace AlchemistNPC.NPCs
 							nextSlot++; 
 							}
 					}
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
+						if (CalamityModDownedBirb)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
+							shop.item[nextSlot].shopCustomPrice = 5000000;
+							nextSlot++;
+						}
 						if (CalamityModDownedProvidence)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ProvidenceBag"));
-							shop.item[nextSlot].shopCustomPrice = 150000000;
+							shop.item[nextSlot].shopCustomPrice = 15000000;
 							nextSlot++;
 						}
 						if (CalamityModDownedPolter)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PolterghastBag"));
-							shop.item[nextSlot].shopCustomPrice = 150000000;
+							shop.item[nextSlot].shopCustomPrice = 15000000;
 							nextSlot++;
 						}
-						if (CalamityModDownedDOG && CalamityModDownedBirb)
+						if (CalamityModDownedDOG)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag"));
-							shop.item[nextSlot].shopCustomPrice = 300000000;
+							shop.item[nextSlot].shopCustomPrice = 30000000;
 							nextSlot++;
 						}
 						if (CalamityModDownedYharon)
 						{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
-							shop.item[nextSlot].shopCustomPrice = 200000000;
-							nextSlot++;
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharonBag"));
-							shop.item[nextSlot].shopCustomPrice = 500000000;
+							shop.item[nextSlot].shopCustomPrice = 50000000;
 							nextSlot++;
 						}
 					}
-					if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+					if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 							if (NPC.downedBoss3)	
 							{
@@ -2011,7 +2055,7 @@ namespace AlchemistNPC.NPCs
 								}
 							}
 						}
-					if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+					if (ModLoader.GetMod("SacredTools") != null)
 						{
 							if (NPC.downedBoss3)	
 							{
@@ -2068,11 +2112,11 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("InformatingNote"));
 				nextSlot++;
 				}
-				if (Config.CoinsDrop)
+				if (AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("AAMod"))
+						if (ModLoader.GetMod("AAMod") != null)
 						{
 							if (AAModDownedMonarch)
 							{
@@ -2085,6 +2129,13 @@ namespace AlchemistNPC.NPCs
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("GripsBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(6);
+								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+								nextSlot++;
+							}
+							if (AAModDownedTruffleToad)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("TruffleBag"));
+								shop.item[nextSlot].shopCustomPrice = new int?(10);
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
 								nextSlot++;
 							}
@@ -2116,27 +2167,6 @@ namespace AlchemistNPC.NPCs
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier2ID;
 								nextSlot++;
 							}
-							if (AAModDownedRetriever)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RetrieverBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(5);
-								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-								nextSlot++;
-							}
-							if (AAModDownedRaider)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RaiderBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(5);
-								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-								nextSlot++;
-							}
-							if (AAModDownedOrthrus)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("OrthusBag"));
-								shop.item[nextSlot].shopCustomPrice = new int?(5);
-								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-								nextSlot++;
-							}
 							if (AAModDownedEquinox)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("DBBag"));
@@ -2146,6 +2176,13 @@ namespace AlchemistNPC.NPCs
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("NCBag"));
 								shop.item[nextSlot].shopCustomPrice = new int?(15);
 								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+								nextSlot++;
+							}
+							if (AAModDownedSisters)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("AHBag"));
+								shop.item[nextSlot].shopCustomPrice = new int?(5);
+								shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
 								nextSlot++;
 							}
 							if (AAModDownedYamata)
@@ -2181,7 +2218,7 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+						if (ModLoader.GetMod("SpiritMod") != null)
 						{
 							if (SpiritModDownedScarabeus)
 							{
@@ -2254,7 +2291,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+						if (ModLoader.GetMod("Laugicality") != null)
 						{
 							if (EnigmaDownedSharkron)
 							{
@@ -2306,7 +2343,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+						if (ModLoader.GetMod("pinkymod") != null)
 						{
 							if (PinkymodDownedST)
 							{
@@ -2343,11 +2380,11 @@ namespace AlchemistNPC.NPCs
 						}
 					}
 				}
-				if (!Config.CoinsDrop)
+				if (!AlchemistNPC.modConfiguration.CoinsDrop)
 				{
 					if (NPC.downedBoss3 && Main.expertMode)
 					{
-						if (ModLoader.GetLoadedMods().Contains("AAMod"))
+						if (ModLoader.GetMod("AAMod") != null)
 						{
 							if (AAModDownedMonarch)
 							{
@@ -2359,6 +2396,12 @@ namespace AlchemistNPC.NPCs
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("GripsBag"));
 								shop.item[nextSlot].shopCustomPrice = 300000;
+								nextSlot++;
+							}
+							if (AAModDownedTruffleToad)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("TruffleBag"));
+								shop.item[nextSlot].shopCustomPrice = 350000;
 								nextSlot++;
 							}
 							if (AAModDownedBrood)
@@ -2385,24 +2428,6 @@ namespace AlchemistNPC.NPCs
 								shop.item[nextSlot].shopCustomPrice = 1000000;
 								nextSlot++;
 							}
-							if (AAModDownedRetriever)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RetrieverBag"));
-								shop.item[nextSlot].shopCustomPrice = 1500000;
-								nextSlot++;
-							}
-							if (AAModDownedRaider)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RaiderBag"));
-								shop.item[nextSlot].shopCustomPrice = 1500000;
-								nextSlot++;
-							}
-							if (AAModDownedOrthrus)
-							{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("OrthusBag"));
-								shop.item[nextSlot].shopCustomPrice = 1500000;
-								nextSlot++;
-							}
 							if (AAModDownedEquinox)
 							{
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("DBBag"));
@@ -2410,6 +2435,12 @@ namespace AlchemistNPC.NPCs
 								nextSlot++;
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("NCBag"));
 								shop.item[nextSlot].shopCustomPrice = 2500000;
+								nextSlot++;
+							}
+							if (AAModDownedSisters)
+							{
+								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("AHBag"));
+								shop.item[nextSlot].shopCustomPrice = 5000000;
 								nextSlot++;
 							}
 							if (AAModDownedYamata)
@@ -2435,12 +2466,9 @@ namespace AlchemistNPC.NPCs
 								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("ShenCache"));
 								shop.item[nextSlot].shopCustomPrice = 30000000;
 								nextSlot++;
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("GripsSBag"));
-								shop.item[nextSlot].shopCustomPrice = 15000000;
-								nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+						if (ModLoader.GetMod("SpiritMod") != null)
 						{
 							if (SpiritModDownedScarabeus)
 							{
@@ -2503,7 +2531,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("Laugicality"))
+						if (ModLoader.GetMod("Laugicality") != null)
 						{
 							if (EnigmaDownedSharkron)
 							{
@@ -2548,7 +2576,7 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
-						if (ModLoader.GetLoadedMods().Contains("pinkymod"))
+						if (ModLoader.GetMod("pinkymod") != null)
 						{
 							if (PinkymodDownedST)
 							{
