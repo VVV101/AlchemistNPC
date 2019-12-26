@@ -14,7 +14,7 @@ namespace AlchemistNPC.Buffs
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Кожа Титана");
-			Description.AddTranslation(GameCulture.Russian, "Иммунитет к некоторым наедоедливым дебаффам");
+			Description.AddTranslation(GameCulture.Russian, "Иммунитет к некоторым надоедливым дебаффам");
             DisplayName.AddTranslation(GameCulture.Chinese, "泰坦皮肤");
             Description.AddTranslation(GameCulture.Chinese, "免疫一些烦人的Debuff");
         }
