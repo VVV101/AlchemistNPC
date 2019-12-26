@@ -18,6 +18,7 @@ Can be crafted on Mythril Anvil.
 -Added Braclet of Time Twist. Drops from any treasure bag with 1:150 chance.
 -Added Recall/Wormhole Potion price config options.
 -Added more materials to Operator's materials shops.
+-Fixed Simple Crafting Penny and both Materia Transmutators were not giving chance to save ingredients during craft (Alchemy Table feature).
 -Fixed Paper Tube multiplayer desync issue.
 -Fixed NetSend error in world file.
 -New awesome mod's icon by Alemeow#7389.
