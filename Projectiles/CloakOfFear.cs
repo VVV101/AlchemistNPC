@@ -31,21 +31,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			Player player = Main.player[projectile.owner];
 			projectile.Center = player.Center;
-			for (int i = 0; i < 5; i++)
-				{
-					int dustType = Main.rand.Next(51, 54);
-					int dustIndex = Dust.NewDust(projectile.position, 96, 96, dustType);
-					Dust dust = Main.dust[dustIndex];
-					dust.velocity.X = dust.velocity.X + Main.rand.Next(-50, 51) * 0.01f;
-					dust.velocity.Y = dust.velocity.Y + Main.rand.Next(-50, 51) * 0.01f;
-					dust.scale *= 0.95f;
-					dust.noGravity = true;
-				}
-			
-			if (player.dead || !player.HasBuff(mod.BuffType("CloakOfFear")))
-			{
-				projectile.Kill();
-			}
+			projectile.ai[0]++;
 			for (int i = 0; i < 200; i++)
             {
                 NPC target = Main.npc[i];
@@ -53,17 +39,14 @@ namespace AlchemistNPC.Projectiles
 				{
 					if (target.Hitbox.Intersects(projectile.Hitbox))
 					{
-					Fear(target);
+						if (!target.HasBuff(mod.BuffType("CloakOfFearDebuff"))) target.velocity *= -1;
+						if (projectile.ai[0] == 5) target.velocity += target.velocity*(-3);
+						target.buffImmune[mod.BuffType("CloakOfFearDebuff")] = false;
+						target.AddBuff(mod.BuffType("CloakOfFearDebuff"), 360);
 					}
 				}
 			}
+			if (projectile.ai[0] == 6) projectile.ai[0] = 0;
 		}
-			
-			public void Fear(NPC target)
-			{
-				target.velocity *= -1;
-				target.buffImmune[mod.BuffType("CloakOfFearDebuff")] = false;
-				target.AddBuff(mod.BuffType("CloakOfFearDebuff"), 360);
-			}
 	}
 }

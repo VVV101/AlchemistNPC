@@ -26,7 +26,7 @@ namespace AlchemistNPC.Projectiles
 			DisplayName.SetDefault("Sasscade Yoyo");
 			ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = -1f;
 			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 400f;
-			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 17f;
+			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 12f;
 
 		}
 

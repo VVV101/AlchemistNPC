@@ -731,6 +731,19 @@ namespace AlchemistNPC.NPCs
 				nextSlot++;
 			}
 			}
+			if (Shop == 3){
+				if (Main.hardMode)
+				{
+					shop.item[nextSlot].SetDefaults (mod.ItemType("MenacingToken"));
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (mod.ItemType("LuckyToken"));
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (mod.ItemType("ViolentToken"));
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (mod.ItemType("WardingToken"));
+					nextSlot++;
+				}
+			}
 		}
 	}
 }

@@ -15,6 +15,12 @@ namespace AlchemistNPC
                 case ItemID.FallenStar:
                     item.value = AlchemistNPC.modConfiguration.StarPrice;
                     break;
+				case ItemID.RecallPotion:
+                    item.value = AlchemistNPC.modConfiguration.RecallPrice;
+                    break;
+				case ItemID.WormholePotion:
+                    item.value = AlchemistNPC.modConfiguration.WormholePrice;
+                    break;
 				case 1267:
                     item.value = 20;
                     break;

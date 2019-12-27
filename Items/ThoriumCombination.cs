@@ -27,7 +27,7 @@ namespace AlchemistNPC.Items
 
             DisplayName.AddTranslation(GameCulture.Chinese, "瑟银捆绑包");
             Tooltip.AddTranslation(GameCulture.Chinese, "获得瑟银的大部分药水Buff" +
-                "\n嗜血, 精准, 对决, 狂怒, 创造力, 耳虫, 灵感爆发, 光辉, 圣洁");
+                "\n嗜血, 精准, 狂热, 狂怒, 创造力, 耳虫, 灵感爆发, 光辉, 圣洁");
 		}    
 
 		public override void SetDefaults()

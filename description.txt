@@ -7,13 +7,52 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
+v9.0
+-Reworked accessories tokens availability.
+Now they cannot be crafted from Perfection Token.
+Now can be bought from Tinkerer in hardmode.
+-Now Lifeform Analizer also creates laser pointer to rare creature (ticks each second).
+Can be toggled by Mod Configuration.
+-Added Master Yoyo Bag. Combines effects of Fire Gauntlet and Yoyo Bag, but gives bigger range bonus.
+Can be crafted on Mythril Anvil.
+-Added Braclet of Time Twist. Drops from any treasure bag with 1:150 chance.
+-Added Recall/Wormhole Potion price config options.
+-Added more materials to Operator's materials shops.
+-Fixed Simple Crafting Penny and both Materia Transmutators were not giving chance to save ingredients during craft (Alchemy Table feature).
+-Fixed Paper Tube multiplayer desync issue.
+-Fixed NetSend error in world file.
+-New awesome mod's icon by Alemeow#7389.
+v8.9.1
+-Mod browser error.
+-Added some more chinese localization.
 v8.9
 -Added new Holoprojector, Desert.
+-Added Immortality Field projector and FEAR emitter.
+IFp makes town NPCs to instantly respawn after being killed.
+FEAR emitter restricts non-boss enemies from going through its field.
+-Added 3 new prehardmode weapons. All drops from spider type enemies.
+Sword of Arachna drops from Wall Creeper with 5%. Infests enemies with spiders.
+Fang Ballista drops from Jungle Creepers with 5%. Shoots impaling arrow which may immobilize normal enemy.
+Spider Fangarang drops from Bloody Crawlers with 10%. Can stack up to 3. Poisons enemies on hit.
+They all also have early hardmode upgrades with spider fangs on normal anvil.
 -Alchemist Charms now also add some duration to buff potions depending on tier.
--Potion of Darkness can no longer be used if any boss is alive.
+-Potion of Darkness can no longer be used if any boss is alive. Removed Heart Ache debuff.
+-Added Swiftness potion to both Tank Combinations and Universal Combination.
+-Beach Teleporter potion now always teleport you to actual left or right side beach.
+It is independant from palms now.
+-Rebalanced some of the Operator's prices.
+-All Calamity references to crit were redone as mod calls.
+-Now Operator has separated shops for vanilla boss drops & materials shop and modded boss drops & materials shop.
+-Now defeating buffed Pumpking/Ice Queen is required to unlock Nightmare Fuel/Endothermic Energy in Operator's shop.
 -Removed Omniscience from Calamity combination, added Soaring and Bounding buffs.
+-Fixed Ban Hammer functionality. Now it will not instakill Destroyer or hardmode event bosses.
+And Dungeon Guardian now gets properly killed by it after the first hit.
+-Fixed drop chances for items with low chances of dropping. Now it should be even lower, as it should be.
+-Fixed/nerfed Penetrator's crit damage.
+-Fixed Moon Lord wasn't dropping Torn Note, Coins or National Ugandan Treasure while Calamity mod is active.
 -Fixed Thorium combination.
 -Cleaned up a lot of buffs code.
+-Added/fixed some more chinese localization.
 v8.8.1
 -Updated to tModloader 0.11.5.
 -Added support for Achievement Lib mod.

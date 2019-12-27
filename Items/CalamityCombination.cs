@@ -25,7 +25,7 @@ namespace AlchemistNPC.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Calamity (Стимулянты Ярима, Каденции, Титановой Чешуи, Полёта, Связующее и Водки Фабсола)");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "灾厄药剂包");
-            Tooltip.AddTranslation(GameCulture.Chinese, "给予大部分灾厄药剂的增益效果 (魔君牌兴奋剂, 尾音, 泰坦之鳞, Fabsol伏特加)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "给予大部分灾厄药剂的增益效果 (魔君牌兴奋剂, 尾音, 腾飞，泰坦之鳞, Fabsol伏特加)");
         }    
 
 		public override void SetDefaults()

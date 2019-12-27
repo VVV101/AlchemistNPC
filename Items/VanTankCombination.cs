@@ -15,12 +15,12 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Tank Combination (Vanilla)");
-			Tooltip.SetDefault("Grants buffs, which are necessary for Tanks (Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration)");
+			Tooltip.SetDefault("Grants buffs, which are necessary for Tanks (Swiftness, Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Танка (без Модовых)");
-            Tooltip.AddTranslation(GameCulture.Russian, "Сочетание баффов Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов и Регенерации");
+            Tooltip.AddTranslation(GameCulture.Russian, "Сочетание баффов Быстроты, Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов и Регенерации");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "坦克药剂包 (原版)");
-            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 再生)");
+            Tooltip.AddTranslation(GameCulture.Chinese, "获得一些坦克Buff (敏捷, 耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 再生)");
         }    
 		public override void SetDefaults()
         {
@@ -43,6 +43,7 @@ namespace AlchemistNPC.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.SwiftnessPotion, 1);
 			recipe.AddIngredient(ItemID.EndurancePotion, 1);
 			recipe.AddIngredient(ItemID.LifeforcePotion, 1);
 			recipe.AddIngredient(ItemID.IronskinPotion, 1);

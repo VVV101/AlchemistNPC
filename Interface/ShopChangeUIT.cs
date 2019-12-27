@@ -27,7 +27,7 @@ namespace AlchemistNPC.Interface
 			TinkererShopsPanel.Left.Set(575f, 0f);
 			TinkererShopsPanel.Top.Set(275f, 0f);
 			TinkererShopsPanel.Width.Set(200f, 0f);
-			TinkererShopsPanel.Height.Set(75f, 0f);
+			TinkererShopsPanel.Height.Set(105f, 0f);
 			TinkererShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
 			TinkererShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
@@ -35,16 +35,19 @@ namespace AlchemistNPC.Interface
 
 			string TinkererShops1; 
 			string TinkererShops2;
+			string TinkererShops3;
 
 			if(Language.ActiveCulture == GameCulture.Chinese)
 				{
 					TinkererShops1 = "移动/其他饰品";
 					TinkererShops2 = "战斗";
+					TinkererShops3 = "战斗";
 				}
 			else
 				{
 					TinkererShops1 = "Movement/Misc";
 					TinkererShops2 = "Combat";
+					TinkererShops3 = "Tokens";
 				}
 			
 			UIText text = new UIText(TinkererShops1);
@@ -61,6 +64,13 @@ namespace AlchemistNPC.Interface
 			text2.Height.Set(22, 0f);
 			TinkererShopsPanel.Append(text2);
 			
+			UIText text3 = new UIText(TinkererShops3);
+			text3.Left.Set(35, 0f);
+			text3.Top.Set(70, 0f);
+			text3.Width.Set(50, 0f);
+			text3.Height.Set(22, 0f);
+			TinkererShopsPanel.Append(text3);
+			
 			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
 			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
 			playButton.Left.Set(10, 0f);
@@ -76,6 +86,13 @@ namespace AlchemistNPC.Interface
 			playButton2.Height.Set(22, 0f);
 			playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
 			TinkererShopsPanel.Append(playButton2);
+			UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
+			playButton3.Left.Set(10, 0f);
+			playButton3.Top.Set(70, 0f);
+			playButton3.Width.Set(22, 0f);
+			playButton3.Height.Set(22, 0f);
+			playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
+			TinkererShopsPanel.Append(playButton3);
 
 			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
@@ -102,6 +119,17 @@ namespace AlchemistNPC.Interface
 		private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
 		{
 			Tinkerer.Shop = 2;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUIT.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+		}
+		
+		private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
+		{
+			Tinkerer.Shop = 3;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIT.visible = false;
 			Main.playerInventory = true;

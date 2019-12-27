@@ -46,6 +46,8 @@ namespace AlchemistNPC
 	{
 		public int Shield = 0;
 		public int fc = 0;
+		public bool MasterYoyoBag = false;
+		public bool TimeTwist = false;
 		public bool HPJ = false;
 		public bool DeltaRune = false;
 		public bool PB4K = false;
@@ -118,6 +120,7 @@ namespace AlchemistNPC
 		public bool DR10 = false;
 		public bool Regeneration = false;
 		public bool Lifeforce = false;
+		public bool MS = false;
 		
 		public int DisasterGauge = 0;
 		public int chargetime = 0;
@@ -211,6 +214,8 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			MasterYoyoBag = false;
+			TimeTwist = false;
 			HPJ = false;
 			DeltaRune = false;
 			PH = false;
@@ -286,6 +291,7 @@ namespace AlchemistNPC
 			DR10 = false;
 			Regeneration = false;
 			Lifeforce = false;
+			MS = false;
 			
 			player.statLifeMax2 += LifeElixir * 50;
 			player.statManaMax2 += Fuaran * 100;
@@ -837,6 +843,21 @@ namespace AlchemistNPC
 					  return;
 					if (player.bank.item[index1].stack > 0 && player.bank.item[index1].type > 0 && (player.bank.item[index1].buffType > 0 && !player.bank.item[index1].summon) && player.bank.item[index1].buffType != 90)
 					{
+						if (ModLoader.GetMod("CalamityMod") != null)
+						{
+							if (player.bank.item[index1].buffType == ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"))
+							{
+								for (int v = 0; v < 200; ++v)
+								{
+									NPC npc = Main.npc[v];
+									if (npc.active && npc.boss)
+									{
+										return;
+									}
+								}
+								CalamityRage(player);
+							}
+						}
 					  int type2 = player.bank.item[index1].buffType;
 					  bool flag = true;
 					  for (int index2 = 0; index2 < 22; ++index2)
@@ -1039,6 +1060,12 @@ namespace AlchemistNPC
 			}
 		}
 		
+		private void CalamityRage(Player player)
+        {
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+			CalamityPlayer.stress = 10000;
+        }
+		
 		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath) {
 			Item item = new Item();
 			item.SetDefaults(mod.ItemType("AntiBuffItem"));
@@ -1070,13 +1097,13 @@ namespace AlchemistNPC
 				switch (Main.rand.Next(3))
 				{
 					case 0:
-					damage += damage*2;
+					damage += damage/2;
 					break;
 					case 1:
-					damage += damage*3;	
+					damage += damage;	
 					break;
 					case 2:
-					damage += damage*4;	
+					damage += (damage/2)*3;	
 					break;
 				}
 			}
@@ -1311,9 +1338,10 @@ namespace AlchemistNPC
 					{
 						RedemptionBoost(player);
 					}
-					if (ModLoader.GetMod("CalamityMod") != null)
+					Mod Calamity = ModLoader.GetMod("CalamityMod");
+					if(Calamity != null)
 					{
-						CalamityBoost(player);
+						Calamity.Call("AddRogueCrit", player, 10);
 					}
 				}
 				if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Regeneration) player.lifeRegen += 4;
@@ -1348,15 +1376,11 @@ namespace AlchemistNPC
 					player.statLifeMax2 += player.statLifeMax / 5 / 20 * 20;
 				}
 			}
+			if (MS) player.moveSpeed += 0.25f;
 			if (Defense8) player.statDefense += 8;
 			if (DR10) player.endurance += 0.1f;
 		}
 		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.throwingCrit += 10;
-        }
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();

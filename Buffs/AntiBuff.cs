@@ -218,9 +218,10 @@ namespace AlchemistNPC.Buffs
 				{
 					RedemptionBoost(player, 0);
 				}
-				if (ModLoader.GetMod("CalamityMod") != null)
+				Mod Calamity = ModLoader.GetMod("CalamityMod");
+				if(Calamity != null)
 				{
-					CalamityBoost(player, 0);
+					Calamity.Call("AddRogueCrit", player, 10);
 				}
 			}
 			if (modPlayer.CustomBooster2 == 1)
@@ -303,9 +304,10 @@ namespace AlchemistNPC.Buffs
 					{
 						RedemptionBoost(player, 1);
 					}
-					if (ModLoader.GetMod("CalamityMod") != null)
+					Mod Calamity = ModLoader.GetMod("CalamityMod");
+					if(Calamity != null)
 					{
-						CalamityBoost(player, 1);
+						Calamity.Call("AddRogueCrit", player, 5);
 					}
 				}
 			}
@@ -333,9 +335,10 @@ namespace AlchemistNPC.Buffs
 					{
 						RedemptionBoost(player, 2);
 					}
-					if (ModLoader.GetMod("CalamityMod") != null)
+					Mod Calamity = ModLoader.GetMod("CalamityMod");
+					if(Calamity != null)
 					{
-						CalamityBoost(player, 2);
+						Calamity.Call("AddRogueCrit", player, 4);
 					}
 				}
 			}
@@ -345,24 +348,6 @@ namespace AlchemistNPC.Buffs
 				player.buffImmune[144] = true;
 			}
 		}
-		
-		private void CalamityBoost(Player player, int c)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			if (c == 0)
-			{
-				CalamityPlayer.throwingCrit += 10;
-			}
-			if (c == 1)
-			{
-				CalamityPlayer.throwingCrit += 5;
-			}
-			if (c == 2)
-			{
-				CalamityPlayer.throwingCrit += 4;
-			}
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player, int c)
         {

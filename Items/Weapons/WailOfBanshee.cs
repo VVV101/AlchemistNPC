@@ -54,21 +54,7 @@ namespace AlchemistNPC.Items.Weapons
 			Vector2 vel1 = new Vector2(-0, 0);
 			vel1 *= 0f;
 			Projectile.NewProjectile(player.position.X, player.position.Y, vel1.X, vel1.Y, mod.ProjectileType("WailOfBanshee"), 1, 0, Main.myPlayer);
-			if (ModLoader.GetMod("CalamityMod") != null)
-			{
-				if (CalamityModRevengeance)
-				{
-				player.AddBuff(mod.BuffType("Exhausted"), 1800); 
-				}
-				else
-				{
-				player.AddBuff(mod.BuffType("Exhausted"), 3600); 	
-				}
-			}
-			if (ModLoader.GetMod("CalamityMod") == null)
-			{
-				player.AddBuff(mod.BuffType("Exhausted"), 3600); 
-			}
+			player.AddBuff(mod.BuffType("Exhausted"), 3600); 
 			return false;
 		}
 		public override bool CanUseItem(Player player)

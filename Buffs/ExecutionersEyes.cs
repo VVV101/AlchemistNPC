@@ -32,29 +32,9 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-			if (ModLoader.GetMod("CalamityMod") != null)
-			{
-				if (CalamityModRevengeance)
-				{
-					if (player.buffTime[buffIndex] == 1) 
-					{ 
-					player.AddBuff(mod.BuffType("Exhausted"), 1800); 
-					}
-				}
-				else
-				{
-					if (player.buffTime[buffIndex] == 1) 
-					{ 
-					player.AddBuff(mod.BuffType("Exhausted"), 3600); 
-					}
-				}
-			}
-			if (ModLoader.GetMod("CalamityMod") == null)
-			{
-				if (player.buffTime[buffIndex] == 1) 
-				{ 
+			if (player.buffTime[buffIndex] == 1) 
+			{ 
 				player.AddBuff(mod.BuffType("Exhausted"), 3600); 
-				}
 			}
 			player.yoraiz0rEye = 7;
 			player.meleeCrit += 5;
@@ -69,18 +49,12 @@ namespace AlchemistNPC.Buffs
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetMod("CalamityMod") != null)
+				Mod Calamity = ModLoader.GetMod("CalamityMod");
+				if(Calamity != null)
 				{
-				CalamityBoost(player);
+					Calamity.Call("AddRogueCrit", player, 5);
 				}
 		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-            CalamityPlayer.throwingCrit += 5;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
