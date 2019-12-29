@@ -51,6 +51,9 @@ Common.FallenStarsPriceTooltip=1000 is 10 silver price by default
 Common.RecallPrice=Recall Potion Price
 Common.RecallPriceTooltip=1000 is 10 silver price by default
 
+Common.WormholePrice=Wormhole Potion Price
+Common.WormholePriceTooltip=1000 is 10 silver price by default
+
 Common.LifeformAnalyzer=Lifeform Analyzer laser pointing
 Common.LifeformAnalyzerTooltip=Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default
 

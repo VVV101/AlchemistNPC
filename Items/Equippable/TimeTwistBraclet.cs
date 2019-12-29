@@ -20,7 +20,9 @@ namespace AlchemistNPC.Items.Equippable
 			+"\nLowers defense/damage reduction by 20/20%");
 			DisplayName.AddTranslation(GameCulture.Russian, "Браслет Искривления Времени");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт шанс получить удвоенный лут с убитых мобов\nПонижает защиту/сопротивление урону на 20/20%");
-        }
+			DisplayName.AddTranslation(GameCulture.Chinese, "时空扭曲手镯");
+			Tooltip.AddTranslation(GameCulture.Chinese, "从打败的敌人身上有几率双倍掉落\n降低20%伤害减免和20防御");
+		}
 	
 		public override void SetDefaults()
 		{

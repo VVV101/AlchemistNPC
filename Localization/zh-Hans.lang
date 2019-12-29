@@ -46,7 +46,16 @@ Common.Potionspricemultiplier=多人药水价格加倍
 Common.PotionspricemultiplierTooltip=提升价格倍率. 默认为1
 
 Common.FallenStarsPrice=落星价格
-Common.FallenStarsPriceTooltip=默认1000个价值10银
+Common.FallenStarsPriceTooltip=默认1000, 等价于价值10银
+
+Common.RecallPrice=回程药剂价格
+Common.RecallPriceTooltip=默认1000, 等价于价值10银
+
+Common.WormholePrice=虫洞药剂价格
+Common.WormholePriceTooltip=默认1000, 等价于价值10银
+
+Common.LifeformAnalyzer=生命体分析仪激光标定
+Common.LifeformAnalyzerTooltip=激活或取消生命体分析仪激光标定 (每秒标记一次). 默认为是
 
 Prefix
 
