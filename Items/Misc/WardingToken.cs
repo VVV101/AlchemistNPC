@@ -28,17 +28,8 @@ namespace AlchemistNPC.Items.Misc
 		{
 			item.width = 32;
 			item.height = 32;
-			item.value = 5000000;
-			item.rare = 8;
-		}
-		
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("PerfectionToken"));
-			recipe.AddTile(TileID.TinkerersWorkbench);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			item.value = 250000;
+			item.rare = 7;
 		}
 	}
 }

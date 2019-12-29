@@ -58,6 +58,27 @@ namespace AlchemistNPC.Items
 		
 		public override void UpdateInventory(Item item, Player player)
 		{
+			if (player.accCritterGuide && AlchemistNPC.modConfiguration.LifeformAnalyzer)
+			{
+				if(Main.GameUpdateCount % 60 == 0) 
+				{
+					for (int v = 0; v < 200; ++v)
+					{
+						NPC npc = Main.npc[v];
+						if (npc.active && npc.rarity >= 1)
+						{
+							float num102 = 6f;
+							float num103 = npc.Center.X + npc.width * 0.5f - player.Center.X;
+							float num104 = npc.Center.Y + npc.height * 0.5f - player.Center.Y;
+							float num105 = (float)Math.Sqrt((double)(num103 * num103 + num104 * num104));
+							num105 = num102 / num105;
+							num103 *= num105;
+							num104 *= num105;
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, num103, num104, mod.ProjectileType("LocatorProjectile"), 0, 0f, player.whoAmI, 0f, 0f);
+						}
+					}
+				}
+			}
 			if (item.type == mod.ItemType("LuckCharm"))
 			{
 				Luck = true;
@@ -1260,6 +1281,10 @@ namespace AlchemistNPC.Items
 		
 		public override void OpenVanillaBag(string context, Player player, int arg)
 		{
+			if (context == "bossBag" && Main.rand.Next(150) == 0)
+			{
+				player.QuickSpawnItem(mod.ItemType("TimeTwistBraclet"));
+			}
 			if (Main.hardMode && context == "bossBag" && Main.rand.Next(150) == 0)
 			{
 				player.QuickSpawnItem(mod.ItemType("SuspiciousLookingScythe"));

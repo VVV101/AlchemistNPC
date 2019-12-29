@@ -166,6 +166,12 @@ namespace AlchemistNPC.Projectiles
 		{
 			Player player = Main.player[projectile.owner];
 			
+			if (projectile.aiStyle == 99 && ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).MasterYoyoBag)
+			{
+				float num1 = ProjectileID.Sets.YoyosMaximumRange[projectile.type];
+				num1 += num1 * 0.25f + 100f;
+			}
+			
 			if (firstTime && !projectile.hostile && projectile.magic && (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem == true) && projectile.type != mod.ProjectileType("Bees"))
 			{
 				for (int g = 0; g < 2; g++)

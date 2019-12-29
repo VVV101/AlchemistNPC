@@ -89,6 +89,11 @@ namespace AlchemistNPC
 		public bool StartMessage;
 		
 		[DefaultValue(true)]
+		[Label("$Mods.AlchemistNPC.Common.LifeformAnalyzer")]
+		[Tooltip("$Mods.AlchemistNPC.Common.LifeformAnalyzerTooltip")]
+		public bool LifeformAnalyzer;
+		
+		[DefaultValue(true)]
 		[Label("$Mods.AlchemistNPC.Common.Revengeancemode")]
 		[Tooltip("$Mods.AlchemistNPC.Common.RevengeancemodeTooltip")]
 		public bool RevPrices;
@@ -104,6 +109,18 @@ namespace AlchemistNPC
 		[Label("$Mods.AlchemistNPC.Common.FallenStarsPrice")]
 		[Tooltip("$Mods.AlchemistNPC.Common.FallenStarsPriceTooltip")]
 		public int StarPrice;
+		
+		[Range(1, 1000000)]
+		[DefaultValue(1000)]
+		[Label("$Mods.AlchemistNPC.Common.RecallPrice")]
+		[Tooltip("$Mods.AlchemistNPC.Common.RecallPriceTooltip")]
+		public int RecallPrice;
+		
+		[Range(1, 1000000)]
+		[DefaultValue(1000)]
+		[Label("$Mods.AlchemistNPC.Common.WormholePrice")]
+		[Tooltip("$Mods.AlchemistNPC.Common.WormholePriceTooltip")]
+		public int WormholePrice;
 
 		public override ModConfig Clone() {
 			var clone = (ModConfiguration)base.Clone();

@@ -1693,7 +1693,12 @@ namespace AlchemistNPC.NPCs
 					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Extractor && npc.boss == true && npc.lifeMax >= 55000 && (Main.rand.Next(10) == 0))
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HateVial"));
-					}	
+					}
+					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).TimeTwist && npc.boss == false && Main.rand.NextBool(4))
+					{
+						npc.NPCLoot();
+						break;
+					}
 				}
 			}
 		}

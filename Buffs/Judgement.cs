@@ -13,9 +13,9 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Judgement");
-			Description.SetDefault("You are spawning sharp bones impaling your foes"
-			+"\n33% chance to reduce damage taken to 2 hitpoints"
-			+"\nDamage reduction is reduced by 33%");
+			Description.SetDefault("You conjure sharp bones to impale your foes"
+			+"\n33% chance to reduce taken damage to 2 hitpoints"
+			+"\nReduces your Damage reduction by 33%");
 			Main.buffNoSave[Type] = true;
 			Main.debuff[Type] = false;
 			canBeCleared = true;

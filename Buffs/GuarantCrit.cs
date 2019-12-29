@@ -18,8 +18,9 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Гарантированный Крит");
 			Description.AddTranslation(GameCulture.Russian, "Ваша следующая атаку будет гарантированным критом");
-            DisplayName.AddTranslation(GameCulture.Chinese, "暴击预定");
-            Description.AddTranslation(GameCulture.Chinese, "下一次攻击必定暴击");
+      DisplayName.AddTranslation(GameCulture.Chinese, "暴击预定");
+      Description.AddTranslation(GameCulture.Chinese, "下一次攻击必定暴击");
+
         }
 		
 		public override void Update(Player player, ref int buffIndex)

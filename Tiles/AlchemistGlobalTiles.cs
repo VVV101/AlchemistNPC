@@ -23,18 +23,24 @@ namespace AlchemistNPC.Tiles
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
+				Main.LocalPlayer.alchemyTable = true;
 			}
 			if (type == mod.TileType("MateriaTransmutatorMK2"))
 			{
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
+				Main.LocalPlayer.alchemyTable = true;
 			}
 			if (type == mod.TileType("SpecCraftPoint"))
 			{
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
+			}
+			if (type == mod.TileType("PreHMPenny"))
+			{
+				Main.LocalPlayer.alchemyTable = true;
 			}
 			return base.AdjTiles(type);
 		}

@@ -12,7 +12,7 @@ namespace AlchemistNPC.Buffs
 		public override void SetDefaults()
 		{
 			DisplayName.SetDefault("Slowness");
-			Description.SetDefault("Enemy is slowed");
+			Description.SetDefault("Enemy is slowed down");
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = false;

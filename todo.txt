@@ -1,0 +1,5 @@
+add more calamity materials
+remove excessive coding
+probably add radar for lifeform analyzer
+fix paper tubes infinite sellability
+fix notes book in mp
