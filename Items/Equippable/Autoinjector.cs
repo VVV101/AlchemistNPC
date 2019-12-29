@@ -102,9 +102,9 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(ItemID.ShroomiteBar, 25);
 			recipe.AddIngredient(ItemID.SpectreBar, 25);
 			recipe.AddIngredient(null, "AlchemicalBundle", 1);
-			recipe.AddIngredient(ItemID.HerculesBeetle, 1);
+			recipe.AddIngredient(ItemID.HerculesBeetle, 1);	
 			recipe.AddIngredient(ItemID.DestroyerEmblem, 1);
-			recipe.AddIngredient(null, "MasksBundle", 1);
+			recipe.AddIngredient(null, "MaskBundle", 1);
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
@@ -120,7 +120,7 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(null, "RangerCombination", 30);
 			recipe.AddIngredient(null, "MageCombination", 30);
 			recipe.AddIngredient(null, "SummonerCombination", 30);
-			recipe.AddIngredient(null, "MasksBundle", 1);
+			recipe.AddIngredient(null, "MaskBundle", 1);
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);
 			recipe.AddRecipe();
