@@ -45,7 +45,9 @@ namespace AlchemistNPC
 	public class AlchemistNPCPlayer : ModPlayer
 	{
 		public int Shield = 0;
+		public int Timer = 0;
 		public int fc = 0;
+		public bool Blinker = false;
 		public bool MasterYoyoBag = false;
 		public bool TimeTwist = false;
 		public bool HPJ = false;
@@ -214,6 +216,7 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			Blinker = false;
 			MasterYoyoBag = false;
 			TimeTwist = false;
 			HPJ = false;
@@ -829,6 +832,31 @@ namespace AlchemistNPC
 				lamp = 0;
 				}
 				lf = false;
+			}
+			if (Blinker)
+			{
+				if (Timer < 30) Timer++;
+				if (Timer >= 30) 
+				{
+					Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
+					if (player.controlRight && player.releaseRight && player.doubleTapCardinalTimer[2]>0)
+					{
+						Timer = 0;
+						player.position.X += 300;
+						if (player.velocity.X < 0) player.velocity.X *= -1;
+						for (int index = 0; index < 30; ++index)
+							Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+					}
+					if (player.controlLeft && player.releaseLeft && player.doubleTapCardinalTimer[3]>0)
+					{
+						Timer = 0;
+						player.position.X -= 300;
+						if (player.velocity.X > 0) player.velocity.X *= -1;
+						for (int index = 0; index < 30; ++index)
+							Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+					}
+				}
+				
 			}
 			if (AlchemistNPC.PipBoyTP.JustPressed && PB4K)
 			{
