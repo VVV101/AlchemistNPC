@@ -15,9 +15,9 @@ namespace AlchemistNPC.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Ninja Potion");
-			Tooltip.SetDefault("Increases damage and critical chance by 5% and grants abilities of a Master Ninja");
+			Tooltip.SetDefault("Increases damage and critical chance by 5%\nGives a chance to dodge attacks and allows the ability to climb walls");
 			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Ниндзя");
-            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает урон и шанс критического удара любым типом на 5% и даёт способности Мастера Ниндзя");
+            Tooltip.AddTranslation(GameCulture.Russian, "Увеличивает урон и шанс критического удара любым типом на 5%\nДаёт шанс увернуться от атаки и позволяет цепляться за стены");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "忍者药剂");
             Tooltip.AddTranslation(GameCulture.Chinese, "增加5%的伤害和暴击率, 并获得忍者大师的能力");

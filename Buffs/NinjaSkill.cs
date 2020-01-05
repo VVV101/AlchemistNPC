@@ -27,7 +27,6 @@ namespace AlchemistNPC.Buffs
             player.rangedCrit += 5;
             player.magicCrit += 5;
             player.thrownCrit += 5;
-			player.dash = 1;
 			player.blackBelt = true;
             player.spikedBoots = 2;
 				if (ModLoader.GetMod("ThoriumMod") != null)
