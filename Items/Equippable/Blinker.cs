@@ -14,9 +14,9 @@ namespace AlchemistNPC.Items.Equippable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Blinker");
-			Tooltip.SetDefault("Gives you dash in the form of instant teleport for short distance");
+			Tooltip.SetDefault("Gives you dash in the form of instant teleport for short distance\nGives a chance to dodge attacks and allows the ability to climb walls");
 			DisplayName.AddTranslation(GameCulture.Russian, "Блинкер");
-            Tooltip.AddTranslation(GameCulture.Russian, "Даёт вам рывок в форме мгновенного телепорта на небольшое расстояние");
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт вам рывок в форме мгновенного телепорта на небольшое расстояние\nДаёт шанс увернуться от атаки и позволяет цепляться за стены");
         }
 	
 		public override void SetDefaults()
@@ -32,17 +32,17 @@ namespace AlchemistNPC.Items.Equippable
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Blinker = true;
+			player.blackBelt = true;
+            player.spikedBoots = 2;
 		}
 		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Tabi);
+			recipe.AddIngredient(ItemID.MasterNinjaGear);
 			recipe.AddIngredient(ItemID.RodofDiscord);
-			recipe.AddIngredient(mod.ItemType("ChromaticCrystal"), 5);
-			recipe.AddIngredient(mod.ItemType("SunkroveraCrystal"), 5);
-			recipe.AddIngredient(mod.ItemType("NyctosythiaCrystal"), 5);
-			recipe.AddTile(mod.TileType("MateriaTransmutator"));
+			recipe.AddIngredient(ItemID.MartianConduitPlating, 100);
+			recipe.AddTile(TileID.MythrilAnvil));
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
