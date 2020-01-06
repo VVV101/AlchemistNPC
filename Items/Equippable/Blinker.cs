@@ -42,10 +42,9 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(ItemID.MasterNinjaGear);
 			recipe.AddIngredient(ItemID.RodofDiscord);
 			recipe.AddIngredient(ItemID.MartianConduitPlating, 100);
-			recipe.AddTile(TileID.MythrilAnvil));
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
 	}
-	
 }
