@@ -17,7 +17,10 @@ namespace AlchemistNPC.Items.Equippable
 			Tooltip.SetDefault("Gives you dash in the form of instant teleport for short distance\nGives a chance to dodge attacks and allows the ability to climb walls");
 			DisplayName.AddTranslation(GameCulture.Russian, "Блинкер");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт вам рывок в форме мгновенного телепорта на небольшое расстояние\nДаёт шанс увернуться от атаки и позволяет цепляться за стены");
-        }
+        
+			DisplayName.AddTranslation(GameCulture.Chinese, "闪位大师装备");
+            Tooltip.AddTranslation(GameCulture.Chinese, "让你的短距离冲刺变成传送\n有机会躲避攻击并能在墙壁攀爬");
+		}
 	
 		public override void SetDefaults()
 		{
