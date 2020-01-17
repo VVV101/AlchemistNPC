@@ -339,6 +339,14 @@ namespace AlchemistNPC
 					ShopChangeUIT.visible = false;
 				}
 			}
+			if (AlchemistNPC.modConfiguration.CoinsDrop)
+			{
+				if (ShopChangeUIO.visible)
+				{
+					CoinsConvertMenu.visible = true;
+				}
+				else CoinsConvertMenu.visible = false;
+			}
 			if (player.talkNPC == -1)
 			{
 				for (int index1 = 0; index1 < 40; ++index1)
@@ -393,13 +401,16 @@ namespace AlchemistNPC
 		
 		public static void ConvertCoins(int tier = 0)
 		{
+			Player player = Main.LocalPlayer;
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			switch (tier)
 			{
-				case 1: RCT2 -= 1; RCT1 += 2; break;
-				case 2: RCT3 -= 1; RCT2 += 2; break; 
-				case 3: RCT4 -= 1; RCT3 += 2; break; 
-				case 4: RCT5 -= 1; RCT4 += 2; break; 
-				case 5: RCT6 -= 1; RCT5 += 2; break; 
+				case 0: break;
+				case 1: modPlayer.RCT2 -= 1; modPlayer.RCT1 += 2; break;
+				case 2: modPlayer.RCT3 -= 1; modPlayer.RCT2 += 2; break; 
+				case 3: modPlayer.RCT4 -= 1; modPlayer.RCT3 += 2; break; 
+				case 4: modPlayer.RCT5 -= 1; modPlayer.RCT4 += 2; break; 
+				case 5: modPlayer.RCT6 -= 1; modPlayer.RCT5 += 2; break; 
 			}
 		}
 		

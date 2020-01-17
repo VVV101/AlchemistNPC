@@ -68,6 +68,8 @@ namespace AlchemistNPC
 		internal ShopChangeUIT alchemistUIT;
 		private UserInterface alchemistUserInterfaceP;
 		internal PipBoyTPMenu pipboyUI;
+		private UserInterface alchemistUserInterfaceC;
+		internal CoinsConvertMenu coinsUI;
 		
 		public override void Load()
 		{
@@ -149,6 +151,11 @@ namespace AlchemistNPC
 				pipboyUI.Activate();
 				alchemistUserInterfaceP = new UserInterface();
 				alchemistUserInterfaceP.SetState(pipboyUI);
+				
+				coinsUI = new CoinsConvertMenu();
+				coinsUI.Activate();
+				alchemistUserInterfaceC = new UserInterface();
+				alchemistUserInterfaceC.SetState(coinsUI);
 			}
 			Mod ALIB = ModLoader.GetMod("AchievementLib");
 			if(ALIB != null)
@@ -327,6 +334,22 @@ namespace AlchemistNPC
 						if (PipBoyTPMenu.visible)
 						{
 							pipboyUI.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexC = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexC != -1)
+			{
+				layers.Insert(MouseTextIndexC, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Coins Convert Menu",
+					delegate
+					{
+						if (CoinsConvertMenu.visible)
+						{
+							coinsUI.Draw(Main.spriteBatch);
 						}
 						return true;
 					},
@@ -1366,6 +1389,11 @@ namespace AlchemistNPC
 			if (alchemistUserInterfaceT != null && ShopChangeUIT.visible)
 			{
 				alchemistUserInterfaceT.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceC != null && CoinsConvertMenu.visible)
+			{
+				alchemistUserInterfaceC.Update(gameTime);
 			}
 		}
     }
