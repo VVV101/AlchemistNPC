@@ -26,7 +26,7 @@ namespace AlchemistNPC.Items.Misc
 		{
 			item.width = 32;
 			item.height = 32;
-			item.maxStack = 999;
+			item.maxStack = 9999;
 			item.value = 10000;
 			item.rare = 8;
 		}

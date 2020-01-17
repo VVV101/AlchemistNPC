@@ -130,6 +130,18 @@ namespace AlchemistNPC
 		
 		private const int maxBBP = -1;
 		public int BBP = 0;
+		private const int maxRCT1 = -1;
+		public int RCT1 = 0;
+		private const int maxRCT2 = -1;
+		public int RCT2 = 0;
+		private const int maxRCT3 = -1;
+		public int RCT3 = 0;
+		private const int maxRCT4 = -1;
+		public int RCT4 = 0;
+		private const int maxRCT5 = -1;
+		public int RCT5 = 0;
+		private const int maxRCT6 = -1;
+		public int RCT6 = 0;
 		private const int maxSnatcherCounter = -1;
 		public int SnatcherCounter = 0;
 		private const int maxLifeElixir = 2;
@@ -327,6 +339,68 @@ namespace AlchemistNPC
 					ShopChangeUIT.visible = false;
 				}
 			}
+			if (player.talkNPC == -1)
+			{
+				for (int index1 = 0; index1 < 40; ++index1)
+				{
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier1") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier2") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier3") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier4") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier5") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier6"))
+					{
+						player.bank3.item[index1].TurnToAir();
+					}
+				}
+			}
+		}
+		
+		public override void PostBuyItem(NPC vendor, Item[] shopInventory, Item item)
+		{
+			if (vendor.type == mod.NPCType("Operator"))
+			{
+				for (int index1 = 0; index1 < 40; ++index1)
+				{
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier1"))
+					{
+						RCT1 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier2"))
+					{
+						RCT2 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier3"))
+					{
+						RCT3 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier4"))
+					{
+						RCT4 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier5"))
+					{
+						RCT5 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier6"))
+					{
+						RCT6 = player.bank3.item[index1].stack;
+						break;
+					}
+				}
+			}
+		}
+		
+		public static void ConvertCoins(int tier = 0)
+		{
+			switch (tier)
+			{
+				case 1: RCT2 -= 1; RCT1 += 2; break;
+				case 2: RCT3 -= 1; RCT2 += 2; break; 
+				case 3: RCT4 -= 1; RCT3 += 2; break; 
+				case 4: RCT5 -= 1; RCT4 += 2; break; 
+				case 5: RCT6 -= 1; RCT5 += 2; break; 
+			}
 		}
 		
 		public override bool CanBeHitByProjectile(Projectile projectile)
@@ -341,6 +415,12 @@ namespace AlchemistNPC
 		public override void clientClone(ModPlayer clientClone)
 		{
 			AlchemistNPCPlayer clone = clientClone as AlchemistNPCPlayer;
+			clone.RCT1 = RCT1;
+			clone.RCT2 = RCT2;
+			clone.RCT3 = RCT3;
+			clone.RCT4 = RCT4;
+			clone.RCT5 = RCT5;
+			clone.RCT6 = RCT6;
 			clone.BBP = BBP;
 			clone.SnatcherCounter = SnatcherCounter;
 		}
@@ -355,6 +435,12 @@ namespace AlchemistNPC
 			packet.Write(KeepBuffs);
 			packet.Write(WellFed);
 			packet.Write(BillIsDowned);
+			packet.Write(RCT1);
+			packet.Write(RCT2);
+			packet.Write(RCT3);
+			packet.Write(RCT4);
+			packet.Write(RCT5);
+			packet.Write(RCT6);
 			packet.Write(BBP);
 			packet.Write(SnatcherCounter);
 			
@@ -397,10 +483,16 @@ namespace AlchemistNPC
 		public override void SendClientChanges(ModPlayer clientPlayer)
 		{
 			AlchemistNPCPlayer clone = clientPlayer as AlchemistNPCPlayer;
-			if (clone.BBP != BBP || clone.SnatcherCounter != SnatcherCounter) {
+			if (clone.BBP != BBP || clone.SnatcherCounter != SnatcherCounter || clone.RCT1 != RCT1 || clone.RCT2 != RCT2 || clone.RCT3 != RCT3 || clone.RCT4 != RCT4 || clone.RCT5 != RCT5 || clone.RCT6 != RCT6) {
 				var packet = mod.GetPacket();
 				packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.SyncPlayerVariables);
 				packet.Write((byte)player.whoAmI);
+				packet.Write(RCT1);
+				packet.Write(RCT2);
+				packet.Write(RCT3);
+				packet.Write(RCT4);
+				packet.Write(RCT5);
+				packet.Write(RCT6);
 				packet.Write(BBP);
 				packet.Write(SnatcherCounter);
 				packet.Send();
@@ -415,6 +507,12 @@ namespace AlchemistNPC
 				{"KeepBuffs", KeepBuffs},
 				{"WellFed", WellFed},
 				{"BillIsDowned", BillIsDowned},
+				{"RCT1", RCT1},
+				{"RCT2", RCT2},
+				{"RCT3", RCT3},
+				{"RCT4", RCT4},
+				{"RCT5", RCT5},
+				{"RCT6", RCT6},
 				{"BBP", BBP},
 				{"SnatcherCounter", SnatcherCounter},
 				
@@ -452,6 +550,12 @@ namespace AlchemistNPC
 			KeepBuffs = tag.GetInt("KeepBuffs");
 			WellFed = tag.GetInt("WellFed");
 			BillIsDowned = tag.GetInt("BillIsDowned");
+			RCT1 = tag.GetInt("RCT1");
+			RCT2 = tag.GetInt("RCT2");
+			RCT3 = tag.GetInt("RCT3");
+			RCT4 = tag.GetInt("RCT4");
+			RCT5 = tag.GetInt("RCT5");
+			RCT6 = tag.GetInt("RCT6");
 			BBP = tag.GetInt("BBP");
 			SnatcherCounter = tag.GetInt("SnatcherCounter");
 			

@@ -8,6 +8,9 @@ The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
 v9.0
+-Reworked the whole reversity coins system.
+Now all player are gatharing coins to their "internal" storage.
+They can only be accessed while trading with Operator.
 -Reworked accessories tokens availability.
 Now they cannot be crafted from Perfection Token.
 Now can be bought from Tinkerer in hardmode.
@@ -22,6 +25,7 @@ Available after beating Moon Lord.
 -Added Recall/Wormhole Potion price config options.
 -Added more materials to Operator's materials shops.
 -Added Assassin and Hydration potions to Thorium Combination.
+-Alchemist's Tremor shop is now replaced with Plants shop.
 -Removed dash ability from Ninja potion.
 -Fixed Simple Crafting Penny and both Materia Transmutators were not giving chance to save ingredients during craft (Alchemy Table feature).
 -Fixed Thorium Combination crafting bug.

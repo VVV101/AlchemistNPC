@@ -348,6 +348,12 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().KeepBuffs = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().WellFed = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BillIsDowned = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT1 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT2 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT3 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT4 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT5 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT6 = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BBP = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().SnatcherCounter = reader.ReadInt32();
 					
@@ -383,12 +389,24 @@ namespace AlchemistNPC
 					playernumber = reader.ReadByte();
 					AlchemistNPCPlayer alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
 					alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
+					alchemistPlayer.RCT1 = reader.ReadInt32();
+					alchemistPlayer.RCT2 = reader.ReadInt32();
+					alchemistPlayer.RCT3 = reader.ReadInt32();
+					alchemistPlayer.RCT4 = reader.ReadInt32();
+					alchemistPlayer.RCT5 = reader.ReadInt32();
+					alchemistPlayer.RCT6 = reader.ReadInt32();
 					alchemistPlayer.BBP = reader.ReadInt32();
 					alchemistPlayer.SnatcherCounter = reader.ReadInt32();
 					if (Main.netMode == NetmodeID.Server) {
 						var packet = GetPacket();
 						packet.Write((byte)AlchemistNPCMessageType.SyncPlayerVariables);
 						packet.Write(playernumber);
+						packet.Write(alchemistPlayer.RCT1);
+						packet.Write(alchemistPlayer.RCT2);
+						packet.Write(alchemistPlayer.RCT3);
+						packet.Write(alchemistPlayer.RCT4);
+						packet.Write(alchemistPlayer.RCT5);
+						packet.Write(alchemistPlayer.RCT6);
 						packet.Write(alchemistPlayer.BBP);
 						packet.Write(alchemistPlayer.SnatcherCounter);
 						packet.Send(-1, playernumber);

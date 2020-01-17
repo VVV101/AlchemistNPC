@@ -982,11 +982,62 @@ namespace AlchemistNPC.NPCs
 		
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
+			bool T1 = false;
+			bool T2 = false;
+			bool T3 = false;
+			bool T4 = false;
+			bool T5 = false;
+			bool T6 = false;
 			for (int k = 0; k < 255; k++)
 			{
 				Player player = Main.player[k];
-				if (player.active)
+				if (player.active && player == Main.LocalPlayer)
 				{
+					for (int index1 = 0; index1 < 40; ++index1)
+					{
+						if (player.bank3.item[index1].stack == 0 && !T1)
+						{
+							player.bank3.item[index1].SetDefaults(mod.ItemType("ReversivityCoinTier1"));
+							player.bank3.item[index1].stack = player.GetModPlayer<AlchemistNPCPlayer>().RCT1;
+							T1 = true;
+							continue;
+						}
+						if (player.bank3.item[index1].stack == 0 && !T2)
+						{
+							player.bank3.item[index1].SetDefaults(mod.ItemType("ReversivityCoinTier2"));
+							player.bank3.item[index1].stack = player.GetModPlayer<AlchemistNPCPlayer>().RCT2;
+							T2 = true;
+							continue;
+						}
+						if (player.bank3.item[index1].stack == 0 && !T3)
+						{
+							player.bank3.item[index1].SetDefaults(mod.ItemType("ReversivityCoinTier3"));
+							player.bank3.item[index1].stack = player.GetModPlayer<AlchemistNPCPlayer>().RCT3;
+							T3 = true;
+							continue;
+						}
+						if (player.bank3.item[index1].stack == 0 && !T4)
+						{
+							player.bank3.item[index1].SetDefaults(mod.ItemType("ReversivityCoinTier4"));
+							player.bank3.item[index1].stack = player.GetModPlayer<AlchemistNPCPlayer>().RCT4;
+							T4 = true;
+							continue;
+						}
+						if (player.bank3.item[index1].stack == 0 && !T5)
+						{
+							player.bank3.item[index1].SetDefaults(mod.ItemType("ReversivityCoinTier5"));
+							player.bank3.item[index1].stack = player.GetModPlayer<AlchemistNPCPlayer>().RCT5;
+							T5 = true;
+							continue;
+						}
+						if (player.bank3.item[index1].stack == 0 && !T6)
+						{
+							player.bank3.item[index1].SetDefaults(mod.ItemType("ReversivityCoinTier6"));
+							player.bank3.item[index1].stack = player.GetModPlayer<AlchemistNPCPlayer>().RCT6;
+							T6 = true;
+							break;
+						}
+					}
 					for (int j = 0; j < player.inventory.Length; j++)
 					{
 						if (player.inventory[j].type == mod.ItemType("OtherworldlyAmulet"))

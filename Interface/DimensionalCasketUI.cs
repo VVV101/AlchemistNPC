@@ -1063,7 +1063,7 @@ namespace AlchemistNPC.Interface
 					if (Main.npc[k].type == mod.NPCType("Alchemist"))
 					{
 						Alchemist.baseShop = true;
-						Alchemist.tremorShop = false;
+						Alchemist.plantShop = false;
 						Main.playerInventory = true;
 						forcetalk = true;
 						Main.player[Main.myPlayer].talkNPC = k;
