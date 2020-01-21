@@ -36,8 +36,8 @@ namespace AlchemistNPC.Items.Summoning
 		public override bool UseItem(Player player)
 		{
 			NPC.NewNPC((int)player.position.X, (int)player.position.Y - 350, NPCID.DungeonGuardian);
-            Main.NewText("Dungeon Guardian has awoken!", 175, 75, 255);
-            NetMessage.SendData(23, -1, -1, null, NPCID.DungeonGuardian, 0f, 0f, 0f, 0);
+			Main.NewText("Dungeon Guardian has awoken!", 175, 75, 255);
+			NetMessage.SendData(23, -1, -1, null, NPCID.DungeonGuardian, 0f, 0f, 0f, 0);
 			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
 			return true;
 		}

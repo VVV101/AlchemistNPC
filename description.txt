@@ -25,6 +25,7 @@ Available after beating Moon Lord.
 -Added Recall/Wormhole Potion price config options.
 -Added more materials to Operator's materials shops.
 -Added Assassin and Hydration potions to Thorium Combination.
+-Added fragments from Thorium mod to Operator.
 -Alchemist's Tremor shop is now replaced with Plants shop.
 -Removed dash ability from Ninja potion.
 -Fixed Simple Crafting Penny and both Materia Transmutators were not giving chance to save ingredients during craft (Alchemy Table feature).

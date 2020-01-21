@@ -980,6 +980,11 @@ namespace AlchemistNPC.NPCs
         get { return AAMod.AAWorld.downedShen; }
         }
 		
+		public override void NPCLoot()
+		{
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("APMC"));
+		}
+		
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
 			bool T1 = false;
@@ -1036,13 +1041,6 @@ namespace AlchemistNPC.NPCs
 							player.bank3.item[index1].stack = player.GetModPlayer<AlchemistNPCPlayer>().RCT6;
 							T6 = true;
 							break;
-						}
-					}
-					for (int j = 0; j < player.inventory.Length; j++)
-					{
-						if (player.inventory[j].type == mod.ItemType("OtherworldlyAmulet"))
-						{
-							OA = true;
 						}
 					}
 				}
@@ -1136,19 +1134,19 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 35000;
 					nextSlot++;
 				}
-				if (NPC.downedMoonlord && OA)
+				if (NPC.downedMoonlord)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentSolar);
-				shop.item[nextSlot].shopCustomPrice = 50000;
+				shop.item[nextSlot].shopCustomPrice = 100000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentNebula);
-				shop.item[nextSlot].shopCustomPrice = 50000;
+				shop.item[nextSlot].shopCustomPrice = 100000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentVortex);
-				shop.item[nextSlot].shopCustomPrice = 50000;
+				shop.item[nextSlot].shopCustomPrice = 100000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.FragmentStardust);
-				shop.item[nextSlot].shopCustomPrice = 50000;
+				shop.item[nextSlot].shopCustomPrice = 100000;
 				nextSlot++;
 				}
 			}
@@ -1159,6 +1157,18 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Petal"));
 					shop.item[nextSlot].shopCustomPrice = 10000;
 					nextSlot++;
+					if (NPC.downedMoonlord)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("WhiteDwarfFragment"));
+						shop.item[nextSlot].shopCustomPrice = 100000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CometFragment"));
+						shop.item[nextSlot].shopCustomPrice = 100000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CelestialFragment"));
+						shop.item[nextSlot].shopCustomPrice = 100000;
+						nextSlot++;
+					}
 				}
 				if (NPC.downedMechBossAny)
 				{

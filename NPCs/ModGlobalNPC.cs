@@ -1467,6 +1467,36 @@ namespace AlchemistNPC.NPCs
 		
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
+		public override bool StrikeNPC(NPC npc, ref double damage, int defense, ref float knockback, int hitDirection, ref bool crit)
+		{
+			if (npc.type == mod.NPCType("Knuckles"))
+			{
+				Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
+				if (player.HeldItem.type == ItemID.WaterGun)
+				{
+					defense = 0;
+				}
+				if (!player.GetModPlayer<AlchemistNPCPlayer>().MemersRiposte)
+				{
+					damage = 1;
+					if (crit)
+					{
+						damage = 2;
+					}
+				}
+				if (player.GetModPlayer<AlchemistNPCPlayer>().MemersRiposte)
+				{
+					damage = 2;
+					if (crit)
+					{
+						damage = 4;
+					}
+				}
+				return false;
+			}
+			return base.StrikeNPC(npc, ref damage, defense, ref knockback, hitDirection, ref crit);
+		}
+		
 		public override void AI(NPC npc)
 		{
 			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
@@ -1476,7 +1506,6 @@ namespace AlchemistNPC.NPCs
 				{
 					npc.position.Y = player.position.Y - 350;
 					npc.position.X = player.position.X;
-					npc.TargetClosest(true);
 					start = true;
 				}
 				if (ks == false)

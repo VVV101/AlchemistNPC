@@ -957,26 +957,45 @@ namespace AlchemistNPC
 					if (player.controlRight && player.releaseRight && player.doubleTapCardinalTimer[2]>0)
 					{
 						Timer = 0;
-						for (int i = 0; i < 6; i++)
-                        {
-							player.position.X += 50;
-							for (int index = 0; index < 30; ++index)
-								Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+						Vector2 pp = new Vector2(player.position.X+300,player.position.Y);
+						if (!Collision.SolidCollision(pp, player.width, player.height))
+						{
+							for (int i = 0; i < 6; i++)
+							{
+								player.position.X += 50;
+								for (int index = 0; index < 30; ++index)
+									Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+							}
+							if (player.velocity.X < 0) player.velocity.X *= -1;
+							player.velocity.X += 6f;
 						}
-						if (player.velocity.X < 0) player.velocity.X *= -1;
-						player.velocity.X += 5f;
+						else
+						{
+							if (player.velocity.X < 0) player.velocity.X *= -1;
+							player.velocity.X += 16f;
+						}							
 					}
 					if (player.controlLeft && player.releaseLeft && player.doubleTapCardinalTimer[3]>0)
 					{
 						Timer = 0;
-						for (int i = 0; i < 6; i++)
-                        {
-							player.position.X -= 50;
-							for (int index = 0; index < 30; ++index)
-								Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+						Vector2 pp = new Vector2(player.position.X-300,player.position.Y);
+						if (!Collision.SolidCollision(pp, player.width, player.height))
+						{
+							for (int i = 0; i < 6; i++)
+							{
+								player.position.X -= 50;
+								for (int index = 0; index < 30; ++index)
+									Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+							}
+							if (player.velocity.X > 0) player.velocity.X *= -1;
+							player.velocity.X += -6f;
 						}
-						if (player.velocity.X > 0) player.velocity.X *= -1;
-						player.velocity.X += -5f;
+						else
+						{
+							if (player.velocity.X > 0) player.velocity.X *= -1;
+							player.velocity.X += -16f;
+						}
+						
 					}
 				}
 				

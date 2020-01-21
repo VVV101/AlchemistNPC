@@ -74,7 +74,7 @@ namespace AlchemistNPC.Items
 							num105 = num102 / num105;
 							num103 *= num105;
 							num104 *= num105;
-							Projectile.NewProjectile(player.Center.X, player.Center.Y, num103, num104, mod.ProjectileType("LocatorProjectile"), 0, 0f, player.whoAmI, 0f, 0f);
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, num103, num104, mod.ProjectileType("LocatorProjectile"), 0, 0f, player.whoAmI, v, 0f);
 						}
 					}
 				}
