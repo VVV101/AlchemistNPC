@@ -41,8 +41,7 @@ namespace AlchemistNPC.Items.Equippable
 			player.yoyoGlove = true;
 			player.yoyoString = true;
             player.meleeDamage += 0.15f;
-			if (player.HeldItem.channel && player.HeldItem.shootSpeed < 16f) player.meleeSpeed += 1f;
-			else if (player.HeldItem.channel && player.HeldItem.shootSpeed >= 16f) player.meleeSpeed += 0.5f;
+			if (player.HeldItem.channel) player.meleeSpeed += 1.15f;
 			else player.meleeSpeed += 0.15f;
 			player.kbGlove = true;
 			player.magmaStone = true;
