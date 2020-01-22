@@ -247,6 +247,7 @@ namespace AlchemistNPC.NPCs
 				{
 					Main.player[Main.myPlayer].QuickSpawnItem(mod.ItemType("MP7"));
 					AlchemistNPCWorld.foundMP7 = true;
+					if (Main.netMode == NetmodeID.Server) NetMessage.SendData(MessageID.WorldData);
 				}
 				else if (AlchemistNPCWorld.foundT1 || AlchemistNPCWorld.foundT2 || AlchemistNPCWorld.foundT3)
 				{

@@ -7,6 +7,8 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
+v9.1
+-Finally fixed all Paper Tubes MP desynchronizations.
 v9.0
 -Reworked the whole reversity coins system.
 Now all player are gatharing coins to their "internal" storage.
