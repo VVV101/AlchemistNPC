@@ -25,7 +25,6 @@ namespace AlchemistNPC.Items
 		public static bool Lucky = false;
 		public static bool Violent = false;
 		public static bool Warding = false;
-		public static bool Stopper = false;
 		public static bool PerfectionToken = false;
 		
 		public bool CalamityModDownedSCal
@@ -331,7 +330,7 @@ namespace AlchemistNPC.Items
 		public override bool NewPreReforge(Item item)
 		{
 			Player player = Main.player[Main.myPlayer];
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PerfectionToken")) && !Stopper && item.damage > 3)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PerfectionToken")) && item.damage > 3)
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -339,12 +338,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("PerfectionToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("MenacingToken")) && !Stopper)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("MenacingToken")))
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -352,12 +350,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("MenacingToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("LuckyToken")) && !Stopper)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("LuckyToken")))
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -365,12 +362,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("LuckyToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("ViolentToken")) && !Stopper)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("ViolentToken")))
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -378,12 +374,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("ViolentToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("WardingToken")) && !Stopper)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("WardingToken")))
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -391,12 +386,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("WardingToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}	
-			return true;
+			return base.NewPreReforge(item);
 		}
 		
 		public override bool ConsumeItem(Item item, Player player)	

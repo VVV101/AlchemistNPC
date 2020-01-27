@@ -260,7 +260,6 @@ namespace AlchemistNPC.Interface
 			Player player = Main.LocalPlayer;
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			int anchorX = (int)shopx;
-			const int barSize = 64;
 			DynamicSpriteFont font = Main.fontMouseText;
 			string maxText = "9999";
 			Vector2 maxTextSize = font.MeasureString(maxText);

@@ -249,7 +249,6 @@ namespace AlchemistNPC
 			AlchemistGlobalItem.Lucky = false;
 			AlchemistGlobalItem.Violent = false;
 			AlchemistGlobalItem.Warding = false;
-			AlchemistGlobalItem.Stopper = false;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
 			MeatGrinderOnUse = false;

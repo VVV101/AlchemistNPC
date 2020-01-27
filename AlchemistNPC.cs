@@ -435,6 +435,17 @@ namespace AlchemistNPC
 						packet.Send(-1, playernumber);
 					}
 					break;
+				case AlchemistNPCMessageType.SyncWorldstate:
+					playernumber = reader.ReadByte();
+					AlchemistNPCWorld.foundMP7 = reader.ReadBoolean();
+					if (Main.netMode == NetmodeID.Server) {
+						var packet = GetPacket();
+						packet.Write((byte)AlchemistNPCMessageType.SyncWorldstate);
+						packet.Write(playernumber);
+						packet.Write(AlchemistNPCWorld.foundMP7);
+						packet.Send(-1, playernumber);
+					}
+					break;
 				default:
 					Logger.Error("AlchemistNPC: Unknown Message type: " + msgType);
 					break;
@@ -445,7 +456,8 @@ namespace AlchemistNPC
 		{
 		LifeAndManaSync,
 		TeleportPlayer,
-		SyncPlayerVariables
+		SyncPlayerVariables,
+		SyncWorldstate
 		}
 		
 		public override void AddRecipeGroups()

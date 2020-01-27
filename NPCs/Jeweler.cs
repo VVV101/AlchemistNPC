@@ -602,6 +602,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ArchitectHorcrux"));
 				shop.item[nextSlot].shopCustomPrice = 150000;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("TinkererHorcrux"));
+				shop.item[nextSlot].shopCustomPrice = 150000;
+				nextSlot++;
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("MusicianHorcrux"));
 				shop.item[nextSlot].shopCustomPrice = 150000;
 				nextSlot++;

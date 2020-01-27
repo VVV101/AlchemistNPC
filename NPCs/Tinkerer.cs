@@ -235,6 +235,15 @@ namespace AlchemistNPC.NPCs
 			}
         }
  
+		public void SyncWorldstate(Player player)
+		{
+			ModPacket packet = mod.GetPacket();
+			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.SyncWorldstate);
+			packet.Write((byte)player.whoAmI);
+			packet.Write(AlchemistNPCWorld.foundMP7);
+			packet.Send();
+		}
+ 
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
         {
             if (firstButton)
@@ -245,9 +254,10 @@ namespace AlchemistNPC.NPCs
 				}
 				if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundT1 && AlchemistNPCWorld.foundT2 && AlchemistNPCWorld.foundT3)
 				{
-					Main.player[Main.myPlayer].QuickSpawnItem(mod.ItemType("MP7"));
+					Player player = Main.player[Main.myPlayer];
+					player.QuickSpawnItem(mod.ItemType("MP7"));
 					AlchemistNPCWorld.foundMP7 = true;
-					if (Main.netMode == NetmodeID.Server) NetMessage.SendData(MessageID.WorldData);
+					if (Main.netMode == 2) SyncWorldstate(player);
 				}
 				else if (AlchemistNPCWorld.foundT1 || AlchemistNPCWorld.foundT2 || AlchemistNPCWorld.foundT3)
 				{
