@@ -254,10 +254,17 @@ namespace AlchemistNPC.NPCs
 				}
 				if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundT1 && AlchemistNPCWorld.foundT2 && AlchemistNPCWorld.foundT3)
 				{
-					Player player = Main.player[Main.myPlayer];
-					player.QuickSpawnItem(mod.ItemType("MP7"));
-					AlchemistNPCWorld.foundMP7 = true;
-					if (Main.netMode == 2) SyncWorldstate(player);
+					for (int k = 0; k < 255; k++)
+					{
+						Player player = Main.player[k];
+						if (player.active)
+						{
+							player.QuickSpawnItem(mod.ItemType("MP7"));
+							AlchemistNPCWorld.foundMP7 = true;
+							if (Main.netMode == 2) SyncWorldstate(player);
+							break;
+						}
+					}
 				}
 				else if (AlchemistNPCWorld.foundT1 || AlchemistNPCWorld.foundT2 || AlchemistNPCWorld.foundT3)
 				{
