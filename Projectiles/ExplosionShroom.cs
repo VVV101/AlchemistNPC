@@ -49,8 +49,16 @@ namespace AlchemistNPC.Projectiles
                         distance = 1.6f / distance;
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
-						Main.PlaySound(SoundID.Item93.WithVolume(.9f), projectile.position);
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, mod.ProjectileType("Electrobeam"), projectile.damage, 0, Main.myPlayer, 0f, 0f);
+						Main.PlaySound(SoundID.Item93.WithVolume(.5f), projectile.position);
+                        int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX*3, shootToY*3, 435, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+						Main.projectile[proj].hostile = false;
+						Main.projectile[proj].friendly = true;
+						Main.projectile[proj].ranged = true;
+						Main.projectile[proj].penetrate = 3;
+						Main.projectile[proj].tileCollide = false;
+						Main.projectile[proj].usesLocalNPCImmunity = true;
+						Main.projectile[proj].localNPCHitCooldown = -1;
+						Main.projectile[proj].timeLeft = 300;
                         projectile.ai[0] = 0f;
                     }
                 }

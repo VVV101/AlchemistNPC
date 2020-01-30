@@ -235,15 +235,6 @@ namespace AlchemistNPC.NPCs
 			}
         }
  
-		public void SyncWorldstate(Player player)
-		{
-			ModPacket packet = mod.GetPacket();
-			packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.SyncWorldstate);
-			packet.Write((byte)player.whoAmI);
-			packet.Write(AlchemistNPCWorld.foundMP7);
-			packet.Send();
-		}
- 
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
         {
             if (firstButton)
@@ -260,9 +251,6 @@ namespace AlchemistNPC.NPCs
 						if (player.active)
 						{
 							player.QuickSpawnItem(mod.ItemType("MP7"));
-							AlchemistNPCWorld.foundMP7 = true;
-							if (Main.netMode == 2) SyncWorldstate(player);
-							break;
 						}
 					}
 				}

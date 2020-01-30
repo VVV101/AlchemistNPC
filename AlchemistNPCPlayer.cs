@@ -949,8 +949,8 @@ namespace AlchemistNPC
 			}
 			if (Blinker)
 			{
-				if (Timer < 30) Timer++;
-				if (Timer >= 30) 
+				if (Timer < 60) Timer++;
+				if (Timer >= 60) 
 				{
 					Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
 					if (player.controlRight && player.releaseRight && player.doubleTapCardinalTimer[2]>0)
