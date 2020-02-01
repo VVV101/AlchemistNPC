@@ -42,6 +42,9 @@ Common.AlchemistNPCLiteTooltip=True to enable starting message. True by default
 Common.Revengeancemode=Revengeance mode prices scaling
 Common.RevengeancemodeTooltip=True to make potions prices bigger. True by default
 
+Common.CatcheableNPCToggle=Catcheable mod's NPCs toggle
+Common.CatcheableNPCToggleTooltip=True to make mod's town NPCs catcheable. True by default
+
 Common.Potionspricemultiplier=Potions price multiplier
 Common.PotionspricemultiplierTooltip=Multiplies potions price by X. 1 by default
 

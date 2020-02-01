@@ -357,51 +357,6 @@ namespace AlchemistNPC.NPCs
 				Main.npcCatchable[npc.type] = true;
 				npc.catchItem = (short)mod.ItemType("CaughtUnicorn");
 			}
-			if (npc.type == mod.NPCType("Alchemist"))
-			{
-				Main.npcCatchable[npc.type] = true;
-				npc.catchItem = (short)mod.ItemType("AlchemistHorcrux");
-			}
-			if (npc.type == mod.NPCType("Brewer"))
-			{
-				Main.npcCatchable[npc.type] = true;
-				npc.catchItem = (short)mod.ItemType("BrewerHorcrux");
-			}
-			if (npc.type == mod.NPCType("Architect"))
-			{
-				Main.npcCatchable[npc.type] = true;
-				npc.catchItem = (short)mod.ItemType("ArchitectHorcrux");
-			}
-			if (npc.type == mod.NPCType("Jeweler"))
-			{
-				Main.npcCatchable[npc.type] = true;
-				npc.catchItem = (short)mod.ItemType("JewelerHorcrux");
-			}
-			if (npc.type == mod.NPCType("Operator"))
-			{
-				Main.npcCatchable[npc.type] = true;
-				npc.catchItem = (short)mod.ItemType("APMC");
-			}
-			if (npc.type == mod.NPCType("OtherworldlyPortal"))
-			{
-				Main.npcCatchable[npc.type] = true;
-				npc.catchItem = (short)mod.ItemType("NotesBook");
-			}
-			if (npc.type == mod.NPCType("Explorer"))
-			{
-				Main.npcCatchable[npc.type] = true;
-				npc.catchItem = (short)mod.ItemType("RealityPiercer");
-			}
-			if (npc.type == mod.NPCType("Musician"))
-			{
-				Main.npcCatchable[npc.type] = true;
-				npc.catchItem = (short)mod.ItemType("MusicianHorcrux");
-			}
-			if (npc.type == mod.NPCType("Tinkerer"))
-			{
-				Main.npcCatchable[npc.type] = true;
-				npc.catchItem = (short)mod.ItemType("TinkererHorcrux");
-			}
 		}
 
 		public override void TownNPCAttackStrength(NPC npc, ref int damage, ref float knockback)

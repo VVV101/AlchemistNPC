@@ -16,16 +16,16 @@ namespace AlchemistNPC.Items.Weapons
 			DisplayName.SetDefault("Penetrator");
 			Tooltip.SetDefault("Pretty slow, unpleasent looking rifle"
 			+ "\n[c/00FF00:Legendary Weapon]"
-			+ "\nCritical hits damage varies from 3x to 5x"
+			+ "\nCritical hits damage varies from 3x to 6x"
 			+ "\nUses health instead of ammo"
 			+"\n[c/00FF00:Stats are growing up through progression]"
 			+"\nBoosted stats will be shown after the first use");
 			DisplayName.AddTranslation(GameCulture.Russian, "Пронзатель");
-            Tooltip.AddTranslation(GameCulture.Russian, "Довольно медленная, неприятно выглядящая винтовка\n[c/00FF00:Легендарное Оружие]\nПробивает значительное количество противников одним выстрелом\nКритические попадания наносят четырёхкратный урон\nОтнимает по 2 очка здоровья за выстрел\n[c/00FF00:Показатели увеличивается по мере прохождения]");
+            Tooltip.AddTranslation(GameCulture.Russian, "Довольно медленная, неприятно выглядящая винтовка\n[c/00FF00:Легендарное Оружие]\nПробивает значительное количество противников одним выстрелом\nКритические попадания наносят вариативный урон (от 3 до 6-кратного)\nОтнимает по 3 очка здоровья за выстрел\n[c/00FF00:Показатели увеличивается по мере прохождения]");
 			DisplayName.AddTranslation(GameCulture.Chinese, "洞察者");
 			Tooltip.AddTranslation(GameCulture.Chinese, "非常缓慢, 看起来让人不愉快的步枪"
 			+"\n[c/00FF00:传奇武器]"
-			+"\n暴击伤害从3倍到5倍浮动"
+			+"\n暴击伤害从3倍到6倍浮动"
 			+"\n消耗生命而不是弹药"
 			+"\n[c/00FF00:属性随进程成长]"
 			+"\n提升过后的属性将会在使用后显示");
@@ -37,8 +37,8 @@ namespace AlchemistNPC.Items.Weapons
 			item.damage = 15;
 			item.crit = 35;
 			item.autoReuse = true;
-			item.useTime = 65;
-			item.useAnimation = 65;
+			item.useTime = 60;
+			item.useAnimation = 60;
 			item.ammo = 0;
 			item.useAmmo = 0;
 		}
@@ -178,7 +178,7 @@ namespace AlchemistNPC.Items.Weapons
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			player.statLife -= 2;
+			player.statLife -= 3;
 			type = 638;
 			return true;
 		}

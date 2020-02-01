@@ -26,7 +26,6 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			target.immune[projectile.owner] = 6;
 			if (!Main.hardMode)
 			{
 			target.AddBuff(BuffID.Frostburn, 180);

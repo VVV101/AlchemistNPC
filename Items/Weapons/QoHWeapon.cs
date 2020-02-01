@@ -39,11 +39,11 @@ namespace AlchemistNPC.Items.Weapons
 			item.rare = 11;
 			item.width = 30;
 			item.height = 30;
-			item.useTime = 12;
+			item.useTime = 6;
 			item.UseSound = SoundID.Item13;
 			item.useStyle = 5;
 			item.shootSpeed = 12f;
-			item.useAnimation = 12;   
+			item.useAnimation = 6;   
 			item.knockBack = 4;
 			item.value = Item.sellPrice(1, 0, 0, 0);
 			item.autoReuse = true;
@@ -52,17 +52,17 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool CanUseItem(Player player)
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost == true)
-					{
-					item.damage = 125;
-					item.useTime = 10;
-					item.useAnimation = 10;
-					}
-					else
-					{
-					item.damage = 99;
-					item.useTime = 12;
-					item.useAnimation = 12;
-					}
+			{
+				item.damage = 125;
+				item.useTime = 5;
+				item.useAnimation = 5;
+			}
+			else
+			{
+				item.damage = 99;
+				item.useTime = 6;
+				item.useAnimation = 6;
+			}
 			switch (Main.rand.Next(4))
 			{
 				case 0:

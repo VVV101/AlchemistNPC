@@ -1263,7 +1263,7 @@ namespace AlchemistNPC
         {
 			if (player.HeldItem.type == mod.ItemType("Penetrator") && crit)
 			{
-				switch (Main.rand.Next(3))
+				switch (Main.rand.Next(4))
 				{
 					case 0:
 					damage += damage/2;
@@ -1273,6 +1273,9 @@ namespace AlchemistNPC
 					break;
 					case 2:
 					damage += (damage/2)*3;	
+					break;
+					case 3:
+					damage += damage*2;	
 					break;
 				}
 			}

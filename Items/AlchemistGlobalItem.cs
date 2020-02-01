@@ -489,6 +489,112 @@ namespace AlchemistNPC.Items
 		public override bool UseItem(Item item, Player player)
 		{
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+			if (item.type == 1991 || item.type == 3183)
+			{
+				for (int v = 0; v < 200; ++v)
+				{
+					NPC npc = Main.npc[v];
+					if (npc.active && npc.townNPC)
+					{
+						if (AlchemistNPC.modConfiguration.CatchNPC)
+						{
+							if (npc.type == mod.NPCType("Alchemist"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("AlchemistHorcrux");
+							}
+							if (npc.type == mod.NPCType("Brewer"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("BrewerHorcrux");
+							}
+							if (npc.type == mod.NPCType("Architect"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("ArchitectHorcrux");
+							}
+							if (npc.type == mod.NPCType("Jeweler"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("JewelerHorcrux");
+							}
+							if (npc.type == mod.NPCType("Operator"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("APMC");
+							}
+							if (npc.type == mod.NPCType("OtherworldlyPortal"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("NotesBook");
+							}
+							if (npc.type == mod.NPCType("Explorer"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("RealityPiercer");
+							}
+							if (npc.type == mod.NPCType("Musician"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("MusicianHorcrux");
+							}
+							if (npc.type == mod.NPCType("Tinkerer"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("TinkererHorcrux");
+							}
+						}
+						if (!AlchemistNPC.modConfiguration.CatchNPC)
+						{
+							if (npc.type == mod.NPCType("Alchemist"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Brewer"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Architect"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Jeweler"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Operator"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("OtherworldlyPortal"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Explorer"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Musician"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Tinkerer"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+						}
+					}
+				}
+			}
 			if (modPlayer.DeltaRune && item.melee && Main.rand.NextBool(100))
 			{
 				float num1 = 9f;

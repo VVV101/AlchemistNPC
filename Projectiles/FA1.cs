@@ -10,7 +10,6 @@ namespace AlchemistNPC.Projectiles
 {
 	public class FA1 : ModProjectile
 	{
-		public static int CloudType = 0;
 		public static int CloudChosenType = 0;
 		
 		public override void SetStaticDefaults()
@@ -39,7 +38,7 @@ namespace AlchemistNPC.Projectiles
 					Vector2 vector2 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					vector2.Normalize();
 					vector2 *= Main.rand.Next(10, 201) * 0.01f;
-					switch (CloudType)
+					switch (Main.rand.Next(3))
 					{
 						case 0: CloudChosenType = mod.ProjectileType("FA11");
 						break;
@@ -48,7 +47,9 @@ namespace AlchemistNPC.Projectiles
 						case 2: CloudChosenType = mod.ProjectileType("FA13");
 						break;
 					}
-					Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector2.X*2.5f, vector2.Y*2.5f, CloudChosenType, projectile.damage, 1f, projectile.owner, 0.0f, Main.rand.Next(-45, 1));
+					int proj = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector2.X*2.5f, vector2.Y*2.5f, CloudChosenType, projectile.damage, 1f, projectile.owner, 0.0f, Main.rand.Next(-45, 1));
+					Main.projectile[proj].usesLocalNPCImmunity = true;
+					Main.projectile[proj].localNPCHitCooldown = 30;
 				}
 			}
 		}

@@ -9,7 +9,12 @@ The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
 v9.1
 -Finally fixed all Paper Tubes MP desynchronizations.
+-Buffed all legendary weapons.
+-Buffed some EGO weapons (In the name of Love and Hate).
 -Added Tinkerer's Horcrux to Jeweler's shop.
+-Added config option to disable catcheability of mod's town NPCs.
+-Counter Matter's projectile is now animated.
+-Increased cooldown time for ''Blinker'' acceessory
 -Reduced amount of lag with Nyctosythia and Enchanted Shroomite Bullets/arrows.
 -Reduced mod's size (for about 2.4 mb). Big thanks to Gotoro!
 v9.0

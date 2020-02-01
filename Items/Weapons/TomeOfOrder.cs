@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\n[c/00FF00:Stats are growing up through progression]"
 			+"\n''Only the ones who are equally good and evil may weild this''"
 			+"\nShoots energy bolts which stick to enemies and tiles"
-			+"\nThey explode after some time or can be blown up manually, dealing extra damage");
+			+"\nThey explode after some time or can be blown up manually, dealing double damage");
 			DisplayName.AddTranslation(GameCulture.Russian, "Том Порядка");
             Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарное Оружие]\n''Лишь тот, кто в равной степени добр и зол может использовать это''\n[c/00FF00:Характеристики оружия улучшаются по мере прохождения]\nВыстреливает энергетические снаряды, способные застревать во врагах или блоках\nОни взрываются по прошествии времени или вручную, нанося дополнительный урон");
 			DisplayName.AddTranslation(GameCulture.Chinese,"秩序原典");
@@ -158,6 +158,7 @@ namespace AlchemistNPC.Items.Weapons
 				{
 					if (Main.projectile[i].active && Main.projectile[i].type == mod.ProjectileType("Bolt"))
 					{
+						Main.projectile[i].damage *= 2;
 						Main.projectile[i].Kill();
 					}
 				}
