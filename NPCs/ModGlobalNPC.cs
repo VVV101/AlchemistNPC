@@ -800,13 +800,6 @@ namespace AlchemistNPC.NPCs
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.FragmentVortex, 1);
 							}
 						}
-						if (npc.type == NPCID.MoonLordCore && modPlayer.PGSWear)
-						{
-							if (Main.rand.Next(2) == 0)
-							{
-								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
-							}
-						}
 					}
 				}
 			}
@@ -816,6 +809,10 @@ namespace AlchemistNPC.NPCs
 				if (player.active)
 				{
 					AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+					if (npc.type == NPCID.MoonLordCore && modPlayer.PGSWear)
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("KnucklesUgandaDoll"));
+					}
 					if (Main.expertMode && AlchemistNPC.modConfiguration.CoinsDrop)
 					{
 						if (ModLoader.GetMod("SpiritMod") != null)
@@ -853,12 +850,28 @@ namespace AlchemistNPC.NPCs
 							if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier 4 Reversity coins and now has " + modPlayer.RCT4 + " in total.", 255, 255, 255);
 							else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier 4 Reversity coins and now has " + modPlayer.RCT4 + " in total."), new Color(255, 255, 255));
 						}
+						if (npc.type == NPCID.MoonLordCore)
+						{
+							int number = Main.rand.Next(12,15);
+							modPlayer.RCT4 += number;
+							if (Main.netMode == 2) SyncPlayerVariables(player);
+							if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier 4 Reversity coins and now has " + modPlayer.RCT4 + " in total.", 255, 255, 255);
+							else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier 4 Reversity coins and now has " + modPlayer.RCT4 + " in total."), new Color(255, 255, 255));
+						}
 					}
 				}
 			}
-			if (npc.type == NPCID.MoonLordCore && AlchemistNPC.modConfiguration.TornNotesDrop)
+
+			if (npc.type == NPCID.MoonLordCore)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote9"));
+				if (AlchemistNPC.modConfiguration.TornNotesDrop)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TornNote9"));
+				}
+				if (AlchemistNPC.modConfiguration.TinkererSpawn)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 3);
+				}
 			}
 			return base.PreNPCLoot(npc);
 		}
@@ -1123,10 +1136,6 @@ namespace AlchemistNPC.NPCs
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
 				}
-				if (npc.type == NPCID.MoonLordCore)
-				{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 3);
-				}
 			}
 			
 			for (int k = 0; k < 255; k++)
@@ -1153,7 +1162,6 @@ namespace AlchemistNPC.NPCs
 							case (NPCID.Golem): number = Main.rand.Next(2,3); tier = 4; break;
 							case (NPCID.DukeFishron): number = Main.rand.Next(6,9); tier = 4; break;
 							case (NPCID.CultistBoss): number = Main.rand.Next(6,9); tier = 4; break;
-							case (NPCID.MoonLordCore): number = Main.rand.Next(12,15); tier = 4; break;
 						}
 						if (npc.type == NPCID.EaterofWorldsHead && !NPC.AnyNPCs(NPCID.EaterofWorldsTail)) {number = Main.rand.Next(6,9); tier = 1;}
 						if (npc.type == NPCID.EaterofWorldsTail && !NPC.AnyNPCs(NPCID.EaterofWorldsHead)) {number = Main.rand.Next(6,9); tier = 1;}

@@ -9,6 +9,8 @@ The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
 v9.1
 -Finally fixed all Paper Tubes MP desynchronizations.
+-Fixed mod's drops from Moon Lord with Calamity mod active.
+This related to Reversity Coins, Torn Note, Paper Tube and National Ugandan Treasure.
 -Buffed all legendary weapons.
 -Buffed some EGO weapons (In the name of Love and Hate).
 -Added Tinkerer's Horcrux to Jeweler's shop.

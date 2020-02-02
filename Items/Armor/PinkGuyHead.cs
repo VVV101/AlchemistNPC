@@ -49,7 +49,8 @@ namespace AlchemistNPC.Items.Armor
 
 		public override void UpdateArmorSet(Player player)
 		{
-            ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).PGSWear = true;
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+            modPlayer.PGSWear = true;
             string PGSetBonus = Language.GetTextValue("Mods.AlchemistNPC.PGSetBonus");
 			player.setBonus = PGSetBonus;
             player.statDefense += 56;
