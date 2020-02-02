@@ -15,7 +15,7 @@ namespace AlchemistNPC.Projectiles
 		{
 			DisplayName.SetDefault("Globe199");
 			projectile.light = 0.5f;
-			Main.projFrames[projectile.type] = 10;
+			Main.projFrames[projectile.type] = 12;
 		}
 
 		public override void SetDefaults()
@@ -38,7 +38,7 @@ namespace AlchemistNPC.Projectiles
 			if (++projectile.frameCounter >= 6)
             {
                 projectile.frameCounter = 0;
-                if (++projectile.frame >= 10)
+                if (++projectile.frame >= 12)
                 {
                     projectile.frame = 0;
                 }
