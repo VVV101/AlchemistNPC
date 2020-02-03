@@ -29,7 +29,7 @@ namespace AlchemistNPC.Items.Placeable
 			item.useStyle = 1;
 			item.consumable = true;
 			item.value = 100000;
-			item.createTile = mod.TileType("HoloprojectorCorruption");
+			item.createTile = mod.TileType("HoloprojectorSpace");
 		}
 	}
 }
