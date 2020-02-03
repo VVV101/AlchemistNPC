@@ -13,6 +13,8 @@ v9.1
 This related to Reversity Coins, Torn Note, Paper Tube and National Ugandan Treasure.
 -Buffed all legendary weapons.
 -Buffed some EGO weapons (In the name of Love and Hate).
+-Added Dungeon and Space Holoprojector to Operator's EGO shop.
+Dungeon is available after beating Skeletron.
 -Added Tinkerer's Horcrux to Jeweler's shop.
 -Added config option to disable catcheability of mod's town NPCs.
 -Counter Matter's projectile is now animated.

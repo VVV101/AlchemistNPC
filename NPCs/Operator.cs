@@ -1323,6 +1323,15 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorCrimson"));
 				shop.item[nextSlot].shopCustomPrice = 250000;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorSpace"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
+				if (NPC.downedBoss3)
+				{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorDungeon"));
+					shop.item[nextSlot].shopCustomPrice = 250000;
+					nextSlot++;
+				}
 				if (Main.hardMode)
 				{
 					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("HoloprojectorHallowed"));
