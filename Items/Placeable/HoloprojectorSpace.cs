@@ -10,9 +10,10 @@ namespace AlchemistNPC.Items.Placeable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Holoprojector ''Space''");
-			Tooltip.SetDefault("Forces biome state to Space while placed");
+			Tooltip.SetDefault("Forces biome state to Space while placed"
+			+"\nNo visual/music effect will appear");
 			DisplayName.AddTranslation(GameCulture.Russian, "Голопроектор ''Космос''");
-            Tooltip.AddTranslation(GameCulture.Russian, "Фиксирует биом Космос когда размещён");
+            Tooltip.AddTranslation(GameCulture.Russian, "Фиксирует биом Космос когда размещён\nНикаких визуальных эффектов или музыки не появится");
 			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''腐化''");
 			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为腐化");
         }
