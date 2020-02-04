@@ -13,8 +13,16 @@ v9.1
 This related to Reversity Coins, Torn Note, Paper Tube and National Ugandan Treasure.
 -Buffed all legendary weapons.
 -Buffed some EGO weapons (In the name of Love and Hate).
+-Added Simulation Control Unit to Operator's EGO shop. Allows to control weather (rain, blizzard, sandstorm) and time.
+Available in hardmode (after beating any mech boss if coins drop is disabled).
+-Added Terrain Reformer to Operator's EGO shop. Pickaxe with right click function.
+Available after beating Moon Lord.
 -Added Dungeon and Space Holoprojector to Operator's EGO shop.
 Dungeon is available after beating Skeletron.
+-Added Feathers to Operator's shop.
+Available after beating Skeletron.
+-Added Forbidden Fragments to Operator's shop.
+Available after beating Sand Elemental.
 -Added Tinkerer's Horcrux to Jeweler's shop.
 -Added config option to disable catcheability of mod's town NPCs.
 -Counter Matter's projectile is now animated.

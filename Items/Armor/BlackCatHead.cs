@@ -60,7 +60,7 @@ namespace AlchemistNPC.Items.Armor
             player.meleeDamage += 0.25f;
 			player.meleeCrit += 15;
 			player.moveSpeed += 0.33f;
-			player.AddBuff(mod.BuffType("BattleComb"), 30);
+			player.AddBuff(mod.BuffType("BattleComb"), 2);
 			player.dash = 1;
 			player.blackBelt = true;
             player.spikedBoots = 2;

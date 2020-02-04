@@ -59,7 +59,7 @@ namespace AlchemistNPC.Items.Armor
             player.rangedCrit += 15;
 			player.meleeCrit += 15;
 			player.moveSpeed += 0.50f;
-			player.AddBuff(mod.BuffType("TankComb"), 30);
+			player.AddBuff(mod.BuffType("TankComb"), 2);
 		}
 	}
 }

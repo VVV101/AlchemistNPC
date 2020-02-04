@@ -41,6 +41,7 @@ namespace AlchemistNPC.NPCs
 	public class ModGlobalNPC : GlobalNPC
 	{
 		public bool banned = false;
+		public bool light = false;
 		public bool chaos = false;
 		public bool rainbowdust = false;
 		public bool electrocute = false;
@@ -48,6 +49,7 @@ namespace AlchemistNPC.NPCs
 		public bool twilight = false;
 		public bool justitiapale = false;
 		public int S = 0;
+		public int C = 0;
 		public bool N1 = false;
 		public bool N2 = false;
 		public bool N3 = false;
@@ -118,6 +120,14 @@ namespace AlchemistNPC.NPCs
 			if (item.type == mod.ItemType("EdgeOfChaos"))
 			{
 				S++;
+			}
+			if (item.type == mod.ItemType("HolyAvenger"))
+			{
+				C++;
+			}
+			if (item.type == mod.ItemType("LightOfCeraSumat"))
+			{
+				C++;
 			}
 			if (npc.HasBuff(mod.BuffType("CurseOfLight")))
 			{
@@ -478,6 +488,7 @@ namespace AlchemistNPC.NPCs
 		public override void ResetEffects(NPC npc)
 		{
 			banned = false;
+			light = false;
 			corrosion = false;
 			chaos = false;
 			rainbowdust = false;
@@ -503,6 +514,33 @@ namespace AlchemistNPC.NPCs
 				if (damage < 299 + S*50)
 				{
 					damage = 300 + S*50;
+				}
+			}
+			if (light)
+			{
+				if (!Main.hardMode)
+				{
+					npc.lifeRegen -= 5 + C;
+					if (damage < 1 + C)
+					{
+						damage = 1 + C;
+					}
+				}
+				if (Main.hardMode && !NPC.downedMoonlord)
+				{
+					npc.lifeRegen -= 30 + C*2;
+					if (damage < 3 + C)
+					{
+						damage = 3 + C;
+					}
+				}
+				if (Main.hardMode && NPC.downedMoonlord)
+				{
+					npc.lifeRegen -= 300 + C*3;
+					if (damage < 30 + C*2)
+					{
+						damage = 30 + C*2;
+					}
 				}
 			}
 			if (banned)
@@ -895,6 +933,17 @@ namespace AlchemistNPC.NPCs
 
 		public override void NPCLoot(NPC npc)
 		{
+			if (npc.type == 541)
+			{
+				if (!AlchemistNPCWorld.downedSandElemental) 
+				{
+					AlchemistNPCWorld.downedSandElemental = true;
+					if (Main.netMode == NetmodeID.Server) 
+					{
+						NetMessage.SendData(MessageID.WorldData);
+					}
+				}
+			}
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModDownedDOG && npc.type == 327)

@@ -35,7 +35,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			item.CloneDefaults(ItemID.SniperRifle);
 			item.damage = 15;
-			item.crit = 35;
+			item.crit = 45;
 			item.autoReuse = true;
 			item.useTime = 60;
 			item.useAnimation = 60;
@@ -72,15 +72,15 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (Main.hardMode)
 			{
-				item.damage = 50;
+				item.damage = 55;
 			}
 			if (NPC.downedMechBossAny)
 			{
-				item.damage = 60;
+				item.damage = 65;
 			}
 			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
-				item.damage = 75;
+				item.damage = 80;
 			}
 			if (NPC.downedPlantBoss)
 			{
