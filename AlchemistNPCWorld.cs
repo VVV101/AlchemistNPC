@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -572,6 +573,26 @@ namespace AlchemistNPC
 			downedDOGPumpking = downed.Contains("DOGPumpking");
 			downedDOGIceQueen = downed.Contains("DOGIceQueen");
 			downedSandElemental = downed.Contains("SandElemental");
+		}
+		
+		public override void PostUpdate()
+		{
+			Player player = Main.player[Main.myPlayer];
+			if (!Main.dayTime && Main.time == 32400.0 && Main.bloodMoon && Main.rand.NextBool(5))
+			{
+				if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Something is falling from the sky...", 200, 150, 255);
+				else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Something is falling from the sky..."), new Color(200, 150, 255)); 
+				
+				float X = player.position.X + Main.rand.Next(-1200, 1200);
+				float Y = player.position.Y - Main.rand.Next(500, 800);
+				float num1 = (float) (player.position.X + (double) (player.width / 2) - X);
+				float num2 = (float) (player.position.Y + (double) (player.height / 2) - Y);
+				float num3 = num1 + (float) Main.rand.Next(-100, 101);
+				float num4 = 23f / (float) Math.Sqrt((double) num3 * (double) num3 + (double) num2 * (double) num2);
+				float SpeedX = (num3 * num4);
+				float SpeedY = num2 * num4;
+				int index2 = Projectile.NewProjectile(X, Y, SpeedX * 1.5f, SpeedY * Main.rand.NextFloat(0.8f,1.2f), mod.ProjectileType("SymbioteMeteor"), 10000, 8f, player.whoAmI, 0f, 0f);
+			}
 		}
 	}
 }

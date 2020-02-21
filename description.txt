@@ -7,6 +7,19 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
+v9.2
+-Added all Broken Hero stuff from Vanilla/Thorium/Spirit/Litho's Armory mods.
+Available after beating Golem.
+-Added Solar Veil to Operator's shop.
+Available after beating Golem.
+-Added Boom Box to Musician's 3rd shop.
+Allows to passively play music boxes placed in the last inventory slot.
+-Added recipes for Obsidian, Honey and Crispy Honey blocks.
+-Reworked Symbiote accessory. Its stats now depending on world state.
+Cannot be crafted anymore. Can drop at the end of Blood Moon with 20%.
+-Fixed mod's NPC summoning items not working.
+-Fixed Materia Transmutators not working as Thorium Anvil and Arcane Armor Fabricator.
+-Fixed cycled sound of Blinker accessory.
 v9.1
 -Finally fixed all Paper Tubes MP desynchronizations.
 -Fixed mod's drops from Moon Lord with Calamity mod active.

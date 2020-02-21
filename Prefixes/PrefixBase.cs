@@ -53,6 +53,42 @@ namespace AlchemistNPC.Prefixes
 		}
 	}
 	
+	public class XenomorphicPrefix : ModPrefix
+	{
+		public override float RollChance(Item item)
+		{
+			return 0f;
+		} 
+
+		// determines if it can roll at all.
+		// use this to control if a prefixes can be rolled or not
+		public override bool CanRoll(Item item)
+		{
+			return false;
+		}
+
+		// change your category this way, defaults to Custom
+		public override PrefixCategory Category { get { return PrefixCategory.Accessory; } }
+		
+		public XenomorphicPrefix()
+		{
+		}
+
+		// Allow multiple prefix autoloading this way (permutations of the same prefix)
+		public override bool Autoload(ref string name)
+		{
+			if (base.Autoload(ref name))
+			{
+				mod.AddPrefix("Xenomorphic", new XenomorphicPrefix());
+			}
+			return false;
+		}
+		
+		public override void Apply(Item item)
+		{
+		}
+	}
+	
 	public class ShiningPrefix : ModPrefix
 	{
 		public override float RollChance(Item item)

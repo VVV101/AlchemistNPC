@@ -208,7 +208,10 @@ namespace AlchemistNPC.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.AlchemistNPC.TinkererButton1");
+			if (AlchemistNPCWorld.foundT1 || AlchemistNPCWorld.foundT2 || AlchemistNPCWorld.foundT3)
+			{
+				button = Language.GetTextValue("Mods.AlchemistNPC.TinkererButton1");
+			}
 			button2 = Language.GetTextValue("Mods.AlchemistNPC.TinkererButton2");
 			Player player = Main.player[Main.myPlayer];
 			if (player.active)

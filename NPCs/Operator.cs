@@ -14,6 +14,7 @@ namespace AlchemistNPC.NPCs
 	public class Operator : ModNPC
 	{
 		public static bool OA = false;
+		public static bool Meteor = false;
 		public static int Shop = 1;
 		public override string Texture
 		{
@@ -76,6 +77,10 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Shop Changer");
             text.AddTranslation(GameCulture.Russian, "Сменить магазин");
             text.AddTranslation(GameCulture.Chinese, "切换商店");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("Meteorite");
+            text.SetDefault("Meteorite");
+            text.AddTranslation(GameCulture.Russian, "Метеорит");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Angela");
             text.SetDefault("Angela");
@@ -270,7 +275,8 @@ namespace AlchemistNPC.NPCs
 
 		public override void ResetEffects()
 		{
-		OA = false;
+			OA = false;
+			Meteor = false;
 		}
 		
 		public override void SetDefaults()
@@ -617,6 +623,20 @@ namespace AlchemistNPC.NPCs
 			string ModdedTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop");
 			string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPC.ModdedTreasureBagsShop2");
 			string ShopChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopChanger");
+			string Meteorite = Language.GetTextValue("Mods.AlchemistNPC.Meteorite");
+			
+			Player player = Main.player[Main.myPlayer];
+			if (player.active)
+			{
+				for (int j = 0; j < player.inventory.Length; j++)
+				{
+					if (player.inventory[j].type == mod.ItemType("SymbioteMeteorite"))
+					{
+						Meteor = true;
+					}
+				}
+			}
+			
 			if (Shop == 1)
 			{
 			button = BossDropsShop;
@@ -641,6 +661,7 @@ namespace AlchemistNPC.NPCs
 			{
 			button = ModdedTreasureBagsShop2;
 			}
+			if (Meteor) button = Meteorite;
 			button2 = ShopChanger;
         }
  
@@ -648,6 +669,23 @@ namespace AlchemistNPC.NPCs
 		{
 			if (firstButton)
 			{
+				if (Meteor)
+				{
+					Player player = Main.player[Main.myPlayer];
+					player.QuickSpawnItem(mod.ItemType("Symbiote"));
+					if (Main.player[Main.myPlayer].HasItem(mod.ItemType("SymbioteMeteorite")) && Meteor)
+					{
+						Item[] inventory = Main.player[Main.myPlayer].inventory;
+						for (int k = 0; k < inventory.Length; k++)
+						{
+							if (inventory[k].type == mod.ItemType("SymbioteMeteorite") && Meteor)
+							{
+								inventory[k].stack--;
+								Meteor = false;
+							}
+						}
+					}
+				}
 				if (!AlchemistNPC.modConfiguration.TS || !Main.expertMode)
 				{
 					shop = true;
@@ -1143,6 +1181,12 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 35000;
 					nextSlot++;
 				}
+				if (NPC.downedGolemBoss)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.BrokenHeroSword);
+					shop.item[nextSlot].shopCustomPrice = 500000;
+					nextSlot++;
+				}
 				if (NPC.downedMoonlord)
 				{
 					shop.item[nextSlot].SetDefaults (ItemID.FragmentSolar);
@@ -1166,6 +1210,12 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Petal"));
 					shop.item[nextSlot].shopCustomPrice = 10000;
 					nextSlot++;
+					if (NPC.downedGolemBoss)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("BrokenHeroFragment"));
+						shop.item[nextSlot].shopCustomPrice = 250000;
+						nextSlot++;
+					}
 					if (NPC.downedMoonlord)
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("WhiteDwarfFragment"));
@@ -1176,6 +1226,42 @@ namespace AlchemistNPC.NPCs
 						nextSlot++;
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CelestialFragment"));
 						shop.item[nextSlot].shopCustomPrice = 100000;
+						nextSlot++;
+					}
+				}
+				if (ModLoader.GetMod("SpiritMod") != null)
+				{
+					if (NPC.downedGolemBoss)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("BrokenParts"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("BrokenStaff"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+					}
+				}
+				if (ModLoader.GetMod("LithosArmory") != null)
+				{
+					if (NPC.downedGolemBoss)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroFlail"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroGreatbow"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroShotgun"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroSling"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroSpear"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroWand"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
 						nextSlot++;
 					}
 				}
@@ -1266,6 +1352,12 @@ namespace AlchemistNPC.NPCs
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
 						shop.item[nextSlot].shopCustomPrice = 30000;
+						nextSlot++;
+					}
+					if (NPC.downedGolemBoss)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("SolarVeil"));
+						shop.item[nextSlot].shopCustomPrice = 50000;
 						nextSlot++;
 					}
 					if (CalamityModDownedRavager)

@@ -375,7 +375,7 @@ namespace AlchemistNPC.NPCs
 		
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
 		{
-			return -1f;
+			return 0f;
 		}
 		
 		public override void ModifyHitPlayer(Player player, ref int damage, ref bool crit)

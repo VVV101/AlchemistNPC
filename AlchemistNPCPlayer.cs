@@ -48,6 +48,7 @@ namespace AlchemistNPC
 		public int Timer = 0;
 		public int fc = 0;
 		public bool Blinker = false;
+		public bool BoomBox = false;
 		public bool MasterYoyoBag = false;
 		public bool TimeTwist = false;
 		public bool HPJ = false;
@@ -229,6 +230,7 @@ namespace AlchemistNPC
 			}
 			Item.potionDelay = 3600;
 			Blinker = false;
+			BoomBox = false;
 			MasterYoyoBag = false;
 			TimeTwist = false;
 			HPJ = false;
@@ -952,9 +954,9 @@ namespace AlchemistNPC
 				if (Timer < 60) Timer++;
 				if (Timer >= 60) 
 				{
-					Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
 					if (player.controlRight && player.releaseRight && player.doubleTapCardinalTimer[2]>0)
 					{
+						Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
 						Timer = 0;
 						Vector2 pp = new Vector2(player.position.X+300,player.position.Y);
 						if (!Collision.SolidCollision(pp, player.width, player.height))
@@ -976,6 +978,7 @@ namespace AlchemistNPC
 					}
 					if (player.controlLeft && player.releaseLeft && player.doubleTapCardinalTimer[3]>0)
 					{
+						Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
 						Timer = 0;
 						Vector2 pp = new Vector2(player.position.X-300,player.position.Y);
 						if (!Collision.SolidCollision(pp, player.width, player.height))

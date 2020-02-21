@@ -429,7 +429,8 @@ namespace AlchemistNPC.NPCs
 						Player player = Main.player[k];
 						if (player.active)
 						{
-						NPC.SpawnOnPlayer(k, mod.NPCType("Young Brewer"));
+							NPC.SpawnOnPlayer(k, mod.NPCType("YoungBrewer"));
+							return;
 						}
 					}
 				}

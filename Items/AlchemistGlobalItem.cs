@@ -13,12 +13,14 @@ using Terraria.ModLoader.IO;
 using Terraria.Localization;
 using AlchemistNPC.Interface;
 using AlchemistNPC;
+using Terraria.UI;
 
 namespace AlchemistNPC.Items
 {
 	public class AlchemistGlobalItem : GlobalItem
 	{	
 		public static bool on = false;
+		public static bool stop = false;
 		public static bool Luck = false;
 		public static bool Luck2 = false;
 		public static bool Menacing = false;
@@ -57,6 +59,14 @@ namespace AlchemistNPC.Items
 		
 		public override void UpdateInventory(Item item, Player player)
 		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BoomBox)
+			{
+				if (player.inventory[49].createTile != -1 && player.inventory[49].accessory)
+				{
+					bool r = false;
+					player.VanillaUpdateAccessory(player.whoAmI, player.inventory[49], false, ref r, ref r, ref r);
+				}
+			}
 			if (player.accCritterGuide && AlchemistNPC.modConfiguration.LifeformAnalyzer)
 			{
 				if(Main.GameUpdateCount % 60 == 0) 
@@ -449,7 +459,18 @@ namespace AlchemistNPC.Items
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Symbiote == true && item.useTime > 3)
 			{
-				return 1.2f;
+				if (!Main.hardMode)
+				{
+					return 1.1f;
+				}
+				if (Main.hardMode && !NPC.downedMoonlord)
+				{
+					return 1.15f;
+				}
+				if (NPC.downedMoonlord)
+				{
+					return 1.2f;
+				}
 			}
 			return base.UseTimeMultiplier(item, player);
 		}
