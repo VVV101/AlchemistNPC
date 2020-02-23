@@ -27,7 +27,7 @@ namespace AlchemistNPC.Interface
 			OperatorShopsPanel.Left.Set(575f, 0f);
 			OperatorShopsPanel.Top.Set(275f, 0f);
 			OperatorShopsPanel.Width.Set(300f, 0f);
-			OperatorShopsPanel.Height.Set(190f, 0f);
+			OperatorShopsPanel.Height.Set(220f, 0f);
 			OperatorShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
 			OperatorShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
@@ -39,6 +39,7 @@ namespace AlchemistNPC.Interface
 			string OperatorShops3; 
 			string OperatorShops4; 
 			string OperatorShops5;
+			string OperatorShops6;
 
 			if(Language.ActiveCulture == GameCulture.Chinese)
 				{
@@ -48,6 +49,7 @@ namespace AlchemistNPC.Interface
 					OperatorShops3 = "原版宝藏袋";
 					OperatorShops4 = "模组宝藏袋#1";
 					OperatorShops5 = "模组宝藏袋#2";
+					OperatorShops6 = "模组宝藏袋#3";
 				}
 			else
 				{
@@ -57,6 +59,7 @@ namespace AlchemistNPC.Interface
 					OperatorShops3 = "Vanilla Treasure Bags";
 					OperatorShops4 = "Modded Treasure Bags #1";
 					OperatorShops5 = "Modded Treasure Bags #2";
+					OperatorShops6 = "Modded Treasure Bags #3";
 				}
 			
 			UIText text = new UIText(OperatorShops1);
@@ -101,6 +104,13 @@ namespace AlchemistNPC.Interface
 			text5.Height.Set(22, 0f);
 			OperatorShopsPanel.Append(text5);
 			
+			UIText text6 = new UIText(OperatorShops6);
+			text6.Left.Set(35, 0f);
+			text6.Top.Set(190, 0f);
+			text6.Width.Set(120, 0f);
+			text6.Height.Set(22, 0f);
+			OperatorShopsPanel.Append(text6);
+			
 			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
 			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
 			playButton.Left.Set(10, 0f);
@@ -144,6 +154,13 @@ namespace AlchemistNPC.Interface
 			playButton5.Height.Set(22, 0f);
 			playButton5.OnClick += new MouseEvent(PlayButtonClicked5);
 			OperatorShopsPanel.Append(playButton5);
+			UIImageButton playButton6 = new UIImageButton(buttonPlayTexture);
+			playButton6.Left.Set(10, 0f);
+			playButton6.Top.Set(190, 0f);
+			playButton6.Width.Set(22, 0f);
+			playButton6.Height.Set(22, 0f);
+			playButton6.OnClick += new MouseEvent(PlayButtonClicked6);
+			OperatorShopsPanel.Append(playButton6);
 
 			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
@@ -214,6 +231,17 @@ namespace AlchemistNPC.Interface
 		private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
 		{
 			Operator.Shop = 5;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUIO.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+		}
+		
+		private void PlayButtonClicked6(UIMouseEvent evt, UIElement listeningElement)
+		{
+			Operator.Shop = 6;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;

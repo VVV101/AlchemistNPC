@@ -1174,9 +1174,13 @@ namespace AlchemistNPC.NPCs
 			}
 			if (npc.boss && AlchemistNPC.modConfiguration.TinkererSpawn)
 			{
-				if (npc.type == NPCID.EyeofCthulhu)
+				if (npc.type == NPCID.KingSlime)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+				}
+				if (npc.type == NPCID.EyeofCthulhu)
+				{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
 				}
 				if (npc.type == NPCID.BrainofCthulhu)
 				{
@@ -1229,6 +1233,100 @@ namespace AlchemistNPC.NPCs
 				if (npc.type == NPCID.DukeFishron)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+				}
+				if (ModLoader.GetMod("CalamityMod") != null)
+				{
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DesertScourgeHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("CrabulonIdle"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("HiveMindP2"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("PerforatorHive"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("SlimeGodCore"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Cryogen"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("BrimstoneElemental"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AquaticScourgeHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("SoulSeeker"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"));
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Leviathan"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumAureus"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+				}
+				if (ModLoader.GetMod("ThoriumMod") != null)
+				{
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("TheGrandThunderBirdv2"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("QueenJelly"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("Viscount"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("GraniteEnergyStorm"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("TheBuriedWarrior"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("ThePrimeScouter"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("BoreanStriderPopped"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 2);
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("FallenDeathBeholder2"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 2);
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("LichHeadless"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("AbyssionReleased"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+				}
+				if (ModLoader.GetMod("ElementsAwoken") != null)
+				{
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Wasteland"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Infernace"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("ScourgeFighter"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 2);
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("RegarothHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 2);
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheCelestial"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"));
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Permafrost"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"));
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Obsidious"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"));
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Aqueous"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheEye"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"));
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("AncientWyrmHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"));
+					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheGuardianFly"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 3);
+				}
+				if (ModLoader.GetMod("SacredTools") != null)
+				{
+					if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("DecreeRun"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("RalnekPhase3"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Jensen"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Araneas"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"));
+					if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Raynare"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Primordia2"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+				}
+				if (ModLoader.GetMod("SpiritMod") != null)
+				{
+					if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Scarabeus"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("ReachBoss"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("AncientFlyer"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("SteamRaiderHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Dusking"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("SpiritCore"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("IlluminantMaster"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Atlas"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+				}
+				if (ModLoader.GetMod("Laugicality") != null)
+				{
+					if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("DuneSharkron"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Hypothema"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Ragnar"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("AnDio3"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Slybertron"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("TheAnnihilator"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("SteamTrain"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Etheria"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 3);
+				}
+				if (ModLoader.GetMod("pinkymod") != null)
+				{
+					if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("DeserteerMelee"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("MythrilSlime"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 2);
+					if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("Valdaris"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("GatekeeperHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 3);
+				}
+				if (ModLoader.GetMod("AAMod") != null)
+				{
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("MushroomMonarch"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("FeudalFungus"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("GripOfChaosRed"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("GripOfChaosBlue"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("TruffleToad"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Broodmother"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Hydra"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("SerpentHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Djinn"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Saggitarius"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Rajah"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 3);
 				}
 			}
 			
@@ -1304,15 +1402,37 @@ namespace AlchemistNPC.NPCs
 							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("AbyssionReleased"))) {number = Main.rand.Next(3,6); tier = 4;}
 							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("RealityBreaker"))) {number = 33; tier = 4;}
 						}
+						if (ModLoader.GetMod("ElementsAwoken") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Wasteland"))) {number = Main.rand.Next(3,5); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Infernace"))) {number = Main.rand.Next(2,4); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("ScourgeFighter"))) {number = Main.rand.Next(5,7); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("RegarothHead"))) {number = Main.rand.Next(6,8); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheCelestial"))) {number = Main.rand.Next(3,5); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Permafrost"))) {number = Main.rand.Next(5,7); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Obsidious"))) {number = Main.rand.Next(5,7); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Aqueous"))) {number = Main.rand.Next(7,10); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheEye"))) {number = Main.rand.Next(5,7); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("AncientWyrmHead"))) {number = Main.rand.Next(5,7); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheGuardianFly"))) {number = Main.rand.Next(10,12); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Volcanox"))) {number = Main.rand.Next(4,7); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("ElderShadeWyrmHead"))) {number = Main.rand.Next(8,12); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Azana"))) {number = Main.rand.Next(14,17); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("AncientAmalgam"))) {number = Main.rand.Next(25,30); tier = 5;}
+						}
 						if (ModLoader.GetMod("SacredTools") != null)
 						{
-							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("FlamePump2"))) {number = Main.rand.Next(4,6); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("DecreeRun"))) {number = Main.rand.Next(2,3); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("RalnekPhase3"))) {number = Main.rand.Next(4,6); tier = 1;}
 							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Jensen"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Araneas"))) {number = Main.rand.Next(5,7); tier = 2;}
 							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Raynare"))) {number = Main.rand.Next(3,6); tier = 3;}
-							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Abaddon"))) {number = Main.rand.Next(3,6); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Primordia2"))) {number = Main.rand.Next(2,4); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Abaddon"))) {number = Main.rand.Next(15,20); tier = 4;}
 							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("AraghurHead"))) {number = Main.rand.Next(6,9); tier = 4;}
-							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("NovaLunarian"))) {number = Main.rand.Next(3,6); tier = 5;}
-							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("ChallengerBoss"))) {number = Main.rand.Next(9,12); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Novaniel"))) {number = Main.rand.Next(3,6); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("ErazorBoss"))) {number = Main.rand.Next(9,12); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("SpookboiSpirit"))) {number = Main.rand.Next(20,30); tier = 5;}
 						}
 						if (ModLoader.GetMod("SpiritMod") != null)
 						{
