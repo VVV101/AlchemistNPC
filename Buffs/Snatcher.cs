@@ -93,6 +93,14 @@ namespace AlchemistNPC.Buffs
 				tip += "\nBoosts your max life by 10%";
 				tipch += "\n增加10%生命上限";
 			}
+			if (modPlayer.SnatcherCounter >= 12500)
+			{
+				tip += "\nReflects 1000% damage taken back to its owner";
+			}
+			if (modPlayer.SnatcherCounter >= 15000)
+			{
+				tip += "\nSupports you by attacking nearby enemies with shadow bursts\nDamage is calculated depending from current weapon in hands";
+			}
 			
 			if(Language.ActiveCulture == GameCulture.Chinese)
 				{
@@ -152,10 +160,10 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.SnatcherCounter >= 5000)
 			{
-				player.meleeCrit += 10;
-				player.rangedCrit += 10;
-				player.magicCrit += 10;
-				player.thrownCrit += 10;
+				player.meleeCrit += 5;
+				player.rangedCrit += 5;
+				player.magicCrit += 5;
+				player.thrownCrit += 5;
 				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					ThoriumCBoosts(player);

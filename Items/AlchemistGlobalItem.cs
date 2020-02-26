@@ -477,23 +477,24 @@ namespace AlchemistNPC.Items
 		
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.HasBuff(mod.BuffType("DemonSlayer")) && item.thrown && Main.rand.Next(3) == 0)
 			{
 				Projectile.NewProjectile(position.X, position.Y-12, speedX, speedY, type, damage, knockBack, player.whoAmI);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Rampage == true && type == 14)
+			if (modPlayer.Rampage == true && type == 14)
 			{
 				type = mod.ProjectileType("Chloroshard");
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Rampage == true && type == 1)
+			if (modPlayer.Rampage == true && type == 1)
 			{
 				type = mod.ProjectileType("ChloroshardArrow");
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(20))
+			if (modPlayer.DeltaRune && item.melee && Main.rand.NextBool(20))
 			{
 				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("RedWave"), 1111, 1f, player.whoAmI);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.magic && Main.rand.NextBool(30))
+			if (modPlayer.DeltaRune && item.magic && Main.rand.NextBool(30))
 			{
 				float numberProjectiles = 9;
 				float rotation = MathHelper.ToRadians(8);
@@ -504,12 +505,49 @@ namespace AlchemistNPC.Items
 					Projectile.NewProjectile(vector.X, vector.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("MM"), 1337, knockBack, player.whoAmI);
 				}
 			}
+			if (modPlayer.Barrage)
+			{
+				Main.PlaySound(SoundID.Item91.WithVolume(.6f), player.position);
+				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
+				int p = Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("EnergyBall"), item.damage/5, 1f, player.whoAmI);
+				if (item.useTime > 10)
+				{
+					Vector2 perturbedSpeed2 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(4));
+					Vector2 perturbedSpeed3 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(4));
+					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed2.X, perturbedSpeed2.Y, mod.ProjectileType("EnergyBall"), item.damage/4, 1f, player.whoAmI);
+					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed3.X, perturbedSpeed3.Y, mod.ProjectileType("EnergyBall"), item.damage/4, 1f, player.whoAmI);
+				}
+			}
 			return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 		
 		public override bool UseItem(Item item, Player player)
 		{
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+			if (modPlayer.Barrage && item.damage > 0 && Main.GameUpdateCount % 6 == 0)
+			{
+				Main.PlaySound(SoundID.Item91.WithVolume(.6f), player.position);
+				float num1 = 9f;
+				Vector2 vector2 = new Vector2(player.position.X + (float)player.width * 0.5f, player.position.Y + (float)player.height * 0.5f);
+				float f1 = (float)Main.mouseX + Main.screenPosition.X - vector2.X;
+				float f2 = (float)Main.mouseY + Main.screenPosition.Y - vector2.Y;
+				if ((double)player.gravDir == -1.0)
+					f2 = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY - vector2.Y;
+				float num4 = (float)Math.Sqrt((double)f1 * (double)f1 + (double)f2 * (double)f2);
+				float num5;
+				if (float.IsNaN(f1) && float.IsNaN(f2) || (double)f1 == 0.0 && (double)f2 == 0.0)
+				{
+					f1 = (float)player.direction;
+					f2 = 0.0f;
+					num5 = num1;
+				}
+				else
+					num5 = num1 / num4;
+				float SpeedX = f1 * num5;
+				float SpeedY = f2 * num5;
+				Vector2 perturbedSpeed = new Vector2(SpeedX, SpeedY).RotatedByRandom(MathHelper.ToRadians(5));
+				Projectile.NewProjectile(vector2.X, vector2.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("EnergyBall"), item.damage/5, 1f, player.whoAmI);
+			}
 			if (item.type == 1991 || item.type == 3183)
 			{
 				for (int v = 0; v < 200; ++v)

@@ -19,9 +19,9 @@ namespace AlchemistNPC.Items.Equippable
 			+ "\n[c/FF0000:EGO Gift]"
 			+"\nProvides light around the character"
 			+"\nIncreases all damages and critical strike chances by 5%"
-			+"\nAttacks remove most of the enemy defense");
+			+"\nAttacks remove some of the enemy's defense depending on progression");
 			DisplayName.AddTranslation(GameCulture.Russian, "Лампа Большой Птицы (O-02-40)");
-            Tooltip.AddTranslation(GameCulture.Russian, "Месяц спустя мы заключили, что не было никакого Зверя.\nСоздаёт свет вокруг персонажа\nПовышает все виды урона и шанс критической атаки на 5%\nАтаки разрушают броню противника");
+            Tooltip.AddTranslation(GameCulture.Russian, "Месяц спустя мы заключили, что не было никакого Зверя.\nСоздаёт свет вокруг персонажа\nПовышает все виды урона и шанс критической атаки на 5%\nАтаки повреждают защиту противника в зависимости от стадии игры");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "大鸟灯 (O-02-40)");
             Tooltip.AddTranslation(GameCulture.Chinese, "'一个月后我们得出了结论：那些所谓的怪物根本就不存在.'\n[c/FF0000:EGO 礼物]\n点亮玩家周围\n增加5%全伤害和暴击\n攻击移除敌人大部分护甲");

@@ -1891,15 +1891,12 @@ namespace AlchemistNPC.NPCs
 						}
 					if (ModLoader.GetMod("CalamityMod") != null)
 					{
-						if (NPC.downedPlantBoss)
+						if (CalamityModDownedCalamitas)
 						{
-							if (CalamityModDownedCalamitas)
-							{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
-							shop.item[nextSlot].shopCustomPrice = new int?(25);
-							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
-							nextSlot++;
-							}
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
+						shop.item[nextSlot].shopCustomPrice = new int?(25);
+						shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+						nextSlot++;
 						}
 						if (CalamityModDownedLeviathan)
 						{
@@ -2214,22 +2211,19 @@ namespace AlchemistNPC.NPCs
 					}
 					if (ModLoader.GetMod("CalamityMod") != null)
 					{
-						if (NPC.downedPlantBoss)
+						if (CalamityModDownedCalamitas)
 						{
-							if (CalamityModDownedCalamitas)
+							if (!CalamityModDownedProvidence)
 							{
-								if (!CalamityModDownedProvidence)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
-								shop.item[nextSlot].shopCustomPrice = 3000000;
-								nextSlot++;
-								}
-								if (CalamityModDownedProvidence)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
-								shop.item[nextSlot].shopCustomPrice = 5000000;
-								nextSlot++;
-								}
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
+							shop.item[nextSlot].shopCustomPrice = 3000000;
+							nextSlot++;
+							}
+							if (CalamityModDownedProvidence)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
+							shop.item[nextSlot].shopCustomPrice = 5000000;
+							nextSlot++;
 							}
 						}
 						if (CalamityModDownedLeviathan)

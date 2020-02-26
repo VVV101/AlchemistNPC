@@ -9,23 +9,25 @@ using AlchemistNPC.Items.Weapons;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class Void : ModProjectile
+	public class ShadowBurst : ModProjectile
 	{
 		public override void SetDefaults()
 		{
-			projectile.magic = true;
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.friendly = true;
 			projectile.ignoreWater = true;
+			projectile.tileCollide = false;
 			projectile.penetrate = -1;
 			projectile.extraUpdates = 3;
-			projectile.timeLeft = 120;
+			projectile.timeLeft = 30;
+			projectile.usesLocalNPCImmunity = true;
+			projectile.localNPCHitCooldown = 12;
 		}
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Void Breath");
+			DisplayName.SetDefault("Shadow Burst");
 
 		}
 
@@ -36,7 +38,7 @@ namespace AlchemistNPC.Projectiles
 			{
 				projectile.timeLeft = 75;
 			}
-			if (projectile.ai[0] > 4f)
+			if (projectile.ai[0] > 1f)
 			{
 				float num302 = 1f;
 				if (projectile.ai[0] == 8f)
@@ -53,6 +55,11 @@ namespace AlchemistNPC.Projectiles
 				}
 				projectile.ai[0] += 1f;
 				int num303 = 86;
+				if (projectile.ai[1] == 0f) num303 = 72; //pink
+				if (projectile.ai[1] == 1f) num303 = 109; //black
+				if (projectile.ai[1] == 2f) num303 = 90; //red
+				if (projectile.ai[1] == 3f) num303 = 169; //yellow
+				if (projectile.ai[1] == 4f) num303 = 88; //blue
 				if (Main.rand.Next(2) == 0)
 				{
 					int num3;
@@ -105,46 +112,6 @@ namespace AlchemistNPC.Projectiles
 				projectile.ai[0] += 1f;
 			}
 			projectile.rotation += 0.3f * (float)projectile.direction;
-		}
-		
-		public override void ModifyHitNPC (NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
-		{
-			if (target.type == mod.NPCType("BillCipher"))
-			{
-			damage /= 200;
-			}
-		}
-		public override bool OnTileCollide(Vector2 oldVelocity)
-		{
-			projectile.penetrate--;
-			if (projectile.penetrate <= 0)
-			{
-				projectile.Kill();
-			}
-			else
-			{
-				projectile.ai[0] += 0.1f;
-				if (projectile.velocity.X != oldVelocity.X)
-				{
-					projectile.velocity.X = -oldVelocity.X;
-				}
-				if (projectile.velocity.Y != oldVelocity.Y)
-				{
-					projectile.velocity.Y = -oldVelocity.Y;
-				}
-				projectile.velocity *= 0.75f;
-			}
-			return false;
-		}
-
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			target.immune[projectile.owner] = 1;
-			if (Main.rand.NextBool(15))
-			{
-				target.buffImmune[mod.BuffType("Patience")] = false;
-				target.AddBuff(mod.BuffType("Patience"), 10);
-			}
 		}
 	}
 }

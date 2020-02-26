@@ -127,7 +127,7 @@ namespace AlchemistNPC.NPCs
 			}
 			if (item.type == mod.ItemType("LightOfCeraSumat"))
 			{
-				C++;
+				C+= 3;
 			}
 			if (npc.HasBuff(mod.BuffType("CurseOfLight")))
 			{
@@ -573,18 +573,18 @@ namespace AlchemistNPC.NPCs
 				}
 				if (Main.hardMode && !NPC.downedMoonlord)
 				{
-					npc.lifeRegen -= 30 + C*2;
-					if (damage < 3 + C)
+					npc.lifeRegen -= 50 + C*2;
+					if (damage < 5 + C)
 					{
-						damage = 3 + C;
+						damage = 5 + C;
 					}
 				}
 				if (Main.hardMode && NPC.downedMoonlord)
 				{
-					npc.lifeRegen -= 300 + C*3;
-					if (damage < 30 + C*2)
+					npc.lifeRegen -= 500 + C*4;
+					if (damage < 50 + C*2)
 					{
-						damage = 30 + C*2;
+						damage = 50 + C*2;
 					}
 				}
 			}

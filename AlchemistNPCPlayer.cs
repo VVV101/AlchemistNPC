@@ -47,6 +47,7 @@ namespace AlchemistNPC
 		public int Shield = 0;
 		public int Timer = 0;
 		public int fc = 0;
+		public bool Barrage = false;
 		public bool Blinker = false;
 		public bool BoomBox = false;
 		public bool MasterYoyoBag = false;
@@ -229,6 +230,7 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			Barrage = false;
 			Blinker = false;
 			BoomBox = false;
 			MasterYoyoBag = false;
@@ -721,10 +723,10 @@ namespace AlchemistNPC
 				}
 				if (player.HasBuff(mod.BuffType("BigBirdLamp")))
 				{
-					target.buffImmune[BuffID.BetsysCurse] = false;
-					target.buffImmune[BuffID.Ichor] = false;
 					target.AddBuff(BuffID.Ichor, 600);
-					target.AddBuff(BuffID.BetsysCurse, 600);
+					if (NPC.downedPlantBoss) target.buffImmune[BuffID.Ichor] = false;
+					if (NPC.downedGolemBoss) target.AddBuff(BuffID.BetsysCurse, 600);
+					if (NPC.downedMoonlord) target.buffImmune[BuffID.BetsysCurse] = false;
 				}
 				if (Scroll)
 				{
@@ -773,10 +775,10 @@ namespace AlchemistNPC
 				}
 				if (player.HasBuff(mod.BuffType("BigBirdLamp")))
 				{
-					target.buffImmune[BuffID.BetsysCurse] = false;
-					target.buffImmune[BuffID.Ichor] = false;
 					target.AddBuff(BuffID.Ichor, 600);
-					target.AddBuff(BuffID.BetsysCurse, 600);
+					if (NPC.downedPlantBoss) target.buffImmune[BuffID.Ichor] = false;
+					if (NPC.downedGolemBoss) target.AddBuff(BuffID.BetsysCurse, 600);
+					if (NPC.downedMoonlord) target.buffImmune[BuffID.BetsysCurse] = false;
 				}
 				if (proj.thrown && Scroll)
 				{
@@ -1303,6 +1305,10 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByNPC(NPC npc, ref int damage, ref bool crit) 		
         {
+			if (SnatcherCounter >= 12500 && player.HasBuff(mod.BuffType("Snatcher")))
+			{
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, 0f, 0f, mod.ProjectileType("Returner2"), damage*10, 0, player.whoAmI);
+			}
 			if (QueenBeeBooster == 1)
 			{
 				var hornet = new List<int>();

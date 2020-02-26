@@ -47,8 +47,11 @@ namespace AlchemistNPC.Items.Equippable
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			player.AddBuff(mod.BuffType("BigBirdLamp"), 60);
-			player.accRunSpeed = 6.75f;
-            player.moveSpeed = player.moveSpeed + 0.08f;
+			if (player.velocity.Y == 0f)
+			{
+				player.accRunSpeed = 10f;
+				player.moveSpeed += 0.25f;
+			}
 			player.wingTimeMax = 280;
 		}
 

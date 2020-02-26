@@ -703,6 +703,9 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TriumphPotion"));
 				shop.item[nextSlot].shopCustomPrice = 30000;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TeslaPotion"));
+				shop.item[nextSlot].shopCustomPrice = 25000;
+				nextSlot++;
 				if (NPC.downedBoss3)
 				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PotionofOmniscience"));

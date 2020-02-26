@@ -16,9 +16,17 @@ Available after beating Golem.
 Available after beating Golem.
 -Added Boom Box to Musician's 3rd shop.
 Allows to passively play music boxes placed in the last inventory slot.
+-Added Armor's module "Barrage" accessory. Support any your attack with some energy balls.
+Available after beating Moon Lord.
 -Added recipes for Obsidian, Honey and Crispy Honey blocks.
+-Added Calamity mod's Tesla Potion to Brewer's 2nd shop.
+-Added rewards for reaching 12500 and 15000 souls counter on Cracked Crown.
+-Nerfed Big Bird's Lamp.
+Now it pierces Ichor immunity after beating Plantera, inflicts Betsy's Curse after beating Golem and pierces Betsy's Curse immunity after beating Moon Lord.
+-Now Paradise Lost Wings actually increases run speed.
 -Reworked Symbiote accessory. Its stats now depending on world state.
 Cannot be crafted anymore. Can drop at the end of Blood Moon with 20%.
+-Resprites for both Cera Sumat legendaries and new Explorer sprite.
 -Fixed mod's NPC summoning items not working.
 -Fixed Materia Transmutators not working as Thorium Anvil and Arcane Armor Fabricator.
 -Fixed cycled sound of Blinker accessory.

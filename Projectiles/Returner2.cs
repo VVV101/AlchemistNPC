@@ -9,13 +9,13 @@ using AlchemistNPC.Items.Weapons;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class Returner : ModProjectile
+	public class Returner2 : ModProjectile
 	{
 		public override void SetDefaults()
 		{
 			projectile.friendly = true;
-			projectile.width = 1920;
-			projectile.height = 1080;
+			projectile.width = 64;
+			projectile.height = 64;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 1;
 			projectile.tileCollide = false;
@@ -25,7 +25,7 @@ namespace AlchemistNPC.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Returner");
+			DisplayName.SetDefault("Returner 2");
 		}
 	}
 }
