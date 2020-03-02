@@ -98,6 +98,11 @@ namespace AlchemistNPC
 		[Tooltip("$Mods.AlchemistNPC.Common.RevengeancemodeTooltip")]
 		public bool RevPrices;
 		
+		[DefaultValue(true)]
+		[Label("$Mods.AlchemistNPC.Common.CatcheableNPCToggle")]
+		[Tooltip("$Mods.AlchemistNPC.Common.CatcheableNPCToggleTooltip")]
+		public bool CatchNPC;
+		
 		[Range(1, 1000)]
 		[DefaultValue(1)]
 		[Label("$Mods.AlchemistNPC.Common.Potionspricemultiplier")]

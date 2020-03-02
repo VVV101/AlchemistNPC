@@ -406,8 +406,8 @@ namespace AlchemistNPC.NPCs
 		
 		public override void ModifyHitPlayer(Player player, ref int damage, ref bool crit)
 		{
-		player.buffImmune[mod.BuffType("MindBurn")] = false;
-		player.AddBuff(mod.BuffType("MindBurn"), 1200);
+			player.buffImmune[mod.BuffType("MindBurn")] = false;
+			player.AddBuff(mod.BuffType("MindBurn"), 1200);
 		}
 		
 		public override void OnHitByItem(Player player, Item item, int damage, float knockback, bool crit)

@@ -68,6 +68,8 @@ namespace AlchemistNPC
 		internal ShopChangeUIT alchemistUIT;
 		private UserInterface alchemistUserInterfaceP;
 		internal PipBoyTPMenu pipboyUI;
+		private UserInterface alchemistUserInterfaceC;
+		internal CoinsConvertMenu coinsUI;
 		
 		public override void Load()
 		{
@@ -149,6 +151,11 @@ namespace AlchemistNPC
 				pipboyUI.Activate();
 				alchemistUserInterfaceP = new UserInterface();
 				alchemistUserInterfaceP.SetState(pipboyUI);
+				
+				coinsUI = new CoinsConvertMenu();
+				coinsUI.Activate();
+				alchemistUserInterfaceC = new UserInterface();
+				alchemistUserInterfaceC.SetState(coinsUI);
 			}
 			Mod ALIB = ModLoader.GetMod("AchievementLib");
 			if(ALIB != null)
@@ -333,6 +340,22 @@ namespace AlchemistNPC
 					InterfaceScaleType.UI)
 				);
 			}
+			int MouseTextIndexC = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexC != -1)
+			{
+				layers.Insert(MouseTextIndexC, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Coins Convert Menu",
+					delegate
+					{
+						if (CoinsConvertMenu.visible)
+						{
+							coinsUI.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
 		}
 
 		public override void HandlePacket(BinaryReader reader, int whoAmI)
@@ -348,6 +371,12 @@ namespace AlchemistNPC
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().KeepBuffs = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().WellFed = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BillIsDowned = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT1 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT2 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT3 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT4 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT5 = reader.ReadInt32();
+					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().RCT6 = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().BBP = reader.ReadInt32();
 					lifeFruitsPlayer.GetModPlayer<AlchemistNPCPlayer>().SnatcherCounter = reader.ReadInt32();
 					
@@ -383,12 +412,24 @@ namespace AlchemistNPC
 					playernumber = reader.ReadByte();
 					AlchemistNPCPlayer alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
 					alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
+					alchemistPlayer.RCT1 = reader.ReadInt32();
+					alchemistPlayer.RCT2 = reader.ReadInt32();
+					alchemistPlayer.RCT3 = reader.ReadInt32();
+					alchemistPlayer.RCT4 = reader.ReadInt32();
+					alchemistPlayer.RCT5 = reader.ReadInt32();
+					alchemistPlayer.RCT6 = reader.ReadInt32();
 					alchemistPlayer.BBP = reader.ReadInt32();
 					alchemistPlayer.SnatcherCounter = reader.ReadInt32();
 					if (Main.netMode == NetmodeID.Server) {
 						var packet = GetPacket();
 						packet.Write((byte)AlchemistNPCMessageType.SyncPlayerVariables);
 						packet.Write(playernumber);
+						packet.Write(alchemistPlayer.RCT1);
+						packet.Write(alchemistPlayer.RCT2);
+						packet.Write(alchemistPlayer.RCT3);
+						packet.Write(alchemistPlayer.RCT4);
+						packet.Write(alchemistPlayer.RCT5);
+						packet.Write(alchemistPlayer.RCT6);
 						packet.Write(alchemistPlayer.BBP);
 						packet.Write(alchemistPlayer.SnatcherCounter);
 						packet.Send(-1, playernumber);
@@ -505,6 +546,24 @@ namespace AlchemistNPC
 			recipe.AddIngredient(ItemID.GoldBar, 10);
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(ItemID.Sundial);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.StoneBlock, 10);
+			recipe.needWater = true;
+			recipe.needLava = true;
+			recipe.SetResult(ItemID.Obsidian, 5);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.BottledHoney, 10);
+			recipe.needWater = true;
+			recipe.needHoney = true;
+			recipe.SetResult(ItemID.HoneyBlock, 5);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.BottledHoney, 10);
+			recipe.needLava = true;
+			recipe.needHoney = true;
+			recipe.SetResult(ItemID.CrispyHoneyBlock, 5);
 			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
 			recipe.AddRecipeGroup("AlchemistNPC:AnyWatch");
@@ -1000,11 +1059,73 @@ namespace AlchemistNPC
             text.AddTranslation(GameCulture.Chinese, "灾难之灵宝藏袋");
             AddTranslation(text);
 
+			 //ElementsAwoken
+			text = CreateTranslation("Wasteland");
+            text.SetDefault("Wasteland Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Infernace");
+            text.SetDefault("Infernace Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("ScourgeFighter");
+            text.SetDefault("Scourge Fighter Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Regaroth");
+            text.SetDefault("Regaroth Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("TheCelestials");
+            text.SetDefault("The Celestials Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Permafrost");
+            text.SetDefault("Permafrost Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Obsidious");
+            text.SetDefault("Obsidious Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Aqueous");
+            text.SetDefault("Aqueous Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("TempleKeepers");
+            text.SetDefault("The Temple Keepers Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Guardian");
+            text.SetDefault("The Guardian Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Volcanox");
+            text.SetDefault("Volcanox Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("VoidLevi");
+            text.SetDefault("Void Leviathan Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Azana");
+            text.SetDefault("Azana Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Ancients");
+            text.SetDefault("The Ancients Treasure Bag");
+            AddTranslation(text);
+
 			 //SacredTools
+			text = CreateTranslation("Decree");
+            text.SetDefault("The Decree Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Декри");
+			text.AddTranslation(GameCulture.Chinese, "焚炎南瓜宝藏袋");
+            AddTranslation(text);
+			 
             text = CreateTranslation("FlamingPumpkin");
             text.SetDefault("The Flaming Pumpkin Treasure Bag");
 	    	text.AddTranslation(GameCulture.Russian, "Сумка Горящей Тыквы");
-			text.AddTranslation(GameCulture.Chinese, "焚炎南瓜宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Jensen");
@@ -1013,10 +1134,20 @@ namespace AlchemistNPC
 			text.AddTranslation(GameCulture.Chinese, "巨型鸟妖詹森宝藏袋");
             AddTranslation(text);
 			
+			text = CreateTranslation("Araneas");
+            text.SetDefault("Araneas Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Аранеи");
+            AddTranslation(text);
+			
 			text = CreateTranslation("Raynare");
             text.SetDefault("Harpy Queen, Raynare Treasure Bag");
 	    	text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевы Гарпий");
 			text.AddTranslation(GameCulture.Chinese, "鸟妖女王雷纳宝藏袋");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Primordia");
+            text.SetDefault("Primordia Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Примордии");
             AddTranslation(text);
 			
 			text = CreateTranslation("Abaddon");
@@ -1038,8 +1169,14 @@ namespace AlchemistNPC
             AddTranslation(text);
 			
 			text = CreateTranslation("Challenger");
-            text.SetDefault("The Challenger Treasure Bag");
+            text.SetDefault("Erazor Treasure Bag");
+			text.AddTranslation(GameCulture.Russian, "Сумка Ирэйзора");
 			text.AddTranslation(GameCulture.Chinese, "堕落帝者宝藏袋");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Spookboi");
+            text.SetDefault("Nihilus Treasure Bag");
+			text.AddTranslation(GameCulture.Russian, "Сумка Нигилюса");
             AddTranslation(text);
 			
 			//SpiritMod
@@ -1348,6 +1485,11 @@ namespace AlchemistNPC
 			if (alchemistUserInterfaceT != null && ShopChangeUIT.visible)
 			{
 				alchemistUserInterfaceT.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceC != null && CoinsConvertMenu.visible)
+			{
+				alchemistUserInterfaceC.Update(gameTime);
 			}
 		}
     }

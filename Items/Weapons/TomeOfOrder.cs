@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Weapons
 			+"\n[c/00FF00:Stats are growing up through progression]"
 			+"\n''Only the ones who are equally good and evil may weild this''"
 			+"\nShoots energy bolts which stick to enemies and tiles"
-			+"\nThey explode after some time or can be blown up manually, dealing extra damage");
+			+"\nThey explode after some time or can be blown up manually, dealing double damage");
 			DisplayName.AddTranslation(GameCulture.Russian, "Том Порядка");
             Tooltip.AddTranslation(GameCulture.Russian, "[c/00FF00:Легендарное Оружие]\n''Лишь тот, кто в равной степени добр и зол может использовать это''\n[c/00FF00:Характеристики оружия улучшаются по мере прохождения]\nВыстреливает энергетические снаряды, способные застревать во врагах или блоках\nОни взрываются по прошествии времени или вручную, нанося дополнительный урон");
 			DisplayName.AddTranslation(GameCulture.Chinese,"秩序原典");
@@ -38,15 +38,14 @@ namespace AlchemistNPC.Items.Weapons
 			item.rare = 11;
 			item.width = 30;
 			item.height = 30;
-			item.useTime = 12;
 			item.UseSound = SoundID.Item9;
 			item.useStyle = 5;
 			item.shootSpeed = 12f;
 			item.knockBack = 4;
 			item.value = Item.sellPrice(0, 10, 0, 0);
 			item.autoReuse = true;
-			item.useTime = 10;
-			item.useAnimation = 30;
+			item.useTime = 12;
+			item.useAnimation = 36;
 			item.shoot = mod.ProjectileType("Bolt");
 		}
 		
@@ -79,9 +78,9 @@ namespace AlchemistNPC.Items.Weapons
 			}
 			if (Main.hardMode)
 			{
-				item.damage = 32;
-				item.useTime = 8;
-				item.useAnimation = 24;
+				item.damage = 29;
+				item.useTime = 10;
+				item.useAnimation = 30;
 			}
 			if (NPC.downedMechBossAny)
 			{
@@ -90,8 +89,8 @@ namespace AlchemistNPC.Items.Weapons
 			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
 				item.damage = 42;
-				item.useTime = 7;
-				item.useAnimation = 21;
+				item.useTime = 8;
+				item.useAnimation = 24;
 			}
 			if (NPC.downedPlantBoss)
 			{
@@ -100,8 +99,8 @@ namespace AlchemistNPC.Items.Weapons
 			if (NPC.downedGolemBoss)
 			{
 				item.damage = 60;
-				item.useTime = 6;
-				item.useAnimation = 18;
+				item.useTime = 7;
+				item.useAnimation = 21;
 			}
 			if (NPC.downedFishron)
 			{
@@ -158,6 +157,7 @@ namespace AlchemistNPC.Items.Weapons
 				{
 					if (Main.projectile[i].active && Main.projectile[i].type == mod.ProjectileType("Bolt"))
 					{
+						Main.projectile[i].damage *= 2;
 						Main.projectile[i].Kill();
 					}
 				}

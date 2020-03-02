@@ -21,6 +21,7 @@ namespace AlchemistNPC.Projectiles
 			projectile.width = 6;
 			projectile.tileCollide = false;
 			projectile.aiStyle = 1;
+			projectile.timeLeft = 600;
 			aiType = 100;
 		}
 		

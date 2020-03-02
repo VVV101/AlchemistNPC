@@ -42,6 +42,9 @@ Common.AlchemistNPCLiteTooltip=True to enable starting message. True by default
 Common.Revengeancemode=Revengeance mode prices scaling
 Common.RevengeancemodeTooltip=True to make potions prices bigger. True by default
 
+Common.CatcheableNPCToggle=Catcheable mod's NPCs toggle
+Common.CatcheableNPCToggleTooltip=True to make mod's town NPCs catcheable. True by default
+
 Common.Potionspricemultiplier=Potions price multiplier
 Common.PotionspricemultiplierTooltip=Multiplies potions price by X. 1 by default
 
@@ -56,6 +59,15 @@ Common.WormholePriceTooltip=1000 is 10 silver price by default
 
 Common.LifeformAnalyzer=Lifeform Analyzer laser pointing
 Common.LifeformAnalyzerTooltip=Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default
+
+Messages
+
+Common.RainStopped=Rain is stopped.
+Common.RainStarted=Rain is started.
+Common.NightTimeSet=Time is set to Night.
+Common.DayTimeSet=Time is set to Day.
+Common.SandstormStopped=Sandstorm is stopped.
+Common.SandstormStarted=Sandstorm is started.
 
 AntiBuffMode
 

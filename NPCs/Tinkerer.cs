@@ -208,7 +208,10 @@ namespace AlchemistNPC.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.AlchemistNPC.TinkererButton1");
+			if (AlchemistNPCWorld.foundT1 || AlchemistNPCWorld.foundT2 || AlchemistNPCWorld.foundT3)
+			{
+				button = Language.GetTextValue("Mods.AlchemistNPC.TinkererButton1");
+			}
 			button2 = Language.GetTextValue("Mods.AlchemistNPC.TinkererButton2");
 			Player player = Main.player[Main.myPlayer];
 			if (player.active)
@@ -245,8 +248,14 @@ namespace AlchemistNPC.NPCs
 				}
 				if (NPC.downedMoonlord && !AlchemistNPCWorld.foundMP7 && AlchemistNPCWorld.foundT1 && AlchemistNPCWorld.foundT2 && AlchemistNPCWorld.foundT3)
 				{
-					Main.player[Main.myPlayer].QuickSpawnItem(mod.ItemType("MP7"));
-					AlchemistNPCWorld.foundMP7 = true;
+					for (int k = 0; k < 255; k++)
+					{
+						Player player = Main.player[k];
+						if (player.active)
+						{
+							player.QuickSpawnItem(mod.ItemType("MP7"));
+						}
+					}
 				}
 				else if (AlchemistNPCWorld.foundT1 || AlchemistNPCWorld.foundT2 || AlchemistNPCWorld.foundT3)
 				{

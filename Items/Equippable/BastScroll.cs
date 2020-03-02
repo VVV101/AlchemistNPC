@@ -81,8 +81,8 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(ItemID.Nanites, 10);
 			recipe.AddIngredient(ItemID.FragmentSolar, 30);
 			recipe.AddIngredient(ItemID.LunarBar, 25);
-			recipe.AddIngredient(null, "EmagledFragmentation", 250);
-			recipe.AddTile(null, "MateriaTransmutator");
+			recipe.AddIngredient(mod.ItemType("EmagledFragmentation"), 250);
+			recipe.AddTile(mod.TileType("MateriaTransmutator"));
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

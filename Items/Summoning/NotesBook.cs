@@ -52,8 +52,8 @@ namespace AlchemistNPC.Items.Summoning
 
 		public override void HoldItem(Player player)
 		{
-		Player.tileRangeX += 600;
-        Player.tileRangeY += 600;
+			Player.tileRangeX += 600;
+			Player.tileRangeY += 600;
 		}
 		
 		public override bool CanUseItem(Player player)

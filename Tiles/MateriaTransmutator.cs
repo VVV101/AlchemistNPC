@@ -76,8 +76,8 @@ namespace AlchemistNPC.Tiles
 				{
                 Array.Resize(ref adjTiles, adjTiles.Length + 3);
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil");
-                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator");
-                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("SoulForge");
+                adjTiles[adjTiles.Length - 2] = ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator");
+                adjTiles[adjTiles.Length - 3] = ModLoader.GetMod("ThoriumMod").TileType("SoulForge");
 				}
 			if (ModLoader.GetMod("FargowiltasSouls") != null)
 				{

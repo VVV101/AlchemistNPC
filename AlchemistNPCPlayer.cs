@@ -47,7 +47,9 @@ namespace AlchemistNPC
 		public int Shield = 0;
 		public int Timer = 0;
 		public int fc = 0;
+		public bool Barrage = false;
 		public bool Blinker = false;
+		public bool BoomBox = false;
 		public bool MasterYoyoBag = false;
 		public bool TimeTwist = false;
 		public bool HPJ = false;
@@ -130,6 +132,18 @@ namespace AlchemistNPC
 		
 		private const int maxBBP = -1;
 		public int BBP = 0;
+		private const int maxRCT1 = -1;
+		public int RCT1 = 0;
+		private const int maxRCT2 = -1;
+		public int RCT2 = 0;
+		private const int maxRCT3 = -1;
+		public int RCT3 = 0;
+		private const int maxRCT4 = -1;
+		public int RCT4 = 0;
+		private const int maxRCT5 = -1;
+		public int RCT5 = 0;
+		private const int maxRCT6 = -1;
+		public int RCT6 = 0;
 		private const int maxSnatcherCounter = -1;
 		public int SnatcherCounter = 0;
 		private const int maxLifeElixir = 2;
@@ -216,7 +230,9 @@ namespace AlchemistNPC
 				Shield = 0;
 			}
 			Item.potionDelay = 3600;
+			Barrage = false;
 			Blinker = false;
+			BoomBox = false;
 			MasterYoyoBag = false;
 			TimeTwist = false;
 			HPJ = false;
@@ -237,7 +253,6 @@ namespace AlchemistNPC
 			AlchemistGlobalItem.Lucky = false;
 			AlchemistGlobalItem.Violent = false;
 			AlchemistGlobalItem.Warding = false;
-			AlchemistGlobalItem.Stopper = false;
 			AlchemistNPC.BastScroll = false;
 			AlchemistNPC.Stormbreaker = false;
 			MeatGrinderOnUse = false;
@@ -327,6 +342,79 @@ namespace AlchemistNPC
 					ShopChangeUIT.visible = false;
 				}
 			}
+			if (AlchemistNPC.modConfiguration.CoinsDrop)
+			{
+				if (ShopChangeUIO.visible)
+				{
+					CoinsConvertMenu.visible = true;
+				}
+				else CoinsConvertMenu.visible = false;
+			}
+			if (player.talkNPC == -1)
+			{
+				for (int index1 = 0; index1 < 40; ++index1)
+				{
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier1") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier2") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier3") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier4") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier5") || player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier6"))
+					{
+						player.bank3.item[index1].TurnToAir();
+					}
+				}
+			}
+		}
+		
+		public override void PostBuyItem(NPC vendor, Item[] shopInventory, Item item)
+		{
+			if (vendor.type == mod.NPCType("Operator"))
+			{
+				for (int index1 = 0; index1 < 40; ++index1)
+				{
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier1"))
+					{
+						RCT1 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier2"))
+					{
+						RCT2 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier3"))
+					{
+						RCT3 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier4"))
+					{
+						RCT4 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier5"))
+					{
+						RCT5 = player.bank3.item[index1].stack;
+						continue;
+					}
+					if (player.bank3.item[index1].type == mod.ItemType("ReversivityCoinTier6"))
+					{
+						RCT6 = player.bank3.item[index1].stack;
+						break;
+					}
+				}
+			}
+		}
+		
+		public static void ConvertCoins(int tier = 0)
+		{
+			Player player = Main.LocalPlayer;
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+			switch (tier)
+			{
+				case 0: break;
+				case 1: modPlayer.RCT2 -= 1; modPlayer.RCT1 += 2; break;
+				case 2: modPlayer.RCT3 -= 1; modPlayer.RCT2 += 2; break; 
+				case 3: modPlayer.RCT4 -= 1; modPlayer.RCT3 += 2; break; 
+				case 4: modPlayer.RCT5 -= 1; modPlayer.RCT4 += 2; break; 
+				case 5: modPlayer.RCT6 -= 1; modPlayer.RCT5 += 2; break; 
+			}
 		}
 		
 		public override bool CanBeHitByProjectile(Projectile projectile)
@@ -341,6 +429,12 @@ namespace AlchemistNPC
 		public override void clientClone(ModPlayer clientClone)
 		{
 			AlchemistNPCPlayer clone = clientClone as AlchemistNPCPlayer;
+			clone.RCT1 = RCT1;
+			clone.RCT2 = RCT2;
+			clone.RCT3 = RCT3;
+			clone.RCT4 = RCT4;
+			clone.RCT5 = RCT5;
+			clone.RCT6 = RCT6;
 			clone.BBP = BBP;
 			clone.SnatcherCounter = SnatcherCounter;
 		}
@@ -355,6 +449,12 @@ namespace AlchemistNPC
 			packet.Write(KeepBuffs);
 			packet.Write(WellFed);
 			packet.Write(BillIsDowned);
+			packet.Write(RCT1);
+			packet.Write(RCT2);
+			packet.Write(RCT3);
+			packet.Write(RCT4);
+			packet.Write(RCT5);
+			packet.Write(RCT6);
 			packet.Write(BBP);
 			packet.Write(SnatcherCounter);
 			
@@ -397,10 +497,16 @@ namespace AlchemistNPC
 		public override void SendClientChanges(ModPlayer clientPlayer)
 		{
 			AlchemistNPCPlayer clone = clientPlayer as AlchemistNPCPlayer;
-			if (clone.BBP != BBP || clone.SnatcherCounter != SnatcherCounter) {
+			if (clone.BBP != BBP || clone.SnatcherCounter != SnatcherCounter || clone.RCT1 != RCT1 || clone.RCT2 != RCT2 || clone.RCT3 != RCT3 || clone.RCT4 != RCT4 || clone.RCT5 != RCT5 || clone.RCT6 != RCT6) {
 				var packet = mod.GetPacket();
 				packet.Write((byte)AlchemistNPC.AlchemistNPCMessageType.SyncPlayerVariables);
 				packet.Write((byte)player.whoAmI);
+				packet.Write(RCT1);
+				packet.Write(RCT2);
+				packet.Write(RCT3);
+				packet.Write(RCT4);
+				packet.Write(RCT5);
+				packet.Write(RCT6);
 				packet.Write(BBP);
 				packet.Write(SnatcherCounter);
 				packet.Send();
@@ -415,6 +521,12 @@ namespace AlchemistNPC
 				{"KeepBuffs", KeepBuffs},
 				{"WellFed", WellFed},
 				{"BillIsDowned", BillIsDowned},
+				{"RCT1", RCT1},
+				{"RCT2", RCT2},
+				{"RCT3", RCT3},
+				{"RCT4", RCT4},
+				{"RCT5", RCT5},
+				{"RCT6", RCT6},
 				{"BBP", BBP},
 				{"SnatcherCounter", SnatcherCounter},
 				
@@ -452,6 +564,12 @@ namespace AlchemistNPC
 			KeepBuffs = tag.GetInt("KeepBuffs");
 			WellFed = tag.GetInt("WellFed");
 			BillIsDowned = tag.GetInt("BillIsDowned");
+			RCT1 = tag.GetInt("RCT1");
+			RCT2 = tag.GetInt("RCT2");
+			RCT3 = tag.GetInt("RCT3");
+			RCT4 = tag.GetInt("RCT4");
+			RCT5 = tag.GetInt("RCT5");
+			RCT6 = tag.GetInt("RCT6");
 			BBP = tag.GetInt("BBP");
 			SnatcherCounter = tag.GetInt("SnatcherCounter");
 			
@@ -605,10 +723,10 @@ namespace AlchemistNPC
 				}
 				if (player.HasBuff(mod.BuffType("BigBirdLamp")))
 				{
-					target.buffImmune[BuffID.BetsysCurse] = false;
-					target.buffImmune[BuffID.Ichor] = false;
 					target.AddBuff(BuffID.Ichor, 600);
-					target.AddBuff(BuffID.BetsysCurse, 600);
+					if (NPC.downedPlantBoss) target.buffImmune[BuffID.Ichor] = false;
+					if (NPC.downedGolemBoss) target.AddBuff(BuffID.BetsysCurse, 600);
+					if (NPC.downedMoonlord) target.buffImmune[BuffID.BetsysCurse] = false;
 				}
 				if (Scroll)
 				{
@@ -657,10 +775,10 @@ namespace AlchemistNPC
 				}
 				if (player.HasBuff(mod.BuffType("BigBirdLamp")))
 				{
-					target.buffImmune[BuffID.BetsysCurse] = false;
-					target.buffImmune[BuffID.Ichor] = false;
 					target.AddBuff(BuffID.Ichor, 600);
-					target.AddBuff(BuffID.BetsysCurse, 600);
+					if (NPC.downedPlantBoss) target.buffImmune[BuffID.Ichor] = false;
+					if (NPC.downedGolemBoss) target.AddBuff(BuffID.BetsysCurse, 600);
+					if (NPC.downedMoonlord) target.buffImmune[BuffID.BetsysCurse] = false;
 				}
 				if (proj.thrown && Scroll)
 				{
@@ -835,33 +953,53 @@ namespace AlchemistNPC
 			}
 			if (Blinker)
 			{
-				if (Timer < 30) Timer++;
-				if (Timer >= 30) 
+				if (Timer < 60) Timer++;
+				if (Timer >= 60) 
 				{
-					Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
 					if (player.controlRight && player.releaseRight && player.doubleTapCardinalTimer[2]>0)
 					{
+						Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
 						Timer = 0;
-						for (int i = 0; i < 6; i++)
-                        {
-							player.position.X += 50;
-							for (int index = 0; index < 30; ++index)
-								Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+						Vector2 pp = new Vector2(player.position.X+300,player.position.Y);
+						if (!Collision.SolidCollision(pp, player.width, player.height))
+						{
+							for (int i = 0; i < 6; i++)
+							{
+								player.position.X += 50;
+								for (int index = 0; index < 30; ++index)
+									Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+							}
+							if (player.velocity.X < 0) player.velocity.X *= -1;
+							player.velocity.X += 6f;
 						}
-						if (player.velocity.X < 0) player.velocity.X *= -1;
-						player.velocity.X += 5f;
+						else
+						{
+							if (player.velocity.X < 0) player.velocity.X *= -1;
+							player.velocity.X += 16f;
+						}							
 					}
 					if (player.controlLeft && player.releaseLeft && player.doubleTapCardinalTimer[3]>0)
 					{
+						Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
 						Timer = 0;
-						for (int i = 0; i < 6; i++)
-                        {
-							player.position.X -= 50;
-							for (int index = 0; index < 30; ++index)
-								Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+						Vector2 pp = new Vector2(player.position.X-300,player.position.Y);
+						if (!Collision.SolidCollision(pp, player.width, player.height))
+						{
+							for (int i = 0; i < 6; i++)
+							{
+								player.position.X -= 50;
+								for (int index = 0; index < 30; ++index)
+									Main.dust[Dust.NewDust(player.position, player.width, player.height, 15, Main.rand.NextFloat(-2f,2f), Main.rand.NextFloat(-2f,2f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+							}
+							if (player.velocity.X > 0) player.velocity.X *= -1;
+							player.velocity.X += -6f;
 						}
-						if (player.velocity.X > 0) player.velocity.X *= -1;
-						player.velocity.X += -5f;
+						else
+						{
+							if (player.velocity.X > 0) player.velocity.X *= -1;
+							player.velocity.X += -16f;
+						}
+						
 					}
 				}
 				
@@ -1130,7 +1268,7 @@ namespace AlchemistNPC
         {
 			if (player.HeldItem.type == mod.ItemType("Penetrator") && crit)
 			{
-				switch (Main.rand.Next(3))
+				switch (Main.rand.Next(4))
 				{
 					case 0:
 					damage += damage/2;
@@ -1140,6 +1278,9 @@ namespace AlchemistNPC
 					break;
 					case 2:
 					damage += (damage/2)*3;	
+					break;
+					case 3:
+					damage += damage*2;	
 					break;
 				}
 			}
@@ -1164,6 +1305,10 @@ namespace AlchemistNPC
 		
 		public override void ModifyHitByNPC(NPC npc, ref int damage, ref bool crit) 		
         {
+			if (SnatcherCounter >= 12500 && player.HasBuff(mod.BuffType("Snatcher")))
+			{
+				Projectile.NewProjectile(npc.Center.X, npc.Center.Y, 0f, 0f, mod.ProjectileType("Returner2"), damage*10, 0, player.whoAmI);
+			}
 			if (QueenBeeBooster == 1)
 			{
 				var hornet = new List<int>();

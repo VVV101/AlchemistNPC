@@ -19,16 +19,13 @@ namespace AlchemistNPC.Projectiles
 			projectile.penetrate = -1;
 			projectile.timeLeft = 1;
 			projectile.tileCollide = false;
+			projectile.usesLocalNPCImmunity = true;
+			projectile.localNPCHitCooldown = -1;
 		}
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Returner");
-		}
-
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
-			target.immune[projectile.owner] = 1;
 		}
 	}
 }

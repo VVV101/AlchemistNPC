@@ -13,8 +13,7 @@ namespace AlchemistNPC.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.ranged = false;
-			projectile.melee = true;
+			projectile.ranged = true;
 			projectile.width = 8;
 			projectile.height = 8;
 			projectile.friendly = true;

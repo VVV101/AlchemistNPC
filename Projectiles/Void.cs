@@ -25,7 +25,7 @@ namespace AlchemistNPC.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fungalosphere Projectile");
+			DisplayName.SetDefault("Void Breath");
 
 		}
 

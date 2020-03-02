@@ -429,7 +429,8 @@ namespace AlchemistNPC.NPCs
 						Player player = Main.player[k];
 						if (player.active)
 						{
-						NPC.SpawnOnPlayer(k, mod.NPCType("Young Brewer"));
+							NPC.SpawnOnPlayer(k, mod.NPCType("YoungBrewer"));
+							return;
 						}
 					}
 				}
@@ -701,6 +702,9 @@ namespace AlchemistNPC.NPCs
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TriumphPotion"));
 				shop.item[nextSlot].shopCustomPrice = 30000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TeslaPotion"));
+				shop.item[nextSlot].shopCustomPrice = 25000;
 				nextSlot++;
 				if (NPC.downedBoss3)
 				{

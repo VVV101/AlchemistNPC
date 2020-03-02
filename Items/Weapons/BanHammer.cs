@@ -8,7 +8,6 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
 using Terraria.Localization;
-using Terraria.World.Generation;
 
 namespace AlchemistNPC.Items.Weapons
 {

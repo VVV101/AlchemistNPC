@@ -36,7 +36,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.Muramasa);
-			item.damage = 12;
+			item.damage = 14;
 			item.melee = true;
 			item.width = 78;
 			item.height = 78;
@@ -60,53 +60,54 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 15;
 			if (NPC.downedSlimeKing)
 			{
-				item.damage = 14;
+				item.damage = 16;
 			}
 			if (NPC.downedBoss1)
 			{
-				item.damage = 16;
+				item.damage = 18;
 			}
 			if (NPC.downedBoss2)
 			{
-				item.damage = 20;
+				item.damage = 22;
 			}
 			if (NPC.downedQueenBee)
 			{
-				item.damage = 24;
+				item.damage = 26;
 			}
 			if (NPC.downedBoss3)
 			{
-				item.damage = 26;
+				item.damage = 30;
 			}
 			if (Main.hardMode)
 			{
-				item.damage = 32;
+				item.damage = 36;
 				item.useTime = 10;
 				item.useAnimation = 10;
+				item.autoReuse = true;
 			}
 			if (NPC.downedMechBossAny)
 			{
-				item.damage = 40;
+				item.damage = 44;
 			}
 			if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 			{
-				item.damage = 48;
+				item.damage = 52;
 			}
 			if (NPC.downedPlantBoss)
 			{
-				item.damage = 56;
+				item.damage = 64;
 			}
 			if (NPC.downedGolemBoss)
 			{
-				item.damage = 64;
+				item.damage = 72;
 			}
 			if (NPC.downedFishron)
 			{
-				item.damage = 72;
+				item.damage = 81;
 			}
 			if (NPC.downedAncientCultist)
 			{
-				item.damage = 81;
+				item.damage = 90;
 			}
 			if (NPC.downedMoonlord)
 			{
@@ -132,13 +133,13 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			target.buffImmune[mod.BuffType("CurseOfLight")] = false;
 			target.AddBuff(mod.BuffType("CurseOfLight"), 300);
-			if (Main.hardMode && !NPC.downedMechBoss1 && !NPC.downedMechBoss2 && !NPC.downedMechBoss3)
+			if (Main.hardMode && !NPC.downedMechBossAny)
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
 			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/4, 0, Main.myPlayer);
 			}
-			if (Main.hardMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3 && !NPC.downedGolemBoss)
+			if (Main.hardMode && NPC.downedMechBossAny && !NPC.downedGolemBoss)
 			{
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;

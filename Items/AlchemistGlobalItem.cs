@@ -13,19 +13,20 @@ using Terraria.ModLoader.IO;
 using Terraria.Localization;
 using AlchemistNPC.Interface;
 using AlchemistNPC;
+using Terraria.UI;
 
 namespace AlchemistNPC.Items
 {
 	public class AlchemistGlobalItem : GlobalItem
 	{	
 		public static bool on = false;
+		public static bool stop = false;
 		public static bool Luck = false;
 		public static bool Luck2 = false;
 		public static bool Menacing = false;
 		public static bool Lucky = false;
 		public static bool Violent = false;
 		public static bool Warding = false;
-		public static bool Stopper = false;
 		public static bool PerfectionToken = false;
 		
 		public bool CalamityModDownedSCal
@@ -58,6 +59,14 @@ namespace AlchemistNPC.Items
 		
 		public override void UpdateInventory(Item item, Player player)
 		{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BoomBox)
+			{
+				if (player.inventory[49].createTile != -1 && player.inventory[49].accessory)
+				{
+					bool r = false;
+					player.VanillaUpdateAccessory(player.whoAmI, player.inventory[49], false, ref r, ref r, ref r);
+				}
+			}
 			if (player.accCritterGuide && AlchemistNPC.modConfiguration.LifeformAnalyzer)
 			{
 				if(Main.GameUpdateCount % 60 == 0) 
@@ -74,7 +83,7 @@ namespace AlchemistNPC.Items
 							num105 = num102 / num105;
 							num103 *= num105;
 							num104 *= num105;
-							Projectile.NewProjectile(player.Center.X, player.Center.Y, num103, num104, mod.ProjectileType("LocatorProjectile"), 0, 0f, player.whoAmI, 0f, 0f);
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, num103, num104, mod.ProjectileType("LocatorProjectile"), 0, 0f, player.whoAmI, v, 0f);
 						}
 					}
 				}
@@ -331,7 +340,7 @@ namespace AlchemistNPC.Items
 		public override bool NewPreReforge(Item item)
 		{
 			Player player = Main.player[Main.myPlayer];
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PerfectionToken")) && !Stopper && item.damage > 3)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("PerfectionToken")) && item.damage > 3)
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -339,12 +348,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("PerfectionToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("MenacingToken")) && !Stopper)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("MenacingToken")))
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -352,12 +360,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("MenacingToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("LuckyToken")) && !Stopper)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("LuckyToken")))
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -365,12 +372,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("LuckyToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("ViolentToken")) && !Stopper)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("ViolentToken")))
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -378,12 +384,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("ViolentToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}
-			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("WardingToken")) && !Stopper)
+			if (Main.player[Main.myPlayer].HasItem(mod.ItemType("WardingToken")))
 			{
 				Item[] inventory = Main.player[Main.myPlayer].inventory;
 				for (int k = 0; k < inventory.Length; k++)
@@ -391,12 +396,11 @@ namespace AlchemistNPC.Items
 					if (inventory[k].type == mod.ItemType("WardingToken"))
 					{
 						inventory[k].stack--;
-						Stopper = true;
-						break;
+						return true;
 					}
 				}
 			}	
-			return true;
+			return base.NewPreReforge(item);
 		}
 		
 		public override bool ConsumeItem(Item item, Player player)	
@@ -455,30 +459,42 @@ namespace AlchemistNPC.Items
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Symbiote == true && item.useTime > 3)
 			{
-				return 1.2f;
+				if (!Main.hardMode)
+				{
+					return 1.1f;
+				}
+				if (Main.hardMode && !NPC.downedMoonlord)
+				{
+					return 1.15f;
+				}
+				if (NPC.downedMoonlord)
+				{
+					return 1.2f;
+				}
 			}
 			return base.UseTimeMultiplier(item, player);
 		}
 		
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 			if (player.HasBuff(mod.BuffType("DemonSlayer")) && item.thrown && Main.rand.Next(3) == 0)
 			{
 				Projectile.NewProjectile(position.X, position.Y-12, speedX, speedY, type, damage, knockBack, player.whoAmI);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Rampage == true && type == 14)
+			if (modPlayer.Rampage == true && type == 14)
 			{
 				type = mod.ProjectileType("Chloroshard");
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Rampage == true && type == 1)
+			if (modPlayer.Rampage == true && type == 1)
 			{
 				type = mod.ProjectileType("ChloroshardArrow");
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.melee && Main.rand.NextBool(20))
+			if (modPlayer.DeltaRune && item.melee && Main.rand.NextBool(20))
 			{
 				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("RedWave"), 1111, 1f, player.whoAmI);
 			}
-			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DeltaRune && item.magic && Main.rand.NextBool(30))
+			if (modPlayer.DeltaRune && item.magic && Main.rand.NextBool(30))
 			{
 				float numberProjectiles = 9;
 				float rotation = MathHelper.ToRadians(8);
@@ -489,12 +505,155 @@ namespace AlchemistNPC.Items
 					Projectile.NewProjectile(vector.X, vector.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("MM"), 1337, knockBack, player.whoAmI);
 				}
 			}
+			if (modPlayer.Barrage)
+			{
+				Main.PlaySound(SoundID.Item91.WithVolume(.6f), player.position);
+				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
+				int p = Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("EnergyBall"), item.damage/5, 1f, player.whoAmI);
+				if (item.useTime > 10)
+				{
+					Vector2 perturbedSpeed2 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(4));
+					Vector2 perturbedSpeed3 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(4));
+					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed2.X, perturbedSpeed2.Y, mod.ProjectileType("EnergyBall"), item.damage/4, 1f, player.whoAmI);
+					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed3.X, perturbedSpeed3.Y, mod.ProjectileType("EnergyBall"), item.damage/4, 1f, player.whoAmI);
+				}
+			}
 			return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 		}
 		
 		public override bool UseItem(Item item, Player player)
 		{
 			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+			if (modPlayer.Barrage && item.damage > 0 && Main.GameUpdateCount % 6 == 0)
+			{
+				Main.PlaySound(SoundID.Item91.WithVolume(.6f), player.position);
+				float num1 = 9f;
+				Vector2 vector2 = new Vector2(player.position.X + (float)player.width * 0.5f, player.position.Y + (float)player.height * 0.5f);
+				float f1 = (float)Main.mouseX + Main.screenPosition.X - vector2.X;
+				float f2 = (float)Main.mouseY + Main.screenPosition.Y - vector2.Y;
+				if ((double)player.gravDir == -1.0)
+					f2 = Main.screenPosition.Y + (float)Main.screenHeight - (float)Main.mouseY - vector2.Y;
+				float num4 = (float)Math.Sqrt((double)f1 * (double)f1 + (double)f2 * (double)f2);
+				float num5;
+				if (float.IsNaN(f1) && float.IsNaN(f2) || (double)f1 == 0.0 && (double)f2 == 0.0)
+				{
+					f1 = (float)player.direction;
+					f2 = 0.0f;
+					num5 = num1;
+				}
+				else
+					num5 = num1 / num4;
+				float SpeedX = f1 * num5;
+				float SpeedY = f2 * num5;
+				Vector2 perturbedSpeed = new Vector2(SpeedX, SpeedY).RotatedByRandom(MathHelper.ToRadians(5));
+				Projectile.NewProjectile(vector2.X, vector2.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("EnergyBall"), item.damage/5, 1f, player.whoAmI);
+			}
+			if (item.type == 1991 || item.type == 3183)
+			{
+				for (int v = 0; v < 200; ++v)
+				{
+					NPC npc = Main.npc[v];
+					if (npc.active && npc.townNPC)
+					{
+						if (AlchemistNPC.modConfiguration.CatchNPC)
+						{
+							if (npc.type == mod.NPCType("Alchemist"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("AlchemistHorcrux");
+							}
+							if (npc.type == mod.NPCType("Brewer"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("BrewerHorcrux");
+							}
+							if (npc.type == mod.NPCType("Architect"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("ArchitectHorcrux");
+							}
+							if (npc.type == mod.NPCType("Jeweler"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("JewelerHorcrux");
+							}
+							if (npc.type == mod.NPCType("Operator"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("APMC");
+							}
+							if (npc.type == mod.NPCType("OtherworldlyPortal"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("NotesBook");
+							}
+							if (npc.type == mod.NPCType("Explorer"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("RealityPiercer");
+							}
+							if (npc.type == mod.NPCType("Musician"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("MusicianHorcrux");
+							}
+							if (npc.type == mod.NPCType("Tinkerer"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("TinkererHorcrux");
+							}
+						}
+						if (!AlchemistNPC.modConfiguration.CatchNPC)
+						{
+							if (npc.type == mod.NPCType("Alchemist"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Brewer"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Architect"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Jeweler"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Operator"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("OtherworldlyPortal"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Explorer"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Musician"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Tinkerer"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+						}
+					}
+				}
+			}
 			if (modPlayer.DeltaRune && item.melee && Main.rand.NextBool(100))
 			{
 				float num1 = 9f;
@@ -628,14 +787,34 @@ namespace AlchemistNPC.Items
             string AbyssionTheForgottenOne = Language.GetTextValue("Mods.AlchemistNPC.AbyssionTheForgottenOne");
             string TheRagnarok = Language.GetTextValue("Mods.AlchemistNPC.TheRagnarok");
 			
+			//ElementsAwoken
+			string Wasteland = Language.GetTextValue("Mods.AlchemistNPC.Wasteland");
+			string Infernace = Language.GetTextValue("Mods.AlchemistNPC.Infernace");
+			string ScourgeFighter = Language.GetTextValue("Mods.AlchemistNPC.ScourgeFighter");
+			string Regaroth = Language.GetTextValue("Mods.AlchemistNPC.Regaroth");
+			string TheCelestials = Language.GetTextValue("Mods.AlchemistNPC.TheCelestials");
+			string Permafrost = Language.GetTextValue("Mods.AlchemistNPC.Permafrost");
+			string Obsidious = Language.GetTextValue("Mods.AlchemistNPC.Obsidious");
+			string Aqueous = Language.GetTextValue("Mods.AlchemistNPC.Aqueous");
+			string TempleKeepers = Language.GetTextValue("Mods.AlchemistNPC.TempleKeepers");
+			string Guardian = Language.GetTextValue("Mods.AlchemistNPC.Guardian");
+			string Volcanox = Language.GetTextValue("Mods.AlchemistNPC.Volcanox");
+			string VoidLevi = Language.GetTextValue("Mods.AlchemistNPC.VoidLevi");
+			string Azana = Language.GetTextValue("Mods.AlchemistNPC.Azana");
+			string Ancients = Language.GetTextValue("Mods.AlchemistNPC.Ancients");
+			
 			//SacredTools
+			string Decree = Language.GetTextValue("Mods.AlchemistNPC.Decree");
 			string FlamingPumpkin = Language.GetTextValue("Mods.AlchemistNPC.FlamingPumpkin");
             string Jensen = Language.GetTextValue("Mods.AlchemistNPC.Jensen");
+			string Araneas = Language.GetTextValue("Mods.AlchemistNPC.Araneas");
 			string Raynare = Language.GetTextValue("Mods.AlchemistNPC.Raynare");
+			string Primordia = Language.GetTextValue("Mods.AlchemistNPC.Primordia");
             string Abaddon = Language.GetTextValue("Mods.AlchemistNPC.Abaddon");
             string Araghur = Language.GetTextValue("Mods.AlchemistNPC.Araghur");
             string Lunarians = Language.GetTextValue("Mods.AlchemistNPC.Lunarians");
             string Challenger = Language.GetTextValue("Mods.AlchemistNPC.Challenger");
+			string Spookboi = Language.GetTextValue("Mods.AlchemistNPC.Spookboi");
 			
 			//SpiritMod
 			string Scarabeus = Language.GetTextValue("Mods.AlchemistNPC.Scarabeus");
@@ -1091,8 +1270,101 @@ namespace AlchemistNPC.Items
 				tooltips.Insert(1,line);
 				}
 			}
+			if (ModLoader.GetMod("ElementsAwoken") != null)
+			{
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("WastelandBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Wasteland", Wasteland);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("InfernaceBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Infernace", Infernace);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("ScourgeFighterBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "ScourgeFighter", ScourgeFighter);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("RegarothBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Regaroth", Regaroth);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("TheCelestialBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "TheCelestials", TheCelestials);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("PermafrostBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Permafrost", Permafrost);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("ObsidiousBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Obsidious", Obsidious);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("AqueousBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Aqueous", Aqueous);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("TempleKeepersBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "TempleKeepers", TempleKeepers);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("GuardianBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Guardian", Guardian);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("VolcanoxBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Volcanox", Volcanox);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("VoidLeviathanBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "VoidLevi", VoidLevi);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("AzanaBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Azana", Azana);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("AncientsBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Ancients", Ancients);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+			}
 			if (ModLoader.GetMod("SacredTools") != null)
 			{
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("DecreeBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Decree", Decree);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
 				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("PumpkinBag")))
 				{
 				TooltipLine line = new TooltipLine(mod, "FlamingPumpkin", FlamingPumpkin);
@@ -1105,9 +1377,21 @@ namespace AlchemistNPC.Items
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 				}
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("AraneasBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Araneas", Araneas);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
 				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("HarpyBag2")))
 				{
 				TooltipLine line = new TooltipLine(mod, "Raynare", Raynare);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("PrimordiaBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Primordia", Primordia);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 				}
@@ -1132,6 +1416,12 @@ namespace AlchemistNPC.Items
 				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("ChallengerBag")))
 				{
 				TooltipLine line = new TooltipLine(mod, "Challenger", Challenger);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("SacredTools").ItemType("SpookboiBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "Spookboi", Spookboi);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 				}

@@ -104,7 +104,7 @@ namespace AlchemistNPC.Projectiles
 				Main.dust[index3].velocity *= 3f;
 				Main.dust[index3].noGravity = true;
 			}
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("ExplosionDummyL"), projectile.damage, projectile.knockBack, player.whoAmI);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("ExplosionDummyL"), projectile.damage+(projectile.damage/3), projectile.knockBack, player.whoAmI);
 		}
 		
 		public bool IsStickingToTarget {

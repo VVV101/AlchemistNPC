@@ -41,6 +41,15 @@ namespace AlchemistNPC.Items.Weapons
 			+"\n88%概率不消耗弹药");
         }
 		
+		public override void UpdateInventory(Player player)
+		{
+			if (!AlchemistNPCWorld.foundMP7)
+			{
+				AlchemistNPCWorld.foundMP7 = true;
+				if (Main.netMode == NetmodeID.Server) NetMessage.SendData(MessageID.WorldData);
+			}
+		}
+		
 		public override int ChoosePrefix (UnifiedRandom rand)
 		{
 			return mod.PrefixType("Shining");

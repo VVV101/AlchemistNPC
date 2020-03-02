@@ -155,14 +155,17 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				case 0:
 				type = mod.ProjectileType("FA1");
+				damage /= 2;
 				break;
 
 				case 1:
 				type = mod.ProjectileType("FA2");
+				damage /= 2;
 				break;
 				
 				case 2:
 				type = mod.ProjectileType("FA3");
+				damage /= 2;
 				break;
 				
 				case 3:

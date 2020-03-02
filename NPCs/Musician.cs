@@ -907,6 +907,9 @@ namespace AlchemistNPC.NPCs
 			}
 			if (S3)
 			{
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BoomBox"));
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
 				if (Main.hardMode)
 				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("FieldsMusicBox"));

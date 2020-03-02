@@ -107,7 +107,7 @@ namespace AlchemistNPC.Items.Weapons
 			target.AddBuff(mod.BuffType("CurseOfLight"), 300);
 			Vector2 vel1 = new Vector2(0, 0);
 			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/2, 0, Main.myPlayer);
+			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage, 0, Main.myPlayer);
 		}
 		
 		public override int ChoosePrefix (UnifiedRandom rand)

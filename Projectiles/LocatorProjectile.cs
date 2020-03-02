@@ -1,46 +1,45 @@
+using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
+using Terraria.Enums;
 namespace AlchemistNPC.Projectiles
 {
 	class LocatorProjectile : ModProjectile
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 4;
-			projectile.height = 4;
+			projectile.light = 0.75f;
+			projectile.width = 22;
+			projectile.height = 28;
 			// NO! projectile.aiStyle = 48;
 			projectile.friendly = false;
 			projectile.hostile = false;
-			projectile.extraUpdates = 100;
-			projectile.timeLeft = 100; // lowered from 300
+			projectile.timeLeft = 61; // lowered from 300
 			projectile.penetrate = -1;
 			projectile.tileCollide = false;
 		}
 
-		// Note, this Texture is actually just a blank texture, FYI.
-		public override string Texture => "Terraria/Projectile_" + ProjectileID.ShadowBeamFriendly;
-
 		public override void AI()
 		{
-			projectile.localAI[0] += 1f;
-			if (projectile.localAI[0] > 8f)
+			int NPCnumber = (int)projectile.ai[0];
+			Vector2 npcpos = new Vector2((int)Main.npc[NPCnumber].Center.X, (int)Main.npc[NPCnumber].Center.Y);
+			Player player = Main.player[projectile.owner];
+
+			if (projectile.owner == Main.myPlayer) // Multiplayer support
 			{
-				int i = 0;
-				if (Main.rand.NextBool(4))
-				{
-					Vector2 projectilePosition = projectile.position;
-					projectilePosition -= projectile.velocity * ((float)i * 0.25f);
-					projectile.alpha = 255;
-					// Important, changed 173 to 178!
-					int dust = Dust.NewDust(projectilePosition, 1, 1, 178, 0f, 0f, 0, default(Color), 1f);
-					Main.dust[dust].noGravity = true;
-					Main.dust[dust].position = projectilePosition;
-					Main.dust[dust].scale = (float)Main.rand.Next(70, 110) * 0.013f;
-					Main.dust[dust].velocity *= 0.2f;
-				}
+				Vector2 diff = npcpos - player.Center;
+				diff.Normalize();
+				projectile.velocity = diff;
+				projectile.direction = npcpos.X > player.Center.X ? 1 : -1;
+				projectile.netUpdate = true;
 			}
+			projectile.position = player.position + projectile.velocity * 45f;
+			projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(90f);
 		}
 	}
 }

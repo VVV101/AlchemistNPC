@@ -49,7 +49,8 @@ namespace AlchemistNPC.Items.Armor
 
 		public override void UpdateArmorSet(Player player)
 		{
-            ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).PGSWear = true;
+			AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+            modPlayer.PGSWear = true;
             string PGSetBonus = Language.GetTextValue("Mods.AlchemistNPC.PGSetBonus");
 			player.setBonus = PGSetBonus;
             player.statDefense += 56;
@@ -58,7 +59,7 @@ namespace AlchemistNPC.Items.Armor
             player.rangedCrit += 15;
 			player.meleeCrit += 15;
 			player.moveSpeed += 0.50f;
-			player.AddBuff(mod.BuffType("TankComb"), 30);
+			player.AddBuff(mod.BuffType("TankComb"), 2);
 		}
 	}
 }

@@ -66,14 +66,6 @@ namespace AlchemistNPC.Projectiles
 				projectile.velocity = (10 * projectile.velocity + move) / 11f;
 				AdjustMagnitude(ref projectile.velocity);
 			}
-			if (Main.rand.Next(3) == 0)
-				{
-				Dust dust = Dust.NewDustDirect(projectile.position, projectile.height, projectile.width, mod.DustType("Hate"),
-				projectile.velocity.X * .2f, projectile.velocity.Y * .2f, 200, Scale: 1.2f);
-				dust.velocity += projectile.velocity * 0.3f;
-				dust.velocity *= 0.2f;
-				dust.noGravity = true;
-				}
 		}
 
 		private void AdjustMagnitude(ref Vector2 vector)
