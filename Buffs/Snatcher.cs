@@ -96,10 +96,12 @@ namespace AlchemistNPC.Buffs
 			if (modPlayer.SnatcherCounter >= 12500)
 			{
 				tip += "\nReflects 1000% damage taken back to its owner";
+				tipch += "\n反弹10倍伤害";
 			}
 			if (modPlayer.SnatcherCounter >= 15000)
 			{
 				tip += "\nSupports you by attacking nearby enemies with shadow bursts\nDamage is calculated depending from current weapon in hands";
+				tipch += "\n让你可以通过暗影爆发攻击附近的敌人\n伤害由当前手持武器决定";
 			}
 			
 			if(Language.ActiveCulture == GameCulture.Chinese)

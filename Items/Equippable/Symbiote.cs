@@ -27,7 +27,7 @@ namespace AlchemistNPC.Items.Equippable
 				DisplayName.AddTranslation(GameCulture.Russian, "Симбионт");
             Tooltip.AddTranslation(GameCulture.Russian, "Усиливает регенерацию\nУменьшает откат зелий лечения\nУвеличивает период неуязвимости после получения урона\nИмеет 2 состояния (Боевое и Защитное)\nБоевое состояние увеличивает скорость ближнего боя на 20%\nАктивируется когда здоровье >50%\nЗащитное состояние сильно усиливает регенерацию, повышает защиту и поглощение урона\nАктивируется когда здоровье <50%");
 			DisplayName.AddTranslation(GameCulture.Chinese, "共生体");
-			Tooltip.AddTranslation(GameCulture.Chinese, "增加10%所有伤害和暴击率\n减少生命药水冷却时间\n增加受伤无敌帧\n拥有两种模式 (攻击/防御)\n攻击模式下增加20%攻击速度\n生命值高于50%时激活\n防御模式下极大增加生命回复, 防御和伤害减免\n生命值低于50%时激活");
+			Tooltip.AddTranslation(GameCulture.Chinese, "减少生命药水冷却时间\n增加受伤无敌帧\n拥有两种模式 (攻击/防御)\n攻击模式下增加10-20%攻击速度\n生命值高于50%时激活\n防御模式下极大增加生命回复, 防御和伤害减免\n生命值低于50%时激活");
         }
 	
 		public override void SetDefaults()

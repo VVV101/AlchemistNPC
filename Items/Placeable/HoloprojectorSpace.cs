@@ -14,8 +14,8 @@ namespace AlchemistNPC.Items.Placeable
 			+"\nNo visual/music effect will appear");
 			DisplayName.AddTranslation(GameCulture.Russian, "Голопроектор ''Космос''");
             Tooltip.AddTranslation(GameCulture.Russian, "Фиксирует биом Космос когда размещён\nНикаких визуальных эффектов или музыки не появится");
-			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''腐化''");
-			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为腐化");
+			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''太空''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为太空");
         }
 
 		public override void SetDefaults()

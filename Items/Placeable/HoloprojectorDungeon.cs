@@ -13,8 +13,8 @@ namespace AlchemistNPC.Items.Placeable
 			Tooltip.SetDefault("Forces biome state to Dungeon while placed");
 			DisplayName.AddTranslation(GameCulture.Russian, "Голопроектор ''Данж''");
             Tooltip.AddTranslation(GameCulture.Russian, "Фиксирует нахождение в Данже когда размещён");
-			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''神圣''");
-			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为神圣");
+			DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''地牢''");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置时强制把地形状态变为地牢");
         }
 
 		public override void SetDefaults()

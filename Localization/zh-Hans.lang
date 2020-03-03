@@ -42,6 +42,9 @@ Common.AlchemistNPCLiteTooltip=是, 以推送消息. 默认为是
 Common.Revengeancemode=灾厄复仇模式价格调整
 Common.RevengeancemodeTooltip=是, 灾厄复仇模式下药水的价格将更高. 默认为是
 
+Common.CatcheableNPCToggle=模组NPC可抓捕开关
+Common.CatcheableNPCToggleTooltip=是, 让模组NPC可被抓捕. 默认为是
+
 Common.Potionspricemultiplier=多人药水价格加倍
 Common.PotionspricemultiplierTooltip=提升价格倍率. 默认为1
 
@@ -65,6 +68,15 @@ Prefix.Arcana=幽秘
 Prefix.Demiurgic=创世
 Prefix.Immortal=不朽
 Prefix.Primal=原初
+
+Messages
+
+Common.RainStopped=雨停了
+Common.RainStarted=开始下雨
+Common.NightTimeSet=时间设置成夜晚
+Common.DayTimeSet=时间设置成白天
+Common.SandstormStopped=沙尘暴停止了
+Common.SandstormStarted=沙尘暴开始了
 
 AntiBuffMode
 

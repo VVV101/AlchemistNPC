@@ -18,7 +18,9 @@ namespace AlchemistNPC.Items.Misc
 			Tooltip.SetDefault("While this is in your inventory, your last inventory slot plays music boxes passively");
 			DisplayName.AddTranslation(GameCulture.Russian, "Бумбокс");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, ваш последний слот инвентаря позволяет пассивно играть музыкальным шкатулкам");
-        }
+			DisplayName.AddTranslation(GameCulture.Chinese, "Boom音乐盒");
+            Tooltip.AddTranslation(GameCulture.Chinese, "放在你的背包里时，你的最后一个背包栏可以播放音乐盒");
+    }
 
 		public override void SetDefaults()
 		{
