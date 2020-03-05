@@ -11,6 +11,7 @@ v9.2
 -Added support to Elements Awoken mod for Operator. Fixed some other mod's errors.
 -Added support for Mod of Redemption for Operator.
 -Now Paper Tubes may drop from some modded bosses.
+-Now Antibuff mode shouldn't affect buffs with duration less than 30.0001 second.
 -Added afterimages for some projectiles.
 -Added all Broken Hero stuff from Vanilla/Thorium/Spirit/Litho's Armory mods.
 Available after beating Golem.
