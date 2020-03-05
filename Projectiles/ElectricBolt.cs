@@ -1,20 +1,35 @@
-using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using System.Linq;
 
 namespace AlchemistNPC.Projectiles
 {
-	public class MB : ModProjectile
+	public class ElectricBolt : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Magic Bullet");     //The English name of the projectile
-			ProjectileID.Sets.TrailCacheLength[projectile.type] = 10;
+			DisplayName.SetDefault("Electric Bolt");
+			Main.projFrames[projectile.type] = 4;
+			ProjectileID.Sets.TrailCacheLength[projectile.type] = 3;    //The length of old position to be recorded
 			ProjectileID.Sets.TrailingMode[projectile.type] = 0;
+		}
+
+		public override void SetDefaults()
+		{
+			projectile.CloneDefaults(435);
+			aiType = 435;
+			projectile.hostile = false;
+			projectile.friendly = true;
+			projectile.ranged = true; 
+			projectile.timeLeft = 420;
+			projectile.penetrate = 3;
+			projectile.tileCollide = false;
+			projectile.usesLocalNPCImmunity = true;
+			projectile.localNPCHitCooldown = -1;
 		}
 		
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor) {
@@ -28,16 +43,9 @@ namespace AlchemistNPC.Projectiles
             return true;
         }
 
-		public override void SetDefaults()
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			projectile.CloneDefaults(ProjectileID.MoonlordBullet);
-			projectile.tileCollide = false;
-			aiType = ProjectileID.MoonlordBullet;
-		}
-		
-		public override void AI()
-		{
-		Lighting.AddLight(projectile.Center, ((255 - projectile.alpha) * 0.9f) / 255f, ((255 - projectile.alpha) * 0.1f) / 255f, ((255 - projectile.alpha) * 0.3f) / 255f);
+			target.AddBuff(mod.BuffType("Electrocute"), 300);
 		}
 	}
 }

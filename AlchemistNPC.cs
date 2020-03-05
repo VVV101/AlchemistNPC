@@ -1115,12 +1115,60 @@ namespace AlchemistNPC
 			text = CreateTranslation("Ancients");
             text.SetDefault("The Ancients Treasure Bag");
             AddTranslation(text);
+			
+			//Redemption
+			text = CreateTranslation("KingChicken");
+            text.SetDefault("The Mighty King Chicken Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("ThornBane");
+            text.SetDefault("Thorn, Bane of the Forest Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("TheKeeper");
+            text.SetDefault("The Keeper Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("XenoCrystal");
+            text.SetDefault("Xenomite Crystal Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("IEye");
+            text.SetDefault("Infected Eye Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("KingSlayer");
+            text.SetDefault("King Slayer III Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("V1");
+            text.SetDefault("Vlitch Cleaver Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("V2");
+            text.SetDefault("Vlitch Gigipede Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("V3");
+            text.SetDefault("Omega Obliterator Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("PZ");
+            text.SetDefault("Patient Zero Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("ThornRematch");
+            text.SetDefault("Thorn, Bane of the Forest Rematch Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Nebuleus");
+            text.SetDefault("Nebuleus, Angel of the Cosmos Treasure Bag");
+            AddTranslation(text);
 
 			 //SacredTools
 			text = CreateTranslation("Decree");
             text.SetDefault("The Decree Treasure Bag");
 	    	text.AddTranslation(GameCulture.Russian, "Сумка Декри");
-			text.AddTranslation(GameCulture.Chinese, "焚炎南瓜宝藏袋");
             AddTranslation(text);
 			 
             text = CreateTranslation("FlamingPumpkin");

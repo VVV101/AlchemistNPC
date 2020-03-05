@@ -23,11 +23,14 @@ namespace AlchemistNPC.Projectiles
 			projectile.magic = false;
 			projectile.thrown = true;
 			projectile.aiStyle = 14;
+			projectile.timeLeft = 360;
 			aiType = 261;
 		}
 		
 		public override void AI()
 		{
+			if (projectile.timeLeft > 350) projectile.tileCollide = false;
+			else projectile.tileCollide = true;
 		}
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)
