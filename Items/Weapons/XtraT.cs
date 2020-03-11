@@ -68,12 +68,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			Projectile.NewProjectile(position.X, position.Y+10, speedX, speedY, type, damage, knockBack, player.whoAmI);
 			Main.PlaySound(SoundID.Item12.WithVolume(.5f), position);
-			int proj = Projectile.NewProjectile(position.X, position.Y, speedX*1.5f, speedY*1.5f, 435, damage*3, knockBack, player.whoAmI);
-			Main.projectile[proj].hostile = false;
-			Main.projectile[proj].friendly = true;
-			Main.projectile[proj].ranged = true;
-			Main.projectile[proj].penetrate = 10;
-			Main.projectile[proj].tileCollide = false;
+			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("ElectricBolt"), damage*3, knockBack, player.whoAmI);
 			Projectile.NewProjectile(position.X, position.Y-10, speedX, speedY, type, damage, knockBack, player.whoAmI);
 			return false;
 		}

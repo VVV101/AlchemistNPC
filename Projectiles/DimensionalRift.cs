@@ -28,15 +28,6 @@ namespace AlchemistNPC.Projectiles
 			aiType = 261;
 		}
 		
-		public override void AI()
-		{
-			if (projectile.timeLeft <= 290)
-			{
-				projectile.width = 64;
-				projectile.height = 64;
-			}
-		}
-		
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
 			projectile.Kill();

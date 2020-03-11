@@ -9,11 +9,14 @@ The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
 v9.2
 -Added support to Elements Awoken mod for Operator. Fixed some other mod's errors.
+-Added support for Mod of Redemption for Operator.
 -Now Paper Tubes may drop from some modded bosses.
+-Now Antibuff mode shouldn't affect buffs with duration less than 30.0001 second.
+-Added afterimages for some projectiles.
 -Added all Broken Hero stuff from Vanilla/Thorium/Spirit/Litho's Armory mods.
 Available after beating Golem.
 -Added Solar Veil to Operator's shop.
-Available after beating Golem.
+Available after beating Plantera.
 -Added Boom Box to Musician's 3rd shop.
 Allows to passively play music boxes placed in the last inventory slot.
 -Added Armor's module "Barrage" accessory. Support any your attack with some energy balls.
@@ -26,7 +29,9 @@ Now it pierces Ichor immunity after beating Plantera, inflicts Betsy's Curse aft
 -Now Paradise Lost Wings actually increases run speed.
 -Reworked Symbiote accessory. Its stats now depending on world state.
 Cannot be crafted anymore. Can drop at the end of Blood Moon with 20%.
--Resprites for both Cera Sumat legendaries and new Explorer sprite.
+-Resprites for both Cera Sumat legendaries (by Logar8521#0059) and new Explorer sprite.
+-Fixed Chaos Bomb hitbox colliding with ground too early.
+-Fixed XtraT's and Enchanced Shroomite's electric bolts being able to hurt player.
 -Fixed mod's NPC summoning items not working.
 -Fixed Materia Transmutators not working as Thorium Anvil and Arcane Armor Fabricator.
 -Fixed cycled sound of Blinker accessory.

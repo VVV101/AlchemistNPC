@@ -1097,6 +1097,59 @@ namespace AlchemistNPC.NPCs
         get { return ElementsAwoken.MyWorld.downedAncients; }
         }
 		
+		public bool ReDownedChicken
+		{
+        get { return Redemption.RedeWorld.downedKingChicken; }
+        }
+		public bool ReDownedThorn
+		{
+        get { return Redemption.RedeWorld.downedThorn; }
+        }
+		public bool ReDownedKeeper
+		{
+        get { return Redemption.RedeWorld.downedTheKeeper; }
+        }
+		public bool ReDownedCrystal
+		{
+        get { return Redemption.RedeWorld.downedXenomiteCrystal; }
+        }
+		public bool ReDownedIEye
+		{
+        get { return Redemption.RedeWorld.downedInfectedEye; }
+        }
+		public bool ReDownedKingSlayer
+		{
+        get { return Redemption.RedeWorld.downedSlayer; }
+        }
+		public bool ReDownedVCleaver
+		{
+        get { return Redemption.RedeWorld.downedVlitch1; }
+        }
+		public bool ReDownedVGigipede
+		{
+        get { return Redemption.RedeWorld.downedVlitch2; }
+        }
+		public bool ReDownedObliterator
+		{
+        get { return Redemption.RedeWorld.downedVlitch3; }
+        }
+		public bool ReDownedPZero
+		{
+        get { return Redemption.RedeWorld.downedPatientZero; }
+        }
+		public bool ReDownedThornRe
+		{
+        get { return Redemption.RedeWorld.downedThornPZ; }
+        }
+		public bool ReDownedGolemRe
+		{
+        get { return Redemption.RedeWorld.downedEaglecrestGolemPZ; }
+        }
+		public bool ReDownedNebuleus
+		{
+        get { return Redemption.RedeWorld.downedNebuleus; }
+        }
+		
 		public override void NPCLoot()
 		{
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("APMC"));
@@ -1433,7 +1486,7 @@ namespace AlchemistNPC.NPCs
 						shop.item[nextSlot].shopCustomPrice = 30000;
 						nextSlot++;
 					}
-					if (NPC.downedGolemBoss)
+					if (NPC.downedPlantBoss)
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("SolarVeil"));
 						shop.item[nextSlot].shopCustomPrice = 50000;
@@ -3058,6 +3111,93 @@ namespace AlchemistNPC.NPCs
 							nextSlot++;
 							}
 						}
+						if (ModLoader.GetMod("Redemption") != null)
+						{
+							if (ReDownedChicken)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("KingChickenBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(4);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (ReDownedThorn)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("ThornBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(6);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (ReDownedKeeper)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("TheKeeperBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(12);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (ReDownedCrystal)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("XenomiteCrystalBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(18);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier1ID;
+							nextSlot++;
+							}
+							if (ReDownedIEye)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("InfectedEyeBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier2ID;
+							nextSlot++;
+							}
+							if (ReDownedKingSlayer)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("SlayerBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+							if (ReDownedVCleaver)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("VlitchCleaverBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(20);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier3ID;
+							nextSlot++;
+							}
+							if (ReDownedVGigipede)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("VlitchGigipedeBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(12);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier4ID;
+							nextSlot++;
+							}
+							if (ReDownedObliterator)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("OmegaOblitBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(5);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
+							nextSlot++;
+							}
+							if (ReDownedPZero)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("PZBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(10);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
+							nextSlot++;
+							}
+							if (ReDownedThornRe && ReDownedGolemRe)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("ThornPZBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(15);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
+							nextSlot++;
+							}
+							if (ReDownedNebuleus)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("NebBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(25);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier5ID;
+							nextSlot++;
+							}
+						}
 					}
 				}
 				if (!AlchemistNPC.modConfiguration.CoinsDrop)
@@ -3147,6 +3287,81 @@ namespace AlchemistNPC.NPCs
 							if (EADownedAncients)
 							{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("AncientsBag"));
+							shop.item[nextSlot].shopCustomPrice = 10000000;
+							nextSlot++;
+							}
+						}
+						if (ModLoader.GetMod("Redemption") != null)
+						{
+							if (ReDownedChicken)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("KingChickenBag"));
+							shop.item[nextSlot].shopCustomPrice = 150000;
+							nextSlot++;
+							}
+							if (ReDownedThorn)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("ThornBag"));
+							shop.item[nextSlot].shopCustomPrice = 250000;
+							nextSlot++;
+							}
+							if (ReDownedKeeper)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("TheKeeperBag"));
+							shop.item[nextSlot].shopCustomPrice = 350000;
+							nextSlot++;
+							}
+							if (ReDownedCrystal)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("XenomiteCrystalBag"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+							}
+							if (ReDownedIEye)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("InfectedEyeBag"));
+							shop.item[nextSlot].shopCustomPrice = 1000000;
+							nextSlot++;
+							}
+							if (ReDownedKingSlayer)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("SlayerBag"));
+							shop.item[nextSlot].shopCustomPrice = 1500000;
+							nextSlot++;
+							}
+							if (ReDownedVCleaver)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("VlitchCleaverBag"));
+							shop.item[nextSlot].shopCustomPrice = 2000000;
+							nextSlot++;
+							}
+							if (ReDownedVGigipede)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("VlitchGigipedeBag"));
+							shop.item[nextSlot].shopCustomPrice = 3000000;
+							nextSlot++;
+							}
+							if (ReDownedObliterator)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("OmegaOblitBag"));
+							shop.item[nextSlot].shopCustomPrice = 5000000;
+							nextSlot++;
+							}
+							if (ReDownedPZero)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("PZBag"));
+							shop.item[nextSlot].shopCustomPrice = 6000000;
+							nextSlot++;
+							}
+							if (ReDownedThornRe && ReDownedGolemRe)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("ThornPZBag"));
+							shop.item[nextSlot].shopCustomPrice = 7000000;
+							nextSlot++;
+							}
+							if (ReDownedNebuleus)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("NebBag"));
 							shop.item[nextSlot].shopCustomPrice = 10000000;
 							nextSlot++;
 							}

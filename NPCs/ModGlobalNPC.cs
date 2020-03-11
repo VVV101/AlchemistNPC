@@ -1276,6 +1276,17 @@ namespace AlchemistNPC.NPCs
 					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("AncientWyrmHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"));
 					if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheGuardianFly"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 3);
 				}
+				if (ModLoader.GetMod("Redemption") != null)
+				{
+					if (npc.type == (ModLoader.GetMod("Redemption").NPCType("KingChicken"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("Redemption").NPCType("Thorn"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
+					if (npc.type == (ModLoader.GetMod("Redemption").NPCType("TheKeeper"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
+					if (npc.type == (ModLoader.GetMod("Redemption").NPCType("XenomiteCrystalPhase2"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 3);
+					if (npc.type == (ModLoader.GetMod("Redemption").NPCType("InfectedEye"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 2);
+					if (npc.type == (ModLoader.GetMod("Redemption").NPCType("KSCharge"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 3);
+					if (npc.type == (ModLoader.GetMod("Redemption").NPCType("VlitchCleaver"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube2"), 4);
+					if (npc.type == (ModLoader.GetMod("Redemption").NPCType("VlitchWormHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
+				}
 				if (ModLoader.GetMod("SacredTools") != null)
 				{
 					if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("DecreeRun"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
@@ -1419,6 +1430,22 @@ namespace AlchemistNPC.NPCs
 							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("ElderShadeWyrmHead"))) {number = Main.rand.Next(8,12); tier = 5;}
 							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Azana"))) {number = Main.rand.Next(14,17); tier = 5;}
 							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("AncientAmalgam"))) {number = Main.rand.Next(25,30); tier = 5;}
+						}
+						if (ModLoader.GetMod("Redemption") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("KingChicken"))) {number = Main.rand.Next(1,2); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("Thorn"))) {number = Main.rand.Next(3,6); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("TheKeeper"))) {number = Main.rand.Next(5,8); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("XenomiteCrystalPhase2"))) {number = Main.rand.Next(8,11); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("InfectedEye"))) {number = Main.rand.Next(4,7); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("KSEntrance"))) {number = Main.rand.Next(9,12); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("VlitchCleaver"))) {number = Main.rand.Next(1,2); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("VlitchWormHead"))) {number = Main.rand.Next(6,9); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("OmegaOblitDamaged"))) {number = Main.rand.Next(2,4); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("PatientZero"))) {number = Main.rand.Next(5,8); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("EaglecrestGolemPZ"))) {number = Main.rand.Next(6,9); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("ThornPZ"))) {number = Main.rand.Next(6,9); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("BigNebuleus"))) {number = Main.rand.Next(15,20); tier = 5;}
 						}
 						if (ModLoader.GetMod("SacredTools") != null)
 						{

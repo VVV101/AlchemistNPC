@@ -14,16 +14,21 @@ namespace AlchemistNPC.Items.Equippable
 	public class Symbiote : ModItem
 	{
 		public static int p = 5;
+		public static int r = 2;
+		public static int d = 2;
+		public static int e = 2;
+		public static int s = 10;
+		public static bool show = false;
+		public static bool SS = false;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Symbiote");
 			Tooltip.SetDefault("Lowers cooldown of healing potions"
 				+ "\nIncreases length of invincibility after taking hit"
-				+ "\nHas two states (Offense and Defense)"
+				+ "\nHas two states (Offense(>50% HP) and Defense (<50% HP))"
 				+ "\nOffensive state increases attack speed by 10-20%"
-				+ "\nActivates while you have > 50% of HP"
 				+ "\nDefensive state greatly increases regeneration, defense and damage reduction"
-				+ "\nActivates while you have < 50% of HP");
+				+ "\nStats boosts are shown when accessory is equipped");
 				DisplayName.AddTranslation(GameCulture.Russian, "Симбионт");
             Tooltip.AddTranslation(GameCulture.Russian, "Усиливает регенерацию\nУменьшает откат зелий лечения\nУвеличивает период неуязвимости после получения урона\nИмеет 2 состояния (Боевое и Защитное)\nБоевое состояние увеличивает скорость ближнего боя на 20%\nАктивируется когда здоровье >50%\nЗащитное состояние сильно усиливает регенерацию, повышает защиту и поглощение урона\nАктивируется когда здоровье <50%");
 			DisplayName.AddTranslation(GameCulture.Chinese, "共生体");
@@ -48,10 +53,15 @@ namespace AlchemistNPC.Items.Equippable
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			Item.potionDelay = 2100;
+			show = true;
 			
 			if (!Main.hardMode)
 			{
 				p = 5;
+				r = 2;
+				d = 2;
+				e = 5;
+				s = 10;
 				player.allDamage += 0.05f;
 				player.lifeRegen += 2;
 				player.statDefense += 2;
@@ -60,6 +70,10 @@ namespace AlchemistNPC.Items.Equippable
 			if (Main.hardMode && !NPC.downedMoonlord)
 			{
 				p = 7;
+				r = 4;
+				d = 4;
+				e = 7;
+				s = 15;
 				player.allDamage += 0.07f;
 				player.lifeRegen += 4;
 				player.statDefense += 4;
@@ -68,6 +82,10 @@ namespace AlchemistNPC.Items.Equippable
 			if (NPC.downedMoonlord)
 			{
 				p = 10;
+				r = 6;
+				d = 6;
+				e = 10;
+				s = 20;
 				player.allDamage += 0.1f;
 				player.lifeRegen += 6;
 				player.statDefense += 6;
@@ -82,27 +100,38 @@ namespace AlchemistNPC.Items.Equippable
 			{
 				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Symbiote = true;
 				player.AddBuff(mod.BuffType("SymbOff"), 2, true);
+				SS = true;
 			}
 			if (player.statLife < player.statLifeMax2/2)
 			{
 				player.AddBuff(mod.BuffType("SymbDef"), 2, true);
+				SS = false;
 				if (!Main.hardMode)
 				{
 					player.lifeRegen += 3;
 					player.statDefense += 8;
 					player.endurance += 0.05f;
+					r += 3;
+					d += 8;
+					e += 5;
 				}
 				if (Main.hardMode && !NPC.downedMoonlord)
 				{
 					player.lifeRegen += 6;
 					player.statDefense += 11;
 					player.endurance += 0.08f;
+					r += 6;
+					d += 11;
+					e += 8;
 				}
 				if (NPC.downedMoonlord)
 				{
 					player.lifeRegen += 9;
 					player.statDefense += 14;
 					player.endurance += 0.1f;
+					r += 9;
+					d += 14;
+					e += 10;
 				}
 			}
 			player.longInvince = true;
@@ -122,16 +151,32 @@ namespace AlchemistNPC.Items.Equippable
 		
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			if (!item.social)
+			if (!item.social && show)
 			{
 				string text1 = "+" + p + "% damage";
 				string text2 = "+" + p + "% critical strike chance";
+				string text3 = "+" + r + " life regeneration";
+				string text4 = "+" + d + " defense";
+				string text5 = "+" + e + "% damage reduction";
+				string text6 = "+" + s + "% attack speed";
 				TooltipLine line = new TooltipLine(mod, "text1", text1);
 				TooltipLine line2 = new TooltipLine(mod, "text2", text2);
+				TooltipLine line3 = new TooltipLine(mod, "text3", text3);
+				TooltipLine line4 = new TooltipLine(mod, "text4", text4);
+				TooltipLine line5 = new TooltipLine(mod, "text5", text5);
+				TooltipLine line6 = new TooltipLine(mod, "text6", text6);
 				line.overrideColor = Color.LimeGreen;
 				line2.overrideColor = Color.LimeGreen;
-				tooltips.Insert(9,line);
-				tooltips.Insert(10,line2);
+				line3.overrideColor = Color.LimeGreen;
+				line4.overrideColor = Color.LimeGreen;
+				line5.overrideColor = Color.LimeGreen;
+				line6.overrideColor = Color.LimeGreen;
+				tooltips.Insert(8,line);
+				tooltips.Insert(9,line2);
+				tooltips.Insert(10,line3);
+				tooltips.Insert(11,line4);
+				tooltips.Insert(12,line5);
+				if (SS) tooltips.Insert(13,line6);
 			}
 		}
 		

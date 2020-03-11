@@ -830,12 +830,6 @@ namespace AlchemistNPC.NPCs
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
 					}
-					if (NPC.downedMoonlord)
-					{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("CultistMusicbox"));
-						shop.item[nextSlot].shopCustomPrice = 150000;
-						nextSlot++;
-					}
 						if (CalamityModMusicDownedGuardian)
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("ProfanedGuardianMusicbox"));
