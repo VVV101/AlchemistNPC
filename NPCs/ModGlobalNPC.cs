@@ -1567,9 +1567,20 @@ namespace AlchemistNPC.NPCs
 					}
 					if (player.HasBuff(mod.BuffType("Snatcher")) && !npc.friendly && npc.type != 14 && npc.type != 135 && !npc.SpawnedFromStatue && npc.type != 1 && npc.type != 535)
 					{
-						modPlayer.SnatcherCounter++;
-						if (Main.netMode == 2)
-						SyncPlayerVariables(player);
+						if (ModLoader.GetMod("Redemption") != null)
+						{
+							if (npc.type != ModLoader.GetMod("Redemption").NPCType("SludgyBlob")) 
+							{
+								modPlayer.SnatcherCounter++;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
+							}
+						if (ModLoader.GetMod("Redemption") == null)
+						{
+							modPlayer.SnatcherCounter++;
+							if (Main.netMode == 2)
+							SyncPlayerVariables(player);
+						}
 					}
 					if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade") && !npc.SpawnedFromStatue)
 					{

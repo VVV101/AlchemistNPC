@@ -856,15 +856,39 @@ namespace AlchemistNPC.NPCs
                 }
 			if (NPC.downedMechBossAny)
 			{
-			shop.item[nextSlot].SetDefaults (ItemID.FleshCloningVaat);
-			shop.item[nextSlot].shopCustomPrice = 20000;
-			nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.FleshCloningVaat);
+				shop.item[nextSlot].shopCustomPrice = 20000;
+				nextSlot++;
+				if (WorldGen.oreTier2 == 108)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.MythrilAnvil);
+					shop.item[nextSlot].shopCustomPrice = 330000;
+					nextSlot++;
+				}
+				if (WorldGen.oreTier2 == 222)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.OrichalcumAnvil);
+					shop.item[nextSlot].shopCustomPrice = 330000;
+					nextSlot++;
+				}
+				if (WorldGen.oreTier3 == 111)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.AdamantiteForge);
+					shop.item[nextSlot].shopCustomPrice = 500000;
+					nextSlot++;
+				}
+				if (WorldGen.oreTier3 == 223)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.TitaniumForge);
+					shop.item[nextSlot].shopCustomPrice = 500000;
+					nextSlot++;
+				}
 			}
 			if (NPC.downedPlantBoss)
 			{
-			shop.item[nextSlot].SetDefaults (ItemID.LihzahrdFurnace);
-			shop.item[nextSlot].shopCustomPrice = 20000;
-			nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.LihzahrdFurnace);
+				shop.item[nextSlot].shopCustomPrice = 20000;
+				nextSlot++;
 			}
 		}
 		if (Shop == 5)
