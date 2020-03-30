@@ -28,8 +28,8 @@ namespace AlchemistNPC.Interface
 			CoinsConvertPanel.SetPadding(0);
 			CoinsConvertPanel.Left.Set(275f, 0f);
 			CoinsConvertPanel.Top.Set(275f, 0f);
-			CoinsConvertPanel.Width.Set(250f, 0f);
-			CoinsConvertPanel.Height.Set(190f, 0f);
+			CoinsConvertPanel.Width.Set(180f, 0f);
+			CoinsConvertPanel.Height.Set(350f, 0f);
 			CoinsConvertPanel.BackgroundColor = new Color(73, 94, 171);
 
 			CoinsConvertPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
@@ -65,96 +65,87 @@ namespace AlchemistNPC.Interface
 			}
 			
 			UIText text = new UIText(Tier1);
-			text.Left.Set(40, 0f);
+			text.Left.Set(10, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(60, 0f);
 			text.Height.Set(22, 0f);
 			CoinsConvertPanel.Append(text);
 			
 			UIText text2 = new UIText(Tier2);
-			text2.Left.Set(40, 0f);
-			text2.Top.Set(40, 0f);
+			text2.Left.Set(10, 0f);
+			text2.Top.Set(70, 0f);
 			text2.Width.Set(60, 0f);
 			text2.Height.Set(22, 0f);
 			CoinsConvertPanel.Append(text2);
 			
 			UIText text3 = new UIText(Tier3);
-			text3.Left.Set(40, 0f);
-			text3.Top.Set(70, 0f);
+			text3.Left.Set(10, 0f);
+			text3.Top.Set(130, 0f);
 			text3.Width.Set(60, 0f);
 			text3.Height.Set(22, 0f);
 			CoinsConvertPanel.Append(text3);
 			
 			UIText text4 = new UIText(Tier4);
-			text4.Left.Set(40, 0f);
-			text4.Top.Set(100, 0f);
+			text4.Left.Set(10, 0f);
+			text4.Top.Set(190, 0f);
 			text4.Width.Set(60, 0f);
 			text4.Height.Set(22, 0f);
 			CoinsConvertPanel.Append(text4);
 			
 			UIText text5 = new UIText(Tier5);
-			text5.Left.Set(40, 0f);
-			text5.Top.Set(130, 0f);
+			text5.Left.Set(10, 0f);
+			text5.Top.Set(250, 0f);
 			text5.Width.Set(60, 0f);
 			text5.Height.Set(22, 0f);
 			CoinsConvertPanel.Append(text5);
 			
 			UIText text6 = new UIText(Tier6);
-			text6.Left.Set(40, 0f);
-			text6.Top.Set(160, 0f);
+			text6.Left.Set(10, 0f);
+			text6.Top.Set(310, 0f);
 			text6.Width.Set(60, 0f);
 			text6.Height.Set(22, 0f);
 			CoinsConvertPanel.Append(text6);
 
 			Mod mod = AlchemistNPC.Instance;
-			Texture2D buttonBackTexture = mod.GetTexture("Interface/ButtonBack");
+			Texture2D buttonBackTexture = mod.GetTexture("Interface/ButtonUp");
 			UIHoverImageButton playButton = new UIHoverImageButton(buttonBackTexture, BottonText);
-			playButton.Left.Set(10, 0f);
+			playButton.Left.Set(130, 0f);
 			playButton.Top.Set(40, 0f);
 			playButton.Width.Set(22, 0f);
 			playButton.Height.Set(22, 0f);
 			playButton.OnClick += new MouseEvent(PlayButtonClicked1);
 			CoinsConvertPanel.Append(playButton);
 			UIHoverImageButton playButton2 = new UIHoverImageButton(buttonBackTexture, BottonText);
-			playButton2.Left.Set(10, 0f);
-			playButton2.Top.Set(70, 0f);
+			playButton2.Left.Set(130, 0f);
+			playButton2.Top.Set(100, 0f);
 			playButton2.Width.Set(22, 0f);
 			playButton2.Height.Set(22, 0f);
 			playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
 			CoinsConvertPanel.Append(playButton2);
 			UIHoverImageButton playButton3 = new UIHoverImageButton(buttonBackTexture, BottonText);
-			playButton3.Left.Set(10, 0f);
-			playButton3.Top.Set(100, 0f);
+			playButton3.Left.Set(130, 0f);
+			playButton3.Top.Set(160, 0f);
 			playButton3.Width.Set(22, 0f);
 			playButton3.Height.Set(22, 0f);
 			playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
 			CoinsConvertPanel.Append(playButton3);
 			UIHoverImageButton playButton4 = new UIHoverImageButton(buttonBackTexture, BottonText);
-			playButton4.Left.Set(10, 0f);
-			playButton4.Top.Set(130, 0f);
+			playButton4.Left.Set(130, 0f);
+			playButton4.Top.Set(220, 0f);
 			playButton4.Width.Set(22, 0f);
 			playButton4.Height.Set(22, 0f);
 			playButton4.OnClick += new MouseEvent(PlayButtonClicked4);
 			CoinsConvertPanel.Append(playButton4);
 			UIHoverImageButton playButton5 = new UIHoverImageButton(buttonBackTexture, BottonText);
-			playButton5.Left.Set(10, 0f);
-			playButton5.Top.Set(160, 0f);
+			playButton5.Left.Set(130, 0f);
+			playButton5.Top.Set(280, 0f);
 			playButton5.Width.Set(22, 0f);
 			playButton5.Height.Set(22, 0f);
 			playButton5.OnClick += new MouseEvent(PlayButtonClicked5);
 			CoinsConvertPanel.Append(playButton5);
 			
-			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
-			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
-			closeButton.Left.Set(220, 0f);
-			closeButton.Top.Set(10, 0f);
-			closeButton.Width.Set(22, 0f);
-			closeButton.Height.Set(22, 0f);
-			closeButton.OnClick += new MouseEvent(CloseButtonClicked);
-			CoinsConvertPanel.Append(closeButton);
-			
 			CoinsDisplay = new UIMoneyDisplay();
-			CoinsDisplay.Left.Set(150, 0f);
+			CoinsDisplay.Left.Set(100, 0f);
 			CoinsDisplay.Top.Set(10, 0f);
 			CoinsDisplay.Width.Set(40f, 0f);
 			CoinsDisplay.Height.Set(40, 1f);
@@ -280,11 +271,11 @@ namespace AlchemistNPC.Interface
 			Vector2 maxTextSize = font.MeasureString(maxText);
 			Color textColor = new Color(Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor);
 			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT1, new Vector2(shopx + (float)(24) + (float)1, shopy), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
-			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT2, new Vector2(shopx + (float)(24) + (float)1, shopy+30), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
-			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT3, new Vector2(shopx + (float)(24) + (float)1, shopy+60), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
-			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT4, new Vector2(shopx + (float)(24) + (float)1, shopy+90), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
-			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT5, new Vector2(shopx + (float)(24) + (float)1, shopy+120), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
-			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT6, new Vector2(shopx + (float)(24) + (float)1, shopy+150), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT2, new Vector2(shopx + (float)(24) + (float)1, shopy+60), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT3, new Vector2(shopx + (float)(24) + (float)1, shopy+120), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT4, new Vector2(shopx + (float)(24) + (float)1, shopy+180), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT5, new Vector2(shopx + (float)(24) + (float)1, shopy+240), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.DrawString(font, "" + modPlayer.RCT6, new Vector2(shopx + (float)(24) + (float)1, shopy+300), textColor, 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
 		}
 	}
 }
