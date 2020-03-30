@@ -17,6 +17,9 @@ namespace AlchemistNPC.Items.Misc
 			DisplayName.AddTranslation(GameCulture.Russian, "Загадочный метеорит");
             Tooltip.SetDefault("Its external shell is insanely durable\nYou probably need to find someone who may help you break it");
 			Tooltip.AddTranslation(GameCulture.Russian, "Его внешняя оболочка невероятно прочна\nВероятно, вам стоит найти кого-нибудь, кто поможет её пробить");
+
+            DisplayName.AddTranslation(GameCulture.Chinese, "神秘陨石");
+			Tooltip.AddTranslation(GameCulture.Chinese, "它的外壳非常结实\n你可能需要找到一个能帮你打开它的人");
         }
         public override void SetDefaults()
 		{

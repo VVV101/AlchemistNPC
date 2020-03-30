@@ -21,7 +21,9 @@ namespace AlchemistNPC.Items.Equippable
 			+"\nDoes not require any ammo");
 			DisplayName.AddTranslation(GameCulture.Russian, "Броневой модуль ''Шквал''");
             Tooltip.AddTranslation(GameCulture.Russian, "Сопровождает любую атаку кратким залпом энегетическими снарядами\nНаносит 1/4 от урона оружия в руках\nНе требует боеприпасов");
-        }
+			DisplayName.AddTranslation(GameCulture.Chinese, "护甲模块 “弹幕网”");
+            Tooltip.AddTranslation(GameCulture.Chinese, "任何攻击后附着能量弹\n产生当前武器1/4的伤害\n无需消耗任何弹药");
+		}
 	
 		public override void SetDefaults()
 		{

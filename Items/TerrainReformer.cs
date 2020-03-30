@@ -18,6 +18,8 @@ namespace AlchemistNPC.Items
 			+"\nRight click for digging extremely fast");
 			DisplayName.AddTranslation(GameCulture.Russian, "Преобразователь Поверностей");
             Tooltip.AddTranslation(GameCulture.Russian, "Легендарное устройства ландшафтного дизайна, созданное Древними\nЛевый клик для точной добычи блоков\nПравый клик для быстрого разрывания земли");
+			DisplayName.AddTranslation(GameCulture.Chinese, "大地重塑者");
+            Tooltip.AddTranslation(GameCulture.Chinese, "由远古文明所制作的传奇地形改造装置\n左键精确开采\n右键极速挖掘");
 		}
 
 		public override void SetDefaults() {

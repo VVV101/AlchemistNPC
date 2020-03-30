@@ -41,13 +41,28 @@ namespace AlchemistNPC.Interface
 			string Tier4;
 			string Tier5;
 			string Tier6;
-		
-			Tier1 = "Tier 1 coins";
-			Tier2 = "Tier 2 coins";
-			Tier3 = "Tier 3 coins";
-			Tier4 = "Tier 4 coins";
-			Tier5 = "Tier 5 coins";
-			Tier6 = "Tier 6 coins";
+			string BottonText;
+
+			if(Language.ActiveCulture == GameCulture.Chinese)
+			{
+				Tier1 = "1级硬币";
+				Tier2 = "2级硬币";
+				Tier3 = "3级硬币";
+				Tier4 = "4级硬币";
+				Tier5 = "5级硬币";
+				Tier6 = "6级硬币";
+				BottonText = "将1个高等级币转化为2个低等级币";
+			}
+			else
+			{
+				Tier1 = "Tier 1 coins";
+				Tier2 = "Tier 2 coins";
+				Tier3 = "Tier 3 coins";
+				Tier4 = "Tier 4 coins";
+				Tier5 = "Tier 5 coins";
+				Tier6 = "Tier 6 coins";
+				BottonText = "Convert 1 coin into 2 of the lower tier";
+			}
 			
 			UIText text = new UIText(Tier1);
 			text.Left.Set(40, 0f);
@@ -93,35 +108,35 @@ namespace AlchemistNPC.Interface
 
 			Mod mod = AlchemistNPC.Instance;
 			Texture2D buttonBackTexture = mod.GetTexture("Interface/ButtonBack");
-			UIHoverImageButton playButton = new UIHoverImageButton(buttonBackTexture, "Convert 1 coin into 2 of the lower tier");
+			UIHoverImageButton playButton = new UIHoverImageButton(buttonBackTexture, BottonText);
 			playButton.Left.Set(10, 0f);
 			playButton.Top.Set(40, 0f);
 			playButton.Width.Set(22, 0f);
 			playButton.Height.Set(22, 0f);
 			playButton.OnClick += new MouseEvent(PlayButtonClicked1);
 			CoinsConvertPanel.Append(playButton);
-			UIHoverImageButton playButton2 = new UIHoverImageButton(buttonBackTexture, "Convert 1 coin into 2 of the lower tier");
+			UIHoverImageButton playButton2 = new UIHoverImageButton(buttonBackTexture, BottonText);
 			playButton2.Left.Set(10, 0f);
 			playButton2.Top.Set(70, 0f);
 			playButton2.Width.Set(22, 0f);
 			playButton2.Height.Set(22, 0f);
 			playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
 			CoinsConvertPanel.Append(playButton2);
-			UIHoverImageButton playButton3 = new UIHoverImageButton(buttonBackTexture, "Convert 1 coin into 2 of the lower tier");
+			UIHoverImageButton playButton3 = new UIHoverImageButton(buttonBackTexture, BottonText);
 			playButton3.Left.Set(10, 0f);
 			playButton3.Top.Set(100, 0f);
 			playButton3.Width.Set(22, 0f);
 			playButton3.Height.Set(22, 0f);
 			playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
 			CoinsConvertPanel.Append(playButton3);
-			UIHoverImageButton playButton4 = new UIHoverImageButton(buttonBackTexture, "Convert 1 coin into 2 of the lower tier");
+			UIHoverImageButton playButton4 = new UIHoverImageButton(buttonBackTexture, BottonText);
 			playButton4.Left.Set(10, 0f);
 			playButton4.Top.Set(130, 0f);
 			playButton4.Width.Set(22, 0f);
 			playButton4.Height.Set(22, 0f);
 			playButton4.OnClick += new MouseEvent(PlayButtonClicked4);
 			CoinsConvertPanel.Append(playButton4);
-			UIHoverImageButton playButton5 = new UIHoverImageButton(buttonBackTexture, "Convert 1 coin into 2 of the lower tier");
+			UIHoverImageButton playButton5 = new UIHoverImageButton(buttonBackTexture, BottonText);
 			playButton5.Left.Set(10, 0f);
 			playButton5.Top.Set(160, 0f);
 			playButton5.Width.Set(22, 0f);

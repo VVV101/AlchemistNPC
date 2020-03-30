@@ -25,8 +25,8 @@ namespace AlchemistNPC.Buffs
 			Main.buffNoTimeDisplay[Type] = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Голографический Проектор ''Данж''");
 			Description.AddTranslation(GameCulture.Russian, "Изменяет текущий биом на Данж");
-            DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''神圣''");
-            Description.AddTranslation(GameCulture.Chinese, "当前地形设置:神圣");
+            DisplayName.AddTranslation(GameCulture.Chinese, "全息投影仪 ''地牢''");
+            Description.AddTranslation(GameCulture.Chinese, "当前地形设置:地牢");
         }
 		
 		public override void Update(Player player, ref int buffIndex)
