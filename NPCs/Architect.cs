@@ -650,10 +650,10 @@ namespace AlchemistNPC.NPCs
 			shop.item[nextSlot].shopCustomPrice = 2;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.MarbleBlock);
-			shop.item[nextSlot].shopCustomPrice = 2;
+			shop.item[nextSlot].shopCustomPrice = 75;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.GraniteBlock);
-			shop.item[nextSlot].shopCustomPrice = 2;
+			shop.item[nextSlot].shopCustomPrice = 75;
 			nextSlot++;
 			if (NPC.downedQueenBee)
 			{
