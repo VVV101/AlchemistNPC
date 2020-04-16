@@ -7,6 +7,11 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
+v9.3
+-Fixed Calamity mod's Rage and Adrenaline related mechanics.
+-Changed price of Marble and Granite blocks.
+v9.2.1
+-Fixed Cracked Crown wasn't collecting souls without Mod of Redemption.
 v9.2
 -Added support for Elements Awoken mod for Operator.
 -Added support for Mod of Redemption for Operator.
