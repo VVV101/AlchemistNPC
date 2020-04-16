@@ -400,7 +400,7 @@ namespace AlchemistNPC.NPCs
 		private void RnAReset(Player player)
 		{
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.stress = 0;
+			CalamityPlayer.rage = 0;
 			CalamityPlayer.adrenaline = 0;
 		}
 		
