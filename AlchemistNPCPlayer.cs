@@ -364,7 +364,16 @@ namespace AlchemistNPC
 		
 		public override void PostBuyItem(NPC vendor, Item[] shopInventory, Item item)
 		{
-			if (vendor.type == mod.NPCType("Operator"))
+			bool Casket = false;
+			for (int j = 0; j < player.inventory.Length; j++)
+			{
+				if (player.inventory[j].type == mod.ItemType("DimensionalCasket"))
+				{
+					Casket = true;
+					break;
+				}
+			}
+			if (vendor.type == mod.NPCType("Operator") || Casket)
 			{
 				for (int index1 = 0; index1 < 40; ++index1)
 				{
@@ -1019,7 +1028,7 @@ namespace AlchemistNPC
 					{
 						if (ModLoader.GetMod("CalamityMod") != null)
 						{
-							if (player.bank.item[index1].buffType == ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"))
+							if (player.bank.item[index1].buffType == ModLoader.GetMod("CalamityMod").BuffType("AbsoluteRage"))
 							{
 								for (int v = 0; v < 200; ++v)
 								{
