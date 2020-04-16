@@ -45,10 +45,10 @@ namespace AlchemistNPC.Items.Misc
 			for (int h = 0; h < 1; h++) {
 			Vector2 vel = new Vector2(0, -1);
 			vel *= 0f;
-			Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("Drainer"), 0, 0, player.whoAmI);
+			Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("Drainer"), 0, 0, player.whoAmI);
 			}
 		player.Hurt(PlayerDeathReason.LegacyEmpty(), 2, 0, false, false, false, -1);
-		CalamityPlayer.stress += 2500;
+		CalamityPlayer.rage += rageMax/4;
 		player.statLife = (player.statLife - player.statLifeMax2 / 4);
 		PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
 		if (Main.rand.Next(2) == 0)

@@ -1246,7 +1246,7 @@ namespace AlchemistNPC
 		private void CalamityRage(Player player)
         {
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.stress = 10000;
+			CalamityPlayer.rage = rageMax;
         }
 		
 		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath) {

@@ -44,7 +44,7 @@ namespace AlchemistNPC.Items
             item.height = 30;
             item.value = Item.sellPrice(0, 1, 0, 0);
             item.rare = 10;
-            item.buffType = ModLoader.GetMod("CalamityMod").BuffType("HeartAttack");
+            item.buffType = ModLoader.GetMod("CalamityMod").BuffType("AbsoluteRage");
             item.buffTime = 18000;
         }
 		
@@ -75,7 +75,7 @@ namespace AlchemistNPC.Items
 		public override bool UseItem(Player player)
 		{
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.stress = 10000;
+			CalamityPlayer.rage = rageMax;
 			return true;
 		}
     }
