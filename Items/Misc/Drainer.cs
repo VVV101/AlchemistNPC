@@ -48,7 +48,7 @@ namespace AlchemistNPC.Items.Misc
 			Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("Drainer"), 0, 0, player.whoAmI);
 			}
 		player.Hurt(PlayerDeathReason.LegacyEmpty(), 2, 0, false, false, false, -1);
-		CalamityPlayer.rage += rageMax/4;
+		CalamityPlayer.rage += CalamityPlayer.rageMax/4;
 		player.statLife = (player.statLife - player.statLifeMax2 / 4);
 		PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
 		if (Main.rand.Next(2) == 0)

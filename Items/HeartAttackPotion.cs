@@ -75,7 +75,7 @@ namespace AlchemistNPC.Items
 		public override bool UseItem(Player player)
 		{
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.rage = rageMax;
+			CalamityPlayer.rage = CalamityPlayer.rageMax;
 			return true;
 		}
     }
