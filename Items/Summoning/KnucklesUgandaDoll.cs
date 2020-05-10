@@ -40,6 +40,7 @@ namespace AlchemistNPC.Items.Summoning
 		public override bool UseItem(Player player)
 		{
 			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Knuckles"));
+			ModGlobalNPC.ksu = true;
 			ModGlobalNPC.kc = 0;
 			ModGlobalNPC.ks = false;
 			return true;

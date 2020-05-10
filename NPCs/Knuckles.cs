@@ -70,12 +70,17 @@ namespace AlchemistNPC.NPCs
 		
 		public override void AI()
 		{
+			if (!ModGlobalNPC.ksu)
+			{
+				Main.NewText("Use National Ugandan Treasure to summon boss properly", 150, 100, 30);
+				npc.CloneDefaults(-66);
+			}
 			if (Main.player[npc.target].dead)
 			{
-				npc.TargetClosest(true);
+				npc.TargetClosest(false);
 				if (Main.player[npc.target].dead)
 				{
-					npc.timeLeft = 0;
+					npc.timeLeft = 10;
 				}
 			}
 			if (!Main.player[npc.target].dead)

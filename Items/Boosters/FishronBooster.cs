@@ -13,11 +13,11 @@ namespace AlchemistNPC.Items.Boosters
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Duke Fishron booster");
-			Tooltip.SetDefault("Gives ability to dash, all stats up while on surface");
+			Tooltip.SetDefault("+4% all stats up while on surface, mount is always accelerated");
 			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель Рыброна");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт способность к рывку, все параметры усилены когда на поверхности");
+			Tooltip.AddTranslation(GameCulture.Russian, "Все параметры усилены на 4% когда на поверхности, ездовой питомец всегда ускорен");
 			DisplayName.AddTranslation(GameCulture.Chinese, "猪鲨增益容器");
-			Tooltip.AddTranslation(GameCulture.Chinese, "给予冲刺能力，表面上的所有统计数据增加");
+			Tooltip.AddTranslation(GameCulture.Chinese, "表面上的所有统计数据增加");
         }
 
 		public override void SetDefaults()

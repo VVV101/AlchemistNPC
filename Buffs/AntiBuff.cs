@@ -136,7 +136,7 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.FishronBooster == 1)
 			{
-				tip += "\nAll stats up while on surface";
+				tip += "\n+4% all stats up while on surface, mount is always accelerated";
 				tipch += "\n表面上的所有属性增加";
 			}
 			if (modPlayer.MartianSaucerBooster == 1)
@@ -317,6 +317,7 @@ namespace AlchemistNPC.Buffs
 			}
 			if (modPlayer.FishronBooster == 1)
 			{
+				player.MountFishronSpecialCounter = 60f;
 				if (player.ZoneOverworldHeight)
 				{
 					player.statDefense += 4;
