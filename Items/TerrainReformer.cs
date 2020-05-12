@@ -87,9 +87,7 @@ namespace AlchemistNPC.Items
 				{
 					for (int j = minTileY; j < maxTileY; ++j)
 					{
-						if (Main.tileDungeon[(int)Main.tile[i, j].type] || Main.tile[i, j].type == 88 || Main.tile[i, j].type == 21 || Main.tile[i, j].type == 26 || Main.tile[i, j].type == 107 || Main.tile[i, j].type == 108 || Main.tile[i, j].type == 111 || Main.tile[i, j].type == 226 || Main.tile[i, j].type == 237 || Main.tile[i, j].type == 221 || Main.tile[i, j].type == 222 || Main.tile[i, j].type == 223 || Main.tile[i, j].type == 211 || Main.tile[i, j].type == 404) continue;
-						if (!Main.hardMode && Main.tile[i, j].type == 58) continue;
-						if (!TileLoader.CanExplode(i, j)) continue;
+						if (Main.tile[i, j].type == 88 || Main.tile[i, j].type == 21 || Main.tile[i, j].type == 26 || Main.tile[i, j].type == 237 ) continue;
 						if (Main.tile[i, j].type == null) continue;
 						if (!Main.tile[i, j].active()) continue;
 						if (hitbox.Intersects(new Rectangle(i * 16, j * 16, 16, 16)))

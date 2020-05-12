@@ -46,11 +46,13 @@ namespace AlchemistNPC.Items
 				{
 					if (Main.keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Escape))
 					{
+						Main.soundVolume = 1f; 
 						DimensionalCasketUI.k = -1;
 						DimensionalCasketUI.forcetalk = false;
 					}
 					if (DimensionalCasketUI.forcetalk == true)
 					{
+						Main.soundVolume = 0f; 
 						Main.player[Main.myPlayer].talkNPC = DimensionalCasketUI.k;
 					}
 				}

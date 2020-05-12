@@ -10,11 +10,14 @@ Full Mod Config support.
 v9.3
 -Added Old Duke's bag in Operator's modded bags shop.
 -Fishron booster now makes Fishron mount always accelerated.
+-Widened array of blocks Terrain Reformer can dig.
 -Hopefully fixed random Knuckles spawns in MP.
--Fixed Chandeliers prices.
+-Kinda fixed earrape sound of Dimensional Casket.
 -Fixed Elements Awoken-related error in Operator's code.
 -Fixed Calamity mod's Rage and Adrenaline related mechanics.
--Changed price of Marble and Granite blocks.
+-Fixed Chandeliers prices.
+-Changed prices of Marble and Granite blocks.
+-Renewed sprites for Reversity Coins and Boom Box.
 v9.2.1
 -Fixed Cracked Crown wasn't collecting souls without Mod of Redemption.
 v9.2
