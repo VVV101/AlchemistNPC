@@ -25,11 +25,6 @@ namespace AlchemistNPC.Buffs
             Description.AddTranslation(GameCulture.Chinese, "增加15%伤害,增加5%暴击率,暴击有5%概率造成4倍伤害");
         }
 		
-		public bool CalamityModRevengeance
-		{
-        get { return CalamityMod.World.CalamityWorld.revenge; }
-        }
-		
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (player.buffTime[buffIndex] == 1) 
@@ -61,7 +56,6 @@ namespace AlchemistNPC.Buffs
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 5;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
@@ -69,7 +63,5 @@ namespace AlchemistNPC.Buffs
             ThoriumPlayer.symphonicCrit += 5;
             ThoriumPlayer.radiantCrit += 5;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

@@ -38,32 +38,32 @@ namespace AlchemistNPC.Items.Equippable
 			player.allDamage += 0.15f;
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)
 			{
-			player.meleeCrit -= 25;
-			player.magicCrit -= 25;
-			player.rangedCrit -= 25;
-			player.thrownCrit -= 25;
+				player.meleeCrit -= 25;
+				player.magicCrit -= 25;
+				player.rangedCrit -= 25;
+				player.thrownCrit -= 25;
 				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
-				ThoriumBoosts(player);
+					ThoriumBoosts(player);
 				}
 				if (ModLoader.GetMod("Redemption") != null)
 				{
-				RedemptionBoost(player);
+					RedemptionBoost(player);
 				}
 			}
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2)
 			{
-			player.meleeCrit -= 15;
-			player.magicCrit -= 15;
-			player.rangedCrit -= 15;
-			player.thrownCrit -= 15;
+				player.meleeCrit -= 15;
+				player.magicCrit -= 15;
+				player.rangedCrit -= 15;
+				player.thrownCrit -= 15;
 				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
-				ThoriumBoosts(player);
+					ThoriumBoosts(player);
 				}
 				if (ModLoader.GetMod("Redemption") != null)
 				{
-				RedemptionBoost(player);
+					RedemptionBoost(player);
 				}
 			}
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).MemersRiposte = true;
@@ -79,33 +79,30 @@ namespace AlchemistNPC.Items.Equippable
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
-				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)
-				{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)
+			{
 				RedemptionPlayer.druidCrit -= 25;
-				}
-				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2)
-				{
+			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2)
+			{
 				RedemptionPlayer.druidCrit -= 15;
-				}
+			}
         }
-		
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
-				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)
-				{
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2 == false)
+			{
 				ThoriumPlayer.symphonicCrit -= 25;
 				ThoriumPlayer.radiantCrit -= 25;
-				}
-				if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2)
-				{
+			}
+			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AutoinjectorMK2)
+			{
 				ThoriumPlayer.symphonicCrit -= 15;
 				ThoriumPlayer.radiantCrit -= 15;
-				}
+			}
         }
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 		
 		public override void AddRecipes()
 		{

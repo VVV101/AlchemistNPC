@@ -26,37 +26,37 @@ namespace AlchemistNPC.Buffs
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-		if (player.statLife < player.statLifeMax2)
-		{
-			if (count >= 12)
+			if (player.statLife < player.statLifeMax2)
 			{
-			count = 0;
-			player.statLife += 5;
-			player.HealEffect(5, true);
+				if (count >= 12)
+				{
+					count = 0;
+					player.statLife += 5;
+					player.HealEffect(5, true);
+				}
+				count++;
 			}
-			count++;
-		}
-		player.allDamage += 0.15f;
-		player.meleeCrit += 15;
-        player.rangedCrit += 15;
-        player.magicCrit += 15;
-        player.thrownCrit += 15;
-		player.lifeRegen += 20;
-		player.endurance -= 0.15f;
-		player.statDefense -= 30;
+			player.allDamage += 0.15f;
+			player.meleeCrit += 15;
+			player.rangedCrit += 15;
+			player.magicCrit += 15;
+			player.thrownCrit += 15;
+			player.lifeRegen += 20;
+			player.endurance -= 0.15f;
+			player.statDefense -= 30;
 			if (ModLoader.GetMod("ThoriumMod") != null)
-				{
+			{
 				ThoriumBoosts(player);
-				}
-				if (ModLoader.GetMod("Redemption") != null)
-				{
+			}
+			if (ModLoader.GetMod("Redemption") != null)
+			{
 				RedemptionBoost(player);
-				}
-				Mod Calamity = ModLoader.GetMod("CalamityMod");
-				if(Calamity != null)
-				{
-					Calamity.Call("AddRogueCrit", player, 15);
-				}
+			}
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
+			{
+				Calamity.Call("AddRogueCrit", player, 15);
+			}
 		}
 		
 		private void RedemptionBoost(Player player)
@@ -64,7 +64,6 @@ namespace AlchemistNPC.Buffs
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 15;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
@@ -72,7 +71,5 @@ namespace AlchemistNPC.Buffs
             ThoriumPlayer.symphonicCrit += 15;
             ThoriumPlayer.radiantCrit += 15;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

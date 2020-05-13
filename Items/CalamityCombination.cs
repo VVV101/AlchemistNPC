@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items
     {
 		public override bool Autoload(ref string name)
 		{
-		return ModLoader.GetMod("CalamityMod") != null;
+			return ModLoader.GetMod("CalamityMod") != null;
 		}
 		
 		public override void SetStaticDefaults()
@@ -48,12 +48,15 @@ namespace AlchemistNPC.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("YharimsStimulants")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("FabsolsVodka")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("CadencePotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("TitanScalePotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("SoaringPotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("BoundingPotion")), 1);
+			if (ModLoader.GetMod("CalamityMod") != null)
+			{
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("YharimsStimulants")), 1);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("FabsolsVodka")), 1);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("CadencePotion")), 1);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("TitanScalePotion")), 1);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("SoaringPotion")), 1);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("BoundingPotion")), 1);
+			}
 			recipe.AddTile(TileID.AlchemyTable);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

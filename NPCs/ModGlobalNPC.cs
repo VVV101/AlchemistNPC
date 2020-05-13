@@ -556,10 +556,10 @@ namespace AlchemistNPC.NPCs
 		{
 			if (chaos)
 			{
-				npc.lifeRegen -= 3000 + S*500;
-				if (damage < 299 + S*50)
+				npc.lifeRegen -= 10000 + S*1500;
+				if (damage < 999 + S*150)
 				{
-					damage = 300 + S*50;
+					damage = 1000 + S*150;
 				}
 			}
 			if (light)
@@ -990,9 +990,10 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
 			{
-				if (CalamityModDownedDOG && npc.type == 327)
+				if ((bool)Calamity.Call("Downed", "dog") && npc.type == 327)
 				{
 					if (!AlchemistNPCWorld.downedDOGPumpking) {
 						AlchemistNPCWorld.downedDOGPumpking = true;
@@ -1002,7 +1003,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 				
-				if (CalamityModDownedDOG && npc.type == 345)
+				if ((bool)Calamity.Call("Downed", "dog") && npc.type == 345)
 				{
 					if (!AlchemistNPCWorld.downedDOGIceQueen) {
 						AlchemistNPCWorld.downedDOGIceQueen = true;
@@ -1235,7 +1236,7 @@ namespace AlchemistNPC.NPCs
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube3"), 2);
 				}
-				if (ModLoader.GetMod("CalamityMod") != null)
+				if (Calamity != null)
 				{
 					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DesertScourgeHead"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"));
 					if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("CrabulonIdle"))) Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PaperTube"), 2);
@@ -1342,333 +1343,333 @@ namespace AlchemistNPC.NPCs
 				}
 			}
 			
-				for (int k = 0; k < 255; k++)
+			for (int k = 0; k < 255; k++)
+			{
+				Player player = Main.player[k];
+				if (player.active)
 				{
-					Player player = Main.player[k];
-					if (player.active)
+					AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
+					if (Main.expertMode && AlchemistNPC.modConfiguration.CoinsDrop)
 					{
-						AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
-						if (Main.expertMode && AlchemistNPC.modConfiguration.CoinsDrop)
+						int number = 0;
+						int tier = 0;
+						switch (npc.type)
 						{
-							int number = 0;
-							int tier = 0;
-							switch (npc.type)
+							case (NPCID.KingSlime): number = Main.rand.Next(1,3); tier = 1; break;
+							case (NPCID.EyeofCthulhu): number = Main.rand.Next(3,6); tier = 1; break;
+							case (NPCID.BrainofCthulhu): number = Main.rand.Next(6,9); tier = 1; break;
+							case (NPCID.QueenBee): number = Main.rand.Next(9,12); tier = 1; break;
+							case (NPCID.SkeletronHead): number = Main.rand.Next(12,15); tier = 1; break;
+							case (NPCID.WallofFlesh): number = Main.rand.Next(4,6); tier = 2; break;
+							case (NPCID.SkeletronPrime): number = Main.rand.Next(2,3); tier = 3; break;
+							case (NPCID.TheDestroyer): number = Main.rand.Next(2,3); tier = 3; break;
+							case (NPCID.Plantera): number = Main.rand.Next(5,6); tier = 3; break;
+							case (NPCID.Golem): number = Main.rand.Next(2,3); tier = 4; break;
+							case (NPCID.DukeFishron): number = Main.rand.Next(6,9); tier = 4; break;
+							case (NPCID.CultistBoss): number = Main.rand.Next(6,9); tier = 4; break;
+						}
+						if (npc.type == NPCID.EaterofWorldsHead && !NPC.AnyNPCs(NPCID.EaterofWorldsTail)) {number = Main.rand.Next(6,9); tier = 1;}
+						if (npc.type == NPCID.EaterofWorldsTail && !NPC.AnyNPCs(NPCID.EaterofWorldsHead)) {number = Main.rand.Next(6,9); tier = 1;}
+						if (npc.type == NPCID.Spazmatism && !NPC.AnyNPCs(NPCID.Retinazer)) {number = Main.rand.Next(2,3); tier = 3;}
+						if (npc.type == NPCID.Retinazer && !NPC.AnyNPCs(NPCID.Spazmatism)) {number = Main.rand.Next(2,3); tier = 3;}
+						if (Calamity != null)
+						{
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DesertScourgeHead"))) {number = Main.rand.Next(1,3); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("CrabulonIdle"))) {number = Main.rand.Next(3,6); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("HiveMindP2"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("PerforatorHive"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("SlimeGodCore"))) {number = Main.rand.Next(2,3); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Cryogen"))) {number = Main.rand.Next(6,9); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("BrimstoneElemental"))) {number = Main.rand.Next(3,6); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AquaticScourgeHead"))) {number = Main.rand.Next(3,6); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("SoulSeeker"))) {number = Main.rand.Next(2,3); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Leviathan"))) {number = Main.rand.Next(12,15); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumAureus"))) {number = Main.rand.Next(9,12); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath"))) {number = Main.rand.Next(3,6); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("RavagerBody"))) {number = Main.rand.Next(3,6); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumDeusHeadSpectral"))) {number = Main.rand.Next(5,7); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss"))) {number = Main.rand.Next(6,9); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss2"))) {number = Main.rand.Next(6,9); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss3"))) {number = Main.rand.Next(6,9); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Providence"))) {number = Main.rand.Next(12,15); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("CeaselessVoid"))) {number = 1; tier = 6;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("StormWeaverHeadNaked"))) {number = 1; tier = 6;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Signus"))) {number = 1; tier = 6;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Polterghast"))) {number = Main.rand.Next(4,6); tier = 6;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("OldDuke"))) {number = Main.rand.Next(5,7); tier = 6;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS"))) {number = Main.rand.Next(6,9); tier = 6;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Birb"))) {number = Main.rand.Next(3,6); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Yharon"))) {number = Main.rand.Next(12,15); tier = 6;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("SupremeCalamitas"))) {number = 66; tier = 6;}
+						}
+						if (ModLoader.GetMod("ThoriumMod") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("TheGrandThunderBirdv2"))) {number = Main.rand.Next(1,2); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("QueenJelly"))) {number = Main.rand.Next(3,6); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("Viscount"))) {number = Main.rand.Next(5,7); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("GraniteEnergyStorm"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("TheBuriedWarrior"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("ThePrimeScouter"))) {number = Main.rand.Next(9,12); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("BoreanStriderPopped"))) {number = Main.rand.Next(2,3); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("FallenDeathBeholder2"))) {number = Main.rand.Next(3,6); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("LichHeadless"))) {number = Main.rand.Next(3,6); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("AbyssionReleased"))) {number = Main.rand.Next(3,6); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("RealityBreaker"))) {number = 33; tier = 4;}
+						}
+						if (ModLoader.GetMod("ElementsAwoken") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Wasteland"))) {number = Main.rand.Next(3,5); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Infernace"))) {number = Main.rand.Next(2,4); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("ScourgeFighter"))) {number = Main.rand.Next(5,7); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("RegarothHead"))) {number = Main.rand.Next(6,8); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheCelestial"))) {number = Main.rand.Next(3,5); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Permafrost"))) {number = Main.rand.Next(5,7); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Obsidious"))) {number = Main.rand.Next(5,7); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Aqueous"))) {number = Main.rand.Next(7,10); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheEye"))) {number = Main.rand.Next(5,7); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("AncientWyrmHead"))) {number = Main.rand.Next(5,7); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheGuardianFly"))) {number = Main.rand.Next(10,12); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Volcanox"))) {number = Main.rand.Next(4,7); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("ElderShadeWyrmHead"))) {number = Main.rand.Next(8,12); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Azana"))) {number = Main.rand.Next(14,17); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("AncientAmalgam"))) {number = Main.rand.Next(25,30); tier = 5;}
+						}
+						if (ModLoader.GetMod("Redemption") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("KingChicken"))) {number = Main.rand.Next(1,2); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("Thorn"))) {number = Main.rand.Next(3,6); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("TheKeeper"))) {number = Main.rand.Next(5,8); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("XenomiteCrystalPhase2"))) {number = Main.rand.Next(8,11); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("InfectedEye"))) {number = Main.rand.Next(4,7); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("KSEntrance"))) {number = Main.rand.Next(9,12); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("VlitchCleaver"))) {number = Main.rand.Next(1,2); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("VlitchWormHead"))) {number = Main.rand.Next(6,9); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("OmegaOblitDamaged"))) {number = Main.rand.Next(2,4); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("PatientZero"))) {number = Main.rand.Next(5,8); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("EaglecrestGolemPZ"))) {number = Main.rand.Next(6,9); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("ThornPZ"))) {number = Main.rand.Next(6,9); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("Redemption").NPCType("BigNebuleus"))) {number = Main.rand.Next(15,20); tier = 5;}
+						}
+						if (ModLoader.GetMod("SacredTools") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("DecreeRun"))) {number = Main.rand.Next(2,3); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("RalnekPhase3"))) {number = Main.rand.Next(4,6); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Jensen"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Araneas"))) {number = Main.rand.Next(5,7); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Raynare"))) {number = Main.rand.Next(3,6); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Primordia2"))) {number = Main.rand.Next(2,4); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Abaddon"))) {number = Main.rand.Next(15,20); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("AraghurHead"))) {number = Main.rand.Next(6,9); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Novaniel"))) {number = Main.rand.Next(3,6); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("ErazorBoss"))) {number = Main.rand.Next(9,12); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("SpookboiSpirit"))) {number = Main.rand.Next(20,30); tier = 5;}
+						}
+						if (ModLoader.GetMod("SpiritMod") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Scarabeus"))) {number = Main.rand.Next(2,3); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("ReachBoss"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("AncientFlyer"))) {number = Main.rand.Next(9,12); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("SteamRaiderHead"))) {number = Main.rand.Next(3,6); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Dusking"))) {number = Main.rand.Next(3,6); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("SpiritCore"))) {number = Main.rand.Next(3,6); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("IlluminantMaster"))) {number = Main.rand.Next(6,9); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Atlas"))) {number = Main.rand.Next(6,9); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Overseer"))) {number = 33; tier = 4;}
+						}
+						if (ModLoader.GetMod("Laugicality") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("DuneSharkron"))) {number = Main.rand.Next(2,3); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Hypothema"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Ragnar"))) {number = Main.rand.Next(9,12); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("AnDio3"))) {number = Main.rand.Next(4,6); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Slybertron"))) {number = Main.rand.Next(6,9); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("TheAnnihilator"))) {number = Main.rand.Next(6,8); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("SteamTrain"))) {number = Main.rand.Next(6,8); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Etheria"))) {number = 33; tier = 4;}
+						}
+						if (ModLoader.GetMod("pinkymod") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("DeserteerMelee"))) {number = Main.rand.Next(2,3); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("MythrilSlime"))) {number = Main.rand.Next(3,5); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("Valdaris"))) {number = Main.rand.Next(12,15); tier = 3;}
+							if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("GatekeeperHead"))) {number = Main.rand.Next(6,9); tier = 4;}
+						}
+						if (ModLoader.GetMod("AAMod") != null)
+						{
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("MushroomMonarch"))) {number = Main.rand.Next(1,2); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("FeudalFungus"))) {number = Main.rand.Next(1,2); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("GripOfChaosRed"))) {number = Main.rand.Next(2,3); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("GripOfChaosBlue"))) {number = Main.rand.Next(2,3); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("TruffleToad"))) {number = Main.rand.Next(5,7); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Broodmother"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Hydra"))) {number = Main.rand.Next(6,9); tier = 1;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("SerpentHead"))) {number = Main.rand.Next(1,2); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Djinn"))) {number = Main.rand.Next(1,2); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Saggitarius"))) {number = Main.rand.Next(1,2); tier = 2;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Rajah"))) {number = Main.rand.Next(4,6); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("DaybringerHead"))) {number = Main.rand.Next(15,20); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("NightcrawlerHead"))) {number = Main.rand.Next(15,20); tier = 4;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Ashe"))) {number = Main.rand.Next(2,3); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Haruka"))) {number = Main.rand.Next(2,3); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Yamata"))) {number = Main.rand.Next(3,5); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("YamataA"))) {number = Main.rand.Next(4,6); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Akuma"))) {number = Main.rand.Next(3,5); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("AkumaA"))) {number = Main.rand.Next(4,6); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Zero"))) {number = Main.rand.Next(6,9); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("ZeroAwakened"))) {number = Main.rand.Next(7,10); tier = 5;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("ShenDoragon"))) {number = Main.rand.Next(10,15); tier = 6;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("ShenA"))) {number = Main.rand.Next(15,20); tier = 6;}
+							if (npc.type == (ModLoader.GetMod("AAMod").NPCType("SupremeRajah"))) {number = 33; tier = 6;}
+						}
+						if (number > 0)
+						{
+							switch (tier)
 							{
-								case (NPCID.KingSlime): number = Main.rand.Next(1,3); tier = 1; break;
-								case (NPCID.EyeofCthulhu): number = Main.rand.Next(3,6); tier = 1; break;
-								case (NPCID.BrainofCthulhu): number = Main.rand.Next(6,9); tier = 1; break;
-								case (NPCID.QueenBee): number = Main.rand.Next(9,12); tier = 1; break;
-								case (NPCID.SkeletronHead): number = Main.rand.Next(12,15); tier = 1; break;
-								case (NPCID.WallofFlesh): number = Main.rand.Next(4,6); tier = 2; break;
-								case (NPCID.SkeletronPrime): number = Main.rand.Next(2,3); tier = 3; break;
-								case (NPCID.TheDestroyer): number = Main.rand.Next(2,3); tier = 3; break;
-								case (NPCID.Plantera): number = Main.rand.Next(5,6); tier = 3; break;
-								case (NPCID.Golem): number = Main.rand.Next(2,3); tier = 4; break;
-								case (NPCID.DukeFishron): number = Main.rand.Next(6,9); tier = 4; break;
-								case (NPCID.CultistBoss): number = Main.rand.Next(6,9); tier = 4; break;
-							}
-							if (npc.type == NPCID.EaterofWorldsHead && !NPC.AnyNPCs(NPCID.EaterofWorldsTail)) {number = Main.rand.Next(6,9); tier = 1;}
-							if (npc.type == NPCID.EaterofWorldsTail && !NPC.AnyNPCs(NPCID.EaterofWorldsHead)) {number = Main.rand.Next(6,9); tier = 1;}
-							if (npc.type == NPCID.Spazmatism && !NPC.AnyNPCs(NPCID.Retinazer)) {number = Main.rand.Next(2,3); tier = 3;}
-							if (npc.type == NPCID.Retinazer && !NPC.AnyNPCs(NPCID.Spazmatism)) {number = Main.rand.Next(2,3); tier = 3;}
-							if (ModLoader.GetMod("CalamityMod") != null)
-							{
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DesertScourgeHead"))) {number = Main.rand.Next(1,3); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("CrabulonIdle"))) {number = Main.rand.Next(3,6); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("HiveMindP2"))) {number = Main.rand.Next(6,9); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("PerforatorHive"))) {number = Main.rand.Next(6,9); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("SlimeGodCore"))) {number = Main.rand.Next(2,3); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Cryogen"))) {number = Main.rand.Next(6,9); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("BrimstoneElemental"))) {number = Main.rand.Next(3,6); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AquaticScourgeHead"))) {number = Main.rand.Next(3,6); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("SoulSeeker"))) {number = Main.rand.Next(2,3); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Leviathan"))) {number = Main.rand.Next(12,15); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumAureus"))) {number = Main.rand.Next(9,12); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath"))) {number = Main.rand.Next(3,6); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("RavagerBody"))) {number = Main.rand.Next(3,6); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("AstrumDeusHeadSpectral"))) {number = Main.rand.Next(5,7); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss"))) {number = Main.rand.Next(6,9); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss2"))) {number = Main.rand.Next(6,9); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("ProfanedGuardianBoss3"))) {number = Main.rand.Next(6,9); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Providence"))) {number = Main.rand.Next(12,15); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("CeaselessVoid"))) {number = 1; tier = 6;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("StormWeaverHeadNaked"))) {number = 1; tier = 6;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Signus"))) {number = 1; tier = 6;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Polterghast"))) {number = Main.rand.Next(4,6); tier = 6;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("OldDuke"))) {number = Main.rand.Next(5,7); tier = 6;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS"))) {number = Main.rand.Next(6,9); tier = 6;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Birb"))) {number = Main.rand.Next(3,6); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Yharon"))) {number = Main.rand.Next(12,15); tier = 6;}
-								if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("SupremeCalamitas"))) {number = 66; tier = 6;}
-							}
-							if (ModLoader.GetMod("ThoriumMod") != null)
-							{
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("TheGrandThunderBirdv2"))) {number = Main.rand.Next(1,2); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("QueenJelly"))) {number = Main.rand.Next(3,6); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("Viscount"))) {number = Main.rand.Next(5,7); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("GraniteEnergyStorm"))) {number = Main.rand.Next(6,9); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("TheBuriedWarrior"))) {number = Main.rand.Next(6,9); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("ThePrimeScouter"))) {number = Main.rand.Next(9,12); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("BoreanStriderPopped"))) {number = Main.rand.Next(2,3); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("FallenDeathBeholder2"))) {number = Main.rand.Next(3,6); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("LichHeadless"))) {number = Main.rand.Next(3,6); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("AbyssionReleased"))) {number = Main.rand.Next(3,6); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("ThoriumMod").NPCType("RealityBreaker"))) {number = 33; tier = 4;}
-							}
-							if (ModLoader.GetMod("ElementsAwoken") != null)
-							{
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Wasteland"))) {number = Main.rand.Next(3,5); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Infernace"))) {number = Main.rand.Next(2,4); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("ScourgeFighter"))) {number = Main.rand.Next(5,7); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("RegarothHead"))) {number = Main.rand.Next(6,8); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheCelestial"))) {number = Main.rand.Next(3,5); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Permafrost"))) {number = Main.rand.Next(5,7); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Obsidious"))) {number = Main.rand.Next(5,7); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Aqueous"))) {number = Main.rand.Next(7,10); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheEye"))) {number = Main.rand.Next(5,7); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("AncientWyrmHead"))) {number = Main.rand.Next(5,7); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("TheGuardianFly"))) {number = Main.rand.Next(10,12); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Volcanox"))) {number = Main.rand.Next(4,7); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("ElderShadeWyrmHead"))) {number = Main.rand.Next(8,12); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("Azana"))) {number = Main.rand.Next(14,17); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("ElementsAwoken").NPCType("AncientAmalgam"))) {number = Main.rand.Next(25,30); tier = 5;}
-							}
-							if (ModLoader.GetMod("Redemption") != null)
-							{
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("KingChicken"))) {number = Main.rand.Next(1,2); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("Thorn"))) {number = Main.rand.Next(3,6); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("TheKeeper"))) {number = Main.rand.Next(5,8); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("XenomiteCrystalPhase2"))) {number = Main.rand.Next(8,11); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("InfectedEye"))) {number = Main.rand.Next(4,7); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("KSEntrance"))) {number = Main.rand.Next(9,12); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("VlitchCleaver"))) {number = Main.rand.Next(1,2); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("VlitchWormHead"))) {number = Main.rand.Next(6,9); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("OmegaOblitDamaged"))) {number = Main.rand.Next(2,4); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("PatientZero"))) {number = Main.rand.Next(5,8); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("EaglecrestGolemPZ"))) {number = Main.rand.Next(6,9); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("ThornPZ"))) {number = Main.rand.Next(6,9); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("Redemption").NPCType("BigNebuleus"))) {number = Main.rand.Next(15,20); tier = 5;}
-							}
-							if (ModLoader.GetMod("SacredTools") != null)
-							{
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("DecreeRun"))) {number = Main.rand.Next(2,3); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("RalnekPhase3"))) {number = Main.rand.Next(4,6); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Jensen"))) {number = Main.rand.Next(6,9); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Araneas"))) {number = Main.rand.Next(5,7); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Raynare"))) {number = Main.rand.Next(3,6); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Primordia2"))) {number = Main.rand.Next(2,4); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Abaddon"))) {number = Main.rand.Next(15,20); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("AraghurHead"))) {number = Main.rand.Next(6,9); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("Novaniel"))) {number = Main.rand.Next(3,6); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("ErazorBoss"))) {number = Main.rand.Next(9,12); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("SacredTools").NPCType("SpookboiSpirit"))) {number = Main.rand.Next(20,30); tier = 5;}
-							}
-							if (ModLoader.GetMod("SpiritMod") != null)
-							{
-								if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Scarabeus"))) {number = Main.rand.Next(2,3); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("ReachBoss"))) {number = Main.rand.Next(6,9); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("AncientFlyer"))) {number = Main.rand.Next(9,12); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("SteamRaiderHead"))) {number = Main.rand.Next(3,6); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Dusking"))) {number = Main.rand.Next(3,6); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("SpiritCore"))) {number = Main.rand.Next(3,6); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("IlluminantMaster"))) {number = Main.rand.Next(6,9); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Atlas"))) {number = Main.rand.Next(6,9); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("SpiritMod").NPCType("Overseer"))) {number = 33; tier = 4;}
-							}
-							if (ModLoader.GetMod("Laugicality") != null)
-							{
-								if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("DuneSharkron"))) {number = Main.rand.Next(2,3); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Hypothema"))) {number = Main.rand.Next(6,9); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Ragnar"))) {number = Main.rand.Next(9,12); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("AnDio3"))) {number = Main.rand.Next(4,6); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Slybertron"))) {number = Main.rand.Next(6,9); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("TheAnnihilator"))) {number = Main.rand.Next(6,8); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("SteamTrain"))) {number = Main.rand.Next(6,8); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("Laugicality").NPCType("Etheria"))) {number = 33; tier = 4;}
-							}
-							if (ModLoader.GetMod("pinkymod") != null)
-							{
-								if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("DeserteerMelee"))) {number = Main.rand.Next(2,3); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("MythrilSlime"))) {number = Main.rand.Next(3,5); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("Valdaris"))) {number = Main.rand.Next(12,15); tier = 3;}
-								if (npc.type == (ModLoader.GetMod("pinkymod").NPCType("GatekeeperHead"))) {number = Main.rand.Next(6,9); tier = 4;}
-							}
-							if (ModLoader.GetMod("AAMod") != null)
-							{
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("MushroomMonarch"))) {number = Main.rand.Next(1,2); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("FeudalFungus"))) {number = Main.rand.Next(1,2); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("GripOfChaosRed"))) {number = Main.rand.Next(2,3); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("GripOfChaosBlue"))) {number = Main.rand.Next(2,3); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("TruffleToad"))) {number = Main.rand.Next(5,7); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Broodmother"))) {number = Main.rand.Next(6,9); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Hydra"))) {number = Main.rand.Next(6,9); tier = 1;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("SerpentHead"))) {number = Main.rand.Next(1,2); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Djinn"))) {number = Main.rand.Next(1,2); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Saggitarius"))) {number = Main.rand.Next(1,2); tier = 2;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Rajah"))) {number = Main.rand.Next(4,6); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("DaybringerHead"))) {number = Main.rand.Next(15,20); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("NightcrawlerHead"))) {number = Main.rand.Next(15,20); tier = 4;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Ashe"))) {number = Main.rand.Next(2,3); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Haruka"))) {number = Main.rand.Next(2,3); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Yamata"))) {number = Main.rand.Next(3,5); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("YamataA"))) {number = Main.rand.Next(4,6); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Akuma"))) {number = Main.rand.Next(3,5); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("AkumaA"))) {number = Main.rand.Next(4,6); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("Zero"))) {number = Main.rand.Next(6,9); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("ZeroAwakened"))) {number = Main.rand.Next(7,10); tier = 5;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("ShenDoragon"))) {number = Main.rand.Next(10,15); tier = 6;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("ShenA"))) {number = Main.rand.Next(15,20); tier = 6;}
-								if (npc.type == (ModLoader.GetMod("AAMod").NPCType("SupremeRajah"))) {number = 33; tier = 6;}
-							}
-							if (number > 0)
-							{
-								switch (tier)
-								{
-									case 1:	
-										modPlayer.RCT1 += number; 
-										if (Main.netMode == 2) SyncPlayerVariables(player);
-										if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT1 + " in total.", 255, 255, 255);
-										else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT1 + " in total."), new Color(255, 255, 255)); 
-										break;
-									case 2:	
-										modPlayer.RCT2 += number;
-										if (Main.netMode == 2) SyncPlayerVariables(player);
-										if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT2 + " in total.", 255, 255, 255);
-										else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT2 + " in total."), new Color(255, 255, 255)); 
-										break;
-									case 3:	
-										modPlayer.RCT3 += number;
-										if (Main.netMode == 2) SyncPlayerVariables(player);
-										if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT3 + " in total.", 255, 255, 255);
-										else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT3 + " in total."), new Color(255, 255, 255)); 
-										break;
-									case 4:	
-										modPlayer.RCT4 += number;
-										if (Main.netMode == 2) SyncPlayerVariables(player);
-										if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT4 + " in total.", 255, 255, 255);
-										else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT4 + " in total."), new Color(255, 255, 255)); 
-										break;
-									case 5:	
-										modPlayer.RCT5 += number;
-										if (Main.netMode == 2) SyncPlayerVariables(player);
-										if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT5 + " in total.", 255, 255, 255);
-										else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT5 + " in total."), new Color(255, 255, 255)); 
-										break;
-									case 6:	
-										modPlayer.RCT6 += number;
-										if (Main.netMode == 2) SyncPlayerVariables(player);
-										if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT6 + " in total.", 255, 255, 255);
-										else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT6 + " in total."), new Color(255, 255, 255)); 
-										break;
-								}
+								case 1:	
+									modPlayer.RCT1 += number; 
+									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT1 + " in total.", 255, 255, 255);
+									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT1 + " in total."), new Color(255, 255, 255)); 
+									break;
+								case 2:	
+									modPlayer.RCT2 += number;
+									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT2 + " in total.", 255, 255, 255);
+									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT2 + " in total."), new Color(255, 255, 255)); 
+									break;
+								case 3:	
+									modPlayer.RCT3 += number;
+									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT3 + " in total.", 255, 255, 255);
+									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT3 + " in total."), new Color(255, 255, 255)); 
+									break;
+								case 4:	
+									modPlayer.RCT4 += number;
+									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT4 + " in total.", 255, 255, 255);
+									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT4 + " in total."), new Color(255, 255, 255)); 
+									break;
+								case 5:	
+									modPlayer.RCT5 += number;
+									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT5 + " in total.", 255, 255, 255);
+									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT5 + " in total."), new Color(255, 255, 255)); 
+									break;
+								case 6:	
+									modPlayer.RCT6 += number;
+									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT6 + " in total.", 255, 255, 255);
+									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT6 + " in total."), new Color(255, 255, 255)); 
+									break;
 							}
 						}
-						if (player.HeldItem.type == mod.ItemType("ChristmasW") && Main.rand.NextBool(33))
+					}
+					if (player.HeldItem.type == mod.ItemType("ChristmasW") && Main.rand.NextBool(33))
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Present);
+					}
+					if (player.HasBuff(mod.BuffType("Snatcher")) && !npc.friendly && npc.type != 14 && npc.type != 135 && !npc.SpawnedFromStatue && npc.type != 1 && npc.type != 535)
+					{
+						if (ModLoader.GetMod("Redemption") != null)
 						{
-							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Present);
-						}
-						if (player.HasBuff(mod.BuffType("Snatcher")) && !npc.friendly && npc.type != 14 && npc.type != 135 && !npc.SpawnedFromStatue && npc.type != 1 && npc.type != 535)
-						{
-							if (ModLoader.GetMod("Redemption") != null)
-							{
-								if (npc.type != ModLoader.GetMod("Redemption").NPCType("SludgyBlob")) 
-								{
-									modPlayer.SnatcherCounter++;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
-							if (ModLoader.GetMod("Redemption") == null)
+							if (npc.type != ModLoader.GetMod("Redemption").NPCType("SludgyBlob")) 
 							{
 								modPlayer.SnatcherCounter++;
 								if (Main.netMode == 2)
 								SyncPlayerVariables(player);
 							}
 						}
-						if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade") && !npc.SpawnedFromStatue)
+						if (ModLoader.GetMod("Redemption") == null)
 						{
-							if (!Main.hardMode && modPlayer.BBP < 2600)
+							modPlayer.SnatcherCounter++;
+							if (Main.netMode == 2)
+							SyncPlayerVariables(player);
+						}
+					}
+					if (player.HeldItem.type == mod.ItemType("BloodthirstyBlade") && !npc.SpawnedFromStatue)
+					{
+						if (!Main.hardMode && modPlayer.BBP < 2600)
+						{
+							if (!npc.boss && npc.type != 1 && npc.type != 535)
 							{
-								if (!npc.boss && npc.type != 1 && npc.type != 535)
-								{
-									modPlayer.BBP++;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
-								
-								if (npc.boss && npc.lifeMax <= 10000)
-								{
-									modPlayer.BBP += 25;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
-								
-								if (npc.boss && npc.lifeMax > 10000)
-								{
-									modPlayer.BBP += 50;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
+								modPlayer.BBP++;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
 							}
-							if (Main.hardMode && modPlayer.BBP < 8900)
+							
+							if (npc.boss && npc.lifeMax <= 10000)
 							{
-								if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(2))
-								{
-									modPlayer.BBP++;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
-								
-								if (npc.boss && npc.lifeMax <= 10000)
-								{
-									modPlayer.BBP += 15;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
-								
-								if (npc.boss && npc.lifeMax > 10000)
-								{
-									modPlayer.BBP += 30;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
+								modPlayer.BBP += 25;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
 							}
-							if (NPC.downedMoonlord)
+							
+							if (npc.boss && npc.lifeMax > 10000)
 							{
-								if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(3))
-								{
-									modPlayer.BBP++;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
-								
-								if (npc.boss && npc.lifeMax <= 10000)
-								{
-									modPlayer.BBP += 10;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
-								
-								if (npc.boss && npc.lifeMax > 10000)
-								{
-									modPlayer.BBP += 20;
-									if (Main.netMode == 2)
-									SyncPlayerVariables(player);
-								}
+								modPlayer.BBP += 50;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
 							}
 						}
-						if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
+						if (Main.hardMode && modPlayer.BBP < 8900)
 						{
-							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoulEssence"));
+							if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(2))
+							{
+								modPlayer.BBP++;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
+							}
+							
+							if (npc.boss && npc.lifeMax <= 10000)
+							{
+								modPlayer.BBP += 15;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
+							}
+							
+							if (npc.boss && npc.lifeMax > 10000)
+							{
+								modPlayer.BBP += 30;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
+							}
 						}
-						if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Extractor && npc.boss == true && npc.lifeMax >= 55000 && (Main.rand.Next(10) == 0))
+						if (NPC.downedMoonlord)
 						{
-							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HateVial"));
+							if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(3))
+							{
+								modPlayer.BBP++;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
+							}
+							
+							if (npc.boss && npc.lifeMax <= 10000)
+							{
+								modPlayer.BBP += 10;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
+							}
+							
+							if (npc.boss && npc.lifeMax > 10000)
+							{
+								modPlayer.BBP += 20;
+								if (Main.netMode == 2)
+								SyncPlayerVariables(player);
+							}
 						}
-						if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).TimeTwist && npc.boss == false && Main.rand.NextBool(4))
-						{
-							npc.NPCLoot();
-							break;
-						}
+					}
+					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Extractor && npc.boss == true && npc.lifeMax >= 50000 && (Main.rand.Next(3) == 0))
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoulEssence"));
+					}
+					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Extractor && npc.boss == true && npc.lifeMax >= 55000 && (Main.rand.Next(10) == 0))
+					{
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("HateVial"));
+					}
+					if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).TimeTwist && npc.boss == false && Main.rand.NextBool(4))
+					{
+						npc.NPCLoot();
+						break;
 					}
 				}
 			}
@@ -1676,12 +1677,8 @@ namespace AlchemistNPC.NPCs
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.World.CalamityWorld.revenge; }
+			get { return CalamityMod.World.CalamityWorld.revenge; }
         }
-		public bool CalamityModDownedDOG
-		{
-		get { return CalamityMod.World.CalamityWorld.downedDoG; }
-		}
 		
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		

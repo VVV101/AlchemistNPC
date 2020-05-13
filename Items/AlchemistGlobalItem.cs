@@ -29,11 +29,6 @@ namespace AlchemistNPC.Items
 		public static bool Warding = false;
 		public static bool PerfectionToken = false;
 		
-		public bool CalamityModDownedSCal
-		{
-		get { return CalamityMod.World.CalamityWorld.downedSCal; }
-		}
-		
 		public override void HoldItem(Item item, Player player)
 		{
 			if (item.type == 2272 && NPC.AnyNPCs(mod.NPCType("Knuckles")))
@@ -409,16 +404,17 @@ namespace AlchemistNPC.Items
 		{
 			if (((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).AlchemistCharmTier4 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0 || item.UseSound == SoundID.Item3))
 			{
-				if (ModLoader.GetMod("CalamityMod") != null)
+				Mod Calamity = ModLoader.GetMod("CalamityMod");
+				if (Calamity != null)
 				{
-					if (CalamityModDownedSCal)
+					if ((bool)Calamity.Call("Downed", "supreme calamitas"))
 					{
-					return false;
+						return false;
 					}
 				}
 				if (Main.rand.NextFloat() >= .25f)
 				{
-				return false;
+					return false;
 				}
 			}
 			
@@ -441,8 +437,6 @@ namespace AlchemistNPC.Items
 			}
 			return true;
 		}
-
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		public override bool ConsumeAmmo(Item item, Player player)
 		{
@@ -770,6 +764,7 @@ namespace AlchemistNPC.Items
             string Ravager = Language.GetTextValue("Mods.AlchemistNPC.Ravager");
             string Providence = Language.GetTextValue("Mods.AlchemistNPC.Providence");
             string Polterghast = Language.GetTextValue("Mods.AlchemistNPC.Polterghast");
+			string OldDuke = Language.GetTextValue("Mods.AlchemistNPC.OldDuke");
             string DevourerofGods = Language.GetTextValue("Mods.AlchemistNPC.DevourerofGods");
             string Bumblebirb = Language.GetTextValue("Mods.AlchemistNPC.Bumblebirb");
             string Yharon = Language.GetTextValue("Mods.AlchemistNPC.Yharon");
@@ -1078,6 +1073,12 @@ namespace AlchemistNPC.Items
 				if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("PolterghastBag")))
 				{
 				TooltipLine line = new TooltipLine(mod, "Polterghast", Polterghast);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("OldDukeBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "OldDuke", OldDuke);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 				}

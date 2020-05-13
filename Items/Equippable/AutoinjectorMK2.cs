@@ -53,20 +53,20 @@ namespace AlchemistNPC.Items.Equippable
 			player.AddBuff(mod.BuffType("UniversalComb"), 2);
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-			player.AddBuff(mod.BuffType("CalamityComb"), 2);
-			Mod Calamity = ModLoader.GetMod("CalamityMod");
-			if(Calamity != null)
-			{
-				Calamity.Call("AddRogueCrit", player, 10);
-			}
+				player.AddBuff(mod.BuffType("CalamityComb"), 2);
+				Mod Calamity = ModLoader.GetMod("CalamityMod");
+				if(Calamity != null)
+				{
+					Calamity.Call("AddRogueCrit", player, 10);
+				}
 			}
 			if (ModLoader.GetMod("Redemption") != null)
 			{
-			RedemptionBoost(player);
+				RedemptionBoost(player);
 			}
 			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
-			ThoriumBoosts(player);
+				ThoriumBoosts(player);
 			}
 			if (!hideVisual)
 			{

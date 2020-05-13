@@ -443,9 +443,8 @@ namespace AlchemistNPC.NPCs
 		
 		public bool CalamityModRevengeance
 		{
-        get { return CalamityMod.World.CalamityWorld.revenge; }
+			get { return CalamityMod.World.CalamityWorld.revenge; }
         }
-		
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		const int Frame_P11 = 0;

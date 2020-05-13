@@ -18,8 +18,8 @@ namespace AlchemistNPC.Buffs
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Гарантированный Крит");
 			Description.AddTranslation(GameCulture.Russian, "Ваша следующая атаку будет гарантированным критом");
-      DisplayName.AddTranslation(GameCulture.Chinese, "暴击预定");
-      Description.AddTranslation(GameCulture.Chinese, "下一次攻击必定暴击");
+			DisplayName.AddTranslation(GameCulture.Chinese, "暴击预定");
+			Description.AddTranslation(GameCulture.Chinese, "下一次攻击必定暴击");
 
         }
 		
@@ -50,19 +50,11 @@ namespace AlchemistNPC.Buffs
 			}
 		}
 		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-            CalamityPlayer.throwingCrit += 100;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 100;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
@@ -70,6 +62,5 @@ namespace AlchemistNPC.Buffs
             ThoriumPlayer.symphonicCrit += 100;
             ThoriumPlayer.radiantCrit += 100;
         }
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

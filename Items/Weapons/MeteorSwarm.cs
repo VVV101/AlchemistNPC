@@ -45,11 +45,6 @@ namespace AlchemistNPC.Items.Weapons
 			item.mana = 200;
         }
 		
-		public bool CalamityModRevengeance
-		{
-        get { return CalamityMod.World.CalamityWorld.revenge; }
-        }
-		
 		public override bool UseItem(Player player)
 		{
 			for (int index1 = 0; index1 < 50; ++index1)

@@ -14,37 +14,37 @@ namespace AlchemistNPC.Items.Weapons
 	{
 		public override void SetDefaults()
 		{
-		item.CloneDefaults(3389);
-		item.damage = 200;
-		item.shoot = mod.ProjectileType("TrueSasscadeYoyo");
-		item.knockBack = 4;
-		item.value = 5000000;
-		item.rare = 11;
-		item.shootSpeed = 12f;
-		item.useTime = 10;
-		item.useAnimation = 10;
+			item.CloneDefaults(3389);
+			item.damage = 200;
+			item.shoot = mod.ProjectileType("TrueSasscadeYoyo");
+			item.knockBack = 4;
+			item.value = 5000000;
+			item.rare = 11;
+			item.shootSpeed = 12f;
+			item.useTime = 10;
+			item.useAnimation = 10;
 		}
 
 		public override void UpdateEquip(Player player)
 		{
-		player.counterWeight = 556 + Main.rand.Next(6);
-        player.yoyoGlove = true;
-        player.yoyoString = true;
+			player.counterWeight = 556 + Main.rand.Next(6);
+			player.yoyoGlove = true;
+			player.yoyoString = true;
 		}
 		
 		public override void UpdateInventory(Player player)
 		{
-		player.counterWeight = 556 + Main.rand.Next(6);
-        player.yoyoGlove = true;
-        player.yoyoString = true;
+			player.counterWeight = 556 + Main.rand.Next(6);
+			player.yoyoGlove = true;
+			player.yoyoString = true;
 		}
 		
 		public override void HoldItem(Player player)
 		{
-		((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).TS = true;
-		player.counterWeight = 556 + Main.rand.Next(6);
-        player.yoyoGlove = true;
-        player.yoyoString = true;
+			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).TS = true;
+			player.counterWeight = 556 + Main.rand.Next(6);
+			player.yoyoGlove = true;
+			player.yoyoString = true;
 		}
 		
 		public override void SetStaticDefaults()
@@ -71,14 +71,14 @@ namespace AlchemistNPC.Items.Weapons
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 3);
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 15);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 10);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 15);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 10);
 			}
 			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
 			}
 			recipe.AddIngredient(null, "EmagledFragmentation", 150);
 			recipe.AddTile(null, "MateriaTransmutator");

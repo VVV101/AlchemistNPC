@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using System.Linq;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -102,9 +103,10 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				item.damage = 500;
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
 			{
-				if (CalamityModDownedGuardian)
+				if ((bool)Calamity.Call("Downed", "profaned guardians"))
 				{
 					item.damage = 600;
 				}
@@ -116,25 +118,25 @@ namespace AlchemistNPC.Items.Weapons
 					item.damage = 750;
 				}
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
+			if (Calamity != null)
 			{
-				if (CalamityModDownedProvidence)
+				if ((bool)Calamity.Call("Downed", "providence"))
 				{
 					item.damage = 1000;
 				}
-				if (CalamityModDownedPolter)
+				if ((bool)Calamity.Call("Downed", "polterghast"))
 				{
 					item.damage = 1350;
 				}
-				if (CalamityModDownedDOG)
+				if ((bool)Calamity.Call("Downed", "dog"))
 				{
 					item.damage = 3000;
 				}
-				if (CalamityModDownedYharon)
+				if ((bool)Calamity.Call("Downed", "yharon"))
 				{
 					item.damage = 5000;
 				}
-				if (CalamityModDownedSCal)
+				if ((bool)Calamity.Call("Downed", "supreme calamitas"))
 				{
 					item.damage = 10000;
 				}
@@ -143,34 +145,6 @@ namespace AlchemistNPC.Items.Weapons
 		}
 		
 		
-		public bool CalamityModDownedGuardian
-		{
-		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
-		}
-		public bool CalamityModDownedBirb
-		{
-		get { return CalamityMod.World.CalamityWorld.downedBumble; }
-		}
-		public bool CalamityModDownedPolter
-		{
-		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
-		}
-		public bool CalamityModDownedDOG
-		{
-		get { return CalamityMod.World.CalamityWorld.downedDoG; }
-		}
-		public bool CalamityModDownedYharon
-		{
-		get { return CalamityMod.World.CalamityWorld.downedYharon; }
-		}
-		public bool CalamityModDownedSCal
-		{
-		get { return CalamityMod.World.CalamityWorld.downedSCal; }
-		}
-		public bool CalamityModDownedProvidence
-        {
-        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
-        }
         public bool ThoriumModDownedRagnarok
         {
         get { return ThoriumMod.ThoriumWorld.downedRealityBreaker; }
@@ -179,6 +153,13 @@ namespace AlchemistNPC.Items.Weapons
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			player.statLife -= 3;
+			if (player.statLife <= 0)
+			{
+				PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
+				if (player.Male) damageSource = PlayerDeathReason.ByCustomReason(player.name + " drained himself to death.");
+				if (!player.Male) damageSource = PlayerDeathReason.ByCustomReason(player.name + " drained herself to death.");
+				player.KillMe(damageSource, 1.0, 0, false);
+			}
 			type = 638;
 			return true;
 		}

@@ -18,12 +18,12 @@ namespace AlchemistNPC.Projectiles
 
 		public override void SetDefaults()
 		{
-		projectile.CloneDefaults(ProjectileID.Bee);
-		projectile.netImportant = true;
-		projectile.netUpdate = true;
-		projectile.magic = true; 
-		projectile.timeLeft = 240;
-		aiType = ProjectileID.Bee;
+			projectile.CloneDefaults(ProjectileID.Bee);
+			projectile.netImportant = true;
+			projectile.netUpdate = true;
+			projectile.magic = true; 
+			projectile.timeLeft = 240;
+			aiType = ProjectileID.Bee;
 		}
 		
 		public override void AI()

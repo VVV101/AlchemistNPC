@@ -59,8 +59,8 @@ namespace AlchemistNPC.Items.Equippable
 			player.noFallDmg = true;
 			if (!hideVisual)
 			{
-            player.doubleJumpSandstorm = true;
-            player.doubleJumpBlizzard = true;
+				player.doubleJumpSandstorm = true;
+				player.doubleJumpBlizzard = true;
 			}
 			Mod Calamity = ModLoader.GetMod("CalamityMod");
 			if(Calamity != null)

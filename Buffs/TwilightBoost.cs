@@ -37,32 +37,25 @@ namespace AlchemistNPC.Buffs
 			player.magicDamage += 3f;
 			player.minionDamage += 3f;
 			if (ModLoader.GetMod("ThoriumMod") != null)
-				{
+			{
 				ThoriumBoosts(player);
-				}
-				if (ModLoader.GetMod("Redemption") != null)
-				{
+			}
+			if (ModLoader.GetMod("Redemption") != null)
+			{
 				RedemptionBoost(player);
-				}
-				if (ModLoader.GetMod("CalamityMod") != null)
-				{
-				CalamityBoost(player);
-				}
+			}
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
+			{
+				Calamity.Call("AddRogueDamage", player, 300);
+			}
 		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.throwingDamage += 3f;
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
 			RedemptionPlayer.druidDamage += 3f;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
@@ -70,7 +63,5 @@ namespace AlchemistNPC.Buffs
             ThoriumPlayer.symphonicDamage += 3f;
 			ThoriumPlayer.radiantBoost += 3f;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

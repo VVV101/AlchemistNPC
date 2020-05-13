@@ -57,12 +57,12 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (player.statLife > player.statLifeMax2*0.35f)
 			{
-			player.AddBuff(mod.BuffType("TrueAkumuAttack"), 2);
+				player.AddBuff(mod.BuffType("TrueAkumuAttack"), 2);
 			}
 			if (player.statLife < player.statLifeMax2*0.35f)
 			{
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Akumu = true;
-			player.AddBuff(mod.BuffType("TrueAkumu"), 2);
+				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).Akumu = true;
+				player.AddBuff(mod.BuffType("TrueAkumu"), 2);
 			}
 		}
 		
@@ -121,14 +121,14 @@ namespace AlchemistNPC.Items.Weapons
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 10);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 10);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
 			}
 			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 5);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 5);
 			}
 			recipe.AddIngredient(null, "EmagledFragmentation", 150);
 			recipe.AddTile(null, "MateriaTransmutator");

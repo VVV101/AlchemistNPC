@@ -13,7 +13,7 @@ namespace AlchemistNPC.Items.Misc
 	{
 		public override bool Autoload(ref string name)
 		{
-		return ModLoader.GetMod("CalamityMod") != null;
+			return ModLoader.GetMod("CalamityMod") != null;
 		}
 
 		public override void SetStaticDefaults()
@@ -41,26 +41,22 @@ namespace AlchemistNPC.Items.Misc
 
 		public override bool UseItem(Player player)
 		{
-		CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
 			for (int h = 0; h < 1; h++) {
 			Vector2 vel = new Vector2(0, -1);
 			vel *= 0f;
 			Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType("Drainer"), 0, 0, player.whoAmI);
 			}
-		player.Hurt(PlayerDeathReason.LegacyEmpty(), 2, 0, false, false, false, -1);
-		CalamityPlayer.rage += CalamityPlayer.rageMax/4;
-		player.statLife = (player.statLife - player.statLifeMax2 / 4);
-		PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
-		if (Main.rand.Next(2) == 0)
-		damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
-		if (player.statLife <= 0)
-		player.KillMe(damageSource, 1.0, 0, false);
-		player.lifeRegenCount = 0;
-		player.lifeRegenTime = 0;
-		return true;
+			player.Hurt(PlayerDeathReason.LegacyEmpty(), 2, 0, false, false, false, -1);
+			CalamityPlayer.rage += CalamityPlayer.rageMax/4;
+			player.statLife = (player.statLife - player.statLifeMax2 / 4);
+			PlayerDeathReason damageSource = PlayerDeathReason.ByOther(13);
+			if (Main.rand.Next(2) == 0)	damageSource = PlayerDeathReason.ByOther(player.Male ? 14 : 15);
+			if (player.statLife <= 0) player.KillMe(damageSource, 1.0, 0, false);
+			player.lifeRegenCount = 0;
+			player.lifeRegenTime = 0;
+			return true;
 		}
-		
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		private Vector2 GetLightPosition(Player player)
 		{

@@ -109,9 +109,10 @@ namespace AlchemistNPC.Items.Weapons
 			{
 				item.damage = 111;
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
 			{
-				if (CalamityModDownedGuardian)
+				if ((bool)Calamity.Call("Downed", "profaned guardians"))
 				{
 					item.damage = 140;
 				}
@@ -123,25 +124,25 @@ namespace AlchemistNPC.Items.Weapons
 					item.damage = 200;
 				}
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
+			if (Calamity != null)
 			{
-				if (CalamityModDownedProvidence)
+				if ((bool)Calamity.Call("Downed", "providence"))
 				{
 					item.damage = 200;
 				}
-				if (CalamityModDownedPolter)
+				if ((bool)Calamity.Call("Downed", "polterghast"))
 				{
 					item.damage = 300;
 				}
-				if (CalamityModDownedDOG)
+				if ((bool)Calamity.Call("Downed", "dog"))
 				{
 					item.damage = 1000;
 				}
-				if (CalamityModDownedYharon)
+				if ((bool)Calamity.Call("Downed", "yharon"))
 				{
 					item.damage = 3000;
 				}
-				if (CalamityModDownedSCal)
+				if ((bool)Calamity.Call("Downed", "supreme calamitas"))
 				{
 					item.damage = 10000;
 				}
@@ -175,37 +176,9 @@ namespace AlchemistNPC.Items.Weapons
 			return true;
 		}
 		
-		public bool CalamityModDownedGuardian
-		{
-		get { return CalamityMod.World.CalamityWorld.downedGuardians; }
-		}
-		public bool CalamityModDownedBirb
-		{
-		get { return CalamityMod.World.CalamityWorld.downedBumble; }
-		}
-		public bool CalamityModDownedPolter
-		{
-		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
-		}
-		public bool CalamityModDownedDOG
-		{
-		get { return CalamityMod.World.CalamityWorld.downedDoG; }
-		}
-		public bool CalamityModDownedYharon
-		{
-		get { return CalamityMod.World.CalamityWorld.downedYharon; }
-		}
-		public bool CalamityModDownedSCal
-		{
-		get { return CalamityMod.World.CalamityWorld.downedSCal; }
-		}
-		public bool CalamityModDownedProvidence
-        {
-        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
-        }
         public bool ThoriumModDownedRagnarok
         {
-        get { return ThoriumMod.ThoriumWorld.downedRealityBreaker; }
+			get { return ThoriumMod.ThoriumWorld.downedRealityBreaker; }
         }
 	}
 }

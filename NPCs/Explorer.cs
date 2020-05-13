@@ -323,11 +323,6 @@ namespace AlchemistNPC.NPCs
 			closeness = 15;
 			item = mod.ItemType("Nyx");
 		}
-		
-		public bool CalamityModDownedDOG
-		{
-		get { return CalamityMod.World.CalamityWorld.downedDoG; }
-		}
  
         public override string GetChat()
         {                                           //npc chat
@@ -353,9 +348,10 @@ namespace AlchemistNPC.NPCs
 			{
 				return Entry8 + Main.npc[Operator].GivenName + Entry9;
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
 			{
-				if (CalamityModDownedDOG && Main.rand.Next(10) == 0)
+				if ((bool)Calamity.Call("Downed", "dog") && Main.rand.Next(10) == 0)
 				{
 					return Entry17;
 				}

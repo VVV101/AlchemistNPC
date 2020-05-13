@@ -366,7 +366,6 @@ namespace AlchemistNPC.Buffs
 				RedemptionPlayer.druidCrit += 4;
 			}
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player, int c)
         {
@@ -387,6 +386,5 @@ namespace AlchemistNPC.Buffs
 				ThoriumPlayer.radiantCrit += 4;
 			}
         }
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

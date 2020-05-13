@@ -1404,30 +1404,30 @@ namespace AlchemistNPC.NPCs
 					}
 					if ((bool)Calamity.Call("Downed", "ravager"))
 					{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BarofLife"));
-					shop.item[nextSlot].shopCustomPrice = 100000;
-					nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BarofLife"));
+						shop.item[nextSlot].shopCustomPrice = 100000;
+						nextSlot++;
 					}
 					if ((bool)Calamity.Call("Downed", "astrum deus"))
 					{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("MeldBlob"));
-					shop.item[nextSlot].shopCustomPrice = 10000;
-					nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("MeldBlob"));
+						shop.item[nextSlot].shopCustomPrice = 10000;
+						nextSlot++;
 					}
 					if ((bool)Calamity.Call("Downed", "profaned guardians"))
 					{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("UnholyEssence"));
-					shop.item[nextSlot].shopCustomPrice = 50000;
-					nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("UnholyEssence"));
+						shop.item[nextSlot].shopCustomPrice = 50000;
+						nextSlot++;
 					}
 					if ((bool)Calamity.Call("Downed", "polterghast"))
 					{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BloodOrb"));
-					shop.item[nextSlot].shopCustomPrice = 50000;
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm"));
-					shop.item[nextSlot].shopCustomPrice = 100000;
-					nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BloodOrb"));
+						shop.item[nextSlot].shopCustomPrice = 50000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm"));
+						shop.item[nextSlot].shopCustomPrice = 100000;
+						nextSlot++;
 					}
 					if ((bool)Calamity.Call("Downed", "dog") && AlchemistNPCWorld.downedDOGPumpking)
 					{

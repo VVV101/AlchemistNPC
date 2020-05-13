@@ -9,7 +9,7 @@ namespace AlchemistNPC.Items.Placeable
 	{
 		public override bool Autoload(ref string name)
 		{
-		return ModLoader.GetMod("CalamityMod") != null;
+			return ModLoader.GetMod("CalamityMod") != null;
 		}
 		
 		public override void SetStaticDefaults()

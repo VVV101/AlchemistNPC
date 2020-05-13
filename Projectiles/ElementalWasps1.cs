@@ -18,13 +18,13 @@ namespace AlchemistNPC.Projectiles
 
 		public override void SetDefaults()
 		{
-		projectile.CloneDefaults(189);
-		projectile.netImportant = true;
-		projectile.netUpdate = true;
-		projectile.magic = false;
-		projectile.thrown = true;
-		projectile.aiStyle = 36;
-		aiType = 189;
+			projectile.CloneDefaults(189);
+			projectile.netImportant = true;
+			projectile.netUpdate = true;
+			projectile.magic = false;
+			projectile.thrown = true;
+			projectile.aiStyle = 36;
+			aiType = 189;
 		}
 
 		public override void AI()

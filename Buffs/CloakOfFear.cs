@@ -31,12 +31,7 @@ namespace AlchemistNPC.Buffs
             DisplayName.AddTranslation(GameCulture.Chinese, "恐惧之袍");
             Description.AddTranslation(GameCulture.Chinese, "使附近的非Boss敌人改变移动方向");
         }
-		
-		public bool CalamityModRevengeance
-		{
-        get { return CalamityMod.World.CalamityWorld.revenge; }
-        }
-		
+
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (player.ownedProjectileCounts[mod.ProjectileType("CloakOfFear")] == 0)

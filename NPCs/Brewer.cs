@@ -437,6 +437,11 @@ namespace AlchemistNPC.NPCs
 				ShopChangeUI.visible = true;
 			}
 		}
+		
+		public bool CalamityModRevengeance
+		{
+        get { return CalamityMod.World.CalamityWorld.revenge; }
+        }
  
 		public bool SacredToolsDownedAbaddon
 		{
@@ -452,40 +457,6 @@ namespace AlchemistNPC.NPCs
 		{
 		get { return SacredTools.ModdedWorld.downedLunarians; }
 		}
- 
-		public bool CalamityModRevengeance
-		{
-        get { return CalamityMod.World.CalamityWorld.revenge; }
-        }
-		
-		public bool CalamityModDownedBirb
-		{
-		get { return CalamityMod.World.CalamityWorld.downedBumble; }
-		}
-		public bool CalamityModDownedPolter
-		{
-		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
-		}
-		public bool CalamityModDownedYharon
-		{
-		get { return CalamityMod.World.CalamityWorld.downedYharon; }
-		}
-		public bool CalamityModDownedAstrum
-		{
-		get { return CalamityMod.World.CalamityWorld.downedStarGod; }
-		}
-		public bool CalamityModDownedCalamitas
-        {
-        get { return CalamityMod.World.CalamityWorld.downedCalamitas; }
-        }
-		public bool CalamityModDownedProvidence
-        {
-        get { return CalamityMod.World.CalamityWorld.downedProvidence; }
-        }
-		public bool CalamityModDownedAstrageldon
-        {
-        get { return CalamityMod.World.CalamityWorld.downedAstrageldon; }
-        }
  
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
@@ -661,10 +632,11 @@ namespace AlchemistNPC.NPCs
 					{
 						if (CalamityModRevengeance)
 						{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("HeartAttackPotion"));
-						shop.item[nextSlot].shopCustomPrice = 250000;
-						nextSlot++;
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("HeartAttackPotion"));
+							shop.item[nextSlot].shopCustomPrice = 250000;
+							nextSlot++;
 						}
+						
 					}
 					if (NPC.downedMechBossAny)
 					{
@@ -692,7 +664,8 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
 			{
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BoundingPotion"));
 				shop.item[nextSlot].shopCustomPrice = 20000;
@@ -743,7 +716,7 @@ namespace AlchemistNPC.NPCs
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("RevivifyPotion"));
 						shop.item[nextSlot].shopCustomPrice = 50000;
 						nextSlot++;
-						if (CalamityModDownedAstrageldon)
+						if ((bool)Calamity.Call("Downed", "astrum aureus"))
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstralInjection"));
 							shop.item[nextSlot].shopCustomPrice = 10000;
@@ -776,13 +749,13 @@ namespace AlchemistNPC.NPCs
 							shop.item[nextSlot].shopCustomPrice = 100000;
 							nextSlot++;
 						}
-						if (CalamityModDownedPolter)
+						if ((bool)Calamity.Call("Downed", "polterghast"))
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CeaselessHungerPotion"));
 							shop.item[nextSlot].shopCustomPrice = 25000;
 							nextSlot++;
 						}
-						if (CalamityModDownedYharon)
+						if ((bool)Calamity.Call("Downed", "yharon"))
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DraconicElixir"));
 							shop.item[nextSlot].shopCustomPrice = 250000;

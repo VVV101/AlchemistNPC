@@ -56,13 +56,6 @@ namespace AlchemistNPC.Items.Weapons
 					target.AddBuff(mod.BuffType("Banned"), 60);
 				}
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
-			{
-				if (target.type == mod.NPCType("CeaselessVoid"))
-				{
-					damage = 1;
-				}
-			}
 			if (target.type == NPCID.DungeonGuardian)
 			{
 				target.buffImmune[mod.BuffType("Banned")] = false;

@@ -58,14 +58,14 @@ namespace AlchemistNPC.Items.Armor
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 8);
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 11);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 20);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 11);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 20);
 			}
 			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 4);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 4);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 4);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 4);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 4);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 4);
 			}
 			recipe.AddIngredient(null, "EmagledFragmentation", 200);
 			recipe.AddTile(null, "MateriaTransmutator");

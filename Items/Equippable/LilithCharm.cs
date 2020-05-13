@@ -44,13 +44,13 @@ namespace AlchemistNPC.Items.Equippable
 		{
 			if (!hideVisual)
 			{
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem = true;
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BeeHeal = true;
+				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem = true;
+				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BeeHeal = true;
 			}
 			if (hideVisual)
 			{
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem = false;
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BeeHeal = false;
+				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).LilithEmblem = false;
+				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).BeeHeal = false;
 			}
 			player.manaMagnet = true;
 			player.magicDamage += 0.15f;
@@ -71,23 +71,23 @@ namespace AlchemistNPC.Items.Equippable
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 4);
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 10);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy")), 10);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 30);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel")), 10);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy")), 10);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 30);
 			}
 			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
 			}
 			if (ModLoader.GetMod("CalamityMod") == null)
 			{
-			recipe.AddTile(null, "MateriaTransmutator");
+				recipe.AddTile(null, "MateriaTransmutator");
 			}
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-			recipe.AddTile(null, "MateriaTransmutatorMK2");
+				recipe.AddTile(null, "MateriaTransmutatorMK2");
 			}
 			recipe.SetResult(this);
 			recipe.AddRecipe();

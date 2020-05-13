@@ -80,7 +80,7 @@ namespace AlchemistNPC.NPCs
 				npc.TargetClosest(false);
 				if (Main.player[npc.target].dead)
 				{
-					npc.timeLeft = 10;
+					npc.timeLeft = 0;
 				}
 			}
 			if (!Main.player[npc.target].dead)

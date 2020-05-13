@@ -964,6 +964,11 @@ namespace AlchemistNPC
 	    text.AddTranslation(GameCulture.Russian, "Сумка Полтергаста");
             text.AddTranslation(GameCulture.Chinese, "噬魂幽花宝藏袋");
             AddTranslation(text);
+			
+			text = CreateTranslation("OldDuke");
+            text.SetDefault("The Old Duke Treasure Bag");
+			text.AddTranslation(GameCulture.Russian, "Сумка Старого Герцога");
+            AddTranslation(text);
 
             text = CreateTranslation("DevourerofGods");
             text.SetDefault("The Devourer of Gods Treasure Bag");

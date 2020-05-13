@@ -21,7 +21,7 @@ namespace AlchemistNPC.Items.Equippable
 				+ "\nBuffs will never wear off after death"
 				+ "\nBuffs's duration will become 2x"
 				+ "\nWill also give permanent effect of Philosopher's Stone");
-				DisplayName.AddTranslation(GameCulture.Russian, "Автоинъектор");
+			DisplayName.AddTranslation(GameCulture.Russian, "Автоинъектор");
             Tooltip.AddTranslation(GameCulture.Russian, "Усиливает регенерацию \nУменьшает откат зелий лечения \nУвеличивает период неуязвимости после получения урона\nДобавляет 10% ко всем видам урона и 8% ко всем шансам критического удара\nТакже даёт эффект Комбинации Универсала\nМожет быть использован для получения постоянных эффектов:\nБаффы не будут исчезать после смерти\nБаффы будут действовать вдвое дольше\nТакже даст постоянный эффект Философского камня");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "自动注射器");
@@ -51,19 +51,19 @@ namespace AlchemistNPC.Items.Equippable
 			player.pStone = true;
 			player.longInvince = true;
 			player.AddBuff(mod.BuffType("UniversalComb"), 2);
-				if (ModLoader.GetMod("ThoriumMod") != null)
-				{
+			if (ModLoader.GetMod("ThoriumMod") != null)
+			{
 				ThoriumBoosts(player);
-				}
-				if (ModLoader.GetMod("Redemption") != null)
-				{
+			}
+			if (ModLoader.GetMod("Redemption") != null)
+			{
 				RedemptionBoost(player);
-				}
-				Mod Calamity = ModLoader.GetMod("CalamityMod");
-				if(Calamity != null)
-				{
-					Calamity.Call("AddRogueCrit", player, 8);
-				}
+			}
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
+			{
+				Calamity.Call("AddRogueCrit", player, 8);
+			}
 		}
 		
 		private void RedemptionBoost(Player player)

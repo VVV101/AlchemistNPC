@@ -87,16 +87,16 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (player.altFunctionUse != 2)
 			{
-			item.noMelee = false;
-			Vector2 SPos = player.position;
-			position = SPos;
-			if (player.direction == 1)
+				item.noMelee = false;
+				Vector2 SPos = player.position;
+				position = SPos;
+				if (player.direction == 1)
 				{
-				Projectile.NewProjectile(position.X+10, position.Y, speedX, speedY, mod.ProjectileType("ParadiseLostProjectile"), damage, knockBack, player.whoAmI);
+					Projectile.NewProjectile(position.X+10, position.Y, speedX, speedY, mod.ProjectileType("ParadiseLostProjectile"), damage, knockBack, player.whoAmI);
 				}
 				if (player.direction == -1)
 				{
-				Projectile.NewProjectile(position.X-10, position.Y, speedX, speedY, mod.ProjectileType("ParadiseLostProjectile"), damage, knockBack, player.whoAmI);
+					Projectile.NewProjectile(position.X-10, position.Y, speedX, speedY, mod.ProjectileType("ParadiseLostProjectile"), damage, knockBack, player.whoAmI);
 				}
 			}
 			if (player.altFunctionUse == 2)
@@ -136,14 +136,14 @@ namespace AlchemistNPC.Items.Weapons
 			recipe.AddIngredient(null, "NyctosythiaCrystal", 10);
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 10);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 25);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 10);
+				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 25);
 			}
 			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 5);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 5);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 5);
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 5);
 			}
 			recipe.AddIngredient(null, "EmagledFragmentation", 250);
 			recipe.AddTile(null, "MateriaTransmutator");

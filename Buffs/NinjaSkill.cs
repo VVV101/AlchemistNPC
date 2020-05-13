@@ -29,19 +29,19 @@ namespace AlchemistNPC.Buffs
             player.thrownCrit += 5;
 			player.blackBelt = true;
             player.spikedBoots = 2;
-				if (ModLoader.GetMod("ThoriumMod") != null)
-				{
+			if (ModLoader.GetMod("ThoriumMod") != null)
+			{
 				ThoriumBoosts(player);
-				}
-				if (ModLoader.GetMod("Redemption") != null)
-				{
+			}
+			if (ModLoader.GetMod("Redemption") != null)
+			{
 				RedemptionBoost(player);
-				}
-				Mod Calamity = ModLoader.GetMod("CalamityMod");
-				if(Calamity != null)
-				{
-					Calamity.Call("AddRogueCrit", player, 5);
-				}
+			}
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
+			{
+				Calamity.Call("AddRogueCrit", player, 5);
+			}
 		}
 		
 		private void RedemptionBoost(Player player)
@@ -49,7 +49,6 @@ namespace AlchemistNPC.Buffs
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 5;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
@@ -57,7 +56,5 @@ namespace AlchemistNPC.Buffs
             ThoriumPlayer.symphonicCrit += 5;
             ThoriumPlayer.radiantCrit += 5;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 	}
 }

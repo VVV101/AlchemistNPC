@@ -206,11 +206,6 @@ namespace AlchemistNPC
 		private const int maxMoonLordBooster = 1;
 		public int MoonLordBooster = 0;
 		
-		public bool CalamityModDownedSCal
-		{
-		get { return CalamityMod.World.CalamityWorld.downedSCal; }
-		}
-		
 		public override bool CloneNewInstances
 		{
 			get
@@ -1126,9 +1121,10 @@ namespace AlchemistNPC
 						{
 							if (AlchemistCharmTier4 == true)
 							{
-								if (ModLoader.GetMod("CalamityMod") != null)
+								Mod Calamity = ModLoader.GetMod("CalamityMod");
+								if (Calamity != null)
 								{
-									if (CalamityModDownedSCal)
+									if ((bool)Calamity.Call("Downed", "supreme calamitas"))
 									{
 									}
 									else if (Main.rand.NextFloat() >= .25f)
@@ -1511,7 +1507,8 @@ namespace AlchemistNPC
 		
 		public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
 		{
-			if (ModLoader.GetMod("CalamityMod") != null)
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if (Calamity != null)
 			{
 				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("HolyWrathBuff")) && AllDamage10) player.allDamage += 0.1f;
 				if (!player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("ProfanedRageBuff")) && AllCrit10)
@@ -1528,11 +1525,7 @@ namespace AlchemistNPC
 					{
 						RedemptionBoost(player);
 					}
-					Mod Calamity = ModLoader.GetMod("CalamityMod");
-					if(Calamity != null)
-					{
-						Calamity.Call("AddRogueCrit", player, 10);
-					}
+					Calamity.Call("AddRogueCrit", player, 10);
 				}
 				if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Regeneration) player.lifeRegen += 4;
 				if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Lifeforce)

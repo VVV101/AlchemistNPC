@@ -92,7 +92,6 @@ namespace AlchemistNPC.Items.Armor
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 20;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 		
 		private void ThoriumBoosts(Player player)
         {
@@ -100,7 +99,5 @@ namespace AlchemistNPC.Items.Armor
             ThoriumPlayer.symphonicCrit += 20;
             ThoriumPlayer.radiantCrit += 20;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
-		}
 	}
+}

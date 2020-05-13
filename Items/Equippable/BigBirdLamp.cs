@@ -65,8 +65,6 @@ namespace AlchemistNPC.Items.Equippable
 			RedemptionPlayer.druidDamage += 0.05f;
             RedemptionPlayer.druidCrit += 5;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
-		
 		private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
@@ -75,8 +73,6 @@ namespace AlchemistNPC.Items.Equippable
 			ThoriumPlayer.radiantBoost += 0.05f;
             ThoriumPlayer.radiantCrit += 5;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 
 		public override void AddRecipes()
 		{

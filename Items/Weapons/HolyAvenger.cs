@@ -135,21 +135,21 @@ namespace AlchemistNPC.Items.Weapons
 			target.AddBuff(mod.BuffType("CurseOfLight"), 300);
 			if (Main.hardMode && !NPC.downedMechBossAny)
 			{
-			Vector2 vel1 = new Vector2(0, 0);
-			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/4, 0, Main.myPlayer);
+				Vector2 vel1 = new Vector2(0, 0);
+				vel1 *= 0f;
+				Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/4, 0, Main.myPlayer);
 			}
 			if (Main.hardMode && NPC.downedMechBossAny && !NPC.downedGolemBoss)
 			{
-			Vector2 vel1 = new Vector2(0, 0);
-			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/3, 0, Main.myPlayer);
+				Vector2 vel1 = new Vector2(0, 0);
+				vel1 *= 0f;
+				Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/3, 0, Main.myPlayer);
 			}
 			if (Main.hardMode && NPC.downedGolemBoss)
 			{
-			Vector2 vel1 = new Vector2(0, 0);
-			vel1 *= 0f;
-			Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/2, 0, Main.myPlayer);
+				Vector2 vel1 = new Vector2(0, 0);
+				vel1 *= 0f;
+				Projectile.NewProjectile(target.position.X, target.position.Y, vel1.X, vel1.Y, mod.ProjectileType("ExplosionAvenger"), damage/2, 0, Main.myPlayer);
 			}
 		}
 	}

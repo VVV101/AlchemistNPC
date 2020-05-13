@@ -36,11 +36,11 @@ namespace AlchemistNPC.Items.Misc
         {
             if (ModLoader.GetMod("CalamityMod") != null)
 			{
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(null, "ReversivityCoinTier5", 1);
-            recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(this, 2);
-            recipe.AddRecipe();
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddIngredient(null, "ReversivityCoinTier5", 1);
+				recipe.AddTile(TileID.LunarCraftingStation);
+				recipe.SetResult(this, 2);
+				recipe.AddRecipe();
 			}
         }
     }

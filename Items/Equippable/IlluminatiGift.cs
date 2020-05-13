@@ -43,11 +43,6 @@ namespace AlchemistNPC.Items.Equippable
 			item.defense = 4;
 			item.expert = true;
 		}
-
-		public bool CalamityModRevengeance
-		{
-        get { return CalamityMod.World.CalamityWorld.revenge; }
-        }
 		
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
@@ -84,21 +79,13 @@ namespace AlchemistNPC.Items.Equippable
 			{
 				if (ModLoader.GetMod("CalamityMod") != null)
 				{
-					if (CalamityModRevengeance)
-					{
-					player.AddBuff(mod.BuffType("IlluminatiHeal"), 1800);
-					player.AddBuff(mod.BuffType("IlluminatiCooldown"), 3600);
-					}
-					else
-					{
 					player.AddBuff(mod.BuffType("IlluminatiHeal"), 3600);
 					player.AddBuff(mod.BuffType("IlluminatiCooldown"), 7200);
-					}
 				}
 				if (ModLoader.GetMod("CalamityMod") == null)
 				{
-				player.AddBuff(mod.BuffType("IlluminatiHeal"), 3600);
-				player.AddBuff(mod.BuffType("IlluminatiCooldown"), 7200);
+					player.AddBuff(mod.BuffType("IlluminatiHeal"), 3600);
+					player.AddBuff(mod.BuffType("IlluminatiCooldown"), 7200);
 				}
 			}
 		}

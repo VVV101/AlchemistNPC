@@ -143,9 +143,10 @@ namespace AlchemistNPC.Items.Equippable
 			{
 				RedemptionBoost(player);
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
 			{
-				CalamityBoost(player);
+				Calamity.Call("AddRogueCrit", player, p);
 			}
 		}
 		
@@ -179,12 +180,6 @@ namespace AlchemistNPC.Items.Equippable
 				if (SS) tooltips.Insert(13,line6);
 			}
 		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-            CalamityPlayer.throwingCrit += p;
-        }
 		
 		private void RedemptionBoost(Player player)
         {

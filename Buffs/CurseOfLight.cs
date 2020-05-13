@@ -31,14 +31,14 @@ namespace AlchemistNPC.Buffs
 			{
 				if (npc.type != 222 && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerShade")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlagueBeeLargeG")))
 				{	
-				npc.velocity *= 0.99f;
+					npc.velocity *= 0.99f;
 				}
 			}
 			if (ModLoader.GetMod("CalamityMod") == null)
 			{
 				if (npc.type != 222)
 				{	
-				npc.velocity *= 0.99f;
+					npc.velocity *= 0.99f;
 				}
 			}
         }

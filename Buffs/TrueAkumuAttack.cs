@@ -23,35 +23,16 @@ namespace AlchemistNPC.Buffs
             Description.AddTranslation(GameCulture.Chinese, "攻击附近敌人");
         }
 		
-		public bool CalamityModRevengeance
-		{
-        get { return CalamityMod.World.CalamityWorld.revenge; }
-        }
-		
 		public override void Update(Player player, ref int buffIndex)
 		{
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-				if (CalamityModRevengeance)
+				if (player.ownedProjectileCounts[mod.ProjectileType("AkumuSphere")] == 0)
 				{
-					if (player.ownedProjectileCounts[mod.ProjectileType("AkumuSphere")] == 0)
-					{
-						for (int h = 0; h < 1; h++) {
-						Vector2 vel = new Vector2(0, -1);
-						vel *= 0f;
-						Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("AkumuSphere"), 1500, 0, player.whoAmI);
-						}
-					}
-				}
-				else
-				{
-					if (player.ownedProjectileCounts[mod.ProjectileType("AkumuSphere")] == 0)
-					{
-						for (int h = 0; h < 1; h++) {
-						Vector2 vel = new Vector2(0, -1);
-						vel *= 0f;
-						Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("AkumuSphere"), 1000, 0, player.whoAmI);
-						}
+					for (int h = 0; h < 1; h++) {
+					Vector2 vel = new Vector2(0, -1);
+					vel *= 0f;
+					Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, mod.ProjectileType ("AkumuSphere"), 1500, 0, player.whoAmI);
 					}
 				}
 			}
