@@ -586,6 +586,12 @@ namespace AlchemistNPC.NPCs
 		shop.item[nextSlot].SetDefaults (ItemID.SuperManaPotion);
 		nextSlot++;	
 		}
+		if (NPC.downedBoss2)
+		{
+		shop.item[nextSlot].SetDefaults (ItemID.StrangeBrew);
+		shop.item[nextSlot].shopCustomPrice = 10000;
+		nextSlot++;
+		}
 		shop.item[nextSlot].SetDefaults (ItemID.RecallPotion);
 		nextSlot++;
 		shop.item[nextSlot].SetDefaults (ItemID.WormholePotion);

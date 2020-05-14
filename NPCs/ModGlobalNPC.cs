@@ -81,6 +81,7 @@ namespace AlchemistNPC.NPCs
 		public static int kc = 0;
 		public static bool ks = false;
 		public static bool ksu = false;
+		public static bool bsu = false;
 		public bool cheat = false;
 		public bool i1 = false;
 		public bool i2 = false;

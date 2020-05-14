@@ -39,6 +39,7 @@ namespace AlchemistNPC.Projectiles
 			Player player = Main.player[projectile.owner];
 			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("BillCipher"));
 			BillCipher.introduction = 0;
+			ModGlobalNPC.bsu = true;
 		}
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

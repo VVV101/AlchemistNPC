@@ -594,12 +594,6 @@ namespace AlchemistNPC.NPCs
 		}
 		if (Shop == 2)
 		{
-			if (NPC.downedBoss2)
-			{
-			shop.item[nextSlot].SetDefaults (ItemID.StrangeBrew);
-			shop.item[nextSlot].shopCustomPrice = 10000;
-			nextSlot++;
-			}
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SunshinePotion"));
 			shop.item[nextSlot].shopCustomPrice = 15000;
 			nextSlot++;
@@ -678,6 +672,9 @@ namespace AlchemistNPC.NPCs
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TeslaPotion"));
 				shop.item[nextSlot].shopCustomPrice = 25000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("SulphurskinPotion"));
+				shop.item[nextSlot].shopCustomPrice = 15000;
 				nextSlot++;
 				if (NPC.downedBoss3)
 				{

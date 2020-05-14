@@ -86,6 +86,11 @@ namespace AlchemistNPC.NPCs
 		
 		public override void AI()
 		{
+			if (!ModGlobalNPC.bsu)
+			{
+				Main.NewText("Use Dimensional Rift to summon boss properly", 150, 100, 30);
+				npc.CloneDefaults(-66);
+			}
 			Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
 			Main.dayTime = false;
 			Main.monolithType = 3;
