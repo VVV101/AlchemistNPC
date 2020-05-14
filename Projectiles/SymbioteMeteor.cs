@@ -67,7 +67,7 @@ namespace AlchemistNPC.Projectiles
 				int index3 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0.0f, 0.0f, 100, new Color(), 1.5f);
 				Main.dust[index3].velocity *= 3f;
 			}
-			Item.NewItem((int)projectile.Center.X, (int)projectile.Center.Y, projectile.width, projectile.height, mod.ItemType("SymbioteMeteorite"), 1, false, mod.PrefixType("Xenomorphic"));
+			Item.NewItem((int)projectile.Center.X, (int)projectile.Center.Y, projectile.width, projectile.height, mod.ItemType("SymbioteMeteorite"));
 		}
 	}
 }

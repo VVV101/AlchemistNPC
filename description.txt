@@ -9,9 +9,11 @@ The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
 v9.3
 -Added Old Duke's bag in Operator's modded bags shop.
+-Added Sulphurskin Potion to Brewer's shop.
 -Fishron booster now makes Fishron mount always accelerated.
 -Widened array of blocks Terrain Reformer can dig.
 -Now Penetrator properly kills the player if drains his last 3 hitpoints.
+-Now Xenomorphic Mystery Meteorite is just Mystery Meteorite.
 -Hopefully fixed random Knuckles spawns in MP.
 -Kinda fixed earrape sound of Dimensional Casket.
 -Fixed Elements Awoken-related error in Operator's code.
