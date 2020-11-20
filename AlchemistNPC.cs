@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework;
 using System.IO;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,6 +10,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.DataStructures;
+using AlchemistNPC.Interface;
+
 using Terraria.Achievements;
 using Terraria.Localization;
 using Terraria.UI;
@@ -73,6 +77,9 @@ namespace AlchemistNPC
 		
 		public override void Load()
 		{
+
+			On.Terraria.Main.PlaySound_int_int_int_int_float_float += NukeMenuClose;
+
 			Instance = this;
             //ZY:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language 
 			string LampLightToggle, DiscordBuffTeleportation, PipBoy;
@@ -179,6 +186,18 @@ namespace AlchemistNPC
 				ALIB.Call("AddAchievement", Instance, "Now you're thinking...", "Obtain Rick Sanchez's Portal Gun", ModContent.GetTexture("AlchemistNPC/AchievementLib/PGLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PGUnlocked"), AchievementCategory.Collector);
 				ALIB.Call("AddAchievement", Instance, "Artificial unintelligence", "Obtain a Portal Turret", ModContent.GetTexture("AlchemistNPC/AchievementLib/PTLocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/PTUnlocked"), AchievementCategory.Collector);
 				ALIB.Call("AddAchievement", Instance, "The only thing to FEAR", "Obtain the incarnation of FEAR", ModContent.GetTexture("AlchemistNPC/AchievementLib/ALocked"), ModContent.GetTexture("AlchemistNPC/AchievementLib/AUnlocked"), AchievementCategory.Collector);
+			}
+		}
+
+		internal static SoundEffectInstance NukeMenuClose(On.Terraria.Main.orig_PlaySound_int_int_int_int_float_float orig, int type, int x, int y, int Style, float volumeScale, float pitchOffset) {
+			Player player = Main.LocalPlayer;
+			if (type == SoundID.MenuClose) 
+			{
+				return null;
+			}
+			else 
+			{
+				return orig(type, x, y, Style, volumeScale, pitchOffset);
 			}
 		}
 		
