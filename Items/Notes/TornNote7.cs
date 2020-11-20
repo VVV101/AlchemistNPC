@@ -17,7 +17,7 @@ namespace AlchemistNPC.Items.Notes
 			+"\nPermanently grants you the effect of the Universal Combination."
 			+"\nCan be consumed for permanent effects:"
 			+"\nBuffs never wear off after death and cooldown of healing potions is reduced"
-		//	+"\nHowever, the Autoinjector is pretty expensive as it requires a Mask Bundle..."
+			+"\nHowever, the Autoinjector is pretty expensive as it requires a Mask Bundle..."
 			+"\nAnother one is Bast's Scroll."
 			+"\nIncreases Melee/Throwing damage & crit by 15%, gives 10% damage reduction."
 			+"\nGives the abilities of a Master Ninja and allows a triple jump."
