@@ -9,11 +9,11 @@ using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Materials
 {
-	public class MasksBundle : ModItem
+	public class MaskBundle : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Masks Bundle");
+			DisplayName.SetDefault("Mask Bundle");
 			Tooltip.SetDefault("Contains masks of all vanilla bosses"
 				+ "\nRequired for making ultimate accessory");
 			DisplayName.AddTranslation(GameCulture.Russian, "Набор Масок");

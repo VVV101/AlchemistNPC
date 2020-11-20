@@ -12,17 +12,17 @@ namespace AlchemistNPC.Items.Notes
 		{
 			DisplayName.SetDefault("Torn Note #7");
 			Tooltip.SetDefault("''Continuing on the Ultimate Accessories, there are 2 more."
-			+"\nOne of them is the Autoinjector." 
+			+"\nOne of them is the Autoinjector."
 			+"\nIt increases all damage by 10% and crit by 8%."
-			+"\nIt also permanently grants you the effect of the Universal Combination."
-			+"\nIt can be consumed to give you permanent effects:"
-			+"\nBuffs will never wear off after death and cooldown of healing potions will be reduced"
-			+"\nHowever, the Autoinjector is pretty expensive as it requires a Masks Bundle..."
+			+"\nPermanently grants you the effect of the Universal Combination."
+			+"\nCan be consumed for permanent effects:"
+			+"\nBuffs never wear off after death and cooldown of healing potions is reduced"
+		//	+"\nHowever, the Autoinjector is pretty expensive as it requires a Mask Bundle..."
 			+"\nAnother one is Bast's Scroll."
-			+"\nIt increases Melee/Throwing damage & crit by 15%, gives 10% damage reduction."
-			+"\nIt also gives the abilities of a Master Ninja and allows a triple jump."
-			+"\nBut its most powerful abilities are:"
-			+"\nThrowing weapons go through tiles and melee/throwing weapon destroys enemy defense...''"
+			+"\nIncreases Melee/Throwing damage & crit by 15%, gives 10% damage reduction."
+			+"\nGives the abilities of a Master Ninja and allows a triple jump."
+			+"\nAnd the most powerful abilities are:"
+			+"\nThrowing weapons go through tiles and melee/throwing weapons ruin enemy's defense...''"
 			+"\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #7");
             Tooltip.AddTranslation(GameCulture.Russian, "'Продолжая тему Ультимативных Аксессуаров, осталость рассмотреть еще два.\nОдин из них - это Автоинъектор. Он увеличивает все виды урона на 10% и шансы критического удара на 8%\nТакже он даёт постоянный эффект Комбинации Универсала.\nТакже он может быть потрачен для получения постоянного эффекта:\nБаффы не будут пропадать после смерти и уменьшится откат зелий лечения.\nНо он очень дорог в крафте, поскольку требует Набор Масок...\nДругой же - Свиток Баст.\nОн повышает урон и шанс критического удара оружия ближнего/метательного оружия на 15%\nЕщё он на 10% повышает поглощение урона, даёт умения Мастера Ниндзя и позволяет прыгать 3 раза.\nНо его самое могучие способности, это:\nМетательные атаки проходят сквозь блоки\n Ближнее и метательное оружие разрушают броню противника...'\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь.");
