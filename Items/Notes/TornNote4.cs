@@ -12,8 +12,8 @@ namespace AlchemistNPC.Items.Notes
 		{
 			DisplayName.SetDefault("Torn Note #4");
 			Tooltip.SetDefault("''Defeating the Moon Lord allows the creation of Ultimate Accessories."
-			+"\n'Sephirothic Fruit'" 
-			+"\nNot only does it increase your minion damage by 15% and gives +2 max minions..."
+			+"\nOne of them is the Sephirothic Fruit." 
+			+"\nNot only does it increase your minion damage by 15% and give +2 max minions..."
 			+"\nBut it also allows your minions to ignore invincibility frames''"
 			+"\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #4");

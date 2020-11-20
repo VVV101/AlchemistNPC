@@ -78,7 +78,7 @@ namespace AlchemistNPC.Items.Armor
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "JustitiaCrown");
-			recipe.AddIngredient(null, "MaskBundle");
+			recipe.AddIngredient(null, "MasksBundle");
 			recipe.AddIngredient(null, "EmagledFragmentation", 100);
 			recipe.AddTile(null, "WingoftheWorld");
 			recipe.SetResult(this);

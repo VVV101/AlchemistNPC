@@ -15,8 +15,8 @@ namespace AlchemistNPC.Items.Notes
 			+ "\nIt said something about... Pink Guy? I have no idea who is this."
 			+ "\nSo, if you find his armor and equip it as actual armor in fight against Moon Lord..."
 			+ "\nYou may get something very unique."
-			+ "\nBut you gotta be very careful with that thing you get,"
-			+ "\nas it can attract attention of a VERY dangerous creature.''"
+			+ "\nBut you need to be very careful with that thing..."
+			+ "\nIt can attract attention of a VERY dangerous creature.''"
 			+ "\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Тайная записка 3");
             Tooltip.AddTranslation(GameCulture.Russian, "''В одном древнем свитке я обнаружила довольно... неприятную информацию.\nТам говорилось о... Розовом Парне? Понятия не имею, кто это.\nВ общем, если ты экипируешь сет его брони в качестве основной во время битвы с Лунным Лордом...\nТо ты можешь получить нечто уникальное.\nНо будь осторожен с этой вещью!\nОна может привлечь внимание ОЧЕНЬ опасного существа.''\nЗдесь ещё есть что-то важное, но вы не можете это прочесть. Не без других частей.\nВозможно, Ювелир сможет помочь.");

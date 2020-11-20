@@ -12,7 +12,7 @@ namespace AlchemistNPC.Items.Notes
 		{
 			DisplayName.SetDefault("Torn Note #1");
 			Tooltip.SetDefault("''Legends say that an Otherworldly Amulet can be obtained by defeating a Dungeon Guardian.''"
-			+ "\nThere is something else, but you can't read it. Not without parts #2 & #3.. Maybe the Jeweler could help you.");
+			+ "\nThere is something else, but you couldn't read it. Not without parts #2 & #3.. Maybe the Jeweler could help you.");
 			DisplayName.AddTranslation(GameCulture.Russian, "Изорванная записка #1");
             Tooltip.AddTranslation(GameCulture.Russian, "Некоторые легенды говорят что вещь, называемая 'Амулет Иного Мира' может быть добыта из Хранителя Подземелья.\nТам есть что-то ещё, но вы не можете прочесть это без других частей. Возможно, вам сможет помочь Ювелир.");
 
