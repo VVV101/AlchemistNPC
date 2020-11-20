@@ -11,8 +11,8 @@ namespace AlchemistNPC.Items.Notes
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Secret Note #1");
-			Tooltip.SetDefault("''If you are reading this, then know, that you could spawn your own Grim Reaper."
-			+ "\nTo do this, you simply need to find the ''Suspicious Looking Scythe'';"
+			Tooltip.SetDefault("''If you are reading this, then know, that you can spawn your own Grim Reaper."
+			+ "\nTo do this, you simply need to find the 'Suspicious Looking Scythe';"
 			+ "\nIt drops with a very low chance from any Treasure Bag in Hardmode."
 			+ "\nGLHF!''"
 			+ "\nThere seems to be something important, but you can't read it yet. Not without other parts. Maybe Jeweler can help you.");
