@@ -58,7 +58,6 @@ namespace AlchemistNPC
 		public bool PH = false;
 		public bool DistantPotionsUse = false;
 		public bool Voodoo = false;
-		public bool HoldsDimensionalCasket = false;
 		public bool CursedMirror = false;
 		public bool ShieldBelt = false;
 		public bool MysticAmuletMount = false;
@@ -256,7 +255,6 @@ namespace AlchemistNPC
 			AlchemistCharmTier2 = false;
 			AlchemistCharmTier3 = false;
 			AlchemistCharmTier4 = false;
-			HoldsDimensionalCasket = false;
 			Illuminati = false;
 			BeeHeal = false;
 			Pandora = false;

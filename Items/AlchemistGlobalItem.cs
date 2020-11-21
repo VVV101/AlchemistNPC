@@ -35,6 +35,7 @@ namespace AlchemistNPC.Items
 			{
 				item.damage = 1;
 			}
+
 			for (int j = 0; j < player.inventory.Length; j++)
 			{
 				if (player.inventory[j].type == mod.ItemType("DimensionalCasket"))

@@ -51,14 +51,6 @@ namespace AlchemistNPC.Items.Misc
 		{
 			return false;
 		}
-
-		public override void HoldItem(Player player)
-		{
-			if (Main.myPlayer == player.whoAmI)
-			{
-				((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).HoldsDimensionalCasket = true;
-			}
-		}
 		
 		public override bool CanRightClick()
         {            

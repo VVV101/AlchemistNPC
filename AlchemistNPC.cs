@@ -191,7 +191,7 @@ namespace AlchemistNPC
 
 		internal static SoundEffectInstance NukeMenuClose(On.Terraria.Main.orig_PlaySound_int_int_int_int_float_float orig, int type, int x, int y, int Style, float volumeScale, float pitchOffset) {
 			Player player = Main.LocalPlayer;
-			if (type == SoundID.MenuClose) 
+			if ((type == SoundID.MenuClose) && (DimensionalCasketUI.forcetalk == true))
 			{
 				return null;
 			}
