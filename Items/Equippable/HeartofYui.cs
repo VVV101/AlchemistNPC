@@ -23,14 +23,14 @@ namespace AlchemistNPC.Items.Equippable
 		public override void SetDefaults()
 		{
 			item.damage = 0;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.shoot = mod.ProjectileType("Yui");
 			item.width = 16;
 			item.height = 30;
 			item.UseSound = SoundID.Item2;
 			item.useAnimation = 20;
 			item.useTime = 20;
-			item.rare = 8;
+			item.rare = ItemRarityID.Yellow;
 			item.noMelee = true;
 			item.value = Item.sellPrice(3, 0, 0, 0);
 			item.buffType = mod.BuffType("Yui");

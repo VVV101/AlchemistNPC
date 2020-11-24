@@ -326,7 +326,7 @@ namespace AlchemistNPC
 			{
 			player.AddBuff(mod.BuffType("DemonSlayer"), 2);
 			}
-			if (Main.netMode == 0)
+			if (Main.netMode == NetmodeID.SinglePlayer)
 			{
 				if (player.talkNPC == -1)
 				{
@@ -895,7 +895,7 @@ namespace AlchemistNPC
 					else if (cursorWorldPosition.Y + player.height > mapHeight) cursorWorldPosition.Y = mapHeight - player.height;
 					
 					player.Teleport(cursorWorldPosition, 0, 0);
-					NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) cursorWorldPosition.X, (float) cursorWorldPosition.Y, 1, 0, 0);
+					NetMessage.SendData(MessageID.Teleport, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) cursorWorldPosition.X, (float) cursorWorldPosition.Y, 1, 0, 0);
 					Main.mapFullscreen = false;
 					
 					for (int index = 0; index < 120; ++index)
@@ -925,7 +925,7 @@ namespace AlchemistNPC
 					else if (cursorWorldPosition.Y + player.height > mapHeight) cursorWorldPosition.Y = mapHeight - player.height;
 					
 					player.Teleport(cursorWorldPosition, 0, 0);
-					NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) cursorWorldPosition.X, (float) cursorWorldPosition.Y, 1, 0, 0);
+					NetMessage.SendData(MessageID.Teleport, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) cursorWorldPosition.X, (float) cursorWorldPosition.Y, 1, 0, 0);
 					Main.mapFullscreen = false;
 					Item[] inventory = player.inventory;
 					for (int k = 0; k < inventory.Length; k++)
@@ -962,7 +962,7 @@ namespace AlchemistNPC
 				{
 					if (player.controlRight && player.releaseRight && player.doubleTapCardinalTimer[2]>0)
 					{
-						Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
+						Main.PlaySound(SoundID.Item, (int)player.position.X, (int)player.position.Y, 15);
 						Timer = 0;
 						Vector2 pp = new Vector2(player.position.X+300,player.position.Y);
 						if (!Collision.SolidCollision(pp, player.width, player.height))
@@ -984,7 +984,7 @@ namespace AlchemistNPC
 					}
 					if (player.controlLeft && player.releaseLeft && player.doubleTapCardinalTimer[3]>0)
 					{
-						Main.PlaySound(2, (int)player.position.X, (int)player.position.Y, 15);
+						Main.PlaySound(SoundID.Item, (int)player.position.X, (int)player.position.Y, 15);
 						Timer = 0;
 						Vector2 pp = new Vector2(player.position.X-300,player.position.Y);
 						if (!Collision.SolidCollision(pp, player.width, player.height))
@@ -1019,7 +1019,7 @@ namespace AlchemistNPC
 				  {
 					if (player.CountBuffs() == 22)
 					  return;
-					if (player.bank.item[index1].stack > 0 && player.bank.item[index1].type > 0 && (player.bank.item[index1].buffType > 0 && !player.bank.item[index1].summon) && player.bank.item[index1].buffType != 90)
+					if (player.bank.item[index1].stack > 0 && player.bank.item[index1].type > ItemID.None && (player.bank.item[index1].buffType > 0 && !player.bank.item[index1].summon) && player.bank.item[index1].buffType != 90)
 					{
 						if (ModLoader.GetMod("CalamityMod") != null)
 						{
@@ -1076,7 +1076,7 @@ namespace AlchemistNPC
 						else
 						  flag = false;
 					  }
-					  if (player.whoAmI == Main.myPlayer && player.bank.item[index1].type == 603 && !Main.cEd)
+					  if (player.whoAmI == Main.myPlayer && player.bank.item[index1].type == ItemID.Carrot && !Main.cEd)
 						flag = false;
 					  if (type2 == 27)
 					  {
@@ -1199,7 +1199,7 @@ namespace AlchemistNPC
 					if (!Collision.SolidCollision(vector2, player.width, player.height))
 					{
 						player.Teleport(vector2, 1, 0);
-						NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
+						NetMessage.SendData(MessageID.Teleport, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
 						if (player.chaosState)
 						{
 							player.statLife = player.statLife - player.statLifeMax2 / 3;
@@ -1221,7 +1221,7 @@ namespace AlchemistNPC
 				if (!Collision.SolidCollision(vector2, player.width, player.height))
 				{
 					player.Teleport(vector2, 1, 0);
-					NetMessage.SendData(65, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
+					NetMessage.SendData(MessageID.Teleport, -1, -1, (NetworkText) null, 0, (float) player.whoAmI, (float) vector2.X, (float) vector2.Y, 1, 0, 0);
 						if (player.chaosState)
 						{
 							player.statLife = player.statLife - player.statLifeMax2 / 7;
@@ -1448,11 +1448,13 @@ namespace AlchemistNPC
 			}
 			if (CultistBooster == 1)
 			{
-				var pillarp = new List<int>();
-				pillarp.Add(537);
-				pillarp.Add(538);
-				pillarp.Add(539);
-				for (int a1 = 573; a1 < 581; a1++)
+                var pillarp = new List<int>
+                {
+                    537,
+                    538,
+                    539
+                };
+                for (int a1 = 573; a1 < 581; a1++)
 				{
 					pillarp.Add(a1);
 				}
@@ -1637,9 +1639,11 @@ namespace AlchemistNPC
 						strength = 2f - strength;
 					}
 					strength = 0.4f + strength * 0.2f;
-					DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0);
-					data.shader = drawInfo.drawPlayer.miscDyes[3].dye;
-					Main.playerDrawData.Add(data);
+                    DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0)
+                    {
+                        shader = drawInfo.drawPlayer.miscDyes[3].dye
+                    };
+                    Main.playerDrawData.Add(data);
 				}
 				if (modPlayer.MysticAmuletMount && modPlayer.fc > 10 && modPlayer.fc <= 20)
 				{
@@ -1652,9 +1656,11 @@ namespace AlchemistNPC
 						strength = 2f - strength;
 					}
 					strength = 0.4f + strength * 0.2f;
-					DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0);
-					data.shader = drawInfo.drawPlayer.miscDyes[3].dye;
-					Main.playerDrawData.Add(data);
+                    DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0)
+                    {
+                        shader = drawInfo.drawPlayer.miscDyes[3].dye
+                    };
+                    Main.playerDrawData.Add(data);
 				}
 				if (modPlayer.MysticAmuletMount && modPlayer.fc > 20 &&  modPlayer.fc <= 30)
 				{
@@ -1667,9 +1673,11 @@ namespace AlchemistNPC
 						strength = 2f - strength;
 					}
 					strength = 0.4f + strength * 0.2f;
-					DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0);
-					data.shader = drawInfo.drawPlayer.miscDyes[3].dye;
-					Main.playerDrawData.Add(data);
+                    DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0)
+                    {
+                        shader = drawInfo.drawPlayer.miscDyes[3].dye
+                    };
+                    Main.playerDrawData.Add(data);
 				}
 				if (modPlayer.MysticAmuletMount && modPlayer.fc > 30 &&  modPlayer.fc <= 40)
 				{
@@ -1682,9 +1690,11 @@ namespace AlchemistNPC
 						strength = 2f - strength;
 					}
 					strength = 0.4f + strength * 0.2f;
-					DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0);
-					data.shader = drawInfo.drawPlayer.miscDyes[3].dye;
-					Main.playerDrawData.Add(data);
+                    DrawData data = new DrawData(texture, new Vector2(drawX, drawY), null, Color.White * strength, 0f, new Vector2(texture.Width / 2f, texture.Height / 2f), 1f, SpriteEffects.None, 0)
+                    {
+                        shader = drawInfo.drawPlayer.miscDyes[3].dye
+                    };
+                    Main.playerDrawData.Add(data);
 				}
 			});
 

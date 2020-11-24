@@ -37,14 +37,14 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 20;
 			item.useAnimation = 10;
 			item.useTime = 10;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 4;
 			item.value = 100000;
-			item.rare = 3;
+			item.rare = ItemRarityID.Orange;
 			item.UseSound = SoundID.Item11;
 			item.autoReuse = true;
-			item.shoot = 10;
+			item.shoot = ProjectileID.PurificationPowder;
 			item.shootSpeed = 16f;
 			item.useAmmo = AmmoID.Bullet;
 		}

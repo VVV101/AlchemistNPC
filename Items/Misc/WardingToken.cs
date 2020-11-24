@@ -29,7 +29,7 @@ namespace AlchemistNPC.Items.Misc
 			item.width = 32;
 			item.height = 32;
 			item.value = 250000;
-			item.rare = 7;
+			item.rare = ItemRarityID.Lime;
 		}
 	}
 }

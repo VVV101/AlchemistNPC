@@ -31,7 +31,7 @@ namespace AlchemistNPC.Items
 		
 		public override void HoldItem(Item item, Player player)
 		{
-			if (item.type == 2272 && NPC.AnyNPCs(mod.NPCType("Knuckles")))
+			if (item.type == ItemID.WaterGun && NPC.AnyNPCs(mod.NPCType("Knuckles")))
 			{
 				item.damage = 1;
 			}
@@ -543,7 +543,7 @@ namespace AlchemistNPC.Items
 				Vector2 perturbedSpeed = new Vector2(SpeedX, SpeedY).RotatedByRandom(MathHelper.ToRadians(5));
 				Projectile.NewProjectile(vector2.X, vector2.Y, perturbedSpeed.X, perturbedSpeed.Y, mod.ProjectileType("EnergyBall"), item.damage/5, 1f, player.whoAmI);
 			}
-			if (item.type == 1991 || item.type == 3183)
+			if (item.type == ItemID.BugNet || item.type == ItemID.GoldenBugNet)
 			{
 				for (int v = 0; v < 200; ++v)
 				{

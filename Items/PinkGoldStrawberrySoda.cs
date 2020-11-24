@@ -28,7 +28,7 @@ namespace AlchemistNPC.Items
             item.maxStack = 99;                 //this is where you set the max stack of item
             item.consumable = true;           //this make that the item is consumable when used
             item.value = 0;
-            item.rare = 6;
+            item.rare = ItemRarityID.LightPurple;
 			item.healLife = 150;
 			item.healMana = 150;
 			item.potion = true;

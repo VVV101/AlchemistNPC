@@ -30,12 +30,12 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 32;
 			item.useTime = 30;
 			item.useAnimation = 30;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.noUseGraphic = true;
 			item.noMelee = true;
 			item.knockBack = 10;
 			item.value = Item.buyPrice(5, 0, 0, 0);
-			item.rare = 10;
+			item.rare = ItemRarityID.Red;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("Turret");
 			item.summon = true;
@@ -67,7 +67,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			Main.PlaySound(2, -1, -1, mod.GetSoundSlot(SoundType.Item, "Sounds/Item/PortalTurretDeploy"));
+			Main.PlaySound(SoundID.Item, -1, -1, mod.GetSoundSlot(SoundType.Item, "Sounds/Item/PortalTurretDeploy"));
 			Vector2 SPos = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
 			position = SPos;
 			if (player.ownedProjectileCounts[mod.ProjectileType("Turret")] < player.maxTurrets)

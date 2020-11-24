@@ -38,7 +38,7 @@ namespace AlchemistNPC.Projectiles
 				projectile.damage = 1;
 				projectile.friendly = true;
 			}
-			if(Main.netMode != 2 && projectile.hostile && Main.myPlayer < 255)
+			if(Main.netMode != NetmodeID.Server && projectile.hostile && Main.myPlayer < 255)
 			{
 				// TODO: when an npc shoot a projectile who spawn projectiles, set them all to this npc
 				npcOwner[projectile.whoAmI] = ModGlobalNPC.npcNow;

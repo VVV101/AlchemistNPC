@@ -30,8 +30,8 @@ namespace AlchemistNPC.Items.Misc
 			item.width = 32;
 			item.height = 32;
 			item.value = 5000000;
-			item.rare = 10;
-			item.useStyle = 1;
+			item.rare = ItemRarityID.Red;
+			item.useStyle = ItemUseStyleID.SwingThrow;
             item.useAnimation = 15;
             item.useTime = 15;
             item.consumable = false;

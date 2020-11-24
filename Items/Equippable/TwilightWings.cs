@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
 
 namespace AlchemistNPC.Items.Equippable
 {
@@ -27,7 +28,7 @@ namespace AlchemistNPC.Items.Equippable
 			item.width = 22;
 			item.height = 20;
 			item.value = 1000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.accessory = true;
 		}
 		

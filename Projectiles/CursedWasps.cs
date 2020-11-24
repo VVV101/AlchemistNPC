@@ -38,7 +38,7 @@ namespace AlchemistNPC.Projectiles
 					{
 						projectile.scale = 1.5f;
 					}	
-					else if (player.armor[index1].type == 3333)
+					else if (player.armor[index1].type == ItemID.HiveBackpack)
 					{
 						projectile.scale = 1.5f;
 					}
@@ -52,7 +52,7 @@ namespace AlchemistNPC.Projectiles
 				}
 				if (ModLoader.GetMod("CalamityMod") == null)
 				{
-					if (player.armor[index1].type == 3333)
+					if (player.armor[index1].type == ItemID.HiveBackpack)
 					{
 						projectile.scale = 1.5f;
 					}
@@ -78,7 +78,7 @@ namespace AlchemistNPC.Projectiles
 					{
 						damage += damage/2;
 					}
-					else if (player.armor[index1].type == 3333)
+					else if (player.armor[index1].type == ItemID.HiveBackpack)
 					{
 						damage += damage/2;
 					}
@@ -92,7 +92,7 @@ namespace AlchemistNPC.Projectiles
 				}
 				if (ModLoader.GetMod("CalamityMod") == null)
 				{
-					if (player.armor[index1].type == 3333)
+					if (player.armor[index1].type == ItemID.HiveBackpack)
 					{
 						damage += damage/2;
 					}

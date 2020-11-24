@@ -26,10 +26,10 @@ namespace AlchemistNPC.Items.Summoning
 			item.height = 20;
 			item.maxStack = 30;
 			item.value = 100;
-			item.rare = 1;
+			item.rare = ItemRarityID.Blue;
 			item.useAnimation = 30;
 			item.useTime = 30;
-			item.useStyle = 4;
+			item.useStyle = ItemUseStyleID.HoldingUp;
 			item.consumable = true;
 		}
 
@@ -37,8 +37,8 @@ namespace AlchemistNPC.Items.Summoning
 		{
 			NPC.NewNPC((int)player.position.X, (int)player.position.Y - 350, NPCID.DungeonGuardian);
 			Main.NewText("Dungeon Guardian has awoken!", 175, 75, 255);
-			NetMessage.SendData(23, -1, -1, null, NPCID.DungeonGuardian, 0f, 0f, 0f, 0);
-			Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
+			NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, NPCID.DungeonGuardian, 0f, 0f, 0f, 0);
+			Main.PlaySound(SoundID.Roar, (int)player.position.X, (int)player.position.Y, 0);
 			return true;
 		}
 	}

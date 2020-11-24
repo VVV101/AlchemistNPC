@@ -12,19 +12,19 @@ namespace AlchemistNPC.Items.Weapons
 	{
 		public override void SetDefaults()
 		{
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.autoReuse = true;
 			item.useAnimation = 2;
 			item.useTime = 2;
 			item.width = 72;
 			item.height = 34;
-			item.shoot = 10;
+			item.shoot = ProjectileID.PurificationPowder;
 			item.useAmmo = AmmoID.Bullet;
 			item.UseSound = SoundID.Item11;
 			item.damage = 10;
 			item.shootSpeed = 14f;
 			item.noMelee = true;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.knockBack = 3;
 			item.ranged = true;
 		}

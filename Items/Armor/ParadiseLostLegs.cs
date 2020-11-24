@@ -39,7 +39,7 @@ namespace AlchemistNPC.Items.Armor
 			item.width = 18;
 			item.height = 18;
 			item.value = 1000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.defense = 40;
 		}
 

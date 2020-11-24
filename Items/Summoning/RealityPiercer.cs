@@ -28,10 +28,10 @@ namespace AlchemistNPC.Items.Summoning
 			item.height = 32;
 			item.maxStack = 30;
 			item.value = 5000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.useAnimation = 30;
 			item.useTime = 30;
-			item.useStyle = 4;
+			item.useStyle = ItemUseStyleID.HoldingUp;
 			item.consumable = true;
 			item.makeNPC = (short)mod.NPCType("Explorer");
 		}

@@ -28,11 +28,11 @@ namespace AlchemistNPC.Items.Weapons
 			item.ranged = false;
 			item.thrown = true;
 			item.damage = 88;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.noUseGraphic = true;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.knockBack = 8;
 			item.shoot = mod.ProjectileType("PF422");
 		}

@@ -44,7 +44,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.value = 1000000;
 			item.rare = 12;
 			item.autoReuse = true;
-			item.shoot = 638;
+			item.shoot = ProjectileID.MoonlordBullet;
 			item.useAmmo = mod.ItemType("MGB");
 		}
 
@@ -101,9 +101,9 @@ namespace AlchemistNPC.Items.Weapons
 			float speedY2 = perturbedSpeed2.Y;
 			float speedX3 = perturbedSpeed3.X;
 			float speedY3 = perturbedSpeed3.Y;
-			Projectile.NewProjectile(vector.X, vector.Y+4, speedX2, speedY2, 638, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(vector.X, vector.Y, speedX, speedY, 638, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(vector.X, vector.Y-4, speedX3, speedY3, 638, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(vector.X, vector.Y+4, speedX2, speedY2, ProjectileID.MoonlordBullet, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(vector.X, vector.Y, speedX, speedY, ProjectileID.MoonlordBullet, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(vector.X, vector.Y-4, speedX3, speedY3, ProjectileID.MoonlordBullet, damage, knockBack, player.whoAmI);
 			return false;
 		}
 		

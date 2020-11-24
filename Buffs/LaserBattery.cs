@@ -35,7 +35,7 @@ namespace AlchemistNPC.Buffs
                 float shootToY = target.position.Y + target.height * 0.5f - player.Center.Y;
                 float distance = (float)Math.Sqrt(shootToX * shootToX + shootToY * shootToY);
 
-                if (distance < 350f && target.catchItem == 0 && !target.friendly && target.active && target.type != 488)
+                if (distance < 350f && target.catchItem == 0 && !target.friendly && target.active && target.type != NPCID.TargetDummy)
                 {
                     if (counter > 20)
                     {
@@ -43,7 +43,7 @@ namespace AlchemistNPC.Buffs
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
 						Main.PlaySound(SoundID.Item93.WithVolume(.6f), player.position);
-                        Projectile.NewProjectile(player.Center.X, player.Center.Y+4, shootToX, shootToY, 433, 60, 6, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(player.Center.X, player.Center.Y+4, shootToX, shootToY, ProjectileID.UFOLaser, 60, 6, Main.myPlayer, 0f, 0f);
                         counter = 0;
                     }
                 }

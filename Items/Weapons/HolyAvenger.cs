@@ -42,10 +42,10 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 78;
 			item.useTime = 15;
 			item.useAnimation = 15;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = Item.buyPrice(platinum: 1);
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}

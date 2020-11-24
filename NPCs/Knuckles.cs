@@ -177,55 +177,55 @@ namespace AlchemistNPC.NPCs
 					{
 						Vector2 vel = new Vector2(-1, -1);
 						vel *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel2 = new Vector2(1, 1);
 						vel2 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel3 = new Vector2(1, -1);
 						vel3 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel4 = new Vector2(-1, 1);
 						vel4 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel5 = new Vector2(0, -1);
 						vel5 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel6 = new Vector2(0, 1);
 						vel6 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel7 = new Vector2(1, 0);
 						vel7 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel8 = new Vector2(-1, 0);
 						vel8 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 					}
 					if (Main.rand.Next(60) == 0)
 					{
 						Vector2 vel = new Vector2(-1, -1);
 						vel *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel2 = new Vector2(1, 1);
 						vel2 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel3 = new Vector2(1, -1);
 						vel3 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel4 = new Vector2(-1, 1);
 						vel4 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel5 = new Vector2(0, -1);
 						vel5 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel6 = new Vector2(0, 1);
 						vel6 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel7 = new Vector2(1, 0);
 						vel7 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel8 = new Vector2(-1, 0);
 						vel8 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 					}
 				}
 			}
@@ -267,55 +267,55 @@ namespace AlchemistNPC.NPCs
 					{
 						Vector2 vel = new Vector2(-1, -1);
 						vel *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel2 = new Vector2(1, 1);
 						vel2 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel3 = new Vector2(1, -1);
 						vel3 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel4 = new Vector2(-1, 1);
 						vel4 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel5 = new Vector2(0, -1);
 						vel5 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel6 = new Vector2(0, 1);
 						vel6 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel7 = new Vector2(1, 0);
 						vel7 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 						Vector2 vel8 = new Vector2(-1, 0);
 						vel8 *= 9f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 449, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, ProjectileID.SaucerLaser, damage2, 0, Main.myPlayer);
 					}
 					if (Main.rand.Next(60) == 0)
 					{
 						Vector2 vel = new Vector2(-1, -1);
 						vel *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel2 = new Vector2(1, 1);
 						vel2 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel3 = new Vector2(1, -1);
 						vel3 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel4 = new Vector2(-1, 1);
 						vel4 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel5 = new Vector2(0, -1);
 						vel5 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel6 = new Vector2(0, 1);
 						vel6 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel7 = new Vector2(1, 0);
 						vel7 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 						Vector2 vel8 = new Vector2(-1, 0);
 						vel8 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 448, damage2, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, ProjectileID.SaucerMissile, damage2, 0, Main.myPlayer);
 					}
 				}
 				if (npc.life < 166666)
@@ -324,55 +324,55 @@ namespace AlchemistNPC.NPCs
 					{
 						Vector2 vel = new Vector2(-1, -1);
 						vel *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 449, damage3, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, ProjectileID.SaucerLaser, damage3, 0, Main.myPlayer);
 						Vector2 vel2 = new Vector2(1, 1);
 						vel2 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 449, damage3, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, ProjectileID.SaucerLaser, damage3, 0, Main.myPlayer);
 						Vector2 vel3 = new Vector2(1, -1);
 						vel3 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 449, damage3, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, ProjectileID.SaucerLaser, damage3, 0, Main.myPlayer);
 						Vector2 vel4 = new Vector2(-1, 1);
 						vel4 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 449, damage3, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, ProjectileID.SaucerLaser, damage3, 0, Main.myPlayer);
 						Vector2 vel5 = new Vector2(0, -1);
 						vel5 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 449, damage3, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, ProjectileID.SaucerLaser, damage3, 0, Main.myPlayer);
 						Vector2 vel6 = new Vector2(0, 1);
 						vel6 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 449, damage3, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, ProjectileID.SaucerLaser, damage3, 0, Main.myPlayer);
 						Vector2 vel7 = new Vector2(1, 0);
 						vel7 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 449, damage3, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, ProjectileID.SaucerLaser, damage3, 0, Main.myPlayer);
 						Vector2 vel8 = new Vector2(-1, 0);
 						vel8 *= 12f;
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 449, damage3, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, ProjectileID.SaucerLaser, damage3, 0, Main.myPlayer);
 					}
 				if (Main.rand.Next(50) == 0)
 				{
 					Vector2 vel = new Vector2(-1, -1);
 					vel *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, 448, damage3, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel.X, vel.Y, ProjectileID.SaucerMissile, damage3, 0, Main.myPlayer);
 					Vector2 vel2 = new Vector2(1, 1);
 					vel2 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, 448, damage3, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel2.X, vel2.Y, ProjectileID.SaucerMissile, damage3, 0, Main.myPlayer);
 					Vector2 vel3 = new Vector2(1, -1);
 					vel3 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, 448, damage3, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel3.X, vel3.Y, ProjectileID.SaucerMissile, damage3, 0, Main.myPlayer);
 					Vector2 vel4 = new Vector2(-1, 1);
 					vel4 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, 448, damage3, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel4.X, vel4.Y, ProjectileID.SaucerMissile, damage3, 0, Main.myPlayer);
 					Vector2 vel5 = new Vector2(0, -1);
 					vel5 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, 448, damage3, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel5.X, vel5.Y, ProjectileID.SaucerMissile, damage3, 0, Main.myPlayer);
 					Vector2 vel6 = new Vector2(0, 1);
 					vel6 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, 448, damage3, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel6.X, vel6.Y, ProjectileID.SaucerMissile, damage3, 0, Main.myPlayer);
 					Vector2 vel7 = new Vector2(1, 0);
 					vel7 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, 448, damage3, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel7.X, vel7.Y, ProjectileID.SaucerMissile, damage3, 0, Main.myPlayer);
 					Vector2 vel8 = new Vector2(-1, 0);
 					vel8 *= 14f;
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, 448, damage3, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, vel8.X, vel8.Y, ProjectileID.SaucerMissile, damage3, 0, Main.myPlayer);
 					}
 				}
 			}

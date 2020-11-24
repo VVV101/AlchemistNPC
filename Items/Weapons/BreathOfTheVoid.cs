@@ -17,12 +17,12 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 34;
 			item.useTime = 5;
 			item.useAnimation = 15;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 4;
 			item.UseSound = SoundID.Item34;
 			item.value = 10000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("BreathOfTheVoid");
 			item.shootSpeed = 9f;

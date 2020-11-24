@@ -35,9 +35,9 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 52;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.value = 100000;
-			item.rare = 5;
+			item.rare = ItemRarityID.Pink;
             item.knockBack = 4;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;

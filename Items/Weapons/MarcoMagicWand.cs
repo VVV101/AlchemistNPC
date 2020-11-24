@@ -37,12 +37,12 @@ namespace AlchemistNPC.Items.Weapons
 			item.channel = true;                            //Channel so that you can held the weapon [Important]
 			item.crit = 10;
 			item.mana = 10;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.width = 30;
 			item.height = 30;
 			item.useTime = 20;
 			item.UseSound = SoundID.Item13;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.shootSpeed = 14f;
 			item.useAnimation = 20;   
 			item.knockBack = 2;			

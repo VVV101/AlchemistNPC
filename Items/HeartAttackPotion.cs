@@ -34,7 +34,7 @@ namespace AlchemistNPC.Items
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;
-            item.useStyle = 2;
+            item.useStyle = ItemUseStyleID.EatingUsing;
             item.useTurn = true;
             item.useAnimation = 17;
             item.useTime = 17;
@@ -43,7 +43,7 @@ namespace AlchemistNPC.Items
             item.width = 20;
             item.height = 30;
             item.value = Item.sellPrice(0, 1, 0, 0);
-            item.rare = 10;
+            item.rare = ItemRarityID.Red;
             item.buffType = ModLoader.GetMod("CalamityMod").BuffType("AbsoluteRage");
             item.buffTime = 18000;
         }

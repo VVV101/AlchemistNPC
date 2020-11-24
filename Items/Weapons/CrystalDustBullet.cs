@@ -28,7 +28,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.consumable = true;
 			item.knockBack = 4;
 			item.value = Item.sellPrice(0, 0, 1, 0);
-			item.rare = 8;
+			item.rare = ItemRarityID.Yellow;
 			item.shoot = mod.ProjectileType("CrystalDust");
 			item.shootSpeed = 16f; 
 			item.ammo = AmmoID.Bullet; //

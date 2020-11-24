@@ -27,7 +27,7 @@ namespace AlchemistNPC.Items.Materials
 			item.height = 14;
 			item.maxStack = 999;
 			item.value = 100;
-			item.rare = 1;
+			item.rare = ItemRarityID.Blue;
 		}
 
 		public override void AddRecipes()

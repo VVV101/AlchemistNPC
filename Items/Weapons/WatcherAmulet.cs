@@ -33,12 +33,12 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 32;
 			item.useTime = 30;
 			item.useAnimation = 30;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.noUseGraphic = true;
 			item.noMelee = true;
 			item.knockBack = 10;
 			item.value = Item.buyPrice(10, 0, 0, 0);
-			item.rare = 9;
+			item.rare = ItemRarityID.Cyan;
 			item.UseSound = SoundID.Item44;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("WatcherCrystal");

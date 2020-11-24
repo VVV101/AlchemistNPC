@@ -1,6 +1,7 @@
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
+using Terraria.ID;
 
 namespace AlchemistNPC.Items.Placeable
 {
@@ -16,7 +17,7 @@ namespace AlchemistNPC.Items.Placeable
 
 		public override void SetDefaults()
 		{
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useTurn = true;
 			item.useAnimation = 15;
 			item.useTime = 10;
@@ -25,7 +26,7 @@ namespace AlchemistNPC.Items.Placeable
 			item.createTile = mod.TileType("FieldsMusicBox");
 			item.width = 24;
 			item.height = 24;
-			item.rare = 4;
+			item.rare = ItemRarityID.LightRed;
 			item.value = 500000;
 			item.accessory = true;
 		}

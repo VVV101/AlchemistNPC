@@ -405,7 +405,7 @@ namespace AlchemistNPC.NPCs
 			{
 				for (int j = 0; j < player.inventory.Length; j++)
 				{
-					if (player.inventory[j].type == 3389)
+					if (player.inventory[j].type == ItemID.Terrarian)
 					{
 						C11 = true;
 					}
@@ -413,11 +413,11 @@ namespace AlchemistNPC.NPCs
 					{
 						C12 = true;
 					}
-					if (player.inventory[j].type == 1326)
+					if (player.inventory[j].type == ItemID.RodofDiscord)
 					{
 						C13 = true;
 					}
-					if (player.inventory[j].type == 3366)
+					if (player.inventory[j].type == ItemID.YoyoBag)
 					{
 						C14 = true;
 					}
@@ -425,19 +425,19 @@ namespace AlchemistNPC.NPCs
 					{
 						C15 = true;
 					}
-					if (player.inventory[j].type == 495)
+					if (player.inventory[j].type == ItemID.RainbowRod)
 					{
 						C21 = true;
 					}
-					if (player.inventory[j].type == 3541)
+					if (player.inventory[j].type == ItemID.LastPrism)
 					{
 						C22 = true;
 					}
-					if (player.inventory[j].type == 493)
+					if (player.inventory[j].type == ItemID.AngelWings)
 					{
 						C23 = true;
 					}
-					if (player.inventory[j].type == 1611)
+					if (player.inventory[j].type == ItemID.ButterflyDust)
 					{
 						C24 = true;
 					}
@@ -449,11 +449,11 @@ namespace AlchemistNPC.NPCs
 					{
 						C26 = true;
 					}
-					if (player.inventory[j].type == 2882)
+					if (player.inventory[j].type == ItemID.ChargedBlasterCannon)
 					{
 						C31 = true;
 					}
-					if (player.inventory[j].type == 1295)
+					if (player.inventory[j].type == ItemID.HeatRay)
 					{
 						C32 = true;
 					}
@@ -461,7 +461,7 @@ namespace AlchemistNPC.NPCs
 					{
 						C33 = true;
 					}
-					if (player.inventory[j].type == 1858)
+					if (player.inventory[j].type == ItemID.SniperScope)
 					{
 						C34 = true;
 					}
@@ -473,7 +473,7 @@ namespace AlchemistNPC.NPCs
 					{
 						C41 = true;
 					}
-					if (player.inventory[j].type == 1363)
+					if (player.inventory[j].type == ItemID.SkeletronTrophy)
 					{
 						C42 = true;
 					}
@@ -489,7 +489,7 @@ namespace AlchemistNPC.NPCs
 					{
 						C45 = true;
 					}
-					if (player.inventory[j].type == 1156)
+					if (player.inventory[j].type == ItemID.PiranhaGun)
 					{
 						C51 = true;
 					}
@@ -501,7 +501,7 @@ namespace AlchemistNPC.NPCs
 					{
 						C53 = true;
 					}
-					if (player.inventory[j].type == 900)
+					if (player.inventory[j].type == ItemID.MoonStone)
 					{
 						C54 = true;
 					}
@@ -509,7 +509,7 @@ namespace AlchemistNPC.NPCs
 					{
 						C55 = true;
 					}
-					if (player.inventory[j].type == 1327)
+					if (player.inventory[j].type == ItemID.DeathSickle)
 					{
 						C61 = true;
 					}
@@ -521,7 +521,7 @@ namespace AlchemistNPC.NPCs
 					{
 						C63 = true;
 					}
-					if (player.inventory[j].type == 1865)
+					if (player.inventory[j].type == ItemID.CelestialStone)
 					{
 						C64 = true;
 					}
@@ -529,7 +529,7 @@ namespace AlchemistNPC.NPCs
 					{
 						C65 = true;
 					}
-					if (player.inventory[j].type == 3384)
+					if (player.inventory[j].type == ItemID.PortalGun)
 					{
 						C71 = true;
 					}
@@ -537,11 +537,11 @@ namespace AlchemistNPC.NPCs
 					{
 						C72 = true;
 					}
-					if (player.inventory[j].type == 3569)
+					if (player.inventory[j].type == ItemID.MoonlordTurretStaff)
 					{
 						C73 = true;
 					}
-					if (player.inventory[j].type == 3122)
+					if (player.inventory[j].type == ItemID.REK)
 					{
 						C74 = true;
 					}
@@ -549,15 +549,15 @@ namespace AlchemistNPC.NPCs
 					{
 						C75 = true;
 					}
-					if (player.inventory[j].type == 3384)
+					if (player.inventory[j].type == ItemID.PortalGun)
 					{
 						C81 = true;
 					}
-					if (player.inventory[j].type == 3628)
+					if (player.inventory[j].type == ItemID.CompanionCube)
 					{
 						C82 = true;
 					}
-					if (player.inventory[j].type == 3820)
+					if (player.inventory[j].type == ItemID.DD2FlameburstTowerT3Popper)
 					{
 						C83 = true;
 					}
@@ -619,7 +619,7 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 3389 && C11)
+							if (inventory[k].type == ItemID.Terrarian && C11)
 							{
 								inventory[k].stack--;
 								C11 = false;
@@ -629,12 +629,12 @@ namespace AlchemistNPC.NPCs
 								inventory[k].stack--;
 								C12 = false;
 							}
-							if (inventory[k].type == 1326 && C13)
+							if (inventory[k].type == ItemID.RodofDiscord && C13)
 							{
 								inventory[k].stack--;
 								C13 = false;
 							}
-							if (inventory[k].type == 3366 && C14)
+							if (inventory[k].type == ItemID.YoyoBag && C14)
 							{
 								inventory[k].stack--;
 								C14 = false;
@@ -657,22 +657,22 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 495 && C21)
+							if (inventory[k].type == ItemID.RainbowRod && C21)
 							{
 								inventory[k].stack--;
 								C21 = false;
 							}
-							if (inventory[k].type == 3541 && C22)
+							if (inventory[k].type == ItemID.LastPrism && C22)
 							{
 								inventory[k].stack--;
 								C22 = false;
 							}
-							if (inventory[k].type == 493 && C23)
+							if (inventory[k].type == ItemID.AngelWings && C23)
 							{
 								inventory[k].stack--;
 								C23 = false;
 							}
-							if (inventory[k].type == 1611 && C24)
+							if (inventory[k].type == ItemID.ButterflyDust && C24)
 							{
 								inventory[k].stack--;
 								C24 = false;
@@ -700,12 +700,12 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 2882 && C31)
+							if (inventory[k].type == ItemID.ChargedBlasterCannon && C31)
 							{
 								inventory[k].stack--;
 								C31 = false;
 							}
-							if (inventory[k].type == 1295 && C32)
+							if (inventory[k].type == ItemID.HeatRay && C32)
 							{
 								inventory[k].stack--;
 								C32 = false;
@@ -715,7 +715,7 @@ namespace AlchemistNPC.NPCs
 								inventory[k].stack--;
 								C33 = false;
 							}
-							if (inventory[k].type == 1858 && C34)
+							if (inventory[k].type == ItemID.SniperScope && C34)
 							{
 								inventory[k].stack--;
 								C34 = false;
@@ -743,7 +743,7 @@ namespace AlchemistNPC.NPCs
 								inventory[k].stack--;
 								C41 = false;
 							}
-							if (inventory[k].type == 1363 && C42)
+							if (inventory[k].type == ItemID.SkeletronTrophy && C42)
 							{
 								inventory[k].stack--;
 								C42 = false;
@@ -776,7 +776,7 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 1156 && C51)
+							if (inventory[k].type == ItemID.PiranhaGun && C51)
 							{
 								inventory[k].stack--;
 								C51 = false;
@@ -791,7 +791,7 @@ namespace AlchemistNPC.NPCs
 								inventory[k].stack--;
 								C53 = false;
 							}
-							if (inventory[k].type == 900 && C54)
+							if (inventory[k].type == ItemID.MoonStone && C54)
 							{
 								inventory[k].stack--;
 								C54 = false;
@@ -814,7 +814,7 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 1327 && C61)
+							if (inventory[k].type == ItemID.DeathSickle && C61)
 							{
 								inventory[k].stack--;
 								C61 = false;
@@ -829,7 +829,7 @@ namespace AlchemistNPC.NPCs
 								inventory[k].stack--;
 								C63 = false;
 							}
-							if (inventory[k].type == 1865 && C64)
+							if (inventory[k].type == ItemID.CelestialStone && C64)
 							{
 								inventory[k].stack--;
 								C64 = false;
@@ -852,7 +852,7 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 3384 && C71)
+							if (inventory[k].type == ItemID.PortalGun && C71)
 							{
 								inventory[k].stack--;
 								C71 = false;
@@ -862,12 +862,12 @@ namespace AlchemistNPC.NPCs
 								inventory[k].stack--;
 								C72 = false;
 							}
-							if (inventory[k].type == 3569 && C73)
+							if (inventory[k].type == ItemID.MoonlordTurretStaff && C73)
 							{
 								inventory[k].stack--;
 								C73 = false;
 							}
-							if (inventory[k].type == 3122 && C74)
+							if (inventory[k].type == ItemID.REK && C74)
 							{
 								inventory[k].stack--;
 								C74 = false;
@@ -890,17 +890,17 @@ namespace AlchemistNPC.NPCs
 						Item[] inventory = Main.player[Main.myPlayer].inventory;
 						for (int k = 0; k < inventory.Length; k++)
 						{
-							if (inventory[k].type == 3384 && C81)
+							if (inventory[k].type == ItemID.PortalGun && C81)
 							{
 								inventory[k].stack--;
 								C81 = false;
 							}
-							if (inventory[k].type == 3628 && C82)
+							if (inventory[k].type == ItemID.CompanionCube && C82)
 							{
 								inventory[k].stack--;
 								C82 = false;
 							}
-							if (inventory[k].type == 3820 && C83)
+							if (inventory[k].type == ItemID.DD2FlameburstTowerT3Popper && C83)
 							{
 								inventory[k].stack--;
 								C83 = false;

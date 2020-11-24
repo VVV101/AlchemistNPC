@@ -85,7 +85,7 @@ namespace AlchemistNPC.Tiles
 						{
 							ALIB.Call("UnlockGlobal", "AlchemistNPC", "The snack that smiles back");
 						}
-						if (Main.netMode == 0)
+						if (Main.netMode == NetmodeID.SinglePlayer)
 						{
 							switch (Main.rand.Next(3))
 							{
@@ -104,7 +104,7 @@ namespace AlchemistNPC.Tiles
 							break;
 							}
 						}
-						if(Main.netMode != 0)
+						if(Main.netMode != NetmodeID.SinglePlayer)
 						{
 						Main.player[Main.myPlayer].AddBuff(mod.BuffType("EvilPresence"), 1);
 						counter = 0;

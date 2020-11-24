@@ -37,11 +37,11 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 32;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 1;
 			item.value = 3000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.UseSound = SoundID.Item114;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("PortalGunProj");

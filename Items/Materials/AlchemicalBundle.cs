@@ -28,7 +28,7 @@ namespace AlchemistNPC.Items.Materials
 			item.height = 32;
 			item.maxStack = 999;
 			item.value = 2500000;
-			item.rare = 9;
+			item.rare = ItemRarityID.Cyan;
 			item.knockBack = 6;
 			item.noMelee = true;
 		}

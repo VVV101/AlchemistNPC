@@ -260,13 +260,13 @@ namespace AlchemistNPC.NPCs
 						Vector2 delta5 = delta.RotatedByRandom(MathHelper.ToRadians(20));
 						Vector2 delta6 = delta.RotatedByRandom(MathHelper.ToRadians(25));
 						Vector2 delta7 = delta.RotatedByRandom(MathHelper.ToRadians(25));
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, 100, damage1, 0, Main.myPlayer);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta2.X, delta2.Y, 100, damage1, 0, Main.myPlayer);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta3.X, delta3.Y, 100, damage1, 0, Main.myPlayer);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta4.X, delta3.Y, 100, damage1, 0, Main.myPlayer);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta5.X, delta3.Y, 100, damage1, 0, Main.myPlayer);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta3.Y, 100, damage1, 0, Main.myPlayer);
-						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta7.X, delta3.Y, 100, damage1, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, ProjectileID.DeathLaser, damage1, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta2.X, delta2.Y, ProjectileID.DeathLaser, damage1, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta3.X, delta3.Y, ProjectileID.DeathLaser, damage1, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta4.X, delta3.Y, ProjectileID.DeathLaser, damage1, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta5.X, delta3.Y, ProjectileID.DeathLaser, damage1, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta3.Y, ProjectileID.DeathLaser, damage1, 0, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta7.X, delta3.Y, ProjectileID.DeathLaser, damage1, 0, Main.myPlayer);
 					}
 					counter++;
 					counter2++;
@@ -315,10 +315,10 @@ namespace AlchemistNPC.NPCs
 					Vector2 delta6 = delta.RotatedByRandom(MathHelper.ToRadians(10));
 					Vector2 delta7 = delta.RotatedByRandom(MathHelper.ToRadians(10));
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta.X, delta.Y, mod.ProjectileType("DeadlyLaser"), 250, 0, Main.myPlayer);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta2.X, delta2.Y, 100, damage2, 0, Main.myPlayer);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta3.X, delta3.Y, 100, damage2, 0, Main.myPlayer);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta4.X, delta4.Y, 100, damage2, 0, Main.myPlayer);
-					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta5.X, delta5.Y, 100, damage2, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta2.X, delta2.Y, ProjectileID.DeathLaser, damage2, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta3.X, delta3.Y, ProjectileID.DeathLaser, damage2, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta4.X, delta4.Y, ProjectileID.DeathLaser, damage2, 0, Main.myPlayer);
+					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta5.X, delta5.Y, ProjectileID.DeathLaser, damage2, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 250, 0, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center.X, npc.Center.Y, delta6.X, delta7.Y, mod.ProjectileType("DeadlyLaser"), 250, 0, Main.myPlayer);
 				}
@@ -361,7 +361,7 @@ namespace AlchemistNPC.NPCs
 				}
 				if (counter2 >= 40)
 				{
-					Main.PlaySound(2, (int)npc.position.X, (int)npc.position.Y, 62);
+					Main.PlaySound(SoundID.Item, (int)npc.position.X, (int)npc.position.Y, 62);
 					counter2 = 0;
 					Vector2 delta = player.Center - npc.Center;
 					float magnitude = (float)Math.Sqrt(delta.X * delta.X + delta.Y * delta.Y);

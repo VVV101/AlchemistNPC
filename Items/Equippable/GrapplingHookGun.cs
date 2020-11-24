@@ -25,7 +25,7 @@ namespace AlchemistNPC.Items.Equippable
 		{
 			item.CloneDefaults(ItemID.AmethystHook);
 			item.shootSpeed = 28f;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.shoot = mod.ProjectileType("GrapplingHookGunProjectile");
 		}
 	}

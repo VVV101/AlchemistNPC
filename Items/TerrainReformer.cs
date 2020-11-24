@@ -30,10 +30,10 @@ namespace AlchemistNPC.Items
 			item.useTime = 5;
 			item.useAnimation = 10;
 			item.pick = 225;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = 100000;
-			item.rare = 10;
+			item.rare = ItemRarityID.Red;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.tileBoost += 5;

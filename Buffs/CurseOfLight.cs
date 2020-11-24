@@ -5,6 +5,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
+using Terraria.ID;
 
 namespace AlchemistNPC.Buffs
 {
@@ -29,14 +30,14 @@ namespace AlchemistNPC.Buffs
 			npc.GetGlobalNPC<ModGlobalNPC>().light = true;
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
-				if (npc.type != 222 && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerShade")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlagueBeeLargeG")))
+				if (npc.type != NPCID.QueenBee && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerGoliath")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlaguebringerShade")) && npc.type != (ModLoader.GetMod("CalamityMod").NPCType("PlagueBeeLargeG")))
 				{	
 					npc.velocity *= 0.99f;
 				}
 			}
 			if (ModLoader.GetMod("CalamityMod") == null)
 			{
-				if (npc.type != 222)
+				if (npc.type != NPCID.QueenBee)
 				{	
 					npc.velocity *= 0.99f;
 				}

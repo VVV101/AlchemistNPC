@@ -36,10 +36,10 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 28;
 			item.useTime = 55;
 			item.useAnimation = 55;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 4;
 			item.value = 1000000;
-			item.rare = 9;
+			item.rare = ItemRarityID.Cyan;
 			item.UseSound = SoundID.Item106;
 			item.shoot = mod.ProjectileType("FA1");
 			item.autoReuse = true;

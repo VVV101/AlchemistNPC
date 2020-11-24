@@ -47,7 +47,7 @@ namespace AlchemistNPC.Projectiles
                         distance = 1.6f / distance;
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX*2, shootToY*2, 523, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX*2, shootToY*2, ProjectileID.ToxicBubble, projectile.damage, 0, Main.myPlayer, 0f, 0f);
                         projectile.ai[0] = 0f;
                     }
                 }

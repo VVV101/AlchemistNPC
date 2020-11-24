@@ -24,7 +24,7 @@ namespace AlchemistNPC.Items
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item
-            item.useStyle = 2;                 //this is how the item is holded when used
+            item.useStyle = ItemUseStyleID.EatingUsing;                 //this is how the item is holded when used
             item.useTurn = true;
             item.useAnimation = 17;
             item.useTime = 17;
@@ -33,7 +33,7 @@ namespace AlchemistNPC.Items
             item.width = 20;
             item.height = 30;
             item.value = Item.sellPrice(0, 0, 50, 0);
-            item.rare = 3;
+            item.rare = ItemRarityID.Orange;
             item.buffType = 146;           //this is where you put your Buff
             item.buffTime = 36000;    //this is the buff duration        10 = 10 Second
             return;

@@ -33,11 +33,11 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 22;
 			item.useTime = 30;
 			item.useAnimation = 30;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.noMelee = true;
 			item.knockBack = 8;
 			item.value = Item.buyPrice(15, 0, 0, 0);
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.UseSound = SoundID.Item44;
 			item.autoReuse = true;
 			item.noUseGraphic = true;

@@ -37,7 +37,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.ranged = false;
 			item.thrown = true;
 			item.damage = 125;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.noUseGraphic = true;

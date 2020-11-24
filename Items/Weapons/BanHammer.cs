@@ -38,7 +38,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 10;
 			item.hammer = 666;
 			item.value = 500000;
-			item.rare = 10;
+			item.rare = ItemRarityID.Red;
             item.knockBack = 10;
             item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
@@ -50,7 +50,7 @@ namespace AlchemistNPC.Items.Weapons
 		{
 			if (target.boss == false)
 			{
-				if (target.type != 134 && target.type != 135 && target.type != 136 && target.type != 325 && target.type != 327 && target.type != 325 && target.type != 344 && target.type != 345 && target.type != 346 &&  target.type != 477)
+				if (target.type != NPCID.TheDestroyer && target.type != NPCID.TheDestroyerBody && target.type != NPCID.TheDestroyerTail && target.type != NPCID.MourningWood && target.type != NPCID.Pumpking && target.type != NPCID.MourningWood && target.type != NPCID.Everscream && target.type != NPCID.IceQueen && target.type != NPCID.SantaNK1 &&  target.type != NPCID.Mothron)
 				{
 					target.buffImmune[mod.BuffType("Banned")] = false;
 					target.AddBuff(mod.BuffType("Banned"), 60);

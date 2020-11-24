@@ -35,7 +35,7 @@ namespace AlchemistNPC.Items.Notes
 			item.height = 36;
 			item.maxStack = 1;
 			item.value = 10000000;
-			item.rare = 10;
+			item.rare = ItemRarityID.Red;
 		}	
 	}
 }

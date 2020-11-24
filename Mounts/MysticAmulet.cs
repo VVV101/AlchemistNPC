@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
 
 namespace AlchemistNPC.Mounts
 {
@@ -54,7 +55,7 @@ namespace AlchemistNPC.Mounts
 			mountData.swimFrameCount = 0;
 			mountData.swimFrameDelay = 0;
 			mountData.swimFrameStart = 0;
-			if (Main.netMode != 2)
+			if (Main.netMode != NetmodeID.Server)
 			{
 				mountData.textureWidth = mountData.backTexture.Width;
 				mountData.textureHeight = mountData.backTexture.Height;

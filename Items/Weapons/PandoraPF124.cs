@@ -39,13 +39,13 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 30;
 			item.useTime = 15;
 			item.useAnimation = 15;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 8;
 			item.value = 1000000;
 			item.rare = 12;
 			item.autoReuse = true;
-			item.shoot = 340;
+			item.shoot = ProjectileID.RocketSnowmanIII;
 			item.shootSpeed = 32f;
 			item.UseSound = SoundID.Item11;
 		}

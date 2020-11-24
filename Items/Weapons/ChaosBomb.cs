@@ -23,10 +23,10 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 20;
 			item.shoot = mod.ProjectileType("ChaosBomb");
 			item.shootSpeed = 16f;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 8;
 			item.value = 1000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}

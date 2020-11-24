@@ -39,7 +39,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
-			Main.PlaySound(4, (int)projectile.position.X, (int)projectile.position.Y, 22);
+			Main.PlaySound(SoundID.NPCKilled, (int)projectile.position.X, (int)projectile.position.Y, 22);
 			projectile.Kill();
 			if (projectile.ai[0] > 7f)
 			{
@@ -96,7 +96,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			Main.PlaySound(4, (int)projectile.position.X, (int)projectile.position.Y, 22);
+			Main.PlaySound(SoundID.NPCKilled, (int)projectile.position.X, (int)projectile.position.Y, 22);
 			projectile.Kill();
 			if (projectile.ai[0] > 7f)
 			{

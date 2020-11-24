@@ -26,10 +26,10 @@ namespace AlchemistNPC.Items.Summoning
 			item.height = 20;
 			item.maxStack = 30;
 			item.value = 15000;
-			item.rare = 6;
+			item.rare = ItemRarityID.LightPurple;
 			item.useAnimation = 30;
 			item.useTime = 30;
-			item.useStyle = 4;
+			item.useStyle = ItemUseStyleID.HoldingUp;
 			item.consumable = true;
 			item.UseSound = SoundID.Item37;
 			item.makeNPC = (short)mod.NPCType("Brewer");

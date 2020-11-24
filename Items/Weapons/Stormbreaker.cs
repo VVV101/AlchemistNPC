@@ -52,7 +52,7 @@ namespace AlchemistNPC.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(3858);
+			item.CloneDefaults(ItemID.MonkStaffT3);
 			item.melee = true;
 			item.damage = 110;
 			item.crit = 21;
@@ -61,7 +61,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.hammer = 600;
 			item.axe = 120;
 			item.value = 10000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
             item.knockBack = 10;
 			item.expert = true;
 			item.scale = 1.5f;

@@ -30,7 +30,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.consumable = true;
 			item.knockBack = 4;
 			item.value = Item.sellPrice(0, 0, 5, 0);
-			item.rare = 10;
+			item.rare = ItemRarityID.Red;
 			item.shoot = mod.ProjectileType("PlasmaRound");
 			item.shootSpeed = 32f; 
 			item.ammo = item.type; //

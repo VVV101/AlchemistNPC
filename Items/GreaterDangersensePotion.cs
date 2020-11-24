@@ -26,7 +26,7 @@ namespace AlchemistNPC.Items
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;
-            item.useStyle = 2;
+            item.useStyle = ItemUseStyleID.EatingUsing;
             item.useTurn = true;
             item.useAnimation = 17;
             item.useTime = 17;
@@ -35,7 +35,7 @@ namespace AlchemistNPC.Items
             item.width = 20;
             item.height = 30;
             item.value = Item.sellPrice(0, 0, 2, 0);
-            item.rare = 7;
+            item.rare = ItemRarityID.Lime;
             item.buffType = mod.BuffType("GreaterDangersense");
             item.buffTime = 36000;
             return;

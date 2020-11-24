@@ -34,10 +34,10 @@ namespace AlchemistNPC.Items.Misc
 		{
 			item.width = 32;
 			item.height = 32;
-			item.rare = 5;
+			item.rare = ItemRarityID.Pink;
 			item.useAnimation = 20;
             item.useTime = 20;
-            item.useStyle = 4;
+            item.useStyle = ItemUseStyleID.HoldingUp;
 			item.UseSound = SoundID.Item4;
 		}
 		
@@ -45,7 +45,7 @@ namespace AlchemistNPC.Items.Misc
         {
 			if (!AlchemistNPCWorld.foundAntiBuffMode)
 			{
-				if (Main.netMode == 0 || Main.netMode == 1)
+				if (Main.netMode == NetmodeID.SinglePlayer || Main.netMode == NetmodeID.MultiplayerClient)
 				{
 					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.AntiBuffmodeactive"), 255, 255, 255);
 				}
@@ -54,7 +54,7 @@ namespace AlchemistNPC.Items.Misc
 			}
 			if (AlchemistNPCWorld.foundAntiBuffMode)
 			{
-				if (Main.netMode == 0 || Main.netMode == 1)
+				if (Main.netMode == NetmodeID.SinglePlayer || Main.netMode == NetmodeID.MultiplayerClient)
 				{
 					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.AntiBuffmodeisdisabled"), 255, 255, 255);
 				}

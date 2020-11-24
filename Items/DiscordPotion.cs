@@ -31,7 +31,7 @@ namespace AlchemistNPC.Items
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item
-            item.useStyle = 2;                 //this is how the item is holded when used
+            item.useStyle = ItemUseStyleID.EatingUsing;                 //this is how the item is holded when used
             item.useTurn = true;
             item.useAnimation = 17;
             item.useTime = 17;
@@ -40,7 +40,7 @@ namespace AlchemistNPC.Items
             item.width = 18;
             item.height = 28;
             item.value = Item.sellPrice(0, 4, 0, 0);
-            item.rare = 7;
+            item.rare = ItemRarityID.Lime;
             item.buffType = mod.BuffType("DiscordBuff");           //this is where you put your Buff
             item.buffTime = 18000;    //this is the buff duration        10 = 10 Second
             return;

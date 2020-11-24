@@ -22,7 +22,7 @@ namespace AlchemistNPC.Items.Equippable
 		{
 			item.CloneDefaults(ItemID.AmethystHook);
 			item.shootSpeed = 24f;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.shoot = mod.ProjectileType("CelestialHookProjectile");
 		}
 		

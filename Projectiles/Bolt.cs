@@ -105,7 +105,7 @@ namespace AlchemistNPC.Projectiles
 			Player player = Main.player[projectile.owner];
 			// This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
 			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 89);
+			Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 89);
 			for (int index1 = 0; index1 < 15; ++index1)
 			{
 				int index2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 29, 0.0f, 0.0f, 100, new Color(), 2.5f);

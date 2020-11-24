@@ -33,7 +33,7 @@ namespace AlchemistNPC.Items.Equippable
 			item.width = 26;
 			item.height = 28;
 			item.value = Item.buyPrice(0, 30, 0, 0);
-			item.rare = 7;
+			item.rare = ItemRarityID.Lime;
 			item.accessory = true;
 			
 		}

@@ -39,7 +39,7 @@ namespace AlchemistNPC.Items.Weapons
 				item.useAnimation = 12;
 				item.useTime = 4;
 				item.reuseDelay = 14;
-				item.shoot = 10;
+				item.shoot = ProjectileID.PurificationPowder;
 				item.useAmmo = AmmoID.Bullet;
 				item.magic = false;
 				item.ranged = true;
@@ -56,7 +56,7 @@ namespace AlchemistNPC.Items.Weapons
 				item.useAnimation = 18;
 				item.useTime = 6;
 				item.reuseDelay = 20;
-				item.shoot = 88;
+				item.shoot = ProjectileID.PurpleLaser;
 				item.useAmmo = 0;
 				item.ranged = false;
 				item.magic = true;

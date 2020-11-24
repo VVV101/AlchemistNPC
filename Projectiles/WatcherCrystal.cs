@@ -54,7 +54,7 @@ namespace AlchemistNPC.Projectiles
                 float shootToY = target.position.Y + target.height * 0.5f - projectile.Center.Y;
                 float distance = (float)Math.Sqrt(shootToX * shootToX + shootToY * shootToY);
 
-                if (distance < 520f && target.catchItem == 0 && !target.friendly && target.active && target.type != 488)
+                if (distance < 520f && target.catchItem == 0 && !target.friendly && target.active && target.type != NPCID.TargetDummy)
                 {
                     if (projectile.ai[0] > 60f) // Time in (60 = 1 second) 
                     {
@@ -62,7 +62,7 @@ namespace AlchemistNPC.Projectiles
 
                         shootToX *= distance * 3;
                         shootToY *= distance * 3;
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, 617, projectile.damage, 0, Main.myPlayer, 0f, 0f);
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, shootToX, shootToY, ProjectileID.NebulaArcanum, projectile.damage, 0, Main.myPlayer, 0f, 0f);
                         projectile.ai[0] = 0f;
                     }
                 }

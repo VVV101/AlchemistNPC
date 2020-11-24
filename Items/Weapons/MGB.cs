@@ -29,7 +29,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.knockBack = 4;
 			item.value = Item.sellPrice(0, 0, 1, 0);
 			item.rare = 12;
-			item.shoot = 638;
+			item.shoot = ProjectileID.MoonlordBullet;
 			item.ammo = item.type;
 		}
 	}

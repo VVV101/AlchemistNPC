@@ -31,7 +31,7 @@ namespace AlchemistNPC.Items.Misc
 			item.width = 32;
 			item.height = 32;
 			item.value = 0;
-			item.rare = 3;
+			item.rare = ItemRarityID.Orange;
 		}
 		
 		public override void UpdateInventory(Player player)

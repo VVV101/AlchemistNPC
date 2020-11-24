@@ -46,7 +46,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.value = 1000000;
 			item.rare = 12;
 			item.autoReuse = true;
-			item.shoot = 10;
+			item.shoot = ProjectileID.PurificationPowder;
 			item.useAmmo = 0;
 		}
 
@@ -60,9 +60,9 @@ namespace AlchemistNPC.Items.Weapons
 			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).DisasterGauge++;
 			if (player.altFunctionUse != 2)
 			{
-			Projectile.NewProjectile(position.X, position.Y+3+Main.rand.Next(-5,5), speedX, speedY, 638, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y+Main.rand.Next(-5,5), speedX, speedY, 638, damage, knockBack, player.whoAmI);
-			Projectile.NewProjectile(position.X, position.Y-3+Main.rand.Next(-5,5), speedX, speedY, 638, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y+3+Main.rand.Next(-5,5), speedX, speedY, ProjectileID.MoonlordBullet, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y+Main.rand.Next(-5,5), speedX, speedY, ProjectileID.MoonlordBullet, damage, knockBack, player.whoAmI);
+			Projectile.NewProjectile(position.X, position.Y-3+Main.rand.Next(-5,5), speedX, speedY, ProjectileID.MoonlordBullet, damage, knockBack, player.whoAmI);
 			return false;
 			}
 			if (player.altFunctionUse == 2)

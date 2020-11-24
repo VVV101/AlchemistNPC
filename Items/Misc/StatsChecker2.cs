@@ -89,7 +89,7 @@ namespace AlchemistNPC.Items.Misc
 			item.width = 32;
 			item.height = 32;
 			item.value = 5000000;
-			item.rare = 8;
+			item.rare = ItemRarityID.Yellow;
 			item.useAnimation = 15;
             item.useTime = 15;
 			item.consumable = false;

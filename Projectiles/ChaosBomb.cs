@@ -124,19 +124,19 @@ namespace AlchemistNPC.Projectiles
 					switch (Main.rand.Next(4))
 					{
 						case 0:
-							Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 89);
+							Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 89);
 							Projectile.NewProjectile(vector2.X, vector2.Y, vector11.X*2f, vector11.Y*2f, mod.ProjectileType("CB1"), projectile.damage*2, 8f, player.whoAmI);
 							break;
 						case 1:
-							Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 89);
+							Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 89);
 							Projectile.NewProjectile(vector2.X, vector2.Y, vector11.X*2f, vector11.Y*2f, mod.ProjectileType("CB2"), projectile.damage*2, 8f, player.whoAmI);
 							break;
 						case 2:
-							Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 89);
+							Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 89);
 							Projectile.NewProjectile(vector2.X, vector2.Y, vector11.X*2f, vector11.Y*2f, mod.ProjectileType("CB3"), projectile.damage*2, 8f, player.whoAmI);
 							break;
 						case 3:
-							Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 89);
+							Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 89);
 							Projectile.NewProjectile(vector2.X, vector2.Y, vector11.X*2f, vector11.Y*2f, mod.ProjectileType("CB4"), projectile.damage*2, 8f, player.whoAmI);
 							break;
 					}

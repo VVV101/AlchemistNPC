@@ -36,12 +36,12 @@ namespace AlchemistNPC.Items.Weapons
 			item.noMelee = true;
 			item.magic = true;
 			item.mana = 10;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.width = 30;
 			item.height = 30;
 			item.useTime = 6;
 			item.UseSound = SoundID.Item13;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.shootSpeed = 12f;
 			item.useAnimation = 6;   
 			item.knockBack = 4;

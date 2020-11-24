@@ -33,9 +33,9 @@ namespace AlchemistNPC.Items.Misc
 			item.maxStack = 1;
 			item.useTime = 30;
 			item.useAnimation = 30;
-			item.useStyle = 2;
+			item.useStyle = ItemUseStyleID.EatingUsing;
 			item.value = 100000;
-			item.rare = 9;
+			item.rare = ItemRarityID.Cyan;
 			item.UseSound = SoundID.Item4;
 		}
 

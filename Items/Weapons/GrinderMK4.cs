@@ -27,7 +27,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.damage = 35;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 24;
 			item.useTime = 30;
 			item.shootSpeed = 3.7f;
@@ -35,7 +35,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.width = 32;
 			item.height = 32;
 			item.scale = 1f;
-			item.rare = 6;
+			item.rare = ItemRarityID.LightPurple;
 			item.value = Item.sellPrice(gold: 50);
 
 			item.melee = true;

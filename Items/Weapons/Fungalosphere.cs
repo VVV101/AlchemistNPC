@@ -17,12 +17,12 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 36;
 			item.useTime = 10;
 			item.useAnimation = 30;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 2;
 			item.UseSound = SoundID.Item34;
 			item.value = 1000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("FungalosphereProjectile");
 			item.shootSpeed = 8f;

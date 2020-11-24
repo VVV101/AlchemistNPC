@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items
 		
 		public static void HandleTeleport(int teleportType = 0, bool forceHandle = false, int whoAmI = 0)
 		{
-			bool syncData = forceHandle || Main.netMode == 0;
+			bool syncData = forceHandle || Main.netMode == NetmodeID.SinglePlayer;
 			if (syncData)
 			{
 				TeleportPlayer(teleportType, forceHandle, whoAmI);
@@ -350,13 +350,13 @@ namespace AlchemistNPC.Items
 
 			LeaveDust(player);
 
-			if (Main.netMode != 2)
+			if (Main.netMode != NetmodeID.Server)
 				return;
 
 			if (syncData)
 			{
 				RemoteClient.CheckSection(player.whoAmI, player.position, 1);
-				NetMessage.SendData(65, -1, -1, null, 0, (float)player.whoAmI, pos.X, pos.Y, 3, 0, 0);
+				NetMessage.SendData(MessageID.Teleport, -1, -1, null, 0, (float)player.whoAmI, pos.X, pos.Y, 3, 0, 0);
 			}
 		}
 

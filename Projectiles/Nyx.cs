@@ -41,7 +41,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
+			Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 62);
 			Vector2 vel = new Vector2(0, -1);
 			vel *= 0f;
 			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionNyx"), projectile.damage/6, 0, Main.myPlayer);
@@ -51,7 +51,7 @@ namespace AlchemistNPC.Projectiles
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
 			target.immune[projectile.owner] = 3;
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
+			Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 62);
 			Vector2 vel = new Vector2(0, -1);
 			vel *= 0f;
 			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionNyx"), projectile.damage/6, 0, Main.myPlayer);

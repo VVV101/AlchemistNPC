@@ -29,7 +29,7 @@ namespace AlchemistNPC.Items.Equippable
 			item.width = 32;
 			item.height = 30;
 			item.value = 5000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.noUseGraphic = true;
 			item.mountType = mod.MountType("Poro");
 		}

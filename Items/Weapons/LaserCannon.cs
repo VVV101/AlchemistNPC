@@ -31,11 +31,11 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 38;
 			item.useTime = 20;
 			item.useAnimation = 20;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 6;
 			item.value = 1000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.UseSound = SoundID.Item92;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("LaserCannon"); //idk why but all the guns in the vanilla source have this

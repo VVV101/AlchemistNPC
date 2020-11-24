@@ -25,8 +25,8 @@ namespace AlchemistNPC.Items.Summoning
             item.width = 46;
             item.height = 42;
             item.maxStack = 1;
-            item.rare = 10;
-            item.useStyle = 1;
+            item.rare = ItemRarityID.Red;
+            item.useStyle = ItemUseStyleID.SwingThrow;
             item.useAnimation = 15;
             item.useTime = 15;
             item.consumable = true;

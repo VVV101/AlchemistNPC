@@ -90,7 +90,7 @@ namespace AlchemistNPC.Projectiles
 		
 		public override bool PreKill(int timeLeft)
 		{
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 62);
+			Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 62);
 			Vector2 vel = new Vector2(0, -1);
 			vel *= 0f;
 			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vel.X, vel.Y, mod.ProjectileType("ExplosionPlasma"), projectile.damage, 0, Main.myPlayer);

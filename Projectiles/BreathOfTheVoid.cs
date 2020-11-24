@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Microsoft.Xna.Framework;
+using Terraria.ID;
 
 namespace AlchemistNPC.Projectiles
 {
@@ -143,7 +144,7 @@ namespace AlchemistNPC.Projectiles
 					num9 = num10 / num8;
 				float SpeedX = f1 * num9;
 				float SpeedY = f2 * num9;
-				Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 34);
+				Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 34);
 				int numberProjectiles = 3;
 				for (int i = 0; i < numberProjectiles; i++)
 				{

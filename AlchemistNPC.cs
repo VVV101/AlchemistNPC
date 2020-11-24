@@ -1,25 +1,16 @@
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework;
 using System.IO;
-using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.DataStructures;
 using AlchemistNPC.Interface;
-
 using Terraria.Achievements;
 using Terraria.Localization;
 using Terraria.UI;
-using Terraria.DataStructures;
 using Terraria.GameContent.UI;
 using AlchemistNPC.Items;
-using AlchemistNPC.Interface;
 
 namespace AlchemistNPC
 {
@@ -190,7 +181,6 @@ namespace AlchemistNPC
 		}
 
 		internal static SoundEffectInstance NukeMenuClose(On.Terraria.Main.orig_PlaySound_int_int_int_int_float_float orig, int type, int x, int y, int Style, float volumeScale, float pitchOffset) {
-			Player player = Main.LocalPlayer;
 			if ((type == SoundID.MenuClose) && (DimensionalCasketUI.forcetalk == true))
 			{
 				return null;
@@ -430,7 +420,6 @@ namespace AlchemistNPC
 				case AlchemistNPCMessageType.SyncPlayerVariables:
 					playernumber = reader.ReadByte();
 					AlchemistNPCPlayer alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
-					alchemistPlayer = Main.player[playernumber].GetModPlayer<AlchemistNPCPlayer>();
 					alchemistPlayer.RCT1 = reader.ReadInt32();
 					alchemistPlayer.RCT2 = reader.ReadInt32();
 					alchemistPlayer.RCT3 = reader.ReadInt32();

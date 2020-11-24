@@ -20,10 +20,10 @@ namespace AlchemistNPC.Items.Summoning
 			item.useAnimation = 20;
 			item.shoot = mod.ProjectileType("DimensionalRift");
 			item.shootSpeed = 10f;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 8;
 			item.value = 1000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}
@@ -46,7 +46,7 @@ Don't break it!!!");
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("StrangeTopHat"));
-			recipe.AddIngredient(170, 10);
+			recipe.AddIngredient(ItemID.Glass, 10);
 			recipe.AddIngredient(ItemID.FragmentNebula, 15);
             recipe.AddIngredient(ItemID.FragmentSolar, 15);
 			recipe.AddIngredient(ItemID.FragmentVortex, 15);

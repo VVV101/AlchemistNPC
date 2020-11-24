@@ -32,7 +32,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.consumable = false;             //You need to set the item consumable so that the ammo would automatically consumed
 			item.knockBack = 1;
 			item.value = 10000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.shoot = mod.ProjectileType("ShroomiteArrow");   //The projectile shoot when your weapon using this ammo
 			item.shootSpeed = 12f;                  //The speed of the projectile
 			item.ammo = AmmoID.Arrow;              //The ammo class this ammo belongs to.

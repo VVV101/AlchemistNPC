@@ -14,12 +14,12 @@ namespace AlchemistNPC.Items.Weapons
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(3389);
+			item.CloneDefaults(ItemID.Terrarian);
 			item.damage = 200;
 			item.shoot = mod.ProjectileType("TrueSasscadeYoyo");
 			item.knockBack = 4;
 			item.value = 5000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.shootSpeed = 12f;
 			item.useTime = 10;
 			item.useAnimation = 10;

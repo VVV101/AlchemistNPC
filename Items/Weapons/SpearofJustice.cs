@@ -23,10 +23,10 @@ namespace AlchemistNPC.Items.Weapons
 			item.useAnimation = 20;
 			item.shoot = mod.ProjectileType("SpearofJustice");
 			item.shootSpeed = 32f;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 8;
 			item.value = 1000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 		}
@@ -138,7 +138,7 @@ namespace AlchemistNPC.Items.Weapons
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "SoulEssence", 7);
 			recipe.AddIngredient(null, "HateVial");
-			recipe.AddIngredient(3543);
+			recipe.AddIngredient(ItemID.DayBreak);
 			recipe.AddIngredient(null, "EmagledFragmentation", 300);
 			recipe.AddTile(null, "MateriaTransmutator");
 			recipe.SetResult(this);

@@ -34,7 +34,7 @@ namespace AlchemistNPC.Projectiles
 			{
 				if (Sandstorm.Happening)
 				{
-					if (Main.netMode == 0 || Main.netMode == 1)
+					if (Main.netMode == NetmodeID.SinglePlayer || Main.netMode == NetmodeID.MultiplayerClient)
 					{
 						Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.SandstormStopped"), 255, 255, 255);
 					}
@@ -44,7 +44,7 @@ namespace AlchemistNPC.Projectiles
 				}
 				if (!Sandstorm.Happening)
 				{
-					if (Main.netMode == 0 || Main.netMode == 1)
+					if (Main.netMode == NetmodeID.SinglePlayer || Main.netMode == NetmodeID.MultiplayerClient)
 					{
 						Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.SandstormStarted"), 255, 255, 255);
 					}
@@ -55,7 +55,7 @@ namespace AlchemistNPC.Projectiles
 			}
 			if (Main.raining)
 			{
-				if (Main.netMode == 0 || Main.netMode == 1)
+				if (Main.netMode == NetmodeID.SinglePlayer || Main.netMode == NetmodeID.MultiplayerClient)
 				{
 					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.RainStopped"), 255, 255, 255);
 				}
@@ -66,7 +66,7 @@ namespace AlchemistNPC.Projectiles
 			}
 			if (!Main.raining)
 			{
-				if (Main.netMode == 0 || Main.netMode == 1)
+				if (Main.netMode == NetmodeID.SinglePlayer || Main.netMode == NetmodeID.MultiplayerClient)
 				{
 					Main.NewText(Language.GetTextValue("Mods.AlchemistNPC.Common.RainStarted"), 255, 255, 255);
 				}

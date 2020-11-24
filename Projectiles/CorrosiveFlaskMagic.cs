@@ -31,7 +31,7 @@ namespace AlchemistNPC.Projectiles
 		public override void Kill(int timeLeft)
 		{
 			Player player = Main.player[projectile.owner];
-			Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 107);
+			Main.PlaySound(SoundID.Item, (int)projectile.position.X, (int)projectile.position.Y, 107);
 			Gore.NewGore(projectile.position, -projectile.oldVelocity * 0.2f, 704, 1f);
 			if (projectile.owner == Main.myPlayer)
 			{

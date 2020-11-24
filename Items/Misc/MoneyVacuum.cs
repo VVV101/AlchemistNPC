@@ -26,43 +26,43 @@ namespace AlchemistNPC.Items.Misc
 			item.width = 32;
 			item.height = 32;
 			item.value = 1000000;
-			item.rare = 5;
+			item.rare = ItemRarityID.Pink;
 		}
 		
 		public override void UpdateInventory(Player player)
 		{
 			for (int number = 0; number < 400; ++number)
 			{
-				if (Main.item[number].active && Main.item[number].type == 71)
+				if (Main.item[number].active && Main.item[number].type == ItemID.CopperCoin)
 				{
 					Main.item[number] = player.GetItem(player.whoAmI, Main.item[number], false, false);
-					if (Main.netMode == 1)
+					if (Main.netMode == NetmodeID.MultiplayerClient)
 					{
-						NetMessage.SendData(21, -1, -1, null, number, 0f, 0f, 0f, 0, 0, 0);
+						NetMessage.SendData(MessageID.SyncItem, -1, -1, null, number, 0f, 0f, 0f, 0, 0, 0);
 					}
 				}
-				else if (Main.item[number].active && Main.item[number].type == 72)
+				else if (Main.item[number].active && Main.item[number].type == ItemID.SilverCoin)
 				{
 					Main.item[number] = player.GetItem(player.whoAmI, Main.item[number], false, false);
-					if (Main.netMode == 1)
+					if (Main.netMode == NetmodeID.MultiplayerClient)
 					{
-						NetMessage.SendData(21, -1, -1, null, number, 0f, 0f, 0f, 0, 0, 0);
+						NetMessage.SendData(MessageID.SyncItem, -1, -1, null, number, 0f, 0f, 0f, 0, 0, 0);
 					}
 				}
-				else if (Main.item[number].active && Main.item[number].type == 73)
+				else if (Main.item[number].active && Main.item[number].type == ItemID.GoldCoin)
 				{
 					Main.item[number] = player.GetItem(player.whoAmI, Main.item[number], false, false);
-					if (Main.netMode == 1)
+					if (Main.netMode == NetmodeID.MultiplayerClient)
 					{
-						NetMessage.SendData(21, -1, -1, null, number, 0f, 0f, 0f, 0, 0, 0);
+						NetMessage.SendData(MessageID.SyncItem, -1, -1, null, number, 0f, 0f, 0f, 0, 0, 0);
 					}
 				}
-				else if (Main.item[number].active && Main.item[number].type == 74)
+				else if (Main.item[number].active && Main.item[number].type == ItemID.PlatinumCoin)
 				{
 					Main.item[number] = player.GetItem(player.whoAmI, Main.item[number], false, false);
-					if (Main.netMode == 1)
+					if (Main.netMode == NetmodeID.MultiplayerClient)
 					{
-						NetMessage.SendData(21, -1, -1, null, number, 0f, 0f, 0f, 0, 0, 0);
+						NetMessage.SendData(MessageID.SyncItem, -1, -1, null, number, 0f, 0f, 0f, 0, 0, 0);
 					}
 				}
 			}

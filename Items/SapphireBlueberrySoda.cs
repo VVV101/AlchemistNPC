@@ -28,7 +28,7 @@ namespace AlchemistNPC.Items
             item.maxStack = 999;
             item.consumable = true;
             item.value = 0;
-            item.rare = 6;
+            item.rare = ItemRarityID.LightPurple;
 			item.healMana = 200;
             return;
         }

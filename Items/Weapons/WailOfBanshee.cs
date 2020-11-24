@@ -34,9 +34,9 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 32;
 			item.useTime = 60;
 			item.useAnimation = 60;
-			item.useStyle = 2;
+			item.useStyle = ItemUseStyleID.EatingUsing;
 			item.noMelee = true;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.mana = 200;
 			item.autoReuse = false;
 			item.shoot = mod.ProjectileType("WailOfBanshee");

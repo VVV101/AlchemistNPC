@@ -52,7 +52,7 @@ Boss存活时无法使用
 			item.height = 32;
 			item.maxStack = 99;
 			item.value = 333333;
-			item.rare = 6;
+			item.rare = ItemRarityID.LightPurple;
 		}
 		
 		public override void UpdateInventory(Player player)

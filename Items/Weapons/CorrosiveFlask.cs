@@ -27,10 +27,10 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 28;
 			item.useTime = 25;
 			item.useAnimation = 25;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 10;
 			item.value = 100000;
-			item.rare = 9;
+			item.rare = ItemRarityID.Cyan;
 			item.UseSound = SoundID.Item106;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("CorrosiveFlaskMagic");

@@ -32,7 +32,7 @@ namespace AlchemistNPC.Items.Weapons
 		public override void SetDefaults()
         {
             item.UseSound = SoundID.Item88;                 //this is the sound that plays when you use the item
-            item.useStyle = 2;                 //this is how the item is holded when used
+            item.useStyle = ItemUseStyleID.EatingUsing;                 //this is how the item is holded when used
             item.useTurn = true;
             item.useAnimation = 20;
             item.useTime = 20;
@@ -41,7 +41,7 @@ namespace AlchemistNPC.Items.Weapons
             item.width = 18;
             item.height = 28;
             item.value = Item.sellPrice(1, 0, 0, 0);
-            item.rare = 11;
+            item.rare = ItemRarityID.Purple;
 			item.mana = 200;
         }
 		
@@ -57,7 +57,7 @@ namespace AlchemistNPC.Items.Weapons
               float num4 = 23f / (float) Math.Sqrt((double) num3 * (double) num3 + (double) num2 * (double) num2);
               float SpeedX = (num3 * num4)/3;
               float SpeedY = num2 * num4;
-              int index2 = Projectile.NewProjectile(X, Y, SpeedX, SpeedY, 711, 1500, 5f, player.whoAmI, 0.0f, 0.0f);
+              int index2 = Projectile.NewProjectile(X, Y, SpeedX, SpeedY, ProjectileID.ApprenticeStaffT3Shot, 1500, 5f, player.whoAmI, 0.0f, 0.0f);
               Main.projectile[index2].ai[1] = (float) player.position.Y;
             }
 			player.AddBuff(mod.BuffType("Exhausted"), 3600); 

@@ -686,7 +686,7 @@ namespace AlchemistNPC.NPCs
 				Player player = Main.player[k];
 				if (player.active && player.HasBuff(mod.BuffType("GreaterDangersense")))
 				{
-					if (npc.type == 112)
+					if (npc.type == NPCID.VileSpit)
 					{
 						npc.color = new Color(255, 255, 0, 100);
 						Lighting.AddLight(npc.position, 1f, 1f, 0f);
@@ -844,19 +844,19 @@ namespace AlchemistNPC.NPCs
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BetsyBooster"));
 				}
-				if (npc.type == 471)
+				if (npc.type == NPCID.GoblinSummoner)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("GSummonerBooster"));
 				}
-				if (npc.type == 243)
+				if (npc.type == NPCID.IceGolem)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("IceGolemBooster"));
 				}
-				if (npc.type == 170 || npc.type == 171 || npc.type == 180)
+				if (npc.type == NPCID.PigronCorruption || npc.type == NPCID.PigronHallow || npc.type == NPCID.PigronCrimson)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PigronBooster"));
 				}
-				if (npc.type == 395)
+				if (npc.type == NPCID.MartianSaucerCore)
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MartianSaucerBooster"));
 				}
@@ -868,19 +868,19 @@ namespace AlchemistNPC.NPCs
 						AlchemistNPCPlayer modPlayer = player.GetModPlayer<AlchemistNPCPlayer>();
 						if (modPlayer.CultistBooster == 1)
 						{
-							if ((npc.type == 402 || npc.type == 405 || npc.type == 407 || npc.type == 409 || npc.type == 411) && Main.rand.NextBool(5))
+							if ((npc.type == NPCID.StardustWormHead || npc.type == NPCID.StardustCellBig || npc.type == NPCID.StardustJellyfishBig || npc.type == NPCID.StardustSpiderBig || npc.type == NPCID.StardustSoldier) && Main.rand.NextBool(5))
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.FragmentStardust, 1);
 							}
-							if ((npc.type == 412 || npc.type == 415 || npc.type == 416 || npc.type == 417 || npc.type == 418 || npc.type == 419) && Main.rand.NextBool(5))
+							if ((npc.type == NPCID.SolarCrawltipedeHead || npc.type == NPCID.SolarDrakomire || npc.type == NPCID.SolarDrakomireRider || npc.type == NPCID.SolarSroller || npc.type == NPCID.SolarCorite || npc.type == NPCID.SolarSolenian) && Main.rand.NextBool(5))
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.FragmentSolar, 1);
 							}
-							if ((npc.type == 420 || npc.type == 421 || npc.type == 423 || npc.type == 424) && Main.rand.NextBool(5))
+							if ((npc.type == NPCID.NebulaBrain || npc.type == NPCID.NebulaHeadcrab || npc.type == NPCID.NebulaBeast || npc.type == NPCID.NebulaSoldier) && Main.rand.NextBool(5))
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.FragmentNebula, 1);
 							}
-							if ((npc.type == 425 || npc.type == 426 || npc.type == 427 || npc.type == 429) && Main.rand.NextBool(5))
+							if ((npc.type == NPCID.VortexRifleman || npc.type == NPCID.VortexHornetQueen || npc.type == NPCID.VortexHornet || npc.type == NPCID.VortexSoldier) && Main.rand.NextBool(5))
 							{
 								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.FragmentVortex, 1);
 							}
@@ -906,7 +906,7 @@ namespace AlchemistNPC.NPCs
 							{
 								int number = Main.rand.Next(6,9);
 								modPlayer.RCT2 += number;
-								if (Main.netMode == 2) SyncPlayerVariables(player);
+								if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 								if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier 2 Reversity coins and now has " + modPlayer.RCT2 + " in total.", 255, 255, 255);
 								else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier 2 Reversity coins and now has " + modPlayer.RCT2 + " in total."), new Color(255, 255, 255));
 							}
@@ -915,7 +915,7 @@ namespace AlchemistNPC.NPCs
 						{
 							int number = Main.rand.Next(12,15);
 							modPlayer.RCT1 += number;
-							if (Main.netMode == 2) SyncPlayerVariables(player);
+							if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 							if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier 1 Reversity coins and now has " + modPlayer.RCT1 + " in total.", 255, 255, 255);
 							else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier 1 Reversity coins and now has " + modPlayer.RCT1 + " in total."), new Color(255, 255, 255));
 						}
@@ -923,7 +923,7 @@ namespace AlchemistNPC.NPCs
 						{
 							int number = Main.rand.Next(3,6);
 							modPlayer.RCT3 += number;
-							if (Main.netMode == 2) SyncPlayerVariables(player);
+							if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 							if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier 3 Reversity coins and now has " + modPlayer.RCT3 + " in total.", 255, 255, 255);
 							else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier 3 Reversity coins and now has " + modPlayer.RCT3 + " in total."), new Color(255, 255, 255));
 						}
@@ -931,7 +931,7 @@ namespace AlchemistNPC.NPCs
 						{
 							int number = Main.rand.Next(3,6);
 							modPlayer.RCT4 += number;
-							if (Main.netMode == 2) SyncPlayerVariables(player);
+							if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 							if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier 4 Reversity coins and now has " + modPlayer.RCT4 + " in total.", 255, 255, 255);
 							else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier 4 Reversity coins and now has " + modPlayer.RCT4 + " in total."), new Color(255, 255, 255));
 						}
@@ -939,7 +939,7 @@ namespace AlchemistNPC.NPCs
 						{
 							int number = Main.rand.Next(12,15);
 							modPlayer.RCT4 += number;
-							if (Main.netMode == 2) SyncPlayerVariables(player);
+							if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 							if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier 4 Reversity coins and now has " + modPlayer.RCT4 + " in total.", 255, 255, 255);
 							else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier 4 Reversity coins and now has " + modPlayer.RCT4 + " in total."), new Color(255, 255, 255));
 						}
@@ -980,7 +980,7 @@ namespace AlchemistNPC.NPCs
 
 		public override void NPCLoot(NPC npc)
 		{
-			if (npc.type == 541)
+			if (npc.type == NPCID.SandElemental)
 			{
 				if (!AlchemistNPCWorld.downedSandElemental) 
 				{
@@ -994,7 +994,7 @@ namespace AlchemistNPC.NPCs
 			Mod Calamity = ModLoader.GetMod("CalamityMod");
 			if(Calamity != null)
 			{
-				if ((bool)Calamity.Call("Downed", "dog") && npc.type == 327)
+				if ((bool)Calamity.Call("Downed", "dog") && npc.type == NPCID.Pumpking)
 				{
 					if (!AlchemistNPCWorld.downedDOGPumpking) {
 						AlchemistNPCWorld.downedDOGPumpking = true;
@@ -1004,7 +1004,7 @@ namespace AlchemistNPC.NPCs
 					}
 				}
 				
-				if ((bool)Calamity.Call("Downed", "dog") && npc.type == 345)
+				if ((bool)Calamity.Call("Downed", "dog") && npc.type == NPCID.IceQueen)
 				{
 					if (!AlchemistNPCWorld.downedDOGIceQueen) {
 						AlchemistNPCWorld.downedDOGIceQueen = true;
@@ -1016,23 +1016,23 @@ namespace AlchemistNPC.NPCs
 			}
 			if (WorldGen.crimson)
 			{
-				if ((npc.type == 239 || npc.type == 240) && Main.rand.NextBool(10))
+				if ((npc.type == NPCID.BloodCrawler || npc.type == NPCID.BloodCrawlerWall) && Main.rand.NextBool(10))
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SpiderFangarang"));
 				}
 			}
 			if (!WorldGen.crimson)
 			{
-				if ((npc.type == 164 || npc.type == 165) && Main.rand.NextBool(10))
+				if ((npc.type == NPCID.WallCreeper || npc.type == NPCID.WallCreeperWall) && Main.rand.NextBool(10))
 				{
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SpiderFangarang"));
 				}
 			}
-			if ((npc.type == 236 || npc.type == 237) && Main.rand.NextBool(20))
+			if ((npc.type == NPCID.JungleCreeper || npc.type == NPCID.JungleCreeperWall) && Main.rand.NextBool(20))
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("FangBallista"));
 			}
-			if ((npc.type == 164 || npc.type == 165) && Main.rand.NextBool(20))
+			if ((npc.type == NPCID.WallCreeper || npc.type == NPCID.WallCreeperWall) && Main.rand.NextBool(20))
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SwordofArachna"));
 			}
@@ -1528,37 +1528,37 @@ namespace AlchemistNPC.NPCs
 							{
 								case 1:	
 									modPlayer.RCT1 += number; 
-									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT1 + " in total.", 255, 255, 255);
 									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT1 + " in total."), new Color(255, 255, 255)); 
 									break;
 								case 2:	
 									modPlayer.RCT2 += number;
-									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT2 + " in total.", 255, 255, 255);
 									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT2 + " in total."), new Color(255, 255, 255)); 
 									break;
 								case 3:	
 									modPlayer.RCT3 += number;
-									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT3 + " in total.", 255, 255, 255);
 									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT3 + " in total."), new Color(255, 255, 255)); 
 									break;
 								case 4:	
 									modPlayer.RCT4 += number;
-									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT4 + " in total.", 255, 255, 255);
 									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT4 + " in total."), new Color(255, 255, 255)); 
 									break;
 								case 5:	
 									modPlayer.RCT5 += number;
-									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT5 + " in total.", 255, 255, 255);
 									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT5 + " in total."), new Color(255, 255, 255)); 
 									break;
 								case 6:	
 									modPlayer.RCT6 += number;
-									if (Main.netMode == 2) SyncPlayerVariables(player);
+									if (Main.netMode == NetmodeID.Server) SyncPlayerVariables(player);
 									if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT6 + " in total.", 255, 255, 255);
 									else NetMessage.BroadcastChatMessage(NetworkText.FromLiteral("Player " + player.name + " got " + number + " tier " + tier + " Reversity coins and now has " + modPlayer.RCT6 + " in total."), new Color(255, 255, 255)); 
 									break;
@@ -1569,21 +1569,21 @@ namespace AlchemistNPC.NPCs
 					{
 						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Present);
 					}
-					if (player.HasBuff(mod.BuffType("Snatcher")) && !npc.friendly && npc.type != 14 && npc.type != 135 && !npc.SpawnedFromStatue && npc.type != 1 && npc.type != 535)
+					if (player.HasBuff(mod.BuffType("Snatcher")) && !npc.friendly && npc.type != NPCID.EaterofWorldsBody && npc.type != NPCID.TheDestroyerBody && !npc.SpawnedFromStatue && npc.type != NPCID.BlueSlime && npc.type != NPCID.SlimeSpiked)
 					{
 						if (ModLoader.GetMod("Redemption") != null)
 						{
 							if (npc.type != ModLoader.GetMod("Redemption").NPCType("SludgyBlob")) 
 							{
 								modPlayer.SnatcherCounter++;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 						}
 						if (ModLoader.GetMod("Redemption") == null)
 						{
 							modPlayer.SnatcherCounter++;
-							if (Main.netMode == 2)
+							if (Main.netMode == NetmodeID.Server)
 							SyncPlayerVariables(player);
 						}
 					}
@@ -1591,70 +1591,70 @@ namespace AlchemistNPC.NPCs
 					{
 						if (!Main.hardMode && modPlayer.BBP < 2600)
 						{
-							if (!npc.boss && npc.type != 1 && npc.type != 535)
+							if (!npc.boss && npc.type != NPCID.BlueSlime && npc.type != NPCID.SlimeSpiked)
 							{
 								modPlayer.BBP++;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
 								modPlayer.BBP += 25;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
 								modPlayer.BBP += 50;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 						}
 						if (Main.hardMode && modPlayer.BBP < 8900)
 						{
-							if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(2))
+							if (!npc.boss && npc.type != NPCID.BlueSlime && npc.type != NPCID.SlimeSpiked && Main.rand.NextBool(2))
 							{
 								modPlayer.BBP++;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
 								modPlayer.BBP += 15;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
 								modPlayer.BBP += 30;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 						}
 						if (NPC.downedMoonlord)
 						{
-							if (!npc.boss && npc.type != 1 && npc.type != 535 && Main.rand.NextBool(3))
+							if (!npc.boss && npc.type != NPCID.BlueSlime && npc.type != NPCID.SlimeSpiked && Main.rand.NextBool(3))
 							{
 								modPlayer.BBP++;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax <= 10000)
 							{
 								modPlayer.BBP += 10;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 							
 							if (npc.boss && npc.lifeMax > 10000)
 							{
 								modPlayer.BBP += 20;
-								if (Main.netMode == 2)
+								if (Main.netMode == NetmodeID.Server)
 								SyncPlayerVariables(player);
 							}
 						}

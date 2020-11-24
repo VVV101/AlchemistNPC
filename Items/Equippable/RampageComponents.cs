@@ -36,7 +36,7 @@ namespace AlchemistNPC.Items.Equippable
 			item.width = 22;
 			item.height = 30;
 			item.value = 1000000;
-			item.rare = 11;
+			item.rare = ItemRarityID.Purple;
 			item.accessory = true;
 		}
 

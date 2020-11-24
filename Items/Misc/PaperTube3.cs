@@ -48,11 +48,11 @@ namespace AlchemistNPC.Items.Misc
 			item.width = 32;
 			item.height = 32;
 			item.value = 200000;
-			item.rare = 8;
+			item.rare = ItemRarityID.Yellow;
 			item.maxStack = 99;
 			item.useAnimation = 20;
             item.useTime = 20;
-            item.useStyle = 4;
+            item.useStyle = ItemUseStyleID.HoldingUp;
 			item.UseSound = SoundID.Item37;
 			item.consumable = true;
 		}

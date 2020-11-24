@@ -37,7 +37,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.value = 10000;
-			item.rare = 8;
+			item.rare = ItemRarityID.Yellow;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("DivineWaspnade");
 			item.shootSpeed = 8f;

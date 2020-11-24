@@ -36,7 +36,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.mana = 25;
 			item.height = 36;
 			item.noUseGraphic = true;
-			item.useStyle = 1;
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useTime = 30;
 			item.useAnimation = 30;
 			item.maxStack = 1;

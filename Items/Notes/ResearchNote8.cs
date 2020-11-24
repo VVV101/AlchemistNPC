@@ -40,7 +40,7 @@ And as the last part, we need to give them a body. I think  that [c/00FF00:fire 
 			item.height = 36;
 			item.maxStack = 1;
 			item.value = 10000000;
-			item.rare = 10;
+			item.rare = ItemRarityID.Red;
 		}	
 	}
 }

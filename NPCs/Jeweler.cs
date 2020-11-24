@@ -519,7 +519,7 @@ namespace AlchemistNPC.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.BandofRegeneration);
 				shop.item[nextSlot].shopCustomPrice = 50000;
 				nextSlot++;
-				if (Main.netMode == 1 || Main.netMode == 2)
+				if (Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.LifeCrystal);
 				shop.item[nextSlot].shopCustomPrice = 100000;

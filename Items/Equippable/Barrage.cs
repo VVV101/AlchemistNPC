@@ -30,7 +30,7 @@ namespace AlchemistNPC.Items.Equippable
 			item.width = 32;
 			item.height = 32;
 			item.value = 100000;
-			item.rare = 10;
+			item.rare = ItemRarityID.Red;
 			item.accessory = true;
 		}
 
@@ -44,7 +44,7 @@ namespace AlchemistNPC.Items.Equippable
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddRecipeGroup("AlchemistNPC:Tier3Bar", 15);
 			recipe.AddIngredient(mod.ItemType("DivineLava"), 99);
-			recipe.AddIngredient(2882);
+			recipe.AddIngredient(ItemID.ChargedBlasterCannon);
 			recipe.AddIngredient(ItemID.Nanites, 99);
 			recipe.AddTile(mod.TileType("MateriaTransmutator"));
 			recipe.SetResult(this);

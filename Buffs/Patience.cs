@@ -3,6 +3,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using AlchemistNPC.NPCs;
 using Terraria.Localization;
+using Terraria.ID;
 
 namespace AlchemistNPC.Buffs
 {
@@ -24,7 +25,7 @@ namespace AlchemistNPC.Buffs
 
         public override void Update(NPC npc, ref int buffIndex)
         {
-			if (npc.type != 488)
+			if (npc.type != NPCID.TargetDummy)
 			{
 			npc.velocity.X = 0.1f;
 			npc.velocity.Y = 0.1f;

@@ -107,7 +107,7 @@ namespace AlchemistNPC.Projectiles.Minions
             {
 				if (counter == 60)
 				{
-					Main.PlaySound(2, -1, -1, mod.GetSoundSlot(SoundType.Item, "Sounds/Item/ThereYouAre"));
+					Main.PlaySound(SoundID.Item, -1, -1, mod.GetSoundSlot(SoundType.Item, "Sounds/Item/ThereYouAre"));
 				}
 				counter++;
 				if (counter == 1200)

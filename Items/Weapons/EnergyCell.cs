@@ -28,7 +28,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.consumable = true;
 			item.knockBack = 1;
 			item.value = Item.sellPrice(0, 0, 75, 0);
-			item.rare = 10;
+			item.rare = ItemRarityID.Red;
 			item.shoot = mod.ProjectileType("QuantumDestabilizer");
 			item.ammo = item.type; // The first item in an ammo class sets the AmmoID to it's type
 		}

@@ -25,7 +25,7 @@ namespace AlchemistNPC.Items.Boosters
 			item.width = 32;
 			item.height = 32;
 			item.value = 0;
-			item.rare = 4;
+			item.rare = ItemRarityID.LightRed;
 		}
 	}
 }

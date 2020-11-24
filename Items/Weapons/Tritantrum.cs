@@ -32,14 +32,14 @@ namespace AlchemistNPC.Items.Weapons
 			item.height = 40;
 			item.useTime = 6;
 			item.useAnimation = 6;
-			item.useStyle = 5;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 8;
 			item.value = 1000000;
-			item.rare = 8;
+			item.rare = ItemRarityID.Yellow;
 			item.UseSound = SoundID.Item11;
 			item.autoReuse = true;
-			item.shoot = 10; //idk why but all the guns in the vanilla source have this
+			item.shoot = ProjectileID.PurificationPowder; //idk why but all the guns in the vanilla source have this
 			item.shootSpeed = 64f;
 			item.useAmmo = mod.ItemType("PlasmaRound");
 		}

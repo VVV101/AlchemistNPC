@@ -26,7 +26,7 @@ Required for making working one");
 			item.width = 32;
 			item.height = 32;
 			item.value = 1000000;
-			item.rare = 5;
+			item.rare = ItemRarityID.Pink;
 	
 		}
 	}

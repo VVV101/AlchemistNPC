@@ -35,7 +35,7 @@ namespace AlchemistNPC.Items.Materials
 			item.healLife = 150;
 			item.potion = true;
 			item.value = 5000000;
-			item.rare = 10;
+			item.rare = ItemRarityID.Red;
 		}
 		
 		public override bool UseItem(Player player)

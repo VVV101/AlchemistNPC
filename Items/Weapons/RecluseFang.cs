@@ -26,7 +26,7 @@ namespace AlchemistNPC.Items.Weapons
 			item.melee = false;
 			item.thrown = true;
 			item.maxStack = 1;
-			item.rare = 2;
+			item.rare = ItemRarityID.Green;
 			item.value = 3333;
 			item.useTime = 15;
 			item.useAnimation = 15;
