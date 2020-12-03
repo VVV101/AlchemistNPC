@@ -14,7 +14,7 @@ namespace AlchemistNPC.Items.Misc
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Simalation Control Unit");
+			DisplayName.SetDefault("Simulation Control Unit");
 			Tooltip.SetDefault("Exclusive product, designed by Angela"
 			+"\nLeft click to change between day and night time"
 			+"\nRight click to enable or disable rain (sandstorm in desert)");
