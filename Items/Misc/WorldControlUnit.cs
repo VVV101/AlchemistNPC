@@ -18,7 +18,7 @@ namespace AlchemistNPC.Items.Misc
 			Tooltip.SetDefault("Exclusive product, designed by Angela"
 			+"\nLeft click to change between day and night time"
 			+"\nRight click to enable or disable rain (sandstorm in desert)");
-			DisplayName.AddTranslation(GameCulture.Russian, "Устройства контроля симуляции");
+			DisplayName.AddTranslation(GameCulture.Russian, "Устройство контроля симуляции");
             Tooltip.AddTranslation(GameCulture.Russian, "Эксклюзивное творение Анджелы\nЛевый клик для смены времени суток\nПравый клик для включения или выключения дождя (песчаной бури в пустыне)");
 			DisplayName.AddTranslation(GameCulture.Chinese, "模拟控制单元");
 			Tooltip.AddTranslation(GameCulture.Chinese, "独家产品，安吉拉设计\n左键昼夜交换\n右键控制下雨（沙漠中控制沙尘暴）");
