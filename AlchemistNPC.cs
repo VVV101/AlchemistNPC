@@ -68,7 +68,6 @@ namespace AlchemistNPC
 		
 		public override void Load()
 		{
-
 			On.Terraria.Main.PlaySound_int_int_int_int_float_float += NukeMenuClose;
 
 			Instance = this;
@@ -180,7 +179,7 @@ namespace AlchemistNPC
 			}
 		}
 
-		internal static SoundEffectInstance NukeMenuClose(On.Terraria.Main.orig_PlaySound_int_int_int_int_float_float orig, int type, int x, int y, int Style, float volumeScale, float pitchOffset) {
+        internal static SoundEffectInstance NukeMenuClose(On.Terraria.Main.orig_PlaySound_int_int_int_int_float_float orig, int type, int x, int y, int Style, float volumeScale, float pitchOffset) {
 			if ((type == SoundID.MenuClose) && (DimensionalCasketUI.forcetalk == true))
 			{
 				return null;

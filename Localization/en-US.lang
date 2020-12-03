@@ -62,12 +62,12 @@ Common.LifeformAnalyzerTooltip=Enable or disable laser pointing of Lifeform Anal
 
 Messages
 
-Common.RainStopped=Rain is stopped.
-Common.RainStarted=Rain is started.
+Common.RainStopped=Rain has stopped.
+Common.RainStarted=Rain has started.
 Common.NightTimeSet=Time is set to Night.
 Common.DayTimeSet=Time is set to Day.
-Common.SandstormStopped=Sandstorm is stopped.
-Common.SandstormStarted=Sandstorm is started.
+Common.SandstormStopped=Sandstorm has stopped.
+Common.SandstormStarted=Sandstorm has started.
 
 AntiBuffMode
 
