@@ -272,9 +272,9 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "是的，我知道我们是捕获和饲养恐怖的怪物的人。但谁会认为把宝藏袋放在一个巨大的怪物里面是个好主意呢？！？你看！");
 	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryO36");
-            text.SetDefault("Кemember Manager, Treasure Bags are valuable but not everything comes inside them. That mutant man can help you get a boss's most elusive drops.");
+            text.SetDefault("Remember Manager, Treasure Bags are valuable but not everything comes inside them. That mutant man can help you get a boss's most elusive drops.");
             text.AddTranslation(GameCulture.Russian, "Помни, Управляющий, хотя Сумки с Сокровищами ценны, но не всё может найтись внутри. Мутант может помочь тебе добыть редчайший лут с боссов.");
-            text.AddTranslation(GameCulture.Chinese, "КEmember经理，宝藏袋很值钱，但不是所有东西都在里面。那个变种人能帮你得到Boss的稀有掉落物。");
+            text.AddTranslation(GameCulture.Chinese, "记住，经理，宝藏袋很值钱，但不是所有东西都在里面。那个变种人能帮你得到Boss的稀有掉落物。");
 	    
 	    mod.AddTranslation(text);
         }
