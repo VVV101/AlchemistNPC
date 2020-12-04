@@ -19,7 +19,7 @@ namespace AlchemistNPC.Items.Misc
 			Tooltip.SetDefault(@"Teleports you to any point of the map
 Use right-click on full screen map to teleport
 Will not work if any boss is alive
-Not breaks after use
+Unbreakable
 ''O, the azure justice, the crimson love,
 In the name of the one buried in destiny,
 I shall make an oath to the light,
