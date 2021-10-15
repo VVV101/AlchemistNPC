@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework;
 using System.IO;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,6 +9,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using AlchemistNPC.Interface;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Achievements;
 using Terraria.Localization;
@@ -73,6 +75,8 @@ namespace AlchemistNPC
 		
 		public override void Load()
 		{
+			On.Terraria.Main.PlaySound_int_int_int_int_float_float += NukeMenuClose;
+
 			Instance = this;
             //ZY:Try to add translation for hotkey, seems worked, but requires to reload mod if change game language 
 			string LampLightToggle, DiscordBuffTeleportation, PipBoy;
@@ -182,6 +186,17 @@ namespace AlchemistNPC
 			}
 		}
 		
+		internal static SoundEffectInstance NukeMenuClose(On.Terraria.Main.orig_PlaySound_int_int_int_int_float_float orig, int type, int x, int y, int Style, float volumeScale, float pitchOffset) {
+			if ((type == SoundID.MenuClose) && (DimensionalCasketUI.forcetalk == true))
+			{
+				return null;
+			}
+			else 
+			{
+				return orig(type, x, y, Style, volumeScale, pitchOffset);
+			}
+		}
+
 		public override void Unload() {
 			Instance = null;
 			instance = null;
