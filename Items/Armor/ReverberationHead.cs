@@ -10,11 +10,11 @@ using Terraria.Localization;
 
 namespace AlchemistNPC.Items.Armor
 {
-	[AutoloadEquip(EquipType.Head)]
-	public class ReverberationHead : ModItem
-	{
-		public override void SetStaticDefaults()
-		{
+    [AutoloadEquip(EquipType.Head)]
+    public class ReverberationHead : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
             DisplayName.SetDefault("Reverberation Wreath (T-04-53)");
             DisplayName.AddTranslation(GameCulture.Russian, "Венок Реверберации (T-04-53)");
             Tooltip.SetDefault("The sleek surface is tough as if it had been cured several times."
@@ -32,61 +32,61 @@ namespace AlchemistNPC.Items.Armor
             mod.AddTranslation(text);
         }
 
-		public override void SetDefaults()
-		{
-			item.width = 18;
-			item.height = 18;
-			item.value = 100000;
-			item.rare = 9;
-			item.defense = 8;
-		}
-
-		public override void UpdateEquip(Player player)
-		{
-			player.rangedDamage += 0.2f;
-		}
-		
-		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
-		{
-			drawHair = true;
-		}
-		
-		public override bool IsArmorSet(Item head, Item body, Item legs)
-		{
-			return body.type == mod.ItemType("ReverberationBody") && legs.type == mod.ItemType("ReverberationLegs");
-		}
-
-		public override void UpdateArmorSet(Player player)
-		{
-			string ReverberationSetBonus = Language.GetTextValue("Mods.AlchemistNPC.ReverberationSetBonus");
-			player.setBonus = ReverberationSetBonus;
-			player.magicQuiver = true;
-			player.AddBuff(mod.BuffType("ShieldofSpring"), 300);
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).RevSet = true;
-				if (ModLoader.GetMod("Redemption") != null)
-				{
-				RedemptionBoost(player);
-				}
-		}
-		
-		private void RedemptionBoost(Player player)
+        public override void SetDefaults()
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
-			RedemptionPlayer.druidDamage += 0.2f;
+            item.width = 18;
+            item.height = 18;
+            item.value = 100000;
+            item.rare = 9;
+            item.defense = 8;
+        }
+
+        public override void UpdateEquip(Player player)
+        {
+            player.rangedDamage += 0.2f;
+        }
+
+        public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
+        {
+            drawHair = true;
+        }
+
+        public override bool IsArmorSet(Item head, Item body, Item legs)
+        {
+            return body.type == mod.ItemType("ReverberationBody") && legs.type == mod.ItemType("ReverberationLegs");
+        }
+
+        public override void UpdateArmorSet(Player player)
+        {
+            string ReverberationSetBonus = Language.GetTextValue("Mods.AlchemistNPC.ReverberationSetBonus");
+            player.setBonus = ReverberationSetBonus;
+            player.magicQuiver = true;
+            player.AddBuff(mod.BuffType("ShieldofSpring"), 300);
+            ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).RevSet = true;
+            if (ModLoader.GetMod("Redemption") != null)
+            {
+                RedemptionBoost(player);
+            }
+        }
+
+        private void RedemptionBoost(Player player)
+        {
+            Redemption.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.DruidDamagePlayer>();
+            RedemptionPlayer.druidDamage += 0.2f;
             RedemptionPlayer.druidCrit += 20;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+        private readonly Mod Redemption = ModLoader.GetMod("Redemption");
 
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.HallowedBar, 10);
-			recipe.AddIngredient(ItemID.DynastyWood, 100);
-			recipe.AddIngredient(ItemID.SoulofLight, 10);
-			recipe.AddIngredient(ItemID.SoulofNight, 10);
-			recipe.AddTile(null, "WingoftheWorld");
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.HallowedBar, 10);
+            recipe.AddIngredient(ItemID.DynastyWood, 100);
+            recipe.AddIngredient(ItemID.SoulofLight, 10);
+            recipe.AddIngredient(ItemID.SoulofNight, 10);
+            recipe.AddTile(null, "WingoftheWorld");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
+    }
 }

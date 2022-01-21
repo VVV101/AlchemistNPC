@@ -11,11 +11,11 @@ using AlchemistNPC.Items.PaleDamageClass;
 
 namespace AlchemistNPC.Items.Armor
 {
-	[AutoloadEquip(EquipType.Head)]
-	public class ParadiseLostHead : ModItem
-	{
-		public override void SetStaticDefaults()
-		{
+    [AutoloadEquip(EquipType.Head)]
+    public class ParadiseLostHead : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
             DisplayName.SetDefault("Paradise Lost Crown of Thorns (T-03-46)");
             DisplayName.AddTranslation(GameCulture.Russian, "Терновый Венец Потерянного Рая (T-03-46)");
             Tooltip.SetDefault("''Thou shall not worry; I have heard your prayers."
@@ -49,92 +49,92 @@ namespace AlchemistNPC.Items.Armor
             mod.AddTranslation(text);
         }
 
-		public override void SetDefaults()
-		{
-			item.width = 18;
-			item.height = 18;
-			item.value = 1000000;
-			item.rare = 11;
-			item.defense = 35;
-		}
-
-		public override void UpdateEquip(Player player)
-		{
-			player.statManaMax2 += 100;
-			player.meleeSpeed += 0.33f;
-		}
-		
-		public override bool IsArmorSet(Item head, Item body, Item legs)
-		{
-			return body.type == mod.ItemType("ParadiseLostBody") && legs.type == mod.ItemType("ParadiseLostLegs");
-		}
-		
-		public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
-		{
-			drawAltHair = true;
-		}
-
-		public override void UpdateArmorSet(Player player)
-		{
-			string ParadiseLostSetBonus = Language.GetTextValue("Mods.AlchemistNPC.ParadiseLostSetBonus");
-			((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost = true;
-			player.setBonus = ParadiseLostSetBonus;
-			player.AddBuff(mod.BuffType("BigBirdLamp"), 60);
-			player.allDamage += 0.35f;
-			player.meleeCrit += 25;
-			player.magicCrit += 25;
-			player.rangedCrit += 25;
-            player.thrownCrit += 25;
-			if (ModLoader.GetMod("ThoriumMod") != null)
-			{
-				ThoriumBoosts(player);
-			}
-			if (ModLoader.GetMod("Redemption") != null)
-			{
-				RedemptionBoost(player);
-			}
-			Mod Calamity = ModLoader.GetMod("CalamityMod");
-			if(Calamity != null)
-			{
-				Calamity.Call("AddRogueCrit", player, 25);
-			}
-		}
-
-		private void RedemptionBoost(Player player)
+        public override void SetDefaults()
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
+            item.width = 18;
+            item.height = 18;
+            item.value = 1000000;
+            item.rare = 11;
+            item.defense = 35;
+        }
+
+        public override void UpdateEquip(Player player)
+        {
+            player.statManaMax2 += 100;
+            player.meleeSpeed += 0.33f;
+        }
+
+        public override bool IsArmorSet(Item head, Item body, Item legs)
+        {
+            return body.type == mod.ItemType("ParadiseLostBody") && legs.type == mod.ItemType("ParadiseLostLegs");
+        }
+
+        public override void DrawHair(ref bool drawHair, ref bool drawAltHair)
+        {
+            drawAltHair = true;
+        }
+
+        public override void UpdateArmorSet(Player player)
+        {
+            string ParadiseLostSetBonus = Language.GetTextValue("Mods.AlchemistNPC.ParadiseLostSetBonus");
+            ((AlchemistNPCPlayer)player.GetModPlayer(mod, "AlchemistNPCPlayer")).ParadiseLost = true;
+            player.setBonus = ParadiseLostSetBonus;
+            player.AddBuff(mod.BuffType("BigBirdLamp"), 60);
+            player.allDamage += 0.35f;
+            player.meleeCrit += 25;
+            player.magicCrit += 25;
+            player.rangedCrit += 25;
+            player.thrownCrit += 25;
+            if (ModLoader.GetMod("ThoriumMod") != null)
+            {
+                ThoriumBoosts(player);
+            }
+            if (ModLoader.GetMod("Redemption") != null)
+            {
+                RedemptionBoost(player);
+            }
+            Mod Calamity = ModLoader.GetMod("CalamityMod");
+            if (Calamity != null)
+            {
+                Calamity.Call("AddRogueCrit", player, 25);
+            }
+        }
+
+        private void RedemptionBoost(Player player)
+        {
+            Redemption.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 25;
         }
-		
-		private void ThoriumBoosts(Player player)
+
+        private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 25;
             ThoriumPlayer.radiantCrit += 25;
         }
-		
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "TwilightCrown");
-			recipe.AddIngredient(null, "ChromaticCrystal", 5);
-			recipe.AddIngredient(null, "SunkroveraCrystal", 5);
-			recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
-			if (ModLoader.GetMod("CalamityMod") != null)
-			{
-				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 7);
-				recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
-			}
-			if (ModLoader.GetMod("ThoriumMod") != null)
-			{
-				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
-				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
-				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
-			}
-			recipe.AddIngredient(null, "EmagledFragmentation", 100);
-			recipe.AddTile(null, "MateriaTransmutator");
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
-	}
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "TwilightCrown");
+            recipe.AddIngredient(null, "ChromaticCrystal", 5);
+            recipe.AddIngredient(null, "SunkroveraCrystal", 5);
+            recipe.AddIngredient(null, "NyctosythiaCrystal", 5);
+            if (ModLoader.GetMod("CalamityMod") != null)
+            {
+                recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("UeliaceBar")), 7);
+                recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm")), 15);
+            }
+            if (ModLoader.GetMod("ThoriumMod") != null)
+            {
+                recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("OceanEssence")), 3);
+                recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("DeathEssence")), 3);
+                recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InfernoEssence")), 3);
+            }
+            recipe.AddIngredient(null, "EmagledFragmentation", 100);
+            recipe.AddTile(null, "MateriaTransmutator");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
+    }
 }

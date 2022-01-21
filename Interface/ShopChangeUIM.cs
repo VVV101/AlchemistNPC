@@ -15,173 +15,186 @@ using AlchemistNPC.NPCs;
 
 namespace AlchemistNPC.Interface
 {
-	class ShopChangeUIM : UIState
-	{
-		public UIPanel MusicianShopsPanel;
-		public static bool visible = false;
+    class ShopChangeUIM : UIState
+    {
+        public UIPanel MusicianShopsPanel;
+        public static bool visible = false;
+        public static uint timeStart;
 
-		public override void OnInitialize()
-		{
-			MusicianShopsPanel = new UIPanel();
-			MusicianShopsPanel.SetPadding(0);
-			MusicianShopsPanel.Left.Set(575f, 0f);
-			MusicianShopsPanel.Top.Set(275f, 0f);
-			MusicianShopsPanel.Width.Set(260f, 0f);
-			MusicianShopsPanel.Height.Set(105f, 0f);
-			MusicianShopsPanel.BackgroundColor = new Color(73, 94, 171);
+        public override void OnInitialize()
+        {
+            MusicianShopsPanel = new UIPanel();
+            MusicianShopsPanel.SetPadding(0);
+            MusicianShopsPanel.Left.Set(575f, 0f);
+            MusicianShopsPanel.Top.Set(275f, 0f);
+            MusicianShopsPanel.Width.Set(260f, 0f);
+            MusicianShopsPanel.Height.Set(105f, 0f);
+            MusicianShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
-			MusicianShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
-			MusicianShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
+            MusicianShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
+            MusicianShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			string MusicianShops1; 
-			string MusicianShops2; 
-			string MusicianShops3; 
+            string MusicianShops1;
+            string MusicianShops2;
+            string MusicianShops3;
 
-			if(Language.ActiveCulture == GameCulture.Chinese)
-				{
-					MusicianShops1 = "原版八音盒";
-					MusicianShops2 = "灾厄八音盒";
-					MusicianShops3 = "模组/瑟银八音盒";
-				}
-			else
-				{
-					MusicianShops1 = "Vanilla Music Boxes";
-					MusicianShops2 = "Calamity Music Boxes";
-					MusicianShops3 = "Mod/Thorium Music Boxes";
-				}
-			
-			UIText text = new UIText(MusicianShops1);
-			text.Left.Set(35, 0f);
-			text.Top.Set(10, 0f);
-			text.Width.Set(90, 0f);
-			text.Height.Set(22, 0f);
-			MusicianShopsPanel.Append(text);
-			
-			UIText text2 = new UIText(MusicianShops2);
-			text2.Left.Set(35, 0f);
-			text2.Top.Set(40, 0f);
-			text2.Width.Set(90, 0f);
-			text2.Height.Set(22, 0f);
-			MusicianShopsPanel.Append(text2);
-			
-			UIText text3 = new UIText(MusicianShops3);
-			text3.Left.Set(35, 0f);
-			text3.Top.Set(70, 0f);
-			text3.Width.Set(90, 0f);
-			text3.Height.Set(22, 0f);
-			MusicianShopsPanel.Append(text3);
-			
-			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
-			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
-			playButton.Left.Set(10, 0f);
-			playButton.Top.Set(10, 0f);
-			playButton.Width.Set(22, 0f);
-			playButton.Height.Set(22, 0f);
-			playButton.OnClick += new MouseEvent(PlayButtonClicked1);
-			MusicianShopsPanel.Append(playButton);
-			UIImageButton playButton2 = new UIImageButton(buttonPlayTexture);
-			playButton2.Left.Set(10, 0f);
-			playButton2.Top.Set(40, 0f);
-			playButton2.Width.Set(22, 0f);
-			playButton2.Height.Set(22, 0f);
-			playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
-			MusicianShopsPanel.Append(playButton2);
-			UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
-			playButton3.Left.Set(10, 0f);
-			playButton3.Top.Set(70, 0f);
-			playButton3.Width.Set(22, 0f);
-			playButton3.Height.Set(22, 0f);
-			playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
-			MusicianShopsPanel.Append(playButton3);
+            if (Language.ActiveCulture == GameCulture.Chinese)
+            {
+                MusicianShops1 = "原版八音盒";
+                MusicianShops2 = "灾厄八音盒";
+                MusicianShops3 = "模组/瑟银八音盒";
+            }
+            else
+            {
+                MusicianShops1 = "Vanilla Music Boxes";
+                MusicianShops2 = "Calamity Music Boxes";
+                MusicianShops3 = "Mod/Thorium Music Boxes";
+            }
 
-			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
-			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
-			closeButton.Left.Set(230, 0f);
-			closeButton.Top.Set(10, 0f);
-			closeButton.Width.Set(22, 0f);
-			closeButton.Height.Set(22, 0f);
-			closeButton.OnClick += new MouseEvent(CloseButtonClicked);
-			MusicianShopsPanel.Append(closeButton);
-			base.Append(MusicianShopsPanel);
-		}
+            UIText text = new UIText(MusicianShops1);
+            text.Left.Set(35, 0f);
+            text.Top.Set(10, 0f);
+            text.Width.Set(90, 0f);
+            text.Height.Set(22, 0f);
+            MusicianShopsPanel.Append(text);
 
-		private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Musician.S1 = true;
-			Musician.S2 = false;
-			Musician.S3 = false;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIM.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Musician.S1 = false;
-			Musician.S2 = true;
-			Musician.S3 = false;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIM.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Musician.S1 = false;
-			Musician.S2 = false;
-			Musician.S3 = true;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIM.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
+            UIText text2 = new UIText(MusicianShops2);
+            text2.Left.Set(35, 0f);
+            text2.Top.Set(40, 0f);
+            text2.Width.Set(90, 0f);
+            text2.Height.Set(22, 0f);
+            MusicianShopsPanel.Append(text2);
 
-		private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Main.PlaySound(SoundID.MenuOpen);
-			visible = false;
-		}
+            UIText text3 = new UIText(MusicianShops3);
+            text3.Left.Set(35, 0f);
+            text3.Top.Set(70, 0f);
+            text3.Width.Set(90, 0f);
+            text3.Height.Set(22, 0f);
+            MusicianShopsPanel.Append(text3);
 
-		Vector2 offset;
-		public bool dragging = false;
-		private void DragStart(UIMouseEvent evt, UIElement listeningElement)
-		{
-			offset = new Vector2(evt.MousePosition.X - MusicianShopsPanel.Left.Pixels, evt.MousePosition.Y - MusicianShopsPanel.Top.Pixels);
-			dragging = true;
-		}
+            Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
+            UIImageButton playButton = new UIImageButton(buttonPlayTexture);
+            playButton.Left.Set(10, 0f);
+            playButton.Top.Set(10, 0f);
+            playButton.Width.Set(22, 0f);
+            playButton.Height.Set(22, 0f);
+            playButton.OnClick += new MouseEvent(PlayButtonClicked1);
+            MusicianShopsPanel.Append(playButton);
+            UIImageButton playButton2 = new UIImageButton(buttonPlayTexture);
+            playButton2.Left.Set(10, 0f);
+            playButton2.Top.Set(40, 0f);
+            playButton2.Width.Set(22, 0f);
+            playButton2.Height.Set(22, 0f);
+            playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
+            MusicianShopsPanel.Append(playButton2);
+            UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
+            playButton3.Left.Set(10, 0f);
+            playButton3.Top.Set(70, 0f);
+            playButton3.Width.Set(22, 0f);
+            playButton3.Height.Set(22, 0f);
+            playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
+            MusicianShopsPanel.Append(playButton3);
 
-		private void DragEnd(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Vector2 end = evt.MousePosition;
-			dragging = false;
+            Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
+            UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
+            closeButton.Left.Set(230, 0f);
+            closeButton.Top.Set(10, 0f);
+            closeButton.Width.Set(22, 0f);
+            closeButton.Height.Set(22, 0f);
+            closeButton.OnClick += new MouseEvent(CloseButtonClicked);
+            MusicianShopsPanel.Append(closeButton);
+            base.Append(MusicianShopsPanel);
+        }
 
-			MusicianShopsPanel.Left.Set(end.X - offset.X, 0f);
-			MusicianShopsPanel.Top.Set(end.Y - offset.Y, 0f);
+        private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Musician.S1 = true;
+                Musician.S2 = false;
+                Musician.S3 = false;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIM.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
 
-			Recalculate();
-		}
+        private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Musician.S1 = false;
+                Musician.S2 = true;
+                Musician.S3 = false;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIM.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
 
-		protected override void DrawSelf(SpriteBatch spriteBatch)
-		{
-			Vector2 MousePosition = new Vector2((float)Main.mouseX, (float)Main.mouseY);
-			if (MusicianShopsPanel.ContainsPoint(MousePosition))
-			{
-				Main.LocalPlayer.mouseInterface = true;
-			}
-			if (dragging)
-			{
-				MusicianShopsPanel.Left.Set(MousePosition.X - offset.X, 0f);
-				MusicianShopsPanel.Top.Set(MousePosition.Y - offset.Y, 0f);
-				Recalculate();
-			}
-		}
-	}
+        private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Musician.S1 = false;
+                Musician.S2 = false;
+                Musician.S3 = true;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIM.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Main.PlaySound(SoundID.MenuOpen);
+                visible = false;
+            }
+        }
+
+        Vector2 offset;
+        public bool dragging = false;
+        private void DragStart(UIMouseEvent evt, UIElement listeningElement)
+        {
+            offset = new Vector2(evt.MousePosition.X - MusicianShopsPanel.Left.Pixels, evt.MousePosition.Y - MusicianShopsPanel.Top.Pixels);
+            dragging = true;
+        }
+
+        private void DragEnd(UIMouseEvent evt, UIElement listeningElement)
+        {
+            Vector2 end = evt.MousePosition;
+            dragging = false;
+
+            MusicianShopsPanel.Left.Set(end.X - offset.X, 0f);
+            MusicianShopsPanel.Top.Set(end.Y - offset.Y, 0f);
+
+            Recalculate();
+        }
+
+        protected override void DrawSelf(SpriteBatch spriteBatch)
+        {
+            Vector2 MousePosition = new Vector2((float)Main.mouseX, (float)Main.mouseY);
+            if (MusicianShopsPanel.ContainsPoint(MousePosition))
+            {
+                Main.LocalPlayer.mouseInterface = true;
+            }
+            if (dragging)
+            {
+                MusicianShopsPanel.Left.Set(MousePosition.X - offset.X, 0f);
+                MusicianShopsPanel.Top.Set(MousePosition.Y - offset.Y, 0f);
+                Recalculate();
+            }
+        }
+    }
 }

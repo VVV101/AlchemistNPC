@@ -1,5 +1,5 @@
-author = Gregg/VVV101, somebody0214, RebooT, drh
-version = 9.3
+author = Gregg/VVV101, somebody0214, RebooT, drh, b2mauler
+version = 9.4
 displayName = AlchemistNPC
 homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v8-0.52798/
 hideCode = false

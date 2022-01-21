@@ -60,6 +60,15 @@ Common.WormholePriceTooltip=1000 is 10 silver price by default
 Common.LifeformAnalyzer=Lifeform Analyzer laser pointing
 Common.LifeformAnalyzerTooltip=Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default
 
+Common.LocatorRange=Lifeform Analyzer Pointing Range
+Common.LocatorRangeTooltip=Max distance the pointer will track. 4000 by default
+
+Common.DisabledLocatorNpcs =Disabled NPCs for Lifeform Analyzer Locator
+Common.DisabledLocatorNpcsTooltip=Arrows won't point to these NPCs
+
+Common.ShopChangeDelay=Shop Change Delay
+Common.ShopChangeDelayTooltip=Delay before shop can be changed after opening interface. 10 frames by default
+
 Messages
 
 Common.RainStopped=Rain is stopped.
