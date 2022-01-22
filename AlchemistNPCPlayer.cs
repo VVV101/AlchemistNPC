@@ -327,7 +327,7 @@ namespace AlchemistNPC
             {
                 player.AddBuff(mod.BuffType("DemonSlayer"), 2);
             }
-            if (Main.netMode == 0)
+            if (Main.netMode != NetmodeID.Server)
             {
                 if (player.talkNPC == -1)
                 {
