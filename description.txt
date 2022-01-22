@@ -7,6 +7,12 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 The Explorer is a secret NPC. Try to figure out, how to spawn her.
 Full Mod Config support.
+v9,4
+-Fix fishron bag condition
+-Fix doubled endurance/damage reduction effect on battle comb
+-Add delay to before shop change can happen
+-Optimize locator arrow code
+-Add Calamity 1.5 treasure bags
 v9.3
 -Added Old Duke's bag in Operator's modded bags shop.
 -Added Sulphurskin Potion to Brewer's shop.

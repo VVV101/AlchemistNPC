@@ -92,6 +92,16 @@ namespace AlchemistNPC
 		[Label("$Mods.AlchemistNPC.Common.LifeformAnalyzer")]
 		[Tooltip("$Mods.AlchemistNPC.Common.LifeformAnalyzerTooltip")]
 		public bool LifeformAnalyzer;
+
+		[Range(40, 4000)]
+		[DefaultValue(4000)]
+		[Label("$Mods.AlchemistNPC.Common.LocatorRange")]
+		[Tooltip("$Mods.AlchemistNPC.Common.LocatorRangeTooltip")]
+		public int LocatorRange;
+
+		[Label("$Mods.AlchemistNPC.Common.DisabledLocatorNpcs")]
+		[Tooltip("$Mods.AlchemistNPC.Common.DisabledLocatorNpcsTooltip")]
+		public HashSet<NPCDefinition> DisabledLocatorNpcs = new HashSet<NPCDefinition>();
 		
 		[DefaultValue(true)]
 		[Label("$Mods.AlchemistNPC.Common.Revengeancemode")]
@@ -126,6 +136,12 @@ namespace AlchemistNPC
 		[Label("$Mods.AlchemistNPC.Common.WormholePrice")]
 		[Tooltip("$Mods.AlchemistNPC.Common.WormholePriceTooltip")]
 		public int WormholePrice;
+
+		[Range(1, 100)]
+		[DefaultValue(10)]
+		[Label("$Mods.AlchemistNPC.Common.ShopChangeDelay")]
+		[Tooltip("$Mods.AlchemistNPC.Common.ShopChangeDelayTooltip")]
+		public int ShopChangeDelay;
 
 		public override ModConfig Clone() {
 			var clone = (ModConfiguration)base.Clone();

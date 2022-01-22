@@ -15,363 +15,398 @@ using AlchemistNPC.NPCs;
 
 namespace AlchemistNPC.Interface
 {
-	class ShopChangeUIA : UIState
-	{
-		public UIPanel ArchitectShopsPanel;
-		public static bool visible = false;
+    class ShopChangeUIA : UIState
+    {
+        public UIPanel ArchitectShopsPanel;
+        public static bool visible = false;
+        public static uint timeStart;
 
-		public override void OnInitialize()
-		{
-			ArchitectShopsPanel = new UIPanel();
-			ArchitectShopsPanel.SetPadding(0);
-			ArchitectShopsPanel.Left.Set(575f, 0f);
-			ArchitectShopsPanel.Top.Set(275f, 0f);
-			ArchitectShopsPanel.Width.Set(230f, 0f);
-			ArchitectShopsPanel.Height.Set(310f, 0f);
-			ArchitectShopsPanel.BackgroundColor = new Color(73, 94, 171);
+        public override void OnInitialize()
+        {
+            ArchitectShopsPanel = new UIPanel();
+            ArchitectShopsPanel.SetPadding(0);
+            ArchitectShopsPanel.Left.Set(575f, 0f);
+            ArchitectShopsPanel.Top.Set(275f, 0f);
+            ArchitectShopsPanel.Width.Set(230f, 0f);
+            ArchitectShopsPanel.Height.Set(310f, 0f);
+            ArchitectShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
-			ArchitectShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
-			ArchitectShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
+            ArchitectShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
+            ArchitectShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			string ArchitectShops1; 
-			string ArchitectShops2;
-			string ArchitectShops3; 
-			string ArchitectShops4; 
-			string ArchitectShops5; 
-			string ArchitectShops6; 
-			string ArchitectShops7; 
-			string ArchitectShops8; 
-			string ArchitectShops9; 
-			string ArchitectShops10;
+            string ArchitectShops1;
+            string ArchitectShops2;
+            string ArchitectShops3;
+            string ArchitectShops4;
+            string ArchitectShops5;
+            string ArchitectShops6;
+            string ArchitectShops7;
+            string ArchitectShops8;
+            string ArchitectShops9;
+            string ArchitectShops10;
 
-			if(Language.ActiveCulture == GameCulture.Chinese)
-				{
-					ArchitectShops1 = "填充块";
-					ArchitectShops2 = "建筑块";
-					ArchitectShops3 = "基础家具";
-					ArchitectShops4 = "进阶家具";
-					ArchitectShops5 = "火把";
-					ArchitectShops6 = "蜡烛";
-					ArchitectShops7 = "灯具";
-					ArchitectShops8 = "灯笼";
-					ArchitectShops9 = "吊灯";
-					ArchitectShops10 = "烛台";
-				}
-			else
-				{
-					ArchitectShops1 = "Filler Blocks";
-					ArchitectShops2 = "Building Blocks";
-					ArchitectShops3 = "Basic Furniture";
-					ArchitectShops4 = "Advanced Furniture";
-					ArchitectShops5 = "Torches";
-					ArchitectShops6 = "Candles";
-					ArchitectShops7 = "Lamps";
-					ArchitectShops8 = "Lanterns";
-					ArchitectShops9 = "Chandeliers";
-					ArchitectShops10 = "Candelabras";
-				}
-			UIText text = new UIText(ArchitectShops1);
-			text.Left.Set(35, 0f);
-			text.Top.Set(10, 0f);
-			text.Width.Set(70, 0f);
-			text.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text);
-			
-			UIText text2 = new UIText(ArchitectShops2);
-			text2.Left.Set(35, 0f);
-			text2.Top.Set(40, 0f);
-			text2.Width.Set(70, 0f);
-			text2.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text2);
-			
-			UIText text3 = new UIText(ArchitectShops3);
-			text3.Left.Set(35, 0f);
-			text3.Top.Set(70, 0f);
-			text3.Width.Set(70, 0f);
-			text3.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text3);
-			
-			UIText text4 = new UIText(ArchitectShops4);
-			text4.Left.Set(35, 0f);
-			text4.Top.Set(100, 0f);
-			text4.Width.Set(70, 0f);
-			text4.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text4);
-			
-			UIText text5 = new UIText(ArchitectShops5);
-			text5.Left.Set(35, 0f);
-			text5.Top.Set(130, 0f);
-			text5.Width.Set(50, 0f);
-			text5.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text5);
-			
-			UIText text6 = new UIText(ArchitectShops6);
-			text6.Left.Set(35, 0f);
-			text6.Top.Set(160, 0f);
-			text6.Width.Set(50, 0f);
-			text6.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text6);
-			
-			UIText text7 = new UIText(ArchitectShops7);
-			text7.Left.Set(35, 0f);
-			text7.Top.Set(190, 0f);
-			text7.Width.Set(50, 0f);
-			text7.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text7);
-			
-			UIText text8 = new UIText(ArchitectShops8);
-			text8.Left.Set(35, 0f);
-			text8.Top.Set(220, 0f);
-			text8.Width.Set(60, 0f);
-			text8.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text8);
-			
-			UIText text9 = new UIText(ArchitectShops9);
-			text9.Left.Set(35, 0f);
-			text9.Top.Set(250, 0f);
-			text9.Width.Set(70, 0f);
-			text9.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text9);
-			
-			UIText text10 = new UIText(ArchitectShops10);
-			text10.Left.Set(35, 0f);
-			text10.Top.Set(280, 0f);
-			text10.Width.Set(70, 0f);
-			text10.Height.Set(22, 0f);
-			ArchitectShopsPanel.Append(text10);
-			
-			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
-			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
-			playButton.Left.Set(10, 0f);
-			playButton.Top.Set(10, 0f);
-			playButton.Width.Set(22, 0f);
-			playButton.Height.Set(22, 0f);
-			playButton.OnClick += new MouseEvent(PlayButtonClicked1);
-			ArchitectShopsPanel.Append(playButton);
-			UIImageButton playButton2 = new UIImageButton(buttonPlayTexture);
-			playButton2.Left.Set(10, 0f);
-			playButton2.Top.Set(40, 0f);
-			playButton2.Width.Set(22, 0f);
-			playButton2.Height.Set(22, 0f);
-			playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
-			ArchitectShopsPanel.Append(playButton2);
-			UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
-			playButton3.Left.Set(10, 0f);
-			playButton3.Top.Set(70, 0f);
-			playButton3.Width.Set(22, 0f);
-			playButton3.Height.Set(22, 0f);
-			playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
-			ArchitectShopsPanel.Append(playButton3);
-			UIImageButton playButton4 = new UIImageButton(buttonPlayTexture);
-			playButton4.Left.Set(10, 0f);
-			playButton4.Top.Set(100, 0f);
-			playButton4.Width.Set(22, 0f);
-			playButton4.Height.Set(22, 0f);
-			playButton4.OnClick += new MouseEvent(PlayButtonClicked4);
-			ArchitectShopsPanel.Append(playButton4);
-			UIImageButton playButton5 = new UIImageButton(buttonPlayTexture);
-			playButton5.Left.Set(10, 0f);
-			playButton5.Top.Set(130, 0f);
-			playButton5.Width.Set(22, 0f);
-			playButton5.Height.Set(22, 0f);
-			playButton5.OnClick += new MouseEvent(PlayButtonClicked5);
-			ArchitectShopsPanel.Append(playButton5);
-			UIImageButton playButton6 = new UIImageButton(buttonPlayTexture);
-			playButton6.Left.Set(10, 0f);
-			playButton6.Top.Set(160, 0f);
-			playButton6.Width.Set(22, 0f);
-			playButton6.Height.Set(22, 0f);
-			playButton6.OnClick += new MouseEvent(PlayButtonClicked6);
-			ArchitectShopsPanel.Append(playButton6);
-			UIImageButton playButton7 = new UIImageButton(buttonPlayTexture);
-			playButton7.Left.Set(10, 0f);
-			playButton7.Top.Set(190, 0f);
-			playButton7.Width.Set(22, 0f);
-			playButton7.Height.Set(22, 0f);
-			playButton7.OnClick += new MouseEvent(PlayButtonClicked7);
-			ArchitectShopsPanel.Append(playButton7);
-			UIImageButton playButton8 = new UIImageButton(buttonPlayTexture);
-			playButton8.Left.Set(10, 0f);
-			playButton8.Top.Set(220, 0f);
-			playButton8.Width.Set(22, 0f);
-			playButton8.Height.Set(22, 0f);
-			playButton8.OnClick += new MouseEvent(PlayButtonClicked8);
-			ArchitectShopsPanel.Append(playButton8);
-			UIImageButton playButton9 = new UIImageButton(buttonPlayTexture);
-			playButton9.Left.Set(10, 0f);
-			playButton9.Top.Set(250, 0f);
-			playButton9.Width.Set(22, 0f);
-			playButton9.Height.Set(22, 0f);
-			playButton9.OnClick += new MouseEvent(PlayButtonClicked9);
-			ArchitectShopsPanel.Append(playButton9);
-			UIImageButton playButton10 = new UIImageButton(buttonPlayTexture);
-			playButton10.Left.Set(10, 0f);
-			playButton10.Top.Set(280, 0f);
-			playButton10.Width.Set(22, 0f);
-			playButton10.Height.Set(22, 0f);
-			playButton10.OnClick += new MouseEvent(PlayButtonClicked10);
-			ArchitectShopsPanel.Append(playButton10);
+            if (Language.ActiveCulture == GameCulture.Chinese)
+            {
+                ArchitectShops1 = "填充块";
+                ArchitectShops2 = "建筑块";
+                ArchitectShops3 = "基础家具";
+                ArchitectShops4 = "进阶家具";
+                ArchitectShops5 = "火把";
+                ArchitectShops6 = "蜡烛";
+                ArchitectShops7 = "灯具";
+                ArchitectShops8 = "灯笼";
+                ArchitectShops9 = "吊灯";
+                ArchitectShops10 = "烛台";
+            }
+            else
+            {
+                ArchitectShops1 = "Filler Blocks";
+                ArchitectShops2 = "Building Blocks";
+                ArchitectShops3 = "Basic Furniture";
+                ArchitectShops4 = "Advanced Furniture";
+                ArchitectShops5 = "Torches";
+                ArchitectShops6 = "Candles";
+                ArchitectShops7 = "Lamps";
+                ArchitectShops8 = "Lanterns";
+                ArchitectShops9 = "Chandeliers";
+                ArchitectShops10 = "Candelabras";
+            }
+            UIText text = new UIText(ArchitectShops1);
+            text.Left.Set(35, 0f);
+            text.Top.Set(10, 0f);
+            text.Width.Set(70, 0f);
+            text.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text);
 
-			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
-			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
-			closeButton.Left.Set(200, 0f);
-			closeButton.Top.Set(10, 0f);
-			closeButton.Width.Set(22, 0f);
-			closeButton.Height.Set(22, 0f);
-			closeButton.OnClick += new MouseEvent(CloseButtonClicked);
-			ArchitectShopsPanel.Append(closeButton);
-			base.Append(ArchitectShopsPanel);
-		}
+            UIText text2 = new UIText(ArchitectShops2);
+            text2.Left.Set(35, 0f);
+            text2.Top.Set(40, 0f);
+            text2.Width.Set(70, 0f);
+            text2.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text2);
 
-		private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 1;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 2;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-			
-		}
-		
-		private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 3;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 4;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 5;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked6(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 6;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked7(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 7;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked8(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 8;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked9(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 9;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
-		
-		private void PlayButtonClicked10(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Architect.Shop = 10;
-			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-			ShopChangeUIA.visible = false;
-			Main.playerInventory = true;
-			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
-			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
-		}
+            UIText text3 = new UIText(ArchitectShops3);
+            text3.Left.Set(35, 0f);
+            text3.Top.Set(70, 0f);
+            text3.Width.Set(70, 0f);
+            text3.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text3);
 
-		private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Main.PlaySound(SoundID.MenuOpen);
-			visible = false;
-		}
+            UIText text4 = new UIText(ArchitectShops4);
+            text4.Left.Set(35, 0f);
+            text4.Top.Set(100, 0f);
+            text4.Width.Set(70, 0f);
+            text4.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text4);
 
-		Vector2 offset;
-		public bool dragging = false;
-		private void DragStart(UIMouseEvent evt, UIElement listeningElement)
-		{
-			offset = new Vector2(evt.MousePosition.X - ArchitectShopsPanel.Left.Pixels, evt.MousePosition.Y - ArchitectShopsPanel.Top.Pixels);
-			dragging = true;
-		}
+            UIText text5 = new UIText(ArchitectShops5);
+            text5.Left.Set(35, 0f);
+            text5.Top.Set(130, 0f);
+            text5.Width.Set(50, 0f);
+            text5.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text5);
 
-		private void DragEnd(UIMouseEvent evt, UIElement listeningElement)
-		{
-			Vector2 end = evt.MousePosition;
-			dragging = false;
+            UIText text6 = new UIText(ArchitectShops6);
+            text6.Left.Set(35, 0f);
+            text6.Top.Set(160, 0f);
+            text6.Width.Set(50, 0f);
+            text6.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text6);
 
-			ArchitectShopsPanel.Left.Set(end.X - offset.X, 0f);
-			ArchitectShopsPanel.Top.Set(end.Y - offset.Y, 0f);
+            UIText text7 = new UIText(ArchitectShops7);
+            text7.Left.Set(35, 0f);
+            text7.Top.Set(190, 0f);
+            text7.Width.Set(50, 0f);
+            text7.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text7);
 
-			Recalculate();
-		}
+            UIText text8 = new UIText(ArchitectShops8);
+            text8.Left.Set(35, 0f);
+            text8.Top.Set(220, 0f);
+            text8.Width.Set(60, 0f);
+            text8.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text8);
 
-		protected override void DrawSelf(SpriteBatch spriteBatch)
-		{
-			Vector2 MousePosition = new Vector2((float)Main.mouseX, (float)Main.mouseY);
-			if (ArchitectShopsPanel.ContainsPoint(MousePosition))
-			{
-				Main.LocalPlayer.mouseInterface = true;
-			}
-			if (dragging)
-			{
-				ArchitectShopsPanel.Left.Set(MousePosition.X - offset.X, 0f);
-				ArchitectShopsPanel.Top.Set(MousePosition.Y - offset.Y, 0f);
-				Recalculate();
-			}
-		}
-	}
+            UIText text9 = new UIText(ArchitectShops9);
+            text9.Left.Set(35, 0f);
+            text9.Top.Set(250, 0f);
+            text9.Width.Set(70, 0f);
+            text9.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text9);
+
+            UIText text10 = new UIText(ArchitectShops10);
+            text10.Left.Set(35, 0f);
+            text10.Top.Set(280, 0f);
+            text10.Width.Set(70, 0f);
+            text10.Height.Set(22, 0f);
+            ArchitectShopsPanel.Append(text10);
+
+            Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
+            UIImageButton playButton = new UIImageButton(buttonPlayTexture);
+            playButton.Left.Set(10, 0f);
+            playButton.Top.Set(10, 0f);
+            playButton.Width.Set(22, 0f);
+            playButton.Height.Set(22, 0f);
+            playButton.OnClick += new MouseEvent(PlayButtonClicked1);
+            ArchitectShopsPanel.Append(playButton);
+            UIImageButton playButton2 = new UIImageButton(buttonPlayTexture);
+            playButton2.Left.Set(10, 0f);
+            playButton2.Top.Set(40, 0f);
+            playButton2.Width.Set(22, 0f);
+            playButton2.Height.Set(22, 0f);
+            playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
+            ArchitectShopsPanel.Append(playButton2);
+            UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
+            playButton3.Left.Set(10, 0f);
+            playButton3.Top.Set(70, 0f);
+            playButton3.Width.Set(22, 0f);
+            playButton3.Height.Set(22, 0f);
+            playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
+            ArchitectShopsPanel.Append(playButton3);
+            UIImageButton playButton4 = new UIImageButton(buttonPlayTexture);
+            playButton4.Left.Set(10, 0f);
+            playButton4.Top.Set(100, 0f);
+            playButton4.Width.Set(22, 0f);
+            playButton4.Height.Set(22, 0f);
+            playButton4.OnClick += new MouseEvent(PlayButtonClicked4);
+            ArchitectShopsPanel.Append(playButton4);
+            UIImageButton playButton5 = new UIImageButton(buttonPlayTexture);
+            playButton5.Left.Set(10, 0f);
+            playButton5.Top.Set(130, 0f);
+            playButton5.Width.Set(22, 0f);
+            playButton5.Height.Set(22, 0f);
+            playButton5.OnClick += new MouseEvent(PlayButtonClicked5);
+            ArchitectShopsPanel.Append(playButton5);
+            UIImageButton playButton6 = new UIImageButton(buttonPlayTexture);
+            playButton6.Left.Set(10, 0f);
+            playButton6.Top.Set(160, 0f);
+            playButton6.Width.Set(22, 0f);
+            playButton6.Height.Set(22, 0f);
+            playButton6.OnClick += new MouseEvent(PlayButtonClicked6);
+            ArchitectShopsPanel.Append(playButton6);
+            UIImageButton playButton7 = new UIImageButton(buttonPlayTexture);
+            playButton7.Left.Set(10, 0f);
+            playButton7.Top.Set(190, 0f);
+            playButton7.Width.Set(22, 0f);
+            playButton7.Height.Set(22, 0f);
+            playButton7.OnClick += new MouseEvent(PlayButtonClicked7);
+            ArchitectShopsPanel.Append(playButton7);
+            UIImageButton playButton8 = new UIImageButton(buttonPlayTexture);
+            playButton8.Left.Set(10, 0f);
+            playButton8.Top.Set(220, 0f);
+            playButton8.Width.Set(22, 0f);
+            playButton8.Height.Set(22, 0f);
+            playButton8.OnClick += new MouseEvent(PlayButtonClicked8);
+            ArchitectShopsPanel.Append(playButton8);
+            UIImageButton playButton9 = new UIImageButton(buttonPlayTexture);
+            playButton9.Left.Set(10, 0f);
+            playButton9.Top.Set(250, 0f);
+            playButton9.Width.Set(22, 0f);
+            playButton9.Height.Set(22, 0f);
+            playButton9.OnClick += new MouseEvent(PlayButtonClicked9);
+            ArchitectShopsPanel.Append(playButton9);
+            UIImageButton playButton10 = new UIImageButton(buttonPlayTexture);
+            playButton10.Left.Set(10, 0f);
+            playButton10.Top.Set(280, 0f);
+            playButton10.Width.Set(22, 0f);
+            playButton10.Height.Set(22, 0f);
+            playButton10.OnClick += new MouseEvent(PlayButtonClicked10);
+            ArchitectShopsPanel.Append(playButton10);
+
+            Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
+            UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
+            closeButton.Left.Set(200, 0f);
+            closeButton.Top.Set(10, 0f);
+            closeButton.Width.Set(22, 0f);
+            closeButton.Height.Set(22, 0f);
+            closeButton.OnClick += new MouseEvent(CloseButtonClicked);
+            ArchitectShopsPanel.Append(closeButton);
+            base.Append(ArchitectShopsPanel);
+        }
+
+        private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 1;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 2;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+
+        }
+
+        private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 3;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 4;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 5;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void PlayButtonClicked6(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 6;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void PlayButtonClicked7(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 7;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void PlayButtonClicked8(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 8;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void PlayButtonClicked9(UIMouseEvent evt, UIElement listeningElement)
+        {
+
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 9;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void PlayButtonClicked10(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Architect.Shop = 10;
+                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+                ShopChangeUIA.visible = false;
+                Main.playerInventory = true;
+                Main.npcChatText = "";
+                Main.npcShop = Main.MaxShopIDs - 1;
+                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+            }
+        }
+
+        private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            {
+                Main.PlaySound(SoundID.MenuOpen);
+                visible = false;
+            }
+        }
+
+        Vector2 offset;
+        public bool dragging = false;
+        private void DragStart(UIMouseEvent evt, UIElement listeningElement)
+        {
+            offset = new Vector2(evt.MousePosition.X - ArchitectShopsPanel.Left.Pixels, evt.MousePosition.Y - ArchitectShopsPanel.Top.Pixels);
+            dragging = true;
+        }
+
+        private void DragEnd(UIMouseEvent evt, UIElement listeningElement)
+        {
+            Vector2 end = evt.MousePosition;
+            dragging = false;
+
+            ArchitectShopsPanel.Left.Set(end.X - offset.X, 0f);
+            ArchitectShopsPanel.Top.Set(end.Y - offset.Y, 0f);
+
+            Recalculate();
+        }
+
+        protected override void DrawSelf(SpriteBatch spriteBatch)
+        {
+            Vector2 MousePosition = new Vector2((float)Main.mouseX, (float)Main.mouseY);
+            if (ArchitectShopsPanel.ContainsPoint(MousePosition))
+            {
+                Main.LocalPlayer.mouseInterface = true;
+            }
+            if (dragging)
+            {
+                ArchitectShopsPanel.Left.Set(MousePosition.X - offset.X, 0f);
+                ArchitectShopsPanel.Top.Set(MousePosition.Y - offset.Y, 0f);
+                Recalculate();
+            }
+        }
+    }
 }
