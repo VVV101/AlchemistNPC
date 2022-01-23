@@ -71,13 +71,13 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Russian, "Боб");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A1");
-            text.SetDefault("If this dastardly ");
-            text.AddTranslation(GameCulture.Russian, "Если эта трусливая ");
+            text.SetDefault("If ");
+            text.AddTranslation(GameCulture.Russian, "Если ");
             text.AddTranslation(GameCulture.Chinese, "如果这个卑鄙的 ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A2");
-            text.SetDefault(" isn't going to shut up, I'm letting ");
-            text.AddTranslation(GameCulture.Russian, " не замолчит, я позволю ");
+            text.SetDefault(" isn't going to shut up, I'm making ");
+            text.AddTranslation(GameCulture.Russian, " не замолчит, я заставлю ");
             text.AddTranslation(GameCulture.Chinese, " 再不住口的话, 我会让 ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A3");
@@ -86,7 +86,7 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, " 咬她.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A4");
-            text.SetDefault("KILL THE ZOMBIES! KILL THE BUNNIES! IN THE NAME OF THE BLOO- oh, sorry, didn't notice you there.");
+            text.SetDefault("With so much blood, I wouldn't be surprised if gods were satisfied for once!");
             text.AddTranslation(GameCulture.Russian, "УБИВАЙ ЗОМБИ! УБИВАЙ КРОЛИКОВ! ВО ИМЯ КРОВ-- Ой прости, я не заметил, что ты здесь.");
             text.AddTranslation(GameCulture.Chinese, "杀掉那个僵尸! 杀掉那个兔子! 那个名字是血- 哦, 抱歉, 我没注意到你在这里.");
             mod.AddTranslation(text);
@@ -96,22 +96,22 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "哦嗨你好我正在为一个湖收集一些装满血的水桶我很开心所以别问我更多问题了再见.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A6");
-            text.SetDefault("I like it when there is a gigantic horde of zombies behind our doors. But I HATE WHEN THEY BREAK MY DOORS!");
+            text.SetDefault("I like it when there is a gigantic horde of zombies behind our doors. But I would like it a whole lot more if they didn't break in.");
             text.AddTranslation(GameCulture.Russian, "Я люблю, когда за нашими дверями огромная орда зомби. Но Я НЕНАВИЖУ КОГДА ОНИ ИХ ЛОМАЮТ!");
             text.AddTranslation(GameCulture.Chinese, "当有一大堆僵尸在我的门后面时我很喜欢它，但是当它们打破我的门时我恨它!");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A7");
-            text.SetDefault("Ah, the feeling of unsafety, the rising emphasis on paranoia the moment the bloodmoon rises up in the sky.");
+            text.SetDefault("Ah, the feeling of unsafety, the rising emphasis on paranoia the moment the blood moon rises up in the sky.");
             text.AddTranslation(GameCulture.Russian, "Ах, это чувство отсутствия безопасности, паранойя, которая подчёркивается моментом, когда кровавая луна восходит на небосводе.");
             text.AddTranslation(GameCulture.Chinese, "啊哈, 这种不安全的感觉, 偏执狂热爱这种血月在空中的感觉.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A8");
-            text.SetDefault("Are you interested in my religion? It invloves sacrifices to the bloody moon.");
+            text.SetDefault("Are you interested in my religion? It involves sacrifices to the bloody moon.");
             text.AddTranslation(GameCulture.Russian, "Ты заинтересован в моей религии? У нас есть жертвы Кровавой Луне.");
             text.AddTranslation(GameCulture.Chinese, "你对我的信仰感兴趣吗? 它涉及对血月的牺牲.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A9");
-            text.SetDefault("Do you know why I hate these goblins? They are so bothersome.");
+            text.SetDefault("Do you know why I hate these goblins? They are so annoying.");
             text.AddTranslation(GameCulture.Russian, "Знаешь, почему я ненавижу этих гоблинов? Они ужасно раздражающие.");
             text.AddTranslation(GameCulture.Chinese, "你知道为毛我恨这些哥布林嘛? 他们太鸡儿吵了.");
             mod.AddTranslation(text);
@@ -131,12 +131,12 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "请不要乱炸OK? ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A13");
-            text.SetDefault(" is already annoying me enough.");
-            text.AddTranslation(GameCulture.Russian, " и так достаточно раздражает меня.");
+            text.SetDefault(" is already enough.");
+            text.AddTranslation(GameCulture.Russian, " и так достаточно для меня.");
             text.AddTranslation(GameCulture.Chinese, " 已经够烦了.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A14");
-            text.SetDefault("BUILDER POTIONS FREE FOR EVERYONE but you.");
+            text.SetDefault("You should have come sooner, we  had a free builder potion giveaway.");
             text.AddTranslation(GameCulture.Russian, "БЕСПЛАТНЫЕ ЗЕЛЬЯ СТРОИТЕЛЯ ДЛЯ ВСЕХ кроме тебя.");
             text.AddTranslation(GameCulture.Chinese, "建筑药水对所有人免费, 除了你.");
             mod.AddTranslation(text);
@@ -156,12 +156,12 @@ namespace AlchemistNPC.NPCs
             text.AddTranslation(GameCulture.Chinese, "不, 我不是家伙(guy). 我是老兄(dude).");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A18");
-            text.SetDefault("Well, the one you recently built was ALMOST impressive. (not really)");
+            text.SetDefault("Well, the one you recently built was ALMOST impressive. Just maybe.");
             text.AddTranslation(GameCulture.Russian, "Ну, то, что ты недавно построил было почти впечатляющим. (на самом деле НЕТ)");
             text.AddTranslation(GameCulture.Chinese, "嗯, 你最近做的一件事情几乎让人印象深刻. (不存在的)");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("A19");
-            text.SetDefault("So, you're saying that chests are furniture too. And I reply: Screw you.");
+            text.SetDefault("So, you're saying that chests are furniture too. Disagree.");
             text.AddTranslation(GameCulture.Russian, "Так ты утверждаешь, что сундуки - это тоже мебель. Я тебе отвечу: Пошёл ты.");
             text.AddTranslation(GameCulture.Chinese, "所以, 你说箱子也是家具. 我表示: 去你丫的.");
             mod.AddTranslation(text);
@@ -174,12 +174,16 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Have you heard 'bout that FuryForged guy? I taught him all he knows!");
             text.AddTranslation(GameCulture.Russian, "Ты слышал об этом FuryForged? Я научил его всему, что он знает!");
             text.AddTranslation(GameCulture.Chinese, "你听说过一个叫FuryForged的家伙吗?他的一切东西都是我教的");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A22");
-            text.SetDefault("I was once hired by a certain company to build a supermassive hi-tech, high-security installation. Lemme tell ya its my magnum opus in terms of Security and Containment.");
+	          mod.AddTranslation(text);
+			      text = mod.CreateTranslation("A22");
+            text.SetDefault("I was once hired by some shady moneybags to build a secure containment bunker. I definitely outdid myself on that, but I could do better today.");
             text.AddTranslation(GameCulture.Russian, "Как-то раз я был нанят одной компанией, чтобы построить огромный высокотехнологичный комплекс с высочайщей степенью безопасности. Это была моя самая лучшая работа в плане сдерживания и безопасности.");
             text.AddTranslation(GameCulture.Chinese, "我曾经被一家公司雇用来建造一个超大规模的高科技，高安全性装置。 让我告诉你我在安全性和阻挡入侵方面我的巨大建树。");
-            mod.AddTranslation(text);
+ 			      text = mod.CreateTranslation("A23");
+            text.SetDefault("Listen, I don't actually hate any of your buildings, I just say things so you get motivated to do better. Now go touch some grass.");
+            text.AddTranslation(GameCulture.Russian, "");
+            text.AddTranslation(GameCulture.Chinese, "");
+	          mod.AddTranslation(text);
             text = mod.CreateTranslation("AS1");
             text.SetDefault("1st shop (Filler Blocks)       ");
             text.AddTranslation(GameCulture.Russian, "1-ый магазин (Обычные Блоки)");
@@ -318,64 +322,66 @@ namespace AlchemistNPC.NPCs
 
         public override string GetChat()
         {                                          //npc chat
+
             string A1 = Language.GetTextValue("Mods.AlchemistNPC.A1");
             string A2 = Language.GetTextValue("Mods.AlchemistNPC.A2");
-            string A3 = Language.GetTextValue("Mods.AlchemistNPC.A3");
-            string A4 = Language.GetTextValue("Mods.AlchemistNPC.A4");
-            string A5 = Language.GetTextValue("Mods.AlchemistNPC.A5");
-            string A6 = Language.GetTextValue("Mods.AlchemistNPC.A6");
-            string A7 = Language.GetTextValue("Mods.AlchemistNPC.A7");
-            string A8 = Language.GetTextValue("Mods.AlchemistNPC.A8");
-            string A9 = Language.GetTextValue("Mods.AlchemistNPC.A9");
-            string A10 = Language.GetTextValue("Mods.AlchemistNPC.A10");
-            string A11 = Language.GetTextValue("Mods.AlchemistNPC.A11");
-            string A12 = Language.GetTextValue("Mods.AlchemistNPC.A12");
-            string A13 = Language.GetTextValue("Mods.AlchemistNPC.A13");
-            string A14 = Language.GetTextValue("Mods.AlchemistNPC.A14");
-            string A15 = Language.GetTextValue("Mods.AlchemistNPC.A15");
-            string A16 = Language.GetTextValue("Mods.AlchemistNPC.A16");
-            string A17 = Language.GetTextValue("Mods.AlchemistNPC.A17");
-            string A18 = Language.GetTextValue("Mods.AlchemistNPC.A18");
+            string A3 = Language.GetTextValue("Mods.AlchemistNPC.A3");	
+            string A4 = Language.GetTextValue("Mods.AlchemistNPC.A4");	
+            string A5 = Language.GetTextValue("Mods.AlchemistNPC.A5");	
+            string A6 = Language.GetTextValue("Mods.AlchemistNPC.A6");	
+            string A7 = Language.GetTextValue("Mods.AlchemistNPC.A7");	
+            string A8 = Language.GetTextValue("Mods.AlchemistNPC.A8");	
+            string A9 = Language.GetTextValue("Mods.AlchemistNPC.A9");	
+            string A10 = Language.GetTextValue("Mods.AlchemistNPC.A10");	
+            string A11 = Language.GetTextValue("Mods.AlchemistNPC.A11");	
+            string A12 = Language.GetTextValue("Mods.AlchemistNPC.A12");	
+            string A13 = Language.GetTextValue("Mods.AlchemistNPC.A13");	
+            string A14 = Language.GetTextValue("Mods.AlchemistNPC.A14");	
+            string A15 = Language.GetTextValue("Mods.AlchemistNPC.A15");	
+            string A16 = Language.GetTextValue("Mods.AlchemistNPC.A16");	
+            string A17 = Language.GetTextValue("Mods.AlchemistNPC.A17");	
+            string A18 = Language.GetTextValue("Mods.AlchemistNPC.A18");	
             string A19 = Language.GetTextValue("Mods.AlchemistNPC.A19");
             string A20 = Language.GetTextValue("Mods.AlchemistNPC.A20");
             string A21 = Language.GetTextValue("Mods.AlchemistNPC.A21");
             string A22 = Language.GetTextValue("Mods.AlchemistNPC.A22");
+            string A22 = Language.GetTextValue("Mods.AlchemistNPC.A23");							
 
             int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
             int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
             int demolitionist = NPC.FindFirstNPC(NPCID.Demolitionist);
             int Operator = NPC.FindFirstNPC(mod.NPCType("Operator"));
-            if (Main.bloodMoon && partyGirl >= 0 && goblinTinkerer >= 0 && Main.rand.Next(4) == 0)
+            if (Main.bloodMoon && partyGirl >= 0 && goblinTinkerer >=0 && Main.rand.Next(4) == 0)
             {
-                return A1 + Main.npc[partyGirl].GivenName + A2 + Main.npc[goblinTinkerer].GivenName + A3;
+            return A1 + Main.npc[partyGirl].GivenName + A2 + Main.npc[goblinTinkerer].GivenName + A3;
             }
             if (Main.bloodMoon)
             {
-                switch (Main.rand.Next(4))
-                {
-                    case 0:
-                        return A4;
-                    case 1:
-                        return A5;
-                    case 2:
-                        return A6;
-                    case 3:
-                        return A7;
-                    case 4:
-                        return A8;
-                }
+              switch (Main.rand.Next(4))
+              {
+              case 0:
+              return A4;
+                      case 1:
+              return A5;
+              case 2:
+              return A6;
+              case 3:
+              return A7;
+              case 4:
+              return A8;
+              }
             }
             if (Main.invasionType == 1)
             {
-                return A9;
+              return A9;
             }
             if (Main.invasionType == 3)
             {
-                return A10;
+              return A10;
             }
             if (Main.invasionType == 4)
             {
-                return A11;
+              return A11;
             }
             if (demolitionist >= 0 && Main.rand.Next(5) == 0)
             {
