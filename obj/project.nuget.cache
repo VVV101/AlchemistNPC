@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vWlMwsWA5GyaXDNzlbGJEldM10FvfLfi33vMQMAmgRZGXTsabPI0lrDfGohZZvoqDv6JRazRJt5tSoHpCqlSsA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\AlchemistNPC\\AlchemistNPC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\b2mau\\.nuget\\packages\\tmodloader.codeassist\\0.1.3\\tmodloader.codeassist.0.1.3.nupkg.sha512"
+  ],
+  "logs": []
+}

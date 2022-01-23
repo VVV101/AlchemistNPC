@@ -6,55 +6,55 @@ using Terraria.Localization;
 
 namespace AlchemistNPC.Buffs
 {
-	public class NinjaSkill : ModBuff
-	{
-		public override void SetDefaults()
-		{
-			DisplayName.SetDefault("Ninja");
-			Description.SetDefault("You are a true ninja!");
-			Main.debuff[Type] = false;
-			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Ниндзя");
-			Description.AddTranslation(GameCulture.Russian, "Вы - истинный ниндзя!");
+    public class NinjaSkill : ModBuff
+    {
+        public override void SetDefaults()
+        {
+            DisplayName.SetDefault("Ninja");
+            Description.SetDefault("You are a true ninja!");
+            Main.debuff[Type] = false;
+            canBeCleared = true;
+            DisplayName.AddTranslation(GameCulture.Russian, "Ниндзя");
+            Description.AddTranslation(GameCulture.Russian, "Вы - истинный ниндзя!");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "忍者");
             Description.AddTranslation(GameCulture.Chinese, "现在你是个真正的忍者了!");
         }
-		public override void Update(Player player, ref int buffIndex)
-		{
-			player.allDamage += 0.05f;
-			player.meleeCrit += 5;
+        public override void Update(Player player, ref int buffIndex)
+        {
+            player.allDamage += 0.05f;
+            player.meleeCrit += 5;
             player.rangedCrit += 5;
             player.magicCrit += 5;
             player.thrownCrit += 5;
-			player.blackBelt = true;
+            player.blackBelt = true;
             player.spikedBoots = 2;
-			if (ModLoader.GetMod("ThoriumMod") != null)
-			{
-				ThoriumBoosts(player);
-			}
-			if (ModLoader.GetMod("Redemption") != null)
-			{
-				RedemptionBoost(player);
-			}
-			Mod Calamity = ModLoader.GetMod("CalamityMod");
-			if(Calamity != null)
-			{
-				Calamity.Call("AddRogueCrit", player, 5);
-			}
-		}
-		
-		private void RedemptionBoost(Player player)
+            if (ModLoader.GetMod("ThoriumMod") != null)
+            {
+                ThoriumBoosts(player);
+            }
+            if (ModLoader.GetMod("Redemption") != null)
+            {
+                RedemptionBoost(player);
+            }
+            Mod Calamity = ModLoader.GetMod("CalamityMod");
+            if (Calamity != null)
+            {
+                Calamity.Call("AddRogueCrit", player, 5);
+            }
+        }
+
+        private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
+            Redemption.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.DruidDamagePlayer>();
             RedemptionPlayer.druidCrit += 5;
         }
-		
-		private void ThoriumBoosts(Player player)
+
+        private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
             ThoriumPlayer.symphonicCrit += 5;
             ThoriumPlayer.radiantCrit += 5;
         }
-	}
+    }
 }
