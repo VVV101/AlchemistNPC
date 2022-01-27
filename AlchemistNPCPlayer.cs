@@ -329,7 +329,7 @@ namespace AlchemistNPC
             }
             if (Main.netMode != NetmodeID.Server)
             {
-                if (player.talkNPC == -1)
+                if (Main.LocalPlayer.talkNPC == -1)
                 {
                     ShopChangeUI.visible = false;
                     ShopChangeUIA.visible = false;
