@@ -174,16 +174,16 @@ namespace AlchemistNPC.NPCs
             text.SetDefault("Have you heard 'bout that FuryForged guy? I taught him all he knows!");
             text.AddTranslation(GameCulture.Russian, "Ты слышал об этом FuryForged? Я научил его всему, что он знает!");
             text.AddTranslation(GameCulture.Chinese, "你听说过一个叫FuryForged的家伙吗?他的一切东西都是我教的");
-	          mod.AddTranslation(text);
-			      text = mod.CreateTranslation("A22");
+	        mod.AddTranslation(text);
+			text = mod.CreateTranslation("A22");
             text.SetDefault("I was once hired by some shady moneybags to build a secure containment bunker. I definitely outdid myself on that, but I could do better today.");
             text.AddTranslation(GameCulture.Russian, "Как-то раз я был нанят одной компанией, чтобы построить огромный высокотехнологичный комплекс с высочайщей степенью безопасности. Это была моя самая лучшая работа в плане сдерживания и безопасности.");
             text.AddTranslation(GameCulture.Chinese, "我曾经被一家公司雇用来建造一个超大规模的高科技，高安全性装置。 让我告诉你我在安全性和阻挡入侵方面我的巨大建树。");
- 			      text = mod.CreateTranslation("A23");
+ 			text = mod.CreateTranslation("A23");
             text.SetDefault("Listen, I don't actually hate any of your buildings, I just say things so you get motivated to do better. Now go touch some grass.");
             text.AddTranslation(GameCulture.Russian, "");
             text.AddTranslation(GameCulture.Chinese, "");
-	          mod.AddTranslation(text);
+	        mod.AddTranslation(text);
             text = mod.CreateTranslation("AS1");
             text.SetDefault("1st shop (Filler Blocks)       ");
             text.AddTranslation(GameCulture.Russian, "1-ый магазин (Обычные Блоки)");
@@ -345,7 +345,7 @@ namespace AlchemistNPC.NPCs
             string A20 = Language.GetTextValue("Mods.AlchemistNPC.A20");
             string A21 = Language.GetTextValue("Mods.AlchemistNPC.A21");
             string A22 = Language.GetTextValue("Mods.AlchemistNPC.A22");
-            string A22 = Language.GetTextValue("Mods.AlchemistNPC.A23");							
+            string A23 = Language.GetTextValue("Mods.AlchemistNPC.A23");							
 
             int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
             int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
