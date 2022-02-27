@@ -405,7 +405,7 @@ namespace AlchemistNPC
                             }
                         }
                         return true;
-                    }, InterfaceScaleType.None)
+                    }, InterfaceScaleType.Game)
                 );
             }
         }
