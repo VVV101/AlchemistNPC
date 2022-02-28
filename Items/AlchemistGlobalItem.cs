@@ -14,6 +14,7 @@ using Terraria.Localization;
 using AlchemistNPC.Interface;
 using AlchemistNPC;
 using Terraria.UI;
+using Terraria.GameInput;
 
 namespace AlchemistNPC.Items
 {
@@ -39,10 +40,21 @@ namespace AlchemistNPC.Items
             {
                 if (player.inventory[j].type == mod.ItemType("DimensionalCasket"))
                 {
-                    if (Main.keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Escape))
+                    var keybinds = PlayerInput.CurrentProfile.InputModes[InputMode.Keyboard].KeyStatus["Inventory"];
+                    string keybind = "Escape";
+                    if(keybinds.Count > 0)
                     {
-                        DimensionalCasketUI.k = -1;
-                        DimensionalCasketUI.forcetalk = false;
+                        keybind = keybinds[0];
+                    }
+
+                    Microsoft.Xna.Framework.Input.Keys closeCasket;
+                    if (Enum.TryParse(keybind, out closeCasket) )
+                    {
+                        if (Main.keyState.IsKeyDown(closeCasket))
+                        {
+                            DimensionalCasketUI.k = -1;
+                            DimensionalCasketUI.forcetalk = false;
+                        }
                     }
                     if (DimensionalCasketUI.forcetalk == true)
                     {

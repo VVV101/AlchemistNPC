@@ -226,7 +226,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 1;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -240,7 +240,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 2;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -255,7 +255,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 3;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -269,7 +269,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 4;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -283,7 +283,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 5;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -297,7 +297,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked6(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 6;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -311,7 +311,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked7(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 7;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -325,7 +325,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked8(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 8;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -340,7 +340,7 @@ namespace AlchemistNPC.Interface
         private void PlayButtonClicked9(UIMouseEvent evt, UIElement listeningElement)
         {
 
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 9;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -354,7 +354,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked10(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Architect.Shop = 10;
                 NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
@@ -368,7 +368,7 @@ namespace AlchemistNPC.Interface
 
         private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Main.PlaySound(SoundID.MenuOpen);
                 visible = false;

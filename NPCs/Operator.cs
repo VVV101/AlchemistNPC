@@ -712,7 +712,7 @@ namespace AlchemistNPC.NPCs
             {
                 if (AlchemistNPC.modConfiguration.TS && Main.expertMode)
                 {
-                    if (!ShopChangeUIO.visible) ShopChangeUIO.timeStart = Main.GameUpdateCount;
+                    if (!ShopChangeUIO.visible && !Main.autoPause) ShopChangeUIO.timeStart = Main.GameUpdateCount;
                     ShopChangeUIO.visible = true;
                 }
                 if (!AlchemistNPC.modConfiguration.TS || !Main.expertMode)
@@ -2285,25 +2285,25 @@ namespace AlchemistNPC.NPCs
                             if ((bool)Calamity.Call("Downed", "dog"))
                             {
                                 shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag"));
-                                shop.item[nextSlot].shopCustomPrice = 10000000;
+                                shop.item[nextSlot].shopCustomPrice = 15000000; // Average 12 platinum per bag
                                 nextSlot++;
                             }
                             if ((bool)Calamity.Call("Downed", "yharon"))
                             {
                                 shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("YharonBag"));
-                                shop.item[nextSlot].shopCustomPrice = 15000000;
+                                shop.item[nextSlot].shopCustomPrice = 20000000; // Average 16 platinum per bag
                                 nextSlot++;
                             }
                             if ((bool)Calamity.Call("Downed", "exomechs"))
                             {
                                 shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("DraedonTreasureBag"));
-                                shop.item[nextSlot].shopCustomPrice = 17500000;
+                                shop.item[nextSlot].shopCustomPrice = 45000000; // Average 32 platinum per bag
                                 nextSlot++;
                             }
                             if ((bool)Calamity.Call("Downed", "supremecalamitas"))
                             {
                                 shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("SCalBag"));
-                                shop.item[nextSlot].shopCustomPrice = 20000000;
+                                shop.item[nextSlot].shopCustomPrice = 60000000; // Average 49 platinum per bag
                                 nextSlot++;
                             }
                         }
