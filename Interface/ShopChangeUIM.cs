@@ -108,7 +108,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Musician.S1 = true;
                 Musician.S2 = false;
@@ -124,7 +124,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Musician.S1 = false;
                 Musician.S2 = true;
@@ -140,7 +140,7 @@ namespace AlchemistNPC.Interface
 
         private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Musician.S1 = false;
                 Musician.S2 = false;
@@ -156,7 +156,7 @@ namespace AlchemistNPC.Interface
 
         private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPC.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPC.modConfiguration.ShopChangeDelay)
             {
                 Main.PlaySound(SoundID.MenuOpen);
                 visible = false;

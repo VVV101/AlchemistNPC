@@ -1398,7 +1398,7 @@ namespace AlchemistNPC.NPCs
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Signus"))) {number = 1; tier = 6;}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Polterghast"))) {number = Main.rand.Next(4,6); tier = 6;}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("OldDuke"))) {number = Main.rand.Next(5,7); tier = 6;}
-							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS"))) {number = Main.rand.Next(6,9); tier = 6;}
+							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHead"))) {number = Main.rand.Next(6,9); tier = 6;}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Birb"))) {number = Main.rand.Next(3,6); tier = 5;}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("Yharon"))) {number = Main.rand.Next(12,15); tier = 6;}
 							if (npc.type == (ModLoader.GetMod("CalamityMod").NPCType("SupremeCalamitas"))) {number = 66; tier = 6;}

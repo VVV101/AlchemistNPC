@@ -137,7 +137,7 @@ namespace AlchemistNPC
 		[Tooltip("$Mods.AlchemistNPC.Common.WormholePriceTooltip")]
 		public int WormholePrice;
 
-		[Range(1, 100)]
+		[Range(0, 100)]
 		[DefaultValue(10)]
 		[Label("$Mods.AlchemistNPC.Common.ShopChangeDelay")]
 		[Tooltip("$Mods.AlchemistNPC.Common.ShopChangeDelayTooltip")]
