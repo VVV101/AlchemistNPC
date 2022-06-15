@@ -115,6 +115,7 @@ namespace AlchemistNPC
                 AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Field of Hopes And Dreams"), ItemType("FieldsMusicBox"), TileType("FieldsMusicBox"));
                 AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - Lantern"), ItemType("SheamMusicBox"), TileType("SheamMusicBox"));
                 AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - The World Revolving"), ItemType("TheWorldRevolvingMusicBox"), TileType("TheWorldRevolvingMusicBox"));
+                AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/Deltarune OST - A Cyber's World"), ItemType("ACybersWorld"), TileType("ACybersWorld"));
 
                 alchemistUI = new ShopChangeUI();
                 alchemistUI.Activate();
