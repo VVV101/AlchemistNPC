@@ -855,6 +855,9 @@ namespace AlchemistNPC.NPCs
                     shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("TheWorldRevolvingMusicBox"));
                     shop.item[nextSlot].shopCustomPrice = 250000;
                     nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("ACybersWorld"));
+                    shop.item[nextSlot].shopCustomPrice = 250000;
+                    nextSlot++;
                 }
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
