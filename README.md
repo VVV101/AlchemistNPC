@@ -17,6 +17,8 @@ Some custom phrases while both NPC are spawned.
 # More information here:
 
 https://forums.terraria.org/index.php?threads/alchemistnpc-v9-0.52798/
+
 https://mirror.sgkoi.dev/Mods/Details/AlchemistNPC
+
 https://terrariamods.fandom.com/wiki/AlchemistNPC
 
