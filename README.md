@@ -14,7 +14,7 @@ Spawn conditions for Musician is to beat Skeletron.
 
 Some custom phrases while both NPC are spawned.
 
-More information here:
+# More information here:
 
 https://forums.terraria.org/index.php?threads/alchemistnpc-v9-0.52798/
 https://mirror.sgkoi.dev/Mods/Details/AlchemistNPC
